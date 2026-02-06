@@ -1,0 +1,26 @@
+# Large files
+yelp_academic_dataset_business.json
+california_businesses.parquet
+california_overture.parquet
+california_real.parquet
+la_historical_businesses.parquet
+overture_conf_labeled.parquet
+overture_dec2025.parquet
+overture_large.parquet
+overture_signal_labeled.parquet
+overture_test.parquet
+project_c_samples.parquet
+samples_3k_project_c_updated.parquet
+test_overture.parquet
+training_data_combined.parquet
+us_overture.parquet
+samples_3k_project_c_updated.parquet
+*.pkl
+*.lgb
+
+# Python
+__pycache__/
+*.pyc
+
+# Environment
+.env
