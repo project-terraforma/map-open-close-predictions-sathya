@@ -1,0 +1,11 @@
+{
+  "accuracy": 0.832992700729927,
+  "precision_closed": 0.3333333333333333,
+  "recall_closed": 0.8274760383386581,
+  "f1_closed": 0.47522935779816516,
+  "roc_auc": 0.9035317271286251,
+  "average_precision": 0.9870011512837229,
+  "total_samples": 3425,
+  "total_closed": 313,
+  "total_open": 3112
+}
