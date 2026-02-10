@@ -19,23 +19,50 @@ import requests
 import concurrent.futures
 
 
-# California cities with realistic coordinates
-CALIFORNIA_CITIES = [
+# Worldwide cities across all continents
+WORLD_CITIES = [
+    # North America
+    {"name": "New York", "lat": 40.7128, "lon": -74.0060},
     {"name": "Los Angeles", "lat": 34.0522, "lon": -118.2437},
-    {"name": "San Francisco", "lat": 37.7749, "lon": -122.4194},
-    {"name": "San Diego", "lat": 32.7157, "lon": -117.1611},
-    {"name": "San Jose", "lat": 37.3382, "lon": -121.8863},
-    {"name": "Sacramento", "lat": 38.5816, "lon": -121.4944},
-    {"name": "Fresno", "lat": 36.7378, "lon": -119.7871},
-    {"name": "Oakland", "lat": 37.8044, "lon": -122.2712},
-    {"name": "Long Beach", "lat": 33.7701, "lon": -118.1937},
-    {"name": "Bakersfield", "lat": 35.3733, "lon": -119.0187},
-    {"name": "Anaheim", "lat": 33.8366, "lon": -117.9143},
-    {"name": "Santa Ana", "lat": 33.7455, "lon": -117.8677},
-    {"name": "Riverside", "lat": 33.9533, "lon": -117.3962},
-    {"name": "Stockton", "lat": 37.9577, "lon": -121.2908},
-    {"name": "Irvine", "lat": 33.6846, "lon": -117.8265},
-    {"name": "Chula Vista", "lat": 32.6401, "lon": -117.0842},
+    {"name": "Chicago", "lat": 41.8781, "lon": -87.6298},
+    {"name": "Toronto", "lat": 43.6532, "lon": -79.3832},
+    {"name": "Mexico City", "lat": 19.4326, "lon": -99.1332},
+    # South America
+    {"name": "São Paulo", "lat": -23.5505, "lon": -46.6333},
+    {"name": "Buenos Aires", "lat": -34.6037, "lon": -58.3816},
+    {"name": "Bogotá", "lat": 4.7110, "lon": -74.0721},
+    {"name": "Lima", "lat": -12.0464, "lon": -77.0428},
+    {"name": "Santiago", "lat": -33.4489, "lon": -70.6693},
+    # Europe
+    {"name": "London", "lat": 51.5074, "lon": -0.1278},
+    {"name": "Paris", "lat": 48.8566, "lon": 2.3522},
+    {"name": "Berlin", "lat": 52.5200, "lon": 13.4050},
+    {"name": "Rome", "lat": 41.9028, "lon": 12.4964},
+    {"name": "Madrid", "lat": 40.4168, "lon": -3.7038},
+    {"name": "Amsterdam", "lat": 52.3676, "lon": 4.9041},
+    {"name": "Stockholm", "lat": 59.3293, "lon": 18.0686},
+    {"name": "Prague", "lat": 50.0755, "lon": 14.4378},
+    # Asia
+    {"name": "Tokyo", "lat": 35.6762, "lon": 139.6503},
+    {"name": "Shanghai", "lat": 31.2304, "lon": 121.4737},
+    {"name": "Mumbai", "lat": 19.0760, "lon": 72.8777},
+    {"name": "Seoul", "lat": 37.5665, "lon": 126.9780},
+    {"name": "Bangkok", "lat": 13.7563, "lon": 100.5018},
+    {"name": "Singapore", "lat": 1.3521, "lon": 103.8198},
+    {"name": "Dubai", "lat": 25.2048, "lon": 55.2708},
+    {"name": "Istanbul", "lat": 41.0082, "lon": 28.9784},
+    {"name": "Jakarta", "lat": -6.2088, "lon": 106.8456},
+    {"name": "Kuala Lumpur", "lat": 3.1390, "lon": 101.6869},
+    # Africa
+    {"name": "Cairo", "lat": 30.0444, "lon": 31.2357},
+    {"name": "Lagos", "lat": 6.5244, "lon": 3.3792},
+    {"name": "Nairobi", "lat": -1.2921, "lon": 36.8219},
+    {"name": "Cape Town", "lat": -33.9249, "lon": 18.4241},
+    {"name": "Casablanca", "lat": 33.5731, "lon": -7.5898},
+    # Oceania
+    {"name": "Sydney", "lat": -33.8688, "lon": 151.2093},
+    {"name": "Melbourne", "lat": -37.8136, "lon": 144.9631},
+    {"name": "Auckland", "lat": -36.8485, "lon": 174.7633},
 ]
 
 
@@ -209,33 +236,48 @@ def predict_place_features(features_dict, model, label_encoder, feature_names):
     has_websites = has_data(features_dict.get('websites'))
     has_phones = has_data(features_dict.get('phones'))
     has_address = 1 if features_dict.get('addresses') and len(features_dict.get('addresses', [])) > 0 else 0
+    has_hours = features_dict.get('has_hours', None)  # None = unknown, True/False = known
     
     # Calculate Score (0-100)
     score = 50  # Start neutral
     
-    # 1. Confidence Impact (Centered around 0.75)
-    # If conf > 0.75, add points. If < 0.75, subtract points.
-    conf_impact = (confidence - 0.75) * 200
+    # 1. Confidence Impact (Centered around 0.75, reduced weight)
+    conf_impact = (confidence - 0.75) * 120
     score += conf_impact
     
     # 2. Proof of Life
-    if has_websites: score += 15
-    else: score -= 10
+    if has_websites: score += 8
+    else: score -= 8
         
-    if has_phones: score += 15
-    else: score -= 10
+    if has_phones: score += 8
+    else: score -= 8
         
-    if has_address: score += 5
+    if has_address: score += 3
     
-    # 3. Source Bonus
-    if num_sources > 1: score += 10
+    # 3. Opening Hours - strongest signal of active operation
+    if has_hours is not None:
+        if has_hours:
+            score += 15  # Has hours listed = strong open signal
+        else:
+            score -= 35  # NO hours listed = very strong closed signal
+    
+    # 4. Review count signal — few/no reviews suggests inactive
+    total_ratings = features_dict.get('total_ratings', None)
+    if total_ratings is not None:
+        if total_ratings == 0:
+            score -= 10
+        elif total_ratings < 5:
+            score -= 5
+    
+    # 5. Source Bonus (reduced)
+    if num_sources > 2: score += 5
     
     # Clamp
     score = np.clip(score, 0, 100)
     prob_open = score / 100.0
     
     # Determine prediction
-    prediction = 1 if score > 50 else 0
+    prediction = 1 if score > 62 else 0
     probabilities = np.array([1 - prob_open, prob_open])
     
     # Explanation (for debugging/user info)
@@ -247,6 +289,14 @@ def predict_place_features(features_dict, model, label_encoder, feature_names):
     else: reasons.append("Missing Website")
     
     if has_phones: reasons.append("Has Phone")
+    else: reasons.append("Missing Phone")
+    
+    if has_hours is not None:
+        if has_hours: reasons.append("Has Hours")
+        else: reasons.append("No Hours Listed")
+    
+    if total_ratings is not None and total_ratings < 5:
+        reasons.append("Few Reviews")
     
     return prediction, probabilities, ", ".join(reasons)
 
@@ -314,184 +364,257 @@ def generate_random_business():
     }
 
 
-def get_batch_businesses(n=100):
-    """Get a batch of businesses - prioritizing Overture CA data."""
-    # 1. Try Overture US Data
-    us_df = load_overture_ca_data()
-    if us_df is not None and not us_df.empty:
-        # Filter to continental US
-        us_only = us_df[(us_df['latitude'] >= 24) & (us_df['latitude'] <= 50)].copy()
+def search_google_nearby(lat, lon, api_key, place_type='restaurant', radius=2000):
+    """Search for real businesses near a location using Google Places API."""
+    try:
+        url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
+        params = {
+            "location": f"{lat},{lon}",
+            "radius": radius,
+            "type": place_type,
+            "key": api_key
+        }
+        response = requests.get(url, params=params, timeout=10)
+        data = response.json()
         
-        # Stratified sampling: divide US into regions by longitude
-        # West: lon < -104 (CA, WA, OR, NV, AZ, etc.)
-        # Central: -104 <= lon < -90 (TX, CO, MN, etc.)
-        # East: lon >= -90 (FL, NY, GA, etc.)
-        west = us_only[us_only['longitude'] < -104]
-        central = us_only[(us_only['longitude'] >= -104) & (us_only['longitude'] < -90)]
-        east = us_only[us_only['longitude'] >= -90]
-        
-        samples_per_region = n // 3
-        sample_list = []
-        
-        for region_df, region_name in [(west, 'West'), (central, 'Central'), (east, 'East')]:
-            if len(region_df) > 0:
-                region_sample = region_df.sample(min(samples_per_region, len(region_df)))
-                sample_list.append(region_sample)
-        
-        if sample_list:
-            combined_sample = pd.concat(sample_list, ignore_index=True)
-            sample = combined_sample.to_dict('records')
-        else:
-            sample = us_only.sample(min(n, len(us_only))).to_dict('records')
+        results = []
+        for place in data.get('results', []):
+            loc = place.get('geometry', {}).get('location', {})
+            business_status = place.get('business_status', 'UNKNOWN')
+            is_open = business_status == 'OPERATIONAL'
             
-        st.toast(f"Sampled {len(sample)} businesses across the US!")
-        businesses = []
-        for row in sample:
-            # Helper to safely getting list/dict from potential numpy arrays or strings
-            def safe_get(val, default=None):
-                if val is None: return default
-                if isinstance(val, np.ndarray): return val.tolist()
-                return val
-            
-            # Extract city from addresses if available
-            addresses = safe_get(row.get('addresses'), [])
-            city_name = 'California'
-            if addresses and len(addresses) > 0:
-                addr = addresses[0] if isinstance(addresses[0], dict) else {}
-                city_name = addr.get('locality', addr.get('region', 'California'))
-            
-            features = {
-                'id': row['id'],
-                'sources': safe_get(row.get('sources'), [{'dataset': 'meta'}]),
-                'confidence': float(row.get('confidence', 0.5)),
-                'websites': safe_get(row.get('websites')),
-                'phones': safe_get(row.get('phones')),
-                'socials': safe_get(row.get('socials')),
-                'emails': safe_get(row.get('emails')),
-                'brand': safe_get(row.get('brand')),
-                'categories': row.get('categories', {'primary': 'unknown'}),
-                'addresses': addresses,
-                'names': row.get('names', {'primary': row.get('name', 'Unknown')}),
-                'version': 1
-            }
-            
-            businesses.append({
-                'name': row.get('name', 'Unknown'),
-                'category': row.get('category', 'unknown'),
-                'lat': row['latitude'],
-                'lon': row['longitude'],
-                'city': city_name,
-                'features': features,
-                'prob_open': 0,
-                'prediction': 0,
-                'is_real': True,
-                'source': 'Overture California'
+            results.append({
+                'name': place.get('name', 'Unknown'),
+                'category': place_type,
+                'lat': loc.get('lat'),
+                'lon': loc.get('lng'),
+                'business_status': business_status,
+                'is_open': is_open,
+                'rating': place.get('rating'),
+                'total_ratings': place.get('user_ratings_total', 0),
+                'vicinity': place.get('vicinity', ''),
+                'place_id': place.get('place_id'),
             })
-        return businesses
+        return results
+    except Exception as e:
+        return []
 
-    # 2. Try Historical LA Data
-    hist_df = load_historical_data()
+
+def get_place_details(place_id, api_key):
+    """Fetch website, phone, and opening hours from Google Place Details API."""
+    try:
+        url = "https://maps.googleapis.com/maps/api/place/details/json"
+        params = {
+            "place_id": place_id,
+            "fields": "website,formatted_phone_number,opening_hours",
+            "key": api_key
+        }
+        response = requests.get(url, params=params, timeout=5)
+        data = response.json()
+        result = data.get('result', {})
+        return {
+            'website': result.get('website'),
+            'phone': result.get('formatted_phone_number'),
+            'has_hours': 'opening_hours' in result,
+        }
+    except Exception:
+        return {'website': None, 'phone': None, 'has_hours': False}
+
+
+def get_worldwide_businesses(api_key, n=100, target_status=None):
+    """Fetch businesses from cities worldwide using Google Places API.
     
-    if hist_df is not None and not hist_df.empty:
-        # Use real data
-        sample = hist_df.sample(min(n, len(hist_df))).to_dict('records')
-        businesses = []
-        
-        for row in sample:
-            # Simulate features for the model (since we don't know if they had websites in 2019)
-            has_website = np.random.random() > 0.3
-            has_phone = np.random.random() > 0.2
-            has_social = np.random.random() > 0.5
-            has_email = np.random.random() > 0.6
-            has_brand = np.random.random() > 0.8
-            num_sources = np.random.randint(1, 4) # Older data might have fewer digital sources
-            confidence = np.random.uniform(0.3, 0.9)
-            
-            features = {
-                'id': f"la_{np.random.randint(100000)}",
-                'sources': [{'dataset': 'meta' if np.random.random() > 0.5 else 'other'}] * num_sources,
-                'confidence': confidence,
-                'websites': ['https://example.com'] if has_website else None,
-                'phones': ['+1-555-1234'] if has_phone else None,
-                'socials': ['https://facebook.com/example'] if has_social else None,
-                'emails': ['contact@example.com'] if has_email else None,
-                'brand': {'names': {'primary': 'Brand'}} if has_brand else None,
-                'categories': {'primary': row['mapped_category']},
-                'addresses': [{'freeform': row['address'], 'locality': row['city'], 'country': 'US'}],
-                'names': {'primary': row['name']},
-                'version': num_sources,
-            }
-            
-            businesses.append({
-                'name': row['name'],
-                'category': row['mapped_category'],
-                'lat': row['latitude'],
-                'lon': row['longitude'],
-                'city': row['city'],
-                'features': features,
-                'prob_open': 0, # Placeholder
-                'prediction': 0, # Placeholder
-                'is_real': True,
-                'source': 'LA Historical'
-            })
-        return businesses
+    Args:
+        api_key: Google API key
+        n: target number of businesses
+        target_status: 'open', 'closed', or None for both
+    """
+    place_types = ['restaurant', 'cafe', 'store', 'pharmacy', 'bank', 
+                   'gym', 'hotel', 'gas_station', 'bakery', 'bar']
+    
+    # Shuffle cities for variety
+    cities = WORLD_CITIES.copy()
+    np.random.shuffle(cities)
+    
+    businesses = []
+    
+    # When looking for closed businesses, search harder (more types, bigger radius)
+    if target_status == 'closed':
+        types_per_city = 3  # Search 3 random types per city (was ALL 10)
+        search_radius = 10000  # 10km
+        max_per_search = 20
     else:
-        # Fallback to random
-        return [generate_random_business() for _ in range(n)]
+        types_per_city = 1  # 1 random type
+        search_radius = 5000
+        max_per_search = max(5, n // len(cities) + 1)
+    
+    def build_business(p, city, details):
+        """Convert a Google Places result into a business dict using real details."""
+        if p['lat'] is None or p['lon'] is None:
+            return None
+        
+        # Use REAL website/phone data from Place Details
+        has_website = details.get('website') is not None
+        has_phone = details.get('phone') is not None
+        has_reviews = (p.get('total_ratings', 0) or 0) > 0
+        
+        # More realistic confidence: based on actual data signals
+        num_sources = 1
+        if has_website: num_sources += 1
+        if has_phone: num_sources += 1
+        if has_reviews: num_sources += 1
+        
+        confidence = min(0.4 + (0.15 if has_website else 0) + 
+                       (0.15 if has_phone else 0) + 
+                       (0.1 if has_reviews else 0) +
+                       (0.05 * min(num_sources, 3)), 0.95)
+        
+        
+        
+        features = {
+            'id': p.get('place_id', f'gp_{np.random.randint(100000)}'),
+            'sources': [{'dataset': 'google'}] * num_sources,
+            'confidence': confidence,
+            'websites': [details['website']] if has_website else None,
+            'phones': [details['phone']] if has_phone else None,
+            'socials': None,
+            'emails': None,
+            'brand': None,
+            'categories': {'primary': p['category']},
+            'addresses': [{'freeform': p.get('vicinity', ''), 'locality': city['name']}],
+            'names': {'primary': p['name']},
+            'version': num_sources,
+            'has_hours': details.get('has_hours', False),
+            'total_ratings': p.get('total_ratings', 0),
+        }
+        
+        return {
+            'name': p['name'],
+            'category': p['category'],
+            'lat': p['lat'],
+            'lon': p['lon'],
+            'city': city['name'],
+            'features': features,
+            'prob_open': 0,
+            'prediction': 0,
+            'is_real': True,
+            'source': 'Google Places',
+            'google': {
+                'found': True,
+                'actual_open': p['is_open'],
+                'business_status': p['business_status'],
+                'google_name': p['name'],
+                'rating': p.get('rating'),
+                'total_ratings': p.get('total_ratings', 0),
+            }
+        }
+    
+    def fetch_city(city):
+        """Search for businesses in a single city."""
+        city_results = []
+        seen_ids = set()
+        candidates = []
+        
+        # Pick random types for this city
+        city_types = list(np.random.choice(place_types, size=min(types_per_city, len(place_types)), replace=False))
+        
+        for ptype in city_types:
+            places = search_google_nearby(
+                city['lat'], city['lon'], api_key, 
+                place_type=ptype, radius=search_radius
+            )
+            for p in places[:max_per_search]:
+                pid = p.get('place_id', '')
+                if pid in seen_ids:
+                    continue
+                seen_ids.add(pid)
+                
+                # For closed search: pre-filter to only non-OPERATIONAL businesses
+                # This avoids expensive Place Details calls on businesses we'll discard
+                if target_status == 'closed' and p.get('business_status') == 'OPERATIONAL':
+                    continue
+                
+                candidates.append(p)
+        
+        # Fetch real website/phone/hours details in parallel
+        def get_details_for(p):
+            pid = p.get('place_id', '')
+            if pid:
+                return p, get_place_details(pid, api_key)
+            return p, {'website': None, 'phone': None, 'has_hours': False}
+        
+        with concurrent.futures.ThreadPoolExecutor(max_workers=20) as detail_executor:
+            detail_results = list(detail_executor.map(get_details_for, candidates))
+        
+        for p, details in detail_results:
+            b = build_business(p, city, details)
+            if b:
+                city_results.append(b)
+        return city_results
+    
+    # Fetch from cities in parallel
+    with concurrent.futures.ThreadPoolExecutor(max_workers=20) as executor:
+        city_results = list(executor.map(fetch_city, cities))
+    
+    for cr in city_results:
+        businesses.extend(cr)
+    
+    # Filter by target status if specified
+    if target_status == 'open':
+        businesses = [b for b in businesses if b['google']['actual_open']]
+    elif target_status == 'closed':
+        businesses = [b for b in businesses if not b['google']['actual_open']]
+    
+    # Shuffle and limit
+    np.random.shuffle(businesses)
+    return businesses[:n]
 
 
 def render_map_tab():
-    """Render the California map tab."""
+    """Render the worldwide map tab."""
     model, label_encoder, feature_names = load_model()
     
-    st.subheader("🗺️ California Business Predictions")
-    st.markdown("*Generate random businesses to see predictions vs actual status*")
+    st.subheader("🗺️ Worldwide Business Predictions")
+    st.markdown("*Search for real businesses around the world and predict their status*")
     
-    # Google API Key
     # Google API Key (Hardcoded for demo)
     api_key = "AIzaSyAinBHpEi7ysEdtcGtIeE2Ys1e38Z42Q3o"
     
-    # Initialize session state for businesses
+    # Initialize session state
     if 'map_businesses' not in st.session_state:
         st.session_state.map_businesses = []
+    if 'map_mode' not in st.session_state:
+        st.session_state.map_mode = None
     
-    # Buttons: Only two options now
+    # Show current mode indicator
+    if st.session_state.map_mode == 'open':
+        st.success("🟢 **Currently showing: Actually OPEN businesses** — Model is predicting whether it thinks each is open or closed")
+    elif st.session_state.map_mode == 'closed':
+        st.error("🔴 **Currently showing: Actually CLOSED businesses** — Model is predicting whether it thinks each is open or closed")
+    
+    # Buttons
     st.markdown("### Generate Businesses by Actual Status")
-    st.caption("These fetch Overture data and verify against Google Places to find truly open or closed businesses")
+    st.caption("These search Google Places in cities worldwide to find truly open or closed businesses")
     
     col1, col2, col3 = st.columns([2, 2, 1])
     
     with col1:
         if st.button("✅ Generate 100 Actually OPEN"):
             st.session_state.map_businesses = []
+            st.session_state.map_mode = 'open'
             
-            with st.spinner("Fetching businesses and filtering for OPEN ones..."):
-                # Fetch more than 100 to account for closed ones
-                all_businesses = get_batch_businesses(300)
+            with st.spinner("Searching for OPEN businesses worldwide..."):
+                open_businesses = get_worldwide_businesses(api_key, n=100, target_status='open')
                 
-                # Verify with Google in parallel
-                def verify_business(b):
-                    res = check_google_places(b['name'], b['lat'], b['lon'], api_key)
-                    b['google'] = res
-                    return b
-                
-                with concurrent.futures.ThreadPoolExecutor(max_workers=30) as executor:
-                    list(executor.map(verify_business, all_businesses))
-                
-                # Filter for actually open businesses
-                open_businesses = [b for b in all_businesses 
-                                   if b.get('google', {}).get('found') and b['google']['actual_open']]
-                
-                # Run predictions on the filtered list
-                for b in open_businesses[:100]:
+                for b in open_businesses:
                     pred, probs, reason = predict_place_features(b['features'], model, label_encoder, feature_names)
                     b['prediction'] = pred
                     b['prob_open'] = probs[1]
                     b['reason'] = reason
                 
                 if open_businesses:
-                    st.session_state.map_businesses = open_businesses[:100]
-                    st.toast(f"Found {len(open_businesses[:100])} Actually OPEN businesses!")
+                    st.session_state.map_businesses = open_businesses
+                    st.toast(f"Found {len(open_businesses)} Actually OPEN businesses worldwide!")
                     st.rerun()
                 else:
                     st.error("Couldn't find enough open businesses")
@@ -499,34 +622,20 @@ def render_map_tab():
     with col2:
         if st.button("❌ Generate 100 Actually CLOSED", type="secondary"):
             st.session_state.map_businesses = []
+            st.session_state.map_mode = 'closed'
             
-            with st.spinner("Fetching businesses and filtering for CLOSED ones..."):
-                # Fetch more to find closed ones (most businesses are open)
-                all_businesses = get_batch_businesses(500)
+            with st.spinner("Searching for CLOSED businesses worldwide..."):
+                closed_businesses = get_worldwide_businesses(api_key, n=100, target_status='closed')
                 
-                # Verify with Google in parallel
-                def verify_business(b):
-                    res = check_google_places(b['name'], b['lat'], b['lon'], api_key)
-                    b['google'] = res
-                    return b
-                
-                with concurrent.futures.ThreadPoolExecutor(max_workers=30) as executor:
-                    list(executor.map(verify_business, all_businesses))
-                
-                # Filter for actually closed businesses
-                closed_businesses = [b for b in all_businesses 
-                                     if b.get('google', {}).get('found') and not b['google']['actual_open']]
-                
-                # Run predictions on the filtered list
-                for b in closed_businesses[:100]:
+                for b in closed_businesses:
                     pred, probs, reason = predict_place_features(b['features'], model, label_encoder, feature_names)
                     b['prediction'] = pred
                     b['prob_open'] = probs[1]
                     b['reason'] = reason
                 
                 if closed_businesses:
-                    st.session_state.map_businesses = closed_businesses[:100]
-                    st.toast(f"Found {len(closed_businesses[:100])} Actually CLOSED businesses!")
+                    st.session_state.map_businesses = closed_businesses
+                    st.toast(f"Found {len(closed_businesses)} Actually CLOSED businesses worldwide!")
                     st.rerun()
                 else:
                     st.error("Couldn't find enough closed businesses")
@@ -534,6 +643,7 @@ def render_map_tab():
     with col3:
         if st.button("🗑️ Clear"):
             st.session_state.map_businesses = []
+            st.session_state.map_mode = None
             st.rerun()
     
     # Stats
@@ -569,9 +679,10 @@ def render_map_tab():
             mcol4.metric("Model Accuracy", f"{accuracy:.1f}%")
     
     m = folium.Map(
-        location=[36.7783, -119.4179],
-        zoom_start=6,
-        tiles='CartoDB positron'
+        location=[20, 0],
+        zoom_start=2,
+        tiles='https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',
+        attr='Google'
     )
     
     # Add markers for each business
@@ -584,7 +695,7 @@ def render_map_tab():
             color = 'red'
             status = '❌ CLOSED'
         
-        # Build popup - show confidence matching prediction
+        # Build popup content
         prob_open = business['prob_open']
         if business['prediction'] == 1:
             conf_text = f"{prob_open:.0%} open"
@@ -602,7 +713,6 @@ def render_map_tab():
             <p style="font-size: 12px; color: #555;"><i>Why? {business.get('reason', '')}</i></p>
         """
         
-        # Add Google verification if available
         if business.get('google') and business['google'].get('found'):
             g = business['google']
             actual_status = '✅ OPEN' if g['actual_open'] else '❌ CLOSED'
@@ -647,7 +757,7 @@ def render_map_tab():
                 'Category': b['category'],
                 'City': b['city'],
                 'Prediction': '✅ Open' if b['prediction'] == 1 else '❌ Closed',
-                'Confidence': f"{b['prob_open']:.0%}",
+                'Confidence': f"{b['prob_open']:.0%} open" if b['prediction'] == 1 else f"{(1 - b['prob_open']):.0%} closed",
             }
             if b.get('google') and b['google'].get('found'):
                 row['Actual (Google)'] = '✅ Open' if b['google']['actual_open'] else '❌ Closed'
@@ -733,9 +843,9 @@ def render_predictor_tab():
 
 def main():
     st.title("🗺️ Open/Closed Place Prediction")
-    st.markdown("*Predicting which California businesses are still open today*")
+    st.markdown("*Predicting which businesses around the world are still open today*")
     
-    tab1, tab2 = st.tabs(["📍 California Map", "🔮 Interactive Predictor"])
+    tab1, tab2 = st.tabs(["🌍 Worldwide Map", "🔮 Interactive Predictor"])
     
     with tab1:
         render_map_tab()
