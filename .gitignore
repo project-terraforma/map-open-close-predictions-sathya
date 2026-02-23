@@ -1,26 +1,44 @@
-# Large files
-yelp_academic_dataset_business.json
-california_businesses.parquet
-california_overture.parquet
-california_real.parquet
-la_historical_businesses.parquet
-overture_conf_labeled.parquet
-overture_dec2025.parquet
-overture_large.parquet
-overture_signal_labeled.parquet
-overture_test.parquet
-project_c_samples.parquet
-samples_3k_project_c_updated.parquet
-test_overture.parquet
-training_data_combined.parquet
-us_overture.parquet
-samples_3k_project_c_updated.parquet
-*.pkl
-*.lgb
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment / secrets
+.env
 
 # Python
 __pycache__/
 *.pyc
+*.pyo
 
-# Environment
-.env
+# Pipeline data (large parquet/image files)
+pipeline/data/
+pipeline/images/
+pipeline/__pycache__/
+
+# Model weights
+*.pt
+*.onnx
+
+# Misc
+.sf

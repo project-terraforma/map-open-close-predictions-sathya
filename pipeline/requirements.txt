@@ -1,0 +1,10 @@
+overturemaps
+requests
+pandas
+ultralytics
+h3
+shapely
+geopandas
+opencv-python
+rapidocr-onnxruntime
+flask
