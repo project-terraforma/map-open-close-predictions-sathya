@@ -1,11 +1,14 @@
 """
-Batch vision analysis: run OCR + CLIP on Mapillary images for each location.
-Downloads images, runs the model, and writes predictions back to mock_data.json.
+Batch vision analysis: run OCR + XGBoost on Mapillary images for each location.
+Downloads images, runs the model, and writes predictions back to test_data.json.
 
-Three-layer prediction system:
-  Layer 1 (Logo):  CLIP brand detection — primary visual signal
-  Layer 2 (Text):  OCR text matching — confirms/boosts logo
-  Layer 3 (Data):  Foursquare + Overture cross-referencing — external verification
+Multi-signal prediction system:
+  Signal 1 (Foursquare): Directory cross-reference — verified/mismatch/no_data
+  Signal 2 (Text):       OCR text matching — visual signal from street imagery
+  Signal 3 (Closure):    OCR closure text detection — "for lease", "closed", etc.
+  Signal 4 (XGBoost):    Metadata model — weak Overture feature signal
+
+Metadata model is a weak backbone. Foursquare + OCR are the real predictors.
 
 Usage: python scripts/run_vision.py
 """
@@ -20,14 +23,33 @@ import re
 from datetime import datetime
 
 sys.path.insert(0, os.path.dirname(__file__))
-from ocr_model import detect_text, detect_brands, get_ocr, get_clip, normalize, get_brand_search_names
+from ocr_model import detect_text, get_ocr, normalize, get_brand_search_names
 
-DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'src', 'data', 'mock_data.json')
+DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'src', 'data', 'test_data.json')
+MODEL_PATH = os.path.join(os.path.dirname(__file__), '..', 'model', 'xgboost_model.json')
 
-# Layer weights
-LOGO_WEIGHT = 0.40
-TEXT_WEIGHT = 0.25
-DATA_WEIGHT = 0.35
+# Closure-indicating text patterns (detected by OCR on storefront)
+CLOSURE_KEYWORDS = [
+    'for lease', 'for rent', 'for sale', 'space available', 'available now',
+    'now leasing', 'now available', 'retail for lease', 'office for lease',
+    'permanently closed', 'closed permanently', 'going out of business',
+    'store closing', 'closing sale', 'everything must go', 'final sale',
+    'coming soon', 'opening soon', 'under construction', 'under renovation',
+    'moved to', 'we have moved', 'relocated', 'new location',
+    'vacant', 'vacate', 'emptied',
+    'rent me', 'lease me',
+]
+
+# Google Places API key (free tier: 100k requests/month)
+GOOGLE_PLACES_API_KEY = os.environ.get('GOOGLE_PLACES_API_KEY', '')
+
+# Must match the features used during training (8 base + 3 engineered)
+BASE_FEATURES = [
+    'overture_confidence', 'source_age_days', 'has_website', 'has_phone',
+    'has_brand', 'address_complete', 'category_encoded', 'fields_populated',
+]
+ENGINEERED_FEATURES = ['missing_signals', 'data_completeness', 'low_confidence']
+FEATURES = BASE_FEATURES + ENGINEERED_FEATURES
 
 
 def download_image(url, suffix=".jpg"):
@@ -72,8 +94,86 @@ def _char_overlap(a, b):
     return overlap / len(a)
 
 
+def detect_closure_text(detected_text):
+    """Check if OCR text contains closure-indicating keywords.
+    Returns: (keyword_matched, strength) or (None, None)
+    strength: 'strong' for definitive closure signals, 'weak' for ambiguous ones
+    """
+    norm = normalize(detected_text)
+    if not norm or len(norm) < 3:
+        return None, None
+
+    strong_signals = [
+        'for lease', 'for rent', 'space available', 'available now',
+        'now leasing', 'retail for lease', 'office for lease',
+        'permanently closed', 'closed permanently', 'going out of business',
+        'store closing', 'closing sale', 'everything must go', 'final sale',
+        'vacant', 'rent me', 'lease me',
+    ]
+    weak_signals = [
+        'coming soon', 'opening soon', 'under construction', 'under renovation',
+        'moved to', 'we have moved', 'relocated', 'new location',
+    ]
+
+    for kw in strong_signals:
+        if kw in norm:
+            return kw, 'strong'
+    for kw in weak_signals:
+        if kw in norm:
+            return kw, 'weak'
+    return None, None
+
+
+def lookup_google_places(name, lat, lng):
+    """Layer 3: Google Places API — check business_status.
+    Returns dict with status, detail, place info."""
+    if not GOOGLE_PLACES_API_KEY:
+        return {"status": "no_api_key", "detail": "Google Places API key not configured", "business_status": None}
+
+    try:
+        # Use Nearby Search with keyword
+        url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
+        params = {
+            "location": f"{lat},{lng}",
+            "radius": 100,
+            "keyword": name,
+            "key": GOOGLE_PLACES_API_KEY,
+        }
+        resp = requests.get(url, params=params, timeout=10)
+        resp.raise_for_status()
+        data = resp.json()
+
+        if data.get("status") != "OK" or not data.get("results"):
+            return {"status": "not_found", "detail": f"No Google Places results for '{name}'", "business_status": None}
+
+        # Find best name match
+        best = None
+        for place in data["results"]:
+            pname = normalize(place.get("name", ""))
+            nname = normalize(name)
+            if nname in pname or pname in nname or (len(nname) >= 4 and nname[:4] in pname):
+                best = place
+                break
+
+        if not best:
+            best = data["results"][0]  # use closest result
+
+        biz_status = best.get("business_status", "UNKNOWN")
+        place_name = best.get("name", "?")
+
+        return {
+            "status": "found",
+            "detail": f"Google Places: '{place_name}' is {biz_status}",
+            "business_status": biz_status,
+            "place_name": place_name,
+            "place_id": best.get("place_id"),
+        }
+    except Exception as e:
+        return {"status": "error", "detail": f"Google Places error: {e}", "business_status": None}
+
+
 def fuzzy_text_match(detected_text, search_names):
-    """Check if detected OCR text matches any of the brand search names.
+    """Check if detected OCR text matches any of the business search names.
     Returns: ('full', matched_name) | ('partial', matched_name) | (None, None)
     """
     norm_text = normalize(detected_text)
@@ -134,249 +234,171 @@ def fuzzy_text_match(detected_text, search_names):
     return None, None
 
 
-def clip_matches_business(brands, search_names):
-    """Check if CLIP detected the correct brand.
-    Returns (matched, score, matched_brand_name)."""
-    for b in brands[:5]:
-        norm_brand = normalize(b["name"])
-        for search_name in search_names:
-            if not search_name:
-                continue
-            if norm_brand == search_name or search_name in norm_brand or norm_brand in search_name:
-                return True, b["score"], b["name"]
-    return False, 0.0, None
+def compute_engineered_features(raw):
+    """Compute engineered features from base features."""
+    missing = (1 - raw.get('has_website', 0)) + (1 - raw.get('has_phone', 0)) + (1 - raw.get('has_brand', 0))
+    conf = raw.get('overture_confidence', 0)
+    fp = raw.get('fields_populated', 0)
+    return {
+        'missing_signals': missing,
+        'data_completeness': round(conf * fp / 9.0, 4),
+        'low_confidence': 1 if conf < 0.7 else 0,
+    }
 
 
-# ── Layer 3: Data verification ──
+def predict_xgboost(location):
+    """XGBoost metadata model prediction (weak signal).
+    Returns dict with verdict, score, confidence, detail, feature_contributions."""
+    try:
+        import xgboost as xgb
+    except ImportError:
+        return {
+            "verdict": "inconclusive",
+            "score": 0.5,
+            "confidence": 0.5,
+            "detail": "XGBoost not installed",
+            "feature_contributions": {},
+        }
 
-def _names_match(a, b):
-    """Check if two business names refer to the same chain."""
-    na = normalize(a)
-    nb = normalize(b)
-    if not na or not nb:
-        return False
-    if na == nb or na in nb or nb in na:
-        return True
-    # Check first significant word
-    wa = [w for w in na.split() if len(w) >= 3]
-    wb = [w for w in nb.split() if len(w) >= 3]
-    if wa and wb and wa[0] == wb[0]:
-        return True
-    return False
+    if not os.path.exists(MODEL_PATH):
+        return {
+            "verdict": "inconclusive",
+            "score": 0.5,
+            "confidence": 0.5,
+            "detail": "No trained model found",
+            "feature_contributions": {},
+        }
 
+    # Load optimal threshold from metadata
+    meta_path = MODEL_PATH.replace('xgboost_model.json', 'xgb_meta.json')
+    threshold = 0.69  # default
+    try:
+        with open(meta_path) as f:
+            meta = json.load(f)
+            threshold = meta.get('optimal_threshold', 0.69)
+    except:
+        pass
 
-def _address_similarity(addr1, addr2):
-    """Word overlap similarity between two addresses. Returns 0-1."""
-    w1 = set(normalize(addr1).split())
-    w2 = set(normalize(addr2).split())
-    # Remove very common words
-    stop = {'st', 'ave', 'rd', 'dr', 'blvd', 'ln', 'ct', 'pl', 'way', 'san', 'francisco', 'ca', 'usa'}
-    w1 = w1 - stop
-    w2 = w2 - stop
-    if not w1 or not w2:
-        return 0.0
-    overlap = len(w1 & w2)
-    return overlap / max(len(w1), len(w2))
+    model = xgb.XGBClassifier()
+    model.load_model(MODEL_PATH)
 
+    raw = location.get('overture_raw', {})
+    eng = compute_engineered_features(raw)
 
-def analyze_data_layer(location):
-    """Layer 3: Data cross-referencing using Foursquare + Overture metadata.
-    Returns a sub-verdict dict."""
-    fs = location.get("foursquare", {})
-    overture = location.get("overture_meta", {})
-    name = location["name"]
-    address = location.get("address", "")
+    features = [float(raw.get(f, 0)) for f in BASE_FEATURES]
+    features += [float(eng.get(f, 0)) for f in ENGINEERED_FEATURES]
 
-    score = 0.0
-    signals = []
+    import numpy as np
+    prob = model.predict_proba([features])[0]
+    open_prob = float(prob[1])
+    confidence = float(max(prob))
 
-    # Signal 1: Foursquare verification status (weight 0.35)
-    fs_status = fs.get("status", "no_data")
-    fs_match = fs.get("match") or {}
-
-    if fs_status == "verified" and not fs_match.get("closed", False):
-        score += 0.35
-        signals.append({"signal": "Foursquare status", "value": "Verified open", "contribution": 0.35})
-    elif fs_status == "closed" or fs_match.get("closed", True) is True:
-        if fs_status == "verified" and fs_match.get("closed", False):
-            score -= 0.40
-            signals.append({"signal": "Foursquare status", "value": "Confirmed closed", "contribution": -0.40})
-        elif fs_status == "closed":
-            score -= 0.40
-            signals.append({"signal": "Foursquare status", "value": "Closed", "contribution": -0.40})
-        else:
-            signals.append({"signal": "Foursquare status", "value": "No data", "contribution": 0.0})
-    elif fs_status == "mismatch":
-        score -= 0.20
-        signals.append({"signal": "Foursquare status", "value": "Name mismatch", "contribution": -0.20})
-    else:
-        signals.append({"signal": "Foursquare status", "value": "No data", "contribution": 0.0})
-
-    # Signal 2: Overture confidence (weight 0.25)
-    overture_conf = overture.get("confidence")
-    if overture_conf is not None:
-        contrib = (overture_conf - 0.5) * 0.5  # maps 0.5-1.0 → 0.0-0.25
-        contrib = max(-0.15, min(0.25, contrib))
-        score += contrib
-        signals.append({"signal": "Overture confidence", "value": f"{overture_conf:.0%}", "contribution": round(contrib, 4)})
-    else:
-        signals.append({"signal": "Overture confidence", "value": "N/A", "contribution": 0.0})
-
-    # Signal 3: Brand name consistency (weight 0.15)
-    overture_brand = overture.get("brand")
-    fs_name = fs_match.get("name", "")
-    brand_consistent = False
-    brand_contrib = 0.0
-
-    if overture_brand and fs_name:
-        if _names_match(name, overture_brand) and _names_match(name, fs_name):
-            brand_consistent = True
-            brand_contrib = 0.15
-        elif _names_match(name, overture_brand) or _names_match(name, fs_name):
-            brand_consistent = True
-            brand_contrib = 0.08
-    elif overture_brand and _names_match(name, overture_brand):
-        brand_consistent = True
-        brand_contrib = 0.10
-    elif fs_name and _names_match(name, fs_name):
-        brand_consistent = True
-        brand_contrib = 0.10
-
-    score += brand_contrib
-    signals.append({"signal": "Brand consistency", "value": "Match" if brand_consistent else "No match", "contribution": round(brand_contrib, 4)})
-
-    # Signal 4: Address consistency (weight 0.15)
-    fs_address = fs_match.get("address", "")
-    addr_score = 0.0
-    if fs_address and address:
-        addr_score = _address_similarity(address, fs_address)
-        addr_contrib = addr_score * 0.15
-        score += addr_contrib
-        signals.append({"signal": "Address match", "value": f"{addr_score:.0%}", "contribution": round(addr_contrib, 4)})
-    else:
-        signals.append({"signal": "Address match", "value": "N/A", "contribution": 0.0})
-
-    # Signal 5: Data recency (weight 0.10)
-    update_time = overture.get("update_time")
-    recency_contrib = 0.0
-    if update_time:
-        try:
-            update_date = datetime.strptime(update_time, "%Y-%m-%d")
-            age_days = (datetime.now() - update_date).days
-            if age_days < 365:
-                recency_contrib = 0.10
-            elif age_days < 730:
-                recency_contrib = 0.05
-            elif age_days < 1825:  # 5 years
-                recency_contrib = 0.0
-            else:
-                recency_contrib = -0.05
-            score += recency_contrib
-        except ValueError:
-            pass
-    signals.append({"signal": "Data recency", "value": update_time or "N/A", "contribution": round(recency_contrib, 4)})
-
-    # Clamp
-    score = max(-1.0, min(1.0, score))
-
-    # Sub-verdict
-    if score >= 0.30:
+    if open_prob >= threshold:
         verdict = "supports_open"
-    elif score <= -0.15:
+    elif open_prob < (1 - threshold):
         verdict = "supports_closed"
     else:
         verdict = "inconclusive"
 
-    # Human-readable detail
-    if verdict == "supports_open":
-        detail_parts = []
-        if fs_status == "verified":
-            detail_parts.append("Foursquare verified open")
-        if overture_conf and overture_conf > 0.8:
-            detail_parts.append(f"Overture confidence {overture_conf:.0%}")
-        if brand_consistent:
-            detail_parts.append("Brand name matches")
-        detail = " | ".join(detail_parts) if detail_parts else f"Data score: {score:.2f}"
-    elif verdict == "supports_closed":
-        if fs_match.get("closed"):
-            detail = "Foursquare confirms business is closed"
-        elif fs_status == "mismatch":
-            detail = "Foursquare found a different business at this location"
-        else:
-            detail = f"Data signals suggest closed (score: {score:.2f})"
-    else:
-        detail = f"Insufficient data to confirm status (score: {score:.2f})"
+    all_features = {f: round(v, 4) for f, v in zip(FEATURES, features)}
 
     return {
         "verdict": verdict,
-        "score": round(score, 4),
-        "signals": signals,
-        "fsq_status": fs_status,
-        "fsq_closed": fs_match.get("closed"),
-        "overture_confidence": overture_conf,
-        "brand_consistent": brand_consistent,
-        "address_match_score": round(addr_score, 2) if fs_address and address else None,
-        "detail": detail,
+        "score": round(open_prob, 4),
+        "confidence": round(confidence, 4),
+        "threshold": threshold,
+        "detail": f"XGBoost metadata score: {open_prob:.0%} open probability (threshold: {threshold:.0%})",
+        "feature_contributions": all_features,
     }
 
 
 def analyze_location(location):
-    """Run vision on ALL images, track per-image evidence, produce 3-layer output."""
+    """Run vision on ALL images, produce 2-layer output (Text + XGBoost)."""
     name = location["name"]
     gallery = location.get("current_gallery", [])
     search_names = get_brand_search_names(name)
 
-    # Layer 3 always runs (no images needed)
-    data_layer = analyze_data_layer(location)
-
     if not gallery:
+        xgb_layer = predict_xgboost(location)
+        # Even with no images, use Foursquare + metadata to make a call
+        fsq = location.get("foursquare", {})
+        fsq_status = fsq.get("status", "no_data")
+        score = 0.50
+        evidence = []
+        if fsq_status == "verified":
+            score += 0.30
+            evidence.append("Foursquare: verified")
+        elif fsq_status == "closed":
+            score -= 0.35
+            evidence.append("Foursquare: closed")
+        elif fsq_status == "mismatch":
+            score -= 0.25
+            evidence.append(f"Foursquare: mismatch")
+        evidence.append("No street-level images")
+        score = max(0.0, min(1.0, score))
+        pred = "open" if score >= 0.5 else "not_open"
+        if fsq_status == "no_data":
+            pred = "unknown"  # truly no info at all
         return {
-            "prediction": "unknown",
-            "confidence": 0.0,
-            "primary_layer": "data",
-            "evidence": "No street-level images available",
+            "prediction": pred,
+            "confidence": round(score, 4),
+            "primary_layer": "foursquare" if fsq_status != "no_data" else "xgboost",
+            "evidence": " | ".join(evidence),
             "layers": {
-                "logo": {"verdict": "no_images", "score": 0.0, "best_image_url": None, "best_image_idx": None, "clip_brand": None, "clip_score": 0.0, "detail": "No images to analyze"},
-                "text": {"verdict": "no_images", "score": 0.0, "best_image_url": None, "best_image_idx": None, "matched_text": None, "match_strength": None, "ocr_texts": [], "detail": "No images to analyze"},
-                "data": data_layer,
+                "text": {"verdict": "no_images", "score": 0.0, "best_image_url": None, "best_image_idx": None,
+                         "matched_text": None, "match_strength": None, "ocr_texts": [], "ocr_texts_detail": [],
+                         "detail": "No images to analyze"},
+                "xgboost": xgb_layer,
+                "foursquare": {"status": fsq_status, "detail": fsq.get("detail", ""), "match": fsq.get("match")},
             },
             "ocr_texts": [],
-            "clip_brand": None,
-            "clip_score": 0.0,
             "images_analyzed": 0,
             "best_image_idx": None,
             "best_image_url": None,
             "text_match": False,
-            "logo_match": False,
-            "logo_match_score": None,
             "per_image": [],
         }
 
     sorted_imgs = sorted(gallery, key=lambda x: x.get("distance_m", 999))
 
-    # ── Phase 1: Analyze every image ──
+    # ── Phase 1: Analyze every image with OCR ──
     all_ocr_texts = []
     per_image_results = []
     images_analyzed = 0
+    closure_signals = []  # Track closure-indicating text found across all images
 
-    # Track best images per layer
-    best_logo_img = {"idx": 0, "url": None, "score": 0.0, "brand": None, "crop_region": None}
-    best_text_img = {"idx": 0, "url": None, "strength": None, "matched_text": None, "texts": []}
+    best_text_img = {"idx": 0, "url": None, "strength": None, "matched_text": None, "texts": [], "age_years": 0.0, "age_factor": 1.0}
 
     for img_idx, img_info in enumerate(sorted_imgs):
         url = img_info.get("url")
+
+        # Calculate image age in years
+        img_date_str = img_info.get("date", "")
+        img_age_years = 0.0
+        try:
+            if img_date_str:
+                img_date = datetime.strptime(img_date_str, "%Y-%m-%d")
+                img_age_years = (datetime.now() - img_date).days / 365.25
+        except (ValueError, TypeError):
+            img_age_years = 10.0  # assume old if we can't parse
+
+        # Pre-compute age factor (used in evidence scoring below)
+        if img_age_years <= 2:
+            age_factor = 1.0
+        elif img_age_years <= 5:
+            age_factor = max(0.4, 1.0 - (img_age_years - 2) * 0.2)
+        else:
+            age_factor = max(0.1, 0.4 - (img_age_years - 5) * 0.06)
+
         img_result = {
             "idx": img_idx,
             "url": url,
             "distance_m": img_info.get("distance_m", 999),
+            "image_age_years": round(img_age_years, 1),
             "texts": [],
             "text_match": None,
             "text_match_strength": None,
             "text_matched_name": None,
-            "brands": [],
-            "clip_match": False,
-            "clip_match_score": 0.0,
-            "clip_match_brand": None,
             "evidence_score": 0.0,
         }
 
@@ -420,53 +442,45 @@ def analyze_location(location):
             if best_match_strength:
                 img_result["text_match"] = True
 
+            # Check for closure-indicating text (for lease, closed, etc.)
+            for t in texts:
+                closure_kw, closure_strength = detect_closure_text(t["text"])
+                if closure_kw:
+                    closure_signals.append({
+                        "keyword": closure_kw,
+                        "strength": closure_strength,
+                        "text": t["text"],
+                        "image_idx": img_idx,
+                        "image_age_years": img_age_years,
+                        "age_factor": age_factor,
+                    })
+
             # Track best text image
             strength_rank = {"full": 2, "partial": 1}
             current_rank = strength_rank.get(best_match_strength, 0)
             best_rank = strength_rank.get(best_text_img["strength"], 0)
             if current_rank > best_rank:
-                best_text_img = {"idx": img_idx, "url": url, "strength": best_match_strength, "matched_text": best_matched_name, "texts": img_text_strings}
+                best_text_img = {"idx": img_idx, "url": url, "strength": best_match_strength,
+                                 "matched_text": best_matched_name, "texts": img_text_strings,
+                                 "age_years": img_age_years, "age_factor": age_factor}
 
-            # CLIP
-            brands = detect_brands(tmp_path)
-            img_result["brands"] = [
-                {"name": b["name"], "score": b["score"], "best_crop_region": b.get("best_crop_region")}
-                for b in brands[:3]
-            ]
-
-            matched, score, matched_brand = clip_matches_business(brands, search_names)
-            img_result["clip_match"] = matched
-            img_result["clip_match_score"] = score
-            img_result["clip_match_brand"] = matched_brand
-
-            # Track best logo image
-            if matched and score > best_logo_img["score"]:
-                matching_brand_obj = next((b for b in brands if b["name"] == matched_brand), None)
-                best_logo_img = {
-                    "idx": img_idx, "url": url, "score": score, "brand": matched_brand,
-                    "crop_region": matching_brand_obj.get("best_crop_region") if matching_brand_obj else None,
-                }
-
-            # Composite evidence score
+            # Evidence score (text-only, no CLIP)
             evidence_score = 0.0
-            if matched:
-                evidence_score += score + 0.4
-            if best_match_strength == "full" and matched:
-                evidence_score += 0.3
-            elif best_match_strength == "full":
-                evidence_score += 0.5
-            elif best_match_strength == "partial" and matched:
-                evidence_score += 0.15
+            if best_match_strength == "full":
+                evidence_score += 0.7
             elif best_match_strength == "partial":
-                evidence_score += 0.1
+                evidence_score += 0.3
             dist = img_info.get("distance_m", 100)
             evidence_score += max(0, (60 - dist) / 600)
+
+            # Image age penalty: old images are unreliable evidence
+            evidence_score *= age_factor
+            img_result["age_factor"] = round(age_factor, 2)
             img_result["evidence_score"] = round(evidence_score, 4)
 
             print(f"      img{img_idx}: OCR={len(texts)} texts, "
                   f"text={'FULL' if best_match_strength == 'full' else 'PART' if best_match_strength == 'partial' else 'none'}, "
-                  f"CLIP={matched_brand or (brands[0]['name'] if brands else '?')}({score:.0%}), "
-                  f"score={evidence_score:.2f}", flush=True)
+                  f"score={evidence_score:.2f}, age={img_age_years:.0f}yr (x{age_factor:.1f})", flush=True)
 
         except Exception as e:
             print(f"      img{img_idx}: ERROR {e}", flush=True)
@@ -486,60 +500,28 @@ def analyze_location(location):
     text_found = any_text_full or any_text_partial
     text_strength = "full" if any_text_full else ("partial" if any_text_partial else None)
 
-    best_clip_score = max((r["clip_match_score"] for r in per_image_results), default=0.0)
-    logo_found = best_clip_score > 0.0
-    logo_strong = best_clip_score >= 0.25
-
-    top_clip_brand = None
-    top_clip_score = 0.0
-    for r in per_image_results:
-        for b in r.get("brands", []):
-            if b["score"] > top_clip_score:
-                top_clip_brand = b["name"]
-                top_clip_score = b["score"]
-
     # ── Phase 3: Per-layer sub-verdicts ──
 
-    # Layer 1: Logo
-    if logo_found and logo_strong:
-        logo_verdict = "detected"
-        logo_score = min(best_clip_score * 2.5, 1.0)  # normalize to 0-1
-        logo_detail = f"Logo match: {best_logo_img['brand']} at {best_clip_score:.1%}"
-    elif logo_found:
-        logo_verdict = "weak"
-        logo_score = best_clip_score * 2.0
-        logo_detail = f"Weak logo match: {best_logo_img['brand']} at {best_clip_score:.1%}"
-    else:
-        logo_verdict = "not_detected"
-        logo_score = 0.0
-        logo_detail = f"No logo detected (top: {top_clip_brand} at {top_clip_score:.1%})" if top_clip_brand else "No logo detected"
+    # Layer 1: Text (discounted by image age)
+    best_age = best_text_img.get("age_years", 0.0)
+    best_age_factor = best_text_img.get("age_factor", 1.0)
+    age_warning = ""
+    if best_age > 3:
+        age_warning = f" (image is {best_age:.0f} years old — low reliability)"
 
-    logo_layer = {
-        "verdict": logo_verdict,
-        "score": round(logo_score, 4),
-        "best_image_url": best_logo_img["url"],
-        "best_image_idx": best_logo_img["idx"] if best_logo_img["url"] else None,
-        "clip_brand": best_logo_img["brand"] or top_clip_brand,
-        "clip_score": round(best_clip_score, 4),
-        "best_crop_region": best_logo_img.get("crop_region"),
-        "detail": logo_detail,
-    }
-
-    # Layer 2: Text
     if text_strength == "full":
         text_verdict = "full_match"
-        text_score = 0.85
-        text_detail = f"Text '{name}' clearly found in images"
+        text_score = 0.85 * best_age_factor
+        text_detail = f"Text '{name}' found in images{age_warning}"
     elif text_strength == "partial":
         text_verdict = "partial_match"
-        text_score = 0.35
-        text_detail = f"Partial text match for '{name}'"
+        text_score = 0.35 * best_age_factor
+        text_detail = f"Partial text match for '{name}'{age_warning}"
     else:
         text_verdict = "no_match"
         text_score = 0.0
         text_detail = f"No '{name}' text detected"
 
-    # Collect all matched texts for display
     matched_text_display = best_text_img["matched_text"] or name if text_found else None
     text_layer = {
         "verdict": text_verdict,
@@ -556,116 +538,138 @@ def analyze_location(location):
                 "bbox_pct": t.get("bbox_pct"),
                 "image_url": r["url"],
                 "image_idx": r["idx"],
+                "is_match": fuzzy_text_match(t["text"], search_names)[0] is not None,
+                "match_strength": fuzzy_text_match(t["text"], search_names)[0],
             }
             for r in per_image_results if r["url"]
             for t in r.get("texts_with_bbox", [])
         ],
         "detail": text_detail,
+        "image_age_years": round(best_age, 1),
+        "image_age_factor": round(best_age_factor, 2),
     }
 
-    # Layer 3: Data (already computed)
-    data_score_normalized = max(0, (data_layer["score"] + 0.4) / 0.9)  # normalize -0.4..0.5 → 0..1
-    data_score_normalized = min(1.0, data_score_normalized)
+    # Layer 2: XGBoost metadata
+    xgb_layer = predict_xgboost(location)
 
-    # ── Phase 4: Determine primary_layer (semantic, not weighted) ──
-    # Primary layer = which layer provides the most interesting/distinguishing evidence
-    # Visual evidence (logo/text) is always more interesting to show than data
-    if logo_found:
-        primary_layer = "logo"
-    elif text_found:
-        primary_layer = "text"
-    else:
-        primary_layer = "data"
+    # Layer 3: Google Places API (if configured)
+    [lng, lat] = location.get("location", [0, 0])
+    google_layer = lookup_google_places(name, lat, lng)
 
-    # ── Phase 5: Make prediction using all 3 layers ──
+    # Layer 4: Foursquare (already fetched, just format)
+    fsq_raw = location.get("foursquare", {})
+    fsq_layer = {
+        "status": fsq_raw.get("status", "no_data"),
+        "detail": fsq_raw.get("detail", "No Foursquare data"),
+        "match": fsq_raw.get("match"),
+    }
+
+    # ── Phase 4: Compute open_score (0.0 = definitely closed, 1.0 = definitely open) ──
+    # Start at 0.5 (no information), then adjust based on signals.
+    open_score = 0.50
     evidence_parts = []
+    primary_layer = "xgboost"
 
-    # Override 1: Foursquare says closed → override to not_open
-    if data_layer["verdict"] == "supports_closed" and data_layer.get("fsq_closed") is True:
-        prediction = "not_open"
-        confidence = 0.0
-        primary_layer = "data"  # data overrides visual here
-        evidence_parts.append("Foursquare confirms business is closed")
-        if logo_found:
-            evidence_parts.append(f"(logo still visible: {best_clip_score:.1%})")
-    # Logo + full text = strongest
-    elif logo_found and text_found and text_strength == "full":
+    age_note = f" ({best_age:.0f}yr old)" if best_age > 3 else ""
+    xgb_score = xgb_layer["score"]
+
+    # Closure text on recent images
+    fresh_closure_signals = [s for s in closure_signals if s["image_age_years"] <= 5]
+    strong_closure_text = any(s["strength"] == "strong" for s in fresh_closure_signals)
+
+    # Foursquare status
+    fsq = location.get("foursquare", {})
+    fsq_status = fsq.get("status", "no_data")
+    fsq_verified = fsq_status == "verified"
+    fsq_mismatch = fsq_status == "mismatch"
+    fsq_closed = fsq_status == "closed"
+
+    # Google Places status
+    google_closed = google_layer.get("business_status") in ("CLOSED_PERMANENTLY", "CLOSED_TEMPORARILY")
+    google_open = google_layer.get("business_status") == "OPERATIONAL"
+
+    # ── Phase 5: Additive scoring — each signal pushes score up or down ──
+
+    # DIRECTORY SIGNALS (strongest)
+    if fsq_verified:
+        open_score += 0.30
+        primary_layer = "foursquare"
+        evidence_parts.append("Foursquare: verified")
+    elif fsq_closed:
+        open_score -= 0.35
+        primary_layer = "foursquare"
+        evidence_parts.append("Foursquare: closed")
+    elif fsq_mismatch:
+        fsq_match = fsq.get("match", {})
+        other_name = fsq_match.get("name", "?") if fsq_match else "?"
+        open_score -= 0.25
+        primary_layer = "foursquare"
+        evidence_parts.append(f"Foursquare: mismatch (\"{other_name}\")")
+
+    if google_open:
+        open_score += 0.20
+        evidence_parts.append("Google: operational")
+    elif google_closed:
+        open_score -= 0.30
+        evidence_parts.append("Google: closed")
+
+    # TEXT SIGNALS (strong, but discounted by image age)
+    if strong_closure_text:
+        best_closure = fresh_closure_signals[0]
+        open_score -= 0.30
+        primary_layer = "text"
+        evidence_parts.append(f"Closure text: \"{best_closure['text']}\"")
+
+    if text_found:
+        # Text match pushes toward open, but heavily discounted by age
+        # Images > 5 years old give zero boost — the sign means nothing after that long
+        if best_age <= 2:
+            age_discount = 1.0
+        elif best_age <= 4:
+            age_discount = 0.5
+        elif best_age <= 5:
+            age_discount = 0.2
+        else:
+            age_discount = 0.0  # 6+ year old text is meaningless
+
+        if text_strength == "full":
+            text_boost = 0.20 * age_discount
+        else:
+            text_boost = 0.10 * age_discount
+
+        open_score += text_boost
+        if primary_layer == "xgboost" and age_discount > 0:
+            primary_layer = "text"
+        evidence_parts.append(f"Text: {text_strength} match{age_note}")
+    else:
+        # No text match on fresh images is a weak negative signal
+        if best_age <= 3 and images_analyzed >= 2:
+            open_score -= 0.05
+            evidence_parts.append(f"No text match on {images_analyzed} recent images")
+        elif images_analyzed == 0:
+            evidence_parts.append("No images available")
+
+    # METADATA SIGNAL (disabled — XGBoost gives ~95% open for everything)
+    # When the model is retrained with better features, re-enable this
+    # xgb_nudge = (xgb_score - 0.5) * 0.05
+    # open_score += xgb_nudge
+
+    # Clamp to [0, 1]
+    open_score = max(0.0, min(1.0, open_score))
+
+    # Binary prediction: > 0.5 = open, <= 0.5 = not_open
+    # Tie goes to "not_open" — assume stale/closed until proven open
+    if images_analyzed == 0 and fsq_status == "no_data" and not google_open and not google_closed:
+        prediction = "unknown"
+    elif open_score > 0.50:
         prediction = "open"
-        confidence = 0.95
-        evidence_parts.append(f"Logo match: {best_clip_score:.1%}")
-        evidence_parts.append(f"Text '{name}' confirmed")
-        if data_layer["verdict"] == "supports_open":
-            evidence_parts.append("Data also confirms")
-    # Strong logo alone
-    elif logo_found and logo_strong:
-        prediction = "open"
-        confidence = max(best_clip_score, 0.70)
-        evidence_parts.append(f"Logo match: {best_clip_score:.1%}")
-        if data_layer["verdict"] == "supports_open":
-            confidence = min(confidence + 0.1, 0.95)
-            evidence_parts.append("Data confirms")
-    # Logo + partial text
-    elif logo_found and text_found:
-        prediction = "open"
-        confidence = max(best_clip_score, 0.65)
-        evidence_parts.append(f"Logo match: {best_clip_score:.1%}")
-        evidence_parts.append(f"Partial text match")
-        if data_layer["verdict"] == "supports_open":
-            confidence = min(confidence + 0.1, 0.90)
-            evidence_parts.append("Data confirms")
-    # Weak logo + data supports open
-    elif logo_found and data_layer["verdict"] == "supports_open":
-        prediction = "open"
-        confidence = max(best_clip_score, 0.60)
-        evidence_parts.append(f"Weak logo match: {best_clip_score:.1%}")
-        evidence_parts.append("Data verification confirms")
-    # Weak logo alone
-    elif logo_found:
-        prediction = "uncertain"
-        confidence = best_clip_score
-        evidence_parts.append(f"Weak logo match: {best_clip_score:.1%} — needs confirmation")
-    # Full text + data supports open
-    elif text_found and text_strength == "full" and data_layer["verdict"] == "supports_open":
-        prediction = "open"
-        confidence = 0.75
-        evidence_parts.append(f"Text '{name}' found in images")
-        evidence_parts.append("Data verification confirms")
-    # Full text alone
-    elif text_found and text_strength == "full":
-        prediction = "open"
-        confidence = 0.70
-        evidence_parts.append(f"Text '{name}' found in images (no logo)")
-    # Partial text + data supports open → open with lower confidence
-    elif text_found and text_strength == "partial" and data_layer["verdict"] == "supports_open":
-        prediction = "open"
-        confidence = 0.55
-        evidence_parts.append(f"Partial text match for '{name}'")
-        evidence_parts.append("Data verification confirms")
-    # Data strongly supports open (no visual evidence at all)
-    elif data_layer["verdict"] == "supports_open" and data_layer["score"] >= 0.40:
-        prediction = "open"
-        confidence = 0.50
-        evidence_parts.append("Data strongly supports open (no visual confirmation)")
-        primary_layer = "data"
-    # Data supports open (weaker)
-    elif data_layer["verdict"] == "supports_open":
-        prediction = "uncertain"
-        confidence = 0.40
-        evidence_parts.append("Data suggests open but no visual confirmation")
-        primary_layer = "data"
-    # Partial text alone
-    elif text_found and text_strength == "partial":
-        prediction = "not_open"
-        confidence = 0.0
-        evidence_parts.append(f"Only partial text match for '{name}' — no logo to confirm")
-    # Nothing
     else:
         prediction = "not_open"
-        confidence = 0.0
-        if top_clip_brand:
-            evidence_parts.append(f"No '{name}' text or logo found (top CLIP: {top_clip_brand} at {top_clip_score:.1%})")
-        else:
-            evidence_parts.append(f"No '{name}' text or logo detected in any image")
+
+    confidence = round(open_score, 4)
+    evidence_parts.append(f"Score: {open_score:.2f}")
+    if closure_signals and not strong_closure_text:
+        evidence_parts.append(f"Closure hint: \"{closure_signals[0]['keyword']}\"")
 
     unique_texts = list(dict.fromkeys(all_ocr_texts))
     evidence_str = " | ".join(evidence_parts)
@@ -677,20 +681,17 @@ def analyze_location(location):
         "evidence": evidence_str,
         "detail": evidence_str,
         "layers": {
-            "logo": logo_layer,
             "text": text_layer,
-            "data": data_layer,
+            "xgboost": xgb_layer,
+            "google": google_layer,
+            "foursquare": fsq_layer,
         },
-        # Backward-compatible flat fields
+        "closure_signals": closure_signals,
         "ocr_texts": unique_texts,
-        "clip_brand": top_clip_brand,
-        "clip_score": round(top_clip_score, 4),
         "images_analyzed": images_analyzed,
         "best_image_idx": best_img_idx,
         "best_image_url": best_img_url,
         "text_match": text_found,
-        "logo_match": logo_found,
-        "logo_match_score": round(best_clip_score, 4) if logo_found else None,
         "per_image": [
             {
                 "url": r["url"],
@@ -698,9 +699,6 @@ def analyze_location(location):
                 "texts_found": len(r["texts"]),
                 "texts_with_bbox": r.get("texts_with_bbox", []),
                 "text_match": r["text_match_strength"],
-                "clip_brand": r["clip_match_brand"] or (r["brands"][0]["name"] if r["brands"] else None),
-                "clip_score": r["clip_match_score"] if r["clip_match"] else (r["brands"][0]["score"] if r["brands"] else 0),
-                "clip_crop_region": r["brands"][0].get("best_crop_region") if r.get("brands") else None,
                 "evidence_score": r["evidence_score"],
             }
             for r in per_image_results if r["url"]
@@ -710,8 +708,8 @@ def analyze_location(location):
 
 def main():
     print("=" * 70, flush=True)
-    print("TERRAFORMA Vision Analysis — 3-Layer Prediction", flush=True)
-    print("Layer 1: Logo (CLIP) | Layer 2: Text (OCR) | Layer 3: Data (FSQ+Overture)", flush=True)
+    print("TERRAFORMA Vision Analysis — 2-Layer Prediction", flush=True)
+    print("Layer 1: Text (OCR) | Layer 2: Metadata (XGBoost)", flush=True)
     print("=" * 70, flush=True)
 
     print(f"\nLoading data from {DATA_PATH}...", flush=True)
@@ -719,14 +717,13 @@ def main():
         data = json.load(f)
     print(f"Loaded {len(data)} locations\n", flush=True)
 
-    # Pre-load models
+    # Pre-load OCR model
     print("Pre-loading models...", flush=True)
     get_ocr()
-    get_clip()
     print("Models ready!\n", flush=True)
 
-    counts = {"open": 0, "not_open": 0, "uncertain": 0, "unknown": 0}
-    primary_counts = {"logo": 0, "text": 0, "data": 0}
+    counts = {"open": 0, "not_open": 0, "unknown": 0}
+    primary_counts = {"text": 0, "xgboost": 0, "google": 0, "foursquare": 0}
     start_time = time.time()
 
     for i, location in enumerate(data):
@@ -740,14 +737,20 @@ def main():
         tag = {"open": "OPEN", "not_open": "CLOSED", "uncertain": "UNSURE", "unknown": "??"}
         icon = tag.get(result["prediction"], "??")
         flags = []
+        fsq_s = result.get("layers", {}).get("foursquare", {}).get("status", "")
+        if fsq_s and fsq_s != "no_data":
+            flags.append(f"FSQ:{fsq_s[:4].upper()}")
         if result["text_match"]:
             flags.append("TEXT")
-        if result["logo_match"]:
-            score_str = f"{result['logo_match_score']:.0%}" if result["logo_match_score"] else "?"
-            flags.append(f"LOGO({score_str})")
-        flags.append(f"DATA:{result['layers']['data']['verdict'][:4].upper()}")
+        if result.get("closure_signals"):
+            flags.append("CLOSURE")
+        google_status = result.get("layers", {}).get("google", {}).get("business_status")
+        if google_status:
+            flags.append(f"G:{google_status[:4]}")
+        flags.append(f"XGB:{result['layers']['xgboost']['score']:.0%}")
         flag_str = f" [{'+'.join(flags)}]" if flags else ""
-        print(f"    => [{icon}]{flag_str} primary={result['primary_layer']} | {result['evidence']}", flush=True)
+        gt = location.get("ground_truth", "?")
+        print(f"    => [{icon}] gt={gt}{flag_str} primary={result['primary_layer']} | {result['evidence']}", flush=True)
 
         counts[result["prediction"]] = counts.get(result["prediction"], 0) + 1
         primary_counts[result["primary_layer"]] = primary_counts.get(result["primary_layer"], 0) + 1

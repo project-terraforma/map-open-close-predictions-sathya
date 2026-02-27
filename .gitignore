@@ -40,5 +40,11 @@ pipeline/__pycache__/
 *.pt
 *.onnx
 
+# Large data files
+*.parquet
+*.zip
+scripts/yelp_balanced_cache.json
+scripts/yelp_cache.json
+
 # Misc
 .sf

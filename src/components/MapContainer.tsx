@@ -1,14 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
+import { createPortal } from 'react-dom';
 import { MapContainer as LeafletMap, TileLayer, Marker } from 'react-leaflet';
 import L from 'leaflet';
 import { renderToStaticMarkup } from 'react-dom/server';
-import mockData from '../data/mock_data.json';
+import testData from '../data/test_data.json';
 import {
     MapPin, X, Calendar, Navigation, Eye, ShieldCheck,
     Clock, Database, Crosshair, ArrowRight, CheckCircle,
     AlertTriangle, XCircle, HelpCircle, Globe, Phone, Type,
     Layers, ImageIcon,
-    ScanEye, ExternalLink
+    ScanEye, ExternalLink, BarChart3,
+    ChevronDown, ChevronRight
 } from 'lucide-react';
 
 // ============================================================
@@ -99,12 +101,44 @@ function PredictionPill({ prediction }: { prediction: string }) {
     );
 }
 
-function ScoreBar({ score, max = 0.4, color }: { score: number; max?: number; color: string }) {
+function ScoreBar({ score, max = 1.0, color }: { score: number; max?: number; color: string }) {
     const pct = Math.min((score / max) * 100, 100);
     return (
         <div className="w-full h-1 bg-white/[0.04] rounded-full overflow-hidden">
             <div className="h-full rounded-full transition-all duration-700" style={{ width: `${pct}%`, backgroundColor: color }} />
         </div>
+    );
+}
+
+function GroundTruthBadge({ poi }: { poi: any }) {
+    const gt = poi.ground_truth;
+    const prediction = poi.vision?.prediction;
+    if (!gt) return null;
+
+    const predIsOpen = prediction === 'open';
+    const gtIsOpen = gt === 'open';
+    const isUncertain = prediction === 'uncertain' || prediction === 'unknown';
+    const isCorrect = predIsOpen === gtIsOpen || (prediction === 'not_open' && !gtIsOpen);
+
+    // If prediction is uncertain/unknown, show that instead of wrong
+    if (isUncertain) {
+        return (
+            <span className="inline-flex items-center gap-1 text-[9px] font-bold px-1.5 py-0.5 rounded bg-yellow-500/15 text-yellow-400 ring-1 ring-yellow-500/20">
+                <AlertTriangle size={8} />
+                UNSURE
+            </span>
+        );
+    }
+
+    return (
+        <span className={`inline-flex items-center gap-1 text-[9px] font-bold px-1.5 py-0.5 rounded ${
+            isCorrect
+                ? 'bg-green-500/15 text-green-400 ring-1 ring-green-500/20'
+                : 'bg-red-500/15 text-red-400 ring-1 ring-red-500/20'
+        }`}>
+            {isCorrect ? <CheckCircle size={8} /> : <XCircle size={8} />}
+            {isCorrect ? 'CORRECT' : 'WRONG'}
+        </span>
     );
 }
 
@@ -132,9 +166,8 @@ function VerificationBadge({ status }: { status: string | undefined }) {
 // LAYER INDICATOR
 // ============================================================
 const LAYER_CONFIG: Record<string, { label: string; icon: any; color: string }> = {
-    logo: { label: 'LOGO', icon: Eye, color: '#3b82f6' },
     text: { label: 'TEXT', icon: Type, color: '#10b981' },
-    data: { label: 'DATA', icon: Database, color: '#f59e0b' },
+    xgboost: { label: 'METADATA', icon: Database, color: '#3b82f6' },
 };
 
 function LayerIndicator({ primaryLayer }: { primaryLayer: string }) {
@@ -166,100 +199,16 @@ function LayerIndicator({ primaryLayer }: { primaryLayer: string }) {
 // ============================================================
 // LAYER EVIDENCE CARDS
 // ============================================================
-function LogoEvidenceCard({ layer, isPrimary, showRegion, onToggleRegion, perImage }: { layer: any; accent?: string; isPrimary: boolean; showRegion?: boolean; onToggleRegion?: () => void; perImage?: any[] }) {
-    if (!layer) return null;
-    const hasCropRegion = layer.best_crop_region && layer.best_image_url;
 
-    return (
-        <div className="rounded-xl overflow-hidden" style={{ background: isPrimary ? 'rgba(59,130,246,0.06)' : 'rgba(255,255,255,0.02)', border: `1px solid ${isPrimary ? '#3b82f640' : 'rgba(255,255,255,0.05)'}` }}>
-            <div className="p-3.5">
-                <div className="flex items-center gap-2 mb-2">
-                    <Eye size={12} className="text-blue-400" />
-                    <span className="text-[10px] font-bold text-blue-400 uppercase tracking-widest">Layer 1: Logo Detection</span>
-                    <span className={`ml-auto text-[9px] font-bold px-1.5 py-0.5 rounded ${
-                        layer.verdict === 'detected' ? 'bg-green-500/10 text-green-400' :
-                        layer.verdict === 'weak' ? 'bg-amber-500/10 text-amber-400' :
-                        'bg-slate-500/10 text-slate-500'
-                    }`}>
-                        {layer.verdict === 'detected' ? 'DETECTED' : layer.verdict === 'weak' ? 'WEAK' : 'NOT FOUND'}
-                    </span>
-                </div>
-                <p className="text-[11px] text-slate-400 leading-relaxed mb-2">
-                    {/* Replace raw CLIP % with normalized score in detail text */}
-                    {layer.detail?.replace(/at \d+\.\d+%/, `at ${((layer.score || 0) * 100).toFixed(0)}%`) || ''}
-                </p>
-
-                {layer.clip_brand && (
-                    <div className="flex items-center justify-between mb-2">
-                        <span className="text-[12px] font-semibold text-white">{layer.clip_brand}</span>
-                        <span className="text-[11px] font-bold font-mono px-2 py-0.5 rounded-md bg-blue-500/10 text-blue-400">
-                            {((layer.score || 0) * 100).toFixed(0)}%
-                        </span>
-                    </div>
-                )}
-                {layer.score > 0 && (
-                    <ScoreBar score={layer.score} max={1.0} color="#3b82f6" />
-                )}
-
-                {/* Evidence image with toggleable region overlay */}
-                {layer.best_image_url && (
-                    <div className="mt-3">
-                        <div className="relative rounded-lg overflow-hidden ring-1 ring-blue-500/20 transition-all">
-                            <img src={layer.best_image_url} className={`w-full object-cover transition-all duration-300 ${showRegion ? 'h-52' : 'h-32'}`} alt="Logo evidence" loading="lazy" />
-                            {showRegion && layer.best_crop_region && (
-                                <div
-                                    style={{
-                                        position: 'absolute',
-                                        left: `${layer.best_crop_region[0] * 100}%`,
-                                        top: `${layer.best_crop_region[1] * 100}%`,
-                                        width: `${layer.best_crop_region[2] * 100}%`,
-                                        height: `${layer.best_crop_region[3] * 100}%`,
-                                        border: '2px solid #3b82f6',
-                                        backgroundColor: 'rgba(59,130,246,0.15)',
-                                        borderRadius: '3px',
-                                        pointerEvents: 'none',
-                                    }}
-                                >
-                                    <span style={{
-                                        position: 'absolute', top: '-16px', left: 0,
-                                        fontSize: '9px', backgroundColor: '#3b82f6', color: 'white',
-                                        padding: '1px 5px', borderRadius: '3px', whiteSpace: 'nowrap',
-                                    }}>
-                                        {layer.clip_brand} detected here
-                                    </span>
-                                </div>
-                            )}
-                        </div>
-                        {hasCropRegion && (
-                            <button
-                                onClick={onToggleRegion}
-                                className={`mt-1.5 text-[9px] font-mono px-2 py-1 rounded transition-all ${
-                                    showRegion
-                                        ? 'bg-blue-500/20 text-blue-300 ring-1 ring-blue-500/30'
-                                        : 'bg-white/5 text-slate-500 hover:text-blue-300 hover:bg-blue-500/10'
-                                }`}
-                            >
-                                {showRegion ? 'Hide region' : 'Show detection region'}
-                            </button>
-                        )}
-                    </div>
-                )}
-            </div>
-        </div>
-    );
-}
-
-function TextEvidenceCard({ layer, isPrimary, activeTextId, onToggleText, perImage }: { layer: any; accent?: string; isPrimary: boolean; activeTextId?: string | null; onToggleText?: (id: string | null, detail: any) => void; perImage?: any[] }) {
+function TextEvidenceCard({ layer, isPrimary, activeTextId, onToggleText }: { layer: any; isPrimary: boolean; activeTextId?: string | null; onToggleText?: (id: string | null, detail: any) => void }) {
     if (!layer) return null;
     const textsDetail: any[] = layer.ocr_texts_detail || [];
     const hasDetail = textsDetail.length > 0;
 
-    // Build flat list with ids
     const allTexts = hasDetail
         ? textsDetail.map((d: any, i: number) => ({ id: `text-${i}`, text: d.text, hasBbox: !!d.bbox_pct, detail: d, imageUrl: d.image_url }))
         : (layer.ocr_texts || []).map((t: string, i: number) => ({ id: `text-${i}`, text: t, hasBbox: false, detail: null, imageUrl: null }));
 
-    // Find active text detail
     const activeItem = activeTextId ? allTexts.find((t: any) => t.id === activeTextId) : null;
     const displayImageUrl = activeItem?.imageUrl || layer.best_image_url;
     const hasActiveAnnotation = !!activeItem?.detail?.bbox_pct;
@@ -269,7 +218,7 @@ function TextEvidenceCard({ layer, isPrimary, activeTextId, onToggleText, perIma
             <div className="p-3.5">
                 <div className="flex items-center gap-2 mb-2">
                     <Type size={12} className="text-emerald-400" />
-                    <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest">Layer 2: Text Detection</span>
+                    <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest">Layer 1: Text Detection</span>
                     <span className={`ml-auto text-[9px] font-bold px-1.5 py-0.5 rounded ${
                         layer.verdict === 'full_match' ? 'bg-green-500/10 text-green-400' :
                         layer.verdict === 'partial_match' ? 'bg-amber-500/10 text-amber-400' :
@@ -287,7 +236,6 @@ function TextEvidenceCard({ layer, isPrimary, activeTextId, onToggleText, perIma
                     </div>
                 )}
 
-                {/* Evidence image — shows active text's image or best_image_url */}
                 {displayImageUrl && (
                     <div className="mt-2">
                         <div className="relative rounded-lg overflow-hidden ring-1 ring-emerald-500/20 transition-all">
@@ -319,7 +267,6 @@ function TextEvidenceCard({ layer, isPrimary, activeTextId, onToggleText, perIma
                     </div>
                 )}
 
-                {/* All OCR text tags — click to toggle bbox on image */}
                 {allTexts.length > 0 && (
                     <div className="mt-2">
                         {hasDetail && (
@@ -357,83 +304,113 @@ function TextEvidenceCard({ layer, isPrimary, activeTextId, onToggleText, perIma
     );
 }
 
-function DataEvidenceCard({ layer, isPrimary, foursquare }: { layer: any; isPrimary: boolean; foursquare: any; overture?: any }) {
+function XGBoostEvidenceCard({ layer, isPrimary }: { layer: any; isPrimary: boolean }) {
     if (!layer) return null;
-    const borderColor = isPrimary ? '#f59e0b' : 'rgba(255,255,255,0.05)';
+    const score = layer.score || 0;
+
     return (
-        <div className="rounded-xl overflow-hidden" style={{ background: isPrimary ? 'rgba(245,158,11,0.06)' : 'rgba(255,255,255,0.02)', border: `1px solid ${borderColor}${isPrimary ? '40' : ''}` }}>
+        <div className="rounded-xl overflow-hidden" style={{ background: isPrimary ? 'rgba(59,130,246,0.06)' : 'rgba(255,255,255,0.02)', border: `1px solid ${isPrimary ? '#3b82f640' : 'rgba(255,255,255,0.05)'}` }}>
             <div className="p-3.5">
                 <div className="flex items-center gap-2 mb-2">
-                    <Database size={12} className="text-amber-400" />
-                    <span className="text-[10px] font-bold text-amber-400 uppercase tracking-widest">Layer 3: Data Verification</span>
+                    <Database size={12} className="text-blue-400" />
+                    <span className="text-[10px] font-bold text-blue-400 uppercase tracking-widest">Layer 2: Metadata Model</span>
                     <span className={`ml-auto text-[9px] font-bold px-1.5 py-0.5 rounded ${
                         layer.verdict === 'supports_open' ? 'bg-green-500/10 text-green-400' :
                         layer.verdict === 'supports_closed' ? 'bg-red-500/10 text-red-400' :
                         'bg-slate-500/10 text-slate-500'
                     }`}>
-                        {layer.verdict === 'supports_open' ? 'SUPPORTS OPEN' : layer.verdict === 'supports_closed' ? 'SUPPORTS CLOSED' : 'INCONCLUSIVE'}
+                        {layer.verdict === 'supports_open' ? 'OPEN' : layer.verdict === 'supports_closed' ? 'CLOSED' : 'INCONCLUSIVE'}
+                        {' '}({(score * 100).toFixed(0)}%)
                     </span>
                 </div>
-                <p className="text-[11px] text-slate-400 leading-relaxed mb-3">{layer.detail}</p>
+                <p className="text-[11px] text-slate-400 leading-relaxed mb-2">{layer.detail}</p>
 
-                {/* Signals breakdown */}
-                {layer.signals && (
-                    <div className="space-y-1.5">
-                        {layer.signals.map((sig: any, i: number) => (
-                            <div key={i} className="flex items-center justify-between text-[10px]">
-                                <span className="text-slate-500">{sig.signal}</span>
-                                <div className="flex items-center gap-2">
-                                    <span className="text-slate-400 font-mono">{sig.value}</span>
-                                    <span className={`font-bold font-mono min-w-[40px] text-right ${
-                                        sig.contribution > 0 ? 'text-green-400' : sig.contribution < 0 ? 'text-red-400' : 'text-slate-600'
-                                    }`}>
-                                        {sig.contribution > 0 ? '+' : ''}{sig.contribution.toFixed(2)}
-                                    </span>
+                <ScoreBar score={score} max={1.0} color="#3b82f6" />
+
+                {/* Feature contributions */}
+                {layer.feature_contributions && Object.keys(layer.feature_contributions).length > 0 && (
+                    <div className="mt-3">
+                        <p className="text-[9px] text-slate-600 uppercase tracking-widest mb-1.5 font-semibold">Feature Values</p>
+                        <div className="space-y-1">
+                            {Object.entries(layer.feature_contributions).map(([key, val]: [string, any]) => (
+                                <div key={key} className="flex items-center justify-between text-[10px]">
+                                    <span className="text-slate-500">{key.replace(/_/g, ' ')}</span>
+                                    <span className="text-slate-300 font-mono">{typeof val === 'number' ? val.toFixed(2) : String(val)}</span>
                                 </div>
-                            </div>
-                        ))}
-                        <div className="flex items-center justify-between text-[10px] pt-1.5 border-t border-white/[0.04]">
-                            <span className="text-slate-400 font-semibold">Total Score</span>
-                            <span className={`font-bold font-mono ${layer.score > 0 ? 'text-green-400' : layer.score < 0 ? 'text-red-400' : 'text-slate-400'}`}>
-                                {layer.score > 0 ? '+' : ''}{layer.score.toFixed(2)}
-                            </span>
+                            ))}
                         </div>
                     </div>
                 )}
+            </div>
+        </div>
+    );
+}
 
-                {/* Foursquare details when primary */}
-                {isPrimary && foursquare?.match && (
-                    <div className="mt-3 pt-3 border-t border-white/[0.04]">
-                        <div className="flex items-center gap-2 mb-2">
-                            <ShieldCheck size={11} className="text-amber-400" />
-                            <span className="text-[10px] font-semibold text-slate-400">Foursquare</span>
-                            <VerificationBadge status={foursquare.status} />
-                        </div>
-                        <div className="grid grid-cols-2 gap-y-1.5 gap-x-3 text-[10px]">
-                            {foursquare.match.name && (
-                                <div className="text-slate-500">Name <span className="text-slate-300">{foursquare.match.name}</span></div>
-                            )}
-                            {foursquare.match.category && (
-                                <div className="text-slate-500">Type <span className="text-slate-300">{foursquare.match.category}</span></div>
-                            )}
-                            {foursquare.match.website && (
-                                <div className="col-span-2 flex items-center gap-1 text-slate-500">
-                                    <Globe size={9} className="text-slate-600 shrink-0" />
-                                    <a href={foursquare.match.website} target="_blank" rel="noopener noreferrer"
-                                       className="text-blue-400 hover:text-blue-300 truncate transition-colors text-[10px]">
-                                        {foursquare.match.website.replace(/https?:\/\/(www\.)?/, '')}
-                                    </a>
-                                </div>
-                            )}
-                            {foursquare.match.phone && (
-                                <div className="flex items-center gap-1 text-slate-500">
-                                    <Phone size={9} className="text-slate-600 shrink-0" />
-                                    <span className="text-slate-300 font-mono">{foursquare.match.phone}</span>
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                )}
+// ============================================================
+// TEST GROUP TOGGLE BAR
+// ============================================================
+const TEST_GROUPS = [
+    { group: null, label: 'ALL', color: '#94a3b8' },
+    { group: 'open', label: 'Open', color: '#22c55e' },
+    { group: 'closed', label: 'Closed', color: '#ef4444' },
+];
+
+function TestGroupBar({ activeGroup, onSetGroup, data }: { activeGroup: string | null; onSetGroup: (g: string | null) => void; data: any[] }) {
+    return (
+        <div className="absolute top-4 right-4 z-[1000] flex items-center gap-1.5 bg-slate-900/90 backdrop-blur-md rounded-xl px-2 py-1.5 ring-1 ring-white/10">
+            {TEST_GROUPS.map(btn => {
+                const count = btn.group ? data.filter((p: any) => p.test_group === btn.group).length : data.length;
+                const isActive = activeGroup === btn.group;
+                return (
+                    <button
+                        key={btn.group || 'all'}
+                        onClick={() => onSetGroup(btn.group)}
+                        className={`px-2.5 py-1 rounded-lg text-[10px] font-bold tracking-wide transition-all ${
+                            isActive
+                                ? 'ring-1 shadow-lg'
+                                : 'opacity-60 hover:opacity-100'
+                        }`}
+                        style={{
+                            backgroundColor: isActive ? `${btn.color}20` : 'transparent',
+                            color: btn.color,
+                            ...(isActive ? { boxShadow: `0 0 0 1px ${btn.color}50` } : {}),
+                        }}
+                    >
+                        {btn.label} <span className="font-mono opacity-70">({count})</span>
+                    </button>
+                );
+            })}
+        </div>
+    );
+}
+
+function AccuracySummary({ data, activeGroup }: { data: any[]; activeGroup: string | null }) {
+    const filtered = activeGroup ? data.filter((p: any) => p.test_group === activeGroup) : data;
+    const withPredictions = filtered.filter((p: any) => p.vision?.prediction && p.ground_truth);
+
+    if (withPredictions.length === 0) return null;
+
+    const correct = withPredictions.filter((p: any) => {
+        const pred = p.vision.prediction;
+        const gt = p.ground_truth;
+        return (pred === 'open' && gt === 'open') || (pred === 'not_open' && gt === 'closed');
+    }).length;
+
+    const accuracy = ((correct / withPredictions.length) * 100).toFixed(0);
+
+    return (
+        <div className="absolute bottom-4 left-4 z-[1000] bg-slate-900/90 backdrop-blur-md rounded-xl px-4 py-3 ring-1 ring-white/10">
+            <div className="flex items-center gap-3">
+                <BarChart3 size={16} className="text-blue-400" />
+                <div>
+                    <p className="text-[11px] text-slate-400">
+                        {activeGroup ? `Group ${activeGroup}` : 'All Groups'} Accuracy
+                    </p>
+                    <p className="text-[18px] font-bold font-mono text-white">
+                        {correct}/{withPredictions.length}
+                        <span className="text-[13px] text-slate-400 ml-1.5">({accuracy}%)</span>
+                    </p>
+                </div>
             </div>
         </div>
     );
@@ -444,8 +421,19 @@ function DataEvidenceCard({ layer, isPrimary, foursquare }: { layer: any; isPrim
 // ============================================================
 export default function MapContainer() {
     const [selectedPoi, setSelectedPoi] = useState<any | null>(null);
-    const [showLogoRegion, setShowLogoRegion] = useState(false);
     const [activeTextId, setActiveTextId] = useState<string | null>(null);
+    const [activeGroup, setActiveGroup] = useState<string | null>(null);
+    const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({});
+
+    const toggleSection = (key: string) => {
+        setExpandedSections(prev => ({ ...prev, [key]: !prev[key] }));
+    };
+
+    const allData = testData as any[];
+    const filteredData = useMemo(() =>
+        activeGroup ? allData.filter((p: any) => p.ground_truth === activeGroup) : allData,
+        [activeGroup, allData]
+    );
 
     useEffect(() => {
         const handleOpen = (e: any) => { if (e.detail) setSelectedPoi(e.detail); };
@@ -455,7 +443,6 @@ export default function MapContainer() {
 
     // Clear annotations when switching POIs
     useEffect(() => {
-        setShowLogoRegion(false);
         setActiveTextId(null);
     }, [selectedPoi?.id]);
 
@@ -463,8 +450,80 @@ export default function MapContainer() {
         setSelectedPoi(poi);
     };
 
+    // Portal-rendered toggle bar — renders into document.body to escape Leaflet's DOM/z-index
+    const togglePortal = createPortal(
+        <div style={{ position: 'fixed', top: 16, right: selectedPoi ? 460 : 16, zIndex: 99999, transition: 'right 0.5s ease-out', pointerEvents: 'auto' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6, background: 'rgba(15,23,42,0.95)', borderRadius: 12, padding: '6px 8px', boxShadow: '0 4px 24px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.1)' }}>
+                {TEST_GROUPS.map(btn => {
+                    const count = btn.group ? allData.filter((p: any) => p.ground_truth === btn.group).length : allData.length;
+                    const isActive = activeGroup === btn.group;
+                    return (
+                        <button
+                            key={btn.group || 'all'}
+                            onClick={() => setActiveGroup(btn.group)}
+                            style={{
+                                padding: '4px 10px',
+                                borderRadius: 8,
+                                fontSize: 10,
+                                fontWeight: 700,
+                                letterSpacing: '0.05em',
+                                border: 'none',
+                                cursor: 'pointer',
+                                transition: 'all 0.2s',
+                                backgroundColor: isActive ? `${btn.color}33` : 'transparent',
+                                color: btn.color,
+                                opacity: isActive ? 1 : 0.6,
+                                boxShadow: isActive ? `0 0 0 1px ${btn.color}80` : 'none',
+                                fontFamily: 'Inter, system-ui, sans-serif',
+                            }}
+                        >
+                            {btn.label} ({count})
+                        </button>
+                    );
+                })}
+            </div>
+        </div>,
+        document.body
+    );
+
+    const accuracyPortal = createPortal(
+        <div style={{ position: 'fixed', bottom: 16, left: 16, zIndex: 99999, pointerEvents: 'auto' }}>
+            {(() => {
+                const filtered = activeGroup ? allData.filter((p: any) => p.ground_truth === activeGroup) : allData;
+                const withPredictions = filtered.filter((p: any) => p.vision?.prediction && p.ground_truth);
+                if (withPredictions.length === 0) return null;
+                const correct = withPredictions.filter((p: any) => {
+                    const pred = p.vision.prediction;
+                    const gt = p.ground_truth;
+                    return (pred === 'open' && gt === 'open') || (pred === 'not_open' && gt === 'closed');
+                }).length;
+                const accuracy = ((correct / withPredictions.length) * 100).toFixed(0);
+                return (
+                    <div style={{ background: 'rgba(15,23,42,0.95)', borderRadius: 12, padding: '12px 16px', boxShadow: '0 4px 24px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.1)' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                            <BarChart3 size={16} style={{ color: '#60a5fa' }} />
+                            <div>
+                                <p style={{ fontSize: 11, color: '#94a3b8', margin: 0 }}>
+                                    {activeGroup ? `${activeGroup.charAt(0).toUpperCase() + activeGroup.slice(1)} Businesses` : 'All'} Accuracy
+                                </p>
+                                <p style={{ fontSize: 18, fontWeight: 700, color: 'white', margin: 0, fontFamily: 'JetBrains Mono, monospace' }}>
+                                    {correct}/{withPredictions.length}
+                                    <span style={{ fontSize: 13, color: '#94a3b8', marginLeft: 6 }}>({accuracy}%)</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                );
+            })()}
+        </div>,
+        document.body
+    );
+
     return (
         <div className="relative w-full h-full flex overflow-hidden">
+            {togglePortal}
+            {accuracyPortal}
+
             {/* Map */}
             <div className={`relative h-full transition-all duration-500 ease-out ${selectedPoi ? 'w-[calc(100%-440px)]' : 'w-full'}`}>
                 <LeafletMap center={[37.7749, -122.4194]} zoom={12} className="w-full h-full">
@@ -472,7 +531,7 @@ export default function MapContainer() {
                         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                         url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
                     />
-                    {mockData.map((poi: any) => (
+                    {filteredData.map((poi: any) => (
                         <Marker
                             key={poi.id}
                             position={[poi.location[1], poi.location[0]]}
@@ -486,16 +545,29 @@ export default function MapContainer() {
             {/* ── DETAIL PANEL ── */}
             {selectedPoi && (() => {
                 const v = selectedPoi.vision;
-                const isOpen = v?.prediction === 'open';
-                const isNotOpen = v?.prediction === 'not_open';
-                const isUncertain = v?.prediction === 'uncertain';
-                const accent = isOpen ? '#22c55e' : isNotOpen ? '#ef4444' : isUncertain ? '#f59e0b' : '#64748b';
-                // Override primary_layer: logo only if score >= 0.70
-                let primaryLayer = v?.primary_layer || 'logo';
-                if (primaryLayer === 'logo' && (v?.layers?.logo?.score || 0) < 0.70) {
-                    primaryLayer = v?.layers?.text?.verdict !== 'no_match' ? 'text' : 'data';
-                }
                 const layers = v?.layers;
+                const xgbScore = layers?.xgboost?.score || 0;
+                const textVerdict = layers?.text?.verdict;
+
+                const textsDetail: any[] = layers?.text?.ocr_texts_detail || [];
+                const allTexts = textsDetail.length > 0
+                    ? textsDetail.map((d: any, i: number) => ({ id: `text-${i}`, text: d.text, hasBbox: !!d.bbox_pct, detail: d, imageUrl: d.image_url, isMatch: d.is_match || false }))
+                    : (layers?.text?.ocr_texts || []).map((t: string, i: number) => ({ id: `text-${i}`, text: t, hasBbox: false, detail: null, imageUrl: null, isMatch: false }));
+
+                // Group texts by image for overlay rendering
+                const textsByImage: Record<string, typeof allTexts> = {};
+                for (const t of allTexts) {
+                    if (t.imageUrl && t.hasBbox) {
+                        if (!textsByImage[t.imageUrl]) textsByImage[t.imageUrl] = [];
+                        textsByImage[t.imageUrl].push(t);
+                    }
+                }
+
+                // Pick the display image: actively clicked text's image, or best match image
+                const displayImageUrl = (activeTextId ? allTexts.find((t: any) => t.id === activeTextId)?.imageUrl : null)
+                    || layers?.text?.best_image_url
+                    || (Object.keys(textsByImage)[0] ?? null);
+                const textsOnDisplayImage = displayImageUrl ? (textsByImage[displayImageUrl] || []) : [];
 
                 return (
                     <div
@@ -522,16 +594,6 @@ export default function MapContainer() {
                                             {selectedPoi.category}
                                         </span>
                                         {v?.prediction && <PredictionPill prediction={v.prediction} />}
-                                        <span className={`text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-md flex items-center gap-1 ${
-                                            selectedPoi.location_type === 'intersection'
-                                                ? 'bg-purple-500/10 text-purple-400 border border-purple-500/20'
-                                                : 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/20'
-                                        }`}>
-                                            {selectedPoi.location_type === 'intersection'
-                                                ? <><Crosshair size={9} /> Intersection</>
-                                                : <><ArrowRight size={9} /> Mid-block</>
-                                            }
-                                        </span>
                                     </div>
                                 </div>
                                 <button
@@ -548,179 +610,239 @@ export default function MapContainer() {
                         </div>
 
                         {/* ── Content ── */}
-                        <div className="px-5 pb-8 space-y-4">
+                        <div className="px-5 pb-8 space-y-3">
 
-                            {/* PREDICTION OVERVIEW */}
-                            {v && (
-                                <div className="rounded-xl overflow-hidden" style={{ background: `${accent}08`, border: `1px solid ${accent}18` }}>
-                                    <div className="p-4">
-                                        <div className="flex items-center justify-between mb-3">
-                                            <div className="flex items-center gap-2.5">
-                                                <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ backgroundColor: `${accent}12` }}>
-                                                    <ScanEye size={14} style={{ color: accent }} />
-                                                </div>
-                                                <div>
-                                                    <h4 className="text-[13px] font-bold text-white tracking-tight">Prediction</h4>
-                                                    <p className="text-[9px] text-slate-600 uppercase tracking-widest font-mono">3-Layer Analysis</p>
-                                                </div>
-                                            </div>
-                                            <PredictionPill prediction={v.prediction} />
+                            {/* ── SECTION 1: Ground Truth (always visible) ── */}
+                            {selectedPoi.ground_truth && (
+                                <div className="rounded-xl p-3.5" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
+                                    <div className="flex items-center justify-between">
+                                        <div className="flex items-center gap-2">
+                                            <ShieldCheck size={14} className="text-slate-400" />
+                                            <span className="text-[11px] text-slate-400">Ground Truth</span>
                                         </div>
-
-                                        {/* Layer indicator */}
-                                        {v.primary_layer && (
-                                            <div className="mb-3">
-                                                <LayerIndicator primaryLayer={primaryLayer} />
-                                            </div>
-                                        )}
-
-                                        <p className="text-[11px] text-slate-400 leading-relaxed mb-2.5">
-                                            {(v.evidence || v.detail || '').replace(/Logo match: \d+\.\d+%/, `Logo match: ${((layers?.logo?.score || 0) * 100).toFixed(0)}%`)}
+                                        <span className={`text-[12px] font-bold font-mono ${selectedPoi.ground_truth === 'open' ? 'text-green-400' : 'text-red-400'}`}>
+                                            {selectedPoi.ground_truth === 'open' ? 'OPEN' : 'CLOSED'}
+                                        </span>
+                                    </div>
+                                    {/* Model accuracy vs ground truth */}
+                                    {selectedPoi.vision?.prediction && (
+                                        <div className="flex items-center justify-between mt-2 pt-2" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+                                            <span className="text-[10px] text-slate-500">Model predicted: <span className="font-mono font-bold text-slate-400">{selectedPoi.vision.prediction.toUpperCase()}</span></span>
+                                            <GroundTruthBadge poi={selectedPoi} />
+                                        </div>
+                                    )}
+                                    {selectedPoi.yelp && (
+                                        <p className="text-[9px] text-slate-600 mt-1.5">
+                                            Source: Yelp — {selectedPoi.yelp.yelp_name}
+                                            {selectedPoi.yelp.yelp_rating && ` (${selectedPoi.yelp.yelp_rating}★)`}
                                         </p>
+                                    )}
+                                </div>
+                            )}
 
-                                        <div className="flex items-center gap-1.5 text-[11px] text-slate-500">
-                                            <ImageIcon size={11} />
-                                            <span><strong className="text-slate-300 font-mono">{v.images_analyzed}</strong> images analyzed</span>
+                            {/* ── SECTION 2: Metadata Model (collapsible) ── */}
+                            {layers?.xgboost && (
+                                <div className="rounded-xl overflow-hidden" style={{ background: 'rgba(59,130,246,0.04)', border: '1px solid rgba(59,130,246,0.15)' }}>
+                                    <button
+                                        onClick={() => toggleSection('xgboost')}
+                                        className="w-full flex items-center gap-2 p-3.5 hover:bg-white/[0.02] transition-colors"
+                                    >
+                                        <Database size={14} className="text-blue-400" />
+                                        <span className="text-[11px] font-semibold text-blue-400">Metadata Model</span>
+                                        <span className={`ml-auto text-[10px] font-bold font-mono px-2 py-0.5 rounded ${
+                                            xgbScore > 0.6 ? 'bg-green-500/10 text-green-400' :
+                                            xgbScore < 0.4 ? 'bg-red-500/10 text-red-400' :
+                                            'bg-slate-500/10 text-slate-400'
+                                        }`}>
+                                            {(xgbScore * 100).toFixed(0)}% open
+                                        </span>
+                                        {expandedSections.xgboost
+                                            ? <ChevronDown size={14} className="text-slate-500 ml-1" />
+                                            : <ChevronRight size={14} className="text-slate-500 ml-1" />
+                                        }
+                                    </button>
+                                    {expandedSections.xgboost && (
+                                        <div className="px-3.5 pb-3.5 pt-0 space-y-2.5">
+                                            <ScoreBar score={xgbScore} max={1.0} color="#3b82f6" />
+                                            <p className="text-[10px] text-slate-500 leading-relaxed">{layers.xgboost.detail}</p>
+                                            {layers.xgboost.feature_contributions && Object.keys(layers.xgboost.feature_contributions).length > 0 && (
+                                                <div className="space-y-1 pt-1">
+                                                    <p className="text-[9px] text-slate-600 uppercase tracking-widest font-semibold">Features</p>
+                                                    {Object.entries(layers.xgboost.feature_contributions).map(([key, val]: [string, any]) => (
+                                                        <div key={key} className="flex items-center justify-between text-[10px]">
+                                                            <span className="text-slate-500">{key.replace(/_/g, ' ')}</span>
+                                                            <span className="text-slate-300 font-mono">{typeof val === 'number' ? val.toFixed(2) : String(val)}</span>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            )}
                                         </div>
-                                    </div>
+                                    )}
                                 </div>
                             )}
 
-                            {/* TEMPORAL WARNING */}
-                            {selectedPoi.temporal?.flag === 'widened' && (
-                                <div className="flex items-center gap-1.5 text-[10px] text-amber-400 bg-amber-500/10 px-3 py-2 rounded-lg border border-amber-500/20">
-                                    <AlertTriangle size={11} className="shrink-0" />
-                                    <span>Images span {selectedPoi.temporal.date_range_days} days — mixed time periods may affect accuracy</span>
-                                </div>
-                            )}
+                            {/* ── SECTION 3: Text Detection (collapsible) ── */}
+                            {layers?.text && (
+                                <div className="rounded-xl overflow-hidden" style={{ background: 'rgba(16,185,129,0.04)', border: '1px solid rgba(16,185,129,0.15)' }}>
+                                    <button
+                                        onClick={() => toggleSection('text')}
+                                        className="w-full flex items-center gap-2 p-3.5 hover:bg-white/[0.02] transition-colors"
+                                    >
+                                        <Type size={14} className="text-emerald-400" />
+                                        <span className="text-[11px] font-semibold text-emerald-400">Text Detection</span>
+                                        <span className={`ml-auto text-[10px] font-bold px-2 py-0.5 rounded ${
+                                            textVerdict === 'full_match' ? 'bg-green-500/10 text-green-400' :
+                                            textVerdict === 'partial_match' ? 'bg-amber-500/10 text-amber-400' :
+                                            'bg-slate-500/10 text-slate-500'
+                                        }`}>
+                                            {textVerdict === 'full_match' ? 'FULL MATCH' : textVerdict === 'partial_match' ? 'PARTIAL' : textVerdict === 'no_images' ? 'NO IMAGES' : 'NO MATCH'}
+                                        </span>
+                                        {expandedSections.text
+                                            ? <ChevronDown size={14} className="text-slate-500 ml-1" />
+                                            : <ChevronRight size={14} className="text-slate-500 ml-1" />
+                                        }
+                                    </button>
+                                    {expandedSections.text && (
+                                        <div className="px-3.5 pb-3.5 pt-0 space-y-2.5">
+                                            <p className="text-[10px] text-slate-500 leading-relaxed">{layers.text.detail}</p>
 
-                            {/* ALL LAYERS — always Logo → Text → Data order, primary one highlighted */}
-                            {layers && (
-                                <div className="space-y-2.5">
-                                    <LogoEvidenceCard layer={layers.logo} isPrimary={primaryLayer === 'logo'} showRegion={showLogoRegion} onToggleRegion={() => setShowLogoRegion(r => !r)} perImage={v?.per_image} />
-                                    <TextEvidenceCard layer={layers.text} isPrimary={primaryLayer === 'text'} activeTextId={activeTextId} onToggleText={(id) => setActiveTextId(id)} perImage={v?.per_image} />
-                                    <DataEvidenceCard layer={layers.data} isPrimary={primaryLayer === 'data'} foursquare={selectedPoi.foursquare} overture={selectedPoi.overture_meta} />
-                                </div>
-                            )}
+                                            {/* Image age warning */}
+                                            {layers.text.image_age_years > 3 && (
+                                                <div className="flex items-center gap-1.5 px-2 py-1.5 rounded-md" style={{
+                                                    backgroundColor: layers.text.image_age_years > 5 ? 'rgba(239,68,68,0.08)' : 'rgba(245,158,11,0.08)',
+                                                    border: `1px solid ${layers.text.image_age_years > 5 ? 'rgba(239,68,68,0.2)' : 'rgba(245,158,11,0.2)'}`,
+                                                }}>
+                                                    <Clock size={10} className={layers.text.image_age_years > 5 ? 'text-red-400' : 'text-amber-400'} />
+                                                    <span className={`text-[9px] font-semibold ${layers.text.image_age_years > 5 ? 'text-red-400' : 'text-amber-400'}`}>
+                                                        Image is {layers.text.image_age_years.toFixed(0)} years old
+                                                        {layers.text.image_age_years > 5 ? ' — low reliability' : ' — reduced confidence'}
+                                                    </span>
+                                                    <span className="ml-auto text-[9px] font-mono text-slate-500">
+                                                        {layers.text.image_age_factor !== undefined ? `${(layers.text.image_age_factor * 100).toFixed(0)}% weight` : ''}
+                                                    </span>
+                                                </div>
+                                            )}
 
-                            {/* OVERTURE MAPS (when data is not primary) */}
-                            {primaryLayer !== 'data' && (
-                                <div className="rounded-xl p-4" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)' }}>
-                                    <div className="flex items-center gap-2.5 mb-3">
-                                        <div className="w-7 h-7 rounded-lg bg-blue-500/10 flex items-center justify-center">
-                                            <Layers size={13} className="text-blue-400" />
-                                        </div>
-                                        <h4 className="text-[13px] font-bold text-white tracking-tight">Overture Maps</h4>
-                                    </div>
-                                    <div className="grid grid-cols-2 gap-y-2.5 gap-x-4 text-[11px]">
-                                        {selectedPoi.overture_meta?.update_time && (
-                                            <div className="flex items-center gap-1.5 text-slate-500">
-                                                <Clock size={11} className="text-slate-600 shrink-0" />
-                                                <span>Updated <span className="text-slate-300 font-mono">{selectedPoi.overture_meta.update_time}</span></span>
-                                            </div>
-                                        )}
-                                        {selectedPoi.overture_meta?.source && (
-                                            <div className="flex items-center gap-1.5 text-slate-500">
-                                                <ShieldCheck size={11} className="text-slate-600 shrink-0" />
-                                                <span>Source <span className="text-slate-300">{selectedPoi.overture_meta.source}</span></span>
-                                            </div>
-                                        )}
-                                        {selectedPoi.overture_meta?.confidence != null && (
-                                            <div className="flex items-center gap-1.5 text-slate-500">
-                                                <CheckCircle size={11} className="text-slate-600 shrink-0" />
-                                                <span>Confidence <span className="text-slate-300 font-mono">{(selectedPoi.overture_meta.confidence * 100).toFixed(0)}%</span></span>
-                                            </div>
-                                        )}
-                                        {selectedPoi.overture_meta?.brand && (
-                                            <div className="flex items-center gap-1.5 text-slate-500">
-                                                <Layers size={11} className="text-slate-600 shrink-0" />
-                                                <span>Brand <span className="text-slate-300 font-medium">{selectedPoi.overture_meta.brand}</span></span>
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
-                            )}
+                                            {layers.text.matched_text && (
+                                                <div>
+                                                    <span className="text-[10px] text-slate-600 mr-2">Matched:</span>
+                                                    <span className="text-[11px] font-semibold text-emerald-300 font-mono">"{layers.text.matched_text}"</span>
+                                                </div>
+                                            )}
 
-                            {/* FOURSQUARE (when data is not primary, since primary already shows it) */}
-                            {primaryLayer !== 'data' && selectedPoi.foursquare && (() => {
-                                const fs = selectedPoi.foursquare;
-                                const colors: Record<string, string> = { verified: '#10b981', closed: '#ef4444', mismatch: '#f59e0b' };
-                                const c = colors[fs.status] || '#64748b';
-                                return (
-                                    <div className="rounded-xl p-4" style={{ background: `${c}06`, border: `1px solid ${c}15` }}>
-                                        <div className="flex items-center gap-2.5 mb-3">
-                                            <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ backgroundColor: `${c}12` }}>
-                                                <ShieldCheck size={13} style={{ color: c }} />
-                                            </div>
-                                            <h4 className="text-[13px] font-bold text-white tracking-tight">Foursquare</h4>
-                                            <VerificationBadge status={fs.status} />
-                                        </div>
-                                        <p className="text-[11px] text-slate-400 leading-relaxed mb-2.5">{fs.detail}</p>
-                                        {fs.match && (
-                                            <div className="grid grid-cols-2 gap-y-2 gap-x-4 text-[11px]">
-                                                {fs.match.chain && (
-                                                    <div className="text-slate-500">Chain <span className="text-slate-300 font-medium">{fs.match.chain}</span></div>
-                                                )}
-                                                {fs.match.category && (
-                                                    <div className="text-slate-500">Type <span className="text-slate-300">{fs.match.category}</span></div>
-                                                )}
-                                                {fs.match.website && (
-                                                    <div className="flex items-center gap-1 text-slate-500">
-                                                        <Globe size={10} className="text-slate-600 shrink-0" />
-                                                        <a href={fs.match.website} target="_blank" rel="noopener noreferrer"
-                                                           className="text-blue-400 hover:text-blue-300 truncate transition-colors">
-                                                            {fs.match.website.replace(/https?:\/\/(www\.)?/, '')}
-                                                        </a>
+                                            {displayImageUrl && (
+                                                <div className="relative rounded-lg overflow-hidden ring-1 ring-emerald-500/20">
+                                                    <img src={displayImageUrl} className="w-full object-cover h-52" alt="Text evidence" loading="lazy" />
+                                                    {/* All bounding boxes on this image */}
+                                                    {textsOnDisplayImage.map((item: any) => {
+                                                        const bbox = item.detail?.bbox_pct;
+                                                        if (!bbox) return null;
+                                                        const isActive = activeTextId === item.id;
+                                                        const isMatch = item.isMatch;
+                                                        return (
+                                                            <div
+                                                                key={item.id}
+                                                                onClick={(e) => { e.stopPropagation(); setActiveTextId(isActive ? null : item.id); }}
+                                                                style={{
+                                                                    position: 'absolute',
+                                                                    left: `${bbox[0] * 100}%`,
+                                                                    top: `${bbox[1] * 100}%`,
+                                                                    width: `${bbox[2] * 100}%`,
+                                                                    height: `${bbox[3] * 100}%`,
+                                                                    border: isActive ? '2px solid #fbbf24' : isMatch ? '2px solid #10b981' : '1px solid rgba(148,163,184,0.4)',
+                                                                    backgroundColor: isActive ? 'rgba(251,191,36,0.25)' : isMatch ? 'rgba(16,185,129,0.15)' : 'rgba(148,163,184,0.08)',
+                                                                    borderRadius: '2px',
+                                                                    cursor: 'pointer',
+                                                                    zIndex: isActive ? 3 : isMatch ? 2 : 1,
+                                                                    transition: 'all 0.15s ease',
+                                                                }}
+                                                            >
+                                                                {(isActive || isMatch) && (
+                                                                    <span style={{
+                                                                        position: 'absolute', top: '-15px', left: 0,
+                                                                        fontSize: '8px',
+                                                                        backgroundColor: isActive ? '#f59e0b' : '#10b981',
+                                                                        color: 'white',
+                                                                        padding: '1px 4px', borderRadius: '2px', whiteSpace: 'nowrap',
+                                                                        lineHeight: '12px',
+                                                                    }}>
+                                                                        {item.text}
+                                                                    </span>
+                                                                )}
+                                                            </div>
+                                                        );
+                                                    })}
+                                                </div>
+                                            )}
+
+                                            {allTexts.length > 0 && (
+                                                <div>
+                                                    <p className="text-[9px] text-slate-600 mb-1">Click text to locate on image</p>
+                                                    <div className="flex flex-wrap gap-1">
+                                                        {allTexts.map((item: any) => {
+                                                            const isActive = activeTextId === item.id;
+                                                            return (
+                                                                <button
+                                                                    key={item.id}
+                                                                    onClick={(e) => {
+                                                                        e.stopPropagation();
+                                                                        if (!item.hasBbox) return;
+                                                                        setActiveTextId(isActive ? null : item.id);
+                                                                    }}
+                                                                    className={`text-[9px] px-1.5 py-0.5 rounded font-mono transition-all ${
+                                                                        isActive
+                                                                            ? 'bg-amber-500/20 text-amber-300 ring-1 ring-amber-500/40'
+                                                                            : item.isMatch
+                                                                                ? 'bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-500/30'
+                                                                                : item.hasBbox
+                                                                                    ? 'text-slate-400 hover:bg-white/[0.06] cursor-pointer'
+                                                                                    : 'text-slate-500 cursor-default'
+                                                                    }`}
+                                                                    style={!isActive && !item.isMatch ? { backgroundColor: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)' } : {}}
+                                                                >
+                                                                    {item.isMatch ? '● ' : ''}{item.text}
+                                                                </button>
+                                                            );
+                                                        })}
                                                     </div>
-                                                )}
-                                                {fs.match.phone && (
-                                                    <div className="flex items-center gap-1 text-slate-500">
-                                                        <Phone size={10} className="text-slate-600 shrink-0" />
-                                                        <span className="text-slate-300 font-mono">{fs.match.phone}</span>
-                                                    </div>
-                                                )}
-                                            </div>
-                                        )}
-                                    </div>
-                                );
-                            })()}
+                                                </div>
+                                            )}
 
-                            {/* STREET VIEW */}
+                                            <p className="text-[9px] text-slate-600">
+                                                {v?.images_analyzed || 0} images analyzed · {textsOnDisplayImage.filter((t: any) => t.isMatch).length} matches found
+                                            </p>
+                                        </div>
+                                    )}
+                                </div>
+                            )}
+
+                            {/* ── SECTION 4: Street View (collapsible) ── */}
                             {selectedPoi.current_gallery?.length > 0 && (
-                                selectedPoi.location_type === 'intersection' ? (
-                                    <>
-                                        {(() => {
-                                            const a = selectedPoi.current_gallery.filter((i: any) => i.group === 'side_a');
-                                            const b = selectedPoi.current_gallery.filter((i: any) => i.group === 'side_b');
-                                            return (
-                                                <>
-                                                    {a.length > 0 && <GalleryStrip images={a} label="Street Side A" accent="#8b5cf6" />}
-                                                    {b.length > 0 && <GalleryStrip images={b} label="Street Side B" accent="#06b6d4" />}
-                                                </>
-                                            );
-                                        })()}
-                                    </>
-                                ) : (
-                                    <GalleryStrip images={selectedPoi.current_gallery} label="Street View" accent="#3b82f6" />
-                                )
+                                <div className="rounded-xl overflow-hidden" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}>
+                                    <button
+                                        onClick={() => toggleSection('gallery')}
+                                        className="w-full flex items-center gap-2 p-3.5 hover:bg-white/[0.02] transition-colors"
+                                    >
+                                        <ImageIcon size={14} className="text-slate-400" />
+                                        <span className="text-[11px] font-semibold text-slate-400">Street View</span>
+                                        <span className="ml-auto text-[10px] text-slate-500 font-mono">{selectedPoi.current_gallery.length} images</span>
+                                        {expandedSections.gallery
+                                            ? <ChevronDown size={14} className="text-slate-500 ml-1" />
+                                            : <ChevronRight size={14} className="text-slate-500 ml-1" />
+                                        }
+                                    </button>
+                                    {expandedSections.gallery && (
+                                        <div className="px-3.5 pb-3.5 pt-0">
+                                            <GalleryStrip images={selectedPoi.current_gallery} label="Street View" accent="#3b82f6" />
+                                        </div>
+                                    )}
+                                </div>
                             )}
 
                             {/* FOOTER */}
-                            <div className="pt-4 border-t border-white/[0.04]">
-                                <div className="grid grid-cols-2 gap-2.5">
-                                    <div className="rounded-lg p-3" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.04)' }}>
-                                        <p className="text-[9px] text-slate-600 uppercase tracking-widest mb-0.5">Overture Updated</p>
-                                        <p className="text-slate-300 text-[12px] font-semibold font-mono">{selectedPoi.overture_meta?.update_time || '—'}</p>
-                                    </div>
-                                    <div className="rounded-lg p-3" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.04)' }}>
-                                        <p className="text-[9px] text-slate-600 uppercase tracking-widest mb-0.5">Street Views</p>
-                                        <p className="text-slate-300 text-[12px] font-semibold font-mono">{selectedPoi.current_gallery?.length || 0} images</p>
-                                    </div>
-                                </div>
-                                <div className="mt-3 text-center">
-                                    <p className="text-[10px] text-slate-700 font-mono">{selectedPoi.location[1].toFixed(5)}, {selectedPoi.location[0].toFixed(5)}</p>
-                                    <p className="text-[8px] text-slate-800 mt-1 uppercase tracking-[0.2em]">Overture Maps · Foursquare · Mapillary · OCR + CLIP</p>
-                                </div>
+                            <div className="pt-3 border-t border-white/[0.04] text-center">
+                                <p className="text-[10px] text-slate-700 font-mono">{selectedPoi.location[1].toFixed(5)}, {selectedPoi.location[0].toFixed(5)}</p>
+                                <p className="text-[8px] text-slate-800 mt-1 uppercase tracking-[0.2em]">Overture Maps · Yelp · Mapillary · OCR + XGBoost</p>
                             </div>
                         </div>
                     </div>

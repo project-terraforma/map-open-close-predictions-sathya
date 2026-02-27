@@ -10,8 +10,8 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const OVERTURE_PATH = path.join(__dirname, 'overture_fastfood.json');
-const OUTPUT_PATH = path.join(__dirname, 'overture_fastfood.json'); // enrich in place
+const OVERTURE_PATH = path.join(__dirname, 'overture_candidates.json');
+const OUTPUT_PATH = path.join(__dirname, 'overture_candidates.json'); // enrich in place
 
 // Credentials from Foursquare Developer Console (visible in project settings)
 const CLIENT_ID = 'AKAFWGBHXBQ335KTR5AJJVOEUPDEAOCUKX4OYBTI2YJETQLW';

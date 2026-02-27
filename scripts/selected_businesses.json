@@ -1,0 +1,1528 @@
+[
+  {
+    "name": "Maack Spa San Francisco",
+    "category": "Beauty Salon",
+    "address": "222 Sansome St, San Francisco",
+    "location": [
+      -122.40067148702869,
+      37.792336461806265
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-08-19",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 190,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 24,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 1,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Maack Spa San Francisco\" at this location",
+      "match": {
+        "fsq_id": "984b6ca44f029bbfd73ce951",
+        "name": "Maack Spa San Francisco",
+        "category": "Health and Beauty Service",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "222 Sansome St, San Francisco, CA 94104, United States"
+      }
+    },
+    "test_group": "A",
+    "ground_truth": "open"
+  },
+  {
+    "name": "May Lee Chinese Restaurant",
+    "category": "Chinese Restaurant",
+    "address": "1256 7th Ave, San Francisco",
+    "location": [
+      -122.4641696,
+      37.7648799
+    ],
+    "overture_meta": {
+      "confidence": 0.948,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.948,
+      "source_age_days": 86,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 47,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 2,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"May Lee Chinese Restaurant\" at this location",
+      "match": {
+        "fsq_id": "4c3413626f1fef3b45b8ec3d",
+        "name": "May Lee Chinese Restaurant",
+        "category": "Chinese Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1256 7th Ave, San Francisco, CA 94122, United States"
+      }
+    },
+    "test_group": "A",
+    "ground_truth": "open"
+  },
+  {
+    "name": "China Delight",
+    "category": "Buffet Restaurant",
+    "address": "295 Orizaba Ave, San Francisco",
+    "location": [
+      -122.462752,
+      37.714259
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2023-07-17",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 954,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 106,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 3,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"China Delights\" at this location",
+      "match": {
+        "fsq_id": "687ccb8aa38a216990f34b8f",
+        "name": "China Delights",
+        "category": "Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "295 Orizaba Ave, San Francisco, CA 94132, United States"
+      }
+    },
+    "test_group": "A",
+    "ground_truth": "open"
+  },
+  {
+    "name": "Barcha",
+    "category": "Mediterranean Restaurant",
+    "address": "28 Fremont St, San Francisco",
+    "location": [
+      -122.3978093,
+      37.7911863
+    ],
+    "overture_meta": {
+      "confidence": 0.998,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.998,
+      "source_age_days": 86,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 3,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 4,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Barcha\" at this location",
+      "match": {
+        "fsq_id": "562a7e02498e31c0f71e2a49",
+        "name": "Barcha",
+        "category": "Mediterranean Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "28 Fremont St, San Francisco, CA 94105, United States"
+      }
+    },
+    "test_group": "A",
+    "ground_truth": "open"
+  },
+  {
+    "name": "The Port of Peri Peri",
+    "category": "Portuguese Restaurant",
+    "address": "737 3rd St, San Francisco",
+    "location": [
+      -122.3921024,
+      37.7786182
+    ],
+    "overture_meta": {
+      "confidence": 0.992,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.992,
+      "source_age_days": 86,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 141,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 5,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"The Port of Peri Peri\" at this location",
+      "match": {
+        "fsq_id": "663efb40741d2d0f76b99126",
+        "name": "The Port of Peri Peri",
+        "category": "Middle Eastern Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "737 3rd St (at King St), San Francisco, CA 94107, United States"
+      }
+    },
+    "test_group": "A",
+    "ground_truth": "open"
+  },
+  {
+    "name": "Terrace Cafe",
+    "category": "Restaurant",
+    "address": "San Francisco Zoo, San Francisco",
+    "location": [
+      -122.49989748001099,
+      37.733130992924444
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2024-06-20",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 615,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 11,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 6,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Terrace Cafe\" at this location",
+      "match": {
+        "fsq_id": "4e5420f4d4c0fe034276481e",
+        "name": "Terrace Cafe",
+        "category": "Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "San Francisco Zoo, San Francisco, CA 94132, United States"
+      }
+    },
+    "test_group": "A",
+    "ground_truth": "open"
+  },
+  {
+    "name": "Olive Specialty Grocery Store",
+    "category": "Specialty Grocery Store",
+    "address": "304 Clement St, San Francisco",
+    "location": [
+      -122.4623827,
+      37.7832324
+    ],
+    "overture_meta": {
+      "confidence": 0.95,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.95,
+      "source_age_days": 86,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 68,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 7,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Olive Specialty Grocery Store\" at this location",
+      "match": {
+        "fsq_id": "62dae98dae3cf0256ab2f430",
+        "name": "Olive Specialty Grocery Store",
+        "category": "Grocery Store",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "304 Clement St (4th Ave), San Francisco, CA 94118, United States"
+      }
+    },
+    "test_group": "A",
+    "ground_truth": "open"
+  },
+  {
+    "name": "Julie's Kitchen",
+    "category": "Buffet Restaurant",
+    "address": "50 Fremont St, San Francisco",
+    "location": [
+      -122.3972044,
+      37.7905193
+    ],
+    "overture_meta": {
+      "confidence": 0.989,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.989,
+      "source_age_days": 86,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 106,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 8,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Julie's Kitchen\" at this location",
+      "match": {
+        "fsq_id": "4a959260f964a520b52320e3",
+        "name": "Julie's Kitchen",
+        "category": "Salad Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "50 Fremont St (Mission St), San Francisco, CA 94105, United States"
+      }
+    },
+    "test_group": "A",
+    "ground_truth": "open"
+  },
+  {
+    "name": "The European",
+    "category": "Tapas Bar",
+    "address": "490 Geary St, San Francisco",
+    "location": [
+      -122.4114021,
+      37.7870301
+    ],
+    "overture_meta": {
+      "confidence": 0.96,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.96,
+      "source_age_days": 86,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 79,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 9,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"The European\" at this location",
+      "match": {
+        "fsq_id": "538d38e7498e98c029b18f56",
+        "name": "The European",
+        "category": "Cocktail Bar",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "490 Geary St, San Francisco, CA 94102, United States"
+      }
+    },
+    "test_group": "A",
+    "ground_truth": "open"
+  },
+  {
+    "name": "The Pub at Ghirardelli Square",
+    "category": "Barbecue Restaurant",
+    "address": "851 Beach St, San Francisco",
+    "location": [
+      -122.42275001733996,
+      37.80634592585518
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-08-19",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 190,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 70,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 10,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Ghirardelli-On-The-Go at Ghirardelli Square\" at this location",
+      "match": {
+        "fsq_id": "4d98f07497d06ea80200400b",
+        "name": "Ghirardelli-On-The-Go at Ghirardelli Square",
+        "category": "Chocolate Store",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "801 Beach Street, San Francisco, CA 94109, United States"
+      }
+    },
+    "test_group": "A",
+    "ground_truth": "open"
+  },
+  {
+    "name": "Calvin Klein Performance",
+    "category": "Clothing Store",
+    "address": "320 Grant Ave, San Francisco",
+    "location": [
+      -122.40525943863895,
+      37.78989568125337
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-08-19",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 190,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 22,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 11,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "test_group": "B",
+    "ground_truth": "closed"
+  },
+  {
+    "name": "Hard Water",
+    "category": "Whiskey Bar",
+    "address": "Pier 3, San Francisco",
+    "location": [
+      -122.39567828132029,
+      37.79737903940473
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-08-19",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 190,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 96,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 12,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "test_group": "B",
+    "ground_truth": "closed"
+  },
+  {
+    "name": "Mangarosa",
+    "category": "Brazilian Restaurant",
+    "address": "1548 Stockton St, San Francisco",
+    "location": [
+      -122.4091492964405,
+      37.80008831492055
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-08-19",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 190,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 74,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 13,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "test_group": "B",
+    "ground_truth": "closed"
+  },
+  {
+    "name": "Quick Bites Caf\u00c3\u00a9",
+    "category": "Theme Restaurant",
+    "address": "3876 Noriega St, San Francisco",
+    "location": [
+      -122.50501,
+      37.7532
+    ],
+    "overture_meta": {
+      "confidence": 0.57,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.57,
+      "source_age_days": 86,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 149,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 14,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "test_group": "B",
+    "ground_truth": "closed"
+  },
+  {
+    "name": "PowerSource Cafe",
+    "category": "Smoothie Juice Bar",
+    "address": "81 Fremont St, San Francisco",
+    "location": [
+      -122.39729542198901,
+      37.7905963203812
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-03-20",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 342,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 55,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 15,
+    "foursquare": {
+      "status": "mismatch",
+      "detail": "Foursquare shows \"Ai Kakou Cafe\" instead",
+      "match": {
+        "fsq_id": "51f18872498e4efd1efc44bc",
+        "name": "Ai Kakou Cafe",
+        "category": "Corporate Cafeteria",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "50 Fremont St, San Francisco, CA 94105, United States"
+      }
+    },
+    "test_group": "B",
+    "ground_truth": "closed"
+  },
+  {
+    "name": "Oddjob",
+    "category": "Cocktail Bar",
+    "address": "1337 Mission St, San Francisco",
+    "location": [
+      -122.41506397316193,
+      37.7758865949978
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-08-19",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 190,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 29,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 16,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "test_group": "B",
+    "ground_truth": "closed"
+  },
+  {
+    "name": "Sunrise Deli",
+    "category": "Halal Restaurant",
+    "address": "54 2nd St, San Francisco",
+    "location": [
+      -122.40071,
+      37.78847
+    ],
+    "overture_meta": {
+      "confidence": 0.947,
+      "update_time": "2019-01-21",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.947,
+      "source_age_days": 2592,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 91,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 17,
+    "foursquare": {
+      "status": "mismatch",
+      "detail": "Foursquare shows \"Deli Club\" instead",
+      "match": {
+        "fsq_id": "2d768289cf2d41b863d41514",
+        "name": "Deli Club",
+        "category": "Deli",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "595 Market St, San Francisco, CA 94105, United States"
+      }
+    },
+    "test_group": "B",
+    "ground_truth": "closed"
+  },
+  {
+    "name": "Rosamunde Sausage Grill",
+    "category": "Hot Dog Restaurant",
+    "address": "545 Haight St, San Francisco",
+    "location": [
+      -122.43105322122572,
+      37.77191052212363
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-03-21",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 341,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 56,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 18,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "test_group": "B",
+    "ground_truth": "closed"
+  },
+  {
+    "name": "Birch & Rye",
+    "category": "Russian Restaurant",
+    "address": "1320 Castro St, San Francisco",
+    "location": [
+      -122.43428160109707,
+      37.75098856471297
+    ],
+    "overture_meta": {
+      "confidence": 0.777,
+      "update_time": "2025-07-03",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.777,
+      "source_age_days": 237,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 103,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 19,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "test_group": "B",
+    "ground_truth": "closed"
+  },
+  {
+    "name": "BA Soccer Academy",
+    "category": "Gym",
+    "address": "1600 Holloway Ave, San Francisco",
+    "location": [
+      -122.4798569,
+      37.7232158
+    ],
+    "overture_meta": {
+      "confidence": 0.57,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.57,
+      "source_age_days": 86,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 8,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 20,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "test_group": "B",
+    "ground_truth": "closed"
+  },
+  {
+    "name": "8 Immortals Restaurant",
+    "category": "Asian Fusion Restaurant",
+    "address": "1433 Taraval St, San Francisco",
+    "location": [
+      -122.4816602,
+      37.7426694
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2021-03-29",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 1794,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 50,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 21,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "test_group": "C",
+    "ground_truth": "closed"
+  },
+  {
+    "name": "C\u00c3\u00a9leste",
+    "category": "Wine Bar",
+    "address": "2165 Union St, San Francisco",
+    "location": [
+      -122.4348889,
+      37.7970361
+    ],
+    "overture_meta": {
+      "confidence": 0.95,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.95,
+      "source_age_days": 86,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 43,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 22,
+    "foursquare": {
+      "status": "mismatch",
+      "detail": "Foursquare shows \"Celeste\" instead",
+      "match": {
+        "fsq_id": "652b0208897cfe7884d4ab19",
+        "name": "Celeste",
+        "category": "Wine Bar",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2165 Union St, San Francisco, CA 94123, United States"
+      }
+    },
+    "test_group": "C",
+    "ground_truth": "closed"
+  },
+  {
+    "name": "Caffe Bella Venezia",
+    "category": "Italian Restaurant",
+    "address": "720 Post St, San Francisco",
+    "location": [
+      -122.41366976737622,
+      37.78784878641728
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-03-21",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 341,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 9,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 23,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "test_group": "C",
+    "ground_truth": "closed"
+  },
+  {
+    "name": "Saucy Greens Salad Shop",
+    "category": "Salad Bar",
+    "address": "1096 Union St, San Francisco",
+    "location": [
+      -122.4172661,
+      37.7995087
+    ],
+    "overture_meta": {
+      "confidence": 0.885,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.885,
+      "source_age_days": 86,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 28,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 24,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "test_group": "C",
+    "ground_truth": "closed"
+  },
+  {
+    "name": "Lefty O' Douls World Famous Mixes since 1958",
+    "category": "Restaurant Wholesale",
+    "address": "333 Geary St, San Francisco",
+    "location": [
+      -122.40868,
+      37.78701
+    ],
+    "overture_meta": {
+      "confidence": 0.323,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.323,
+      "source_age_days": 86,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 116,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 25,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "test_group": "C",
+    "ground_truth": "closed"
+  },
+  {
+    "name": "Kitchen Kura",
+    "category": "Japanese Restaurant",
+    "address": "1525 Irving St, San Francisco",
+    "location": [
+      -122.47442746666667,
+      37.76367347
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-03-21",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 341,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 26,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 26,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "test_group": "C",
+    "ground_truth": "closed"
+  },
+  {
+    "name": "Ottimista Enoteca-Caf\u00c3\u00a9",
+    "category": "Wine Bar",
+    "address": "1838 Union St, San Francisco",
+    "location": [
+      -122.42964911148266,
+      37.79787497742454
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-04-23",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 308,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 43,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 27,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "test_group": "C",
+    "ground_truth": "closed"
+  },
+  {
+    "name": "HD Chinese Yunnan Rice Noodle",
+    "category": "Noodles Restaurant",
+    "address": "1395 Noriega St, San Francisco",
+    "location": [
+      -122.4784774,
+      37.7540336
+    ],
+    "overture_meta": {
+      "confidence": 0.989,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.989,
+      "source_age_days": 86,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 58,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 28,
+    "foursquare": {
+      "status": "mismatch",
+      "detail": "Foursquare shows \"HD Rice Noodle\" instead",
+      "match": {
+        "fsq_id": "57aa9e10498e5f5ea1622eb2",
+        "name": "HD Rice Noodle",
+        "category": "Chinese Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1395 Noriega St (21st Ave), San Francisco, CA 94122, United States"
+      }
+    },
+    "test_group": "C",
+    "ground_truth": "closed"
+  },
+  {
+    "name": "Bask",
+    "category": "Spanish Restaurant",
+    "address": "42 Columbus Ave, San Francisco",
+    "location": [
+      -122.40428297166291,
+      37.79617918442693
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-08-19",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 190,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 36,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 29,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "test_group": "C",
+    "ground_truth": "closed"
+  },
+  {
+    "name": "Head Over Heels Gymnastics SF",
+    "category": "Gymnastics Center",
+    "address": "1611 Powell St, San Francisco",
+    "location": [
+      -122.410985,
+      37.799454
+    ],
+    "overture_meta": {
+      "confidence": 0.323,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.323,
+      "source_age_days": 86,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 83,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 30,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "test_group": "C",
+    "ground_truth": "closed"
+  },
+  {
+    "name": "Pig & Pie",
+    "category": "Comfort Food Restaurant",
+    "address": "2962 24th St, San Francisco",
+    "location": [
+      -122.41143822669981,
+      37.75269083497468
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-08-19",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 190,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 137,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 31,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "test_group": "C",
+    "ground_truth": "closed"
+  },
+  {
+    "name": "Buena Vista",
+    "category": "Bar And Grill Restaurant",
+    "address": "via vecchia per saronno 8, San Francisco",
+    "location": [
+      -122.4092561,
+      37.7745015
+    ],
+    "overture_meta": {
+      "confidence": 0.323,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.323,
+      "source_age_days": 86,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 81,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 32,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "test_group": "C",
+    "ground_truth": "closed"
+  },
+  {
+    "name": "Restaurante Smoked Mamma",
+    "category": "Breakfast And Brunch Restaurant",
+    "address": "San Francisco, calle 70, San Francisco",
+    "location": [
+      -122.41183,
+      37.76775
+    ],
+    "overture_meta": {
+      "confidence": 0.57,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.57,
+      "source_age_days": 86,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 57,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 33,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "test_group": "C",
+    "ground_truth": "closed"
+  },
+  {
+    "name": "Falafelland",
+    "category": "Falafel Restaurant",
+    "address": "133 6th St, San Francisco",
+    "location": [
+      -122.4080245,
+      37.7805991
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2019-07-27",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 2405,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 139,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 34,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "test_group": "C",
+    "ground_truth": "closed"
+  },
+  {
+    "name": "Piri Pica",
+    "category": "Portuguese Restaurant",
+    "address": "590 Valencia St, San Francisco",
+    "location": [
+      -122.42197240000002,
+      37.7635165
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-03-21",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 341,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 141,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 35,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "test_group": "C",
+    "ground_truth": "closed"
+  },
+  {
+    "name": "Duna",
+    "category": "European Restaurant",
+    "address": "983 Valencia St, San Francisco",
+    "location": [
+      -122.42096244432875,
+      37.75720208001211
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-04-23",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 308,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 98,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 36,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "test_group": "C",
+    "ground_truth": "closed"
+  },
+  {
+    "name": "Guddu de Karahi",
+    "category": "Indian Restaurant",
+    "address": "1501 Noriega St, San Francisco",
+    "location": [
+      -122.4798184633255,
+      37.75395265117597
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-03-21",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 341,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 30,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 37,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "test_group": "C",
+    "ground_truth": "closed"
+  },
+  {
+    "name": "Restaurante Guatemalteco Ebenezer",
+    "category": "Guatemalan Restaurant",
+    "address": "3263 Mission St, San Francisco",
+    "location": [
+      -122.4203076,
+      37.7445476
+    ],
+    "overture_meta": {
+      "confidence": 0.974,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.974,
+      "source_age_days": 86,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 147,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 38,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "test_group": "C",
+    "ground_truth": "closed"
+  },
+  {
+    "name": "EZ Education Info",
+    "category": "Internet Cafe",
+    "address": "43rd Avenue, San Francisco",
+    "location": [
+      -122.503431414019,
+      37.77524089854767
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-05-09",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 292,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 66,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 39,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "test_group": "C",
+    "ground_truth": "closed"
+  },
+  {
+    "name": "Buttermilk Southern Kitchen",
+    "category": "Southern Restaurant",
+    "address": "2848 23rd St, San Francisco",
+    "location": [
+      -122.40930959053861,
+      37.754461680381745
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-08-19",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 190,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 60,
+      "fields_populated": 3,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 40,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "test_group": "C",
+    "ground_truth": "closed"
+  }
+]

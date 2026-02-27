@@ -1,0 +1,52 @@
+{
+  "training_features": [
+    "overture_confidence",
+    "source_age_days",
+    "has_website",
+    "has_phone",
+    "has_brand",
+    "address_complete",
+    "category_encoded",
+    "fields_populated",
+    "missing_signals",
+    "data_completeness",
+    "low_confidence"
+  ],
+  "base_features": [
+    "overture_confidence",
+    "source_age_days",
+    "has_website",
+    "has_phone",
+    "has_brand",
+    "address_complete",
+    "category_encoded",
+    "fields_populated"
+  ],
+  "engineered_features": [
+    "missing_signals",
+    "data_completeness",
+    "low_confidence"
+  ],
+  "all_features": [
+    "overture_confidence",
+    "source_age_days",
+    "has_website",
+    "has_phone",
+    "has_brand",
+    "address_complete",
+    "category_encoded",
+    "fields_populated",
+    "missing_signals",
+    "data_completeness",
+    "low_confidence",
+    "ocr_text_match",
+    "image_age_days",
+    "num_images"
+  ],
+  "n_training_samples": 6367,
+  "n_open": 4977,
+  "n_closed": 1390,
+  "optimal_threshold": 0.69,
+  "cv_accuracy": 0.7817,
+  "closed_recall": 0.0007
+}
