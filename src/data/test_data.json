@@ -24,7 +24,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0,
       "image_age_days": 3708,
-      "num_images": 2
+      "num_images": 2,
+      "category_closure_rate": 0.0
     },
     "id": 1,
     "foursquare": {
@@ -58,10 +59,10 @@
     ],
     "vision": {
       "prediction": "open",
-      "confidence": 0.75,
+      "confidence": 0.65,
       "primary_layer": "foursquare",
-      "evidence": "Foursquare: verified | No text match on 2 recent images | Score: 0.75",
-      "detail": "Foursquare: verified | No text match on 2 recent images | Score: 0.75",
+      "evidence": "Foursquare: verified | Website: dead (DNS resolution failed — domain does not exist) | No text match on 2 recent images | Metadata: 81% open (no nudge) | Score: 0.65",
+      "detail": "Foursquare: verified | Website: dead (DNS resolution failed — domain does not exist) | No text match on 2 recent images | Metadata: 81% open (no nudge) | Score: 0.65",
       "layers": {
         "text": {
           "verdict": "no_match",
@@ -184,10 +185,11 @@
         },
         "xgboost": {
           "verdict": "supports_open",
-          "score": 0.9828,
-          "confidence": 0.9828,
+          "score": 0.8065,
+          "confidence": 0.8065,
+          "raw_score": 0.9971,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 81% open (calibrated from 100% raw)",
           "feature_contributions": {
             "overture_confidence": 0.77,
             "source_age_days": 190.0,
@@ -195,7 +197,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 24.0,
+            "category_closure_rate": 0.0,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.5133,
@@ -206,6 +208,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "dead",
+          "url": "http://www.maackspasf.com",
+          "status_code": null,
+          "detail": "DNS resolution failed — domain does not exist"
         },
         "foursquare": {
           "status": "verified",
@@ -324,6 +332,13 @@
           "evidence_score": 0.006
         }
       ]
+    },
+    "website_url": "http://www.maackspasf.com",
+    "phone_number": "(415) 276-9769",
+    "website_check": {
+      "status": "dead",
+      "status_code": null,
+      "detail": "DNS resolution failed — domain does not exist"
     }
   },
   {
@@ -351,7 +366,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0,
       "image_age_days": 2893,
-      "num_images": 6
+      "num_images": 6,
+      "category_closure_rate": 0.078
     },
     "id": 2,
     "foursquare": {
@@ -409,10 +425,10 @@
     ],
     "vision": {
       "prediction": "open",
-      "confidence": 0.75,
+      "confidence": 0.65,
       "primary_layer": "foursquare",
-      "evidence": "Foursquare: verified | No text match on 6 recent images | Score: 0.75",
-      "detail": "Foursquare: verified | No text match on 6 recent images | Score: 0.75",
+      "evidence": "Foursquare: verified | Website: dead (DNS resolution failed — domain does not exist) | No text match on 6 recent images | Metadata: 77% open (no nudge) | Score: 0.65",
+      "detail": "Foursquare: verified | Website: dead (DNS resolution failed — domain does not exist) | No text match on 6 recent images | Metadata: 77% open (no nudge) | Score: 0.65",
       "layers": {
         "text": {
           "verdict": "no_match",
@@ -566,10 +582,11 @@
         },
         "xgboost": {
           "verdict": "supports_open",
-          "score": 0.9852,
-          "confidence": 0.9852,
+          "score": 0.7675,
+          "confidence": 0.7675,
+          "raw_score": 0.9852,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 99% open probability (threshold: 69%)",
+          "detail": "XGBoost: 77% open (calibrated from 99% raw)",
           "feature_contributions": {
             "overture_confidence": 0.948,
             "source_age_days": 86.0,
@@ -577,7 +594,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 47.0,
+            "category_closure_rate": 0.078,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.632,
@@ -588,6 +605,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "dead",
+          "url": "http://www.mayleerestaurant.com/",
+          "status_code": null,
+          "detail": "DNS resolution failed — domain does not exist"
         },
         "foursquare": {
           "status": "verified",
@@ -768,6 +791,13 @@
       "yelp_rating": 3.8,
       "yelp_review_count": 310,
       "yelp_url": "https://www.yelp.com/biz/may-lee-chinese-restaurant-san-francisco?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "website_url": "http://www.mayleerestaurant.com/",
+    "phone_number": "+14152421006",
+    "website_check": {
+      "status": "dead",
+      "status_code": null,
+      "detail": "DNS resolution failed — domain does not exist"
     }
   },
   {
@@ -795,7 +825,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0,
       "image_age_days": 3446,
-      "num_images": 6
+      "num_images": 6,
+      "category_closure_rate": 0.2183
     },
     "id": 3,
     "foursquare": {
@@ -853,10 +884,10 @@
     ],
     "vision": {
       "prediction": "open",
-      "confidence": 0.75,
+      "confidence": 0.65,
       "primary_layer": "foursquare",
-      "evidence": "Foursquare: verified | No text match on 6 recent images | Score: 0.75",
-      "detail": "Foursquare: verified | No text match on 6 recent images | Score: 0.75",
+      "evidence": "Foursquare: verified | Website: dead (DNS resolution failed — domain does not exist) | No text match on 6 recent images | Metadata: 57% open (no nudge) | Score: 0.65",
+      "detail": "Foursquare: verified | Website: dead (DNS resolution failed — domain does not exist) | No text match on 6 recent images | Metadata: 57% open (no nudge) | Score: 0.65",
       "layers": {
         "text": {
           "verdict": "no_match",
@@ -1142,11 +1173,12 @@
           "image_age_factor": 1.0
         },
         "xgboost": {
-          "verdict": "supports_open",
-          "score": 0.9549,
-          "confidence": 0.9549,
+          "verdict": "inconclusive",
+          "score": 0.5652,
+          "confidence": 0.5652,
+          "raw_score": 0.9375,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 95% open probability (threshold: 69%)",
+          "detail": "XGBoost: 57% open (calibrated from 94% raw)",
           "feature_contributions": {
             "overture_confidence": 0.77,
             "source_age_days": 954.0,
@@ -1154,7 +1186,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 106.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.5133,
@@ -1165,6 +1197,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "dead",
+          "url": "https://www.chinadelightsca.com/",
+          "status_code": null,
+          "detail": "DNS resolution failed — domain does not exist"
         },
         "foursquare": {
           "status": "verified",
@@ -1445,6 +1483,13 @@
       "yelp_rating": 4.1,
       "yelp_review_count": 61,
       "yelp_url": "https://www.yelp.com/biz/china-delights-san-francisco-2?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "website_url": "https://www.chinadelightsca.com/",
+    "phone_number": "4155868000",
+    "website_check": {
+      "status": "dead",
+      "status_code": null,
+      "detail": "DNS resolution failed — domain does not exist"
     }
   },
   {
@@ -1472,7 +1517,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0,
       "image_age_days": 446,
-      "num_images": 2
+      "num_images": 2,
+      "category_closure_rate": 0.2183
     },
     "id": 4,
     "foursquare": {
@@ -1508,8 +1554,8 @@
       "prediction": "open",
       "confidence": 0.75,
       "primary_layer": "foursquare",
-      "evidence": "Foursquare: verified | No text match on 2 recent images | Score: 0.75",
-      "detail": "Foursquare: verified | No text match on 2 recent images | Score: 0.75",
+      "evidence": "Foursquare: verified | Website: alive | No text match on 2 recent images | Metadata: 76% open (no nudge) | Score: 0.75",
+      "detail": "Foursquare: verified | Website: alive | No text match on 2 recent images | Metadata: 76% open (no nudge) | Score: 0.75",
       "layers": {
         "text": {
           "verdict": "no_match",
@@ -1558,10 +1604,11 @@
         },
         "xgboost": {
           "verdict": "supports_open",
-          "score": 0.9909,
-          "confidence": 0.9909,
+          "score": 0.7649,
+          "confidence": 0.7649,
+          "raw_score": 0.9844,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 99% open probability (threshold: 69%)",
+          "detail": "XGBoost: 76% open (calibrated from 98% raw)",
           "feature_contributions": {
             "overture_confidence": 0.998,
             "source_age_days": 86.0,
@@ -1569,7 +1616,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 3.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.6653,
@@ -1580,6 +1627,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "alive",
+          "url": "http://barcha-sf.com/",
+          "status_code": 200,
+          "detail": "Website responding (HTTP 200)"
         },
         "foursquare": {
           "status": "verified",
@@ -1652,6 +1705,13 @@
       "yelp_rating": 4.1,
       "yelp_review_count": 904,
       "yelp_url": "https://www.yelp.com/biz/barcha-san-francisco?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "website_url": "http://barcha-sf.com/",
+    "phone_number": "+14157570781",
+    "website_check": {
+      "status": "alive",
+      "status_code": 200,
+      "detail": "Website responding (HTTP 200)"
     }
   },
   {
@@ -1679,7 +1739,8 @@
       "fields_populated": 5,
       "ocr_text_match": 0.5,
       "image_age_days": 2032,
-      "num_images": 2
+      "num_images": 2,
+      "category_closure_rate": 0.2183
     },
     "id": 5,
     "foursquare": {
@@ -1715,8 +1776,8 @@
       "prediction": "open",
       "confidence": 0.9,
       "primary_layer": "foursquare",
-      "evidence": "Foursquare: verified | Text: partial match | Score: 0.90",
-      "detail": "Foursquare: verified | Text: partial match | Score: 0.90",
+      "evidence": "Foursquare: verified | Text: partial match | Metadata: 77% open (no nudge) | Score: 0.90",
+      "detail": "Foursquare: verified | Text: partial match | Metadata: 77% open (no nudge) | Score: 0.90",
       "layers": {
         "text": {
           "verdict": "partial_match",
@@ -2110,10 +2171,11 @@
         },
         "xgboost": {
           "verdict": "supports_open",
-          "score": 0.9866,
-          "confidence": 0.9866,
+          "score": 0.766,
+          "confidence": 0.766,
+          "raw_score": 0.9847,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 99% open probability (threshold: 69%)",
+          "detail": "XGBoost: 77% open (calibrated from 98% raw)",
           "feature_contributions": {
             "overture_confidence": 0.992,
             "source_age_days": 86.0,
@@ -2121,7 +2183,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 141.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 5.0,
             "missing_signals": 2.0,
             "data_completeness": 0.5511,
@@ -2132,6 +2194,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "no_url",
+          "url": null,
+          "status_code": null,
+          "detail": "No URL in Overture"
         },
         "foursquare": {
           "status": "verified",
@@ -2457,6 +2525,13 @@
       "yelp_rating": 4.3,
       "yelp_review_count": 58,
       "yelp_url": "https://www.yelp.com/biz/the-port-of-peri-peri-san-francisco?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "website_url": null,
+    "phone_number": "+14153407373",
+    "website_check": {
+      "status": "no_url",
+      "status_code": null,
+      "detail": "No URL in Overture"
     }
   },
   {
@@ -2484,7 +2559,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0,
       "image_age_days": 0,
-      "num_images": 0
+      "num_images": 0,
+      "category_closure_rate": 0.1429
     },
     "id": 6,
     "foursquare": {
@@ -2505,9 +2581,9 @@
     "current_gallery": [],
     "vision": {
       "prediction": "open",
-      "confidence": 0.8,
+      "confidence": 0.85,
       "primary_layer": "foursquare",
-      "evidence": "Foursquare: verified | No street-level images",
+      "evidence": "Foursquare: verified | Website: alive | No street-level images",
       "layers": {
         "text": {
           "verdict": "no_images",
@@ -2522,10 +2598,11 @@
         },
         "xgboost": {
           "verdict": "supports_open",
-          "score": 0.9365,
-          "confidence": 0.9365,
+          "score": 0.7291,
+          "confidence": 0.7291,
+          "raw_score": 0.9747,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 94% open probability (threshold: 69%)",
+          "detail": "XGBoost: 73% open (calibrated from 97% raw)",
           "feature_contributions": {
             "overture_confidence": 0.77,
             "source_age_days": 615.0,
@@ -2533,12 +2610,18 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 11.0,
+            "category_closure_rate": 0.1429,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.5133,
             "low_confidence": 0.0
           }
+        },
+        "website": {
+          "status": "alive",
+          "url": "http://sfzoo.org",
+          "status_code": 200,
+          "detail": "Website responding (HTTP 200)"
         },
         "foursquare": {
           "status": "verified",
@@ -2568,6 +2651,13 @@
       "yelp_rating": 2.2,
       "yelp_review_count": 5,
       "yelp_url": "https://www.yelp.com/biz/terrace-caf%C3%A9-san-francisco-4?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "website_url": "http://sfzoo.org",
+    "phone_number": "(415) 923-3125",
+    "website_check": {
+      "status": "alive",
+      "status_code": 200,
+      "detail": "Website responding (HTTP 200)"
     }
   },
   {
@@ -2595,7 +2685,8 @@
       "fields_populated": 6,
       "ocr_text_match": 1,
       "image_age_days": 1532,
-      "num_images": 5
+      "num_images": 5,
+      "category_closure_rate": 0.2183
     },
     "id": 7,
     "foursquare": {
@@ -2649,8 +2740,8 @@
       "prediction": "open",
       "confidence": 0.9,
       "primary_layer": "foursquare",
-      "evidence": "Foursquare: verified | Text: full match | Score: 0.90",
-      "detail": "Foursquare: verified | Text: full match | Score: 0.90",
+      "evidence": "Foursquare: verified | Website: alive | Text: full match | Metadata: 68% open (no nudge) | Score: 0.90",
+      "detail": "Foursquare: verified | Website: alive | Text: full match | Metadata: 68% open (no nudge) | Score: 0.90",
       "layers": {
         "text": {
           "verdict": "full_match",
@@ -2923,11 +3014,12 @@
           "image_age_factor": 0.92
         },
         "xgboost": {
-          "verdict": "supports_open",
-          "score": 0.98,
-          "confidence": 0.98,
+          "verdict": "inconclusive",
+          "score": 0.6825,
+          "confidence": 0.6825,
+          "raw_score": 0.9632,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 68% open (calibrated from 96% raw)",
           "feature_contributions": {
             "overture_confidence": 0.95,
             "source_age_days": 86.0,
@@ -2935,7 +3027,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 68.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.6333,
@@ -2946,6 +3038,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "alive",
+          "url": "https://www.instagram.com/olive304sf/",
+          "status_code": 200,
+          "detail": "Website responding (HTTP 200)"
         },
         "foursquare": {
           "status": "verified",
@@ -3209,6 +3307,13 @@
       "yelp_rating": 4.6,
       "yelp_review_count": 30,
       "yelp_url": "https://www.yelp.com/biz/olive-specialty-grocery-store-san-francisco?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "website_url": "https://www.instagram.com/olive304sf/",
+    "phone_number": "+16282802624",
+    "website_check": {
+      "status": "alive",
+      "status_code": 200,
+      "detail": "Website responding (HTTP 200)"
     }
   },
   {
@@ -3236,7 +3341,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0,
       "image_age_days": 446,
-      "num_images": 7
+      "num_images": 7,
+      "category_closure_rate": 0.2183
     },
     "id": 8,
     "foursquare": {
@@ -3300,10 +3406,10 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.45,
+      "confidence": 0.35,
       "primary_layer": "text",
-      "evidence": "Foursquare: verified | Closure text: \"RETAIL FOR LEASE T.4\" | No text match on 7 recent images | Score: 0.45",
-      "detail": "Foursquare: verified | Closure text: \"RETAIL FOR LEASE T.4\" | No text match on 7 recent images | Score: 0.45",
+      "evidence": "Foursquare: verified | Website: dead (DNS resolution failed — domain does not exist) | Closure text: \"RETAIL FOR LEASE T.4\" | No text match on 7 recent images | Metadata: 74% open (no nudge) | Score: 0.35",
+      "detail": "Foursquare: verified | Website: dead (DNS resolution failed — domain does not exist) | Closure text: \"RETAIL FOR LEASE T.4\" | No text match on 7 recent images | Metadata: 74% open (no nudge) | Score: 0.35",
       "layers": {
         "text": {
           "verdict": "no_match",
@@ -3457,10 +3563,11 @@
         },
         "xgboost": {
           "verdict": "supports_open",
-          "score": 0.9873,
-          "confidence": 0.9873,
+          "score": 0.7399,
+          "confidence": 0.7399,
+          "raw_score": 0.9776,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 99% open probability (threshold: 69%)",
+          "detail": "XGBoost: 74% open (calibrated from 98% raw)",
           "feature_contributions": {
             "overture_confidence": 0.989,
             "source_age_days": 86.0,
@@ -3468,7 +3575,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 106.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.6593,
@@ -3479,6 +3586,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "dead",
+          "url": "http://www.julieskitchensf.net",
+          "status_code": null,
+          "detail": "DNS resolution failed — domain does not exist"
         },
         "foursquare": {
           "status": "verified",
@@ -3687,6 +3800,13 @@
       "yelp_rating": 4.1,
       "yelp_review_count": 122,
       "yelp_url": "https://www.yelp.com/biz/julies-kitchen-san-francisco-5?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "website_url": "http://www.julieskitchensf.net",
+    "phone_number": "+14159789747",
+    "website_check": {
+      "status": "dead",
+      "status_code": null,
+      "detail": "DNS resolution failed — domain does not exist"
     }
   },
   {
@@ -3714,7 +3834,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0.5,
       "image_age_days": 892,
-      "num_images": 7
+      "num_images": 7,
+      "category_closure_rate": 0.2183
     },
     "id": 9,
     "foursquare": {
@@ -3780,8 +3901,8 @@
       "prediction": "open",
       "confidence": 0.9,
       "primary_layer": "foursquare",
-      "evidence": "Foursquare: verified | Text: partial match | Score: 0.90",
-      "detail": "Foursquare: verified | Text: partial match | Score: 0.90",
+      "evidence": "Foursquare: verified | Website: alive | Text: partial match | Metadata: 69% open (no nudge) | Score: 0.90",
+      "detail": "Foursquare: verified | Website: alive | Text: partial match | Metadata: 69% open (no nudge) | Score: 0.90",
       "layers": {
         "text": {
           "verdict": "partial_match",
@@ -4009,11 +4130,12 @@
           "image_age_factor": 1.0
         },
         "xgboost": {
-          "verdict": "supports_open",
-          "score": 0.9823,
-          "confidence": 0.9823,
+          "verdict": "inconclusive",
+          "score": 0.687,
+          "confidence": 0.687,
+          "raw_score": 0.9643,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 69% open (calibrated from 96% raw)",
           "feature_contributions": {
             "overture_confidence": 0.96,
             "source_age_days": 86.0,
@@ -4021,7 +4143,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 79.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.64,
@@ -4032,6 +4154,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "alive",
+          "url": "http://theeuropeansf.com/",
+          "status_code": 200,
+          "detail": "Website responding (HTTP 200)"
         },
         "foursquare": {
           "status": "verified",
@@ -4277,6 +4405,13 @@
       "yelp_rating": 4,
       "yelp_review_count": 186,
       "yelp_url": "https://www.yelp.com/biz/the-european-san-francisco?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "website_url": "http://theeuropeansf.com/",
+    "phone_number": "+14153452305",
+    "website_check": {
+      "status": "alive",
+      "status_code": 200,
+      "detail": "Website responding (HTTP 200)"
     }
   },
   {
@@ -4304,7 +4439,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0.5,
       "image_age_days": 2469,
-      "num_images": 4
+      "num_images": 4,
+      "category_closure_rate": 0.1819
     },
     "id": 10,
     "foursquare": {
@@ -4352,8 +4488,8 @@
       "prediction": "open",
       "confidence": 0.8,
       "primary_layer": "foursquare",
-      "evidence": "Foursquare: verified | Text: partial match (10yr old) | Score: 0.80",
-      "detail": "Foursquare: verified | Text: partial match (10yr old) | Score: 0.80",
+      "evidence": "Foursquare: verified | Website: alive | Text: partial match (10yr old) | Metadata: 70% open (no nudge) | Score: 0.80",
+      "detail": "Foursquare: verified | Website: alive | Text: partial match (10yr old) | Metadata: 70% open (no nudge) | Score: 0.80",
       "layers": {
         "text": {
           "verdict": "partial_match",
@@ -4477,10 +4613,11 @@
         },
         "xgboost": {
           "verdict": "supports_open",
-          "score": 0.9792,
-          "confidence": 0.9792,
+          "score": 0.699,
+          "confidence": 0.699,
+          "raw_score": 0.9672,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 70% open (calibrated from 97% raw)",
           "feature_contributions": {
             "overture_confidence": 0.77,
             "source_age_days": 190.0,
@@ -4488,7 +4625,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 70.0,
+            "category_closure_rate": 0.1819,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.5133,
@@ -4499,6 +4636,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "alive",
+          "url": "http://www.thepubsf.com/",
+          "status_code": 200,
+          "detail": "Website responding (HTTP 200)"
         },
         "foursquare": {
           "status": "verified",
@@ -4634,6 +4777,13 @@
           "evidence_score": 0.008
         }
       ]
+    },
+    "website_url": "http://www.thepubsf.com/",
+    "phone_number": "(415) 351-0500",
+    "website_check": {
+      "status": "alive",
+      "status_code": 200,
+      "detail": "Website responding (HTTP 200)"
     }
   },
   {
@@ -4661,7 +4811,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0,
       "image_age_days": 438,
-      "num_images": 4
+      "num_images": 4,
+      "category_closure_rate": 0.2308
     },
     "id": 11,
     "foursquare": {
@@ -4698,10 +4849,10 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.45,
+      "confidence": 0.35,
       "primary_layer": "xgboost",
-      "evidence": "No text match on 4 recent images | Score: 0.45",
-      "detail": "No text match on 4 recent images | Score: 0.45",
+      "evidence": "Website: dead (Client error 403) | No text match on 4 recent images | Metadata: 68% open (no nudge) | Score: 0.35",
+      "detail": "Website: dead (Client error 403) | No text match on 4 recent images | Metadata: 68% open (no nudge) | Score: 0.35",
       "layers": {
         "text": {
           "verdict": "no_match",
@@ -4974,11 +5125,12 @@
           "image_age_factor": 1.0
         },
         "xgboost": {
-          "verdict": "supports_open",
-          "score": 0.9828,
-          "confidence": 0.9828,
+          "verdict": "inconclusive",
+          "score": 0.6795,
+          "confidence": 0.6795,
+          "raw_score": 0.9625,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 68% open (calibrated from 96% raw)",
           "feature_contributions": {
             "overture_confidence": 0.77,
             "source_age_days": 190.0,
@@ -4986,7 +5138,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 22.0,
+            "category_closure_rate": 0.2308,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.5133,
@@ -4997,6 +5149,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "dead",
+          "url": "https://www.calvinklein.us",
+          "status_code": 403,
+          "detail": "Client error 403"
         },
         "foursquare": {
           "status": "no_data",
@@ -5235,6 +5393,13 @@
           "evidence_score": 0.05
         }
       ]
+    },
+    "website_url": "https://www.calvinklein.us",
+    "phone_number": "(415) 398-4041",
+    "website_check": {
+      "status": "dead",
+      "status_code": 403,
+      "detail": "Client error 403"
     }
   },
   {
@@ -5262,7 +5427,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0,
       "image_age_days": 1460,
-      "num_images": 4
+      "num_images": 4,
+      "category_closure_rate": 0.2183
     },
     "id": 12,
     "foursquare": {
@@ -5299,10 +5465,10 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.45,
+      "confidence": 0.25,
       "primary_layer": "xgboost",
-      "evidence": "No text match on 4 recent images | Score: 0.45",
-      "detail": "No text match on 4 recent images | Score: 0.45",
+      "evidence": "Website: redirected (Redirects to different domain: jakazimer.com) | No text match on 4 recent images | Metadata: 68% open (no nudge) | Score: 0.25",
+      "detail": "Website: redirected (Redirects to different domain: jakazimer.com) | No text match on 4 recent images | Metadata: 68% open (no nudge) | Score: 0.25",
       "layers": {
         "text": {
           "verdict": "no_match",
@@ -5470,11 +5636,12 @@
           "image_age_factor": 1.0
         },
         "xgboost": {
-          "verdict": "supports_open",
-          "score": 0.9816,
-          "confidence": 0.9816,
+          "verdict": "inconclusive",
+          "score": 0.6813,
+          "confidence": 0.6813,
+          "raw_score": 0.963,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 68% open (calibrated from 96% raw)",
           "feature_contributions": {
             "overture_confidence": 0.77,
             "source_age_days": 190.0,
@@ -5482,7 +5649,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 96.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.5133,
@@ -5493,6 +5660,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "redirect",
+          "url": "http://hardwaterbar.com",
+          "status_code": 200,
+          "detail": "Redirects to different domain: jakazimer.com"
         },
         "foursquare": {
           "status": "no_data",
@@ -5654,6 +5827,13 @@
           "evidence_score": 0.0536
         }
       ]
+    },
+    "website_url": "http://hardwaterbar.com",
+    "phone_number": "(415) 392-3021",
+    "website_check": {
+      "status": "redirect",
+      "status_code": 200,
+      "detail": "Redirects to different domain: jakazimer.com"
     }
   },
   {
@@ -5681,7 +5861,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0.5,
       "image_age_days": 1294,
-      "num_images": 2
+      "num_images": 2,
+      "category_closure_rate": 0.2183
     },
     "id": 13,
     "foursquare": {
@@ -5705,11 +5886,11 @@
       }
     ],
     "vision": {
-      "prediction": "open",
-      "confidence": 0.55,
+      "prediction": "not_open",
+      "confidence": 0.45,
       "primary_layer": "text",
-      "evidence": "Text: partial match (4yr old) | Score: 0.55",
-      "detail": "Text: partial match (4yr old) | Score: 0.55",
+      "evidence": "Website: dead (DNS resolution failed — domain does not exist) | Text: partial match (4yr old) | Metadata: 68% open (no nudge) | Score: 0.45",
+      "detail": "Website: dead (DNS resolution failed — domain does not exist) | Text: partial match (4yr old) | Metadata: 68% open (no nudge) | Score: 0.45",
       "layers": {
         "text": {
           "verdict": "partial_match",
@@ -5832,11 +6013,12 @@
           "image_age_factor": 0.69
         },
         "xgboost": {
-          "verdict": "supports_open",
-          "score": 0.9792,
-          "confidence": 0.9792,
+          "verdict": "inconclusive",
+          "score": 0.6813,
+          "confidence": 0.6813,
+          "raw_score": 0.963,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 68% open (calibrated from 96% raw)",
           "feature_contributions": {
             "overture_confidence": 0.77,
             "source_age_days": 190.0,
@@ -5844,7 +6026,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 74.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.5133,
@@ -5855,6 +6037,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "dead",
+          "url": "http://www.mangarosasf.com",
+          "status_code": null,
+          "detail": "DNS resolution failed — domain does not exist"
         },
         "foursquare": {
           "status": "no_data",
@@ -5965,6 +6153,13 @@
           "evidence_score": 0.2257
         }
       ]
+    },
+    "website_url": "http://www.mangarosasf.com",
+    "phone_number": "(415) 956-3211",
+    "website_check": {
+      "status": "dead",
+      "status_code": null,
+      "detail": "DNS resolution failed — domain does not exist"
     }
   },
   {
@@ -5992,7 +6187,8 @@
       "fields_populated": 5,
       "ocr_text_match": 0,
       "image_age_days": 3560,
-      "num_images": 4
+      "num_images": 4,
+      "category_closure_rate": 0.2183
     },
     "id": 14,
     "foursquare": {
@@ -6031,8 +6227,8 @@
       "prediction": "not_open",
       "confidence": 0.45,
       "primary_layer": "xgboost",
-      "evidence": "No text match on 4 recent images | Score: 0.45",
-      "detail": "No text match on 4 recent images | Score: 0.45",
+      "evidence": "No text match on 4 recent images | Metadata: 59% open (no nudge) | Score: 0.45",
+      "detail": "No text match on 4 recent images | Metadata: 59% open (no nudge) | Score: 0.45",
       "layers": {
         "text": {
           "verdict": "no_match",
@@ -6485,11 +6681,12 @@
           "image_age_factor": 1.0
         },
         "xgboost": {
-          "verdict": "supports_open",
-          "score": 0.9504,
-          "confidence": 0.9504,
+          "verdict": "inconclusive",
+          "score": 0.5887,
+          "confidence": 0.5887,
+          "raw_score": 0.9425,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 95% open probability (threshold: 69%)",
+          "detail": "XGBoost: 59% open (calibrated from 94% raw)",
           "feature_contributions": {
             "overture_confidence": 0.57,
             "source_age_days": 86.0,
@@ -6497,7 +6694,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 149.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 5.0,
             "missing_signals": 2.0,
             "data_completeness": 0.3167,
@@ -6508,6 +6705,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "no_url",
+          "url": null,
+          "status_code": null,
+          "detail": "No URL in Overture"
         },
         "foursquare": {
           "status": "no_data",
@@ -6879,6 +7082,13 @@
           "evidence_score": 0.0058
         }
       ]
+    },
+    "website_url": null,
+    "phone_number": null,
+    "website_check": {
+      "status": "no_url",
+      "status_code": null,
+      "detail": "No URL in Overture"
     }
   },
   {
@@ -6906,7 +7116,8 @@
       "fields_populated": 5,
       "ocr_text_match": 0,
       "image_age_days": 446,
-      "num_images": 4
+      "num_images": 4,
+      "category_closure_rate": 0.1364
     },
     "id": 15,
     "foursquare": {
@@ -6954,8 +7165,8 @@
       "prediction": "not_open",
       "confidence": 0.2,
       "primary_layer": "foursquare",
-      "evidence": "Foursquare: mismatch (\"Ai Kakou Cafe\") | No text match on 4 recent images | Score: 0.20",
-      "detail": "Foursquare: mismatch (\"Ai Kakou Cafe\") | No text match on 4 recent images | Score: 0.20",
+      "evidence": "Foursquare: mismatch (\"Ai Kakou Cafe\") | No text match on 4 recent images | Metadata: 72% open (no nudge) | Score: 0.20",
+      "detail": "Foursquare: mismatch (\"Ai Kakou Cafe\") | No text match on 4 recent images | Metadata: 72% open (no nudge) | Score: 0.20",
       "layers": {
         "text": {
           "verdict": "no_match",
@@ -6972,10 +7183,11 @@
         },
         "xgboost": {
           "verdict": "supports_open",
-          "score": 0.9737,
-          "confidence": 0.9737,
+          "score": 0.7227,
+          "confidence": 0.7227,
+          "raw_score": 0.9731,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 97% open probability (threshold: 69%)",
+          "detail": "XGBoost: 72% open (calibrated from 97% raw)",
           "feature_contributions": {
             "overture_confidence": 0.77,
             "source_age_days": 342.0,
@@ -6983,7 +7195,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 55.0,
+            "category_closure_rate": 0.1364,
             "fields_populated": 5.0,
             "missing_signals": 2.0,
             "data_completeness": 0.4278,
@@ -6994,6 +7206,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "no_url",
+          "url": null,
+          "status_code": null,
+          "detail": "No URL in Overture"
         },
         "foursquare": {
           "status": "mismatch",
@@ -7049,6 +7267,13 @@
           "evidence_score": 0.0717
         }
       ]
+    },
+    "website_url": null,
+    "phone_number": "(415) 896-1312",
+    "website_check": {
+      "status": "no_url",
+      "status_code": null,
+      "detail": "No URL in Overture"
     }
   },
   {
@@ -7076,7 +7301,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0,
       "image_age_days": 577,
-      "num_images": 3
+      "num_images": 3,
+      "category_closure_rate": 0.1364
     },
     "id": 16,
     "foursquare": {
@@ -7109,8 +7335,8 @@
       "prediction": "not_open",
       "confidence": 0.45,
       "primary_layer": "xgboost",
-      "evidence": "No text match on 3 recent images | Score: 0.45",
-      "detail": "No text match on 3 recent images | Score: 0.45",
+      "evidence": "Website: alive | No text match on 3 recent images | Metadata: 76% open (no nudge) | Score: 0.45",
+      "detail": "Website: alive | No text match on 3 recent images | Metadata: 76% open (no nudge) | Score: 0.45",
       "layers": {
         "text": {
           "verdict": "no_match",
@@ -7127,10 +7353,11 @@
         },
         "xgboost": {
           "verdict": "supports_open",
-          "score": 0.983,
-          "confidence": 0.983,
+          "score": 0.7598,
+          "confidence": 0.7598,
+          "raw_score": 0.983,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 76% open (calibrated from 98% raw)",
           "feature_contributions": {
             "overture_confidence": 0.77,
             "source_age_days": 190.0,
@@ -7138,7 +7365,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 29.0,
+            "category_closure_rate": 0.1364,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.5133,
@@ -7149,6 +7376,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "alive",
+          "url": "http://www.oddjobsf.com",
+          "status_code": 200,
+          "detail": "Website responding (HTTP 200)"
         },
         "foursquare": {
           "status": "no_data",
@@ -7188,6 +7421,13 @@
           "evidence_score": 0.0617
         }
       ]
+    },
+    "website_url": "http://www.oddjobsf.com",
+    "phone_number": "(904) 878-1337",
+    "website_check": {
+      "status": "alive",
+      "status_code": 200,
+      "detail": "Website responding (HTTP 200)"
     }
   },
   {
@@ -7215,7 +7455,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0,
       "image_age_days": 0,
-      "num_images": 0
+      "num_images": 0,
+      "category_closure_rate": 0.2183
     },
     "id": 17,
     "foursquare": {
@@ -7236,9 +7477,9 @@
     "current_gallery": [],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.25,
+      "confidence": 0.3,
       "primary_layer": "foursquare",
-      "evidence": "Foursquare: mismatch | No street-level images",
+      "evidence": "Foursquare: mismatch | Website: alive | No street-level images",
       "layers": {
         "text": {
           "verdict": "no_images",
@@ -7252,11 +7493,12 @@
           "detail": "No images to analyze"
         },
         "xgboost": {
-          "verdict": "supports_open",
-          "score": 0.9261,
-          "confidence": 0.9261,
+          "verdict": "supports_closed",
+          "score": 0.2935,
+          "confidence": 0.7065,
+          "raw_score": 0.8792,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 93% open probability (threshold: 69%)",
+          "detail": "XGBoost: 29% open (calibrated from 88% raw)",
           "feature_contributions": {
             "overture_confidence": 0.947,
             "source_age_days": 2592.0,
@@ -7264,12 +7506,18 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 91.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.6313,
             "low_confidence": 0.0
           }
+        },
+        "website": {
+          "status": "alive",
+          "url": "https://www.sunrisedelisf.com/",
+          "status_code": 200,
+          "detail": "Website responding (HTTP 200)"
         },
         "foursquare": {
           "status": "mismatch",
@@ -7291,6 +7539,13 @@
       "best_image_url": null,
       "text_match": false,
       "per_image": []
+    },
+    "website_url": "https://www.sunrisedelisf.com/",
+    "phone_number": "4154959999",
+    "website_check": {
+      "status": "alive",
+      "status_code": 200,
+      "detail": "Website responding (HTTP 200)"
     }
   },
   {
@@ -7318,7 +7573,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0,
       "image_age_days": 1067,
-      "num_images": 4
+      "num_images": 4,
+      "category_closure_rate": 0.2183
     },
     "id": 18,
     "foursquare": {
@@ -7355,10 +7611,10 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.45,
+      "confidence": 0.35,
       "primary_layer": "xgboost",
-      "evidence": "No text match on 4 recent images | Score: 0.45",
-      "detail": "No text match on 4 recent images | Score: 0.45",
+      "evidence": "Website: dead (Page not found (404)) | No text match on 4 recent images | Metadata: 68% open (no nudge) | Score: 0.35",
+      "detail": "Website: dead (Page not found (404)) | No text match on 4 recent images | Metadata: 68% open (no nudge) | Score: 0.35",
       "layers": {
         "text": {
           "verdict": "no_match",
@@ -7601,11 +7857,12 @@
           "image_age_factor": 1.0
         },
         "xgboost": {
-          "verdict": "supports_open",
-          "score": 0.9844,
-          "confidence": 0.9844,
+          "verdict": "inconclusive",
+          "score": 0.6766,
+          "confidence": 0.6766,
+          "raw_score": 0.9619,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 68% open (calibrated from 96% raw)",
           "feature_contributions": {
             "overture_confidence": 0.77,
             "source_age_days": 341.0,
@@ -7613,7 +7870,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 56.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.5133,
@@ -7624,6 +7881,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "dead",
+          "url": "http://rosamundesausagegrill.com/mission-street/",
+          "status_code": 404,
+          "detail": "Page not found (404)"
         },
         "foursquare": {
           "status": "no_data",
@@ -7841,6 +8104,13 @@
           "evidence_score": 0.0246
         }
       ]
+    },
+    "website_url": "http://rosamundesausagegrill.com/mission-street/",
+    "phone_number": "(415) 437-6851",
+    "website_check": {
+      "status": "dead",
+      "status_code": 404,
+      "detail": "Page not found (404)"
     }
   },
   {
@@ -7868,7 +8138,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0.5,
       "image_age_days": 1498,
-      "num_images": 3
+      "num_images": 3,
+      "category_closure_rate": 0.2183
     },
     "id": 19,
     "foursquare": {
@@ -7898,11 +8169,11 @@
       }
     ],
     "vision": {
-      "prediction": "open",
-      "confidence": 0.6,
+      "prediction": "not_open",
+      "confidence": 0.4,
       "primary_layer": "text",
-      "evidence": "Text: partial match | Score: 0.60",
-      "detail": "Text: partial match | Score: 0.60",
+      "evidence": "Website: redirected (Redirects to different domain: anyaelwattar.com) | Text: partial match | Metadata: 68% open (no nudge) | Score: 0.40",
+      "detail": "Website: redirected (Redirects to different domain: anyaelwattar.com) | Text: partial match | Metadata: 68% open (no nudge) | Score: 0.40",
       "layers": {
         "text": {
           "verdict": "partial_match",
@@ -8265,11 +8536,12 @@
           "image_age_factor": 1.0
         },
         "xgboost": {
-          "verdict": "supports_open",
-          "score": 0.9811,
-          "confidence": 0.9811,
+          "verdict": "inconclusive",
+          "score": 0.6766,
+          "confidence": 0.6766,
+          "raw_score": 0.9619,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 68% open (calibrated from 96% raw)",
           "feature_contributions": {
             "overture_confidence": 0.777,
             "source_age_days": 237.0,
@@ -8277,7 +8549,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 103.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.518,
@@ -8288,6 +8560,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "redirect",
+          "url": "http://birchandryesf.com",
+          "status_code": 200,
+          "detail": "Redirects to different domain: anyaelwattar.com"
         },
         "foursquare": {
           "status": "no_data",
@@ -8584,6 +8862,13 @@
           "evidence_score": 0.05
         }
       ]
+    },
+    "website_url": "http://birchandryesf.com",
+    "phone_number": "(415) 796-2265",
+    "website_check": {
+      "status": "redirect",
+      "status_code": 200,
+      "detail": "Redirects to different domain: anyaelwattar.com"
     }
   },
   {
@@ -8611,7 +8896,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0,
       "image_age_days": 0,
-      "num_images": 0
+      "num_images": 0,
+      "category_closure_rate": 0.0476
     },
     "id": 20,
     "foursquare": {
@@ -8622,10 +8908,10 @@
     "ground_truth": "closed",
     "current_gallery": [],
     "vision": {
-      "prediction": "unknown",
-      "confidence": 0.5,
-      "primary_layer": "xgboost",
-      "evidence": "No street-level images",
+      "prediction": "open",
+      "confidence": 0.55,
+      "primary_layer": "website",
+      "evidence": "Website: alive | No street-level images",
       "layers": {
         "text": {
           "verdict": "no_images",
@@ -8640,10 +8926,11 @@
         },
         "xgboost": {
           "verdict": "supports_open",
-          "score": 0.966,
-          "confidence": 0.966,
+          "score": 0.7583,
+          "confidence": 0.7583,
+          "raw_score": 0.9826,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 97% open probability (threshold: 69%)",
+          "detail": "XGBoost: 76% open (calibrated from 98% raw)",
           "feature_contributions": {
             "overture_confidence": 0.57,
             "source_age_days": 86.0,
@@ -8651,12 +8938,18 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 8.0,
+            "category_closure_rate": 0.0476,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.38,
             "low_confidence": 1.0
           }
+        },
+        "website": {
+          "status": "alive",
+          "url": "http://www.bayareasocceracademy.com/",
+          "status_code": 200,
+          "detail": "Website responding (HTTP 200)"
         },
         "foursquare": {
           "status": "no_data",
@@ -8670,6 +8963,13 @@
       "best_image_url": null,
       "text_match": false,
       "per_image": []
+    },
+    "website_url": "http://www.bayareasocceracademy.com/",
+    "phone_number": "+15103889214",
+    "website_check": {
+      "status": "alive",
+      "status_code": 200,
+      "detail": "Website responding (HTTP 200)"
     }
   },
   {
@@ -8697,7 +8997,8 @@
       "fields_populated": 6,
       "ocr_text_match": 1,
       "image_age_days": 532,
-      "num_images": 4
+      "num_images": 4,
+      "category_closure_rate": 0.2183
     },
     "id": 21,
     "foursquare": {
@@ -8733,11 +9034,11 @@
       }
     ],
     "vision": {
-      "prediction": "open",
-      "confidence": 0.7,
+      "prediction": "not_open",
+      "confidence": 0.4792,
       "primary_layer": "text",
-      "evidence": "Text: full match | Score: 0.70",
-      "detail": "Text: full match | Score: 0.70",
+      "evidence": "Website: redirected (Redirects to different domain: desatajurhalang.id) | Text: full match | Metadata: 40% open (nudge -0.02) | Score: 0.48",
+      "detail": "Website: redirected (Redirects to different domain: desatajurhalang.id) | Text: full match | Metadata: 40% open (nudge -0.02) | Score: 0.48",
       "layers": {
         "text": {
           "verdict": "full_match",
@@ -9265,11 +9566,12 @@
           "image_age_factor": 1.0
         },
         "xgboost": {
-          "verdict": "supports_open",
-          "score": 0.9513,
-          "confidence": 0.9513,
+          "verdict": "inconclusive",
+          "score": 0.396,
+          "confidence": 0.604,
+          "raw_score": 0.9026,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 95% open probability (threshold: 69%)",
+          "detail": "XGBoost: 40% open (calibrated from 90% raw)",
           "feature_contributions": {
             "overture_confidence": 0.77,
             "source_age_days": 1794.0,
@@ -9277,7 +9579,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 50.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.5133,
@@ -9288,6 +9590,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "redirect",
+          "url": "https://www.eightimmortalsrestaurant.com/",
+          "status_code": 200,
+          "detail": "Redirects to different domain: desatajurhalang.id"
         },
         "foursquare": {
           "status": "no_data",
@@ -9714,6 +10022,13 @@
           "evidence_score": 0.3617
         }
       ]
+    },
+    "website_url": "https://www.eightimmortalsrestaurant.com/",
+    "phone_number": "4157315515",
+    "website_check": {
+      "status": "redirect",
+      "status_code": 200,
+      "detail": "Redirects to different domain: desatajurhalang.id"
     }
   },
   {
@@ -9741,7 +10056,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0.5,
       "image_age_days": 3155,
-      "num_images": 4
+      "num_images": 4,
+      "category_closure_rate": 0.2183
     },
     "id": 22,
     "foursquare": {
@@ -9789,8 +10105,8 @@
       "prediction": "not_open",
       "confidence": 0.25,
       "primary_layer": "foursquare",
-      "evidence": "Foursquare: mismatch (\"Celeste\") | Text: partial match (10yr old) | Score: 0.25",
-      "detail": "Foursquare: mismatch (\"Celeste\") | Text: partial match (10yr old) | Score: 0.25",
+      "evidence": "Foursquare: mismatch (\"Celeste\") | Text: partial match (10yr old) | Metadata: 68% open (no nudge) | Score: 0.25",
+      "detail": "Foursquare: mismatch (\"Celeste\") | Text: partial match (10yr old) | Metadata: 68% open (no nudge) | Score: 0.25",
       "layers": {
         "text": {
           "verdict": "partial_match",
@@ -10227,11 +10543,12 @@
           "image_age_factor": 0.11
         },
         "xgboost": {
-          "verdict": "supports_open",
-          "score": 0.9854,
-          "confidence": 0.9854,
+          "verdict": "inconclusive",
+          "score": 0.6825,
+          "confidence": 0.6825,
+          "raw_score": 0.9632,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 99% open probability (threshold: 69%)",
+          "detail": "XGBoost: 68% open (calibrated from 96% raw)",
           "feature_contributions": {
             "overture_confidence": 0.95,
             "source_age_days": 86.0,
@@ -10239,7 +10556,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 43.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.6333,
@@ -10250,6 +10567,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "no_url",
+          "url": null,
+          "status_code": null,
+          "detail": "No URL in Overture"
         },
         "foursquare": {
           "status": "mismatch",
@@ -10617,6 +10940,13 @@
           "evidence_score": 0.0138
         }
       ]
+    },
+    "website_url": null,
+    "phone_number": null,
+    "website_check": {
+      "status": "no_url",
+      "status_code": null,
+      "detail": "No URL in Overture"
     }
   },
   {
@@ -10644,7 +10974,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0.5,
       "image_age_days": 1041,
-      "num_images": 6
+      "num_images": 6,
+      "category_closure_rate": 0.2324
     },
     "id": 23,
     "foursquare": {
@@ -10692,11 +11023,11 @@
       }
     ],
     "vision": {
-      "prediction": "open",
-      "confidence": 0.6,
+      "prediction": "not_open",
+      "confidence": 0.5,
       "primary_layer": "text",
-      "evidence": "Text: partial match | Score: 0.60",
-      "detail": "Text: partial match | Score: 0.60",
+      "evidence": "Website: dead (DNS resolution failed — domain does not exist) | Text: partial match | Metadata: 67% open (no nudge) | Score: 0.50",
+      "detail": "Website: dead (DNS resolution failed — domain does not exist) | Text: partial match | Metadata: 67% open (no nudge) | Score: 0.50",
       "layers": {
         "text": {
           "verdict": "partial_match",
@@ -11164,11 +11495,12 @@
           "image_age_factor": 1.0
         },
         "xgboost": {
-          "verdict": "supports_open",
-          "score": 0.9761,
-          "confidence": 0.9761,
+          "verdict": "inconclusive",
+          "score": 0.6747,
+          "confidence": 0.6747,
+          "raw_score": 0.9614,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 67% open (calibrated from 96% raw)",
           "feature_contributions": {
             "overture_confidence": 0.77,
             "source_age_days": 341.0,
@@ -11176,7 +11508,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 9.0,
+            "category_closure_rate": 0.2324,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.5133,
@@ -11187,6 +11519,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "dead",
+          "url": "http://caffebellavenezia.com",
+          "status_code": null,
+          "detail": "DNS resolution failed — domain does not exist"
         },
         "foursquare": {
           "status": "no_data",
@@ -11586,6 +11924,13 @@
           "evidence_score": 0.0143
         }
       ]
+    },
+    "website_url": "http://caffebellavenezia.com",
+    "phone_number": "(415) 775-1156",
+    "website_check": {
+      "status": "dead",
+      "status_code": null,
+      "detail": "DNS resolution failed — domain does not exist"
     }
   },
   {
@@ -11613,7 +11958,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0,
       "image_age_days": 2527,
-      "num_images": 4
+      "num_images": 4,
+      "category_closure_rate": 0.1819
     },
     "id": 24,
     "foursquare": {
@@ -11652,8 +11998,8 @@
       "prediction": "not_open",
       "confidence": 0.45,
       "primary_layer": "xgboost",
-      "evidence": "No text match on 4 recent images | Score: 0.45",
-      "detail": "No text match on 4 recent images | Score: 0.45",
+      "evidence": "Website: alive | No text match on 4 recent images | Metadata: 69% open (no nudge) | Score: 0.45",
+      "detail": "Website: alive | No text match on 4 recent images | Metadata: 69% open (no nudge) | Score: 0.45",
       "layers": {
         "text": {
           "verdict": "no_match",
@@ -11686,11 +12032,12 @@
           "image_age_factor": 1.0
         },
         "xgboost": {
-          "verdict": "supports_open",
-          "score": 0.9833,
-          "confidence": 0.9833,
+          "verdict": "inconclusive",
+          "score": 0.6869,
+          "confidence": 0.6869,
+          "raw_score": 0.9643,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 69% open (calibrated from 96% raw)",
           "feature_contributions": {
             "overture_confidence": 0.885,
             "source_age_days": 86.0,
@@ -11698,7 +12045,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 28.0,
+            "category_closure_rate": 0.1819,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.59,
@@ -11709,6 +12056,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "alive",
+          "url": "https://www.saucygreens.com/",
+          "status_code": 200,
+          "detail": "Website responding (HTTP 200)"
         },
         "foursquare": {
           "status": "no_data",
@@ -11777,6 +12130,13 @@
       "yelp_rating": 4.8,
       "yelp_review_count": 66,
       "yelp_url": "https://www.yelp.com/biz/saucy-greens-san-francisco?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "website_url": "https://www.saucygreens.com/",
+    "phone_number": "+14153076141",
+    "website_check": {
+      "status": "alive",
+      "status_code": 200,
+      "detail": "Website responding (HTTP 200)"
     }
   },
   {
@@ -11804,7 +12164,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0,
       "image_age_days": 2755,
-      "num_images": 1
+      "num_images": 1,
+      "category_closure_rate": 0.2183
     },
     "id": 25,
     "foursquare": {
@@ -11823,10 +12184,10 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.5,
+      "confidence": 0.4,
       "primary_layer": "xgboost",
-      "evidence": "Score: 0.50",
-      "detail": "Score: 0.50",
+      "evidence": "Website: dead (DNS resolution failed — domain does not exist) | Metadata: 57% open (no nudge) | Score: 0.40",
+      "detail": "Website: dead (DNS resolution failed — domain does not exist) | Metadata: 57% open (no nudge) | Score: 0.40",
       "layers": {
         "text": {
           "verdict": "no_match",
@@ -11919,11 +12280,12 @@
           "image_age_factor": 1.0
         },
         "xgboost": {
-          "verdict": "supports_open",
-          "score": 0.9777,
-          "confidence": 0.9777,
+          "verdict": "inconclusive",
+          "score": 0.5739,
+          "confidence": 0.5739,
+          "raw_score": 0.9394,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 57% open (calibrated from 94% raw)",
           "feature_contributions": {
             "overture_confidence": 0.323,
             "source_age_days": 86.0,
@@ -11931,7 +12293,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 116.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.2153,
@@ -11942,6 +12304,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "dead",
+          "url": "http://www.bestbloodymarys.com/",
+          "status_code": null,
+          "detail": "DNS resolution failed — domain does not exist"
         },
         "foursquare": {
           "status": "no_data",
@@ -12022,6 +12390,13 @@
           "evidence_score": 0.0078
         }
       ]
+    },
+    "website_url": "http://www.bestbloodymarys.com/",
+    "phone_number": "+18663318560",
+    "website_check": {
+      "status": "dead",
+      "status_code": null,
+      "detail": "DNS resolution failed — domain does not exist"
     }
   },
   {
@@ -12049,7 +12424,8 @@
       "fields_populated": 6,
       "ocr_text_match": 1,
       "image_age_days": 3198,
-      "num_images": 6
+      "num_images": 6,
+      "category_closure_rate": 0.1213
     },
     "id": 26,
     "foursquare": {
@@ -12100,8 +12476,8 @@
       "prediction": "not_open",
       "confidence": 0.5,
       "primary_layer": "xgboost",
-      "evidence": "Text: full match (10yr old) | Score: 0.50",
-      "detail": "Text: full match (10yr old) | Score: 0.50",
+      "evidence": "Website: alive | Text: full match (10yr old) | Metadata: 76% open (no nudge) | Score: 0.50",
+      "detail": "Website: alive | Text: full match (10yr old) | Metadata: 76% open (no nudge) | Score: 0.50",
       "layers": {
         "text": {
           "verdict": "full_match",
@@ -12538,10 +12914,11 @@
         },
         "xgboost": {
           "verdict": "supports_open",
-          "score": 0.9826,
-          "confidence": 0.9826,
+          "score": 0.763,
+          "confidence": 0.763,
+          "raw_score": 0.9839,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 76% open (calibrated from 98% raw)",
           "feature_contributions": {
             "overture_confidence": 0.77,
             "source_age_days": 341.0,
@@ -12549,7 +12926,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 26.0,
+            "category_closure_rate": 0.1213,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.5133,
@@ -12560,6 +12937,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "alive",
+          "url": "http://kitchenkura.com",
+          "status_code": 200,
+          "detail": "Website responding (HTTP 200)"
         },
         "foursquare": {
           "status": "no_data",
@@ -12934,6 +13317,13 @@
           "evidence_score": 0.0068
         }
       ]
+    },
+    "website_url": "http://kitchenkura.com",
+    "phone_number": "(415) 731-2054",
+    "website_check": {
+      "status": "alive",
+      "status_code": 200,
+      "detail": "Website responding (HTTP 200)"
     }
   },
   {
@@ -12961,7 +13351,8 @@
       "fields_populated": 6,
       "ocr_text_match": 1,
       "image_age_days": 2759,
-      "num_images": 4
+      "num_images": 4,
+      "category_closure_rate": 0.2183
     },
     "id": 27,
     "foursquare": {
@@ -13000,8 +13391,8 @@
       "prediction": "not_open",
       "confidence": 0.5,
       "primary_layer": "xgboost",
-      "evidence": "Text: full match (11yr old) | Score: 0.50",
-      "detail": "Text: full match (11yr old) | Score: 0.50",
+      "evidence": "Text: full match (11yr old) | Metadata: 68% open (no nudge) | Score: 0.50",
+      "detail": "Text: full match (11yr old) | Metadata: 68% open (no nudge) | Score: 0.50",
       "layers": {
         "text": {
           "verdict": "full_match",
@@ -13154,11 +13545,12 @@
           "image_age_factor": 0.1
         },
         "xgboost": {
-          "verdict": "supports_open",
-          "score": 0.9844,
-          "confidence": 0.9844,
+          "verdict": "inconclusive",
+          "score": 0.6766,
+          "confidence": 0.6766,
+          "raw_score": 0.9619,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 68% open (calibrated from 96% raw)",
           "feature_contributions": {
             "overture_confidence": 0.77,
             "source_age_days": 308.0,
@@ -13166,7 +13558,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 43.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.5133,
@@ -13177,6 +13569,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "no_url",
+          "url": null,
+          "status_code": null,
+          "detail": "No URL in Overture"
         },
         "foursquare": {
           "status": "no_data",
@@ -13327,6 +13725,13 @@
           "evidence_score": 0.0768
         }
       ]
+    },
+    "website_url": null,
+    "phone_number": null,
+    "website_check": {
+      "status": "no_url",
+      "status_code": null,
+      "detail": "No URL in Overture"
     }
   },
   {
@@ -13354,7 +13759,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0.5,
       "image_age_days": 3505,
-      "num_images": 6
+      "num_images": 6,
+      "category_closure_rate": 0.2183
     },
     "id": 28,
     "foursquare": {
@@ -13414,8 +13820,8 @@
       "prediction": "not_open",
       "confidence": 0.25,
       "primary_layer": "foursquare",
-      "evidence": "Foursquare: mismatch (\"HD Rice Noodle\") | Text: partial match (9yr old) | Score: 0.25",
-      "detail": "Foursquare: mismatch (\"HD Rice Noodle\") | Text: partial match (9yr old) | Score: 0.25",
+      "evidence": "Foursquare: mismatch (\"HD Rice Noodle\") | Website: alive | Text: partial match (9yr old) | Metadata: 74% open (no nudge) | Score: 0.25",
+      "detail": "Foursquare: mismatch (\"HD Rice Noodle\") | Website: alive | Text: partial match (9yr old) | Metadata: 74% open (no nudge) | Score: 0.25",
       "layers": {
         "text": {
           "verdict": "partial_match",
@@ -14369,10 +14775,11 @@
         },
         "xgboost": {
           "verdict": "supports_open",
-          "score": 0.987,
-          "confidence": 0.987,
+          "score": 0.7399,
+          "confidence": 0.7399,
+          "raw_score": 0.9776,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 99% open probability (threshold: 69%)",
+          "detail": "XGBoost: 74% open (calibrated from 98% raw)",
           "feature_contributions": {
             "overture_confidence": 0.989,
             "source_age_days": 86.0,
@@ -14380,7 +14787,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 58.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.6593,
@@ -14391,6 +14798,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "alive",
+          "url": "http://hdricenoodle.com",
+          "status_code": 200,
+          "detail": "Website responding (HTTP 200)"
         },
         "foursquare": {
           "status": "mismatch",
@@ -15160,6 +15573,13 @@
       "yelp_rating": 3.6,
       "yelp_review_count": 127,
       "yelp_url": "https://www.yelp.com/biz/hd-rice-noodle-san-francisco?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "website_url": "http://hdricenoodle.com",
+    "phone_number": "+14156641318",
+    "website_check": {
+      "status": "alive",
+      "status_code": 200,
+      "detail": "Website responding (HTTP 200)"
     }
   },
   {
@@ -15187,7 +15607,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0.5,
       "image_age_days": 442,
-      "num_images": 3
+      "num_images": 3,
+      "category_closure_rate": 0.2183
     },
     "id": 29,
     "foursquare": {
@@ -15220,8 +15641,8 @@
       "prediction": "not_open",
       "confidence": 0.3,
       "primary_layer": "text",
-      "evidence": "Closure text: \"Rent Me Tod\" | Text: partial match | Score: 0.30",
-      "detail": "Closure text: \"Rent Me Tod\" | Text: partial match | Score: 0.30",
+      "evidence": "Closure text: \"Rent Me Tod\" | Text: partial match | Metadata: 68% open (no nudge) | Score: 0.30",
+      "detail": "Closure text: \"Rent Me Tod\" | Text: partial match | Metadata: 68% open (no nudge) | Score: 0.30",
       "layers": {
         "text": {
           "verdict": "partial_match",
@@ -15674,11 +16095,12 @@
           "image_age_factor": 1.0
         },
         "xgboost": {
-          "verdict": "supports_open",
-          "score": 0.983,
-          "confidence": 0.983,
+          "verdict": "inconclusive",
+          "score": 0.6813,
+          "confidence": 0.6813,
+          "raw_score": 0.963,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 68% open (calibrated from 96% raw)",
           "feature_contributions": {
             "overture_confidence": 0.77,
             "source_age_days": 190.0,
@@ -15686,7 +16108,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 36.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.5133,
@@ -15697,6 +16119,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "no_url",
+          "url": null,
+          "status_code": null,
+          "detail": "No URL in Overture"
         },
         "foursquare": {
           "status": "no_data",
@@ -16076,6 +16504,13 @@
           "evidence_score": 0.065
         }
       ]
+    },
+    "website_url": null,
+    "phone_number": "(415) 292-2012",
+    "website_check": {
+      "status": "no_url",
+      "status_code": null,
+      "detail": "No URL in Overture"
     }
   },
   {
@@ -16103,7 +16538,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0,
       "image_age_days": 1324,
-      "num_images": 4
+      "num_images": 4,
+      "category_closure_rate": 0.1819
     },
     "id": 30,
     "foursquare": {
@@ -16142,8 +16578,8 @@
       "prediction": "not_open",
       "confidence": 0.45,
       "primary_layer": "xgboost",
-      "evidence": "No text match on 4 recent images | Score: 0.45",
-      "detail": "No text match on 4 recent images | Score: 0.45",
+      "evidence": "Website: alive | No text match on 4 recent images | Metadata: 65% open (no nudge) | Score: 0.45",
+      "detail": "Website: alive | No text match on 4 recent images | Metadata: 65% open (no nudge) | Score: 0.45",
       "layers": {
         "text": {
           "verdict": "no_match",
@@ -16219,11 +16655,12 @@
           "image_age_factor": 1.0
         },
         "xgboost": {
-          "verdict": "supports_open",
-          "score": 0.9781,
-          "confidence": 0.9781,
+          "verdict": "inconclusive",
+          "score": 0.6524,
+          "confidence": 0.6524,
+          "raw_score": 0.9563,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 65% open (calibrated from 96% raw)",
           "feature_contributions": {
             "overture_confidence": 0.323,
             "source_age_days": 86.0,
@@ -16231,7 +16668,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 83.0,
+            "category_closure_rate": 0.1819,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.2153,
@@ -16242,6 +16679,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "alive",
+          "url": "http://www.headoverheelssf.com",
+          "status_code": 200,
+          "detail": "Website responding (HTTP 200)"
         },
         "foursquare": {
           "status": "no_data",
@@ -16342,6 +16785,13 @@
       "yelp_rating": 0,
       "yelp_review_count": 0,
       "yelp_url": "https://www.yelp.com/biz/head-over-heels-gymnastics-sf-san-francisco?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "website_url": "http://www.headoverheelssf.com",
+    "phone_number": "+14159353863",
+    "website_check": {
+      "status": "alive",
+      "status_code": 200,
+      "detail": "Website responding (HTTP 200)"
     }
   },
   {
@@ -16369,7 +16819,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0,
       "image_age_days": 2314,
-      "num_images": 6
+      "num_images": 6,
+      "category_closure_rate": 0.2183
     },
     "id": 31,
     "foursquare": {
@@ -16418,10 +16869,10 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.45,
+      "confidence": 0.35,
       "primary_layer": "xgboost",
-      "evidence": "No text match on 6 recent images | Score: 0.45",
-      "detail": "No text match on 6 recent images | Score: 0.45",
+      "evidence": "Website: dead (DNS resolution failed — domain does not exist) | No text match on 6 recent images | Metadata: 68% open (no nudge) | Score: 0.35",
+      "detail": "Website: dead (DNS resolution failed — domain does not exist) | No text match on 6 recent images | Metadata: 68% open (no nudge) | Score: 0.35",
       "layers": {
         "text": {
           "verdict": "no_match",
@@ -17008,11 +17459,12 @@
           "image_age_factor": 1.0
         },
         "xgboost": {
-          "verdict": "supports_open",
-          "score": 0.9764,
-          "confidence": 0.9764,
+          "verdict": "inconclusive",
+          "score": 0.6813,
+          "confidence": 0.6813,
+          "raw_score": 0.963,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 68% open (calibrated from 96% raw)",
           "feature_contributions": {
             "overture_confidence": 0.77,
             "source_age_days": 190.0,
@@ -17020,7 +17472,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 137.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.5133,
@@ -17031,6 +17483,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "dead",
+          "url": "http://www.pigandpiesf.com",
+          "status_code": null,
+          "detail": "DNS resolution failed — domain does not exist"
         },
         "foursquare": {
           "status": "no_data",
@@ -17518,6 +17976,13 @@
           "evidence_score": 0.0527
         }
       ]
+    },
+    "website_url": "http://www.pigandpiesf.com",
+    "phone_number": "(415) 401-8770",
+    "website_check": {
+      "status": "dead",
+      "status_code": null,
+      "detail": "DNS resolution failed — domain does not exist"
     }
   },
   {
@@ -17545,7 +18010,8 @@
       "fields_populated": 6,
       "ocr_text_match": 1,
       "image_age_days": 2872,
-      "num_images": 6
+      "num_images": 6,
+      "category_closure_rate": 0.1819
     },
     "id": 32,
     "foursquare": {
@@ -17596,8 +18062,8 @@
       "prediction": "not_open",
       "confidence": 0.5,
       "primary_layer": "xgboost",
-      "evidence": "Text: full match (11yr old) | Score: 0.50",
-      "detail": "Text: full match (11yr old) | Score: 0.50",
+      "evidence": "Website: alive | Text: full match (11yr old) | Metadata: 65% open (no nudge) | Score: 0.50",
+      "detail": "Website: alive | Text: full match (11yr old) | Metadata: 65% open (no nudge) | Score: 0.50",
       "layers": {
         "text": {
           "verdict": "full_match",
@@ -18035,11 +18501,12 @@
           "image_age_factor": 0.1
         },
         "xgboost": {
-          "verdict": "supports_open",
-          "score": 0.9781,
-          "confidence": 0.9781,
+          "verdict": "inconclusive",
+          "score": 0.6524,
+          "confidence": 0.6524,
+          "raw_score": 0.9563,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 65% open (calibrated from 96% raw)",
           "feature_contributions": {
             "overture_confidence": 0.323,
             "source_age_days": 86.0,
@@ -18047,7 +18514,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 81.0,
+            "category_closure_rate": 0.1819,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.2153,
@@ -18058,6 +18525,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "alive",
+          "url": "http://buenavistamotorinn.com/",
+          "status_code": 200,
+          "detail": "Website responding (HTTP 200)"
         },
         "foursquare": {
           "status": "no_data",
@@ -18435,6 +18908,13 @@
           "evidence_score": 0.06
         }
       ]
+    },
+    "website_url": "http://buenavistamotorinn.com/",
+    "phone_number": "+14159239600",
+    "website_check": {
+      "status": "alive",
+      "status_code": 200,
+      "detail": "Website responding (HTTP 200)"
     }
   },
   {
@@ -18462,7 +18942,8 @@
       "fields_populated": 5,
       "ocr_text_match": 0,
       "image_age_days": 2868,
-      "num_images": 3
+      "num_images": 3,
+      "category_closure_rate": 0.2183
     },
     "id": 33,
     "foursquare": {
@@ -18495,8 +18976,8 @@
       "prediction": "not_open",
       "confidence": 0.45,
       "primary_layer": "xgboost",
-      "evidence": "No text match on 3 recent images | Score: 0.45",
-      "detail": "No text match on 3 recent images | Score: 0.45",
+      "evidence": "No text match on 3 recent images | Metadata: 59% open (no nudge) | Score: 0.45",
+      "detail": "No text match on 3 recent images | Metadata: 59% open (no nudge) | Score: 0.45",
       "layers": {
         "text": {
           "verdict": "no_match",
@@ -18799,11 +19280,12 @@
           "image_age_factor": 1.0
         },
         "xgboost": {
-          "verdict": "supports_open",
-          "score": 0.9685,
-          "confidence": 0.9685,
+          "verdict": "inconclusive",
+          "score": 0.5887,
+          "confidence": 0.5887,
+          "raw_score": 0.9425,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 97% open probability (threshold: 69%)",
+          "detail": "XGBoost: 59% open (calibrated from 94% raw)",
           "feature_contributions": {
             "overture_confidence": 0.57,
             "source_age_days": 86.0,
@@ -18811,7 +19293,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 57.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 5.0,
             "missing_signals": 2.0,
             "data_completeness": 0.3167,
@@ -18822,6 +19304,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "no_url",
+          "url": null,
+          "status_code": null,
+          "detail": "No URL in Overture"
         },
         "foursquare": {
           "status": "no_data",
@@ -19073,6 +19561,13 @@
           "evidence_score": 0.0189
         }
       ]
+    },
+    "website_url": null,
+    "phone_number": "+50761216299",
+    "website_check": {
+      "status": "no_url",
+      "status_code": null,
+      "detail": "No URL in Overture"
     }
   },
   {
@@ -19100,7 +19595,8 @@
       "fields_populated": 5,
       "ocr_text_match": 1,
       "image_age_days": 1774,
-      "num_images": 8
+      "num_images": 8,
+      "category_closure_rate": 0.2183
     },
     "id": 34,
     "foursquare": {
@@ -19161,10 +19657,10 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.5,
+      "confidence": 0.4222,
       "primary_layer": "xgboost",
-      "evidence": "Text: full match (6yr old) | Score: 0.50",
-      "detail": "Text: full match (6yr old) | Score: 0.50",
+      "evidence": "Website: alive | Text: full match (6yr old) | Metadata: 11% open (nudge -0.08) | Score: 0.42",
+      "detail": "Website: alive | Text: full match (6yr old) | Metadata: 11% open (nudge -0.08) | Score: 0.42",
       "layers": {
         "text": {
           "verdict": "full_match",
@@ -19857,11 +20353,12 @@
           "image_age_factor": 0.33
         },
         "xgboost": {
-          "verdict": "supports_open",
-          "score": 0.8022,
-          "confidence": 0.8022,
+          "verdict": "supports_closed",
+          "score": 0.1111,
+          "confidence": 0.8889,
+          "raw_score": 0.8178,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 80% open probability (threshold: 69%)",
+          "detail": "XGBoost: 11% open (calibrated from 82% raw)",
           "feature_contributions": {
             "overture_confidence": 0.77,
             "source_age_days": 2405.0,
@@ -19869,7 +20366,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 139.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 5.0,
             "missing_signals": 2.0,
             "data_completeness": 0.4278,
@@ -19880,6 +20377,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "alive",
+          "url": "https://falafelland.restaurant/",
+          "status_code": 200,
+          "detail": "Website responding (HTTP 200)"
         },
         "foursquare": {
           "status": "no_data",
@@ -20468,6 +20971,13 @@
       "yelp_rating": 4.8,
       "yelp_review_count": 223,
       "yelp_url": "https://www.yelp.com/biz/falafelland-san-francisco-2?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "website_url": "https://falafelland.restaurant/",
+    "phone_number": "+14154241552",
+    "website_check": {
+      "status": "alive",
+      "status_code": 200,
+      "detail": "Website responding (HTTP 200)"
     }
   },
   {
@@ -20495,7 +21005,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0,
       "image_age_days": 2216,
-      "num_images": 6
+      "num_images": 6,
+      "category_closure_rate": 0.2183
     },
     "id": 35,
     "foursquare": {
@@ -20544,10 +21055,10 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.45,
+      "confidence": 0.35,
       "primary_layer": "xgboost",
-      "evidence": "No text match on 6 recent images | Score: 0.45",
-      "detail": "No text match on 6 recent images | Score: 0.45",
+      "evidence": "Website: dead (DNS resolution failed — domain does not exist) | No text match on 6 recent images | Metadata: 68% open (no nudge) | Score: 0.35",
+      "detail": "Website: dead (DNS resolution failed — domain does not exist) | No text match on 6 recent images | Metadata: 68% open (no nudge) | Score: 0.35",
       "layers": {
         "text": {
           "verdict": "no_match",
@@ -20655,11 +21166,12 @@
           "image_age_factor": 1.0
         },
         "xgboost": {
-          "verdict": "supports_open",
-          "score": 0.9758,
-          "confidence": 0.9758,
+          "verdict": "inconclusive",
+          "score": 0.6766,
+          "confidence": 0.6766,
+          "raw_score": 0.9619,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 68% open (calibrated from 96% raw)",
           "feature_contributions": {
             "overture_confidence": 0.77,
             "source_age_days": 341.0,
@@ -20667,7 +21179,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 141.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.5133,
@@ -20678,6 +21190,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "dead",
+          "url": "https://piripicante.com",
+          "status_code": null,
+          "detail": "DNS resolution failed — domain does not exist"
         },
         "foursquare": {
           "status": "no_data",
@@ -20820,6 +21338,13 @@
       "yelp_rating": 3.9,
       "yelp_review_count": 1747,
       "yelp_url": "https://www.yelp.com/biz/pica-pica-arepa-kitchen-san-francisco?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "website_url": "https://piripicante.com",
+    "phone_number": "(415) 800-7994",
+    "website_check": {
+      "status": "dead",
+      "status_code": null,
+      "detail": "DNS resolution failed — domain does not exist"
     }
   },
   {
@@ -20847,7 +21372,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0.5,
       "image_age_days": 3419,
-      "num_images": 3
+      "num_images": 3,
+      "category_closure_rate": 0.1819
     },
     "id": 36,
     "foursquare": {
@@ -20880,8 +21406,8 @@
       "prediction": "not_open",
       "confidence": 0.5,
       "primary_layer": "xgboost",
-      "evidence": "Text: partial match (8yr old) | Score: 0.50",
-      "detail": "Text: partial match (8yr old) | Score: 0.50",
+      "evidence": "Website: alive | Text: partial match (8yr old) | Metadata: 69% open (no nudge) | Score: 0.50",
+      "detail": "Website: alive | Text: partial match (8yr old) | Metadata: 69% open (no nudge) | Score: 0.50",
       "layers": {
         "text": {
           "verdict": "partial_match",
@@ -21125,10 +21651,11 @@
         },
         "xgboost": {
           "verdict": "supports_open",
-          "score": 0.9811,
-          "confidence": 0.9811,
+          "score": 0.6949,
+          "confidence": 0.6949,
+          "raw_score": 0.9662,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 69% open (calibrated from 97% raw)",
           "feature_contributions": {
             "overture_confidence": 0.77,
             "source_age_days": 308.0,
@@ -21136,7 +21663,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 98.0,
+            "category_closure_rate": 0.1819,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.5133,
@@ -21147,6 +21674,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "alive",
+          "url": "https://www.duna.kitchen",
+          "status_code": 200,
+          "detail": "Website responding (HTTP 200)"
         },
         "foursquare": {
           "status": "no_data",
@@ -21355,6 +21888,13 @@
           "evidence_score": 0.0057
         }
       ]
+    },
+    "website_url": "https://www.duna.kitchen",
+    "phone_number": "(415) 484-1206",
+    "website_check": {
+      "status": "alive",
+      "status_code": 200,
+      "detail": "Website responding (HTTP 200)"
     }
   },
   {
@@ -21382,7 +21922,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0,
       "image_age_days": 3505,
-      "num_images": 6
+      "num_images": 6,
+      "category_closure_rate": 0.1559
     },
     "id": 37,
     "foursquare": {
@@ -21431,10 +21972,10 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.45,
+      "confidence": 0.35,
       "primary_layer": "xgboost",
-      "evidence": "No text match on 6 recent images | Score: 0.45",
-      "detail": "No text match on 6 recent images | Score: 0.45",
+      "evidence": "Website: dead (DNS resolution failed — domain does not exist) | No text match on 6 recent images | Metadata: 72% open (no nudge) | Score: 0.35",
+      "detail": "Website: dead (DNS resolution failed — domain does not exist) | No text match on 6 recent images | Metadata: 72% open (no nudge) | Score: 0.35",
       "layers": {
         "text": {
           "verdict": "no_match",
@@ -21871,10 +22412,11 @@
         },
         "xgboost": {
           "verdict": "supports_open",
-          "score": 0.9826,
-          "confidence": 0.9826,
+          "score": 0.719,
+          "confidence": 0.719,
+          "raw_score": 0.9722,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 72% open (calibrated from 97% raw)",
           "feature_contributions": {
             "overture_confidence": 0.77,
             "source_age_days": 341.0,
@@ -21882,7 +22424,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 30.0,
+            "category_closure_rate": 0.1559,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.5133,
@@ -21893,6 +22435,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "dead",
+          "url": "http://guddudekarahi.com",
+          "status_code": null,
+          "detail": "DNS resolution failed — domain does not exist"
         },
         "foursquare": {
           "status": "no_data",
@@ -22268,6 +22816,13 @@
           "evidence_score": 0.0065
         }
       ]
+    },
+    "website_url": "http://guddudekarahi.com",
+    "phone_number": "(415) 759-9088",
+    "website_check": {
+      "status": "dead",
+      "status_code": null,
+      "detail": "DNS resolution failed — domain does not exist"
     }
   },
   {
@@ -22295,7 +22850,8 @@
       "fields_populated": 5,
       "ocr_text_match": 0.5,
       "image_age_days": 3431,
-      "num_images": 2
+      "num_images": 2,
+      "category_closure_rate": 0.2183
     },
     "id": 38,
     "foursquare": {
@@ -22322,8 +22878,8 @@
       "prediction": "not_open",
       "confidence": 0.5,
       "primary_layer": "xgboost",
-      "evidence": "Text: partial match (9yr old) | Score: 0.50",
-      "detail": "Text: partial match (9yr old) | Score: 0.50",
+      "evidence": "Text: partial match (9yr old) | Metadata: 74% open (no nudge) | Score: 0.50",
+      "detail": "Text: partial match (9yr old) | Metadata: 74% open (no nudge) | Score: 0.50",
       "layers": {
         "text": {
           "verdict": "partial_match",
@@ -22567,10 +23123,11 @@
         },
         "xgboost": {
           "verdict": "supports_open",
-          "score": 0.985,
-          "confidence": 0.985,
+          "score": 0.7392,
+          "confidence": 0.7392,
+          "raw_score": 0.9774,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 74% open (calibrated from 98% raw)",
           "feature_contributions": {
             "overture_confidence": 0.974,
             "source_age_days": 86.0,
@@ -22578,7 +23135,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 147.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 5.0,
             "missing_signals": 2.0,
             "data_completeness": 0.5411,
@@ -22589,6 +23146,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "no_url",
+          "url": null,
+          "status_code": null,
+          "detail": "No URL in Overture"
         },
         "foursquare": {
           "status": "no_data",
@@ -22796,6 +23359,13 @@
       "yelp_rating": 4.3,
       "yelp_review_count": 4,
       "yelp_url": "https://www.yelp.com/biz/restaurante-guatemalteco-ebenezer-san-francisco?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "website_url": null,
+    "phone_number": "+16502714193",
+    "website_check": {
+      "status": "no_url",
+      "status_code": null,
+      "detail": "No URL in Overture"
     }
   },
   {
@@ -22823,7 +23393,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0,
       "image_age_days": 191,
-      "num_images": 1
+      "num_images": 1,
+      "category_closure_rate": 0.2183
     },
     "id": 39,
     "foursquare": {
@@ -22844,8 +23415,8 @@
       "prediction": "not_open",
       "confidence": 0.5,
       "primary_layer": "xgboost",
-      "evidence": "Score: 0.50",
-      "detail": "Score: 0.50",
+      "evidence": "Website: alive | Metadata: 68% open (no nudge) | Score: 0.50",
+      "detail": "Website: alive | Metadata: 68% open (no nudge) | Score: 0.50",
       "layers": {
         "text": {
           "verdict": "no_match",
@@ -22861,11 +23432,12 @@
           "image_age_factor": 1.0
         },
         "xgboost": {
-          "verdict": "supports_open",
-          "score": 0.9786,
-          "confidence": 0.9786,
+          "verdict": "inconclusive",
+          "score": 0.6766,
+          "confidence": 0.6766,
+          "raw_score": 0.9619,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 68% open (calibrated from 96% raw)",
           "feature_contributions": {
             "overture_confidence": 0.77,
             "source_age_days": 292.0,
@@ -22873,7 +23445,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 66.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.5133,
@@ -22884,6 +23456,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "alive",
+          "url": "https://www.ezeducationinfo.com",
+          "status_code": 200,
+          "detail": "Website responding (HTTP 200)"
         },
         "foursquare": {
           "status": "no_data",
@@ -22907,6 +23485,13 @@
           "evidence_score": 0.065
         }
       ]
+    },
+    "website_url": "https://www.ezeducationinfo.com",
+    "phone_number": "(415) 228-4488",
+    "website_check": {
+      "status": "alive",
+      "status_code": 200,
+      "detail": "Website responding (HTTP 200)"
     }
   },
   {
@@ -22934,7 +23519,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0,
       "image_age_days": 1729,
-      "num_images": 6
+      "num_images": 6,
+      "category_closure_rate": 0.2183
     },
     "id": 40,
     "foursquare": {
@@ -22985,8 +23571,8 @@
       "prediction": "not_open",
       "confidence": 0.45,
       "primary_layer": "xgboost",
-      "evidence": "No text match on 6 recent images | Score: 0.45",
-      "detail": "No text match on 6 recent images | Score: 0.45",
+      "evidence": "Website: alive | No text match on 6 recent images | Metadata: 68% open (no nudge) | Score: 0.45",
+      "detail": "Website: alive | No text match on 6 recent images | Metadata: 68% open (no nudge) | Score: 0.45",
       "layers": {
         "text": {
           "verdict": "no_match",
@@ -23243,11 +23829,12 @@
           "image_age_factor": 1.0
         },
         "xgboost": {
-          "verdict": "supports_open",
-          "score": 0.9776,
-          "confidence": 0.9776,
+          "verdict": "inconclusive",
+          "score": 0.6813,
+          "confidence": 0.6813,
+          "raw_score": 0.963,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 68% open (calibrated from 96% raw)",
           "feature_contributions": {
             "overture_confidence": 0.77,
             "source_age_days": 190.0,
@@ -23255,7 +23842,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 60.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.5133,
@@ -23266,6 +23853,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "alive",
+          "url": "http://buttermilksouthernkitchen.com",
+          "status_code": 200,
+          "detail": "Website responding (HTTP 200)"
         },
         "foursquare": {
           "status": "no_data",
@@ -23508,6 +24101,13 @@
           "evidence_score": 0.008
         }
       ]
+    },
+    "website_url": "http://buttermilksouthernkitchen.com",
+    "phone_number": "(415) 341-1031",
+    "website_check": {
+      "status": "dead",
+      "status_code": null,
+      "detail": "Connection timed out"
     }
   },
   {
@@ -23535,7 +24135,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0,
       "image_age_days": 3392,
-      "num_images": 4
+      "num_images": 4,
+      "category_closure_rate": 0.2183
     },
     "id": 41,
     "foursquare": {
@@ -23583,8 +24184,8 @@
       "prediction": "open",
       "confidence": 0.8,
       "primary_layer": "foursquare",
-      "evidence": "Foursquare: verified | Text: partial match (10yr old) | Score: 0.80",
-      "detail": "Foursquare: verified | Text: partial match (10yr old) | Score: 0.80",
+      "evidence": "Foursquare: verified | Website: alive | Text: partial match (10yr old) | Metadata: 68% open (no nudge) | Score: 0.80",
+      "detail": "Foursquare: verified | Website: alive | Text: partial match (10yr old) | Metadata: 68% open (no nudge) | Score: 0.80",
       "layers": {
         "text": {
           "verdict": "partial_match",
@@ -24007,11 +24608,12 @@
           "image_age_factor": 0.12
         },
         "xgboost": {
-          "verdict": "supports_open",
-          "score": 0.9805,
-          "confidence": 0.9805,
+          "verdict": "inconclusive",
+          "score": 0.6813,
+          "confidence": 0.6813,
+          "raw_score": 0.963,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 68% open (calibrated from 96% raw)",
           "feature_contributions": {
             "overture_confidence": 0.77,
             "source_age_days": 168.0,
@@ -24019,7 +24621,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 58.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.5133,
@@ -24030,6 +24632,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "alive",
+          "url": "https://chinanorthdumplingtogo.com/",
+          "status_code": 200,
+          "detail": "Website responding (HTTP 200)"
         },
         "foursquare": {
           "status": "verified",
@@ -24387,6 +24995,13 @@
           "evidence_score": 0.0136
         }
       ]
+    },
+    "website_url": "https://chinanorthdumplingtogo.com/",
+    "phone_number": "4156659777",
+    "website_check": {
+      "status": "alive",
+      "status_code": 200,
+      "detail": "Website responding (HTTP 200)"
     }
   },
   {
@@ -24414,7 +25029,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0,
       "image_age_days": 2160,
-      "num_images": 6
+      "num_images": 6,
+      "category_closure_rate": 0.1819
     },
     "id": 42,
     "foursquare": {
@@ -24472,10 +25088,10 @@
     ],
     "vision": {
       "prediction": "open",
-      "confidence": 0.85,
+      "confidence": 0.75,
       "primary_layer": "foursquare",
-      "evidence": "Foursquare: verified | Text: partial match | Score: 0.85",
-      "detail": "Foursquare: verified | Text: partial match | Score: 0.85",
+      "evidence": "Foursquare: verified | Website: dead (Page not found (404)) | Text: partial match | Metadata: 69% open (no nudge) | Score: 0.75",
+      "detail": "Foursquare: verified | Website: dead (Page not found (404)) | Text: partial match | Metadata: 69% open (no nudge) | Score: 0.75",
       "layers": {
         "text": {
           "verdict": "partial_match",
@@ -24674,10 +25290,11 @@
         },
         "xgboost": {
           "verdict": "supports_open",
-          "score": 0.9786,
-          "confidence": 0.9786,
+          "score": 0.6949,
+          "confidence": 0.6949,
+          "raw_score": 0.9662,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 69% open (calibrated from 97% raw)",
           "feature_contributions": {
             "overture_confidence": 0.77,
             "source_age_days": 237.0,
@@ -24685,7 +25302,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 70.0,
+            "category_closure_rate": 0.1819,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.5133,
@@ -24696,6 +25313,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "dead",
+          "url": "http://jafcorrea.wix.com/ronspitstop",
+          "status_code": 404,
+          "detail": "Page not found (404)"
         },
         "foursquare": {
           "status": "verified",
@@ -24903,6 +25526,13 @@
           "evidence_score": 0.3263
         }
       ]
+    },
+    "website_url": "http://jafcorrea.wix.com/ronspitstop",
+    "phone_number": "(415) 515-2023",
+    "website_check": {
+      "status": "dead",
+      "status_code": 404,
+      "detail": "Page not found (404)"
     }
   },
   {
@@ -24930,7 +25560,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0,
       "image_age_days": 1138,
-      "num_images": 5
+      "num_images": 5,
+      "category_closure_rate": 0.2183
     },
     "id": 43,
     "foursquare": {
@@ -24984,8 +25615,8 @@
       "prediction": "open",
       "confidence": 0.75,
       "primary_layer": "foursquare",
-      "evidence": "Foursquare: verified | No text match on 5 recent images | Score: 0.75",
-      "detail": "Foursquare: verified | No text match on 5 recent images | Score: 0.75",
+      "evidence": "Foursquare: verified | Website: alive | No text match on 5 recent images | Metadata: 68% open (no nudge) | Score: 0.75",
+      "detail": "Foursquare: verified | Website: alive | No text match on 5 recent images | Metadata: 68% open (no nudge) | Score: 0.75",
       "layers": {
         "text": {
           "verdict": "no_match",
@@ -25243,11 +25874,12 @@
           "image_age_factor": 1.0
         },
         "xgboost": {
-          "verdict": "supports_open",
-          "score": 0.9797,
-          "confidence": 0.9797,
+          "verdict": "inconclusive",
+          "score": 0.6814,
+          "confidence": 0.6814,
+          "raw_score": 0.963,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 68% open (calibrated from 96% raw)",
           "feature_contributions": {
             "overture_confidence": 0.947,
             "source_age_days": 177.0,
@@ -25255,7 +25887,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 75.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.6313,
@@ -25266,6 +25898,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "alive",
+          "url": "https://newfortunetogo.com/",
+          "status_code": 200,
+          "detail": "Website responding (HTTP 200)"
         },
         "foursquare": {
           "status": "verified",
@@ -25511,6 +26149,13 @@
           "evidence_score": 0.0427
         }
       ]
+    },
+    "website_url": "https://newfortunetogo.com/",
+    "phone_number": "4152309264",
+    "website_check": {
+      "status": "alive",
+      "status_code": 200,
+      "detail": "Website responding (HTTP 200)"
     }
   },
   {
@@ -25538,7 +26183,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0,
       "image_age_days": 0,
-      "num_images": 0
+      "num_images": 0,
+      "category_closure_rate": 0.2183
     },
     "id": 44,
     "foursquare": {
@@ -25559,9 +26205,9 @@
     "current_gallery": [],
     "vision": {
       "prediction": "open",
-      "confidence": 0.8,
+      "confidence": 0.7,
       "primary_layer": "foursquare",
-      "evidence": "Foursquare: verified | No street-level images",
+      "evidence": "Foursquare: verified | Website: dead | No street-level images",
       "layers": {
         "text": {
           "verdict": "no_images",
@@ -25576,10 +26222,11 @@
         },
         "xgboost": {
           "verdict": "supports_open",
-          "score": 0.9787,
-          "confidence": 0.9787,
+          "score": 0.701,
+          "confidence": 0.701,
+          "raw_score": 0.9677,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 70% open (calibrated from 97% raw)",
           "feature_contributions": {
             "overture_confidence": 0.927,
             "source_age_days": 300.0,
@@ -25587,12 +26234,18 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 137.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.618,
             "low_confidence": 0.0
           }
+        },
+        "website": {
+          "status": "dead",
+          "url": "http://macattacksf.com",
+          "status_code": null,
+          "detail": "DNS resolution failed — domain does not exist"
         },
         "foursquare": {
           "status": "verified",
@@ -25614,6 +26267,13 @@
       "best_image_url": null,
       "text_match": false,
       "per_image": []
+    },
+    "website_url": "http://macattacksf.com",
+    "phone_number": "(415) 854-7700",
+    "website_check": {
+      "status": "dead",
+      "status_code": null,
+      "detail": "DNS resolution failed — domain does not exist"
     }
   },
   {
@@ -25641,7 +26301,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0,
       "image_age_days": 1231,
-      "num_images": 4
+      "num_images": 4,
+      "category_closure_rate": 0.2183
     },
     "id": 45,
     "foursquare": {
@@ -25689,8 +26350,8 @@
       "prediction": "open",
       "confidence": 0.75,
       "primary_layer": "foursquare",
-      "evidence": "Foursquare: verified | No text match on 4 recent images | Score: 0.75",
-      "detail": "Foursquare: verified | No text match on 4 recent images | Score: 0.75",
+      "evidence": "Foursquare: verified | Website: alive | No text match on 4 recent images | Metadata: 77% open (no nudge) | Score: 0.75",
+      "detail": "Foursquare: verified | Website: alive | No text match on 4 recent images | Metadata: 77% open (no nudge) | Score: 0.75",
       "layers": {
         "text": {
           "verdict": "no_match",
@@ -25784,10 +26445,11 @@
         },
         "xgboost": {
           "verdict": "supports_open",
-          "score": 0.9891,
-          "confidence": 0.9891,
+          "score": 0.7662,
+          "confidence": 0.7662,
+          "raw_score": 0.9848,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 99% open probability (threshold: 69%)",
+          "detail": "XGBoost: 77% open (calibrated from 98% raw)",
           "feature_contributions": {
             "overture_confidence": 0.997,
             "source_age_days": 86.0,
@@ -25795,7 +26457,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 154.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.6647,
@@ -25806,6 +26468,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "alive",
+          "url": "http://www.almasrisfca.com/",
+          "status_code": 200,
+          "detail": "Website responding (HTTP 200)"
         },
         "foursquare": {
           "status": "verified",
@@ -25918,6 +26586,13 @@
           "evidence_score": 0.0601
         }
       ]
+    },
+    "website_url": "http://www.almasrisfca.com/",
+    "phone_number": "+14158762300",
+    "website_check": {
+      "status": "alive",
+      "status_code": 200,
+      "detail": "Website responding (HTTP 200)"
     }
   },
   {
@@ -25945,7 +26620,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0,
       "image_age_days": 2669,
-      "num_images": 1
+      "num_images": 1,
+      "category_closure_rate": 0.1819
     },
     "id": 46,
     "foursquare": {
@@ -25975,8 +26651,8 @@
       "prediction": "open",
       "confidence": 0.8,
       "primary_layer": "foursquare",
-      "evidence": "Foursquare: verified | Score: 0.80",
-      "detail": "Foursquare: verified | Score: 0.80",
+      "evidence": "Foursquare: verified | Website: alive | Metadata: 76% open (no nudge) | Score: 0.80",
+      "detail": "Foursquare: verified | Website: alive | Metadata: 76% open (no nudge) | Score: 0.80",
       "layers": {
         "text": {
           "verdict": "no_match",
@@ -26160,10 +26836,11 @@
         },
         "xgboost": {
           "verdict": "supports_open",
-          "score": 0.9897,
-          "confidence": 0.9897,
+          "score": 0.7642,
+          "confidence": 0.7642,
+          "raw_score": 0.9842,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 99% open probability (threshold: 69%)",
+          "detail": "XGBoost: 76% open (calibrated from 98% raw)",
           "feature_contributions": {
             "overture_confidence": 0.977,
             "source_age_days": 86.0,
@@ -26171,7 +26848,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 99.0,
+            "category_closure_rate": 0.1819,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.6513,
@@ -26182,6 +26859,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "alive",
+          "url": "https://se7enbuds.com/",
+          "status_code": 200,
+          "detail": "SSL error but HTTP works"
         },
         "foursquare": {
           "status": "verified",
@@ -26336,6 +27019,13 @@
           "evidence_score": 0.0183
         }
       ]
+    },
+    "website_url": "https://se7enbuds.com/",
+    "phone_number": "+16282211295",
+    "website_check": {
+      "status": "alive",
+      "status_code": 200,
+      "detail": "SSL error but HTTP works"
     }
   },
   {
@@ -26363,7 +27053,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0,
       "image_age_days": 2029,
-      "num_images": 3
+      "num_images": 3,
+      "category_closure_rate": 0.2183
     },
     "id": 47,
     "foursquare": {
@@ -26405,8 +27096,8 @@
       "prediction": "open",
       "confidence": 0.8,
       "primary_layer": "foursquare",
-      "evidence": "Foursquare: verified | Text: partial match (10yr old) | Score: 0.80",
-      "detail": "Foursquare: verified | Text: partial match (10yr old) | Score: 0.80",
+      "evidence": "Foursquare: verified | Website: alive | Text: partial match (10yr old) | Metadata: 69% open (no nudge) | Score: 0.80",
+      "detail": "Foursquare: verified | Website: alive | Text: partial match (10yr old) | Metadata: 69% open (no nudge) | Score: 0.80",
       "layers": {
         "text": {
           "verdict": "partial_match",
@@ -26784,11 +27475,12 @@
           "image_age_factor": 0.1
         },
         "xgboost": {
-          "verdict": "supports_open",
-          "score": 0.9827,
-          "confidence": 0.9827,
+          "verdict": "inconclusive",
+          "score": 0.687,
+          "confidence": 0.687,
+          "raw_score": 0.9643,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 69% open (calibrated from 96% raw)",
           "feature_contributions": {
             "overture_confidence": 0.96,
             "source_age_days": 181.0,
@@ -26796,7 +27488,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 120.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.64,
@@ -26807,6 +27499,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "alive",
+          "url": "https://www.stanthonysf.org/the-last-dinner",
+          "status_code": 200,
+          "detail": "Website responding (HTTP 200)"
         },
         "foursquare": {
           "status": "verified",
@@ -27122,6 +27820,13 @@
           "evidence_score": 0.3067
         }
       ]
+    },
+    "website_url": "https://www.stanthonysf.org/the-last-dinner",
+    "phone_number": "(415) 241-2690",
+    "website_check": {
+      "status": "alive",
+      "status_code": 200,
+      "detail": "Website responding (HTTP 200)"
     }
   },
   {
@@ -27149,7 +27854,8 @@
       "fields_populated": 7,
       "ocr_text_match": 0,
       "image_age_days": 1102,
-      "num_images": 4
+      "num_images": 4,
+      "category_closure_rate": 0.2183
     },
     "id": 48,
     "foursquare": {
@@ -27197,8 +27903,8 @@
       "prediction": "open",
       "confidence": 0.75,
       "primary_layer": "foursquare",
-      "evidence": "Foursquare: verified | No text match on 4 recent images | Score: 0.75",
-      "detail": "Foursquare: verified | No text match on 4 recent images | Score: 0.75",
+      "evidence": "Foursquare: verified | Website: alive | No text match on 4 recent images | Metadata: 77% open (no nudge) | Score: 0.75",
+      "detail": "Foursquare: verified | Website: alive | No text match on 4 recent images | Metadata: 77% open (no nudge) | Score: 0.75",
       "layers": {
         "text": {
           "verdict": "no_match",
@@ -27486,10 +28192,11 @@
         },
         "xgboost": {
           "verdict": "supports_open",
-          "score": 0.9845,
-          "confidence": 0.9845,
+          "score": 0.7657,
+          "confidence": 0.7657,
+          "raw_score": 0.9846,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 77% open (calibrated from 98% raw)",
           "feature_contributions": {
             "overture_confidence": 0.997,
             "source_age_days": 86.0,
@@ -27497,7 +28204,7 @@
             "has_phone": 1.0,
             "has_brand": 1.0,
             "address_complete": 1.0,
-            "category_encoded": 144.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 7.0,
             "missing_signals": 0.0,
             "data_completeness": 0.7754,
@@ -27508,6 +28215,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "alive",
+          "url": "http://www.paprikasf.com/",
+          "status_code": 200,
+          "detail": "Website responding (HTTP 200)"
         },
         "foursquare": {
           "status": "verified",
@@ -27764,6 +28477,13 @@
           "evidence_score": 0.0489
         }
       ]
+    },
+    "website_url": "http://www.paprikasf.com/",
+    "phone_number": "+14153751477",
+    "website_check": {
+      "status": "alive",
+      "status_code": 200,
+      "detail": "Website responding (HTTP 200)"
     }
   },
   {
@@ -27791,7 +28511,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0,
       "image_age_days": 440,
-      "num_images": 2
+      "num_images": 2,
+      "category_closure_rate": 0.2183
     },
     "id": 49,
     "foursquare": {
@@ -27827,8 +28548,8 @@
       "prediction": "open",
       "confidence": 0.75,
       "primary_layer": "foursquare",
-      "evidence": "Foursquare: verified | No text match on 2 recent images | Score: 0.75",
-      "detail": "Foursquare: verified | No text match on 2 recent images | Score: 0.75",
+      "evidence": "Foursquare: verified | Website: alive | No text match on 2 recent images | Metadata: 76% open (no nudge) | Score: 0.75",
+      "detail": "Foursquare: verified | Website: alive | No text match on 2 recent images | Metadata: 76% open (no nudge) | Score: 0.75",
       "layers": {
         "text": {
           "verdict": "no_match",
@@ -27950,10 +28671,11 @@
         },
         "xgboost": {
           "verdict": "supports_open",
-          "score": 0.991,
-          "confidence": 0.991,
+          "score": 0.7649,
+          "confidence": 0.7649,
+          "raw_score": 0.9844,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 99% open probability (threshold: 69%)",
+          "detail": "XGBoost: 76% open (calibrated from 98% raw)",
           "feature_contributions": {
             "overture_confidence": 0.999,
             "source_age_days": 86.0,
@@ -27961,7 +28683,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 112.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.666,
@@ -27972,6 +28694,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "alive",
+          "url": "http://www.DabaoSingapore.com/",
+          "status_code": 200,
+          "detail": "Website responding (HTTP 200)"
         },
         "foursquare": {
           "status": "verified",
@@ -28089,6 +28817,13 @@
           "evidence_score": 0.0317
         }
       ]
+    },
+    "website_url": "http://www.DabaoSingapore.com/",
+    "phone_number": "+14159669557",
+    "website_check": {
+      "status": "alive",
+      "status_code": 200,
+      "detail": "Website responding (HTTP 200)"
     }
   },
   {
@@ -28116,7 +28851,8 @@
       "fields_populated": 6,
       "ocr_text_match": 0,
       "image_age_days": 3415,
-      "num_images": 3
+      "num_images": 3,
+      "category_closure_rate": 0.2183
     },
     "id": 50,
     "foursquare": {
@@ -28158,8 +28894,8 @@
       "prediction": "open",
       "confidence": 0.75,
       "primary_layer": "foursquare",
-      "evidence": "Foursquare: verified | No text match on 3 recent images | Score: 0.75",
-      "detail": "Foursquare: verified | No text match on 3 recent images | Score: 0.75",
+      "evidence": "Foursquare: verified | Website: alive | No text match on 3 recent images | Metadata: 72% open (no nudge) | Score: 0.75",
+      "detail": "Foursquare: verified | Website: alive | No text match on 3 recent images | Metadata: 72% open (no nudge) | Score: 0.75",
       "layers": {
         "text": {
           "verdict": "no_match",
@@ -28403,10 +29139,11 @@
         },
         "xgboost": {
           "verdict": "supports_open",
-          "score": 0.9809,
-          "confidence": 0.9809,
+          "score": 0.7196,
+          "confidence": 0.7196,
+          "raw_score": 0.9723,
           "threshold": 0.69,
-          "detail": "XGBoost metadata score: 98% open probability (threshold: 69%)",
+          "detail": "XGBoost: 72% open (calibrated from 97% raw)",
           "feature_contributions": {
             "overture_confidence": 0.991,
             "source_age_days": 86.0,
@@ -28414,7 +29151,7 @@
             "has_phone": 1.0,
             "has_brand": 0.0,
             "address_complete": 1.0,
-            "category_encoded": 108.0,
+            "category_closure_rate": 0.2183,
             "fields_populated": 6.0,
             "missing_signals": 1.0,
             "data_completeness": 0.6607,
@@ -28425,6 +29162,12 @@
           "status": "no_api_key",
           "detail": "Google Places API key not configured",
           "business_status": null
+        },
+        "website": {
+          "status": "alive",
+          "url": "http://www.lafondasantafe.com",
+          "status_code": 200,
+          "detail": "Website responding (HTTP 200)"
         },
         "foursquare": {
           "status": "verified",
@@ -28641,6 +29384,13 @@
           "evidence_score": 0.0064
         }
       ]
+    },
+    "website_url": "http://www.lafondasantafe.com",
+    "phone_number": "+14156819205",
+    "website_check": {
+      "status": "alive",
+      "status_code": 200,
+      "detail": "Website responding (HTTP 200)"
     }
   }
 ]

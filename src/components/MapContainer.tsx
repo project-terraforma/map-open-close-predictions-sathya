@@ -612,6 +612,27 @@ export default function MapContainer() {
                         {/* ── Content ── */}
                         <div className="px-5 pb-8 space-y-3">
 
+                            {/* ── CONFIDENCE HERO ── */}
+                            {v?.confidence != null && (() => {
+                                const rawScore = v.confidence;
+                                const isOpen = v.prediction === 'open';
+                                const directedConf = isOpen ? rawScore : (1 - rawScore);
+                                const pct = Math.round(directedConf * 100);
+                                const color = isOpen ? '#4ade80' : '#f87171';
+                                const bgColor = isOpen ? 'rgba(34,197,94,0.08)' : 'rgba(239,68,68,0.08)';
+                                const borderColor = isOpen ? 'rgba(34,197,94,0.2)' : 'rgba(239,68,68,0.2)';
+                                const label = isOpen ? 'LIKELY OPEN' : 'LIKELY CLOSED';
+                                return (
+                                    <div className="rounded-xl p-4 text-center" style={{ background: bgColor, border: `1px solid ${borderColor}` }}>
+                                        <div className="text-[36px] font-black font-mono leading-none" style={{ color }}>{pct}%</div>
+                                        <div className="text-[11px] font-bold tracking-[0.15em] mt-1.5" style={{ color }}>{label}</div>
+                                        <div className="w-full h-1.5 bg-white/[0.06] rounded-full overflow-hidden mt-3">
+                                            <div className="h-full rounded-full transition-all duration-700" style={{ width: `${pct}%`, backgroundColor: color }} />
+                                        </div>
+                                    </div>
+                                );
+                            })()}
+
                             {/* ── SECTION 1: Ground Truth (always visible) ── */}
                             {selectedPoi.ground_truth && (
                                 <div className="rounded-xl p-3.5" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
@@ -681,7 +702,70 @@ export default function MapContainer() {
                                 </div>
                             )}
 
-                            {/* ── SECTION 3: Text Detection (collapsible) ── */}
+                            {/* ── SECTION 3: Website Liveness (collapsible) ── */}
+                            {layers?.website && layers.website.status !== 'no_url' && (
+                                <div className="rounded-xl overflow-hidden" style={{
+                                    background: layers.website.status === 'alive' ? 'rgba(34,197,94,0.04)' :
+                                               layers.website.status === 'dead' ? 'rgba(239,68,68,0.04)' :
+                                               'rgba(245,158,11,0.04)',
+                                    border: `1px solid ${layers.website.status === 'alive' ? 'rgba(34,197,94,0.15)' :
+                                                         layers.website.status === 'dead' ? 'rgba(239,68,68,0.15)' :
+                                                         'rgba(245,158,11,0.15)'}`,
+                                }}>
+                                    <button
+                                        onClick={() => toggleSection('website')}
+                                        className="w-full flex items-center gap-2 p-3.5 hover:bg-white/[0.02] transition-colors"
+                                    >
+                                        <Globe size={14} className={
+                                            layers.website.status === 'alive' ? 'text-green-400' :
+                                            layers.website.status === 'dead' ? 'text-red-400' :
+                                            'text-amber-400'
+                                        } />
+                                        <span className={`text-[11px] font-semibold ${
+                                            layers.website.status === 'alive' ? 'text-green-400' :
+                                            layers.website.status === 'dead' ? 'text-red-400' :
+                                            'text-amber-400'
+                                        }`}>Website</span>
+                                        <span className={`ml-auto text-[10px] font-bold px-2 py-0.5 rounded ${
+                                            layers.website.status === 'alive' ? 'bg-green-500/10 text-green-400' :
+                                            layers.website.status === 'dead' ? 'bg-red-500/10 text-red-400' :
+                                            layers.website.status === 'redirect' ? 'bg-red-500/10 text-red-400' :
+                                            'bg-amber-500/10 text-amber-400'
+                                        }`}>
+                                            {layers.website.status === 'alive' ? 'ALIVE' :
+                                             layers.website.status === 'dead' ? 'DEAD' :
+                                             layers.website.status === 'redirect' ? 'REDIRECTED' :
+                                             layers.website.status === 'parked' ? 'PARKED' :
+                                             layers.website.status.toUpperCase()}
+                                        </span>
+                                        {expandedSections.website
+                                            ? <ChevronDown size={14} className="text-slate-500 ml-1" />
+                                            : <ChevronRight size={14} className="text-slate-500 ml-1" />
+                                        }
+                                    </button>
+                                    {expandedSections.website && (
+                                        <div className="px-3.5 pb-3.5 pt-0 space-y-2">
+                                            {layers.website.url && (
+                                                <a
+                                                    href={layers.website.url}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="text-[10px] text-blue-400 hover:text-blue-300 flex items-center gap-1 break-all"
+                                                >
+                                                    <ExternalLink size={9} className="shrink-0" />
+                                                    {layers.website.url}
+                                                </a>
+                                            )}
+                                            <p className="text-[10px] text-slate-500 leading-relaxed">{layers.website.detail}</p>
+                                            {layers.website.status_code && (
+                                                <span className="text-[9px] font-mono text-slate-600">HTTP {layers.website.status_code}</span>
+                                            )}
+                                        </div>
+                                    )}
+                                </div>
+                            )}
+
+                            {/* ── SECTION 4: Text Detection (collapsible) ── */}
                             {layers?.text && (
                                 <div className="rounded-xl overflow-hidden" style={{ background: 'rgba(16,185,129,0.04)', border: '1px solid rgba(16,185,129,0.15)' }}>
                                     <button
@@ -842,7 +926,7 @@ export default function MapContainer() {
                             {/* FOOTER */}
                             <div className="pt-3 border-t border-white/[0.04] text-center">
                                 <p className="text-[10px] text-slate-700 font-mono">{selectedPoi.location[1].toFixed(5)}, {selectedPoi.location[0].toFixed(5)}</p>
-                                <p className="text-[8px] text-slate-800 mt-1 uppercase tracking-[0.2em]">Overture Maps · Yelp · Mapillary · OCR + XGBoost</p>
+                                <p className="text-[8px] text-slate-800 mt-1 uppercase tracking-[0.2em]">Overture Maps · Yelp · Mapillary · Foursquare · OCR + XGBoost</p>
                             </div>
                         </div>
                     </div>

@@ -6,9 +6,8 @@ Multi-signal prediction system:
   Signal 1 (Foursquare): Directory cross-reference — verified/mismatch/no_data
   Signal 2 (Text):       OCR text matching — visual signal from street imagery
   Signal 3 (Closure):    OCR closure text detection — "for lease", "closed", etc.
-  Signal 4 (XGBoost):    Metadata model — weak Overture feature signal
-
-Metadata model is a weak backbone. Foursquare + OCR are the real predictors.
+  Signal 4 (Website):    Website liveness — alive/dead/redirect/parked
+  Signal 5 (XGBoost):    Metadata model — calibrated Overture feature signal
 
 Usage: python scripts/run_vision.py
 """
@@ -24,6 +23,7 @@ from datetime import datetime
 
 sys.path.insert(0, os.path.dirname(__file__))
 from ocr_model import detect_text, get_ocr, normalize, get_brand_search_names
+from check_website_liveness import check_website
 
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'src', 'data', 'test_data.json')
 MODEL_PATH = os.path.join(os.path.dirname(__file__), '..', 'model', 'xgboost_model.json')
@@ -46,7 +46,7 @@ GOOGLE_PLACES_API_KEY = os.environ.get('GOOGLE_PLACES_API_KEY', '')
 # Must match the features used during training (8 base + 3 engineered)
 BASE_FEATURES = [
     'overture_confidence', 'source_age_days', 'has_website', 'has_phone',
-    'has_brand', 'address_complete', 'category_encoded', 'fields_populated',
+    'has_brand', 'address_complete', 'category_closure_rate', 'fields_populated',
 ]
 ENGINEERED_FEATURES = ['missing_signals', 'data_completeness', 'low_confidence']
 FEATURES = BASE_FEATURES + ENGINEERED_FEATURES
@@ -247,10 +247,11 @@ def compute_engineered_features(raw):
 
 
 def predict_xgboost(location):
-    """XGBoost metadata model prediction (weak signal).
-    Returns dict with verdict, score, confidence, detail, feature_contributions."""
+    """XGBoost metadata model prediction with Platt-calibrated probabilities.
+    Returns dict with verdict, score (calibrated), detail, feature_contributions."""
     try:
         import xgboost as xgb
+        import numpy as np
     except ImportError:
         return {
             "verdict": "inconclusive",
@@ -269,13 +270,20 @@ def predict_xgboost(location):
             "feature_contributions": {},
         }
 
-    # Load optimal threshold from metadata
+    # Load metadata (threshold, Platt params, closure rates)
     meta_path = MODEL_PATH.replace('xgboost_model.json', 'xgb_meta.json')
-    threshold = 0.69  # default
+    threshold = 0.69
+    platt_a, platt_b = None, None
+    closure_rates = {}
+    global_closure_rate = 0.22
     try:
-        with open(meta_path) as f:
+        with open(meta_path, encoding='utf-8') as f:
             meta = json.load(f)
             threshold = meta.get('optimal_threshold', 0.69)
+            platt_a = meta.get('platt_a')
+            platt_b = meta.get('platt_b')
+            closure_rates = meta.get('category_closure_rates', {})
+            global_closure_rate = meta.get('global_closure_rate', 0.22)
     except:
         pass
 
@@ -283,15 +291,28 @@ def predict_xgboost(location):
     model.load_model(MODEL_PATH)
 
     raw = location.get('overture_raw', {})
+
+    # Look up category closure rate
+    category = location.get('category', 'Unknown')
+    raw['category_closure_rate'] = closure_rates.get(category, global_closure_rate)
+
     eng = compute_engineered_features(raw)
 
     features = [float(raw.get(f, 0)) for f in BASE_FEATURES]
     features += [float(eng.get(f, 0)) for f in ENGINEERED_FEATURES]
 
-    import numpy as np
     prob = model.predict_proba([features])[0]
-    open_prob = float(prob[1])
-    confidence = float(max(prob))
+    raw_open_prob = float(prob[1])
+
+    # Apply Platt scaling if params available
+    if platt_a is not None and platt_b is not None:
+        # Platt: P(y=1|f) = 1 / (1 + exp(A*f + B))
+        open_prob = 1.0 / (1.0 + np.exp(platt_a * raw_open_prob + platt_b))
+        open_prob = float(open_prob)
+    else:
+        open_prob = raw_open_prob
+
+    confidence = max(open_prob, 1 - open_prob)
 
     if open_prob >= threshold:
         verdict = "supports_open"
@@ -306,8 +327,9 @@ def predict_xgboost(location):
         "verdict": verdict,
         "score": round(open_prob, 4),
         "confidence": round(confidence, 4),
+        "raw_score": round(raw_open_prob, 4),
         "threshold": threshold,
-        "detail": f"XGBoost metadata score: {open_prob:.0%} open probability (threshold: {threshold:.0%})",
+        "detail": f"XGBoost: {open_prob:.0%} open (calibrated from {raw_open_prob:.0%} raw)",
         "feature_contributions": all_features,
     }
 
@@ -320,7 +342,7 @@ def analyze_location(location):
 
     if not gallery:
         xgb_layer = predict_xgboost(location)
-        # Even with no images, use Foursquare + metadata to make a call
+        # Even with no images, use Foursquare + website + metadata to make a call
         fsq = location.get("foursquare", {})
         fsq_status = fsq.get("status", "no_data")
         score = 0.50
@@ -334,21 +356,44 @@ def analyze_location(location):
         elif fsq_status == "mismatch":
             score -= 0.25
             evidence.append(f"Foursquare: mismatch")
+
+        # Website liveness check
+        website_url = location.get("website_url")
+        if website_url:
+            ws_status, ws_code, ws_detail = check_website(website_url)
+        else:
+            ws_status, ws_code, ws_detail = 'no_url', None, 'No URL in Overture'
+        website_layer = {"status": ws_status, "url": website_url, "status_code": ws_code, "detail": ws_detail}
+
+        if ws_status == 'redirect':
+            score -= 0.20
+            evidence.append(f"Website: redirected")
+        elif ws_status == 'dead':
+            score -= 0.10
+            evidence.append(f"Website: dead")
+        elif ws_status == 'parked':
+            score -= 0.15
+            evidence.append(f"Website: parked")
+        elif ws_status == 'alive':
+            score += 0.05
+            evidence.append(f"Website: alive")
+
         evidence.append("No street-level images")
         score = max(0.0, min(1.0, score))
-        pred = "open" if score >= 0.5 else "not_open"
-        if fsq_status == "no_data":
+        pred = "open" if score > 0.50 else "not_open"
+        if fsq_status == "no_data" and ws_status == "no_url":
             pred = "unknown"  # truly no info at all
         return {
             "prediction": pred,
             "confidence": round(score, 4),
-            "primary_layer": "foursquare" if fsq_status != "no_data" else "xgboost",
+            "primary_layer": "foursquare" if fsq_status != "no_data" else "website" if ws_status not in ("no_url",) else "xgboost",
             "evidence": " | ".join(evidence),
             "layers": {
                 "text": {"verdict": "no_images", "score": 0.0, "best_image_url": None, "best_image_idx": None,
                          "matched_text": None, "match_strength": None, "ocr_texts": [], "ocr_texts_detail": [],
                          "detail": "No images to analyze"},
                 "xgboost": xgb_layer,
+                "website": website_layer,
                 "foursquare": {"status": fsq_status, "detail": fsq.get("detail", ""), "match": fsq.get("match")},
             },
             "ocr_texts": [],
@@ -556,7 +601,20 @@ def analyze_location(location):
     [lng, lat] = location.get("location", [0, 0])
     google_layer = lookup_google_places(name, lat, lng)
 
-    # Layer 4: Foursquare (already fetched, just format)
+    # Layer 4: Website liveness check
+    website_url = location.get("website_url")
+    if website_url:
+        ws_status, ws_code, ws_detail = check_website(website_url)
+    else:
+        ws_status, ws_code, ws_detail = 'no_url', None, 'No URL in Overture'
+    website_layer = {
+        "status": ws_status,
+        "url": website_url,
+        "status_code": ws_code,
+        "detail": ws_detail,
+    }
+
+    # Layer 5: Foursquare (already fetched, just format)
     fsq_raw = location.get("foursquare", {})
     fsq_layer = {
         "status": fsq_raw.get("status", "no_data"),
@@ -613,6 +671,26 @@ def analyze_location(location):
         open_score -= 0.30
         evidence_parts.append("Google: closed")
 
+    # WEBSITE LIVENESS SIGNAL
+    if ws_status == 'redirect':
+        # Domain redirects to unrelated site → very strong closure signal (100% closed in test)
+        open_score -= 0.20
+        evidence_parts.append(f"Website: redirected ({ws_detail})")
+    elif ws_status == 'dead':
+        # DNS fail, 404, timeout → moderate closure signal (53% closed)
+        open_score -= 0.10
+        evidence_parts.append(f"Website: dead ({ws_detail})")
+    elif ws_status == 'parked':
+        # Domain parking page → strong closure signal
+        open_score -= 0.15
+        evidence_parts.append(f"Website: parked domain")
+    elif ws_status == 'alive':
+        # Website responding — NOT a positive signal (many closed businesses keep websites up)
+        evidence_parts.append(f"Website: alive")
+    elif ws_status == 'ssl_error':
+        # SSL error — domain exists but cert issues
+        evidence_parts.append(f"Website: SSL error")
+
     # TEXT SIGNALS (strong, but discounted by image age)
     if strong_closure_text:
         best_closure = fresh_closure_signals[0]
@@ -649,10 +727,16 @@ def analyze_location(location):
         elif images_analyzed == 0:
             evidence_parts.append("No images available")
 
-    # METADATA SIGNAL (disabled — XGBoost gives ~95% open for everything)
-    # When the model is retrained with better features, re-enable this
-    # xgb_nudge = (xgb_score - 0.5) * 0.05
-    # open_score += xgb_nudge
+    # METADATA SIGNAL (calibrated via Platt scaling)
+    # The model can identify weak businesses (score < 0.40) but can't reliably
+    # confirm open ones (most get 0.65-0.77 regardless). Only nudge when confident.
+    if xgb_score < 0.40:
+        # Strong closed signal from metadata (few businesses score this low)
+        xgb_nudge = (xgb_score - 0.5) * 0.20
+        open_score += xgb_nudge
+        evidence_parts.append(f"Metadata: {xgb_score:.0%} open (nudge {xgb_nudge:+.2f})")
+    else:
+        evidence_parts.append(f"Metadata: {xgb_score:.0%} open (no nudge)")
 
     # Clamp to [0, 1]
     open_score = max(0.0, min(1.0, open_score))
@@ -684,6 +768,7 @@ def analyze_location(location):
             "text": text_layer,
             "xgboost": xgb_layer,
             "google": google_layer,
+            "website": website_layer,
             "foursquare": fsq_layer,
         },
         "closure_signals": closure_signals,
@@ -747,6 +832,9 @@ def main():
         google_status = result.get("layers", {}).get("google", {}).get("business_status")
         if google_status:
             flags.append(f"G:{google_status[:4]}")
+        ws_s = result.get("layers", {}).get("website", {}).get("status", "")
+        if ws_s and ws_s not in ("no_url",):
+            flags.append(f"WEB:{ws_s[:5].upper()}")
         flags.append(f"XGB:{result['layers']['xgboost']['score']:.0%}")
         flag_str = f" [{'+'.join(flags)}]" if flags else ""
         gt = location.get("ground_truth", "?")
