@@ -8,6 +8,7 @@ Output: src/data/test_data.json (updated with Yelp ground truth)
 """
 
 import os
+import sys
 import json
 import re
 import time
@@ -15,7 +16,11 @@ import urllib.request
 import urllib.parse
 import urllib.error
 
-DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'src', 'data', 'test_data.json')
+_default_data = os.path.join(os.path.dirname(__file__), '..', 'src', 'data', 'test_data.json')
+DATA_PATH = _default_data
+for _i, _arg in enumerate(sys.argv):
+    if _arg == '--input' and _i + 1 < len(sys.argv):
+        DATA_PATH = sys.argv[_i + 1]
 
 ENV_PATH = os.path.join(os.path.dirname(__file__), '..', '.env')
 YELP_API_KEY = None

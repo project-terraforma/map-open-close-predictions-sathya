@@ -137,11 +137,55 @@ def detect_text(image_path):
 
 def get_brand_search_names(business_name):
     """Get the list of search names for a business.
-    Just uses the normalized name directly (no chain-specific aliases)."""
+    Returns the full normalized name plus significant sub-phrases and words
+    so partial sign text (e.g. just 'Al Masri' from 'Al-Masri Egyptian Restaurant')
+    can still match."""
     norm = normalize(business_name)
     if not norm:
         return []
-    return [norm]
+
+    names = [norm]
+    words = norm.split()
+
+    # Common suffixes/generic words to strip for sub-phrase generation
+    generic = {
+        'restaurant', 'cafe', 'coffee', 'bar', 'grill', 'kitchen', 'bakery',
+        'salon', 'spa', 'studio', 'shop', 'store', 'market', 'deli',
+        'pizza', 'pizzeria', 'taqueria', 'bistro', 'lounge', 'pub',
+        'inc', 'llc', 'corp', 'the', 'and', 'of', 'at', 'by', 'on',
+        'beauty', 'barber', 'dental', 'fitness', 'gym', 'yoga',
+        'cleaners', 'cleaning', 'pharmacy', 'supply', 'supplies',
+        'express', 'boutique', 'design', 'center', 'club',
+    }
+
+    # Add the name without trailing generic words (e.g. "al masri" from "al masri egyptian restaurant")
+    core_words = []
+    for w in words:
+        if w in generic and len(core_words) > 0:
+            break
+        core_words.append(w)
+    if len(core_words) >= 2 and core_words != words:
+        names.append(' '.join(core_words))
+
+    # Add individual significant words (5+ chars, not generic)
+    for w in words:
+        if len(w) >= 5 and w not in generic:
+            names.append(w)
+
+    # Add consecutive 2-word pairs (catches things like "peri peri", "dim sum")
+    for i in range(len(words) - 1):
+        pair = f"{words[i]} {words[i+1]}"
+        if len(pair) >= 6 and words[i] not in generic and words[i+1] not in generic:
+            names.append(pair)
+
+    # Deduplicate while preserving order
+    seen = set()
+    unique = []
+    for n in names:
+        if n not in seen:
+            seen.add(n)
+            unique.append(n)
+    return unique
 
 
 if __name__ == "__main__":

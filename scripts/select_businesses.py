@@ -2,19 +2,52 @@
 Select diverse businesses from Overture Maps parquet for open/closed prediction testing.
 Not limited to fast food — samples restaurants, retail, services, etc.
 
-Usage: python scripts/select_businesses.py
-Output: scripts/overture_candidates.json
+Usage: python scripts/select_businesses.py [--city sf|la|chicago]
+Output: scripts/overture_candidates_<city>.json
 """
 
 import pandas as pd
 import shapely.wkb
 import json
 import os
+import sys
 import random
 from datetime import datetime
 
-PARQUET_PATH = os.path.join(os.path.dirname(__file__), '..', 'pipeline', 'data', 'sf_places_large.parquet')
-OUTPUT_PATH = os.path.join(os.path.dirname(__file__), 'overture_candidates.json')
+SCRIPT_DIR = os.path.dirname(__file__)
+DATA_DIR = os.path.join(SCRIPT_DIR, '..', 'pipeline', 'data')
+
+CITY_CONFIG = {
+    'sf': {
+        'parquet': os.path.join(DATA_DIR, 'sf_places_large.parquet'),
+        'default_city': 'San Francisco',
+        'state': 'CA',
+    },
+    'la': {
+        'parquet': os.path.join(DATA_DIR, 'la_places.parquet'),
+        'default_city': 'Los Angeles',
+        'state': 'CA',
+    },
+    'chicago': {
+        'parquet': os.path.join(DATA_DIR, 'chicago_places.parquet'),
+        'default_city': 'Chicago',
+        'state': 'IL',
+    },
+}
+
+# Parse --city arg
+CITY_KEY = 'sf'
+for i, arg in enumerate(sys.argv):
+    if arg == '--city' and i + 1 < len(sys.argv):
+        CITY_KEY = sys.argv[i + 1].lower()
+
+if CITY_KEY not in CITY_CONFIG:
+    print(f"Unknown city: {CITY_KEY}. Available: {', '.join(CITY_CONFIG.keys())}")
+    sys.exit(1)
+
+CITY = CITY_CONFIG[CITY_KEY]
+PARQUET_PATH = CITY['parquet']
+OUTPUT_PATH = os.path.join(SCRIPT_DIR, f'overture_candidates_{CITY_KEY}.json')
 
 # Categories we want to sample from (diverse mix)
 # These match the 'primary' field in Overture categories dict
@@ -32,7 +65,6 @@ INDOOR_KEYWORDS = [
     'mall', 'galleria', 'food court', 'plaza area', 'lower level',
     'level b', 'suite', 'ste ', 'spc ', 'unit ',
     'inside', 'interior', 'concourse', 'terminal', 'airport',
-    'westlake', 'stonestown', 'metreon',
 ]
 
 SKIP_NAMES = [
@@ -172,26 +204,26 @@ def main():
             continue
 
         # Extract address
-        address = 'San Francisco, CA'
+        address = f"{CITY['default_city']}, {CITY['state']}"
         try:
             addrs = row.get('addresses')
             if addrs is not None and len(addrs) > 0:
                 addr_obj = addrs[0]
                 freeform = addr_obj.get('freeform') if hasattr(addr_obj, 'get') else addr_obj['freeform']
                 if freeform:
-                    address = f"{freeform}, San Francisco"
+                    address = f"{freeform}, {CITY['default_city']}"
                 else:
                     number = addr_obj.get('number', '') if hasattr(addr_obj, 'get') else ''
                     street = addr_obj.get('street', '') if hasattr(addr_obj, 'get') else ''
                     if number and street:
-                        address = f"{number} {street}, San Francisco"
+                        address = f"{number} {street}, {CITY['default_city']}"
                     elif street:
-                        address = f"{street}, San Francisco"
+                        address = f"{street}, {CITY['default_city']}"
         except:
             pass
 
-        # Skip bad addresses
-        if address == 'San Francisco, CA':
+        # Skip bad addresses (only have city name, no street)
+        if address == f"{CITY['default_city']}, {CITY['state']}":
             continue
 
         # Extract confidence

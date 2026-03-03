@@ -331,28 +331,6 @@
           "text_match": null,
           "evidence_score": 0.006
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        },
-        {
-          "signal": "website",
-          "weight": -0.1,
-          "description": "Website: dead"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (2 recent images)"
-        }
       ]
     },
     "website_url": "http://www.maackspasf.com",
@@ -803,28 +781,6 @@
           "texts_with_bbox": [],
           "text_match": null,
           "evidence_score": 0.0069
-        }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        },
-        {
-          "signal": "website",
-          "weight": -0.1,
-          "description": "Website: dead"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (6 recent images)"
         }
       ]
     },
@@ -1518,28 +1474,6 @@
           "text_match": null,
           "evidence_score": 0.0091
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        },
-        {
-          "signal": "website",
-          "weight": -0.1,
-          "description": "Website: dead"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (6 recent images)"
-        }
       ]
     },
     "yelp": {
@@ -1762,23 +1696,6 @@
           "text_match": null,
           "evidence_score": 0.0833
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (2 recent images)"
-        }
       ]
     },
     "yelp": {
@@ -1936,8 +1853,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_v8XipbSEFVVUd12q1dd4RYgaM4_tYNk3r5NqZimlf52PpqcIrArpzG9xuwI-ueVdt-orpgmhU8qZV9aZIvIqB1nmXUUuQeND2JW-dKSsQ8PPWevCjnQQUtpZhXGb3Uhh1Th9ujG50gS5PT1e4rGs?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=awdavx0jsLqQIWayVpmC3A&_nc_oc=AdkIeu_6m4wZpWJJYIeMKbMt6IarKBE2MtV6hgKzYdlgxFvCBrjC7i1SkTP_F0EHGcsDG8XU-7Ph1cJRmXfOsPhj&ccb=10-5&oh=00_AftkZd1ccQHsGjMH4bCficPnYGALRXOkjhhm59kfctGnOw&oe=69C640BE&_nc_sid=201bca",
               "image_idx": 0,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "roadway/roadside assets",
@@ -1978,8 +1895,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_v8XipbSEFVVUd12q1dd4RYgaM4_tYNk3r5NqZimlf52PpqcIrArpzG9xuwI-ueVdt-orpgmhU8qZV9aZIvIqB1nmXUUuQeND2JW-dKSsQ8PPWevCjnQQUtpZhXGb3Uhh1Th9ujG50gS5PT1e4rGs?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=awdavx0jsLqQIWayVpmC3A&_nc_oc=AdkIeu_6m4wZpWJJYIeMKbMt6IarKBE2MtV6hgKzYdlgxFvCBrjC7i1SkTP_F0EHGcsDG8XU-7Ph1cJRmXfOsPhj&ccb=10-5&oh=00_AftkZd1ccQHsGjMH4bCficPnYGALRXOkjhhm59kfctGnOw&oe=69C640BE&_nc_sid=201bca",
               "image_idx": 0,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "marker geospatial",
@@ -1992,8 +1909,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_v8XipbSEFVVUd12q1dd4RYgaM4_tYNk3r5NqZimlf52PpqcIrArpzG9xuwI-ueVdt-orpgmhU8qZV9aZIvIqB1nmXUUuQeND2JW-dKSsQ8PPWevCjnQQUtpZhXGb3Uhh1Th9ujG50gS5PT1e4rGs?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=awdavx0jsLqQIWayVpmC3A&_nc_oc=AdkIeu_6m4wZpWJJYIeMKbMt6IarKBE2MtV6hgKzYdlgxFvCBrjC7i1SkTP_F0EHGcsDG8XU-7Ph1cJRmXfOsPhj&ccb=10-5&oh=00_AftkZd1ccQHsGjMH4bCficPnYGALRXOkjhhm59kfctGnOw&oe=69C640BE&_nc_sid=201bca",
               "image_idx": 0,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "imagery",
@@ -2599,23 +2516,6 @@
           "text_match": null,
           "evidence_score": 0.0058
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        },
-        {
-          "signal": "text",
-          "weight": 0.1,
-          "description": "Text: partial match"
-        }
       ]
     },
     "yelp": {
@@ -2742,19 +2642,7 @@
       "best_image_idx": null,
       "best_image_url": null,
       "text_match": false,
-      "per_image": [],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        }
-      ]
+      "per_image": []
     },
     "yelp": {
       "yelp_name": "Terrace Café",
@@ -3410,23 +3298,6 @@
           "text_match": "full",
           "evidence_score": 0.7008
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        },
-        {
-          "signal": "text",
-          "weight": 0.1,
-          "description": "Text: full match"
-        }
       ]
     },
     "yelp": {
@@ -3543,7 +3414,7 @@
         "text": {
           "verdict": "no_match",
           "score": 0.0,
-          "best_image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-070PbWA-J6wrO7J3c6CYlOdYMZCugSUvK-oK98YkNwQq0MteLqB2nTfTCYoKkBESc4gsL5K6Pe9deTMeyoGJ14yKz4Y_vMojoAYK0SRCMjxjBAvZV-ASQjWdhG87zztKeuLEbtuIomUkPmJokPCQ?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=zPh8-iZAAsu9mq4pK454Rg&_nc_oc=AdnK_TcjtGuyJS2nB6sUO2gAfl9PiONMZFG-v4VubPLXoRD1ScKCf_DUuGhvqUo81cEgmD5oMz7RiaV-11bpHTQL&ccb=10-5&oh=00_AfsrFYVHTGyM12dqZT8Dl4azDSKOD5Vol7LdYxVhRGnbUQ&oe=69C64CCB&_nc_sid=201bca",
+          "best_image_url": null,
           "best_image_idx": null,
           "matched_text": null,
           "match_strength": null,
@@ -3919,33 +3790,6 @@
           "texts_with_bbox": [],
           "text_match": null,
           "evidence_score": 0.0583
-        }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        },
-        {
-          "signal": "website",
-          "weight": -0.1,
-          "description": "Website: dead"
-        },
-        {
-          "signal": "closure_text",
-          "weight": -0.3,
-          "description": "Closure text: \"RETAIL FOR LEASE T.4\""
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (7 recent images)"
         }
       ]
     },
@@ -4552,23 +4396,6 @@
           "text_match": null,
           "evidence_score": 0.0162
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        },
-        {
-          "signal": "text",
-          "weight": 0.1,
-          "description": "Text: partial match"
-        }
       ]
     },
     "yelp": {
@@ -4949,18 +4776,6 @@
           "text_match": null,
           "evidence_score": 0.008
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        }
       ]
     },
     "website_url": "http://www.thepubsf.com/",
@@ -5158,18 +4973,6 @@
           "texts_with_bbox": [],
           "text_match": null,
           "evidence_score": 0.0522
-        }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (4 recent images)"
         }
       ]
     },
@@ -5464,8 +5267,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_iGsB3S7YIsb8L3ntGWhmKLC7iWiu6w4UBZBCkCkBpMFTy6yODmyg1ZBhkeDqEruOW5p4VhRlDmeyZIixAkX_Q4T6UoUNqjoXgJpUZunurQwMr_Ki9HP4fPvhg39YJn16ZnvIPt2JHd9-Zvjrzng?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=Rkcmzt73DE_CGaetRApuVQ&_nc_oc=AdlUQEModhAeqshu4xGSYFydoE4o_TI3DlbvJ8oRZH0oNv9HTG4282u85iAsBUwr8XXfDthgLsXsn_PXJZYgQoYK&ccb=10-5&oh=00_AfshE5fPqW_NehZYvl4o_DgtoYeuULFWXXrALDOfQvm8lA&oe=69C64C77&_nc_sid=201bca",
               "image_idx": 0,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "isartsy",
@@ -5492,8 +5295,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_iGsB3S7YIsb8L3ntGWhmKLC7iWiu6w4UBZBCkCkBpMFTy6yODmyg1ZBhkeDqEruOW5p4VhRlDmeyZIixAkX_Q4T6UoUNqjoXgJpUZunurQwMr_Ki9HP4fPvhg39YJn16ZnvIPt2JHd9-Zvjrzng?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=Rkcmzt73DE_CGaetRApuVQ&_nc_oc=AdlUQEModhAeqshu4xGSYFydoE4o_TI3DlbvJ8oRZH0oNv9HTG4282u85iAsBUwr8XXfDthgLsXsn_PXJZYgQoYK&ccb=10-5&oh=00_AfshE5fPqW_NehZYvl4o_DgtoYeuULFWXXrALDOfQvm8lA&oe=69C64C77&_nc_sid=201bca",
               "image_idx": 0,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "PENING",
@@ -5730,8 +5533,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8ToveU8oe9jrK20SazVKeTbiTI2qfHtKu0CdAMnjdeEH5q-sWKmbwIeplkmqqgmbj2BSKmE9A-yasFlD944BMjDbhfIip2nVQXengY-s1_QoPf083ZjWVN6snfV4OLIplnpv20cbvYJwwmTvgMIg?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=Rkcmzt73DE_CGaetRApuVQ&_nc_oc=Adn7FyBPxdbR8PzvEqgVCDgRkdc1mlNidpLqmHgP_QfzZHtHWQVdbZXBTTq3RJTqFIh-q9-gExyE9WRbYzDDG_6Q&ccb=10-5&oh=00_Afv67UKqfD89cnhO47Q_R63khcv4EVkUfbpX96c9wPotUQ&oe=69C638D0&_nc_sid=201bca",
               "image_idx": 1,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "1395",
@@ -5772,8 +5575,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8ToveU8oe9jrK20SazVKeTbiTI2qfHtKu0CdAMnjdeEH5q-sWKmbwIeplkmqqgmbj2BSKmE9A-yasFlD944BMjDbhfIip2nVQXengY-s1_QoPf083ZjWVN6snfV4OLIplnpv20cbvYJwwmTvgMIg?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=Rkcmzt73DE_CGaetRApuVQ&_nc_oc=Adn7FyBPxdbR8PzvEqgVCDgRkdc1mlNidpLqmHgP_QfzZHtHWQVdbZXBTTq3RJTqFIh-q9-gExyE9WRbYzDDG_6Q&ccb=10-5&oh=00_Afv67UKqfD89cnhO47Q_R63khcv4EVkUfbpX96c9wPotUQ&oe=69C638D0&_nc_sid=201bca",
               "image_idx": 1,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "in for stortups",
@@ -6010,8 +5813,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_vkIVlrAi6zmYQNR5hnB6Bqk9I9Zf5HUsRQBplU_t43CwngkqiDamvyNgo1NrET0tVy_4WJgnFEHmgOHBmVIudv8IIUriFiqorBYwqj_vez5OJqpBIVm-cOYziLDbU0rnWKNOJHPWWuN6f-9-VgA?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=Rkcmzt73DE_CGaetRApuVQ&_nc_oc=AdnyNodGMXV3L1R9liQU9krG-uvOcKcTA-MZ_2i-7Vn9JxslaRRBIQ2g5pOXB8gys--hOIl8v3elAKnLu7d3-0RM&ccb=10-5&oh=00_AftTzyDF-RVpn2ntUqwc4GxQa3daA4C5wqOOjU7oFaS1Cw&oe=69C6358F&_nc_sid=201bca",
               "image_idx": 3,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "415-681-1398海珠",
@@ -7019,18 +6822,6 @@
           "text_match": "partial",
           "evidence_score": 0.0481
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": -0.25,
-          "description": "Foursquare: mismatch (\"HD Rice Noodle\")"
-        }
       ]
     },
     "yelp": {
@@ -7118,12 +6909,12 @@
       "detail": "Website: alive | No text match on 4 recent images | Metadata: 65% open (no nudge) | Score: 0.45",
       "layers": {
         "text": {
-          "verdict": "partial_match",
+          "verdict": "no_match",
           "score": 0.0,
-          "best_image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_UAybC-28lNSZBrwXkjLH3C2AWvXY_EVs-5KKlQpGr78dYBtHT5cVZ0cvc17ipJq3lNiD26DgCXf1Lsp4ypFfspkJFDTrga3i3ogeo3w-MTenPElDy0U6wg9-E1GCAtNWtDcqd1y7pgrWy9Cjuswk?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=y1SKVMbNSO8q5AflGbb5pw&_nc_oc=AdmeSPpVMha_gfeHlqkKXraoSA3OpspeAGYuXAMrw6LLl4EjEbTMev1tQTdZuclgi2OMGGt2PeT7J0Csc040DEnf&ccb=10-5&oh=00_AfsJgoEHtsISwmxuamwbVNovmy1c9XyuEsBw0LK-gq4G2A&oe=69C63448&_nc_sid=201bca",
+          "best_image_url": null,
           "best_image_idx": null,
-          "matched_text": "over heels",
-          "match_strength": "partial",
+          "matched_text": null,
+          "match_strength": null,
           "ocr_texts": [
             "POWELL STREET",
             "PARKING"
@@ -7140,8 +6931,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_UAybC-28lNSZBrwXkjLH3C2AWvXY_EVs-5KKlQpGr78dYBtHT5cVZ0cvc17ipJq3lNiD26DgCXf1Lsp4ypFfspkJFDTrga3i3ogeo3w-MTenPElDy0U6wg9-E1GCAtNWtDcqd1y7pgrWy9Cjuswk?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=y1SKVMbNSO8q5AflGbb5pw&_nc_oc=AdmeSPpVMha_gfeHlqkKXraoSA3OpspeAGYuXAMrw6LLl4EjEbTMev1tQTdZuclgi2OMGGt2PeT7J0Csc040DEnf&ccb=10-5&oh=00_AfsJgoEHtsISwmxuamwbVNovmy1c9XyuEsBw0LK-gq4G2A&oe=69C63448&_nc_sid=201bca",
               "image_idx": 2,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "PARKING",
@@ -7168,8 +6959,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9WaOfxlSmno_5bm_vL-8iDeyKMRwYimlNZ6ay1ywyvoDJArqvNcdAN3EOzfBo4JAMC5M_61SwLxBhYLOujJpaROGp3l-OcFVHG903wg60BQL2GSXUb0A6eGgKavzO1guWdBMKPE10vDj-35GEZgw?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=y1SKVMbNSO8q5AflGbb5pw&_nc_oc=AdmRSoHIUqu4elGypr9UXcWofT-wB0AiI9_cePpZxEXJGSXyoAKN3Crd9XQ7iBk_EinLgMeVrA1CupFNlI00lWA2&ccb=10-5&oh=00_Aftj6zcf4tvj0DhlqIwsR2-XOHGQuULP5MEB4q0M7QN3DQ&oe=69C62143&_nc_sid=201bca",
               "image_idx": 3,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "PARKING",
@@ -7311,18 +7102,6 @@
           ],
           "text_match": null,
           "evidence_score": 0.0334
-        }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "text",
-          "weight": 0.1,
-          "description": "Text: partial match"
         }
       ]
     },
@@ -7690,23 +7469,6 @@
           ],
           "text_match": null,
           "evidence_score": 0.016
-        }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "website",
-          "weight": -0.1,
-          "description": "Website: dead"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (6 recent images)"
         }
       ]
     },
@@ -8250,13 +8012,6 @@
           ],
           "text_match": null,
           "evidence_score": 0.0089
-        }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
         }
       ]
     },
@@ -9160,18 +8915,6 @@
           "text_match": null,
           "evidence_score": 0.0136
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        }
       ]
     },
     "website_url": "https://chinanorthdumplingtogo.com/",
@@ -9276,7 +9019,7 @@
           "score": 0.3233,
           "best_image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9HzmaD4KRy9Wo0yLHZCaJE6VtStbWPvaCX0lrEhQqZdUwwefm1rvaujb-lSXSkAZr-ejDkBJsB_iMPvAO4XM8eGQ7BRjRuJkqknDV5AJGPyQNilyjozhKFBquKeqz_T0mf0oSbQdTBIMAFWQ301w?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=GMnRYINLioSvKbOmZwkC4w&_nc_oc=Adla7nTvdextselEkZSPgNCfp2k1HqS5_4P8GYVeXsEnGAgFzDwHTOmTqYUT3vjDjaJ-tXV0vVn5-D7rju2iQVX6&ccb=10-5&oh=00_AftI_lUE9RuFTr_U0MlDQ8UnzK_w_2Wt3AoBtCBHm1aXhg&oe=69C782DC&_nc_sid=201bca",
           "best_image_idx": 5,
-          "matched_text": "rons pit",
+          "matched_text": "rons pit stop",
           "match_strength": "partial",
           "ocr_texts": [
             "Glecneys",
@@ -9388,8 +9131,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9HzmaD4KRy9Wo0yLHZCaJE6VtStbWPvaCX0lrEhQqZdUwwefm1rvaujb-lSXSkAZr-ejDkBJsB_iMPvAO4XM8eGQ7BRjRuJkqknDV5AJGPyQNilyjozhKFBquKeqz_T0mf0oSbQdTBIMAFWQ301w?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=GMnRYINLioSvKbOmZwkC4w&_nc_oc=Adla7nTvdextselEkZSPgNCfp2k1HqS5_4P8GYVeXsEnGAgFzDwHTOmTqYUT3vjDjaJ-tXV0vVn5-D7rju2iQVX6&ccb=10-5&oh=00_AftI_lUE9RuFTr_U0MlDQ8UnzK_w_2Wt3AoBtCBHm1aXhg&oe=69C782DC&_nc_sid=201bca",
               "image_idx": 5,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "roadwayl roadside assets",
@@ -9444,8 +9187,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9HzmaD4KRy9Wo0yLHZCaJE6VtStbWPvaCX0lrEhQqZdUwwefm1rvaujb-lSXSkAZr-ejDkBJsB_iMPvAO4XM8eGQ7BRjRuJkqknDV5AJGPyQNilyjozhKFBquKeqz_T0mf0oSbQdTBIMAFWQ301w?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=GMnRYINLioSvKbOmZwkC4w&_nc_oc=Adla7nTvdextselEkZSPgNCfp2k1HqS5_4P8GYVeXsEnGAgFzDwHTOmTqYUT3vjDjaJ-tXV0vVn5-D7rju2iQVX6&ccb=10-5&oh=00_AftI_lUE9RuFTr_U0MlDQ8UnzK_w_2Wt3AoBtCBHm1aXhg&oe=69C782DC&_nc_sid=201bca",
               "image_idx": 5,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "marke",
@@ -9703,28 +9446,6 @@
           "text_match": "partial",
           "evidence_score": 0.3263
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        },
-        {
-          "signal": "website",
-          "weight": -0.1,
-          "description": "Website: dead"
-        },
-        {
-          "signal": "text",
-          "weight": 0.05,
-          "description": "Text: partial match"
-        }
       ]
     },
     "website_url": "http://jafcorrea.wix.com/ronspitstop",
@@ -9819,12 +9540,12 @@
       "detail": "Foursquare: verified | Website: alive | No text match on 5 recent images | Metadata: 68% open (no nudge) | Score: 0.75",
       "layers": {
         "text": {
-          "verdict": "partial_match",
+          "verdict": "no_match",
           "score": 0.0,
-          "best_image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_Ve1RUVRsqRXRJaIqiKFAOfz1qSnXmHo-sqoDglp-p5_suQnj9a5OkdccIfJWisfDcme3NJqmhK2a0NGDB_wXa0F66YAY_B2i0ZQI5owJrnqYEpxVaozlIavlGmZ2pVktbGLJdk2CZ455ZLOZ3yx8?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=2cxEcoh3Vrj3K9WcNJczNA&_nc_oc=Adk0BqCzf2lMSwyXtzJZq01D-62iii4SSqGJIRuJZ3-iKuCV5maxQSuFIYsm0QDR04-y902SAdFs3SIEPwt3DO5y&ccb=10-5&oh=00_Afvcc0KJqtyhD1UtK6JQVeVhVv1oaxaS3wF8cdh1xSl-Ig&oe=69C76702&_nc_sid=201bca",
+          "best_image_url": null,
           "best_image_idx": null,
-          "matched_text": "new fortune",
-          "match_strength": "partial",
+          "matched_text": null,
+          "match_strength": null,
           "ocr_texts": [
             "ICKE",
             "2022/12/02",
@@ -9883,8 +9604,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_Ve1RUVRsqRXRJaIqiKFAOfz1qSnXmHo-sqoDglp-p5_suQnj9a5OkdccIfJWisfDcme3NJqmhK2a0NGDB_wXa0F66YAY_B2i0ZQI5owJrnqYEpxVaozlIavlGmZ2pVktbGLJdk2CZ455ZLOZ3yx8?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=2cxEcoh3Vrj3K9WcNJczNA&_nc_oc=Adk0BqCzf2lMSwyXtzJZq01D-62iii4SSqGJIRuJZ3-iKuCV5maxQSuFIYsm0QDR04-y902SAdFs3SIEPwt3DO5y&ccb=10-5&oh=00_Afvcc0KJqtyhD1UtK6JQVeVhVv1oaxaS3wF8cdh1xSl-Ig&oe=69C76702&_nc_sid=201bca",
               "image_idx": 0,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "2022/12/021",
@@ -9925,8 +9646,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_Ve1RUVRsqRXRJaIqiKFAOfz1qSnXmHo-sqoDglp-p5_suQnj9a5OkdccIfJWisfDcme3NJqmhK2a0NGDB_wXa0F66YAY_B2i0ZQI5owJrnqYEpxVaozlIavlGmZ2pVktbGLJdk2CZ455ZLOZ3yx8?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=2cxEcoh3Vrj3K9WcNJczNA&_nc_oc=Adk0BqCzf2lMSwyXtzJZq01D-62iii4SSqGJIRuJZ3-iKuCV5maxQSuFIYsm0QDR04-y902SAdFs3SIEPwt3DO5y&ccb=10-5&oh=00_Afvcc0KJqtyhD1UtK6JQVeVhVv1oaxaS3wF8cdh1xSl-Ig&oe=69C76702&_nc_sid=201bca",
               "image_idx": 0,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "PRINTING",
@@ -9995,8 +9716,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-mjhBeSuId50xjx1zVwfDGnTlPPjEOfqc-GfSB9Yrfsk8fCspaqJ1Jyb1lJp2C4ytOMx_8pu0RN_g9zbr5bl2vYLx8eCE_hOs5S7fOYdf7aLf1cQqp_vx8o0SfIQps79t7KVFthWEor8suXqWfvg?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=2cxEcoh3Vrj3K9WcNJczNA&_nc_oc=Adl0Y0W4HBVsqw6zsJsCLrpU-e99VSkBZ9VmOSgSlh0xmIOWbxhA6Ofcv72uik9jz3Q8OdywR2Ktr0cmEuqWO-7H&ccb=10-5&oh=00_Afv3ZSDdQNrMlZOsxFmVWd5S0YWJKh-jsmLXhpIUkXphLg&oe=69C784D5&_nc_sid=201bca",
               "image_idx": 3,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "2022/12/02 12:53:09",
@@ -10051,8 +9772,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9DzfYXoyeXyYxO1rS13I4DQ4bFUPg7MIxBT104S33WQDuf2MAyD8mzvCSw8-Tnz_127Q3I4l59NRvMuGfAD_77VS5RzkPp_b_oB45yOzkKBd95Nu5qj1kufu79gDcimcDkPDV8LLc7vEurobXTY6U?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=2cxEcoh3Vrj3K9WcNJczNA&_nc_oc=AdlkYyylMIqCCm95CD0IlPepprXSehfpwbe8Ka5QKsjgvjuhYERxJkbXfrPjj6sIIglmHxl_Bu41Tai8r7Q2qIG7&ccb=10-5&oh=00_Aftw1YrmGhpDrW5FsQI99knkKTY58xG605yuzeDouEvDTw&oe=69C7598D&_nc_sid=201bca",
               "image_idx": 4,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "2022/12/02.12:53:14",
@@ -10348,23 +10069,6 @@
           "text_match": null,
           "evidence_score": 0.0427
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        },
-        {
-          "signal": "text",
-          "weight": 0.1,
-          "description": "Text: partial match"
-        }
       ]
     },
     "website_url": "https://newfortunetogo.com/",
@@ -10483,24 +10187,7 @@
       "best_image_idx": null,
       "best_image_url": null,
       "text_match": false,
-      "per_image": [],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        },
-        {
-          "signal": "website",
-          "weight": -0.1,
-          "description": "Website: dead"
-        }
-      ]
+      "per_image": []
     },
     "website_url": "http://macattacksf.com",
     "phone_number": "(415) 854-7700",
@@ -10590,7 +10277,7 @@
         "text": {
           "verdict": "no_match",
           "score": 0.0,
-          "best_image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8hxbO2GlKLusu8KITHp5mjoE0yHN9rUMR5M3irARHRDwKB4hQejtAcQMEIpIM_ct3OO09yhZANFUqfW8LpUjbWAMvq96CxQbX0TRQp4eRr7KNdzJXl-hnpK0PNiGW76txV5LV8V2fvvYf2DqbfRv8?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=Wh35MvlsRvo9xSJKKcM6VA&_nc_oc=Adk8WDpYkMXWQEtLhoXk4K_CHeuPrw53U-OkWkQlknPdVxBRANpkt9NeossWAjTDO6oVLlVQt2fLBvMaf99m5yOk&ccb=10-5&oh=00_AfujWNlgLoFOwzzQCvlacUmY2HUQJBdfGSkcKYFnpkv0jQ&oe=69C767CB&_nc_sid=201bca",
+          "best_image_url": null,
           "best_image_idx": null,
           "matched_text": null,
           "match_strength": null,
@@ -10818,23 +10505,6 @@
           "texts_with_bbox": [],
           "text_match": null,
           "evidence_score": 0.0601
-        }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (4 recent images)"
         }
       ]
     },
@@ -11269,18 +10939,6 @@
           "text_match": null,
           "evidence_score": 0.0183
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        }
       ]
     },
     "website_url": "https://se7enbuds.com/",
@@ -11491,8 +11149,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8CjP1WQUnAIWb3LcuORyuCvuHz_Pp94nU3GxVoV92-El2NmAMFQfTlrGfxe-nLW50MyV3XznDH_j2vWYjkLgbddUrSEqIlcpznMeoW0sWBCzp4lLM0T0RtCv7bcVO8_qzDeoQIuQh7tLc-R8_1yw?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=uc69M-tKb3MB2f6Pee6o6Q&_nc_oc=AdniSUkVc0xcU6g2yAVDCjPnpDosUw3F3Teub4q3MkBTgwJlh7qfX02gwTKccbVeDuN5CjB_LCPjs6t62F4ZmsXW&ccb=10-5&oh=00_AfsxBYsvTXh9-qqQpltCwlTo8LOvu7mj_lrnLJAYhLIjfw&oe=69C75182&_nc_sid=201bca",
               "image_idx": 0,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "431",
@@ -12081,18 +11739,6 @@
           ],
           "text_match": "partial",
           "evidence_score": 0.3067
-        }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
         }
       ]
     },
@@ -12751,23 +12397,6 @@
           "text_match": null,
           "evidence_score": 0.0489
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (4 recent images)"
-        }
       ]
     },
     "website_url": "http://www.paprikasf.com/",
@@ -13107,23 +12736,6 @@
           ],
           "text_match": null,
           "evidence_score": 0.0317
-        }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (2 recent images)"
         }
       ]
     },
@@ -13692,23 +13304,6 @@
           "text_match": null,
           "evidence_score": 0.0064
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (3 recent images)"
-        }
       ]
     },
     "website_url": "http://www.lafondasantafe.com",
@@ -14030,23 +13625,6 @@
           "text_match": null,
           "evidence_score": 0.0367
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (2 recent images)"
-        }
       ]
     },
     "ground_truth": "open",
@@ -14166,12 +13744,12 @@
       "detail": "Foursquare: verified | Website: alive | Text: partial match | Metadata: 70% open (no nudge) | Score: 0.90",
       "layers": {
         "text": {
-          "verdict": "no_match",
+          "verdict": "partial_match",
           "score": 0.35,
           "best_image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9EYHPGaKGgKS3NvLY2sVmmw8PtOyujKez99bwHosXAmxcPy4Y06RtU7FYVqrZeE1UW3FvQ1jtcXIruIFmsOUosZkH9ODA7cvYXmjUCnNhUbGR8FT5xXvpbnOsutmR-qzM688D5QZr-Tv7KTymwJA?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=WRZB2x7lehw-J-qOfinNwQ&_nc_oc=AdmrRxWKaVgu8qq9mJDn3LTyOsWJWIV6VUS4fT2sbLO5gnppitjzJjCIWn5buX5xApEnXzUo04m_j_VQnuAQLTma&ccb=10-5&oh=00_AftsMHEQdpkkdnswg-OiMvugv2EJyAHsHdoL5e9cNkB3Tw&oe=69C9697D&_nc_sid=201bca",
           "best_image_idx": 1,
-          "matched_text": null,
-          "match_strength": null,
+          "matched_text": "azalinas",
+          "match_strength": "partial",
           "ocr_texts": [
             "pavementinspection",
             "roadway/roadside assets",
@@ -14227,8 +13805,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9EYHPGaKGgKS3NvLY2sVmmw8PtOyujKez99bwHosXAmxcPy4Y06RtU7FYVqrZeE1UW3FvQ1jtcXIruIFmsOUosZkH9ODA7cvYXmjUCnNhUbGR8FT5xXvpbnOsutmR-qzM688D5QZr-Tv7KTymwJA?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=WRZB2x7lehw-J-qOfinNwQ&_nc_oc=AdmrRxWKaVgu8qq9mJDn3LTyOsWJWIV6VUS4fT2sbLO5gnppitjzJjCIWn5buX5xApEnXzUo04m_j_VQnuAQLTma&ccb=10-5&oh=00_AftsMHEQdpkkdnswg-OiMvugv2EJyAHsHdoL5e9cNkB3Tw&oe=69C9697D&_nc_sid=201bca",
               "image_idx": 1,
-              "is_match": false,
-              "match_strength": null
+              "is_match": true,
+              "match_strength": "partial"
             },
             {
               "text": "geo.com",
@@ -14283,8 +13861,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9EYHPGaKGgKS3NvLY2sVmmw8PtOyujKez99bwHosXAmxcPy4Y06RtU7FYVqrZeE1UW3FvQ1jtcXIruIFmsOUosZkH9ODA7cvYXmjUCnNhUbGR8FT5xXvpbnOsutmR-qzM688D5QZr-Tv7KTymwJA?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=WRZB2x7lehw-J-qOfinNwQ&_nc_oc=AdmrRxWKaVgu8qq9mJDn3LTyOsWJWIV6VUS4fT2sbLO5gnppitjzJjCIWn5buX5xApEnXzUo04m_j_VQnuAQLTma&ccb=10-5&oh=00_AftsMHEQdpkkdnswg-OiMvugv2EJyAHsHdoL5e9cNkB3Tw&oe=69C9697D&_nc_sid=201bca",
               "image_idx": 1,
-              "is_match": false,
-              "match_strength": null
+              "is_match": true,
+              "match_strength": "partial"
             },
             {
               "text": "imagery",
@@ -14325,8 +13903,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9EYHPGaKGgKS3NvLY2sVmmw8PtOyujKez99bwHosXAmxcPy4Y06RtU7FYVqrZeE1UW3FvQ1jtcXIruIFmsOUosZkH9ODA7cvYXmjUCnNhUbGR8FT5xXvpbnOsutmR-qzM688D5QZr-Tv7KTymwJA?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=WRZB2x7lehw-J-qOfinNwQ&_nc_oc=AdmrRxWKaVgu8qq9mJDn3LTyOsWJWIV6VUS4fT2sbLO5gnppitjzJjCIWn5buX5xApEnXzUo04m_j_VQnuAQLTma&ccb=10-5&oh=00_AftsMHEQdpkkdnswg-OiMvugv2EJyAHsHdoL5e9cNkB3Tw&oe=69C9697D&_nc_sid=201bca",
               "image_idx": 1,
-              "is_match": false,
-              "match_strength": null
+              "is_match": true,
+              "match_strength": "partial"
             },
             {
               "text": "Needa",
@@ -14521,8 +14099,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An947lQjwsUhKAEkeb6kDcYeZKMs9eIraoiyDtqC3flDFM43x5_dMt8tkQE968n3Z7zSgdqlMtSWzvbBwQGFlnljpW4bApOhPQzBGM07KbSEQr4Nsnhuio5__5BGBx-tD9xpPVjWBVhgRMlj78nb9wU?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=WRZB2x7lehw-J-qOfinNwQ&_nc_oc=AdkIZEtS4QF0-VU6l-SgRxlP-ywzemsnAGuWJQkqs2dIUe81zYNWqBQhkoNrl_YMkpOOP8AL9si_KGvu7URZfd2e&ccb=10-6&oh=00_AfufSY7mMV4ZaxX5DGNmjqCXhVsf5O0Lls_0-gpgpUwGhg&oe=69C95AA9&_nc_sid=201bca",
               "image_idx": 4,
-              "is_match": false,
-              "match_strength": null
+              "is_match": true,
+              "match_strength": "partial"
             },
             {
               "text": "-geo.com",
@@ -14577,8 +14155,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An947lQjwsUhKAEkeb6kDcYeZKMs9eIraoiyDtqC3flDFM43x5_dMt8tkQE968n3Z7zSgdqlMtSWzvbBwQGFlnljpW4bApOhPQzBGM07KbSEQr4Nsnhuio5__5BGBx-tD9xpPVjWBVhgRMlj78nb9wU?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=WRZB2x7lehw-J-qOfinNwQ&_nc_oc=AdkIZEtS4QF0-VU6l-SgRxlP-ywzemsnAGuWJQkqs2dIUe81zYNWqBQhkoNrl_YMkpOOP8AL9si_KGvu7URZfd2e&ccb=10-6&oh=00_AfufSY7mMV4ZaxX5DGNmjqCXhVsf5O0Lls_0-gpgpUwGhg&oe=69C95AA9&_nc_sid=201bca",
               "image_idx": 4,
-              "is_match": false,
-              "match_strength": null
+              "is_match": true,
+              "match_strength": "partial"
             },
             {
               "text": "imagery",
@@ -14647,8 +14225,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-A5qWWOHuIn1pyxulb_2HJpmZu-sbLfeY0Xt_Rqan9P4WgJvCAWQJuyJmSJzlPRmi_XtDx6t3k02l5yPxihD_SgldlkcRf82EUvy73UO-uMd8tHDZqqUMfzreYTb1-tIUfHReI-uwWcY1rC74aLvqk?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=WRZB2x7lehw-J-qOfinNwQ&_nc_oc=AdnnXvLKypknckY-oc2PyeUtz8s0KNKEy-Mm68jq30H9ujOah1nCwDgWGME9cdeHmLlKxE1yModS9yFDSdHhnHh2&ccb=10-5&oh=00_Afu1tBs263bTcWj2vVfJ-8U5iI7RxevvnR39wfHymacp_g&oe=69C96810&_nc_sid=201bca",
               "image_idx": 5,
-              "is_match": false,
-              "match_strength": null
+              "is_match": true,
+              "match_strength": "partial"
             },
             {
               "text": "geo.com",
@@ -14703,8 +14281,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-A5qWWOHuIn1pyxulb_2HJpmZu-sbLfeY0Xt_Rqan9P4WgJvCAWQJuyJmSJzlPRmi_XtDx6t3k02l5yPxihD_SgldlkcRf82EUvy73UO-uMd8tHDZqqUMfzreYTb1-tIUfHReI-uwWcY1rC74aLvqk?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=WRZB2x7lehw-J-qOfinNwQ&_nc_oc=AdnnXvLKypknckY-oc2PyeUtz8s0KNKEy-Mm68jq30H9ujOah1nCwDgWGME9cdeHmLlKxE1yModS9yFDSdHhnHh2&ccb=10-5&oh=00_Afu1tBs263bTcWj2vVfJ-8U5iI7RxevvnR39wfHymacp_g&oe=69C96810&_nc_sid=201bca",
               "image_idx": 5,
-              "is_match": false,
-              "match_strength": null
+              "is_match": true,
+              "match_strength": "partial"
             },
             {
               "text": "imagery",
@@ -15292,23 +14870,6 @@
           ],
           "text_match": null,
           "evidence_score": 0.0426
-        }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (8 recent images)"
         }
       ]
     },
@@ -16394,18 +15955,6 @@
           "text_match": null,
           "evidence_score": 0.0683
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        }
       ]
     },
     "ground_truth": "open",
@@ -16501,12 +16050,12 @@
       "detail": "Foursquare: verified | Website: alive | No text match on 4 recent images | Metadata: 81% open (no nudge) | Score: 0.75",
       "layers": {
         "text": {
-          "verdict": "partial_match",
+          "verdict": "no_match",
           "score": 0.0,
-          "best_image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8TITzg6LD368t-YOJdJb3rkuj_bJgRcznX2JDw1ZaLzGRkzClbGN0wl3QpPBBW9Z41jgiwx05UbIIaBzUh5MrtHWEMroQoyfNYFddZlc56i8sk2vuqK0WAZ5XbH_UrgpezU2tQkP-NAuRtlLdO3g?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=KG7scsGRHZh4URL3vSPJ_Q&_nc_oc=Adn3d1b2QbF0qXcxoJxjB26ChOjr_mWa2kv6V7sUFj90qOMyFO9Koz69EU4oIN3PO3HPS_dtzZ2h1-A5QQel94v9&ccb=10-5&oh=00_AfvIDOjV0C4PIYgV28ICn0-JA8NbAo-RNKoOuASHtKVS-g&oe=69C947AB&_nc_sid=201bca",
+          "best_image_url": null,
           "best_image_idx": null,
-          "matched_text": "red union",
-          "match_strength": "partial",
+          "matched_text": null,
+          "match_strength": null,
           "ocr_texts": [
             "SI2S8",
             "VNLHOBISED MCAEHICFE",
@@ -16585,8 +16134,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8TITzg6LD368t-YOJdJb3rkuj_bJgRcznX2JDw1ZaLzGRkzClbGN0wl3QpPBBW9Z41jgiwx05UbIIaBzUh5MrtHWEMroQoyfNYFddZlc56i8sk2vuqK0WAZ5XbH_UrgpezU2tQkP-NAuRtlLdO3g?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=KG7scsGRHZh4URL3vSPJ_Q&_nc_oc=Adn3d1b2QbF0qXcxoJxjB26ChOjr_mWa2kv6V7sUFj90qOMyFO9Koz69EU4oIN3PO3HPS_dtzZ2h1-A5QQel94v9&ccb=10-5&oh=00_AfvIDOjV0C4PIYgV28ICn0-JA8NbAo-RNKoOuASHtKVS-g&oe=69C947AB&_nc_sid=201bca",
               "image_idx": 1,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "OEREPAR",
@@ -16810,23 +16359,6 @@
           ],
           "text_match": null,
           "evidence_score": 0.0384
-        }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        },
-        {
-          "signal": "text",
-          "weight": 0.1,
-          "description": "Text: partial match"
         }
       ]
     },
@@ -17650,23 +17182,6 @@
           "text_match": null,
           "evidence_score": 0.0177
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (4 recent images)"
-        }
       ]
     },
     "ground_truth": "open",
@@ -17758,7 +17273,7 @@
         "text": {
           "verdict": "no_match",
           "score": 0.0,
-          "best_image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_BBYwMj4f8RYTGsS24VlxPBBCySICorX_2uACBcyf7cs8pr6o6Qq5LZuzvtOt3pEXT4iMQPGOEFqXwRwjnDKTxWGngZ2nB0-6LTohUDnqfSyDYmYmgJgIRehmBCpyxRqVzwbH9FyYj8Mf4s3WQHw?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=ojNinLO7Dj28uXgxLeHxjw&_nc_oc=AdncJry_CJZE60eHeQeFYf7m0arvQkcwGgNxzavTCC76Eu2Ig61GNfeQAu36cWSm1dCTMfCRKjRYJf_AuamiqxP3&ccb=10-5&oh=00_Afv4sWg-6MT1gaB5ATRLA5m8p75e4eRyY4KXdBJ9OVMmdw&oe=69C9631B&_nc_sid=201bca",
+          "best_image_url": null,
           "best_image_idx": null,
           "matched_text": null,
           "match_strength": null,
@@ -17981,23 +17496,6 @@
           "text_match": null,
           "evidence_score": 0.04
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (3 recent images)"
-        }
       ]
     },
     "ground_truth": "open",
@@ -18083,7 +17581,7 @@
         "text": {
           "verdict": "no_match",
           "score": 0.0,
-          "best_image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9K4VhlA-RX5NcbkjCyuzXgnfXd7JPKyU13BfnYT1PXo6uA0W1mVtXCYAInESYr79IC-Xx7MtsEz9y-z_Fc_RZ3PJ7auj3dzKRrx4cFHVh5keJqIdOQQ-ob26BRtnKzrVOLc3t0VRDRfcAg9D24iqs?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=fW-cM259Om0bH64Yv6J7nA&_nc_oc=AdktRyUTq8_qS46y7t3xY63StAo7ev8bn5RbwQntLFSsDc23V2OQIqxaYhK2mDfUkMlV8-qr_EYAHlW99QEHVxWB&ccb=10-6&oh=00_Afv9EMuCaQmPfAlF7GJH31D0NQTNVTiMbwRG_sjDV2-JyA&oe=69C95546&_nc_sid=201bca",
+          "best_image_url": null,
           "best_image_idx": null,
           "matched_text": null,
           "match_strength": null,
@@ -18499,23 +17997,6 @@
           "text_match": null,
           "evidence_score": 0.0059
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (2 recent images)"
-        }
       ]
     },
     "ground_truth": "open",
@@ -18611,12 +18092,12 @@
       "detail": "Foursquare: verified | Text: partial match | Metadata: 59% open (no nudge) | Score: 0.90",
       "layers": {
         "text": {
-          "verdict": "no_match",
+          "verdict": "partial_match",
           "score": 0.35,
           "best_image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_NItJ47hvRZ18CcyJeEwFiWD8Y8_BADEwJ2ydNIOlk1MXnKJvN7lywHVra3Bqq1an1gwPhb9uuBN1KTRABsYlrp-vOY5wytG4C3Ji5HFaCGJctSJbEvsq4VU27C-NP477zkPM5NQV1190oHPvwCY8?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=vIOMruSAIxiMhJeV_XlrzA&_nc_oc=Adk-EJ6KbIsaYo-nu1O2FhNOsKNN2OGfZaqUV3jzGmD9ks_CWLCWHCsQdy44HewB1RZ3b4aInsNIIyvZim7NLbCT&ccb=10-5&oh=00_AfvjJN0sZTTtEw09Ebt7cI7l_S6TM_af-5V-JbeUSRXvsw&oe=69C9584C&_nc_sid=201bca",
           "best_image_idx": 0,
-          "matched_text": null,
-          "match_strength": null,
+          "matched_text": "ragia",
+          "match_strength": "partial",
           "ocr_texts": [
             "pavementinspection",
             "roadway /roadside assets",
@@ -18664,8 +18145,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_NItJ47hvRZ18CcyJeEwFiWD8Y8_BADEwJ2ydNIOlk1MXnKJvN7lywHVra3Bqq1an1gwPhb9uuBN1KTRABsYlrp-vOY5wytG4C3Ji5HFaCGJctSJbEvsq4VU27C-NP477zkPM5NQV1190oHPvwCY8?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=vIOMruSAIxiMhJeV_XlrzA&_nc_oc=Adk-EJ6KbIsaYo-nu1O2FhNOsKNN2OGfZaqUV3jzGmD9ks_CWLCWHCsQdy44HewB1RZ3b4aInsNIIyvZim7NLbCT&ccb=10-5&oh=00_AfvjJN0sZTTtEw09Ebt7cI7l_S6TM_af-5V-JbeUSRXvsw&oe=69C9584C&_nc_sid=201bca",
               "image_idx": 0,
-              "is_match": false,
-              "match_strength": null
+              "is_match": true,
+              "match_strength": "partial"
             },
             {
               "text": "719.644.6480",
@@ -18720,8 +18201,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_NItJ47hvRZ18CcyJeEwFiWD8Y8_BADEwJ2ydNIOlk1MXnKJvN7lywHVra3Bqq1an1gwPhb9uuBN1KTRABsYlrp-vOY5wytG4C3Ji5HFaCGJctSJbEvsq4VU27C-NP477zkPM5NQV1190oHPvwCY8?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=vIOMruSAIxiMhJeV_XlrzA&_nc_oc=Adk-EJ6KbIsaYo-nu1O2FhNOsKNN2OGfZaqUV3jzGmD9ks_CWLCWHCsQdy44HewB1RZ3b4aInsNIIyvZim7NLbCT&ccb=10-5&oh=00_AfvjJN0sZTTtEw09Ebt7cI7l_S6TM_af-5V-JbeUSRXvsw&oe=69C9584C&_nc_sid=201bca",
               "image_idx": 0,
-              "is_match": false,
-              "match_strength": null
+              "is_match": true,
+              "match_strength": "partial"
             },
             {
               "text": "imagery",
@@ -18748,8 +18229,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8pbit8wJgovY3wNeV0m5nc9LndA4nj-DKxf-x5BuggxD1ltyqFpwDd0DOzs_tbt-MctlX9gGTfiqSS6TZb_ot_ipM_wr-HvKB-kvz_G1Gb_fzyk_-SszLIBDr2tACejvL5jHL3DA1kfY4t-4F47qY?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=vIOMruSAIxiMhJeV_XlrzA&_nc_oc=Admx0351eMlwqkt4v22BaN89pGWjVOSCelUwbImvvSX2J7z52MX6s39i9TM-gv3iy-oegZcfZ6K4NRfJdPdTvWzH&ccb=10-5&oh=00_Afu8NXfShl91dv6XWhQ12Xs1p8Dpm1HTnbArWbHFtJSGXQ&oe=69C95DDB&_nc_sid=201bca",
               "image_idx": 1,
-              "is_match": false,
-              "match_strength": null
+              "is_match": true,
+              "match_strength": "partial"
             },
             {
               "text": "PARKING",
@@ -18790,8 +18271,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8pbit8wJgovY3wNeV0m5nc9LndA4nj-DKxf-x5BuggxD1ltyqFpwDd0DOzs_tbt-MctlX9gGTfiqSS6TZb_ot_ipM_wr-HvKB-kvz_G1Gb_fzyk_-SszLIBDr2tACejvL5jHL3DA1kfY4t-4F47qY?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=vIOMruSAIxiMhJeV_XlrzA&_nc_oc=Admx0351eMlwqkt4v22BaN89pGWjVOSCelUwbImvvSX2J7z52MX6s39i9TM-gv3iy-oegZcfZ6K4NRfJdPdTvWzH&ccb=10-5&oh=00_Afu8NXfShl91dv6XWhQ12Xs1p8Dpm1HTnbArWbHFtJSGXQ&oe=69C95DDB&_nc_sid=201bca",
               "image_idx": 1,
-              "is_match": false,
-              "match_strength": null
+              "is_match": true,
+              "match_strength": "partial"
             },
             {
               "text": "Wine",
@@ -18832,8 +18313,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8pbit8wJgovY3wNeV0m5nc9LndA4nj-DKxf-x5BuggxD1ltyqFpwDd0DOzs_tbt-MctlX9gGTfiqSS6TZb_ot_ipM_wr-HvKB-kvz_G1Gb_fzyk_-SszLIBDr2tACejvL5jHL3DA1kfY4t-4F47qY?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=vIOMruSAIxiMhJeV_XlrzA&_nc_oc=Admx0351eMlwqkt4v22BaN89pGWjVOSCelUwbImvvSX2J7z52MX6s39i9TM-gv3iy-oegZcfZ6K4NRfJdPdTvWzH&ccb=10-5&oh=00_Afu8NXfShl91dv6XWhQ12Xs1p8Dpm1HTnbArWbHFtJSGXQ&oe=69C95DDB&_nc_sid=201bca",
               "image_idx": 1,
-              "is_match": false,
-              "match_strength": null
+              "is_match": true,
+              "match_strength": "partial"
             },
             {
               "text": "FISHERMAN'S WHARE",
@@ -18846,8 +18327,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8pbit8wJgovY3wNeV0m5nc9LndA4nj-DKxf-x5BuggxD1ltyqFpwDd0DOzs_tbt-MctlX9gGTfiqSS6TZb_ot_ipM_wr-HvKB-kvz_G1Gb_fzyk_-SszLIBDr2tACejvL5jHL3DA1kfY4t-4F47qY?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=vIOMruSAIxiMhJeV_XlrzA&_nc_oc=Admx0351eMlwqkt4v22BaN89pGWjVOSCelUwbImvvSX2J7z52MX6s39i9TM-gv3iy-oegZcfZ6K4NRfJdPdTvWzH&ccb=10-5&oh=00_Afu8NXfShl91dv6XWhQ12Xs1p8Dpm1HTnbArWbHFtJSGXQ&oe=69C95DDB&_nc_sid=201bca",
               "image_idx": 1,
-              "is_match": false,
-              "match_strength": null
+              "is_match": true,
+              "match_strength": "partial"
             },
             {
               "text": "FENTRANGE",
@@ -18860,8 +18341,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An862ITJxhBq2XwWUqWQMuBV_7GItUu-YuvB9onqAg7TPXnF1fNOTVdidC1W0rLnvIiSbVo4faU4gMixXC2BwI2vIxoGJP2YDmBNgI7e6KY58deG7K3RqPuxteyMu5dfQBSx9OgYJGmhud1HNAfzSNc?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=vIOMruSAIxiMhJeV_XlrzA&_nc_oc=AdnLDqVrbUkt8vV2aenuYWn-smCWYZQSLc3wMG7CMhV5qb1T4I_61ETrlZ69o0mpIxhl7aWwHsN5GeRZxnYYMPbO&ccb=10-5&oh=00_AfursOWp9l8eDsXitaSmAeMjid-LTTHgTh2f4RQ-8flLuA&oe=69C96033&_nc_sid=201bca",
               "image_idx": 2,
-              "is_match": false,
-              "match_strength": null
+              "is_match": true,
+              "match_strength": "partial"
             },
             {
               "text": "PALING",
@@ -19208,23 +18689,6 @@
           "text_match": null,
           "evidence_score": 0.0349
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (4 recent images)"
-        }
       ]
     },
     "ground_truth": "open",
@@ -19308,12 +18772,12 @@
       "detail": "Foursquare: verified | Website: alive | Text: partial match | Metadata: 77% open (no nudge) | Score: 0.90",
       "layers": {
         "text": {
-          "verdict": "no_match",
+          "verdict": "partial_match",
           "score": 0.35,
           "best_image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An99Knq7edKYEDLlLBQDO2t5-vxJteIDt0TDIZCKvCT8Q2vulZFoZWlJNNmn4a2o_Scbxc0vGCWpm-dgDCKIGJMIdknq-PeDNnWfc5xa5tivTGE9VAPo8hyMgsGGDOUvolvOPal6KOWmK8HQ4vF_6nw?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=HhQkuM4fjnjbs28m2gs5-Q&_nc_oc=Adkvjaeldl2pEdFrYg_lsMj0JkgAJFuXQec-vvI6DHvUV05TlKdb1IM3c4e4xdUWLEXUSzgs0Mr_uiHje_CIhJzV&ccb=10-5&oh=00_Afs906Di-vhPQMlz7fuO5ORfhenoQYIStFLCsHgHTIoAuw&oe=69C95ADF&_nc_sid=201bca",
           "best_image_idx": 0,
-          "matched_text": null,
-          "match_strength": null,
+          "matched_text": "sababa",
+          "match_strength": "partial",
           "ocr_texts": [
             "ENROLLINGFORDA",
             "Barber·Cosmetology",
@@ -19350,8 +18814,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An99Knq7edKYEDLlLBQDO2t5-vxJteIDt0TDIZCKvCT8Q2vulZFoZWlJNNmn4a2o_Scbxc0vGCWpm-dgDCKIGJMIdknq-PeDNnWfc5xa5tivTGE9VAPo8hyMgsGGDOUvolvOPal6KOWmK8HQ4vF_6nw?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=HhQkuM4fjnjbs28m2gs5-Q&_nc_oc=Adkvjaeldl2pEdFrYg_lsMj0JkgAJFuXQec-vvI6DHvUV05TlKdb1IM3c4e4xdUWLEXUSzgs0Mr_uiHje_CIhJzV&ccb=10-5&oh=00_Afs906Di-vhPQMlz7fuO5ORfhenoQYIStFLCsHgHTIoAuw&oe=69C95ADF&_nc_sid=201bca",
               "image_idx": 0,
-              "is_match": false,
-              "match_strength": null
+              "is_match": true,
+              "match_strength": "partial"
             },
             {
               "text": "ENROLING FORDA",
@@ -19392,8 +18856,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An99Knq7edKYEDLlLBQDO2t5-vxJteIDt0TDIZCKvCT8Q2vulZFoZWlJNNmn4a2o_Scbxc0vGCWpm-dgDCKIGJMIdknq-PeDNnWfc5xa5tivTGE9VAPo8hyMgsGGDOUvolvOPal6KOWmK8HQ4vF_6nw?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=HhQkuM4fjnjbs28m2gs5-Q&_nc_oc=Adkvjaeldl2pEdFrYg_lsMj0JkgAJFuXQec-vvI6DHvUV05TlKdb1IM3c4e4xdUWLEXUSzgs0Mr_uiHje_CIhJzV&ccb=10-5&oh=00_Afs906Di-vhPQMlz7fuO5ORfhenoQYIStFLCsHgHTIoAuw&oe=69C95ADF&_nc_sid=201bca",
               "image_idx": 0,
-              "is_match": false,
-              "match_strength": null
+              "is_match": true,
+              "match_strength": "partial"
             },
             {
               "text": "ENROLINGFORDA",
@@ -19420,8 +18884,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An99Knq7edKYEDLlLBQDO2t5-vxJteIDt0TDIZCKvCT8Q2vulZFoZWlJNNmn4a2o_Scbxc0vGCWpm-dgDCKIGJMIdknq-PeDNnWfc5xa5tivTGE9VAPo8hyMgsGGDOUvolvOPal6KOWmK8HQ4vF_6nw?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=HhQkuM4fjnjbs28m2gs5-Q&_nc_oc=Adkvjaeldl2pEdFrYg_lsMj0JkgAJFuXQec-vvI6DHvUV05TlKdb1IM3c4e4xdUWLEXUSzgs0Mr_uiHje_CIhJzV&ccb=10-5&oh=00_Afs906Di-vhPQMlz7fuO5ORfhenoQYIStFLCsHgHTIoAuw&oe=69C95ADF&_nc_sid=201bca",
               "image_idx": 0,
-              "is_match": false,
-              "match_strength": null
+              "is_match": true,
+              "match_strength": "partial"
             },
             {
               "text": "410",
@@ -19602,23 +19066,6 @@
           "text_match": null,
           "evidence_score": 0.005
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (2 recent images)"
-        }
       ]
     },
     "ground_truth": "open",
@@ -19716,7 +19163,7 @@
         "text": {
           "verdict": "no_match",
           "score": 0.0,
-          "best_image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-WBClI1CvQmdW344aRQjq469P1L41CtmwWgg3B8RSTbEOxRAR4eQau4djfpCoiINE7nBn9YgomuQu1o_qlXglpyPbW2eo-VEk9XNE7Jyxvb5z_3pWZAnk6nW8jrr2NY8528ujwkXusfREcH4q3Og?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=rd_c7yd_Tdk3-7i-Et-StQ&_nc_oc=AdlC3b44V3gSSh5kI7By-zF7pCyCjAGB7K-L0J9FFStAV1t8wmAsRxrMNppy5uxoPWuXuYyj2wKU8tjizbJfxWpi&ccb=10-5&oh=00_AfvxFdA_th6E7V0npFIcLVGR8XUGMQT-8iwZ8QyJhdRwRQ&oe=69C961E4&_nc_sid=201bca",
+          "best_image_url": null,
           "best_image_idx": null,
           "matched_text": null,
           "match_strength": null,
@@ -20311,28 +19758,6 @@
           "text_match": null,
           "evidence_score": 0.0376
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        },
-        {
-          "signal": "website",
-          "weight": -0.1,
-          "description": "Website: dead"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (4 recent images)"
-        }
       ]
     },
     "ground_truth": "open",
@@ -20632,28 +20057,6 @@
           "text_match": null,
           "evidence_score": 0.0453
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        },
-        {
-          "signal": "website",
-          "weight": -0.1,
-          "description": "Website: dead"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (2 recent images)"
-        }
       ]
     },
     "ground_truth": "open",
@@ -20751,7 +20154,7 @@
         "text": {
           "verdict": "no_match",
           "score": 0.0,
-          "best_image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_86StITJiWQxE7gtVcDR9fnDWoQn0e_epyUI5g8YLZSw-XbLHEtLf244X71DVab2DWvcadfcgfAmVTMIUu5fbq6CDtTq7nuPcP9m1MaxQgncJl73gn73Vbt7PezDQfMpPjPdI-b-Rg8-K3l_dzQw?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=c99ILmYHXBPPOEOW9jLDdw&_nc_oc=Adkm_aq89cWTbjlVP7iFi80J0e28V2vVl7wPIE5p5k92T7kCj5Hjv7wX9SLIzcZXiklxrogprW1M4wlAebLpDkkH&ccb=10-5&oh=00_AfvyZ2rvEGMrYXmbwGTbAEE9xHbSX-QR2Jze9uXNwjJcIw&oe=69C952D6&_nc_sid=201bca",
+          "best_image_url": null,
           "best_image_idx": null,
           "matched_text": null,
           "match_strength": null,
@@ -21529,23 +20932,6 @@
           "text_match": null,
           "evidence_score": 0.0733
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (4 recent images)"
-        }
       ]
     },
     "ground_truth": "open",
@@ -22197,23 +21583,6 @@
           "text_match": null,
           "evidence_score": 0.0465
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        },
-        {
-          "signal": "website",
-          "weight": -0.1,
-          "description": "Website: dead"
-        }
       ]
     },
     "ground_truth": "open",
@@ -22224,6 +21593,1821 @@
       "yelp_rating": 4.1,
       "yelp_review_count": 331,
       "yelp_url": "https://www.yelp.com/biz/red-window-san-francisco?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    }
+  },
+  {
+    "name": "Papalote Truck",
+    "category": "Texmex Restaurant",
+    "address": "400 Howard St, San Francisco",
+    "location": [
+      -122.396166,
+      37.788972
+    ],
+    "overture_meta": {
+      "confidence": 0.639,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.639,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 106,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 471,
+      "num_images": 6,
+      "category_closure_rate": 0.2183
+    },
+    "id": 70,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Papalote Truck\" at this location",
+      "match": {
+        "fsq_id": "5c82d213fd16bb00396126df",
+        "name": "Papalote Truck",
+        "category": "Food Truck",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "San Francisco, CA 94105, United States"
+      }
+    },
+    "current_gallery": [
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9EwnKam_I1D8b9tJLpwnx774PNpO-PWBjckLGgsNzKFcLxTNDELh-eHiDQ58xdwWakw-4qssNUBlvNsfU4YaeapeC1jmYZs02tNCtxG1eNBBJT8fdvurrSgDmOPrTXKBxvtxEZVYWHCoRt2hKerRc?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdkTGkejtTLoPGu2FUsnbhQpiij6kHJSau9BZAMe0z_FRgZAeeJg4s1wTr2LwRuUjxzGcyR9UwbncNGEs9JK5h0G&ccb=10-5&oh=00_Afu83h0lSf4b5PRn_FOurhoMhN-sNL8tto5Oz8IxGyiA4g&oe=69C96E19&_nc_sid=201bca",
+        "date": "2025-08-22",
+        "distance_m": 17,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_MAbMMRQvWT6l-v5UIUsLJDkI6QStdxT6uMl3eZlPCgFmTvcNre0J2BmUkhzzlL2p6y4FIxAZLLoRV_b5znVa6CFKkUztEdRA3NN8Mmo24b-47PwIdWF_U3pm3dSvtDtrH9ydYndXY0lQ3-1sXE6s?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnVu_Jmxtp3kWKhSHHKl1iIHoIo4_2yCh6v2WUo76atbrAhFeTyioYH2eJZOOUvMLxIKTX9fnVqgW_lm-zrt9VC&ccb=10-5&oh=00_Afv0VfjiWqhF5WxupQbfX8sdbLS1ATDXhvNOLKShsol7TQ&oe=69C940D3&_nc_sid=201bca",
+        "date": "2025-08-22",
+        "distance_m": 15,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9U2YI_rZeuA1KWPMVjMcXIjUNqIORW55ajqvFmwzc0DadiUSddQvMZs6uC44pZo4k2g9l0-F5pSkweZ-TEZFQ7BLW_56qAbwS4KMjUzZ-VWVYRssYTtkBB7DKNHN-nfdHw0Tqg6sDQxtGSVWiUog?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnA9Ru2pNo5l6muBOQK3bpK_P25gugX_eoknEdjXvoRe2gpCvkzPO3X2oD-9doFk7OAHQM7l2pbPefKXsfV2vjr&ccb=10-5&oh=00_AfuIk7yz_daEzLnFFGO8zQRf0SoqaG5LOXa4LYVUssY0Wg&oe=69C97772&_nc_sid=201bca",
+        "date": "2024-12-06",
+        "distance_m": 19,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8lJZeEvyht-BdMWVYINrP4CkBj4ZnhCuL3THLV4cXwckLeBbCOnDUWpQ-rp17Tyb9elwqoSwx81J-EseeCsGActhZRVPw0C5Pd1_TVVsUlLbShEH6OBEeRpP1lZ8jlosGZHR4Ntb_jmaF7HDWYVEg?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnL3pQpaf6KMvTekpkZ1gNappOqpquMD__LrAM1TtpYWT8kUvxp-7bCZzly8fBL_AEri0m3cSq5w0rGWeeOirh_&ccb=10-5&oh=00_Afu1ZtlEesWwet4W6JMbHVra-2X8UKOPU1ztNfpELmKC4w&oe=69C941ED&_nc_sid=201bca",
+        "date": "2024-12-06",
+        "distance_m": 19,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9UiwEd-3LAuTdRJ6cfKAUnHzgw0CKMSFQEHULw8xftQ42shlgNYyzXgXpm0etv9YlQ9wWUiZSOWObwBUA0A2ynTHhM5KvWaUF0TLZJqSqTDn74caZ88ksY8C4BvsYMATT53zJ-gcB5rEX_V93WoE4?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnwYk1ggB9jKoG9PrvSvIqwFdTSSRrhCdaFoA34Yu3XcQ2QactjRfiS43bie21MM4m_8Ab9x3351VF5KaX1xgOl&ccb=10-5&oh=00_AfsXd1DzkxG938TbZrp9IAPTBLtcSCqhIlMwHxfSGUAANA&oe=69C94F98&_nc_sid=201bca",
+        "date": "2025-08-22",
+        "distance_m": 14,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_kY4oTO1WV5VUy3Wik6p_ZGJdCpBuz77MVHwQDrWVmiheLvWPA83GI-sUXEtcBjDKUTjygcI257XITe1bDQufYUGBbIJruo6w6pWRcX2dmwYup7XH9V8gbUqAEVVDsvx51jJuJ74gmuGYGg-fC8wU?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=Adk-Std6m3XCgazEN8ld0dZB2oObkEpWYpK17vRTmDPZpwM-1Xw-d0HXK-vGRngccgND2Vk4RDb-mFpb79cHuPD5&ccb=10-5&oh=00_AfuY5_wRJCNELzOQ0fDn2Ya63w47oSm7uVpF_QSIYJlLGA&oe=69C9714D&_nc_sid=201bca",
+        "date": "2022-06-08",
+        "distance_m": 23,
+        "group": "sequential"
+      }
+    ],
+    "website_url": "http://www.papalotetruck.com/",
+    "phone_number": "+17078637444",
+    "website_check": {
+      "status": "dead",
+      "status_code": null,
+      "detail": "DNS resolution failed — domain does not exist"
+    },
+    "vision": {
+      "prediction": "open",
+      "confidence": 0.65,
+      "primary_layer": "foursquare",
+      "evidence": "Foursquare: verified | Website: dead (DNS resolution failed — domain does not exist) | No text match on 6 recent images | Metadata: 65% open (no nudge) | Score: 0.65",
+      "detail": "Foursquare: verified | Website: dead (DNS resolution failed — domain does not exist) | No text match on 6 recent images | Metadata: 65% open (no nudge) | Score: 0.65",
+      "layers": {
+        "text": {
+          "verdict": "no_match",
+          "score": 0.0,
+          "best_image_url": null,
+          "best_image_idx": null,
+          "matched_text": null,
+          "match_strength": null,
+          "ocr_texts": [
+            "ONO",
+            "X3079",
+            "Howard",
+            "SASCO",
+            "ofrick",
+            "DO NOT",
+            "X3019",
+            "rard",
+            "1OHO0",
+            "pavementinspection",
+            "roadway/roadside assets",
+            "inventories",
+            "719.644.6480",
+            "ser",
+            "cem",
+            "marker geospatial",
+            "imagery",
+            "mapping",
+            "geo.com",
+            "Oince",
+            "CHIPOTLE",
+            "xOiite",
+            "xOice",
+            "OPTAFRNT",
+            "UHCESITEPIS"
+          ],
+          "ocr_texts_detail": [
+            {
+              "text": "ONO",
+              "confidence": 0.57,
+              "bbox_pct": [
+                0.6896,
+                0.0269,
+                0.0151,
+                0.0139
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9UiwEd-3LAuTdRJ6cfKAUnHzgw0CKMSFQEHULw8xftQ42shlgNYyzXgXpm0etv9YlQ9wWUiZSOWObwBUA0A2ynTHhM5KvWaUF0TLZJqSqTDn74caZ88ksY8C4BvsYMATT53zJ-gcB5rEX_V93WoE4?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnwYk1ggB9jKoG9PrvSvIqwFdTSSRrhCdaFoA34Yu3XcQ2QactjRfiS43bie21MM4m_8Ab9x3351VF5KaX1xgOl&ccb=10-5&oh=00_AfsXd1DzkxG938TbZrp9IAPTBLtcSCqhIlMwHxfSGUAANA&oe=69C94F98&_nc_sid=201bca",
+              "image_idx": 0,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "X3079",
+              "confidence": 0.602,
+              "bbox_pct": [
+                0.6911,
+                0.0407,
+                0.0135,
+                0.013
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9UiwEd-3LAuTdRJ6cfKAUnHzgw0CKMSFQEHULw8xftQ42shlgNYyzXgXpm0etv9YlQ9wWUiZSOWObwBUA0A2ynTHhM5KvWaUF0TLZJqSqTDn74caZ88ksY8C4BvsYMATT53zJ-gcB5rEX_V93WoE4?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnwYk1ggB9jKoG9PrvSvIqwFdTSSRrhCdaFoA34Yu3XcQ2QactjRfiS43bie21MM4m_8Ab9x3351VF5KaX1xgOl&ccb=10-5&oh=00_AfsXd1DzkxG938TbZrp9IAPTBLtcSCqhIlMwHxfSGUAANA&oe=69C94F98&_nc_sid=201bca",
+              "image_idx": 0,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "Howard",
+              "confidence": 0.72,
+              "bbox_pct": [
+                0.5833,
+                0.0722,
+                0.0292,
+                0.013
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9UiwEd-3LAuTdRJ6cfKAUnHzgw0CKMSFQEHULw8xftQ42shlgNYyzXgXpm0etv9YlQ9wWUiZSOWObwBUA0A2ynTHhM5KvWaUF0TLZJqSqTDn74caZ88ksY8C4BvsYMATT53zJ-gcB5rEX_V93WoE4?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnwYk1ggB9jKoG9PrvSvIqwFdTSSRrhCdaFoA34Yu3XcQ2QactjRfiS43bie21MM4m_8Ab9x3351VF5KaX1xgOl&ccb=10-5&oh=00_AfsXd1DzkxG938TbZrp9IAPTBLtcSCqhIlMwHxfSGUAANA&oe=69C94F98&_nc_sid=201bca",
+              "image_idx": 0,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "SASCO",
+              "confidence": 0.806,
+              "bbox_pct": [
+                0.924,
+                0.2954,
+                0.0344,
+                0.0259
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9UiwEd-3LAuTdRJ6cfKAUnHzgw0CKMSFQEHULw8xftQ42shlgNYyzXgXpm0etv9YlQ9wWUiZSOWObwBUA0A2ynTHhM5KvWaUF0TLZJqSqTDn74caZ88ksY8C4BvsYMATT53zJ-gcB5rEX_V93WoE4?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnwYk1ggB9jKoG9PrvSvIqwFdTSSRrhCdaFoA34Yu3XcQ2QactjRfiS43bie21MM4m_8Ab9x3351VF5KaX1xgOl&ccb=10-5&oh=00_AfsXd1DzkxG938TbZrp9IAPTBLtcSCqhIlMwHxfSGUAANA&oe=69C94F98&_nc_sid=201bca",
+              "image_idx": 0,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "ofrick",
+              "confidence": 0.658,
+              "bbox_pct": [
+                0.1635,
+                0.3407,
+                0.0208,
+                0.0167
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9UiwEd-3LAuTdRJ6cfKAUnHzgw0CKMSFQEHULw8xftQ42shlgNYyzXgXpm0etv9YlQ9wWUiZSOWObwBUA0A2ynTHhM5KvWaUF0TLZJqSqTDn74caZ88ksY8C4BvsYMATT53zJ-gcB5rEX_V93WoE4?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnwYk1ggB9jKoG9PrvSvIqwFdTSSRrhCdaFoA34Yu3XcQ2QactjRfiS43bie21MM4m_8Ab9x3351VF5KaX1xgOl&ccb=10-5&oh=00_AfsXd1DzkxG938TbZrp9IAPTBLtcSCqhIlMwHxfSGUAANA&oe=69C94F98&_nc_sid=201bca",
+              "image_idx": 0,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "DO NOT",
+              "confidence": 0.726,
+              "bbox_pct": [
+                0.6875,
+                0.0231,
+                0.0198,
+                0.0204
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9UiwEd-3LAuTdRJ6cfKAUnHzgw0CKMSFQEHULw8xftQ42shlgNYyzXgXpm0etv9YlQ9wWUiZSOWObwBUA0A2ynTHhM5KvWaUF0TLZJqSqTDn74caZ88ksY8C4BvsYMATT53zJ-gcB5rEX_V93WoE4?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnwYk1ggB9jKoG9PrvSvIqwFdTSSRrhCdaFoA34Yu3XcQ2QactjRfiS43bie21MM4m_8Ab9x3351VF5KaX1xgOl&ccb=10-5&oh=00_AfsXd1DzkxG938TbZrp9IAPTBLtcSCqhIlMwHxfSGUAANA&oe=69C94F98&_nc_sid=201bca",
+              "image_idx": 0,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "X3019",
+              "confidence": 0.508,
+              "bbox_pct": [
+                0.6906,
+                0.0407,
+                0.0151,
+                0.0139
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9UiwEd-3LAuTdRJ6cfKAUnHzgw0CKMSFQEHULw8xftQ42shlgNYyzXgXpm0etv9YlQ9wWUiZSOWObwBUA0A2ynTHhM5KvWaUF0TLZJqSqTDn74caZ88ksY8C4BvsYMATT53zJ-gcB5rEX_V93WoE4?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnwYk1ggB9jKoG9PrvSvIqwFdTSSRrhCdaFoA34Yu3XcQ2QactjRfiS43bie21MM4m_8Ab9x3351VF5KaX1xgOl&ccb=10-5&oh=00_AfsXd1DzkxG938TbZrp9IAPTBLtcSCqhIlMwHxfSGUAANA&oe=69C94F98&_nc_sid=201bca",
+              "image_idx": 0,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "rard",
+              "confidence": 0.638,
+              "bbox_pct": [
+                0.5964,
+                0.0731,
+                0.0156,
+                0.0102
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9UiwEd-3LAuTdRJ6cfKAUnHzgw0CKMSFQEHULw8xftQ42shlgNYyzXgXpm0etv9YlQ9wWUiZSOWObwBUA0A2ynTHhM5KvWaUF0TLZJqSqTDn74caZ88ksY8C4BvsYMATT53zJ-gcB5rEX_V93WoE4?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnwYk1ggB9jKoG9PrvSvIqwFdTSSRrhCdaFoA34Yu3XcQ2QactjRfiS43bie21MM4m_8Ab9x3351VF5KaX1xgOl&ccb=10-5&oh=00_AfsXd1DzkxG938TbZrp9IAPTBLtcSCqhIlMwHxfSGUAANA&oe=69C94F98&_nc_sid=201bca",
+              "image_idx": 0,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "1OHO0",
+              "confidence": 0.619,
+              "bbox_pct": [
+                0.2323,
+                0.0843,
+                0.0156,
+                0.013
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9UiwEd-3LAuTdRJ6cfKAUnHzgw0CKMSFQEHULw8xftQ42shlgNYyzXgXpm0etv9YlQ9wWUiZSOWObwBUA0A2ynTHhM5KvWaUF0TLZJqSqTDn74caZ88ksY8C4BvsYMATT53zJ-gcB5rEX_V93WoE4?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnwYk1ggB9jKoG9PrvSvIqwFdTSSRrhCdaFoA34Yu3XcQ2QactjRfiS43bie21MM4m_8Ab9x3351VF5KaX1xgOl&ccb=10-5&oh=00_AfsXd1DzkxG938TbZrp9IAPTBLtcSCqhIlMwHxfSGUAANA&oe=69C94F98&_nc_sid=201bca",
+              "image_idx": 0,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "pavementinspection",
+              "confidence": 0.888,
+              "bbox_pct": [
+                0.6738,
+                0.7139,
+                0.1084,
+                0.0283
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_MAbMMRQvWT6l-v5UIUsLJDkI6QStdxT6uMl3eZlPCgFmTvcNre0J2BmUkhzzlL2p6y4FIxAZLLoRV_b5znVa6CFKkUztEdRA3NN8Mmo24b-47PwIdWF_U3pm3dSvtDtrH9ydYndXY0lQ3-1sXE6s?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnVu_Jmxtp3kWKhSHHKl1iIHoIo4_2yCh6v2WUo76atbrAhFeTyioYH2eJZOOUvMLxIKTX9fnVqgW_lm-zrt9VC&ccb=10-5&oh=00_Afv0VfjiWqhF5WxupQbfX8sdbLS1ATDXhvNOLKShsol7TQ&oe=69C940D3&_nc_sid=201bca",
+              "image_idx": 1,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "roadway/roadside assets",
+              "confidence": 0.849,
+              "bbox_pct": [
+                0.812,
+                0.7148,
+                0.1338,
+                0.0234
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_MAbMMRQvWT6l-v5UIUsLJDkI6QStdxT6uMl3eZlPCgFmTvcNre0J2BmUkhzzlL2p6y4FIxAZLLoRV_b5znVa6CFKkUztEdRA3NN8Mmo24b-47PwIdWF_U3pm3dSvtDtrH9ydYndXY0lQ3-1sXE6s?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnVu_Jmxtp3kWKhSHHKl1iIHoIo4_2yCh6v2WUo76atbrAhFeTyioYH2eJZOOUvMLxIKTX9fnVqgW_lm-zrt9VC&ccb=10-5&oh=00_Afv0VfjiWqhF5WxupQbfX8sdbLS1ATDXhvNOLKShsol7TQ&oe=69C940D3&_nc_sid=201bca",
+              "image_idx": 1,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "inventories",
+              "confidence": 0.899,
+              "bbox_pct": [
+                0.5859,
+                0.7266,
+                0.0596,
+                0.0215
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_MAbMMRQvWT6l-v5UIUsLJDkI6QStdxT6uMl3eZlPCgFmTvcNre0J2BmUkhzzlL2p6y4FIxAZLLoRV_b5znVa6CFKkUztEdRA3NN8Mmo24b-47PwIdWF_U3pm3dSvtDtrH9ydYndXY0lQ3-1sXE6s?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnVu_Jmxtp3kWKhSHHKl1iIHoIo4_2yCh6v2WUo76atbrAhFeTyioYH2eJZOOUvMLxIKTX9fnVqgW_lm-zrt9VC&ccb=10-5&oh=00_Afv0VfjiWqhF5WxupQbfX8sdbLS1ATDXhvNOLKShsol7TQ&oe=69C940D3&_nc_sid=201bca",
+              "image_idx": 1,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "719.644.6480",
+              "confidence": 0.885,
+              "bbox_pct": [
+                0.1523,
+                0.7344,
+                0.0747,
+                0.0273
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_MAbMMRQvWT6l-v5UIUsLJDkI6QStdxT6uMl3eZlPCgFmTvcNre0J2BmUkhzzlL2p6y4FIxAZLLoRV_b5znVa6CFKkUztEdRA3NN8Mmo24b-47PwIdWF_U3pm3dSvtDtrH9ydYndXY0lQ3-1sXE6s?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnVu_Jmxtp3kWKhSHHKl1iIHoIo4_2yCh6v2WUo76atbrAhFeTyioYH2eJZOOUvMLxIKTX9fnVqgW_lm-zrt9VC&ccb=10-5&oh=00_Afv0VfjiWqhF5WxupQbfX8sdbLS1ATDXhvNOLKShsol7TQ&oe=69C940D3&_nc_sid=201bca",
+              "image_idx": 1,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "ser",
+              "confidence": 0.543,
+              "bbox_pct": [
+                0.9785,
+                0.7256,
+                0.019,
+                0.0137
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_MAbMMRQvWT6l-v5UIUsLJDkI6QStdxT6uMl3eZlPCgFmTvcNre0J2BmUkhzzlL2p6y4FIxAZLLoRV_b5znVa6CFKkUztEdRA3NN8Mmo24b-47PwIdWF_U3pm3dSvtDtrH9ydYndXY0lQ3-1sXE6s?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnVu_Jmxtp3kWKhSHHKl1iIHoIo4_2yCh6v2WUo76atbrAhFeTyioYH2eJZOOUvMLxIKTX9fnVqgW_lm-zrt9VC&ccb=10-5&oh=00_Afv0VfjiWqhF5WxupQbfX8sdbLS1ATDXhvNOLKShsol7TQ&oe=69C940D3&_nc_sid=201bca",
+              "image_idx": 1,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "cem",
+              "confidence": 0.64,
+              "bbox_pct": [
+                0.0942,
+                0.7354,
+                0.0254,
+                0.0146
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_MAbMMRQvWT6l-v5UIUsLJDkI6QStdxT6uMl3eZlPCgFmTvcNre0J2BmUkhzzlL2p6y4FIxAZLLoRV_b5znVa6CFKkUztEdRA3NN8Mmo24b-47PwIdWF_U3pm3dSvtDtrH9ydYndXY0lQ3-1sXE6s?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnVu_Jmxtp3kWKhSHHKl1iIHoIo4_2yCh6v2WUo76atbrAhFeTyioYH2eJZOOUvMLxIKTX9fnVqgW_lm-zrt9VC&ccb=10-5&oh=00_Afv0VfjiWqhF5WxupQbfX8sdbLS1ATDXhvNOLKShsol7TQ&oe=69C940D3&_nc_sid=201bca",
+              "image_idx": 1,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "marker geospatial",
+              "confidence": 0.866,
+              "bbox_pct": [
+                0.2812,
+                0.7412,
+                0.106,
+                0.0234
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_MAbMMRQvWT6l-v5UIUsLJDkI6QStdxT6uMl3eZlPCgFmTvcNre0J2BmUkhzzlL2p6y4FIxAZLLoRV_b5znVa6CFKkUztEdRA3NN8Mmo24b-47PwIdWF_U3pm3dSvtDtrH9ydYndXY0lQ3-1sXE6s?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnVu_Jmxtp3kWKhSHHKl1iIHoIo4_2yCh6v2WUo76atbrAhFeTyioYH2eJZOOUvMLxIKTX9fnVqgW_lm-zrt9VC&ccb=10-5&oh=00_Afv0VfjiWqhF5WxupQbfX8sdbLS1ATDXhvNOLKShsol7TQ&oe=69C940D3&_nc_sid=201bca",
+              "image_idx": 1,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "imagery",
+              "confidence": 0.752,
+              "bbox_pct": [
+                0.4233,
+                0.7422,
+                0.042,
+                0.0166
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_MAbMMRQvWT6l-v5UIUsLJDkI6QStdxT6uMl3eZlPCgFmTvcNre0J2BmUkhzzlL2p6y4FIxAZLLoRV_b5znVa6CFKkUztEdRA3NN8Mmo24b-47PwIdWF_U3pm3dSvtDtrH9ydYndXY0lQ3-1sXE6s?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnVu_Jmxtp3kWKhSHHKl1iIHoIo4_2yCh6v2WUo76atbrAhFeTyioYH2eJZOOUvMLxIKTX9fnVqgW_lm-zrt9VC&ccb=10-5&oh=00_Afv0VfjiWqhF5WxupQbfX8sdbLS1ATDXhvNOLKShsol7TQ&oe=69C940D3&_nc_sid=201bca",
+              "image_idx": 1,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "mapping",
+              "confidence": 0.823,
+              "bbox_pct": [
+                0.5044,
+                0.7324,
+                0.0469,
+                0.0234
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_MAbMMRQvWT6l-v5UIUsLJDkI6QStdxT6uMl3eZlPCgFmTvcNre0J2BmUkhzzlL2p6y4FIxAZLLoRV_b5znVa6CFKkUztEdRA3NN8Mmo24b-47PwIdWF_U3pm3dSvtDtrH9ydYndXY0lQ3-1sXE6s?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnVu_Jmxtp3kWKhSHHKl1iIHoIo4_2yCh6v2WUo76atbrAhFeTyioYH2eJZOOUvMLxIKTX9fnVqgW_lm-zrt9VC&ccb=10-5&oh=00_Afv0VfjiWqhF5WxupQbfX8sdbLS1ATDXhvNOLKShsol7TQ&oe=69C940D3&_nc_sid=201bca",
+              "image_idx": 1,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "pavementinspection",
+              "confidence": 0.892,
+              "bbox_pct": [
+                0.6743,
+                0.7168,
+                0.1069,
+                0.0234
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9EwnKam_I1D8b9tJLpwnx774PNpO-PWBjckLGgsNzKFcLxTNDELh-eHiDQ58xdwWakw-4qssNUBlvNsfU4YaeapeC1jmYZs02tNCtxG1eNBBJT8fdvurrSgDmOPrTXKBxvtxEZVYWHCoRt2hKerRc?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdkTGkejtTLoPGu2FUsnbhQpiij6kHJSau9BZAMe0z_FRgZAeeJg4s1wTr2LwRuUjxzGcyR9UwbncNGEs9JK5h0G&ccb=10-5&oh=00_Afu83h0lSf4b5PRn_FOurhoMhN-sNL8tto5Oz8IxGyiA4g&oe=69C96E19&_nc_sid=201bca",
+              "image_idx": 2,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "roadway/roadside assets",
+              "confidence": 0.851,
+              "bbox_pct": [
+                0.8125,
+                0.7168,
+                0.1328,
+                0.0195
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9EwnKam_I1D8b9tJLpwnx774PNpO-PWBjckLGgsNzKFcLxTNDELh-eHiDQ58xdwWakw-4qssNUBlvNsfU4YaeapeC1jmYZs02tNCtxG1eNBBJT8fdvurrSgDmOPrTXKBxvtxEZVYWHCoRt2hKerRc?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdkTGkejtTLoPGu2FUsnbhQpiij6kHJSau9BZAMe0z_FRgZAeeJg4s1wTr2LwRuUjxzGcyR9UwbncNGEs9JK5h0G&ccb=10-5&oh=00_Afu83h0lSf4b5PRn_FOurhoMhN-sNL8tto5Oz8IxGyiA4g&oe=69C96E19&_nc_sid=201bca",
+              "image_idx": 2,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "geo.com",
+              "confidence": 0.777,
+              "bbox_pct": [
+                0.0762,
+                0.7305,
+                0.0439,
+                0.0215
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9EwnKam_I1D8b9tJLpwnx774PNpO-PWBjckLGgsNzKFcLxTNDELh-eHiDQ58xdwWakw-4qssNUBlvNsfU4YaeapeC1jmYZs02tNCtxG1eNBBJT8fdvurrSgDmOPrTXKBxvtxEZVYWHCoRt2hKerRc?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdkTGkejtTLoPGu2FUsnbhQpiij6kHJSau9BZAMe0z_FRgZAeeJg4s1wTr2LwRuUjxzGcyR9UwbncNGEs9JK5h0G&ccb=10-5&oh=00_Afu83h0lSf4b5PRn_FOurhoMhN-sNL8tto5Oz8IxGyiA4g&oe=69C96E19&_nc_sid=201bca",
+              "image_idx": 2,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "719.644.6480",
+              "confidence": 0.853,
+              "bbox_pct": [
+                0.1528,
+                0.7334,
+                0.0737,
+                0.0283
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9EwnKam_I1D8b9tJLpwnx774PNpO-PWBjckLGgsNzKFcLxTNDELh-eHiDQ58xdwWakw-4qssNUBlvNsfU4YaeapeC1jmYZs02tNCtxG1eNBBJT8fdvurrSgDmOPrTXKBxvtxEZVYWHCoRt2hKerRc?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdkTGkejtTLoPGu2FUsnbhQpiij6kHJSau9BZAMe0z_FRgZAeeJg4s1wTr2LwRuUjxzGcyR9UwbncNGEs9JK5h0G&ccb=10-5&oh=00_Afu83h0lSf4b5PRn_FOurhoMhN-sNL8tto5Oz8IxGyiA4g&oe=69C96E19&_nc_sid=201bca",
+              "image_idx": 2,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "mapping",
+              "confidence": 0.865,
+              "bbox_pct": [
+                0.5049,
+                0.7334,
+                0.0459,
+                0.0215
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9EwnKam_I1D8b9tJLpwnx774PNpO-PWBjckLGgsNzKFcLxTNDELh-eHiDQ58xdwWakw-4qssNUBlvNsfU4YaeapeC1jmYZs02tNCtxG1eNBBJT8fdvurrSgDmOPrTXKBxvtxEZVYWHCoRt2hKerRc?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdkTGkejtTLoPGu2FUsnbhQpiij6kHJSau9BZAMe0z_FRgZAeeJg4s1wTr2LwRuUjxzGcyR9UwbncNGEs9JK5h0G&ccb=10-5&oh=00_Afu83h0lSf4b5PRn_FOurhoMhN-sNL8tto5Oz8IxGyiA4g&oe=69C96E19&_nc_sid=201bca",
+              "image_idx": 2,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "inventories",
+              "confidence": 0.856,
+              "bbox_pct": [
+                0.5854,
+                0.7256,
+                0.0605,
+                0.0234
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9EwnKam_I1D8b9tJLpwnx774PNpO-PWBjckLGgsNzKFcLxTNDELh-eHiDQ58xdwWakw-4qssNUBlvNsfU4YaeapeC1jmYZs02tNCtxG1eNBBJT8fdvurrSgDmOPrTXKBxvtxEZVYWHCoRt2hKerRc?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdkTGkejtTLoPGu2FUsnbhQpiij6kHJSau9BZAMe0z_FRgZAeeJg4s1wTr2LwRuUjxzGcyR9UwbncNGEs9JK5h0G&ccb=10-5&oh=00_Afu83h0lSf4b5PRn_FOurhoMhN-sNL8tto5Oz8IxGyiA4g&oe=69C96E19&_nc_sid=201bca",
+              "image_idx": 2,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "marker geospatial",
+              "confidence": 0.818,
+              "bbox_pct": [
+                0.2812,
+                0.7412,
+                0.1064,
+                0.0234
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9EwnKam_I1D8b9tJLpwnx774PNpO-PWBjckLGgsNzKFcLxTNDELh-eHiDQ58xdwWakw-4qssNUBlvNsfU4YaeapeC1jmYZs02tNCtxG1eNBBJT8fdvurrSgDmOPrTXKBxvtxEZVYWHCoRt2hKerRc?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdkTGkejtTLoPGu2FUsnbhQpiij6kHJSau9BZAMe0z_FRgZAeeJg4s1wTr2LwRuUjxzGcyR9UwbncNGEs9JK5h0G&ccb=10-5&oh=00_Afu83h0lSf4b5PRn_FOurhoMhN-sNL8tto5Oz8IxGyiA4g&oe=69C96E19&_nc_sid=201bca",
+              "image_idx": 2,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "imagery",
+              "confidence": 0.754,
+              "bbox_pct": [
+                0.4233,
+                0.7412,
+                0.042,
+                0.0166
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9EwnKam_I1D8b9tJLpwnx774PNpO-PWBjckLGgsNzKFcLxTNDELh-eHiDQ58xdwWakw-4qssNUBlvNsfU4YaeapeC1jmYZs02tNCtxG1eNBBJT8fdvurrSgDmOPrTXKBxvtxEZVYWHCoRt2hKerRc?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdkTGkejtTLoPGu2FUsnbhQpiij6kHJSau9BZAMe0z_FRgZAeeJg4s1wTr2LwRuUjxzGcyR9UwbncNGEs9JK5h0G&ccb=10-5&oh=00_Afu83h0lSf4b5PRn_FOurhoMhN-sNL8tto5Oz8IxGyiA4g&oe=69C96E19&_nc_sid=201bca",
+              "image_idx": 2,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "Oince",
+              "confidence": 0.539,
+              "bbox_pct": [
+                0.2036,
+                0.2787,
+                0.0427,
+                0.0315
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9U2YI_rZeuA1KWPMVjMcXIjUNqIORW55ajqvFmwzc0DadiUSddQvMZs6uC44pZo4k2g9l0-F5pSkweZ-TEZFQ7BLW_56qAbwS4KMjUzZ-VWVYRssYTtkBB7DKNHN-nfdHw0Tqg6sDQxtGSVWiUog?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnA9Ru2pNo5l6muBOQK3bpK_P25gugX_eoknEdjXvoRe2gpCvkzPO3X2oD-9doFk7OAHQM7l2pbPefKXsfV2vjr&ccb=10-5&oh=00_AfuIk7yz_daEzLnFFGO8zQRf0SoqaG5LOXa4LYVUssY0Wg&oe=69C97772&_nc_sid=201bca",
+              "image_idx": 3,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "CHIPOTLE",
+              "confidence": 0.842,
+              "bbox_pct": [
+                0.6833,
+                0.2843,
+                0.188,
+                0.0935
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9U2YI_rZeuA1KWPMVjMcXIjUNqIORW55ajqvFmwzc0DadiUSddQvMZs6uC44pZo4k2g9l0-F5pSkweZ-TEZFQ7BLW_56qAbwS4KMjUzZ-VWVYRssYTtkBB7DKNHN-nfdHw0Tqg6sDQxtGSVWiUog?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnA9Ru2pNo5l6muBOQK3bpK_P25gugX_eoknEdjXvoRe2gpCvkzPO3X2oD-9doFk7OAHQM7l2pbPefKXsfV2vjr&ccb=10-5&oh=00_AfuIk7yz_daEzLnFFGO8zQRf0SoqaG5LOXa4LYVUssY0Wg&oe=69C97772&_nc_sid=201bca",
+              "image_idx": 3,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "xOiite",
+              "confidence": 0.519,
+              "bbox_pct": [
+                0.2026,
+                0.2796,
+                0.0432,
+                0.0315
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9U2YI_rZeuA1KWPMVjMcXIjUNqIORW55ajqvFmwzc0DadiUSddQvMZs6uC44pZo4k2g9l0-F5pSkweZ-TEZFQ7BLW_56qAbwS4KMjUzZ-VWVYRssYTtkBB7DKNHN-nfdHw0Tqg6sDQxtGSVWiUog?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnA9Ru2pNo5l6muBOQK3bpK_P25gugX_eoknEdjXvoRe2gpCvkzPO3X2oD-9doFk7OAHQM7l2pbPefKXsfV2vjr&ccb=10-5&oh=00_AfuIk7yz_daEzLnFFGO8zQRf0SoqaG5LOXa4LYVUssY0Wg&oe=69C97772&_nc_sid=201bca",
+              "image_idx": 3,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "CHIPOTLE",
+              "confidence": 0.799,
+              "bbox_pct": [
+                0.6458,
+                0.2713,
+                0.1943,
+                0.0843
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8lJZeEvyht-BdMWVYINrP4CkBj4ZnhCuL3THLV4cXwckLeBbCOnDUWpQ-rp17Tyb9elwqoSwx81J-EseeCsGActhZRVPw0C5Pd1_TVVsUlLbShEH6OBEeRpP1lZ8jlosGZHR4Ntb_jmaF7HDWYVEg?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnL3pQpaf6KMvTekpkZ1gNappOqpquMD__LrAM1TtpYWT8kUvxp-7bCZzly8fBL_AEri0m3cSq5w0rGWeeOirh_&ccb=10-5&oh=00_Afu1ZtlEesWwet4W6JMbHVra-2X8UKOPU1ztNfpELmKC4w&oe=69C941ED&_nc_sid=201bca",
+              "image_idx": 4,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "xOice",
+              "confidence": 0.503,
+              "bbox_pct": [
+                0.1964,
+                0.2907,
+                0.0328,
+                0.0296
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8lJZeEvyht-BdMWVYINrP4CkBj4ZnhCuL3THLV4cXwckLeBbCOnDUWpQ-rp17Tyb9elwqoSwx81J-EseeCsGActhZRVPw0C5Pd1_TVVsUlLbShEH6OBEeRpP1lZ8jlosGZHR4Ntb_jmaF7HDWYVEg?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnL3pQpaf6KMvTekpkZ1gNappOqpquMD__LrAM1TtpYWT8kUvxp-7bCZzly8fBL_AEri0m3cSq5w0rGWeeOirh_&ccb=10-5&oh=00_Afu1ZtlEesWwet4W6JMbHVra-2X8UKOPU1ztNfpELmKC4w&oe=69C941ED&_nc_sid=201bca",
+              "image_idx": 4,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "OPTAFRNT",
+              "confidence": 0.592,
+              "bbox_pct": [
+                0.3161,
+                0.4685,
+                0.026,
+                0.0185
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8lJZeEvyht-BdMWVYINrP4CkBj4ZnhCuL3THLV4cXwckLeBbCOnDUWpQ-rp17Tyb9elwqoSwx81J-EseeCsGActhZRVPw0C5Pd1_TVVsUlLbShEH6OBEeRpP1lZ8jlosGZHR4Ntb_jmaF7HDWYVEg?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnL3pQpaf6KMvTekpkZ1gNappOqpquMD__LrAM1TtpYWT8kUvxp-7bCZzly8fBL_AEri0m3cSq5w0rGWeeOirh_&ccb=10-5&oh=00_Afu1ZtlEesWwet4W6JMbHVra-2X8UKOPU1ztNfpELmKC4w&oe=69C941ED&_nc_sid=201bca",
+              "image_idx": 4,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "UHCESITEPIS",
+              "confidence": 0.551,
+              "bbox_pct": [
+                0.3141,
+                0.5111,
+                0.0318,
+                0.0213
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8lJZeEvyht-BdMWVYINrP4CkBj4ZnhCuL3THLV4cXwckLeBbCOnDUWpQ-rp17Tyb9elwqoSwx81J-EseeCsGActhZRVPw0C5Pd1_TVVsUlLbShEH6OBEeRpP1lZ8jlosGZHR4Ntb_jmaF7HDWYVEg?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnL3pQpaf6KMvTekpkZ1gNappOqpquMD__LrAM1TtpYWT8kUvxp-7bCZzly8fBL_AEri0m3cSq5w0rGWeeOirh_&ccb=10-5&oh=00_Afu1ZtlEesWwet4W6JMbHVra-2X8UKOPU1ztNfpELmKC4w&oe=69C941ED&_nc_sid=201bca",
+              "image_idx": 4,
+              "is_match": false,
+              "match_strength": null
+            }
+          ],
+          "detail": "No 'Papalote Truck' text detected",
+          "image_age_years": 0.0,
+          "image_age_factor": 1.0
+        },
+        "xgboost": {
+          "verdict": "inconclusive",
+          "score": 0.6476,
+          "confidence": 0.6476,
+          "raw_score": 0.9552,
+          "threshold": 0.69,
+          "detail": "XGBoost: 65% open (calibrated from 96% raw)",
+          "feature_contributions": {
+            "overture_confidence": 0.639,
+            "source_age_days": 88.0,
+            "has_website": 1.0,
+            "has_phone": 1.0,
+            "has_brand": 0.0,
+            "address_complete": 1.0,
+            "category_closure_rate": 0.2183,
+            "fields_populated": 7.0,
+            "missing_signals": 1.0,
+            "data_completeness": 0.497,
+            "low_confidence": 1.0
+          }
+        },
+        "google": {
+          "status": "no_api_key",
+          "detail": "Google Places API key not configured",
+          "business_status": null
+        },
+        "website": {
+          "status": "dead",
+          "url": "http://www.papalotetruck.com/",
+          "status_code": null,
+          "detail": "DNS resolution failed — domain does not exist"
+        },
+        "foursquare": {
+          "status": "verified",
+          "detail": "Foursquare confirms \"Papalote Truck\" at this location",
+          "match": {
+            "fsq_id": "5c82d213fd16bb00396126df",
+            "name": "Papalote Truck",
+            "category": "Food Truck",
+            "closed": false,
+            "website": null,
+            "phone": null,
+            "address": "San Francisco, CA 94105, United States"
+          }
+        }
+      },
+      "closure_signals": [],
+      "ocr_texts": [
+        "ONO",
+        "X3079",
+        "Howard",
+        "SASCO",
+        "ofrick",
+        "DO NOT",
+        "X3019",
+        "rard",
+        "1OHO0",
+        "pavementinspection",
+        "roadway/roadside assets",
+        "inventories",
+        "719.644.6480",
+        "ser",
+        "cem",
+        "marker geospatial",
+        "imagery",
+        "mapping",
+        "geo.com",
+        "Oince",
+        "CHIPOTLE",
+        "xOiite",
+        "xOice",
+        "OPTAFRNT",
+        "UHCESITEPIS"
+      ],
+      "images_analyzed": 6,
+      "best_image_idx": 0,
+      "best_image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9UiwEd-3LAuTdRJ6cfKAUnHzgw0CKMSFQEHULw8xftQ42shlgNYyzXgXpm0etv9YlQ9wWUiZSOWObwBUA0A2ynTHhM5KvWaUF0TLZJqSqTDn74caZ88ksY8C4BvsYMATT53zJ-gcB5rEX_V93WoE4?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnwYk1ggB9jKoG9PrvSvIqwFdTSSRrhCdaFoA34Yu3XcQ2QactjRfiS43bie21MM4m_8Ab9x3351VF5KaX1xgOl&ccb=10-5&oh=00_AfsXd1DzkxG938TbZrp9IAPTBLtcSCqhIlMwHxfSGUAANA&oe=69C94F98&_nc_sid=201bca",
+      "text_match": false,
+      "per_image": [
+        {
+          "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9UiwEd-3LAuTdRJ6cfKAUnHzgw0CKMSFQEHULw8xftQ42shlgNYyzXgXpm0etv9YlQ9wWUiZSOWObwBUA0A2ynTHhM5KvWaUF0TLZJqSqTDn74caZ88ksY8C4BvsYMATT53zJ-gcB5rEX_V93WoE4?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnwYk1ggB9jKoG9PrvSvIqwFdTSSRrhCdaFoA34Yu3XcQ2QactjRfiS43bie21MM4m_8Ab9x3351VF5KaX1xgOl&ccb=10-5&oh=00_AfsXd1DzkxG938TbZrp9IAPTBLtcSCqhIlMwHxfSGUAANA&oe=69C94F98&_nc_sid=201bca",
+          "idx": 0,
+          "texts_found": 9,
+          "texts_with_bbox": [
+            {
+              "text": "ONO",
+              "confidence": 0.57,
+              "bbox_pct": [
+                0.6896,
+                0.0269,
+                0.0151,
+                0.0139
+              ]
+            },
+            {
+              "text": "X3079",
+              "confidence": 0.602,
+              "bbox_pct": [
+                0.6911,
+                0.0407,
+                0.0135,
+                0.013
+              ]
+            },
+            {
+              "text": "Howard",
+              "confidence": 0.72,
+              "bbox_pct": [
+                0.5833,
+                0.0722,
+                0.0292,
+                0.013
+              ]
+            },
+            {
+              "text": "SASCO",
+              "confidence": 0.806,
+              "bbox_pct": [
+                0.924,
+                0.2954,
+                0.0344,
+                0.0259
+              ]
+            },
+            {
+              "text": "ofrick",
+              "confidence": 0.658,
+              "bbox_pct": [
+                0.1635,
+                0.3407,
+                0.0208,
+                0.0167
+              ]
+            },
+            {
+              "text": "DO NOT",
+              "confidence": 0.726,
+              "bbox_pct": [
+                0.6875,
+                0.0231,
+                0.0198,
+                0.0204
+              ]
+            },
+            {
+              "text": "X3019",
+              "confidence": 0.508,
+              "bbox_pct": [
+                0.6906,
+                0.0407,
+                0.0151,
+                0.0139
+              ]
+            },
+            {
+              "text": "rard",
+              "confidence": 0.638,
+              "bbox_pct": [
+                0.5964,
+                0.0731,
+                0.0156,
+                0.0102
+              ]
+            },
+            {
+              "text": "1OHO0",
+              "confidence": 0.619,
+              "bbox_pct": [
+                0.2323,
+                0.0843,
+                0.0156,
+                0.013
+              ]
+            }
+          ],
+          "text_match": null,
+          "evidence_score": 0.0767
+        },
+        {
+          "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_MAbMMRQvWT6l-v5UIUsLJDkI6QStdxT6uMl3eZlPCgFmTvcNre0J2BmUkhzzlL2p6y4FIxAZLLoRV_b5znVa6CFKkUztEdRA3NN8Mmo24b-47PwIdWF_U3pm3dSvtDtrH9ydYndXY0lQ3-1sXE6s?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnVu_Jmxtp3kWKhSHHKl1iIHoIo4_2yCh6v2WUo76atbrAhFeTyioYH2eJZOOUvMLxIKTX9fnVqgW_lm-zrt9VC&ccb=10-5&oh=00_Afv0VfjiWqhF5WxupQbfX8sdbLS1ATDXhvNOLKShsol7TQ&oe=69C940D3&_nc_sid=201bca",
+          "idx": 1,
+          "texts_found": 9,
+          "texts_with_bbox": [
+            {
+              "text": "pavementinspection",
+              "confidence": 0.888,
+              "bbox_pct": [
+                0.6738,
+                0.7139,
+                0.1084,
+                0.0283
+              ]
+            },
+            {
+              "text": "roadway/roadside assets",
+              "confidence": 0.849,
+              "bbox_pct": [
+                0.812,
+                0.7148,
+                0.1338,
+                0.0234
+              ]
+            },
+            {
+              "text": "inventories",
+              "confidence": 0.899,
+              "bbox_pct": [
+                0.5859,
+                0.7266,
+                0.0596,
+                0.0215
+              ]
+            },
+            {
+              "text": "719.644.6480",
+              "confidence": 0.885,
+              "bbox_pct": [
+                0.1523,
+                0.7344,
+                0.0747,
+                0.0273
+              ]
+            },
+            {
+              "text": "ser",
+              "confidence": 0.543,
+              "bbox_pct": [
+                0.9785,
+                0.7256,
+                0.019,
+                0.0137
+              ]
+            },
+            {
+              "text": "cem",
+              "confidence": 0.64,
+              "bbox_pct": [
+                0.0942,
+                0.7354,
+                0.0254,
+                0.0146
+              ]
+            },
+            {
+              "text": "marker geospatial",
+              "confidence": 0.866,
+              "bbox_pct": [
+                0.2812,
+                0.7412,
+                0.106,
+                0.0234
+              ]
+            },
+            {
+              "text": "imagery",
+              "confidence": 0.752,
+              "bbox_pct": [
+                0.4233,
+                0.7422,
+                0.042,
+                0.0166
+              ]
+            },
+            {
+              "text": "mapping",
+              "confidence": 0.823,
+              "bbox_pct": [
+                0.5044,
+                0.7324,
+                0.0469,
+                0.0234
+              ]
+            }
+          ],
+          "text_match": null,
+          "evidence_score": 0.075
+        },
+        {
+          "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9EwnKam_I1D8b9tJLpwnx774PNpO-PWBjckLGgsNzKFcLxTNDELh-eHiDQ58xdwWakw-4qssNUBlvNsfU4YaeapeC1jmYZs02tNCtxG1eNBBJT8fdvurrSgDmOPrTXKBxvtxEZVYWHCoRt2hKerRc?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdkTGkejtTLoPGu2FUsnbhQpiij6kHJSau9BZAMe0z_FRgZAeeJg4s1wTr2LwRuUjxzGcyR9UwbncNGEs9JK5h0G&ccb=10-5&oh=00_Afu83h0lSf4b5PRn_FOurhoMhN-sNL8tto5Oz8IxGyiA4g&oe=69C96E19&_nc_sid=201bca",
+          "idx": 2,
+          "texts_found": 8,
+          "texts_with_bbox": [
+            {
+              "text": "pavementinspection",
+              "confidence": 0.892,
+              "bbox_pct": [
+                0.6743,
+                0.7168,
+                0.1069,
+                0.0234
+              ]
+            },
+            {
+              "text": "roadway/roadside assets",
+              "confidence": 0.851,
+              "bbox_pct": [
+                0.8125,
+                0.7168,
+                0.1328,
+                0.0195
+              ]
+            },
+            {
+              "text": "geo.com",
+              "confidence": 0.777,
+              "bbox_pct": [
+                0.0762,
+                0.7305,
+                0.0439,
+                0.0215
+              ]
+            },
+            {
+              "text": "719.644.6480",
+              "confidence": 0.853,
+              "bbox_pct": [
+                0.1528,
+                0.7334,
+                0.0737,
+                0.0283
+              ]
+            },
+            {
+              "text": "mapping",
+              "confidence": 0.865,
+              "bbox_pct": [
+                0.5049,
+                0.7334,
+                0.0459,
+                0.0215
+              ]
+            },
+            {
+              "text": "inventories",
+              "confidence": 0.856,
+              "bbox_pct": [
+                0.5854,
+                0.7256,
+                0.0605,
+                0.0234
+              ]
+            },
+            {
+              "text": "marker geospatial",
+              "confidence": 0.818,
+              "bbox_pct": [
+                0.2812,
+                0.7412,
+                0.1064,
+                0.0234
+              ]
+            },
+            {
+              "text": "imagery",
+              "confidence": 0.754,
+              "bbox_pct": [
+                0.4233,
+                0.7412,
+                0.042,
+                0.0166
+              ]
+            }
+          ],
+          "text_match": null,
+          "evidence_score": 0.0717
+        },
+        {
+          "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9U2YI_rZeuA1KWPMVjMcXIjUNqIORW55ajqvFmwzc0DadiUSddQvMZs6uC44pZo4k2g9l0-F5pSkweZ-TEZFQ7BLW_56qAbwS4KMjUzZ-VWVYRssYTtkBB7DKNHN-nfdHw0Tqg6sDQxtGSVWiUog?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnA9Ru2pNo5l6muBOQK3bpK_P25gugX_eoknEdjXvoRe2gpCvkzPO3X2oD-9doFk7OAHQM7l2pbPefKXsfV2vjr&ccb=10-5&oh=00_AfuIk7yz_daEzLnFFGO8zQRf0SoqaG5LOXa4LYVUssY0Wg&oe=69C97772&_nc_sid=201bca",
+          "idx": 3,
+          "texts_found": 3,
+          "texts_with_bbox": [
+            {
+              "text": "Oince",
+              "confidence": 0.539,
+              "bbox_pct": [
+                0.2036,
+                0.2787,
+                0.0427,
+                0.0315
+              ]
+            },
+            {
+              "text": "CHIPOTLE",
+              "confidence": 0.842,
+              "bbox_pct": [
+                0.6833,
+                0.2843,
+                0.188,
+                0.0935
+              ]
+            },
+            {
+              "text": "xOiite",
+              "confidence": 0.519,
+              "bbox_pct": [
+                0.2026,
+                0.2796,
+                0.0432,
+                0.0315
+              ]
+            }
+          ],
+          "text_match": null,
+          "evidence_score": 0.0683
+        },
+        {
+          "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8lJZeEvyht-BdMWVYINrP4CkBj4ZnhCuL3THLV4cXwckLeBbCOnDUWpQ-rp17Tyb9elwqoSwx81J-EseeCsGActhZRVPw0C5Pd1_TVVsUlLbShEH6OBEeRpP1lZ8jlosGZHR4Ntb_jmaF7HDWYVEg?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=AdnL3pQpaf6KMvTekpkZ1gNappOqpquMD__LrAM1TtpYWT8kUvxp-7bCZzly8fBL_AEri0m3cSq5w0rGWeeOirh_&ccb=10-5&oh=00_Afu1ZtlEesWwet4W6JMbHVra-2X8UKOPU1ztNfpELmKC4w&oe=69C941ED&_nc_sid=201bca",
+          "idx": 4,
+          "texts_found": 4,
+          "texts_with_bbox": [
+            {
+              "text": "CHIPOTLE",
+              "confidence": 0.799,
+              "bbox_pct": [
+                0.6458,
+                0.2713,
+                0.1943,
+                0.0843
+              ]
+            },
+            {
+              "text": "xOice",
+              "confidence": 0.503,
+              "bbox_pct": [
+                0.1964,
+                0.2907,
+                0.0328,
+                0.0296
+              ]
+            },
+            {
+              "text": "OPTAFRNT",
+              "confidence": 0.592,
+              "bbox_pct": [
+                0.3161,
+                0.4685,
+                0.026,
+                0.0185
+              ]
+            },
+            {
+              "text": "UHCESITEPIS",
+              "confidence": 0.551,
+              "bbox_pct": [
+                0.3141,
+                0.5111,
+                0.0318,
+                0.0213
+              ]
+            }
+          ],
+          "text_match": null,
+          "evidence_score": 0.0683
+        },
+        {
+          "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_kY4oTO1WV5VUy3Wik6p_ZGJdCpBuz77MVHwQDrWVmiheLvWPA83GI-sUXEtcBjDKUTjygcI257XITe1bDQufYUGBbIJruo6w6pWRcX2dmwYup7XH9V8gbUqAEVVDsvx51jJuJ74gmuGYGg-fC8wU?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=Cedjfum2D51ljI3TogwJWA&_nc_oc=Adk-Std6m3XCgazEN8ld0dZB2oObkEpWYpK17vRTmDPZpwM-1Xw-d0HXK-vGRngccgND2Vk4RDb-mFpb79cHuPD5&ccb=10-5&oh=00_AfuY5_wRJCNELzOQ0fDn2Ya63w47oSm7uVpF_QSIYJlLGA&oe=69C9714D&_nc_sid=201bca",
+          "idx": 5,
+          "texts_found": 0,
+          "texts_with_bbox": [],
+          "text_match": null,
+          "evidence_score": 0.0404
+        }
+      ]
+    },
+    "ground_truth": "open",
+    "yelp": {
+      "yelp_name": "Papalote Truck",
+      "is_closed": false,
+      "match_score": 1.0,
+      "yelp_rating": 3.8,
+      "yelp_review_count": 5,
+      "yelp_url": "https://www.yelp.com/biz/papalote-truck-san-francisco?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    }
+  },
+  {
+    "name": "San Bruno Market",
+    "category": "Specialty Grocery Store",
+    "address": "2480 San Bruno Ave, San Francisco",
+    "location": [
+      -122.4049421,
+      37.730473
+    ],
+    "overture_meta": {
+      "confidence": 0.948,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.948,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 68,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 3437,
+      "num_images": 4,
+      "category_closure_rate": 0.2183
+    },
+    "id": 71,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"San Bruno Supermarket\" at this location",
+      "match": {
+        "fsq_id": "4c379fc5ae2da593ac3affc5",
+        "name": "San Bruno Supermarket",
+        "category": "Grocery Store",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2480 San Bruno Ave (at Felton St), San Francisco, CA 94134, United States"
+      }
+    },
+    "current_gallery": [
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An84wMDPRrID99g6YubMKmewHoLSN-VmREmVIljy0O0dfQhudVIh5Pxq4T1SwXNyrX64Ihv6fdkDUeYNhEzg1bt5Lm4GR8fdh1SgXj30gM-vpZ4iY8g2ir9bXgiL1srqDUGgd8xth-7pkIH3kortqQ?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=PRCXk9bsp0popJpX32b3Rg&_nc_oc=Adkv4-pkVed_VVozxFylb-B83N4h-ZIOSDDS_Lu8wN08u4mmOZGuYIon_u8rG4BGO1x4ZvpLS2NQv2fnL0by-ilF&ccb=10-5&oh=00_AfuMAZGBxYvQUWXSe034rjqUDhghLxPwt5wb9lFHfgv9Cg&oe=69C9492A&_nc_sid=201bca",
+        "date": "2016-09-20",
+        "distance_m": 13,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9hz7fcWuOodlMkZp6PcKiVDLDQpj1QGjTJXOB4BDcGZ2EnwjG7lbnPv2VaoFtU-JEYwU7KZX_C-x94bSjDuiQozD7OOlFxlUQ47xai6Fzi7oOFDYbJOSJwUoyIwwAxkLFD2SsCeoCMRv3Qy6HDoA?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=PRCXk9bsp0popJpX32b3Rg&_nc_oc=AdkEmlUfOmmY3A1XiC2fcfiP073IznTtvbRTTQsmbPUcsTWkeezmX5hKHDllmNXP_dgS_kDk2_PGBzaeRwfef6Ip&ccb=10-5&oh=00_AftlyKz0TgB54-AsVezfKoOvnp-pNdXASM3nRFKtF1djTg&oe=69C97740&_nc_sid=201bca",
+        "date": "2016-09-20",
+        "distance_m": 16,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8mdzwyRcIXtUdCQIEHrcZO4Od94_neO2hk5cUH60SeAZ5mVsTY10dMB6Du6BFdJfOOAy1EFScHSQDJ8t7t2GWdyCrlPU-B4NMeSvQHp78_vNmosxbP3X2oZ6VpVvyE9HbCnL1-qkv73R-36gtXCg?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=PRCXk9bsp0popJpX32b3Rg&_nc_oc=AdkIA2p54KTliEmZfazfvuDAWTd8E8Rm8emCU4y9GFdKoVsd_Pe1_X9U5ssZDg4vSA3hxhr8Afat2GUuwxuZGwJA&ccb=10-5&oh=00_Aft3er-6nudlCbVrAbSn50KZP3tD7XqNUxWA1-6mPC4ENQ&oe=69C97404&_nc_sid=201bca",
+        "date": "2016-10-10",
+        "distance_m": 31,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-hO53AnS_IFLjfHhDVhHYUGXVuWWsJESfVVejxhJyNQUDLW9keBIa0CVl1U2Cd0mymLeZgOV01PSP5mVTXmiAXeMSqT8Zj9Ux9WEGqJukMcj-tV4TOrxiS9TviZr8mhfqDX8Ww228ZFX_giOkZxg?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=PRCXk9bsp0popJpX32b3Rg&_nc_oc=Adm7jcmj13b7c761FXH-eUtmxWdmQ4ipZ6Yv4aUJOPFzSvzSE525M3uW_Fmge9KjBTwJmzLzKAq_lqCBmume0jWZ&ccb=10-5&oh=00_AfsKXbaeZjJTca_nYCPds0zIyVNUS5Y-VMLcg-QWFrG86w&oe=69C9754F&_nc_sid=201bca",
+        "date": "2016-10-10",
+        "distance_m": 26,
+        "group": "sequential"
+      }
+    ],
+    "website_url": "http://www.sanbrunomarket.com/",
+    "phone_number": "+14154685788",
+    "website_check": {
+      "status": "alive",
+      "status_code": 200,
+      "detail": "Website responding (HTTP 200)"
+    },
+    "vision": {
+      "prediction": "open",
+      "confidence": 0.8,
+      "primary_layer": "foursquare",
+      "evidence": "Foursquare: verified | Website: alive | Text: partial match (9yr old) | Metadata: 70% open (no nudge) | Score: 0.80",
+      "detail": "Foursquare: verified | Website: alive | Text: partial match (9yr old) | Metadata: 70% open (no nudge) | Score: 0.80",
+      "layers": {
+        "text": {
+          "verdict": "partial_match",
+          "score": 0.0468,
+          "best_image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An84wMDPRrID99g6YubMKmewHoLSN-VmREmVIljy0O0dfQhudVIh5Pxq4T1SwXNyrX64Ihv6fdkDUeYNhEzg1bt5Lm4GR8fdh1SgXj30gM-vpZ4iY8g2ir9bXgiL1srqDUGgd8xth-7pkIH3kortqQ?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=PRCXk9bsp0popJpX32b3Rg&_nc_oc=Adkv4-pkVed_VVozxFylb-B83N4h-ZIOSDDS_Lu8wN08u4mmOZGuYIon_u8rG4BGO1x4ZvpLS2NQv2fnL0by-ilF&ccb=10-5&oh=00_AfuMAZGBxYvQUWXSe034rjqUDhghLxPwt5wb9lFHfgv9Cg&oe=69C9492A&_nc_sid=201bca",
+          "best_image_idx": 0,
+          "matched_text": "san bruno market",
+          "match_strength": "partial",
+          "ocr_texts": [
+            "SIARLEAINNGCENIER",
+            "STAR LEARNING CENTE",
+            "415-468",
+            "698",
+            "WAILABLEFRESH",
+            "EVERYDAY",
+            "SHRIEANINGCENTER",
+            "STARLEARNINGCENTE",
+            "HUS",
+            "NG CENTER",
+            "STARLE",
+            "STAR LEAL",
+            "NGCENTER",
+            "45-48-183",
+            "NG CENTE?",
+            "STAR LEAL NG CENTER",
+            "SIAR LEARNING",
+            "STARLEARNNGCEN",
+            "2488",
+            "STAR LEARNING",
+            "SIARLEIINNG"
+          ],
+          "ocr_texts_detail": [
+            {
+              "text": "SIARLEAINNGCENIER",
+              "confidence": 0.76,
+              "bbox_pct": [
+                0.0776,
+                0.3898,
+                0.0484,
+                0.0389
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An84wMDPRrID99g6YubMKmewHoLSN-VmREmVIljy0O0dfQhudVIh5Pxq4T1SwXNyrX64Ihv6fdkDUeYNhEzg1bt5Lm4GR8fdh1SgXj30gM-vpZ4iY8g2ir9bXgiL1srqDUGgd8xth-7pkIH3kortqQ?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=PRCXk9bsp0popJpX32b3Rg&_nc_oc=Adkv4-pkVed_VVozxFylb-B83N4h-ZIOSDDS_Lu8wN08u4mmOZGuYIon_u8rG4BGO1x4ZvpLS2NQv2fnL0by-ilF&ccb=10-5&oh=00_AfuMAZGBxYvQUWXSe034rjqUDhghLxPwt5wb9lFHfgv9Cg&oe=69C9492A&_nc_sid=201bca",
+              "image_idx": 0,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "STAR LEARNING CENTE",
+              "confidence": 0.874,
+              "bbox_pct": [
+                0.0839,
+                0.4481,
+                0.0938,
+                0.0528
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An84wMDPRrID99g6YubMKmewHoLSN-VmREmVIljy0O0dfQhudVIh5Pxq4T1SwXNyrX64Ihv6fdkDUeYNhEzg1bt5Lm4GR8fdh1SgXj30gM-vpZ4iY8g2ir9bXgiL1srqDUGgd8xth-7pkIH3kortqQ?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=PRCXk9bsp0popJpX32b3Rg&_nc_oc=Adkv4-pkVed_VVozxFylb-B83N4h-ZIOSDDS_Lu8wN08u4mmOZGuYIon_u8rG4BGO1x4ZvpLS2NQv2fnL0by-ilF&ccb=10-5&oh=00_AfuMAZGBxYvQUWXSe034rjqUDhghLxPwt5wb9lFHfgv9Cg&oe=69C9492A&_nc_sid=201bca",
+              "image_idx": 0,
+              "is_match": true,
+              "match_strength": "partial"
+            },
+            {
+              "text": "415-468",
+              "confidence": 0.812,
+              "bbox_pct": [
+                0.2156,
+                0.5083,
+                0.0276,
+                0.0222
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An84wMDPRrID99g6YubMKmewHoLSN-VmREmVIljy0O0dfQhudVIh5Pxq4T1SwXNyrX64Ihv6fdkDUeYNhEzg1bt5Lm4GR8fdh1SgXj30gM-vpZ4iY8g2ir9bXgiL1srqDUGgd8xth-7pkIH3kortqQ?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=PRCXk9bsp0popJpX32b3Rg&_nc_oc=Adkv4-pkVed_VVozxFylb-B83N4h-ZIOSDDS_Lu8wN08u4mmOZGuYIon_u8rG4BGO1x4ZvpLS2NQv2fnL0by-ilF&ccb=10-5&oh=00_AfuMAZGBxYvQUWXSe034rjqUDhghLxPwt5wb9lFHfgv9Cg&oe=69C9492A&_nc_sid=201bca",
+              "image_idx": 0,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "698",
+              "confidence": 0.742,
+              "bbox_pct": [
+                0.2448,
+                0.5083,
+                0.0146,
+                0.0185
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An84wMDPRrID99g6YubMKmewHoLSN-VmREmVIljy0O0dfQhudVIh5Pxq4T1SwXNyrX64Ihv6fdkDUeYNhEzg1bt5Lm4GR8fdh1SgXj30gM-vpZ4iY8g2ir9bXgiL1srqDUGgd8xth-7pkIH3kortqQ?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=PRCXk9bsp0popJpX32b3Rg&_nc_oc=Adkv4-pkVed_VVozxFylb-B83N4h-ZIOSDDS_Lu8wN08u4mmOZGuYIon_u8rG4BGO1x4ZvpLS2NQv2fnL0by-ilF&ccb=10-5&oh=00_AfuMAZGBxYvQUWXSe034rjqUDhghLxPwt5wb9lFHfgv9Cg&oe=69C9492A&_nc_sid=201bca",
+              "image_idx": 0,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "WAILABLEFRESH",
+              "confidence": 0.796,
+              "bbox_pct": [
+                0.3984,
+                0.5204,
+                0.0437,
+                0.0213
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An84wMDPRrID99g6YubMKmewHoLSN-VmREmVIljy0O0dfQhudVIh5Pxq4T1SwXNyrX64Ihv6fdkDUeYNhEzg1bt5Lm4GR8fdh1SgXj30gM-vpZ4iY8g2ir9bXgiL1srqDUGgd8xth-7pkIH3kortqQ?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=PRCXk9bsp0popJpX32b3Rg&_nc_oc=Adkv4-pkVed_VVozxFylb-B83N4h-ZIOSDDS_Lu8wN08u4mmOZGuYIon_u8rG4BGO1x4ZvpLS2NQv2fnL0by-ilF&ccb=10-5&oh=00_AfuMAZGBxYvQUWXSe034rjqUDhghLxPwt5wb9lFHfgv9Cg&oe=69C9492A&_nc_sid=201bca",
+              "image_idx": 0,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "EVERYDAY",
+              "confidence": 0.856,
+              "bbox_pct": [
+                0.3964,
+                0.537,
+                0.0432,
+                0.0222
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An84wMDPRrID99g6YubMKmewHoLSN-VmREmVIljy0O0dfQhudVIh5Pxq4T1SwXNyrX64Ihv6fdkDUeYNhEzg1bt5Lm4GR8fdh1SgXj30gM-vpZ4iY8g2ir9bXgiL1srqDUGgd8xth-7pkIH3kortqQ?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=PRCXk9bsp0popJpX32b3Rg&_nc_oc=Adkv4-pkVed_VVozxFylb-B83N4h-ZIOSDDS_Lu8wN08u4mmOZGuYIon_u8rG4BGO1x4ZvpLS2NQv2fnL0by-ilF&ccb=10-5&oh=00_AfuMAZGBxYvQUWXSe034rjqUDhghLxPwt5wb9lFHfgv9Cg&oe=69C9492A&_nc_sid=201bca",
+              "image_idx": 0,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "SHRIEANINGCENTER",
+              "confidence": 0.732,
+              "bbox_pct": [
+                0.0776,
+                0.3889,
+                0.049,
+                0.0407
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An84wMDPRrID99g6YubMKmewHoLSN-VmREmVIljy0O0dfQhudVIh5Pxq4T1SwXNyrX64Ihv6fdkDUeYNhEzg1bt5Lm4GR8fdh1SgXj30gM-vpZ4iY8g2ir9bXgiL1srqDUGgd8xth-7pkIH3kortqQ?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=PRCXk9bsp0popJpX32b3Rg&_nc_oc=Adkv4-pkVed_VVozxFylb-B83N4h-ZIOSDDS_Lu8wN08u4mmOZGuYIon_u8rG4BGO1x4ZvpLS2NQv2fnL0by-ilF&ccb=10-5&oh=00_AfuMAZGBxYvQUWXSe034rjqUDhghLxPwt5wb9lFHfgv9Cg&oe=69C9492A&_nc_sid=201bca",
+              "image_idx": 0,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "STARLEARNINGCENTE",
+              "confidence": 0.862,
+              "bbox_pct": [
+                0.0745,
+                0.4481,
+                0.1042,
+                0.0565
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An84wMDPRrID99g6YubMKmewHoLSN-VmREmVIljy0O0dfQhudVIh5Pxq4T1SwXNyrX64Ihv6fdkDUeYNhEzg1bt5Lm4GR8fdh1SgXj30gM-vpZ4iY8g2ir9bXgiL1srqDUGgd8xth-7pkIH3kortqQ?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=PRCXk9bsp0popJpX32b3Rg&_nc_oc=Adkv4-pkVed_VVozxFylb-B83N4h-ZIOSDDS_Lu8wN08u4mmOZGuYIon_u8rG4BGO1x4ZvpLS2NQv2fnL0by-ilF&ccb=10-5&oh=00_AfuMAZGBxYvQUWXSe034rjqUDhghLxPwt5wb9lFHfgv9Cg&oe=69C9492A&_nc_sid=201bca",
+              "image_idx": 0,
+              "is_match": true,
+              "match_strength": "partial"
+            },
+            {
+              "text": "HUS",
+              "confidence": 0.686,
+              "bbox_pct": [
+                0.2214,
+                0.6824,
+                0.0198,
+                0.0194
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9hz7fcWuOodlMkZp6PcKiVDLDQpj1QGjTJXOB4BDcGZ2EnwjG7lbnPv2VaoFtU-JEYwU7KZX_C-x94bSjDuiQozD7OOlFxlUQ47xai6Fzi7oOFDYbJOSJwUoyIwwAxkLFD2SsCeoCMRv3Qy6HDoA?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=PRCXk9bsp0popJpX32b3Rg&_nc_oc=AdkEmlUfOmmY3A1XiC2fcfiP073IznTtvbRTTQsmbPUcsTWkeezmX5hKHDllmNXP_dgS_kDk2_PGBzaeRwfef6Ip&ccb=10-5&oh=00_AftlyKz0TgB54-AsVezfKoOvnp-pNdXASM3nRFKtF1djTg&oe=69C97740&_nc_sid=201bca",
+              "image_idx": 1,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "NG CENTER",
+              "confidence": 0.827,
+              "bbox_pct": [
+                0.1953,
+                0.263,
+                0.0391,
+                0.0287
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-hO53AnS_IFLjfHhDVhHYUGXVuWWsJESfVVejxhJyNQUDLW9keBIa0CVl1U2Cd0mymLeZgOV01PSP5mVTXmiAXeMSqT8Zj9Ux9WEGqJukMcj-tV4TOrxiS9TviZr8mhfqDX8Ww228ZFX_giOkZxg?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=PRCXk9bsp0popJpX32b3Rg&_nc_oc=Adm7jcmj13b7c761FXH-eUtmxWdmQ4ipZ6Yv4aUJOPFzSvzSE525M3uW_Fmge9KjBTwJmzLzKAq_lqCBmume0jWZ&ccb=10-5&oh=00_AfsKXbaeZjJTca_nYCPds0zIyVNUS5Y-VMLcg-QWFrG86w&oe=69C9754F&_nc_sid=201bca",
+              "image_idx": 2,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "STARLE",
+              "confidence": 0.765,
+              "bbox_pct": [
+                0.1578,
+                0.2759,
+                0.0276,
+                0.025
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-hO53AnS_IFLjfHhDVhHYUGXVuWWsJESfVVejxhJyNQUDLW9keBIa0CVl1U2Cd0mymLeZgOV01PSP5mVTXmiAXeMSqT8Zj9Ux9WEGqJukMcj-tV4TOrxiS9TviZr8mhfqDX8Ww228ZFX_giOkZxg?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=PRCXk9bsp0popJpX32b3Rg&_nc_oc=Adm7jcmj13b7c761FXH-eUtmxWdmQ4ipZ6Yv4aUJOPFzSvzSE525M3uW_Fmge9KjBTwJmzLzKAq_lqCBmume0jWZ&ccb=10-5&oh=00_AfsKXbaeZjJTca_nYCPds0zIyVNUS5Y-VMLcg-QWFrG86w&oe=69C9754F&_nc_sid=201bca",
+              "image_idx": 2,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "STAR LEAL",
+              "confidence": 0.662,
+              "bbox_pct": [
+                0.112,
+                0.3333,
+                0.0885,
+                0.0676
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-hO53AnS_IFLjfHhDVhHYUGXVuWWsJESfVVejxhJyNQUDLW9keBIa0CVl1U2Cd0mymLeZgOV01PSP5mVTXmiAXeMSqT8Zj9Ux9WEGqJukMcj-tV4TOrxiS9TviZr8mhfqDX8Ww228ZFX_giOkZxg?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=PRCXk9bsp0popJpX32b3Rg&_nc_oc=Adm7jcmj13b7c761FXH-eUtmxWdmQ4ipZ6Yv4aUJOPFzSvzSE525M3uW_Fmge9KjBTwJmzLzKAq_lqCBmume0jWZ&ccb=10-5&oh=00_AfsKXbaeZjJTca_nYCPds0zIyVNUS5Y-VMLcg-QWFrG86w&oe=69C9754F&_nc_sid=201bca",
+              "image_idx": 2,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "NGCENTER",
+              "confidence": 0.831,
+              "bbox_pct": [
+                0.1891,
+                0.363,
+                0.0568,
+                0.0519
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-hO53AnS_IFLjfHhDVhHYUGXVuWWsJESfVVejxhJyNQUDLW9keBIa0CVl1U2Cd0mymLeZgOV01PSP5mVTXmiAXeMSqT8Zj9Ux9WEGqJukMcj-tV4TOrxiS9TviZr8mhfqDX8Ww228ZFX_giOkZxg?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=PRCXk9bsp0popJpX32b3Rg&_nc_oc=Adm7jcmj13b7c761FXH-eUtmxWdmQ4ipZ6Yv4aUJOPFzSvzSE525M3uW_Fmge9KjBTwJmzLzKAq_lqCBmume0jWZ&ccb=10-5&oh=00_AfsKXbaeZjJTca_nYCPds0zIyVNUS5Y-VMLcg-QWFrG86w&oe=69C9754F&_nc_sid=201bca",
+              "image_idx": 2,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "45-48-183",
+              "confidence": 0.691,
+              "bbox_pct": [
+                0.2615,
+                0.4491,
+                0.0245,
+                0.0204
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-hO53AnS_IFLjfHhDVhHYUGXVuWWsJESfVVejxhJyNQUDLW9keBIa0CVl1U2Cd0mymLeZgOV01PSP5mVTXmiAXeMSqT8Zj9Ux9WEGqJukMcj-tV4TOrxiS9TviZr8mhfqDX8Ww228ZFX_giOkZxg?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=PRCXk9bsp0popJpX32b3Rg&_nc_oc=Adm7jcmj13b7c761FXH-eUtmxWdmQ4ipZ6Yv4aUJOPFzSvzSE525M3uW_Fmge9KjBTwJmzLzKAq_lqCBmume0jWZ&ccb=10-5&oh=00_AfsKXbaeZjJTca_nYCPds0zIyVNUS5Y-VMLcg-QWFrG86w&oe=69C9754F&_nc_sid=201bca",
+              "image_idx": 2,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "NG CENTE?",
+              "confidence": 0.7,
+              "bbox_pct": [
+                0.1964,
+                0.262,
+                0.0385,
+                0.0278
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-hO53AnS_IFLjfHhDVhHYUGXVuWWsJESfVVejxhJyNQUDLW9keBIa0CVl1U2Cd0mymLeZgOV01PSP5mVTXmiAXeMSqT8Zj9Ux9WEGqJukMcj-tV4TOrxiS9TviZr8mhfqDX8Ww228ZFX_giOkZxg?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=PRCXk9bsp0popJpX32b3Rg&_nc_oc=Adm7jcmj13b7c761FXH-eUtmxWdmQ4ipZ6Yv4aUJOPFzSvzSE525M3uW_Fmge9KjBTwJmzLzKAq_lqCBmume0jWZ&ccb=10-5&oh=00_AfsKXbaeZjJTca_nYCPds0zIyVNUS5Y-VMLcg-QWFrG86w&oe=69C9754F&_nc_sid=201bca",
+              "image_idx": 2,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "STAR LEAL NG CENTER",
+              "confidence": 0.779,
+              "bbox_pct": [
+                0.1115,
+                0.3315,
+                0.137,
+                0.0889
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-hO53AnS_IFLjfHhDVhHYUGXVuWWsJESfVVejxhJyNQUDLW9keBIa0CVl1U2Cd0mymLeZgOV01PSP5mVTXmiAXeMSqT8Zj9Ux9WEGqJukMcj-tV4TOrxiS9TviZr8mhfqDX8Ww228ZFX_giOkZxg?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=PRCXk9bsp0popJpX32b3Rg&_nc_oc=Adm7jcmj13b7c761FXH-eUtmxWdmQ4ipZ6Yv4aUJOPFzSvzSE525M3uW_Fmge9KjBTwJmzLzKAq_lqCBmume0jWZ&ccb=10-5&oh=00_AfsKXbaeZjJTca_nYCPds0zIyVNUS5Y-VMLcg-QWFrG86w&oe=69C9754F&_nc_sid=201bca",
+              "image_idx": 2,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "SIAR LEARNING",
+              "confidence": 0.807,
+              "bbox_pct": [
+                0.2974,
+                0.3574,
+                0.0391,
+                0.0194
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8mdzwyRcIXtUdCQIEHrcZO4Od94_neO2hk5cUH60SeAZ5mVsTY10dMB6Du6BFdJfOOAy1EFScHSQDJ8t7t2GWdyCrlPU-B4NMeSvQHp78_vNmosxbP3X2oZ6VpVvyE9HbCnL1-qkv73R-36gtXCg?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=PRCXk9bsp0popJpX32b3Rg&_nc_oc=AdkIA2p54KTliEmZfazfvuDAWTd8E8Rm8emCU4y9GFdKoVsd_Pe1_X9U5ssZDg4vSA3hxhr8Afat2GUuwxuZGwJA&ccb=10-5&oh=00_Aft3er-6nudlCbVrAbSn50KZP3tD7XqNUxWA1-6mPC4ENQ&oe=69C97404&_nc_sid=201bca",
+              "image_idx": 3,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "STARLEARNNGCEN",
+              "confidence": 0.851,
+              "bbox_pct": [
+                0.2755,
+                0.4,
+                0.063,
+                0.0481
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8mdzwyRcIXtUdCQIEHrcZO4Od94_neO2hk5cUH60SeAZ5mVsTY10dMB6Du6BFdJfOOAy1EFScHSQDJ8t7t2GWdyCrlPU-B4NMeSvQHp78_vNmosxbP3X2oZ6VpVvyE9HbCnL1-qkv73R-36gtXCg?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=PRCXk9bsp0popJpX32b3Rg&_nc_oc=AdkIA2p54KTliEmZfazfvuDAWTd8E8Rm8emCU4y9GFdKoVsd_Pe1_X9U5ssZDg4vSA3hxhr8Afat2GUuwxuZGwJA&ccb=10-5&oh=00_Aft3er-6nudlCbVrAbSn50KZP3tD7XqNUxWA1-6mPC4ENQ&oe=69C97404&_nc_sid=201bca",
+              "image_idx": 3,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "2488",
+              "confidence": 0.775,
+              "bbox_pct": [
+                0.1995,
+                0.4343,
+                0.0161,
+                0.0204
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8mdzwyRcIXtUdCQIEHrcZO4Od94_neO2hk5cUH60SeAZ5mVsTY10dMB6Du6BFdJfOOAy1EFScHSQDJ8t7t2GWdyCrlPU-B4NMeSvQHp78_vNmosxbP3X2oZ6VpVvyE9HbCnL1-qkv73R-36gtXCg?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=PRCXk9bsp0popJpX32b3Rg&_nc_oc=AdkIA2p54KTliEmZfazfvuDAWTd8E8Rm8emCU4y9GFdKoVsd_Pe1_X9U5ssZDg4vSA3hxhr8Afat2GUuwxuZGwJA&ccb=10-5&oh=00_Aft3er-6nudlCbVrAbSn50KZP3tD7XqNUxWA1-6mPC4ENQ&oe=69C97404&_nc_sid=201bca",
+              "image_idx": 3,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "STAR LEARNING",
+              "confidence": 0.745,
+              "bbox_pct": [
+                0.2979,
+                0.3574,
+                0.0385,
+                0.0185
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8mdzwyRcIXtUdCQIEHrcZO4Od94_neO2hk5cUH60SeAZ5mVsTY10dMB6Du6BFdJfOOAy1EFScHSQDJ8t7t2GWdyCrlPU-B4NMeSvQHp78_vNmosxbP3X2oZ6VpVvyE9HbCnL1-qkv73R-36gtXCg?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=PRCXk9bsp0popJpX32b3Rg&_nc_oc=AdkIA2p54KTliEmZfazfvuDAWTd8E8Rm8emCU4y9GFdKoVsd_Pe1_X9U5ssZDg4vSA3hxhr8Afat2GUuwxuZGwJA&ccb=10-5&oh=00_Aft3er-6nudlCbVrAbSn50KZP3tD7XqNUxWA1-6mPC4ENQ&oe=69C97404&_nc_sid=201bca",
+              "image_idx": 3,
+              "is_match": false,
+              "match_strength": null
+            },
+            {
+              "text": "SIARLEIINNG",
+              "confidence": 0.6,
+              "bbox_pct": [
+                0.2984,
+                0.3574,
+                0.0365,
+                0.0194
+              ],
+              "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8mdzwyRcIXtUdCQIEHrcZO4Od94_neO2hk5cUH60SeAZ5mVsTY10dMB6Du6BFdJfOOAy1EFScHSQDJ8t7t2GWdyCrlPU-B4NMeSvQHp78_vNmosxbP3X2oZ6VpVvyE9HbCnL1-qkv73R-36gtXCg?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=PRCXk9bsp0popJpX32b3Rg&_nc_oc=AdkIA2p54KTliEmZfazfvuDAWTd8E8Rm8emCU4y9GFdKoVsd_Pe1_X9U5ssZDg4vSA3hxhr8Afat2GUuwxuZGwJA&ccb=10-5&oh=00_Aft3er-6nudlCbVrAbSn50KZP3tD7XqNUxWA1-6mPC4ENQ&oe=69C97404&_nc_sid=201bca",
+              "image_idx": 3,
+              "is_match": false,
+              "match_strength": null
+            }
+          ],
+          "detail": "Partial text match for 'San Bruno Market' (image is 9 years old — low reliability)",
+          "image_age_years": 9.4,
+          "image_age_factor": 0.13
+        },
+        "xgboost": {
+          "verdict": "supports_open",
+          "score": 0.7003,
+          "confidence": 0.7003,
+          "raw_score": 0.9675,
+          "threshold": 0.69,
+          "detail": "XGBoost: 70% open (calibrated from 97% raw)",
+          "feature_contributions": {
+            "overture_confidence": 0.948,
+            "source_age_days": 88.0,
+            "has_website": 1.0,
+            "has_phone": 1.0,
+            "has_brand": 0.0,
+            "address_complete": 1.0,
+            "category_closure_rate": 0.2183,
+            "fields_populated": 7.0,
+            "missing_signals": 1.0,
+            "data_completeness": 0.7373,
+            "low_confidence": 0.0
+          }
+        },
+        "google": {
+          "status": "no_api_key",
+          "detail": "Google Places API key not configured",
+          "business_status": null
+        },
+        "website": {
+          "status": "alive",
+          "url": "http://www.sanbrunomarket.com/",
+          "status_code": 200,
+          "detail": "Website responding (HTTP 200)"
+        },
+        "foursquare": {
+          "status": "verified",
+          "detail": "Foursquare confirms \"San Bruno Supermarket\" at this location",
+          "match": {
+            "fsq_id": "4c379fc5ae2da593ac3affc5",
+            "name": "San Bruno Supermarket",
+            "category": "Grocery Store",
+            "closed": false,
+            "website": null,
+            "phone": null,
+            "address": "2480 San Bruno Ave (at Felton St), San Francisco, CA 94134, United States"
+          }
+        }
+      },
+      "closure_signals": [],
+      "ocr_texts": [
+        "SIARLEAINNGCENIER",
+        "STAR LEARNING CENTE",
+        "415-468",
+        "698",
+        "WAILABLEFRESH",
+        "EVERYDAY",
+        "SHRIEANINGCENTER",
+        "STARLEARNINGCENTE",
+        "HUS",
+        "NG CENTER",
+        "STARLE",
+        "STAR LEAL",
+        "NGCENTER",
+        "45-48-183",
+        "NG CENTE?",
+        "STAR LEAL NG CENTER",
+        "SIAR LEARNING",
+        "STARLEARNNGCEN",
+        "2488",
+        "STAR LEARNING",
+        "SIARLEIINNG"
+      ],
+      "images_analyzed": 4,
+      "best_image_idx": 0,
+      "best_image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An84wMDPRrID99g6YubMKmewHoLSN-VmREmVIljy0O0dfQhudVIh5Pxq4T1SwXNyrX64Ihv6fdkDUeYNhEzg1bt5Lm4GR8fdh1SgXj30gM-vpZ4iY8g2ir9bXgiL1srqDUGgd8xth-7pkIH3kortqQ?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=PRCXk9bsp0popJpX32b3Rg&_nc_oc=Adkv4-pkVed_VVozxFylb-B83N4h-ZIOSDDS_Lu8wN08u4mmOZGuYIon_u8rG4BGO1x4ZvpLS2NQv2fnL0by-ilF&ccb=10-5&oh=00_AfuMAZGBxYvQUWXSe034rjqUDhghLxPwt5wb9lFHfgv9Cg&oe=69C9492A&_nc_sid=201bca",
+      "text_match": true,
+      "per_image": [
+        {
+          "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An84wMDPRrID99g6YubMKmewHoLSN-VmREmVIljy0O0dfQhudVIh5Pxq4T1SwXNyrX64Ihv6fdkDUeYNhEzg1bt5Lm4GR8fdh1SgXj30gM-vpZ4iY8g2ir9bXgiL1srqDUGgd8xth-7pkIH3kortqQ?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=PRCXk9bsp0popJpX32b3Rg&_nc_oc=Adkv4-pkVed_VVozxFylb-B83N4h-ZIOSDDS_Lu8wN08u4mmOZGuYIon_u8rG4BGO1x4ZvpLS2NQv2fnL0by-ilF&ccb=10-5&oh=00_AfuMAZGBxYvQUWXSe034rjqUDhghLxPwt5wb9lFHfgv9Cg&oe=69C9492A&_nc_sid=201bca",
+          "idx": 0,
+          "texts_found": 8,
+          "texts_with_bbox": [
+            {
+              "text": "SIARLEAINNGCENIER",
+              "confidence": 0.76,
+              "bbox_pct": [
+                0.0776,
+                0.3898,
+                0.0484,
+                0.0389
+              ]
+            },
+            {
+              "text": "STAR LEARNING CENTE",
+              "confidence": 0.874,
+              "bbox_pct": [
+                0.0839,
+                0.4481,
+                0.0938,
+                0.0528
+              ]
+            },
+            {
+              "text": "415-468",
+              "confidence": 0.812,
+              "bbox_pct": [
+                0.2156,
+                0.5083,
+                0.0276,
+                0.0222
+              ]
+            },
+            {
+              "text": "698",
+              "confidence": 0.742,
+              "bbox_pct": [
+                0.2448,
+                0.5083,
+                0.0146,
+                0.0185
+              ]
+            },
+            {
+              "text": "WAILABLEFRESH",
+              "confidence": 0.796,
+              "bbox_pct": [
+                0.3984,
+                0.5204,
+                0.0437,
+                0.0213
+              ]
+            },
+            {
+              "text": "EVERYDAY",
+              "confidence": 0.856,
+              "bbox_pct": [
+                0.3964,
+                0.537,
+                0.0432,
+                0.0222
+              ]
+            },
+            {
+              "text": "SHRIEANINGCENTER",
+              "confidence": 0.732,
+              "bbox_pct": [
+                0.0776,
+                0.3889,
+                0.049,
+                0.0407
+              ]
+            },
+            {
+              "text": "STARLEARNINGCENTE",
+              "confidence": 0.862,
+              "bbox_pct": [
+                0.0745,
+                0.4481,
+                0.1042,
+                0.0565
+              ]
+            }
+          ],
+          "text_match": "partial",
+          "evidence_score": 0.0506
+        },
+        {
+          "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9hz7fcWuOodlMkZp6PcKiVDLDQpj1QGjTJXOB4BDcGZ2EnwjG7lbnPv2VaoFtU-JEYwU7KZX_C-x94bSjDuiQozD7OOlFxlUQ47xai6Fzi7oOFDYbJOSJwUoyIwwAxkLFD2SsCeoCMRv3Qy6HDoA?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=PRCXk9bsp0popJpX32b3Rg&_nc_oc=AdkEmlUfOmmY3A1XiC2fcfiP073IznTtvbRTTQsmbPUcsTWkeezmX5hKHDllmNXP_dgS_kDk2_PGBzaeRwfef6Ip&ccb=10-5&oh=00_AftlyKz0TgB54-AsVezfKoOvnp-pNdXASM3nRFKtF1djTg&oe=69C97740&_nc_sid=201bca",
+          "idx": 1,
+          "texts_found": 1,
+          "texts_with_bbox": [
+            {
+              "text": "HUS",
+              "confidence": 0.686,
+              "bbox_pct": [
+                0.2214,
+                0.6824,
+                0.0198,
+                0.0194
+              ]
+            }
+          ],
+          "text_match": null,
+          "evidence_score": 0.0098
+        },
+        {
+          "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-hO53AnS_IFLjfHhDVhHYUGXVuWWsJESfVVejxhJyNQUDLW9keBIa0CVl1U2Cd0mymLeZgOV01PSP5mVTXmiAXeMSqT8Zj9Ux9WEGqJukMcj-tV4TOrxiS9TviZr8mhfqDX8Ww228ZFX_giOkZxg?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=PRCXk9bsp0popJpX32b3Rg&_nc_oc=Adm7jcmj13b7c761FXH-eUtmxWdmQ4ipZ6Yv4aUJOPFzSvzSE525M3uW_Fmge9KjBTwJmzLzKAq_lqCBmume0jWZ&ccb=10-5&oh=00_AfsKXbaeZjJTca_nYCPds0zIyVNUS5Y-VMLcg-QWFrG86w&oe=69C9754F&_nc_sid=201bca",
+          "idx": 2,
+          "texts_found": 7,
+          "texts_with_bbox": [
+            {
+              "text": "NG CENTER",
+              "confidence": 0.827,
+              "bbox_pct": [
+                0.1953,
+                0.263,
+                0.0391,
+                0.0287
+              ]
+            },
+            {
+              "text": "STARLE",
+              "confidence": 0.765,
+              "bbox_pct": [
+                0.1578,
+                0.2759,
+                0.0276,
+                0.025
+              ]
+            },
+            {
+              "text": "STAR LEAL",
+              "confidence": 0.662,
+              "bbox_pct": [
+                0.112,
+                0.3333,
+                0.0885,
+                0.0676
+              ]
+            },
+            {
+              "text": "NGCENTER",
+              "confidence": 0.831,
+              "bbox_pct": [
+                0.1891,
+                0.363,
+                0.0568,
+                0.0519
+              ]
+            },
+            {
+              "text": "45-48-183",
+              "confidence": 0.691,
+              "bbox_pct": [
+                0.2615,
+                0.4491,
+                0.0245,
+                0.0204
+              ]
+            },
+            {
+              "text": "NG CENTE?",
+              "confidence": 0.7,
+              "bbox_pct": [
+                0.1964,
+                0.262,
+                0.0385,
+                0.0278
+              ]
+            },
+            {
+              "text": "STAR LEAL NG CENTER",
+              "confidence": 0.779,
+              "bbox_pct": [
+                0.1115,
+                0.3315,
+                0.137,
+                0.0889
+              ]
+            }
+          ],
+          "text_match": null,
+          "evidence_score": 0.0078
+        },
+        {
+          "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8mdzwyRcIXtUdCQIEHrcZO4Od94_neO2hk5cUH60SeAZ5mVsTY10dMB6Du6BFdJfOOAy1EFScHSQDJ8t7t2GWdyCrlPU-B4NMeSvQHp78_vNmosxbP3X2oZ6VpVvyE9HbCnL1-qkv73R-36gtXCg?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=PRCXk9bsp0popJpX32b3Rg&_nc_oc=AdkIA2p54KTliEmZfazfvuDAWTd8E8Rm8emCU4y9GFdKoVsd_Pe1_X9U5ssZDg4vSA3hxhr8Afat2GUuwxuZGwJA&ccb=10-5&oh=00_Aft3er-6nudlCbVrAbSn50KZP3tD7XqNUxWA1-6mPC4ENQ&oe=69C97404&_nc_sid=201bca",
+          "idx": 3,
+          "texts_found": 5,
+          "texts_with_bbox": [
+            {
+              "text": "SIAR LEARNING",
+              "confidence": 0.807,
+              "bbox_pct": [
+                0.2974,
+                0.3574,
+                0.0391,
+                0.0194
+              ]
+            },
+            {
+              "text": "STARLEARNNGCEN",
+              "confidence": 0.851,
+              "bbox_pct": [
+                0.2755,
+                0.4,
+                0.063,
+                0.0481
+              ]
+            },
+            {
+              "text": "2488",
+              "confidence": 0.775,
+              "bbox_pct": [
+                0.1995,
+                0.4343,
+                0.0161,
+                0.0204
+              ]
+            },
+            {
+              "text": "STAR LEARNING",
+              "confidence": 0.745,
+              "bbox_pct": [
+                0.2979,
+                0.3574,
+                0.0385,
+                0.0185
+              ]
+            },
+            {
+              "text": "SIARLEIINNG",
+              "confidence": 0.6,
+              "bbox_pct": [
+                0.2984,
+                0.3574,
+                0.0365,
+                0.0194
+              ]
+            }
+          ],
+          "text_match": null,
+          "evidence_score": 0.0066
+        }
+      ]
+    },
+    "ground_truth": "open",
+    "yelp": {
+      "yelp_name": "San Bruno Market",
+      "is_closed": false,
+      "match_score": 1.0,
+      "yelp_rating": 2.4,
+      "yelp_review_count": 93,
+      "yelp_url": "https://www.yelp.com/biz/san-bruno-market-san-francisco?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
     }
   },
   {
@@ -22297,7 +23481,7 @@
         "text": {
           "verdict": "no_match",
           "score": 0.0,
-          "best_image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9jWUcesVbyJMQbC7VB11ukIwNZwnIz3zfu0IYNciKMZFf3567aqQQpE9H3OzshRsuNBCtbfv0QIVHVW2X13702PY_e-1n8bhJlKmQZUxL6GK61plbb0xLX-R165g0tOcNuFKyLbIBiBg6IIs-7alo?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=EArCzM6vfoabVhaoKz7Rsw&_nc_oc=Adk_eZCd2aDu2lXWXxPqLhewn4B7w_pkcKP-7AlLO28UFiUvd9zEBDpsH-21NNUwI3k_fmGldYKlSMcMfH7AyTKx&ccb=10-5&oh=00_AftWZpxyLBdNNXuMKgFvyY2Vks9HHyONnqQzxbHV0sHP4g&oe=69C647C3&_nc_sid=201bca",
+          "best_image_url": null,
           "best_image_idx": null,
           "matched_text": null,
           "match_strength": null,
@@ -22832,23 +24016,6 @@
           "text_match": null,
           "evidence_score": 0.05
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "website",
-          "weight": -0.1,
-          "description": "Website: dead"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (4 recent images)"
-        }
       ]
     },
     "website_url": "https://www.calvinklein.us",
@@ -22930,7 +24097,7 @@
         "text": {
           "verdict": "no_match",
           "score": 0.0,
-          "best_image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_Ow-tg6OkAW2hJ46jtIB2yyvuY7gJBjt5T-8qnFYUF5oQcEeEs86m2bUM1w71xH-tUDCH6mQJovFMsRAeN8A-3dlooXnebMxVKKNjWtvVEM_-pWjKwJ6dstssSSCannijIb8V9dUDF1aXIIGwjJn0?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=okDpEmeGTsEKlJgUCHN76g&_nc_oc=AdnMK1Etzgwww5N1JaE4ZnqMoTlFqQZYY7Uq4tI0Big23WrqkUE6xB5RYR5ZnwByDt9TOm4XKImo-tAvSA6trRCW&ccb=10-5&oh=00_Afvylww4j78k-40xqqFHi1DfPlntwVYdG8mXCyel6dlu7Q&oe=69C61FB7&_nc_sid=201bca",
+          "best_image_url": null,
           "best_image_idx": null,
           "matched_text": null,
           "match_strength": null,
@@ -23283,23 +24450,6 @@
           "text_match": null,
           "evidence_score": 0.0536
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "website",
-          "weight": -0.2,
-          "description": "Website: redirected"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (4 recent images)"
-        }
       ]
     },
     "website_url": "http://hardwaterbar.com",
@@ -23367,12 +24517,12 @@
       "detail": "Website: dead (DNS resolution failed — domain does not exist) | Text: partial match (4yr old) | Metadata: 68% open (no nudge) | Score: 0.45",
       "layers": {
         "text": {
-          "verdict": "no_match",
+          "verdict": "partial_match",
           "score": 0.2418,
           "best_image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_Bccvve761CWPrGyLFW5CP9buHyTROkT7_oyVcULQokPopZfFkch9B8DZDiWuShnX1wswmwllUIRr0VVOfSNIJI5MX6PSVmDZjXrAeiUwmZcoEVS2J0Ncf0iUMG4Y2422BSVBUHCb025xsWS8B4w?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=RgColzIC_Tc-0VwmBRLVxw&_nc_oc=AdnwfWwgN1ui9N8D1K06neJRMGfmV56bvknd_-YIT9w17QJ-4ElN6Hb18X6utYcre3i5uk1IlgpC_p-LLuL1K5JY&ccb=10-5&oh=00_Aftu5t5qpPcoEIVR2vYZyCmlWOdHeFvA3UuKHwq7mjkepg&oe=69C6409F&_nc_sid=201bca",
           "best_image_idx": 1,
-          "matched_text": null,
-          "match_strength": null,
+          "matched_text": "mangarosa",
+          "match_strength": "partial",
           "ocr_texts": [
             "Intetnaltootsaro",
             "bulit onRetool",
@@ -23394,8 +24544,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_Bccvve761CWPrGyLFW5CP9buHyTROkT7_oyVcULQokPopZfFkch9B8DZDiWuShnX1wswmwllUIRr0VVOfSNIJI5MX6PSVmDZjXrAeiUwmZcoEVS2J0Ncf0iUMG4Y2422BSVBUHCb025xsWS8B4w?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=RgColzIC_Tc-0VwmBRLVxw&_nc_oc=AdnwfWwgN1ui9N8D1K06neJRMGfmV56bvknd_-YIT9w17QJ-4ElN6Hb18X6utYcre3i5uk1IlgpC_p-LLuL1K5JY&ccb=10-5&oh=00_Aftu5t5qpPcoEIVR2vYZyCmlWOdHeFvA3UuKHwq7mjkepg&oe=69C6409F&_nc_sid=201bca",
               "image_idx": 1,
-              "is_match": false,
-              "match_strength": null
+              "is_match": true,
+              "match_strength": "partial"
             },
             {
               "text": "bulit onRetool",
@@ -23436,8 +24586,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_Bccvve761CWPrGyLFW5CP9buHyTROkT7_oyVcULQokPopZfFkch9B8DZDiWuShnX1wswmwllUIRr0VVOfSNIJI5MX6PSVmDZjXrAeiUwmZcoEVS2J0Ncf0iUMG4Y2422BSVBUHCb025xsWS8B4w?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=RgColzIC_Tc-0VwmBRLVxw&_nc_oc=AdnwfWwgN1ui9N8D1K06neJRMGfmV56bvknd_-YIT9w17QJ-4ElN6Hb18X6utYcre3i5uk1IlgpC_p-LLuL1K5JY&ccb=10-5&oh=00_Aftu5t5qpPcoEIVR2vYZyCmlWOdHeFvA3UuKHwq7mjkepg&oe=69C6409F&_nc_sid=201bca",
               "image_idx": 1,
-              "is_match": false,
-              "match_strength": null
+              "is_match": true,
+              "match_strength": "partial"
             },
             {
               "text": "bulitonRetool",
@@ -23464,8 +24614,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_Bccvve761CWPrGyLFW5CP9buHyTROkT7_oyVcULQokPopZfFkch9B8DZDiWuShnX1wswmwllUIRr0VVOfSNIJI5MX6PSVmDZjXrAeiUwmZcoEVS2J0Ncf0iUMG4Y2422BSVBUHCb025xsWS8B4w?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=RgColzIC_Tc-0VwmBRLVxw&_nc_oc=AdnwfWwgN1ui9N8D1K06neJRMGfmV56bvknd_-YIT9w17QJ-4ElN6Hb18X6utYcre3i5uk1IlgpC_p-LLuL1K5JY&ccb=10-5&oh=00_Aftu5t5qpPcoEIVR2vYZyCmlWOdHeFvA3UuKHwq7mjkepg&oe=69C6409F&_nc_sid=201bca",
               "image_idx": 1,
-              "is_match": false,
-              "match_strength": null
+              "is_match": true,
+              "match_strength": "partial"
             },
             {
               "text": "bulntonRetool",
@@ -23626,18 +24776,6 @@
           "text_match": "partial",
           "evidence_score": 0.2257
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "website",
-          "weight": -0.1,
-          "description": "Website: dead"
-        }
       ]
     },
     "website_url": "http://www.mangarosasf.com",
@@ -23717,12 +24855,12 @@
       "detail": "No text match on 4 recent images | Metadata: 59% open (no nudge) | Score: 0.45",
       "layers": {
         "text": {
-          "verdict": "partial_match",
+          "verdict": "no_match",
           "score": 0.0,
-          "best_image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8T4NO65GbVy_stls3rXTTnSX35Z_f_vMTUnWZjfKZ9ObCKrxI6fQ_85clpbeoDAXlHxauap2ATSvf8X4IlI0bDvomb2MUWMX9oW2bbw5yY90GEjzrYGu5NqrO129mFj4sM-bPYKxb2d1adAwYAeA?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=UKeWllOr50vYDj4gSt9z7w&_nc_oc=AdlnGeg7OUKWDLmiEIn4k1WgfzXRMx_Yxn2z1uia5NTgDuo_0RYY55GDtMoYFDM6GS7B0_Jh_U7T9GWoUwpe53qe&ccb=10-5&oh=00_Aft6boHWZwQzR_L3eUgInXpAO2WjYXcGFAfR-5sQiSTIQw&oe=69C64151&_nc_sid=201bca",
+          "best_image_url": null,
           "best_image_idx": null,
-          "matched_text": "bites caf",
-          "match_strength": "partial",
+          "matched_text": null,
+          "match_strength": null,
           "ocr_texts": [
             "3872",
             "3870",
@@ -23794,8 +24932,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8T4NO65GbVy_stls3rXTTnSX35Z_f_vMTUnWZjfKZ9ObCKrxI6fQ_85clpbeoDAXlHxauap2ATSvf8X4IlI0bDvomb2MUWMX9oW2bbw5yY90GEjzrYGu5NqrO129mFj4sM-bPYKxb2d1adAwYAeA?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=UKeWllOr50vYDj4gSt9z7w&_nc_oc=AdlnGeg7OUKWDLmiEIn4k1WgfzXRMx_Yxn2z1uia5NTgDuo_0RYY55GDtMoYFDM6GS7B0_Jh_U7T9GWoUwpe53qe&ccb=10-5&oh=00_Aft6boHWZwQzR_L3eUgInXpAO2WjYXcGFAfR-5sQiSTIQw&oe=69C64151&_nc_sid=201bca",
               "image_idx": 0,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "3868",
@@ -23850,8 +24988,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-3Nhmx5IHOBqmrCsCqxqlE8OAO3wwcPWZFPnkEpTBVd9unrg3jzi_9fnNoTILi_ZiQW0E86snckdOTb3W61tih2yr9hyWROnqpeh-Oh5FTeoYrmwSYRseZNfwNgvj1P8WkLOE926hhfW41qwJ2Vg?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=UKeWllOr50vYDj4gSt9z7w&_nc_oc=AdnbJjhtn9xPmrgN1dNC4eozXcbaNPen-d0gLf5RVR0K7AjjuI-Th_mHS7z3ZgHhamxGMbHCcfMlZUkhBKjRVSZO&ccb=10-5&oh=00_AfvNXhJdxzcvL9OnFpAvrK58fooQL3M6bS3iN9iCRZz0Ww&oe=69C636F1&_nc_sid=201bca",
               "image_idx": 1,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "ELNO?",
@@ -23892,8 +25030,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-3Nhmx5IHOBqmrCsCqxqlE8OAO3wwcPWZFPnkEpTBVd9unrg3jzi_9fnNoTILi_ZiQW0E86snckdOTb3W61tih2yr9hyWROnqpeh-Oh5FTeoYrmwSYRseZNfwNgvj1P8WkLOE926hhfW41qwJ2Vg?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=UKeWllOr50vYDj4gSt9z7w&_nc_oc=AdnbJjhtn9xPmrgN1dNC4eozXcbaNPen-d0gLf5RVR0K7AjjuI-Th_mHS7z3ZgHhamxGMbHCcfMlZUkhBKjRVSZO&ccb=10-5&oh=00_AfvNXhJdxzcvL9OnFpAvrK58fooQL3M6bS3iN9iCRZz0Ww&oe=69C636F1&_nc_sid=201bca",
               "image_idx": 1,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "CIE HAL WNENT",
@@ -23934,8 +25072,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-3Nhmx5IHOBqmrCsCqxqlE8OAO3wwcPWZFPnkEpTBVd9unrg3jzi_9fnNoTILi_ZiQW0E86snckdOTb3W61tih2yr9hyWROnqpeh-Oh5FTeoYrmwSYRseZNfwNgvj1P8WkLOE926hhfW41qwJ2Vg?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=UKeWllOr50vYDj4gSt9z7w&_nc_oc=AdnbJjhtn9xPmrgN1dNC4eozXcbaNPen-d0gLf5RVR0K7AjjuI-Th_mHS7z3ZgHhamxGMbHCcfMlZUkhBKjRVSZO&ccb=10-5&oh=00_AfvNXhJdxzcvL9OnFpAvrK58fooQL3M6bS3iN9iCRZz0Ww&oe=69C636F1&_nc_sid=201bca",
               "image_idx": 1,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "ELHNO?",
@@ -24116,8 +25254,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-qeDXs-fvSBjiCpmLl4kjNRguDTzSbfImcNB53YqOHtm36kmbGBKYh9fGrAXNLXbbMM7x-kfr_ZWobpXdLDCkobLmRZaWhoNq1x1Anc_tg_0sccNa24Gm_1-2IpQRTJ28MEHeEwvoJOWBWi90lVA?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=UKeWllOr50vYDj4gSt9z7w&_nc_oc=AdkBw5pwF2lAsrt2DNfoZHegNiE_ngn-NuzDHIB3cPprHcj9fotYlQVfGKKiH4Cw-Flidoy8dkS5nfQuA7nGnx1C&ccb=10-5&oh=00_AfsRssvdulIcfjrSgRjLvyw7u7lnQ-Z60NYWtUV4licmBw&oe=69C62793&_nc_sid=201bca",
               "image_idx": 2,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "DEVIL'STEETHE BANING COMPANY",
@@ -24130,8 +25268,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9S_LMbUYJ-LVmUqmhDpW8ABeqLPboi20wCREINFeu8s01Jj0MRvVQVw71bWyC2DK_Dckno00kzv091s1NLk3ggVxOmc386MDC5sISfO4zdl8_X8jmU5Wqq-FO19j1x4B3J_wq8YarGzHF67S7Z1w?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=UKeWllOr50vYDj4gSt9z7w&_nc_oc=AdkQosIu-Yx9mPGUxRqEJm6lM7xSIGR5xpMhF0Q8O2H_9FCHSfFGjW-OetgzeHssFV85APtyEDdVZTm1KCzWgB55&ccb=10-5&oh=00_Aftda9kyLpI8ouWnTWgXxIid5Kuga0KGaFy0T1CEjqooEg&oe=69C621A5&_nc_sid=201bca",
               "image_idx": 3,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "DEVILSTEETHA BANING COMPANY",
@@ -24144,8 +25282,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9S_LMbUYJ-LVmUqmhDpW8ABeqLPboi20wCREINFeu8s01Jj0MRvVQVw71bWyC2DK_Dckno00kzv091s1NLk3ggVxOmc386MDC5sISfO4zdl8_X8jmU5Wqq-FO19j1x4B3J_wq8YarGzHF67S7Z1w?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=UKeWllOr50vYDj4gSt9z7w&_nc_oc=AdkQosIu-Yx9mPGUxRqEJm6lM7xSIGR5xpMhF0Q8O2H_9FCHSfFGjW-OetgzeHssFV85APtyEDdVZTm1KCzWgB55&ccb=10-5&oh=00_Aftda9kyLpI8ouWnTWgXxIid5Kuga0KGaFy0T1CEjqooEg&oe=69C621A5&_nc_sid=201bca",
               "image_idx": 3,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "DEVIL'STEETHE BANING CO",
@@ -24158,8 +25296,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9S_LMbUYJ-LVmUqmhDpW8ABeqLPboi20wCREINFeu8s01Jj0MRvVQVw71bWyC2DK_Dckno00kzv091s1NLk3ggVxOmc386MDC5sISfO4zdl8_X8jmU5Wqq-FO19j1x4B3J_wq8YarGzHF67S7Z1w?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=UKeWllOr50vYDj4gSt9z7w&_nc_oc=AdkQosIu-Yx9mPGUxRqEJm6lM7xSIGR5xpMhF0Q8O2H_9FCHSfFGjW-OetgzeHssFV85APtyEDdVZTm1KCzWgB55&ccb=10-5&oh=00_Aftda9kyLpI8ouWnTWgXxIid5Kuga0KGaFy0T1CEjqooEg&oe=69C621A5&_nc_sid=201bca",
               "image_idx": 3,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             }
           ],
           "detail": "No 'Quick Bites CafÃ©' text detected",
@@ -24567,18 +25705,6 @@
           "text_match": null,
           "evidence_score": 0.0058
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "text",
-          "weight": 0.1,
-          "description": "Text: partial match"
-        }
       ]
     },
     "website_url": null,
@@ -24764,23 +25890,6 @@
           "text_match": null,
           "evidence_score": 0.0717
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": -0.25,
-          "description": "Foursquare: mismatch (\"Ai Kakou Cafe\")"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (4 recent images)"
-        }
       ]
     },
     "website_url": null,
@@ -24935,18 +26044,6 @@
           "text_match": null,
           "evidence_score": 0.0617
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (3 recent images)"
-        }
       ]
     },
     "website_url": "http://www.oddjobsf.com",
@@ -25065,24 +26162,7 @@
       "best_image_idx": null,
       "best_image_url": null,
       "text_match": false,
-      "per_image": [],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": -0.25,
-          "description": "Foursquare: mismatch (\"Deli Club\")"
-        },
-        {
-          "signal": "xgboost",
-          "weight": -0.0413,
-          "description": "Metadata: 29% open (nudge)"
-        }
-      ]
+      "per_image": []
     },
     "website_url": "https://www.sunrisedelisf.com/",
     "phone_number": "4154959999",
@@ -25646,23 +26726,6 @@
           ],
           "text_match": null,
           "evidence_score": 0.0246
-        }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "website",
-          "weight": -0.1,
-          "description": "Website: dead"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (4 recent images)"
         }
       ]
     },
@@ -26422,23 +27485,6 @@
           "text_match": null,
           "evidence_score": 0.05
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "website",
-          "weight": -0.2,
-          "description": "Website: redirected"
-        },
-        {
-          "signal": "text",
-          "weight": 0.1,
-          "description": "Text: partial match"
-        }
       ]
     },
     "website_url": "http://birchandryesf.com",
@@ -26540,14 +27586,7 @@
       "best_image_idx": null,
       "best_image_url": null,
       "text_match": false,
-      "per_image": [],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        }
-      ]
+      "per_image": []
     },
     "website_url": "http://www.bayareasocceracademy.com/",
     "phone_number": "+15103889214",
@@ -26862,8 +27901,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-5Sa7gIuDnjn5PBUun2ub9TnFBj8ZMBaV9dhwagLPjs0iOzuGQHBLhfI7w_mfnfhpW9y6g-rTS2XqkGr7ZWsYvVxXXJ5MiXmpPAvfTSaqaRJZcJSK41cldbJ0RCfYFUdiJPn5qO6sRuWrbbXtAmQ?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=2-DTTK2rutjUjAIRIcOovw&_nc_oc=Adk0ZFe2_CdpAQuCGIdMqhpUSKKYXSzpjQsZdOVBotlFh3XcVak7aGVSK3F7giB7SN5fGTlv4HN4kwrmQOZm92Ki&ccb=10-5&oh=00_Aft1_eV_iqYM22zzHoXET_0OvOfJgxluxxrwS7PMr-VLTw&oe=69C641E1&_nc_sid=201bca",
               "image_idx": 2,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "@marker-geo.com-719.644.6480.",
@@ -26918,8 +27957,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-5Sa7gIuDnjn5PBUun2ub9TnFBj8ZMBaV9dhwagLPjs0iOzuGQHBLhfI7w_mfnfhpW9y6g-rTS2XqkGr7ZWsYvVxXXJ5MiXmpPAvfTSaqaRJZcJSK41cldbJ0RCfYFUdiJPn5qO6sRuWrbbXtAmQ?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=2-DTTK2rutjUjAIRIcOovw&_nc_oc=Adk0ZFe2_CdpAQuCGIdMqhpUSKKYXSzpjQsZdOVBotlFh3XcVak7aGVSK3F7giB7SN5fGTlv4HN4kwrmQOZm92Ki&ccb=10-5&oh=00_Aft1_eV_iqYM22zzHoXET_0OvOfJgxluxxrwS7PMr-VLTw&oe=69C641E1&_nc_sid=201bca",
               "image_idx": 2,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "service",
@@ -27002,8 +28041,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-5Sa7gIuDnjn5PBUun2ub9TnFBj8ZMBaV9dhwagLPjs0iOzuGQHBLhfI7w_mfnfhpW9y6g-rTS2XqkGr7ZWsYvVxXXJ5MiXmpPAvfTSaqaRJZcJSK41cldbJ0RCfYFUdiJPn5qO6sRuWrbbXtAmQ?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=2-DTTK2rutjUjAIRIcOovw&_nc_oc=Adk0ZFe2_CdpAQuCGIdMqhpUSKKYXSzpjQsZdOVBotlFh3XcVak7aGVSK3F7giB7SN5fGTlv4HN4kwrmQOZm92Ki&ccb=10-5&oh=00_Aft1_eV_iqYM22zzHoXET_0OvOfJgxluxxrwS7PMr-VLTw&oe=69C641E1&_nc_sid=201bca",
               "image_idx": 2,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "imagery",
@@ -27605,28 +28644,6 @@
           ],
           "text_match": "partial",
           "evidence_score": 0.3617
-        }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "website",
-          "weight": -0.2,
-          "description": "Website: redirected"
-        },
-        {
-          "signal": "text",
-          "weight": 0.2,
-          "description": "Text: full match"
-        },
-        {
-          "signal": "xgboost",
-          "weight": -0.0208,
-          "description": "Metadata: 40% open (nudge)"
         }
       ]
     },
@@ -28546,18 +29563,6 @@
           "text_match": null,
           "evidence_score": 0.0138
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": -0.25,
-          "description": "Foursquare: mismatch (\"Celeste\")"
-        }
       ]
     },
     "website_url": null,
@@ -28653,7 +29658,7 @@
           "score": 0.35,
           "best_image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-opm8xD8kALTbTsLu55Xzh7QEyAy_zWU0FWVTwvPs1m69uhigAt3v1eeaBEn576TnhlZ08nHVhrhFY5rWbTDmN1rXtgBvwYZkvY4Ju3KZG-fM2liU6-SQIsbmLMmIBMu-nQ6zkv6TXTSTRADCd-w?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=hEXae04IHIB67rCwvi3XLw&_nc_oc=AdkwN6EOOgs5Imw2COCCI4hfR0QZDGCYCBGPSwox8f1zBulaf2pgn5P9kh1fP5YQjUYfYffnQ-kyFNP54ou0ICC-&ccb=10-5&oh=00_AftbFa7VTpSMXUbr6atee4J3IHJYXlYJJatdVtZzLCxABg&oe=69C623EB&_nc_sid=201bca",
           "best_image_idx": 4,
-          "matched_text": "caffe bella",
+          "matched_text": "caffe bella venezia",
           "match_strength": "partial",
           "ocr_texts": [
             "ORONLDUR",
@@ -28839,8 +29844,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-opm8xD8kALTbTsLu55Xzh7QEyAy_zWU0FWVTwvPs1m69uhigAt3v1eeaBEn576TnhlZ08nHVhrhFY5rWbTDmN1rXtgBvwYZkvY4Ju3KZG-fM2liU6-SQIsbmLMmIBMu-nQ6zkv6TXTSTRADCd-w?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=hEXae04IHIB67rCwvi3XLw&_nc_oc=AdkwN6EOOgs5Imw2COCCI4hfR0QZDGCYCBGPSwox8f1zBulaf2pgn5P9kh1fP5YQjUYfYffnQ-kyFNP54ou0ICC-&ccb=10-5&oh=00_AftbFa7VTpSMXUbr6atee4J3IHJYXlYJJatdVtZzLCxABg&oe=69C623EB&_nc_sid=201bca",
               "image_idx": 4,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "ANSONIA HOTEL",
@@ -28867,8 +29872,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-opm8xD8kALTbTsLu55Xzh7QEyAy_zWU0FWVTwvPs1m69uhigAt3v1eeaBEn576TnhlZ08nHVhrhFY5rWbTDmN1rXtgBvwYZkvY4Ju3KZG-fM2liU6-SQIsbmLMmIBMu-nQ6zkv6TXTSTRADCd-w?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=hEXae04IHIB67rCwvi3XLw&_nc_oc=AdkwN6EOOgs5Imw2COCCI4hfR0QZDGCYCBGPSwox8f1zBulaf2pgn5P9kh1fP5YQjUYfYffnQ-kyFNP54ou0ICC-&ccb=10-5&oh=00_AftbFa7VTpSMXUbr6atee4J3IHJYXlYJJatdVtZzLCxABg&oe=69C623EB&_nc_sid=201bca",
               "image_idx": 4,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "pavementinspection",
@@ -29035,8 +30040,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-opm8xD8kALTbTsLu55Xzh7QEyAy_zWU0FWVTwvPs1m69uhigAt3v1eeaBEn576TnhlZ08nHVhrhFY5rWbTDmN1rXtgBvwYZkvY4Ju3KZG-fM2liU6-SQIsbmLMmIBMu-nQ6zkv6TXTSTRADCd-w?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=hEXae04IHIB67rCwvi3XLw&_nc_oc=AdkwN6EOOgs5Imw2COCCI4hfR0QZDGCYCBGPSwox8f1zBulaf2pgn5P9kh1fP5YQjUYfYffnQ-kyFNP54ou0ICC-&ccb=10-5&oh=00_AftbFa7VTpSMXUbr6atee4J3IHJYXlYJJatdVtZzLCxABg&oe=69C623EB&_nc_sid=201bca",
               "image_idx": 4,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "CAESICH RFRICERATION&A/CCO,I",
@@ -29049,8 +30054,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-opm8xD8kALTbTsLu55Xzh7QEyAy_zWU0FWVTwvPs1m69uhigAt3v1eeaBEn576TnhlZ08nHVhrhFY5rWbTDmN1rXtgBvwYZkvY4Ju3KZG-fM2liU6-SQIsbmLMmIBMu-nQ6zkv6TXTSTRADCd-w?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=hEXae04IHIB67rCwvi3XLw&_nc_oc=AdkwN6EOOgs5Imw2COCCI4hfR0QZDGCYCBGPSwox8f1zBulaf2pgn5P9kh1fP5YQjUYfYffnQ-kyFNP54ou0ICC-&ccb=10-5&oh=00_AftbFa7VTpSMXUbr6atee4J3IHJYXlYJJatdVtZzLCxABg&oe=69C623EB&_nc_sid=201bca",
               "image_idx": 4,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             },
             {
               "text": "roadway/roacs",
@@ -29542,23 +30547,6 @@
           "text_match": null,
           "evidence_score": 0.0143
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "website",
-          "weight": -0.1,
-          "description": "Website: dead"
-        },
-        {
-          "signal": "text",
-          "weight": 0.1,
-          "description": "Text: partial match"
-        }
       ]
     },
     "website_url": "http://caffebellavenezia.com",
@@ -29620,12 +30608,12 @@
       "detail": "Website: dead (DNS resolution failed — domain does not exist) | Metadata: 57% open (no nudge) | Score: 0.40",
       "layers": {
         "text": {
-          "verdict": "partial_match",
+          "verdict": "no_match",
           "score": 0.0,
-          "best_image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_43IgXK_lFGJPOAUI9upABKptl10NylLH1kFQg8MP6rwG88VgJ0n71sxe9EECLHelP31-rUtMmc4JoZq-aGA7tSeG-qcSfyhvYZQn-bWf2lIPDwJt2FGxPSeA6NLxHk_2NnpReDIBv618yHGn9F1E?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=696EN2AEAfswShN2u3ZvGg&_nc_oc=Adk960leTXotHZ7RVfoHie_HBCkrgYw6TabS-aMZbV3f_IYMYrg8o1mQn-mBNfcRzfxo2Aud2jISr0IbOT-WRYws&ccb=10-5&oh=00_AfsQ8UL--oTVwD32mhQXEV56VQ8givV1NvVR2gkqjB0vEQ&oe=69C63E1C&_nc_sid=201bca",
+          "best_image_url": null,
           "best_image_idx": null,
-          "matched_text": "o douls",
-          "match_strength": "partial",
+          "matched_text": null,
+          "match_strength": null,
           "ocr_texts": [
             "HANDLERY",
             "HOTEI",
@@ -29701,8 +30689,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_43IgXK_lFGJPOAUI9upABKptl10NylLH1kFQg8MP6rwG88VgJ0n71sxe9EECLHelP31-rUtMmc4JoZq-aGA7tSeG-qcSfyhvYZQn-bWf2lIPDwJt2FGxPSeA6NLxHk_2NnpReDIBv618yHGn9F1E?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=696EN2AEAfswShN2u3ZvGg&_nc_oc=Adk960leTXotHZ7RVfoHie_HBCkrgYw6TabS-aMZbV3f_IYMYrg8o1mQn-mBNfcRzfxo2Aud2jISr0IbOT-WRYws&ccb=10-5&oh=00_AfsQ8UL--oTVwD32mhQXEV56VQ8givV1NvVR2gkqjB0vEQ&oe=69C63E1C&_nc_sid=201bca",
               "image_idx": 0,
-              "is_match": true,
-              "match_strength": "partial"
+              "is_match": false,
+              "match_strength": null
             }
           ],
           "detail": "No 'Lefty O' Douls World Famous Mixes since 1958' text detected",
@@ -29818,23 +30806,6 @@
           ],
           "text_match": null,
           "evidence_score": 0.0078
-        }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "website",
-          "weight": -0.1,
-          "description": "Website: dead"
-        },
-        {
-          "signal": "text",
-          "weight": 0.1,
-          "description": "Text: partial match"
         }
       ]
     },
@@ -30763,13 +31734,6 @@
           "text_match": null,
           "evidence_score": 0.0068
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        }
       ]
     },
     "website_url": "http://kitchenkura.com",
@@ -31178,13 +32142,6 @@
           "text_match": "full",
           "evidence_score": 0.0768
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        }
       ]
     },
     "website_url": null,
@@ -31258,12 +32215,12 @@
       "detail": "Closure text: \"Rent Me Tod\" | Text: partial match | Metadata: 68% open (no nudge) | Score: 0.30",
       "layers": {
         "text": {
-          "verdict": "no_match",
+          "verdict": "partial_match",
           "score": 0.35,
           "best_image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9mGWD3m3TpRjNKwpYiFYIHX37kZruJA8EQM6wun2YgKNvwa7LEbzkxS4UKpwuLfwn2o6xwfwjHgf08pERRqSxkIo4wCa4PqHdR_cbvQ7Z025IyJDzGSYm_qAoPArcbh8I_MBQSJ8xUMv4rqivwHiY?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=hFAw0dW0KMLs7qyQ4tjjHQ&_nc_oc=Adm6ZPHsb_gjR0VjoHi5jPRrYJa8vv4oNSq0qC77EzMrQmuRNY8jrdmY37fJcU2-Kug1rDbDVfPiKQtIGcLnrpD6&ccb=10-5&oh=00_AfvPmUyjgZW0rnm3URsbVtXLVPmC00JvK0XXNEklbBSjXQ&oe=69C628BF&_nc_sid=201bca",
           "best_image_idx": 0,
-          "matched_text": null,
-          "match_strength": null,
+          "matched_text": "bask",
+          "match_strength": "partial",
           "ocr_texts": [
             "AMC+makes",
             "HOYYENASSN",
@@ -31307,8 +32264,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9mGWD3m3TpRjNKwpYiFYIHX37kZruJA8EQM6wun2YgKNvwa7LEbzkxS4UKpwuLfwn2o6xwfwjHgf08pERRqSxkIo4wCa4PqHdR_cbvQ7Z025IyJDzGSYm_qAoPArcbh8I_MBQSJ8xUMv4rqivwHiY?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=hFAw0dW0KMLs7qyQ4tjjHQ&_nc_oc=Adm6ZPHsb_gjR0VjoHi5jPRrYJa8vv4oNSq0qC77EzMrQmuRNY8jrdmY37fJcU2-Kug1rDbDVfPiKQtIGcLnrpD6&ccb=10-5&oh=00_AfvPmUyjgZW0rnm3URsbVtXLVPmC00JvK0XXNEklbBSjXQ&oe=69C628BF&_nc_sid=201bca",
               "image_idx": 0,
-              "is_match": false,
-              "match_strength": null
+              "is_match": true,
+              "match_strength": "partial"
             },
             {
               "text": "HOYYENASSN",
@@ -31377,8 +32334,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9mGWD3m3TpRjNKwpYiFYIHX37kZruJA8EQM6wun2YgKNvwa7LEbzkxS4UKpwuLfwn2o6xwfwjHgf08pERRqSxkIo4wCa4PqHdR_cbvQ7Z025IyJDzGSYm_qAoPArcbh8I_MBQSJ8xUMv4rqivwHiY?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=hFAw0dW0KMLs7qyQ4tjjHQ&_nc_oc=Adm6ZPHsb_gjR0VjoHi5jPRrYJa8vv4oNSq0qC77EzMrQmuRNY8jrdmY37fJcU2-Kug1rDbDVfPiKQtIGcLnrpD6&ccb=10-5&oh=00_AfvPmUyjgZW0rnm3URsbVtXLVPmC00JvK0XXNEklbBSjXQ&oe=69C628BF&_nc_sid=201bca",
               "image_idx": 0,
-              "is_match": false,
-              "match_strength": null
+              "is_match": true,
+              "match_strength": "partial"
             },
             {
               "text": "HOY YEN ASSY",
@@ -31405,8 +32362,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9mGWD3m3TpRjNKwpYiFYIHX37kZruJA8EQM6wun2YgKNvwa7LEbzkxS4UKpwuLfwn2o6xwfwjHgf08pERRqSxkIo4wCa4PqHdR_cbvQ7Z025IyJDzGSYm_qAoPArcbh8I_MBQSJ8xUMv4rqivwHiY?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=hFAw0dW0KMLs7qyQ4tjjHQ&_nc_oc=Adm6ZPHsb_gjR0VjoHi5jPRrYJa8vv4oNSq0qC77EzMrQmuRNY8jrdmY37fJcU2-Kug1rDbDVfPiKQtIGcLnrpD6&ccb=10-5&oh=00_AfvPmUyjgZW0rnm3URsbVtXLVPmC00JvK0XXNEklbBSjXQ&oe=69C628BF&_nc_sid=201bca",
               "image_idx": 0,
-              "is_match": false,
-              "match_strength": null
+              "is_match": true,
+              "match_strength": "partial"
             },
             {
               "text": "Bar",
@@ -32115,23 +33072,6 @@
           ],
           "text_match": null,
           "evidence_score": 0.065
-        }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "closure_text",
-          "weight": -0.3,
-          "description": "Closure text: \"Rent Me Tod\""
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (3 recent images)"
         }
       ]
     },
@@ -33324,23 +34264,6 @@
           "text_match": null,
           "evidence_score": 0.0527
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "website",
-          "weight": -0.1,
-          "description": "Website: dead"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (6 recent images)"
-        }
       ]
     },
     "website_url": "http://www.pigandpiesf.com",
@@ -34273,13 +35196,6 @@
           "text_match": null,
           "evidence_score": 0.06
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        }
       ]
     },
     "website_url": "http://buenavistamotorinn.com/",
@@ -34932,18 +35848,6 @@
           ],
           "text_match": null,
           "evidence_score": 0.0189
-        }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (3 recent images)"
         }
       ]
     },
@@ -36347,18 +37251,6 @@
           "text_match": null,
           "evidence_score": 0.0155
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "xgboost",
-          "weight": -0.0778,
-          "description": "Metadata: 11% open (nudge)"
-        }
       ]
     },
     "yelp": {
@@ -36440,12 +37332,12 @@
       "detail": "Website: alive | Text: partial match (8yr old) | Metadata: 69% open (no nudge) | Score: 0.50",
       "layers": {
         "text": {
-          "verdict": "no_match",
+          "verdict": "partial_match",
           "score": 0.0851,
           "best_image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8Z6OHSGM4aViYpSTt91KP1imw53DElP14P-ky_H97dbC-blQOCdR1_GCex66bb5bnB_MZsOgNL21ASlqzuCuxNlIblhP7E2mDUJZ2zRS0NbY29uoCw2EqPKKQn8-xLDTEfEnGc_AK935wnarF4jA?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=279PhMOo64j2bN0UtlUE1Q&_nc_oc=Adnom0VVEwKmGwwDLRuhNjRsV19qDzNy8HMAuMLyZAxhclgGKwpW7zyLp_soIN8ZixIXnKz2AUW0wwGw9gedQ6XN&ccb=10-5&oh=00_Afuu__ZAWAmuKXHv6vS2VSEle7jp0RZw6EgfrvoMowV27w&oe=69C6388F&_nc_sid=201bca",
           "best_image_idx": 0,
-          "matched_text": null,
-          "match_strength": null,
+          "matched_text": "duna",
+          "match_strength": "partial",
           "ocr_texts": [
             "SFJAZZ",
             "SA",
@@ -36503,8 +37395,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8Z6OHSGM4aViYpSTt91KP1imw53DElP14P-ky_H97dbC-blQOCdR1_GCex66bb5bnB_MZsOgNL21ASlqzuCuxNlIblhP7E2mDUJZ2zRS0NbY29uoCw2EqPKKQn8-xLDTEfEnGc_AK935wnarF4jA?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=279PhMOo64j2bN0UtlUE1Q&_nc_oc=Adnom0VVEwKmGwwDLRuhNjRsV19qDzNy8HMAuMLyZAxhclgGKwpW7zyLp_soIN8ZixIXnKz2AUW0wwGw9gedQ6XN&ccb=10-5&oh=00_Afuu__ZAWAmuKXHv6vS2VSEle7jp0RZw6EgfrvoMowV27w&oe=69C6388F&_nc_sid=201bca",
               "image_idx": 0,
-              "is_match": false,
-              "match_strength": null
+              "is_match": true,
+              "match_strength": "partial"
             },
             {
               "text": "lian Cuuine",
@@ -36517,8 +37409,8 @@
               ],
               "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8Z6OHSGM4aViYpSTt91KP1imw53DElP14P-ky_H97dbC-blQOCdR1_GCex66bb5bnB_MZsOgNL21ASlqzuCuxNlIblhP7E2mDUJZ2zRS0NbY29uoCw2EqPKKQn8-xLDTEfEnGc_AK935wnarF4jA?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=279PhMOo64j2bN0UtlUE1Q&_nc_oc=Adnom0VVEwKmGwwDLRuhNjRsV19qDzNy8HMAuMLyZAxhclgGKwpW7zyLp_soIN8ZixIXnKz2AUW0wwGw9gedQ6XN&ccb=10-5&oh=00_Afuu__ZAWAmuKXHv6vS2VSEle7jp0RZw6EgfrvoMowV27w&oe=69C6388F&_nc_sid=201bca",
               "image_idx": 0,
-              "is_match": false,
-              "match_strength": null
+              "is_match": true,
+              "match_strength": "partial"
             },
             {
               "text": "KROOTERING",
@@ -36917,13 +37809,6 @@
           "text_match": null,
           "evidence_score": 0.0057
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        }
       ]
     },
     "website_url": "https://www.duna.kitchen",
@@ -37017,7 +37902,7 @@
         "text": {
           "verdict": "no_match",
           "score": 0.0,
-          "best_image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9shbZ_i7n8PF2VhNe6JLtYd_xqKGiDBytwS1wI9xdd_A-6DEoipqtVEYFqa7Bo4AMgR0f3YwhzEz_D6xgtcXoxQoRc5ka0rJ6R5OupMGsqWZrBjPo0ta3agHYTAWoYuQLtLH8K29CAqttykVZD5w?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=lIUulC59pWRZD81Yok-Vtg&_nc_oc=AdndY8_SifxGoCeGgDnVK_EFV5BjPpsCNnw8G9JArzdHdP6sefBf8uK6KMcI36sJ98Ja6CX5dgeX43xhYRm5BiDN&ccb=10-5&oh=00_Afuuvd9cwEjU_uNlBRtsQ6HOIh-2wg_wwB8Xw4yeOuL6-A&oe=69C61D28&_nc_sid=201bca",
+          "best_image_url": null,
           "best_image_idx": null,
           "matched_text": null,
           "match_strength": null,
@@ -37852,23 +38737,6 @@
           "text_match": null,
           "evidence_score": 0.0065
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "website",
-          "weight": -0.1,
-          "description": "Website: dead"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (6 recent images)"
-        }
       ]
     },
     "website_url": "http://guddudekarahi.com",
@@ -37995,13 +38863,6 @@
           "text_match": null,
           "evidence_score": 0.065
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        }
       ]
     },
     "website_url": "https://www.ezeducationinfo.com",
@@ -38095,7 +38956,7 @@
         "text": {
           "verdict": "no_match",
           "score": 0.0,
-          "best_image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9kTuUvZWfEmMESO21KFwE01DP9TjUHd6j2NLkQs2MtniW5hI7KxkOoJxTmW9cwtYtqe-JxlEBlBm7xshCrcELrwF66CwN2fWxHH5crRfILs-shDoY0zQuhtvRUBoPEAK95N9qTMhgVLCopjV92ad4?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=Qyp3DoJVSVUjZvcu1QNVUg&_nc_oc=Adm5z9VoYaCfPNip-kOO0lpEFbcZagOdDeLzsQbKvAa_Vh64sLTN6YgPvKkiY1groCOa5PEpxUQgZue49giwWIyB&ccb=10-5&oh=00_Afss_AY2xOKvlYPugjvaRO_MCZjxUoLz2xuSE55WgIiENw&oe=69C650B2&_nc_sid=201bca",
+          "best_image_url": null,
           "best_image_idx": null,
           "matched_text": null,
           "match_strength": null,
@@ -38618,18 +39479,6 @@
           "text_match": null,
           "evidence_score": 0.008
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (6 recent images)"
-        }
       ]
     },
     "website_url": "http://buttermilksouthernkitchen.com",
@@ -38731,7 +39580,7 @@
         "text": {
           "verdict": "no_match",
           "score": 0.0,
-          "best_image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_5YpfXFaZZYhoJEBxnjj1UN5DtnooCqHQhom_uEicOkaiyPxVpe1gAZvqUGaQroyCSWMaEok_9pPRvEXDwdlVFlKaiwRKJWaE74Jqzg5MCGgIgNPGqIb6uYmlqkAuHP8PqvPdWw93abuMEYOe9BT0?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=9SC-pnICLJWE6DpDm61BWA&_nc_oc=Adl6R09NaCAwnmHVSa7xSeX8CNCwjODHj-SNxCi4MdWFCb61wmTzzv-KN4nzhSNr4Sn-6c1BvSWtBwaNnUiINW0t&ccb=10-6&oh=00_Afukicks0ikBO3cbVS2W4KjvQdQzb8qc92DXvBVF48OUrQ&oe=69C97777&_nc_sid=201bca",
+          "best_image_url": null,
           "best_image_idx": null,
           "matched_text": null,
           "match_strength": null,
@@ -39490,23 +40339,6 @@
           "text_match": null,
           "evidence_score": 0.0063
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (5 recent images)"
-        }
       ]
     },
     "ground_truth": "closed",
@@ -39894,18 +40726,6 @@
           "text_match": null,
           "evidence_score": 0.0617
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (4 recent images)"
-        }
       ]
     },
     "ground_truth": "closed"
@@ -40001,7 +40821,7 @@
         "text": {
           "verdict": "no_match",
           "score": 0.0,
-          "best_image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-wbXU8rdjssYpwaEdFtrjLjQ076wVmEZq6ZECy95x0TkFwkc_hnH1XvSpwRhLwqTkHcN623fIDQrQEwWDUq7Dh8m7JKq1OUY2YLO4SEqYQAL6ZW3LrtkP_C4Xw-Ppe4Mc1_MFybdj4LI87r9Z-FQ?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=b0IJsnBlhD7J0KnQ4ne4tQ&_nc_oc=AdnTnyZsZlyV4r2Uas2DrgNDyUYCBt32GmK3Rul1q8UVdBSUjk-ePxUu8VcuBtaVlb_Se9lnPoJkyV8AVmMVzl_n&ccb=10-5&oh=00_AftXckH_-4p0lvTq4q01pWwMV2tHxdYAoG3vzqlEPpkWfg&oe=69C96D88&_nc_sid=201bca",
+          "best_image_url": null,
           "best_image_idx": null,
           "matched_text": null,
           "match_strength": null,
@@ -40611,28 +41431,6 @@
           "text_match": null,
           "evidence_score": 0.0052
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": -0.25,
-          "description": "Foursquare: mismatch (\"Marina Pizza & Caffe\")"
-        },
-        {
-          "signal": "website",
-          "weight": -0.15,
-          "description": "Website: parked"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (5 recent images)"
-        }
       ]
     },
     "ground_truth": "closed"
@@ -40878,18 +41676,6 @@
           ],
           "text_match": null,
           "evidence_score": 0.0131
-        }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (2 recent images)"
         }
       ]
     },
@@ -41165,23 +41951,6 @@
           "text_match": null,
           "evidence_score": 0.0045
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "website",
-          "weight": -0.1,
-          "description": "Website: dead"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (2 recent images)"
-        }
       ]
     },
     "ground_truth": "closed"
@@ -41433,18 +42202,6 @@
           "texts_with_bbox": [],
           "text_match": null,
           "evidence_score": 0.065
-        }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (6 recent images)"
         }
       ]
     },
@@ -41744,28 +42501,6 @@
           "text_match": null,
           "evidence_score": 0.0087
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        },
-        {
-          "signal": "website",
-          "weight": -0.1,
-          "description": "Website: dead"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (2 recent images)"
-        }
       ]
     },
     "ground_truth": "closed"
@@ -41858,7 +42593,7 @@
         "text": {
           "verdict": "no_match",
           "score": 0.0,
-          "best_image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9xQBqx-yht24ss5iMNAhm3fos3Bk5QCYARO-bzkkF0Cx7eFWh0_H_3LhcgMJ_dU_rBGzpMc3NeHeJUjp5EdNI68KXAs60QES9N7CBg7SjZcYNIHNq6PWwolLssQ-UiRktgScUSt_QdJYsiFXty7Q?stp=s2048x696&edm=AOnQwmMEAAAA&_nc_gid=_aXSPhCOItltRlYCh-z-4A&_nc_oc=AdmxfJ7mOmX2g-WHSeeaxKrhzgy9ah8_0tijun-_7gnSnoLIZyoIu1fB6tPkYKPzBjuXPtASFoTzWktEjldwRtyx&ccb=10-5&oh=00_AfsJXWa0pSVhIGXl_LYImQgNQYW-io2LMVqtRiS_EF8E7g&oe=69C95C84&_nc_sid=201bca",
+          "best_image_url": null,
           "best_image_idx": null,
           "matched_text": null,
           "match_strength": null,
@@ -42356,18 +43091,6 @@
           "text_match": null,
           "evidence_score": 0.0617
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (6 recent images)"
-        }
       ]
     },
     "ground_truth": "closed"
@@ -42673,28 +43396,6 @@
           "text_match": null,
           "evidence_score": 0.0179
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": 0.3,
-          "description": "Foursquare: verified"
-        },
-        {
-          "signal": "website",
-          "weight": -0.1,
-          "description": "Website: dead"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (3 recent images)"
-        }
       ]
     },
     "ground_truth": "closed"
@@ -42962,28 +43663,6 @@
           "text_match": null,
           "evidence_score": 0.0091
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "foursquare",
-          "weight": -0.25,
-          "description": "Foursquare: mismatch (\"Counsel LLP - Media & Technology Law\")"
-        },
-        {
-          "signal": "website",
-          "weight": -0.1,
-          "description": "Website: dead"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (4 recent images)"
-        }
       ]
     },
     "ground_truth": "closed"
@@ -43076,7 +43755,7 @@
         "text": {
           "verdict": "no_match",
           "score": 0.0,
-          "best_image_url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8e3u5Ikt07Qox8KWYso4DGGROGcwmFaeKTLi3rN19gYTRJIWeqYBvS_V6B8YqYr19Zds8bgbVJCW9w8S8DodhIoZUCdOSiN30YurD6SzI4YXee7yfv1KuTB6EB9gRLIwS0MSpzSjkUAxqNyLKMurc?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=fVQVHxgXFeSqiKM7FhHd_w&_nc_oc=Adkc8s6wWxQ_uprw8esR5OQ1kfdLXekUhVk3qHRMpGNY8ECXTU6j5_ys8tZ5bF4lp-AcUQ66gAZ_1fRzQRtIHHOX&ccb=10-5&oh=00_AfuAUgDub5OcCRNuxSFzgHlPHu9sdIWn81m1Oa2ynEajKA&oe=69C96D1F&_nc_sid=201bca",
+          "best_image_url": null,
           "best_image_idx": null,
           "matched_text": null,
           "match_strength": null,
@@ -43936,18 +44615,6 @@
           "text_match": null,
           "evidence_score": 0.055
         }
-      ],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "text",
-          "weight": -0.05,
-          "description": "No text match (6 recent images)"
-        }
       ]
     },
     "ground_truth": "closed"
@@ -44039,19 +44706,7 @@
       "best_image_idx": null,
       "best_image_url": null,
       "text_match": false,
-      "per_image": [],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "website",
-          "weight": -0.1,
-          "description": "Website: dead"
-        }
-      ]
+      "per_image": []
     },
     "ground_truth": "closed",
     "yelp": {
@@ -44150,19 +44805,7 @@
       "best_image_idx": null,
       "best_image_url": null,
       "text_match": false,
-      "per_image": [],
-      "score_breakdown": [
-        {
-          "signal": "base",
-          "weight": 0.5,
-          "description": "Base score"
-        },
-        {
-          "signal": "website",
-          "weight": -0.1,
-          "description": "Website: dead"
-        }
-      ]
+      "per_image": []
     },
     "ground_truth": "closed",
     "yelp": {
@@ -44172,6 +44815,204 @@
       "yelp_rating": 3.9,
       "yelp_review_count": 8,
       "yelp_url": "https://www.yelp.com/biz/bun-app%C3%A9tit-san-francisco?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    }
+  },
+  {
+    "name": "Corx Wine Cafe",
+    "category": "Wine Bar",
+    "address": "3240 Geary Blvd, San Francisco",
+    "location": [
+      -122.4539096,
+      37.7817878
+    ],
+    "overture_meta": {
+      "confidence": 0.95,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.95,
+      "source_age_days": 91,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.2183,
+      "fields_populated": 7
+    },
+    "id": 163,
+    "website_url": "http://Corxwinecafe.com/",
+    "phone_number": "+14157026157",
+    "website_check": {
+      "status": "alive",
+      "status_code": 200,
+      "detail": "Website responding (HTTP 200)"
+    },
+    "vision": {
+      "prediction": "open",
+      "confidence": 0.55,
+      "primary_layer": "website",
+      "evidence": "Website: alive | No street-level images",
+      "layers": {
+        "text": {
+          "verdict": "no_images",
+          "score": 0.0,
+          "best_image_url": null,
+          "best_image_idx": null,
+          "matched_text": null,
+          "match_strength": null,
+          "ocr_texts": [],
+          "ocr_texts_detail": [],
+          "detail": "No images to analyze"
+        },
+        "xgboost": {
+          "verdict": "supports_open",
+          "score": 0.7012,
+          "confidence": 0.7012,
+          "raw_score": 0.9677,
+          "threshold": 0.69,
+          "detail": "XGBoost: 70% open (calibrated from 97% raw)",
+          "feature_contributions": {
+            "overture_confidence": 0.95,
+            "source_age_days": 91.0,
+            "has_website": 1.0,
+            "has_phone": 1.0,
+            "has_brand": 0.0,
+            "address_complete": 1.0,
+            "category_closure_rate": 0.2183,
+            "fields_populated": 7.0,
+            "missing_signals": 1.0,
+            "data_completeness": 0.7389,
+            "low_confidence": 0.0
+          }
+        },
+        "website": {
+          "status": "alive",
+          "url": "http://Corxwinecafe.com/",
+          "status_code": 200,
+          "detail": "Website responding (HTTP 200)"
+        },
+        "foursquare": {
+          "status": "no_data",
+          "detail": "",
+          "match": null
+        }
+      },
+      "ocr_texts": [],
+      "images_analyzed": 0,
+      "best_image_idx": null,
+      "best_image_url": null,
+      "text_match": false,
+      "per_image": []
+    },
+    "ground_truth": "closed",
+    "yelp": {
+      "yelp_name": "Corx Wine Cafe",
+      "is_closed": true,
+      "match_score": 1.0,
+      "yelp_rating": 4.1,
+      "yelp_review_count": 21,
+      "yelp_url": "https://www.yelp.com/biz/corx-wine-cafe-san-francisco-2?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    }
+  },
+  {
+    "name": "Hot Licks",
+    "category": "Specialty Grocery Store",
+    "address": "39 Pier 39, San Francisco",
+    "location": [
+      -122.4103272,
+      37.8100002
+    ],
+    "overture_meta": {
+      "confidence": 0.989,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.989,
+      "source_age_days": 91,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.2183,
+      "fields_populated": 7
+    },
+    "id": 166,
+    "website_url": "http://www.hotlickssauces.com",
+    "phone_number": "+14156587440",
+    "website_check": {
+      "status": "alive",
+      "status_code": 200,
+      "detail": "Website responding (HTTP 200)"
+    },
+    "vision": {
+      "prediction": "open",
+      "confidence": 0.55,
+      "primary_layer": "website",
+      "evidence": "Website: alive | No street-level images",
+      "layers": {
+        "text": {
+          "verdict": "no_images",
+          "score": 0.0,
+          "best_image_url": null,
+          "best_image_idx": null,
+          "matched_text": null,
+          "match_strength": null,
+          "ocr_texts": [],
+          "ocr_texts_detail": [],
+          "detail": "No images to analyze"
+        },
+        "xgboost": {
+          "verdict": "supports_open",
+          "score": 0.7418,
+          "confidence": 0.7418,
+          "raw_score": 0.9781,
+          "threshold": 0.69,
+          "detail": "XGBoost: 74% open (calibrated from 98% raw)",
+          "feature_contributions": {
+            "overture_confidence": 0.989,
+            "source_age_days": 91.0,
+            "has_website": 1.0,
+            "has_phone": 1.0,
+            "has_brand": 0.0,
+            "address_complete": 1.0,
+            "category_closure_rate": 0.2183,
+            "fields_populated": 7.0,
+            "missing_signals": 1.0,
+            "data_completeness": 0.7692,
+            "low_confidence": 0.0
+          }
+        },
+        "website": {
+          "status": "alive",
+          "url": "http://www.hotlickssauces.com",
+          "status_code": 200,
+          "detail": "Website responding (HTTP 200)"
+        },
+        "foursquare": {
+          "status": "no_data",
+          "detail": "",
+          "match": null
+        }
+      },
+      "ocr_texts": [],
+      "images_analyzed": 0,
+      "best_image_idx": null,
+      "best_image_url": null,
+      "text_match": false,
+      "per_image": []
+    },
+    "ground_truth": "closed",
+    "yelp": {
+      "yelp_name": "Hot Licks",
+      "is_closed": true,
+      "match_score": 1.0,
+      "yelp_rating": 4.8,
+      "yelp_review_count": 10,
+      "yelp_url": "https://www.yelp.com/biz/hot-licks-san-francisco-4?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
     }
   }
 ]

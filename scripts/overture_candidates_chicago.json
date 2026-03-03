@@ -1,0 +1,3164 @@
+[
+  {
+    "name": "Udupi Palace Restaurant",
+    "category": "Indian Restaurant",
+    "address": "2543 W Devon Ave, Chicago",
+    "location": [
+      -87.6940035,
+      41.9975566
+    ],
+    "overture_meta": {
+      "confidence": 0.99,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.99,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 66,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 1,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Udupi Palace Restaurant | Best vegetarian Indian Restaurant\" at this location",
+      "match": {
+        "fsq_id": "4aa1e192f964a520aa4120e3",
+        "name": "Udupi Palace Restaurant | Best vegetarian Indian Restaurant",
+        "category": "Indian Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2543 W Devon Ave (at N Rockwell St), Chicago, IL 60659, United States"
+      }
+    }
+  },
+  {
+    "name": "FLASH Hernandez Tacos",
+    "category": "Mexican Restaurant",
+    "address": "5102 W 22nd Pl, Chicago",
+    "location": [
+      -87.75181,
+      41.85048
+    ],
+    "overture_meta": {
+      "confidence": 0.639,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.639,
+      "source_age_days": 88,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 17,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 2,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Worthy Nutrition",
+    "category": "Beer Bar",
+    "address": "3743 Prairie Ave, Chicago",
+    "location": [
+      -87.84378,
+      41.822632
+    ],
+    "overture_meta": {
+      "confidence": 0.947,
+      "update_time": "2024-01-24",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.947,
+      "source_age_days": 765,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 102,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 3,
+    "foursquare": {
+      "status": "mismatch",
+      "detail": "Foursquare shows \"Balance Brookfield Nutrition\" instead",
+      "match": {
+        "fsq_id": "694074f098a16e23d3507c0d",
+        "name": "Balance Brookfield Nutrition",
+        "category": "Health Food Store",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "3743 Prairie Ave, Brookfield, IL 60513, United States"
+      }
+    }
+  },
+  {
+    "name": "One Stop Jamaica Jerk",
+    "category": "Jamaican Restaurant",
+    "address": "1849 E 79th St, Chicago",
+    "location": [
+      -87.5789694,
+      41.751478
+    ],
+    "overture_meta": {
+      "confidence": 0.959,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.959,
+      "source_age_days": 88,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 60,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 4,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Jibaritos",
+    "category": "Puerto Rican Restaurant",
+    "address": "2616 N Clark St, Chicago",
+    "location": [
+      -87.643861,
+      41.9299708
+    ],
+    "overture_meta": {
+      "confidence": 0.902,
+      "update_time": "2024-01-31",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.902,
+      "source_age_days": 758,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 73,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 5,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Pupuseria Metapan",
+    "category": "Salvadoran Restaurant",
+    "address": "6107 W Addison St, Chicago",
+    "location": [
+      -87.77936037398877,
+      41.9455636430322
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-08-22",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 189,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 130,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 6,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Pupuseria Metapan\" at this location",
+      "match": {
+        "fsq_id": "5a75d2516f706a3800589cd6",
+        "name": "Pupuseria Metapan",
+        "category": "Salvadoran Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "6107 W Addison St (Meade), Chicago, IL 60634, United States"
+      }
+    }
+  },
+  {
+    "name": "Isla Pilipina",
+    "category": "Filipino Restaurant",
+    "address": "2501 W Lawrence Ave, Chicago",
+    "location": [
+      -87.69146068020827,
+      41.96853482569908
+    ],
+    "overture_meta": {
+      "confidence": 0.929,
+      "update_time": "2025-08-19",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.929,
+      "source_age_days": 192,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 50,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 7,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Bountiful Eatery",
+    "category": "Gluten Free Restaurant",
+    "address": "3312 N Broadway St, Chicago",
+    "location": [
+      -87.64452695846558,
+      41.940930213584934
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-10-21",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 129,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 87,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 8,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Poke Gu",
+    "category": "Poke Restaurant",
+    "address": "2931 N Broadway, Chicago",
+    "location": [
+      -87.6441165,
+      41.9358211
+    ],
+    "overture_meta": {
+      "confidence": 0.95,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.95,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 34,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 9,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Poke Gu\" at this location",
+      "match": {
+        "fsq_id": "63e157e78f8ec77b37d62d33",
+        "name": "Poke Gu",
+        "category": "Poke Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2931 N Broadway St, Chicago, IL 60657, United States"
+      }
+    }
+  },
+  {
+    "name": "The Barrel Club",
+    "category": "Cocktail Bar",
+    "address": "4910 W 111th St, Chicago",
+    "location": [
+      -87.7427128,
+      41.6918354
+    ],
+    "overture_meta": {
+      "confidence": 0.995,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.995,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 59,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 10,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"The Barrel Club\" at this location",
+      "match": {
+        "fsq_id": "5d154d876d22da002facdc4c",
+        "name": "The Barrel Club",
+        "category": "Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "4910 W 111th St (111th and Cicero), Oak Lawn, IL 60453, United States"
+      }
+    }
+  },
+  {
+    "name": "Muscle Bar Juice Bar",
+    "category": "Smoothie Juice Bar",
+    "address": "1804 W Lawrence Ave, Chicago",
+    "location": [
+      -87.6749614,
+      41.9696123
+    ],
+    "overture_meta": {
+      "confidence": 0.95,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.95,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 16,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 11,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Muscle Bar\" at this location",
+      "match": {
+        "fsq_id": "63f951b70c02447ac35d2c43",
+        "name": "Muscle Bar",
+        "category": "Juice Bar",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "Chicago, IL 60640, United States"
+      }
+    }
+  },
+  {
+    "name": "Old Lviv / Старий Львів",
+    "category": "Ukrainian Restaurant",
+    "address": "2228 W Chicago Ave, Chicago",
+    "location": [
+      -87.68306875908377,
+      41.89604087499564
+    ],
+    "overture_meta": {
+      "confidence": 0.969,
+      "update_time": "2026-01-10",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.969,
+      "source_age_days": 48,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 150,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 12,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Old Lviv / Старий Львів\" at this location",
+      "match": {
+        "fsq_id": "4cdc2d804006a143ed16ddb2",
+        "name": "Old Lviv / Старий Львів",
+        "category": "Ukrainian Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2228 W Chicago Ave, Chicago, IL 60622, United States"
+      }
+    }
+  },
+  {
+    "name": "Da Mao Jia",
+    "category": "Indo Chinese Restaurant",
+    "address": "2621 S Halsted St, Chicago",
+    "location": [
+      -87.64612083338767,
+      41.84473461384861
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-10-24",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 126,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 80,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 13,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Da Mao Jia\" at this location",
+      "match": {
+        "fsq_id": "5fc725e8355bff288d0ea967",
+        "name": "Da Mao Jia",
+        "category": "Indian Chinese Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2621 S Halsted St, Chicago, IL 60608, United States"
+      }
+    }
+  },
+  {
+    "name": "Toscana Grill",
+    "category": "Eastern European Restaurant",
+    "address": "5357 N Lincoln Ave, Chicago",
+    "location": [
+      -87.6921932,
+      41.97926
+    ],
+    "overture_meta": {
+      "confidence": 0.972,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.972,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 128,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 14,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Toscana Grill\" at this location",
+      "match": {
+        "fsq_id": "4db097a76e81a2637edb3eed",
+        "name": "Toscana Grill",
+        "category": "Greek Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "5357 N Lincoln Ave (Balmoral Avenue), Chicago, IL 60625, United States"
+      }
+    }
+  },
+  {
+    "name": "Hermosa",
+    "category": "Cambodian Restaurant",
+    "address": "4356 W Armitage Ave, Chicago",
+    "location": [
+      -87.7362221,
+      41.9173311
+    ],
+    "overture_meta": {
+      "confidence": 0.946,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.946,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 64,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 15,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Hermosa\" at this location",
+      "match": {
+        "fsq_id": "57118855498e9fcbf728b812",
+        "name": "Hermosa",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "4356 W Armitage Ave (Kostner), Chicago, IL 60639, United States"
+      }
+    }
+  },
+  {
+    "name": "Ann Sather Restaurant",
+    "category": "Scandinavian Restaurant",
+    "address": "909 W Belmont Ave, Chicago",
+    "location": [
+      -87.6520165,
+      41.9398213
+    ],
+    "overture_meta": {
+      "confidence": 0.989,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.989,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 90,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 16,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Broadway Ann Sather Restaurant\" at this location",
+      "match": {
+        "fsq_id": "5fd187dbade17c5d25896b64",
+        "name": "Broadway Ann Sather Restaurant",
+        "category": "Café",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "909 W BELMONT AVE, Chicago, IL 60657, United States"
+      }
+    }
+  },
+  {
+    "name": "Einstein Bros. Bagels",
+    "category": "Bagel Restaurant",
+    "address": "109 E Pearson St, Chicago",
+    "location": [
+      -87.6254913,
+      41.8973839
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-08-29",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 182,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 43,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 17,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Big League Burgers",
+    "category": "Burger Restaurant",
+    "address": "3734 W Irving Park Rd, Chicago",
+    "location": [
+      -87.7216339,
+      41.9540972
+    ],
+    "overture_meta": {
+      "confidence": 0.992,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.992,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 28,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 18,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Big League Burgers\" at this location",
+      "match": {
+        "fsq_id": "5bfb3bfa2b9844002cdee4c3",
+        "name": "Big League Burgers",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "3734 W Irving Park Rd (Ridgeway), Chicago, IL 60618, United States"
+      }
+    }
+  },
+  {
+    "name": "Sweet World Pastry",
+    "category": "Bakery",
+    "address": "5450 N Milwaukee Ave, Chicago",
+    "location": [
+      -87.77253787208555,
+      41.98048651022692
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-10-21",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 129,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 24,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 19,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Sweet World Pastry\" at this location",
+      "match": {
+        "fsq_id": "4bd60445637ba5939978f770",
+        "name": "Sweet World Pastry",
+        "category": "Bakery",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "5450 N Milwaukee Ave (at Catalpa), Chicago, IL 60630, United States"
+      }
+    }
+  },
+  {
+    "name": "Bunch of Dumplings",
+    "category": "Pan Asian Restaurant",
+    "address": "2537 S Wabash Ave, Chicago",
+    "location": [
+      -87.6253698,
+      41.8464045
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-04-16",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 317,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 79,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 20,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Bunch of Dumplings\" at this location",
+      "match": {
+        "fsq_id": "694086e0b9c5366b7b441f90",
+        "name": "Bunch of Dumplings",
+        "category": "Chinese Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2537 S Wabash Ave, Chicago, IL 60616, United States"
+      }
+    }
+  },
+  {
+    "name": "honeygrow",
+    "category": "Noodles Restaurant",
+    "address": "179 N Morgan St, Chicago",
+    "location": [
+      -87.651873,
+      41.885252
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2017-09-27",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 3075,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 108,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 21,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Las Islas Berwyn",
+    "category": "Seafood Restaurant",
+    "address": "6516 Cermak Rd, Chicago",
+    "location": [
+      -87.7868295,
+      41.8508962
+    ],
+    "overture_meta": {
+      "confidence": 0.975,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.975,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 62,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 22,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Las Islas Marias\" at this location",
+      "match": {
+        "fsq_id": "4c3fc091af052d7f0ae47a79",
+        "name": "Las Islas Marias",
+        "category": "Mexican Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "6516 Cermak Rd, Berwyn, IL 60402, United States"
+      }
+    }
+  },
+  {
+    "name": "Rica Arepa",
+    "category": "Venezuelan Restaurant",
+    "address": "2913 N Lincoln Ave, Chicago",
+    "location": [
+      -87.6616263,
+      41.9347961
+    ],
+    "overture_meta": {
+      "confidence": 0.988,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.988,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 77,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 23,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Rica Arepa\" at this location",
+      "match": {
+        "fsq_id": "60bac0475bcee64c61b7bab7",
+        "name": "Rica Arepa",
+        "category": "Venezuelan Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2913 N Lincoln Ave (George), Chicago, IL 60657, United States"
+      }
+    }
+  },
+  {
+    "name": "The Lounge at JW Marriott",
+    "category": "Hotel Bar",
+    "address": "151 W Adams St, Chicago",
+    "location": [
+      -87.63323315787626,
+      41.879331867004716
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-12-19",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 70,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 157,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 24,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"The Lounge at JW Marriott\" at this location",
+      "match": {
+        "fsq_id": "4ce86e9c595cb1f795efc814",
+        "name": "The Lounge at JW Marriott",
+        "category": "Hotel Bar",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "151 W Adams St (btwn S. Wells & S. LaSalle), Chicago, IL 60603, United States"
+      }
+    }
+  },
+  {
+    "name": "KAYBEE's Indian Flavor",
+    "category": "Malaysian Restaurant",
+    "address": "1234 N Halsted St, Chicago",
+    "location": [
+      -87.6483907,
+      41.9047043
+    ],
+    "overture_meta": {
+      "confidence": 0.947,
+      "update_time": "2021-08-25",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.947,
+      "source_age_days": 1647,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 159,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 25,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Lina Pita",
+    "category": "Moroccan Restaurant",
+    "address": "3113 N Halsted St, Chicago",
+    "location": [
+      -87.6490212989608,
+      41.93820519846018
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-07-03",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 239,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 119,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 26,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "The Little Sherpa",
+    "category": "Himalayan Nepalese Restaurant",
+    "address": "6031 N Cicero Ave, Chicago",
+    "location": [
+      -87.7480123,
+      41.9908783
+    ],
+    "overture_meta": {
+      "confidence": 0.972,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.972,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 91,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 27,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"The Little Sherpa\" at this location",
+      "match": {
+        "fsq_id": "67a569cdea1b9404d58c47d5",
+        "name": "The Little Sherpa",
+        "category": "Indian Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "6031 N Cicero Ave (W Peterson), Chicago, IL 60646, United States"
+      }
+    }
+  },
+  {
+    "name": "Desi Cloud Kitchen",
+    "category": "Halal Restaurant",
+    "address": "2739 W Devon Ave, Chicago",
+    "location": [
+      -87.6986729,
+      41.997418
+    ],
+    "overture_meta": {
+      "confidence": 0.95,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.95,
+      "source_age_days": 88,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 48,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 28,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Lior's Cafe",
+    "category": "Haitian Restaurant",
+    "address": "10500 S Halsted St, Chicago",
+    "location": [
+      -87.6430983,
+      41.7031255
+    ],
+    "overture_meta": {
+      "confidence": 0.982,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.982,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 61,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 29,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Liors Cafe\" at this location",
+      "match": {
+        "fsq_id": "663fe129ead9380676814f65",
+        "name": "Liors Cafe",
+        "category": "Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "10500 S Halsted St, Chicago, IL 60628, United States"
+      }
+    }
+  },
+  {
+    "name": "Pine Dental Care",
+    "category": "Pediatric Dentist",
+    "address": "1460 N Halsted St, Chicago",
+    "location": [
+      -87.6488525,
+      41.9080192
+    ],
+    "overture_meta": {
+      "confidence": 0.997,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.997,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 18,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 30,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Pine Dental Care\" at this location",
+      "match": {
+        "fsq_id": "5216845111d22a4594f3165e",
+        "name": "Pine Dental Care",
+        "category": "Dentist",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1460 N Halsted St (Blackhawk St.), Chicago, IL 60642, United States"
+      }
+    }
+  },
+  {
+    "name": "Shop Decisions",
+    "category": "Clothing Store",
+    "address": "1114 S Delano Ct W, Chicago",
+    "location": [
+      -87.6330666,
+      41.8685814
+    ],
+    "overture_meta": {
+      "confidence": 0.95,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.95,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 11,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 31,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Shop Decisions\" at this location",
+      "match": {
+        "fsq_id": "69406c9398a16e23d3330e8d",
+        "name": "Shop Decisions",
+        "category": "Clothing Store",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1114 S Delano Ct W, Chicago, IL 60605, United States"
+      }
+    }
+  },
+  {
+    "name": "DFworkroom",
+    "category": "Hair Salon",
+    "address": "3255 N Paulina St, Chicago",
+    "location": [
+      -87.67089497232958,
+      41.9411596338076
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-04-21",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 312,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 3,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 32,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"DFworkroom\" at this location",
+      "match": {
+        "fsq_id": "5307cdd3498e855124881d6d",
+        "name": "DFworkroom",
+        "category": "Hair Salon",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "3255 N Paulina St (School), Chicago, IL 60657, United States"
+      }
+    }
+  },
+  {
+    "name": "Irving J. Leonard DDS, Ltd.",
+    "category": "Cosmetic Dentist",
+    "address": "1360 N Sandburg Ter, Chicago",
+    "location": [
+      -87.632158,
+      41.907255
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2013-01-28",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 4778,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 105,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 33,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Conscious Plates",
+    "category": "Vegan Restaurant",
+    "address": "332 E 51st St, Chicago",
+    "location": [
+      -87.61837439604213,
+      41.80218143520161
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-05-20",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 283,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 63,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 34,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Conscious Plates\" at this location",
+      "match": {
+        "fsq_id": "765368f661494d740482edde",
+        "name": "Conscious Plates",
+        "category": "Vegan and Vegetarian Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "332 E 51st St, Chicago, IL 60615, United States"
+      }
+    }
+  },
+  {
+    "name": "Lobo De Mar Restaurant",
+    "category": "Seafood Restaurant",
+    "address": "5503 W Cermak Rd, Chicago",
+    "location": [
+      -87.76176843326051,
+      41.85074291575071
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-10-24",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 126,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 62,
+      "fields_populated": 8,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 35,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Lobo De Mar Restaurant\" at this location",
+      "match": {
+        "fsq_id": "4e9cb51a4fc67b739b845ab2",
+        "name": "Lobo De Mar Restaurant",
+        "category": "Seafood Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "5503 W Cermak Rd (at 55th Ave), Cicero, IL 60804, United States"
+      }
+    }
+  },
+  {
+    "name": "Minghin Cuisine",
+    "category": "Dim Sum Restaurant",
+    "address": "215 E Grand Ave, Chicago",
+    "location": [
+      -87.62204,
+      41.89153
+    ],
+    "overture_meta": {
+      "confidence": 0.955,
+      "update_time": "2017-09-20",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.955,
+      "source_age_days": 3082,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 113,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 36,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"MingHin Cuisine\" at this location",
+      "match": {
+        "fsq_id": "5fa8725b08db5a66e1a48a1c",
+        "name": "MingHin Cuisine",
+        "category": "Chinese Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "215 E Ohio St, Chicago, IL 60611, United States"
+      }
+    }
+  },
+  {
+    "name": "Your Organic Inner G",
+    "category": "Vegetarian Restaurant",
+    "address": "8259 S Kedzie Ave, Chicago",
+    "location": [
+      -87.7017636,
+      41.7426102
+    ],
+    "overture_meta": {
+      "confidence": 0.95,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.95,
+      "source_age_days": 88,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 78,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 37,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Your Organic Inner G\" at this location",
+      "match": {
+        "fsq_id": "66b3adf8a788e80bbde1b81a",
+        "name": "Your Organic Inner G",
+        "category": "Vegan and Vegetarian Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "Chicago, IL 60652, United States"
+      }
+    }
+  },
+  {
+    "name": "Kizin Creole Restaurant",
+    "category": "Haitian Restaurant",
+    "address": "2311 Howard St, Chicago",
+    "location": [
+      -87.688185,
+      42.0193812
+    ],
+    "overture_meta": {
+      "confidence": 0.964,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.964,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 61,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 38,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Kizin Creole Restaurant\" at this location",
+      "match": {
+        "fsq_id": "5233bf2911d2b264f3b8506a",
+        "name": "Kizin Creole Restaurant",
+        "category": "Caribbean Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2311 W Howard St, Chicago, IL 60645, United States"
+      }
+    }
+  },
+  {
+    "name": "Cafe Nova",
+    "category": "Sri Lankan Restaurant",
+    "address": "6431 N Sheridan Rd, Chicago",
+    "location": [
+      -87.6604256,
+      41.9992188
+    ],
+    "overture_meta": {
+      "confidence": 0.99,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.99,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 140,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 39,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Cafe Nova\" at this location",
+      "match": {
+        "fsq_id": "641de457fcb526663521dc02",
+        "name": "Cafe Nova",
+        "category": "Indian Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "6431 N Sheridan Rd, Chicago, IL 60626, United States"
+      }
+    }
+  },
+  {
+    "name": "Baskin-Robbins",
+    "category": "Ice Cream Shop",
+    "address": "3801 W Belmont Ave, Chicago",
+    "location": [
+      -87.7223164,
+      41.9390213
+    ],
+    "overture_meta": {
+      "confidence": 0.981,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Baskin-Robbins"
+    },
+    "overture_raw": {
+      "overture_confidence": 0.981,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 1,
+      "address_complete": 1,
+      "category_encoded": 5,
+      "fields_populated": 8,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 40,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Baskin-Robbins\" at this location",
+      "match": {
+        "fsq_id": "4f997b52d4f21823bb1f50fb",
+        "name": "Baskin-Robbins",
+        "category": "Ice Cream Parlor",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "3801 W Belmont Ave, Chicago, IL 60618, United States"
+      }
+    }
+  },
+  {
+    "name": "Sharks Fish and Chicken Blue Island",
+    "category": "Chicken Wings Restaurant",
+    "address": "2411 119th St, Chicago",
+    "location": [
+      -87.6814847,
+      41.6769418
+    ],
+    "overture_meta": {
+      "confidence": 0.982,
+      "update_time": "2021-10-22",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.982,
+      "source_age_days": 1589,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 36,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 41,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Sharks Fish & Chicken\" at this location",
+      "match": {
+        "fsq_id": "4cddf26f3644a0934725499f",
+        "name": "Sharks Fish & Chicken",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2411 119th St, Blue Island, IL 60406, United States"
+      }
+    }
+  },
+  {
+    "name": "Café Crisp",
+    "category": "Salad Bar",
+    "address": "2852 N Clark St, Chicago",
+    "location": [
+      -87.646317198907,
+      41.93408404019641
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-05-22",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 281,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 96,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 42,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Café Crisp\" at this location",
+      "match": {
+        "fsq_id": "59554d986fd626672ce52ecb",
+        "name": "Café Crisp",
+        "category": "Salad Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2852 N Clark St, Chicago, IL 60657, United States"
+      }
+    }
+  },
+  {
+    "name": "Nexx Phaze Barber Beauty Studio",
+    "category": "Barber",
+    "address": "4333 W Madison St, Chicago",
+    "location": [
+      -87.7343726,
+      41.8805472
+    ],
+    "overture_meta": {
+      "confidence": 0.95,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.95,
+      "source_age_days": 88,
+      "has_website": 0,
+      "has_phone": 0,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 7,
+      "fields_populated": 5,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 43,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Poke Burrito South Loop",
+    "category": "Poke Restaurant",
+    "address": "423 S Dearborn St, Chicago",
+    "location": [
+      -87.6291597,
+      41.8761567
+    ],
+    "overture_meta": {
+      "confidence": 0.961,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.961,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 34,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 44,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Poke Burrito South Loop\" at this location",
+      "match": {
+        "fsq_id": "5aa9cebbe97dfb5e84f18ec2",
+        "name": "Poke Burrito South Loop",
+        "category": "Poke Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "423 S Dearborn St, Chicago, IL 60605, United States"
+      }
+    }
+  },
+  {
+    "name": "Sunny Bowls",
+    "category": "Soup Restaurant",
+    "address": "222 Merchandise Mart Plz, Chicago",
+    "location": [
+      -87.6347125,
+      41.8884665
+    ],
+    "overture_meta": {
+      "confidence": 0.934,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.934,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 98,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 45,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Sunny Bowls\" at this location",
+      "match": {
+        "fsq_id": "61b0fb6bd367161110da28b1",
+        "name": "Sunny Bowls",
+        "category": "Soup Spot",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "Merchandise Mart, Chicago, IL 60654, United States"
+      }
+    }
+  },
+  {
+    "name": "Red June Cafe",
+    "category": "Cafe",
+    "address": "2020 N Leavitt St, Chicago",
+    "location": [
+      -87.6826701,
+      41.9183311
+    ],
+    "overture_meta": {
+      "confidence": 0.984,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.984,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 38,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 46,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Red June Cafe\" at this location",
+      "match": {
+        "fsq_id": "4b437852f964a52020e125e3",
+        "name": "Red June Cafe",
+        "category": "Coffee Shop",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2020 N Leavitt St (at W McLean Ave), Chicago, IL 60647, United States"
+      }
+    }
+  },
+  {
+    "name": "Dancen",
+    "category": "Korean Restaurant",
+    "address": "5114 N Lincoln Ave, Chicago",
+    "location": [
+      -87.692283,
+      41.9745385
+    ],
+    "overture_meta": {
+      "confidence": 0.951,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.951,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 89,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 47,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Dancen\" at this location",
+      "match": {
+        "fsq_id": "4af874e7f964a5206b0d22e3",
+        "name": "Dancen",
+        "category": "Korean Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "5114 N Lincoln Ave, Chicago, IL 60625, United States"
+      }
+    }
+  },
+  {
+    "name": "Popeyes Louisiana Kitchen",
+    "category": "Cajun And Creole Restaurant",
+    "address": "5708 South Harlem Ave., Chicago",
+    "location": [
+      -87.80179591395441,
+      41.78768992240777
+    ],
+    "overture_meta": {
+      "confidence": 0.978,
+      "update_time": "2025-07-10",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.978,
+      "source_age_days": 232,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 83,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 48,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Popeyes Louisiana Kitchen\" at this location",
+      "match": {
+        "fsq_id": "4f324c7519836c91c7c9f837",
+        "name": "Popeyes Louisiana Kitchen",
+        "category": "Fried Chicken Joint",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "5708 S Harlem Ave, Summit, IL 60501, United States"
+      }
+    }
+  },
+  {
+    "name": "El Fogon de Elena",
+    "category": "Colombian Restaurant",
+    "address": "3149 W Lawrence Ave, Chicago",
+    "location": [
+      -87.7079581,
+      41.9683582
+    ],
+    "overture_meta": {
+      "confidence": 0.974,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.974,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 134,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 49,
+    "foursquare": {
+      "status": "mismatch",
+      "detail": "Foursquare shows \"El Fogón de Elena Restaurante\" instead",
+      "match": {
+        "fsq_id": "5e6f8f74d337970007fbf67d",
+        "name": "El Fogón de Elena Restaurante",
+        "category": "South American Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "3149 W Lawrence Ave, Chicago, IL 60625, United States"
+      }
+    }
+  },
+  {
+    "name": "Tejas Yoga",
+    "category": "Yoga Studio",
+    "address": "141 W Jackson Blvd, Chicago",
+    "location": [
+      -87.62622639996997,
+      41.86563674549695
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-10-20",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 130,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 67,
+      "fields_populated": 8,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 50,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Tejas Yoga\" at this location",
+      "match": {
+        "fsq_id": "4b17362df964a520d1c323e3",
+        "name": "Tejas Yoga",
+        "category": "Yoga Studio",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "141 W Jackson Blvd (13th St and Wabash), Chicago, IL 60605, United States"
+      }
+    }
+  },
+  {
+    "name": "Czech Plaza Restaurant",
+    "category": "Czech Restaurant",
+    "address": "7016 Cermak Rd, Chicago",
+    "location": [
+      -87.799113,
+      41.8506115
+    ],
+    "overture_meta": {
+      "confidence": 0.947,
+      "update_time": "2021-09-03",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.947,
+      "source_age_days": 1638,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 149,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 51,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Jamba",
+    "category": "Smoothie Juice Bar",
+    "address": "875 N Michigan Ave, Chicago",
+    "location": [
+      -87.6234184,
+      41.8988524
+    ],
+    "overture_meta": {
+      "confidence": 0.966,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Jamba"
+    },
+    "overture_raw": {
+      "overture_confidence": 0.966,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 1,
+      "address_complete": 1,
+      "category_encoded": 16,
+      "fields_populated": 8,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 52,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Jamba\" at this location",
+      "match": {
+        "fsq_id": "60e4fb3b4dad4b15b84ec2a1",
+        "name": "Jamba",
+        "category": "Juice Bar",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "800 E Grand Ave, Chicago, IL 60611, United States"
+      }
+    }
+  },
+  {
+    "name": "Staytion Market & Bar",
+    "category": "Bar",
+    "address": "1 W Wacker Dr, Chicago",
+    "location": [
+      -87.6283082,
+      41.8866418
+    ],
+    "overture_meta": {
+      "confidence": 0.948,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.948,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 26,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 53,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Staytion Market & Bar\" at this location",
+      "match": {
+        "fsq_id": "5554f79b498ed1410ec4cbbf",
+        "name": "Staytion Market & Bar",
+        "category": "Hotel Bar",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1 W Wacker Dr, Chicago, IL 60601, United States"
+      }
+    }
+  },
+  {
+    "name": "Journeys Kidz",
+    "category": "Childrens Clothing Store",
+    "address": "7501 W Cermak Rd, Chicago",
+    "location": [
+      -87.8110424,
+      41.8476854
+    ],
+    "overture_meta": {
+      "confidence": 0.989,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Journeys"
+    },
+    "overture_raw": {
+      "overture_confidence": 0.989,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 1,
+      "address_complete": 1,
+      "category_encoded": 31,
+      "fields_populated": 8,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 54,
+    "foursquare": {
+      "status": "mismatch",
+      "detail": "Foursquare shows \"Underground By Journeys\" instead",
+      "match": {
+        "fsq_id": "4cc332e3d43ba14334555ef8",
+        "name": "Underground By Journeys",
+        "category": "Shoe Store",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "7501 W Cermak Rd, North Riverside, IL 60546, United States"
+      }
+    }
+  },
+  {
+    "name": "Kasama",
+    "category": "Filipino Restaurant",
+    "address": "1001 N Winchester Ave, Chicago",
+    "location": [
+      -87.6756617,
+      41.8996303
+    ],
+    "overture_meta": {
+      "confidence": 0.976,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.976,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 50,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 55,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Kasama\" at this location",
+      "match": {
+        "fsq_id": "5f359651c551a43bd0e8cbd7",
+        "name": "Kasama",
+        "category": "Filipino Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1001 N Winchester Ave (at Augusta Blvd), Chicago, IL 60622, United States"
+      }
+    }
+  },
+  {
+    "name": "Bon a Pit",
+    "category": "Barbecue Restaurant",
+    "address": "12200 S Harlem Ave, Chicago",
+    "location": [
+      -87.79703671644232,
+      41.669565616627025
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-08-19",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 192,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 6,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 56,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Publican Quality Bread",
+    "category": "Bakery",
+    "address": "1759 W Grand Ave, Chicago",
+    "location": [
+      -87.6718331,
+      41.8907801
+    ],
+    "overture_meta": {
+      "confidence": 0.965,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.965,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 24,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 57,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Publican Quality Bread\" at this location",
+      "match": {
+        "fsq_id": "629f5e2054524a740859eb68",
+        "name": "Publican Quality Bread",
+        "category": "Bakery",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1759 W Grand Ave, Chicago, IL 60622, United States"
+      }
+    }
+  },
+  {
+    "name": "Beermiscuous",
+    "category": "Beer Bar",
+    "address": "2812 N Lincoln Ave, Chicago",
+    "location": [
+      -87.6594318,
+      41.9326979
+    ],
+    "overture_meta": {
+      "confidence": 0.95,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.95,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 102,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 58,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Beermiscuous\" at this location",
+      "match": {
+        "fsq_id": "53694877498ec47ca9aadd1d",
+        "name": "Beermiscuous",
+        "category": "Bar",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2812 N Lincoln Ave (Diversey), Chicago, IL 60657, United States"
+      }
+    }
+  },
+  {
+    "name": "Falafel Island",
+    "category": "Falafel Restaurant",
+    "address": "24 E Adams St, Chicago",
+    "location": [
+      -87.62649029053297,
+      41.87970965929967
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-05-01",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 302,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 35,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 59,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Falafel Island\" at this location",
+      "match": {
+        "fsq_id": "52d9861011d24b885ee6be1f",
+        "name": "Falafel Island",
+        "category": "Falafel Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "24 E Adams St (Wabash), Chicago, IL 60603, United States"
+      }
+    }
+  },
+  {
+    "name": "The Melting Pot",
+    "category": "Fondue Restaurant",
+    "address": "609 N Dearborn St, Chicago",
+    "location": [
+      -87.62974614715425,
+      41.89270780413555
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-03-20",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 344,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 142,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 60,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Cycle Therapy",
+    "category": "Gym",
+    "address": "1301 E 47th St, Chicago",
+    "location": [
+      -87.59419278644118,
+      41.8092133054465
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-03-21",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 343,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 2,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 61,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Cycle Therapy\" at this location",
+      "match": {
+        "fsq_id": "56913709498e4b7de27bbae5",
+        "name": "Cycle Therapy",
+        "category": "Gym and Studio",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1301 E 47th St, Chicago, IL 60653, United States"
+      }
+    }
+  },
+  {
+    "name": "Afghan Kabob",
+    "category": "Afghan Restaurant",
+    "address": "4040 W Montrose Ave, Chicago",
+    "location": [
+      -87.729278,
+      41.961073
+    ],
+    "overture_meta": {
+      "confidence": 0.323,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.323,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 136,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 62,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Shallots Bistro",
+    "category": "Kosher Restaurant",
+    "address": "7016 Carpenter Rd, Chicago",
+    "location": [
+      -87.7621843,
+      42.0088267
+    ],
+    "overture_meta": {
+      "confidence": 0.977,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.977,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 145,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 63,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Shallots Bistro\" at this location",
+      "match": {
+        "fsq_id": "4c103f68b93cc9b6498856e0",
+        "name": "Shallots Bistro",
+        "category": "Steakhouse",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "7016 Carpenter Rd, Skokie, IL 60077, United States"
+      }
+    }
+  },
+  {
+    "name": "Al-Rob's Fashion For Men",
+    "category": "Mens Clothing Store",
+    "address": "566 W Roosevelt Rd, Chicago",
+    "location": [
+      -87.641884,
+      41.867558
+    ],
+    "overture_meta": {
+      "confidence": 0.639,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.639,
+      "source_age_days": 88,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 54,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 64,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Al-Rob's Fashion For Men\" at this location",
+      "match": {
+        "fsq_id": "0b23ed2a5db14f65f080f9da",
+        "name": "Al-Rob's Fashion For Men",
+        "category": "Clothing Store",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "566 W Roosevelt Rd, Chicago, IL 60607, United States"
+      }
+    }
+  },
+  {
+    "name": "Rise Sushi & Sake Lounge",
+    "category": "Sushi Restaurant",
+    "address": "3401 N Southport Ave, Chicago",
+    "location": [
+      -87.66387191772712,
+      41.943552010127
+    ],
+    "overture_meta": {
+      "confidence": 0.958,
+      "update_time": "2024-12-13",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.958,
+      "source_age_days": 441,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 12,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 65,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Cousin's Incredible Vitality",
+    "category": "Vegan Restaurant",
+    "address": "3038 W Irving Park Rd, Chicago",
+    "location": [
+      -87.70461143333333,
+      41.9539419
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-03-21",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 343,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 63,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 66,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "The Dime",
+    "category": "Sports Bar",
+    "address": "2263 N Lincoln Ave, Chicago",
+    "location": [
+      -87.6455768,
+      41.9232874
+    ],
+    "overture_meta": {
+      "confidence": 0.958,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.958,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 44,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 67,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"The Dime\" at this location",
+      "match": {
+        "fsq_id": "5e574370f0f7bb0008c6be39",
+        "name": "The Dime",
+        "category": "Sports Bar",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2263 N Lincoln Ave, Chicago, IL 60614, United States"
+      }
+    }
+  },
+  {
+    "name": "iNG Restaurant",
+    "category": "Molecular Gastronomy Restaurant",
+    "address": "951 W Fulton St, Chicago",
+    "location": [
+      -87.65183889184429,
+      41.88662229276587
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-04-23",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 310,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 166,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 68,
+    "foursquare": {
+      "status": "mismatch",
+      "detail": "Foursquare shows \"Next Restaurant\" instead",
+      "match": {
+        "fsq_id": "4c0bd6246071a593cfcee132",
+        "name": "Next Restaurant",
+        "category": "Molecular Gastronomy Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "953 W Fulton Market (at Morgan St.), Chicago, IL 60607, United States"
+      }
+    }
+  },
+  {
+    "name": "Aloha Poke Co.",
+    "category": "Poke Restaurant",
+    "address": "163 W North Ave, Chicago",
+    "location": [
+      -87.6341976,
+      41.91102
+    ],
+    "overture_meta": {
+      "confidence": 0.95,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Aloha Poké"
+    },
+    "overture_raw": {
+      "overture_confidence": 0.95,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 1,
+      "address_complete": 1,
+      "category_encoded": 34,
+      "fields_populated": 8,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 69,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Aloha Poke Co.\" at this location",
+      "match": {
+        "fsq_id": "5a7ca00c6336be11eab62842",
+        "name": "Aloha Poke Co.",
+        "category": "Poke Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "163 W North Ave (Wells Street), Chicago, IL 60610, United States"
+      }
+    }
+  },
+  {
+    "name": "China Buffet",
+    "category": "Chinese Restaurant",
+    "address": "8803 S Harlem Ave, Chicago",
+    "location": [
+      -87.7974893683502,
+      41.73169604157084
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-07-03",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 239,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 25,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 70,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"China Buffet\" at this location",
+      "match": {
+        "fsq_id": "4c3a125c93db0f47c87e2492",
+        "name": "China Buffet",
+        "category": "Chinese Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "8803 S Harlem Ave, Bridgeview, IL 60455, United States"
+      }
+    }
+  },
+  {
+    "name": "Cafe Ba-Ba-Reeba",
+    "category": "Tapas Bar",
+    "address": "2024 N Halsted St, Chicago",
+    "location": [
+      -87.6486305,
+      41.9189623
+    ],
+    "overture_meta": {
+      "confidence": 0.992,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.992,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 85,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 71,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Cafe Ba-Ba-Reeba\" at this location",
+      "match": {
+        "fsq_id": "41eda300f964a520f71e1fe3",
+        "name": "Cafe Ba-Ba-Reeba",
+        "category": "Tapas Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2024 N Halsted St (btwn W Dickens Ave & W Armitage Ave), Chicago, IL 60614, United States"
+      }
+    }
+  },
+  {
+    "name": "Maki Sushi & Noodle Shop",
+    "category": "Sushi Restaurant",
+    "address": "12 S Northwest Hwy, Chicago",
+    "location": [
+      -87.82867845111932,
+      42.01082001448073
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-08-19",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 192,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 12,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 72,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Galt Baby",
+    "category": "Childrens Clothing Store",
+    "address": "1915 N Clybourn Ave, Chicago",
+    "location": [
+      -87.65635013580324,
+      41.91594643125757
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2010-05-16",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 5766,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 31,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 73,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Mongolian Cuisine",
+    "category": "Mongolian Restaurant",
+    "address": "4640 N Cumberland Ave, Chicago",
+    "location": [
+      -87.83741619768583,
+      41.96435761051327
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-08-19",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 192,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 148,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 74,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Mongolian Cuisine\" at this location",
+      "match": {
+        "fsq_id": "5a0f21048b98fd70846ca888",
+        "name": "Mongolian Cuisine",
+        "category": "Mongolian Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "4640 N Cumberland Ave, Chicago, IL 60656, United States"
+      }
+    }
+  },
+  {
+    "name": "Izakaya Mita",
+    "category": "Pan Asian Restaurant",
+    "address": "1960 N Damen Ave, Chicago",
+    "location": [
+      -87.6778639,
+      41.9176221
+    ],
+    "overture_meta": {
+      "confidence": 0.947,
+      "update_time": "2020-11-25",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.947,
+      "source_age_days": 1920,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 79,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 75,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Soup Barz",
+    "category": "Soup Restaurant",
+    "address": "133 N Wells St, Chicago",
+    "location": [
+      -87.63369781137668,
+      41.884054355338634
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-03-21",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 343,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 98,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 76,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Soup Barz\" at this location",
+      "match": {
+        "fsq_id": "58e7e94cfda3d80b1131343f",
+        "name": "Soup Barz",
+        "category": "Soup Spot",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "133 N Wells St (Randolph), Chicago, IL 60606, United States"
+      }
+    }
+  },
+  {
+    "name": "Roy's",
+    "category": "Hawaiian Restaurant",
+    "address": "720 N State St, Chicago",
+    "location": [
+      -87.62838542461395,
+      41.895531092510126
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-10-21",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 129,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 125,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 77,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "My Hookah Cafe",
+    "category": "Hookah Bar",
+    "address": "5806 N Lincoln Ave, Chicago",
+    "location": [
+      -87.7018018,
+      41.9869089
+    ],
+    "overture_meta": {
+      "confidence": 0.962,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.962,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 122,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 78,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"My Hookah Cafe\" at this location",
+      "match": {
+        "fsq_id": "4b08e5ccf964a520351323e3",
+        "name": "My Hookah Cafe",
+        "category": "Hookah Bar",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "5806 N Lincoln Ave, Chicago, IL 60659, United States"
+      }
+    }
+  },
+  {
+    "name": "Khmai",
+    "category": "Cambodian Restaurant",
+    "address": "6580 N Sheridan Rd, Chicago",
+    "location": [
+      -87.6609842,
+      42.0023955
+    ],
+    "overture_meta": {
+      "confidence": 0.992,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.992,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 64,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 79,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Khmai Fine Dining\" at this location",
+      "match": {
+        "fsq_id": "665b9292cc1c52560eeb52e9",
+        "name": "Khmai Fine Dining",
+        "category": "Cambodian Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "6580 N Sheridan Rd, Chicago, IL 60626, United States"
+      }
+    }
+  },
+  {
+    "name": "MeeNaRi Restaurant",
+    "category": "Korean Restaurant",
+    "address": "3311 W Bryn Mawr Ave, Chicago",
+    "location": [
+      -87.7117935,
+      41.9829227
+    ],
+    "overture_meta": {
+      "confidence": 0.965,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.965,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 89,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 80,
+    "foursquare": {
+      "status": "mismatch",
+      "detail": "Foursquare shows \"MiNaRi\" instead",
+      "match": {
+        "fsq_id": "4c4ce44b7711e21e240177a0",
+        "name": "MiNaRi",
+        "category": "Korean Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "3313 W Bryn Mawr Ave, Chicago, IL 60659, United States"
+      }
+    }
+  }
+]

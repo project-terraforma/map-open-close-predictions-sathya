@@ -113,10 +113,10 @@ body,
 /* ======================================
    Panel Slide Animation
    ====================================== */
-@keyframes slideInRight {
+@keyframes slideInLeft {
   from {
-    transform: translateX(100%);
-    opacity: 0.5;
+    transform: translateX(-100%);
+    opacity: 0;
   }
 
   to {
@@ -138,7 +138,33 @@ body,
 }
 
 .panel-enter {
-  animation: slideInRight 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: slideInLeft 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Reset all elements inside the detail panel */
+.panel-enter button,
+.panel-enter div {
+  outline: none !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+}
+
+.panel-enter button {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+@keyframes popupScaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .panel-content-enter {
@@ -203,4 +229,42 @@ body,
 
 .leaflet-popup-close-button:hover {
   color: #e2e8f0 !important;
+}
+
+/* ======================================
+   Leaflet Zoom Controls — right side, dark theme
+   ====================================== */
+.leaflet-top.leaflet-left {
+  left: auto !important;
+  right: 16px !important;
+  top: 190px !important;
+}
+
+.leaflet-control-zoom {
+  border: none !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08) !important;
+}
+
+.leaflet-control-zoom a {
+  background-color: #0a0a0a !important;
+  color: #ffffff !important;
+  width: 36px !important;
+  height: 36px !important;
+  line-height: 36px !important;
+  font-size: 18px !important;
+  font-weight: 300 !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  transition: background-color 0.15s ease;
+}
+
+.leaflet-control-zoom a:last-child {
+  border-bottom: none !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
 }

@@ -2744,15 +2744,15 @@
     "id": 71,
     "foursquare": {
       "status": "mismatch",
-      "detail": "Foursquare shows \"Ai Kakou Cafe\" instead",
+      "detail": "Foursquare shows \"Beale St Cafe\" instead",
       "match": {
-        "fsq_id": "51f18872498e4efd1efc44bc",
-        "name": "Ai Kakou Cafe",
-        "category": "Corporate Cafeteria",
+        "fsq_id": "4f8c46ede4b00a6264805c08",
+        "name": "Beale St Cafe",
+        "category": "Café",
         "closed": false,
         "website": null,
         "phone": null,
-        "address": "50 Fremont St, San Francisco, CA 94105, United States"
+        "address": "50 Beale St, 23rd Floor, San Francisco, CA 94105, United States"
       }
     }
   },

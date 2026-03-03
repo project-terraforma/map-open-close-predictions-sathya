@@ -25,7 +25,13 @@ sys.path.insert(0, os.path.dirname(__file__))
 from ocr_model import detect_text, get_ocr, normalize, get_brand_search_names
 from check_website_liveness import check_website
 
-DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'src', 'data', 'test_data.json')
+# Accept --input arg for different city data files
+_default_data = os.path.join(os.path.dirname(__file__), '..', 'src', 'data', 'test_data.json')
+DATA_PATH = _default_data
+for _i, _arg in enumerate(sys.argv):
+    if _arg == '--input' and _i + 1 < len(sys.argv):
+        DATA_PATH = sys.argv[_i + 1]
+
 MODEL_PATH = os.path.join(os.path.dirname(__file__), '..', 'model', 'xgboost_model.json')
 
 # Closure-indicating text patterns (detected by OCR on storefront)
@@ -209,27 +215,29 @@ def fuzzy_text_match(detected_text, search_names):
                         return "partial", search_name
 
         # Level 3: Garbled OCR detection (LCS + char overlap)
-        name_nospace = search_name.replace(" ", "")
-        text_nospace = norm_text.replace(" ", "")
+        # Only apply to multi-word search names — single words are too prone to false positives
+        if len(search_words) >= 2:
+            name_nospace = search_name.replace(" ", "")
+            text_nospace = norm_text.replace(" ", "")
 
-        if len(text_nospace) >= 4 and len(name_nospace) >= 4:
-            overlap = _char_overlap(name_nospace, text_nospace)
-            lcs_len = _longest_common_subsequence(name_nospace, text_nospace)
-            lcs_ratio = lcs_len / len(name_nospace)
+            if len(text_nospace) >= 4 and len(name_nospace) >= 4:
+                overlap = _char_overlap(name_nospace, text_nospace)
+                lcs_len = _longest_common_subsequence(name_nospace, text_nospace)
+                lcs_ratio = lcs_len / len(name_nospace)
 
-            if overlap >= 0.55 and lcs_ratio >= 0.50:
-                return "partial", search_name
+                if overlap >= 0.55 and lcs_ratio >= 0.50:
+                    return "partial", search_name
 
-            for sw in search_words:
-                if len(sw) < 4:
-                    continue
-                for tw in text_words:
-                    if len(tw) < 3:
+                for sw in search_words:
+                    if len(sw) < 4:
                         continue
-                    if len(sw) >= 6 and len(tw) >= 4:
-                        lcs = _longest_common_subsequence(sw, tw)
-                        if lcs >= len(sw) * 0.6 and lcs >= 3:
-                            return "partial", search_name
+                    for tw in text_words:
+                        if len(tw) < 3:
+                            continue
+                        if len(sw) >= 6 and len(tw) >= 4:
+                            lcs = _longest_common_subsequence(sw, tw)
+                            if lcs >= len(sw) * 0.6 and lcs >= 3:
+                                return "partial", search_name
 
     return None, None
 
@@ -625,6 +633,7 @@ def analyze_location(location):
     # ── Phase 4: Compute open_score (0.0 = definitely closed, 1.0 = definitely open) ──
     # Start at 0.5 (no information), then adjust based on signals.
     open_score = 0.50
+    score_breakdown = [{"signal": "base", "weight": 0.50, "description": "Base score"}]
     evidence_parts = []
     primary_layer = "xgboost"
 
@@ -651,50 +660,54 @@ def analyze_location(location):
     # DIRECTORY SIGNALS (strongest)
     if fsq_verified:
         open_score += 0.30
+        score_breakdown.append({"signal": "foursquare", "weight": 0.30, "description": "Foursquare: verified"})
         primary_layer = "foursquare"
         evidence_parts.append("Foursquare: verified")
     elif fsq_closed:
         open_score -= 0.35
+        score_breakdown.append({"signal": "foursquare", "weight": -0.35, "description": "Foursquare: closed"})
         primary_layer = "foursquare"
         evidence_parts.append("Foursquare: closed")
     elif fsq_mismatch:
         fsq_match = fsq.get("match", {})
         other_name = fsq_match.get("name", "?") if fsq_match else "?"
         open_score -= 0.25
+        score_breakdown.append({"signal": "foursquare", "weight": -0.25, "description": f"Foursquare: mismatch (\"{other_name}\")"})
         primary_layer = "foursquare"
         evidence_parts.append(f"Foursquare: mismatch (\"{other_name}\")")
 
     if google_open:
         open_score += 0.20
+        score_breakdown.append({"signal": "google", "weight": 0.20, "description": "Google: operational"})
         evidence_parts.append("Google: operational")
     elif google_closed:
         open_score -= 0.30
+        score_breakdown.append({"signal": "google", "weight": -0.30, "description": "Google: closed"})
         evidence_parts.append("Google: closed")
 
     # WEBSITE LIVENESS SIGNAL
     if ws_status == 'redirect':
-        # Domain redirects to unrelated site → very strong closure signal (100% closed in test)
         open_score -= 0.20
+        score_breakdown.append({"signal": "website", "weight": -0.20, "description": "Website: redirected"})
         evidence_parts.append(f"Website: redirected ({ws_detail})")
     elif ws_status == 'dead':
-        # DNS fail, 404, timeout → moderate closure signal (53% closed)
         open_score -= 0.10
+        score_breakdown.append({"signal": "website", "weight": -0.10, "description": "Website: dead"})
         evidence_parts.append(f"Website: dead ({ws_detail})")
     elif ws_status == 'parked':
-        # Domain parking page → strong closure signal
         open_score -= 0.15
+        score_breakdown.append({"signal": "website", "weight": -0.15, "description": "Website: parked"})
         evidence_parts.append(f"Website: parked domain")
     elif ws_status == 'alive':
-        # Website responding — NOT a positive signal (many closed businesses keep websites up)
         evidence_parts.append(f"Website: alive")
     elif ws_status == 'ssl_error':
-        # SSL error — domain exists but cert issues
         evidence_parts.append(f"Website: SSL error")
 
     # TEXT SIGNALS (strong, but discounted by image age)
     if strong_closure_text:
         best_closure = fresh_closure_signals[0]
         open_score -= 0.30
+        score_breakdown.append({"signal": "closure_text", "weight": -0.30, "description": f"Closure text: \"{best_closure['text']}\""})
         primary_layer = "text"
         evidence_parts.append(f"Closure text: \"{best_closure['text']}\"")
 
@@ -716,6 +729,8 @@ def analyze_location(location):
             text_boost = 0.10 * age_discount
 
         open_score += text_boost
+        if text_boost != 0:
+            score_breakdown.append({"signal": "text", "weight": round(text_boost, 4), "description": f"Text: {text_strength} match{age_note}"})
         if primary_layer == "xgboost" and age_discount > 0:
             primary_layer = "text"
         evidence_parts.append(f"Text: {text_strength} match{age_note}")
@@ -723,6 +738,7 @@ def analyze_location(location):
         # No text match on fresh images is a weak negative signal
         if best_age <= 3 and images_analyzed >= 2:
             open_score -= 0.05
+            score_breakdown.append({"signal": "text", "weight": -0.05, "description": f"No text match ({images_analyzed} recent images)"})
             evidence_parts.append(f"No text match on {images_analyzed} recent images")
         elif images_analyzed == 0:
             evidence_parts.append("No images available")
@@ -734,6 +750,7 @@ def analyze_location(location):
         # Strong closed signal from metadata (few businesses score this low)
         xgb_nudge = (xgb_score - 0.5) * 0.20
         open_score += xgb_nudge
+        score_breakdown.append({"signal": "xgboost", "weight": round(xgb_nudge, 4), "description": f"Metadata: {xgb_score:.0%} open (nudge)"})
         evidence_parts.append(f"Metadata: {xgb_score:.0%} open (nudge {xgb_nudge:+.2f})")
     else:
         evidence_parts.append(f"Metadata: {xgb_score:.0%} open (no nudge)")
@@ -761,6 +778,7 @@ def analyze_location(location):
     return {
         "prediction": prediction,
         "confidence": round(confidence, 4),
+        "score_breakdown": score_breakdown,
         "primary_layer": primary_layer,
         "evidence": evidence_str,
         "detail": evidence_str,

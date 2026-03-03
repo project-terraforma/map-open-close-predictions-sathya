@@ -12,8 +12,20 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const INPUT_PATH = path.join(__dirname, 'selected_businesses.json');
-const OUTPUT_PATH = path.join(__dirname, '..', 'src', 'data', 'test_data.json');
+
+// Accept --input and --output args for different city files
+let inputFile = path.join(__dirname, 'selected_businesses.json');
+let outputFile = path.join(__dirname, '..', 'src', 'data', 'test_data.json');
+const inputIdx = process.argv.indexOf('--input');
+if (inputIdx !== -1 && process.argv[inputIdx + 1]) {
+    inputFile = path.resolve(process.argv[inputIdx + 1]);
+}
+const outputIdx = process.argv.indexOf('--output');
+if (outputIdx !== -1 && process.argv[outputIdx + 1]) {
+    outputFile = path.resolve(process.argv[outputIdx + 1]);
+}
+const INPUT_PATH = inputFile;
+const OUTPUT_PATH = outputFile;
 const ACCESS_TOKEN = 'MLY|25120378337641785|21245babc5f6905ed3da857aba13bc87';
 
 // ============================================================

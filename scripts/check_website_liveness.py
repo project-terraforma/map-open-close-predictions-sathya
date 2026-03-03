@@ -21,9 +21,36 @@ from urllib.parse import urlparse
 
 import pandas as pd
 
-PARQUET_PATH = os.path.join(os.path.dirname(__file__), '..', 'pipeline', 'data', 'sf_places_large.parquet')
-TEST_DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'src', 'data', 'test_data.json')
-TRAIN_DATA_PATH = os.path.join(os.path.dirname(__file__), 'yelp_training_data.json')
+SCRIPT_DIR = os.path.dirname(__file__)
+DATA_DIR = os.path.join(SCRIPT_DIR, '..', 'pipeline', 'data')
+
+CITY_CONFIG = {
+    'sf': {
+        'parquet': os.path.join(DATA_DIR, 'sf_places_large.parquet'),
+    },
+    'la': {
+        'parquet': os.path.join(DATA_DIR, 'la_places.parquet'),
+    },
+    'chicago': {
+        'parquet': os.path.join(DATA_DIR, 'chicago_places.parquet'),
+    },
+}
+
+# Parse --city arg (default: sf)
+CITY_KEY = 'sf'
+for i, arg in enumerate(sys.argv):
+    if arg == '--city' and i + 1 < len(sys.argv):
+        CITY_KEY = sys.argv[i + 1].lower()
+
+PARQUET_PATH = CITY_CONFIG.get(CITY_KEY, CITY_CONFIG['sf'])['parquet']
+
+# Parse --input arg for test data path
+TEST_DATA_PATH = os.path.join(SCRIPT_DIR, '..', 'src', 'data', 'test_data.json')
+for i, arg in enumerate(sys.argv):
+    if arg == '--input' and i + 1 < len(sys.argv):
+        TEST_DATA_PATH = sys.argv[i + 1]
+
+TRAIN_DATA_PATH = os.path.join(SCRIPT_DIR, 'yelp_training_data.json')
 
 # Known domain parking / expired domain indicators
 PARKED_INDICATORS = [
@@ -170,13 +197,13 @@ def main():
 
         url, phone = extract_url_from_parquet(name, location, df)
 
-        print(f"\n[{i+1}/{len(test_data)}] {name}")
-        print(f"  URL: {url or 'none'}")
-        print(f"  Phone: {phone or 'none'}")
+        print(f"\n[{i+1}/{len(test_data)}] {name}".encode('ascii', 'replace').decode())
+        print(f"  URL: {url or 'none'}".encode('ascii', 'replace').decode())
+        print(f"  Phone: {phone or 'none'}".encode('ascii', 'replace').decode())
 
         if url:
             status, code, detail = check_website(url)
-            print(f"  Status: {status} ({detail})")
+            print(f"  Status: {status} ({detail})".encode('ascii', 'replace').decode())
         else:
             status, code, detail = 'no_url', None, 'No URL in Overture'
 

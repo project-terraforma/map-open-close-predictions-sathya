@@ -1,16 +1,34 @@
 import { useState, useEffect, useMemo } from 'react';
 import { createPortal } from 'react-dom';
-import { MapContainer as LeafletMap, TileLayer, Marker } from 'react-leaflet';
+import { MapContainer as LeafletMap, TileLayer, Marker, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import { renderToStaticMarkup } from 'react-dom/server';
-import testData from '../data/test_data.json';
+import testDataSf from '../data/test_data.json';
+import testDataLa from '../data/test_data_la.json';
+import testDataChicago from '../data/test_data_chicago.json';
+
+// ============================================================
+// CITY CONFIG
+// ============================================================
+const CITIES: Record<string, { label: string; center: [number, number]; zoom: number; data: any[] }> = {
+    sf: { label: 'San Francisco', center: [37.7749, -122.4194], zoom: 12, data: testDataSf as any[] },
+    la: { label: 'Los Angeles', center: [34.0522, -118.2437], zoom: 11, data: testDataLa as any[] },
+    chicago: { label: 'Chicago', center: [41.8781, -87.6298], zoom: 12, data: testDataChicago as any[] },
+};
+
+function MapFlyTo({ center, zoom }: { center: [number, number]; zoom: number }) {
+    const map = useMap();
+    useEffect(() => {
+        map.flyTo(center, zoom, { duration: 1.5 });
+    }, [center, zoom, map]);
+    return null;
+}
 import {
     MapPin, X, Calendar, Navigation, Eye, ShieldCheck,
     Clock, Database, Crosshair, ArrowRight, CheckCircle,
     AlertTriangle, XCircle, HelpCircle, Globe, Phone, Type,
-    Layers, ImageIcon,
-    ScanEye, ExternalLink, BarChart3,
-    ChevronDown, ChevronRight
+    Layers, ImageIcon, ChevronLeft, ChevronRight,
+    ScanEye, ExternalLink, BarChart3
 } from 'lucide-react';
 
 // ============================================================
@@ -57,10 +75,12 @@ interface GalleryImage {
 function GalleryStrip({ images, label, accent }: { images: GalleryImage[]; label: string; accent: string }) {
     return (
         <div className="panel-content-enter">
-            <div className="flex items-center gap-2 mb-3">
-                <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: accent }} />
-                <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-widest">{label}</span>
-                <span className="text-[11px] text-slate-600 ml-auto font-mono">{images.length} views</span>
+            <div className="flex items-center justify-center w-full mt-2">
+                <div style={{ backgroundColor: '#9333ea', borderColor: '#6b21a8' }} className="w-full py-2.5 rounded-lg border shadow-sm flex items-center justify-center">
+                    <span style={{ fontWeight: 900 }} className="text-[12px] text-white font-mono tracking-wide uppercase text-center block w-full">
+                        {images.length} images around the business
+                    </span>
+                </div>
             </div>
             <div className="gallery-scroll">
                 {images.map((img, i) => (
@@ -73,7 +93,7 @@ function GalleryStrip({ images, label, accent }: { images: GalleryImage[]; label
                     </div>
                 ))}
             </div>
-            <p className="text-[10px] text-slate-600 mt-1.5 flex items-center gap-1">
+            <p className="text-[10px] text-slate-600 mt-1.5 flex items-center justify-center gap-1 text-center">
                 <ExternalLink size={9} /> Click to view full size
             </p>
         </div>
@@ -131,11 +151,10 @@ function GroundTruthBadge({ poi }: { poi: any }) {
     }
 
     return (
-        <span className={`inline-flex items-center gap-1 text-[9px] font-bold px-1.5 py-0.5 rounded ${
-            isCorrect
-                ? 'bg-green-500/15 text-green-400 ring-1 ring-green-500/20'
-                : 'bg-red-500/15 text-red-400 ring-1 ring-red-500/20'
-        }`}>
+        <span className={`inline-flex items-center gap-1 text-[9px] font-bold px-1.5 py-0.5 rounded ${isCorrect
+            ? 'bg-green-500/15 text-green-400 ring-1 ring-green-500/20'
+            : 'bg-red-500/15 text-red-400 ring-1 ring-red-500/20'
+            }`}>
             {isCorrect ? <CheckCircle size={8} /> : <XCircle size={8} />}
             {isCorrect ? 'CORRECT' : 'WRONG'}
         </span>
@@ -219,11 +238,10 @@ function TextEvidenceCard({ layer, isPrimary, activeTextId, onToggleText }: { la
                 <div className="flex items-center gap-2 mb-2">
                     <Type size={12} className="text-emerald-400" />
                     <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest">Layer 1: Text Detection</span>
-                    <span className={`ml-auto text-[9px] font-bold px-1.5 py-0.5 rounded ${
-                        layer.verdict === 'full_match' ? 'bg-green-500/10 text-green-400' :
+                    <span className={`ml-auto text-[9px] font-bold px-1.5 py-0.5 rounded ${layer.verdict === 'full_match' ? 'bg-green-500/10 text-green-400' :
                         layer.verdict === 'partial_match' ? 'bg-amber-500/10 text-amber-400' :
-                        'bg-slate-500/10 text-slate-500'
-                    }`}>
+                            'bg-slate-500/10 text-slate-500'
+                        }`}>
                         {layer.verdict === 'full_match' ? 'FULL MATCH' : layer.verdict === 'partial_match' ? 'PARTIAL' : 'NO MATCH'}
                     </span>
                 </div>
@@ -236,7 +254,7 @@ function TextEvidenceCard({ layer, isPrimary, activeTextId, onToggleText }: { la
                     </div>
                 )}
 
-                {displayImageUrl && (
+                {displayImageUrl && (layer.matched_text || hasActiveAnnotation) ? (
                     <div className="mt-2">
                         <div className="relative rounded-lg overflow-hidden ring-1 ring-emerald-500/20 transition-all">
                             <img src={displayImageUrl} className={`w-full object-cover transition-all duration-300 ${hasActiveAnnotation ? 'h-52' : 'h-32'}`} alt="Text evidence" loading="lazy" />
@@ -265,6 +283,12 @@ function TextEvidenceCard({ layer, isPrimary, activeTextId, onToggleText }: { la
                             )}
                         </div>
                     </div>
+                ) : !layer.matched_text && (
+                    <div className="mt-2 py-4 rounded-lg flex items-center justify-center" style={{ background: 'rgba(255,255,255,0.03)' }}>
+                        <span className="text-slate-600 text-[10px] font-medium">
+                            {layer.verdict === 'no_images' ? 'No images to analyze' : 'No text match found'}
+                        </span>
+                    </div>
                 )}
 
                 {allTexts.length > 0 && (
@@ -282,13 +306,12 @@ function TextEvidenceCard({ layer, isPrimary, activeTextId, onToggleText }: { la
                                             if (!item.hasBbox || !onToggleText) return;
                                             onToggleText(isActive ? null : item.id, item.detail);
                                         }}
-                                        className={`text-[9px] px-1.5 py-0.5 rounded font-mono transition-all ${
-                                            isActive
-                                                ? 'bg-emerald-500/20 text-emerald-300 ring-1 ring-emerald-500/40'
-                                                : item.hasBbox
-                                                    ? 'text-slate-400 hover:bg-emerald-500/10 hover:text-emerald-300 cursor-pointer'
-                                                    : 'text-slate-400 cursor-default'
-                                        }`}
+                                        className={`text-[9px] px-1.5 py-0.5 rounded font-mono transition-all ${isActive
+                                            ? 'bg-emerald-500/20 text-emerald-300 ring-1 ring-emerald-500/40'
+                                            : item.hasBbox
+                                                ? 'text-slate-400 hover:bg-emerald-500/10 hover:text-emerald-300 cursor-pointer'
+                                                : 'text-slate-400 cursor-default'
+                                            }`}
                                         style={!isActive ? { backgroundColor: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)' } : {}}
                                         title={item.hasBbox ? (isActive ? 'Click to hide' : 'Click to show on image') : 'No position data'}
                                     >
@@ -314,11 +337,10 @@ function XGBoostEvidenceCard({ layer, isPrimary }: { layer: any; isPrimary: bool
                 <div className="flex items-center gap-2 mb-2">
                     <Database size={12} className="text-blue-400" />
                     <span className="text-[10px] font-bold text-blue-400 uppercase tracking-widest">Layer 2: Metadata Model</span>
-                    <span className={`ml-auto text-[9px] font-bold px-1.5 py-0.5 rounded ${
-                        layer.verdict === 'supports_open' ? 'bg-green-500/10 text-green-400' :
+                    <span className={`ml-auto text-[9px] font-bold px-1.5 py-0.5 rounded ${layer.verdict === 'supports_open' ? 'bg-green-500/10 text-green-400' :
                         layer.verdict === 'supports_closed' ? 'bg-red-500/10 text-red-400' :
-                        'bg-slate-500/10 text-slate-500'
-                    }`}>
+                            'bg-slate-500/10 text-slate-500'
+                        }`}>
                         {layer.verdict === 'supports_open' ? 'OPEN' : layer.verdict === 'supports_closed' ? 'CLOSED' : 'INCONCLUSIVE'}
                         {' '}({(score * 100).toFixed(0)}%)
                     </span>
@@ -350,26 +372,25 @@ function XGBoostEvidenceCard({ layer, isPrimary }: { layer: any; isPrimary: bool
 // TEST GROUP TOGGLE BAR
 // ============================================================
 const TEST_GROUPS = [
-    { group: null, label: 'ALL', color: '#94a3b8' },
-    { group: 'open', label: 'Open', color: '#22c55e' },
-    { group: 'closed', label: 'Closed', color: '#ef4444' },
+    { group: null, label: 'All', color: '#94a3b8' },
+    { group: 'open', label: 'Actually Open', color: '#22c55e' },
+    { group: 'closed', label: 'Actually Closed', color: '#ef4444' },
 ];
 
 function TestGroupBar({ activeGroup, onSetGroup, data }: { activeGroup: string | null; onSetGroup: (g: string | null) => void; data: any[] }) {
     return (
         <div className="absolute top-4 right-4 z-[1000] flex items-center gap-1.5 bg-slate-900/90 backdrop-blur-md rounded-xl px-2 py-1.5 ring-1 ring-white/10">
             {TEST_GROUPS.map(btn => {
-                const count = btn.group ? data.filter((p: any) => p.test_group === btn.group).length : data.length;
+                const count = btn.group ? data.filter((p: any) => p.ground_truth === btn.group).length : data.length;
                 const isActive = activeGroup === btn.group;
                 return (
                     <button
                         key={btn.group || 'all'}
                         onClick={() => onSetGroup(btn.group)}
-                        className={`px-2.5 py-1 rounded-lg text-[10px] font-bold tracking-wide transition-all ${
-                            isActive
-                                ? 'ring-1 shadow-lg'
-                                : 'opacity-60 hover:opacity-100'
-                        }`}
+                        className={`px-2.5 py-1 rounded-lg text-[10px] font-bold tracking-wide transition-all ${isActive
+                            ? 'ring-1 shadow-lg'
+                            : 'opacity-60 hover:opacity-100'
+                            }`}
                         style={{
                             backgroundColor: isActive ? `${btn.color}20` : 'transparent',
                             color: btn.color,
@@ -423,13 +444,13 @@ export default function MapContainer() {
     const [selectedPoi, setSelectedPoi] = useState<any | null>(null);
     const [activeTextId, setActiveTextId] = useState<string | null>(null);
     const [activeGroup, setActiveGroup] = useState<string | null>(null);
-    const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({});
+    const [activeCity, setActiveCity] = useState<string>('sf');
+    const [activeLayer, setActiveLayer] = useState<string | null>(null);
+    const [textGalleryIdx, setTextGalleryIdx] = useState(0);
+    const [highlightedTextId, setHighlightedTextId] = useState<string | null>(null);
 
-    const toggleSection = (key: string) => {
-        setExpandedSections(prev => ({ ...prev, [key]: !prev[key] }));
-    };
-
-    const allData = testData as any[];
+    const cityConfig = CITIES[activeCity];
+    const allData = cityConfig.data;
     const filteredData = useMemo(() =>
         activeGroup ? allData.filter((p: any) => p.ground_truth === activeGroup) : allData,
         [activeGroup, allData]
@@ -444,23 +465,63 @@ export default function MapContainer() {
     // Clear annotations when switching POIs
     useEffect(() => {
         setActiveTextId(null);
+        setActiveLayer(null);
+        setTextGalleryIdx(0);
     }, [selectedPoi?.id]);
 
     const openPanel = (poi: any) => {
         setSelectedPoi(poi);
+        setTextGalleryIdx(0);
+        setHighlightedTextId(null);
     };
+
+    // City selector portal
+    const cityPortal = createPortal(
+        <div style={{ position: 'fixed', top: 16, right: 16, zIndex: 99999, pointerEvents: 'auto' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6, background: 'rgba(15,23,42,0.95)', borderRadius: 12, padding: '6px 8px', boxShadow: '0 4px 24px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.1)' }}>
+                {Object.entries(CITIES).map(([key, city]) => {
+                    const isActive = activeCity === key;
+                    return (
+                        <button
+                            key={key}
+                            onClick={() => { setActiveCity(key); setSelectedPoi(null); setActiveGroup(null); }}
+                            style={{
+                                padding: '5px 12px',
+                                borderRadius: 8,
+                                fontSize: 11,
+                                fontWeight: 700,
+                                letterSpacing: '0.03em',
+                                border: 'none',
+                                cursor: 'pointer',
+                                transition: 'all 0.2s',
+                                backgroundColor: isActive ? 'rgba(96,165,250,0.2)' : 'transparent',
+                                color: isActive ? '#60a5fa' : '#94a3b8',
+                                boxShadow: isActive ? '0 0 0 1px rgba(96,165,250,0.5)' : 'none',
+                                fontFamily: 'Inter, system-ui, sans-serif',
+                            }}
+                        >
+                            {city.label} <span style={{ fontSize: 9, opacity: 0.7, marginLeft: 4 }}>{city.data.length}</span>
+                        </button>
+                    );
+                })}
+            </div>
+        </div>,
+        document.body
+    );
 
     // Portal-rendered toggle bar — renders into document.body to escape Leaflet's DOM/z-index
     const togglePortal = createPortal(
-        <div style={{ position: 'fixed', top: 16, right: selectedPoi ? 460 : 16, zIndex: 99999, transition: 'right 0.5s ease-out', pointerEvents: 'auto' }}>
+        <div style={{ position: 'fixed', top: 16, left: selectedPoi ? 432 : 16, zIndex: 99999, pointerEvents: 'auto', transition: 'left 0.5s ease-out' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 6, background: 'rgba(15,23,42,0.95)', borderRadius: 12, padding: '6px 8px', boxShadow: '0 4px 24px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.1)' }}>
                 {TEST_GROUPS.map(btn => {
+                    const hasGt = allData.some((p: any) => p.ground_truth);
                     const count = btn.group ? allData.filter((p: any) => p.ground_truth === btn.group).length : allData.length;
                     const isActive = activeGroup === btn.group;
+                    const isDisabled = btn.group !== null && !hasGt;
                     return (
                         <button
                             key={btn.group || 'all'}
-                            onClick={() => setActiveGroup(btn.group)}
+                            onClick={() => !isDisabled && setActiveGroup(btn.group)}
                             style={{
                                 padding: '4px 10px',
                                 borderRadius: 8,
@@ -468,14 +529,15 @@ export default function MapContainer() {
                                 fontWeight: 700,
                                 letterSpacing: '0.05em',
                                 border: 'none',
-                                cursor: 'pointer',
+                                cursor: isDisabled ? 'not-allowed' : 'pointer',
                                 transition: 'all 0.2s',
                                 backgroundColor: isActive ? `${btn.color}33` : 'transparent',
                                 color: btn.color,
-                                opacity: isActive ? 1 : 0.6,
+                                opacity: isDisabled ? 0.25 : isActive ? 1 : 0.6,
                                 boxShadow: isActive ? `0 0 0 1px ${btn.color}80` : 'none',
                                 fontFamily: 'Inter, system-ui, sans-serif',
                             }}
+                            title={isDisabled ? 'No ground truth labels for this city' : ''}
                         >
                             {btn.label} ({count})
                         </button>
@@ -487,31 +549,63 @@ export default function MapContainer() {
     );
 
     const accuracyPortal = createPortal(
-        <div style={{ position: 'fixed', bottom: 16, left: 16, zIndex: 99999, pointerEvents: 'auto' }}>
+        <div style={{ position: 'fixed', top: 72, right: 16, zIndex: 99999, pointerEvents: 'auto' }}>
             {(() => {
-                const filtered = activeGroup ? allData.filter((p: any) => p.ground_truth === activeGroup) : allData;
-                const withPredictions = filtered.filter((p: any) => p.vision?.prediction && p.ground_truth);
+                const withPredictions = allData.filter((p: any) => p.vision?.prediction && p.ground_truth);
                 if (withPredictions.length === 0) return null;
-                const correct = withPredictions.filter((p: any) => {
-                    const pred = p.vision.prediction;
-                    const gt = p.ground_truth;
-                    return (pred === 'open' && gt === 'open') || (pred === 'not_open' && gt === 'closed');
-                }).length;
-                const accuracy = ((correct / withPredictions.length) * 100).toFixed(0);
+
+                // Split by ground truth
+                const openGt = withPredictions.filter((p: any) => p.ground_truth === 'open');
+                const closedGt = withPredictions.filter((p: any) => p.ground_truth === 'closed');
+                const openCorrect = openGt.filter((p: any) => p.vision.prediction === 'open').length;
+                const closedCorrect = closedGt.filter((p: any) => p.vision.prediction === 'not_open').length;
+                const openPct = openGt.length > 0 ? Math.round((openCorrect / openGt.length) * 100) : 0;
+                const closedPct = closedGt.length > 0 ? Math.round((closedCorrect / closedGt.length) * 100) : 0;
+                const totalCorrect = openCorrect + closedCorrect;
+                const totalGt = openGt.length + closedGt.length;
+                const totalPct = totalGt > 0 ? Math.round((totalCorrect / totalGt) * 100) : 0;
+
+                const pctColor = (pct: number) => pct >= 80 ? '#4ade80' : pct >= 60 ? '#fbbf24' : '#f87171';
+
+                // If a filter is active, show only that group
+                const showOpen = !activeGroup || activeGroup === 'open';
+                const showClosed = !activeGroup || activeGroup === 'closed';
+
                 return (
-                    <div style={{ background: 'rgba(15,23,42,0.95)', borderRadius: 12, padding: '12px 16px', boxShadow: '0 4px 24px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.1)' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                            <BarChart3 size={16} style={{ color: '#60a5fa' }} />
-                            <div>
-                                <p style={{ fontSize: 11, color: '#94a3b8', margin: 0 }}>
-                                    {activeGroup ? `${activeGroup.charAt(0).toUpperCase() + activeGroup.slice(1)} Businesses` : 'All'} Accuracy
-                                </p>
-                                <p style={{ fontSize: 18, fontWeight: 700, color: 'white', margin: 0, fontFamily: 'JetBrains Mono, monospace' }}>
-                                    {correct}/{withPredictions.length}
-                                    <span style={{ fontSize: 13, color: '#94a3b8', marginLeft: 6 }}>({accuracy}%)</span>
-                                </p>
-                            </div>
+                    <div style={{ background: 'rgba(15,23,42,0.95)', borderRadius: 12, padding: '12px 16px', boxShadow: '0 4px 24px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.1)', display: 'flex', flexDirection: 'column', gap: 6 }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 2 }}>
+                            <BarChart3 size={14} style={{ color: '#60a5fa' }} />
+                            <span style={{ fontSize: 10, color: '#64748b', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Accuracy</span>
                         </div>
+                        {showOpen && (
+                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
+                                <span style={{ fontSize: 11, color: '#94a3b8' }}>Actually Open</span>
+                                <span style={{ fontSize: 14, fontWeight: 700, fontFamily: 'JetBrains Mono, monospace', color: 'white' }}>
+                                    <span style={{ color: '#22c55e' }}>{openCorrect}</span>
+                                    <span style={{ color: '#475569' }}>/{openGt.length}</span>
+                                    <span style={{ fontSize: 11, color: pctColor(openPct), marginLeft: 6 }}>({openPct}%)</span>
+                                </span>
+                            </div>
+                        )}
+                        {showClosed && (
+                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
+                                <span style={{ fontSize: 11, color: '#94a3b8' }}>Actually Closed</span>
+                                <span style={{ fontSize: 14, fontWeight: 700, fontFamily: 'JetBrains Mono, monospace', color: 'white' }}>
+                                    <span style={{ color: '#ef4444' }}>{closedCorrect}</span>
+                                    <span style={{ color: '#475569' }}>/{closedGt.length}</span>
+                                    <span style={{ fontSize: 11, color: pctColor(closedPct), marginLeft: 6 }}>({closedPct}%)</span>
+                                </span>
+                            </div>
+                        )}
+                        {!activeGroup && (
+                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8, borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 6, marginTop: 2 }}>
+                                <span style={{ fontSize: 11, color: '#94a3b8', fontWeight: 600 }}>Overall</span>
+                                <span style={{ fontSize: 14, fontWeight: 700, fontFamily: 'JetBrains Mono, monospace', color: 'white' }}>
+                                    {totalCorrect}<span style={{ color: '#475569' }}>/{totalGt}</span>
+                                    <span style={{ fontSize: 11, color: pctColor(totalPct), marginLeft: 6 }}>({totalPct}%)</span>
+                                </span>
+                            </div>
+                        )}
                     </div>
                 );
             })()}
@@ -521,28 +615,11 @@ export default function MapContainer() {
 
     return (
         <div className="relative w-full h-full flex overflow-hidden">
+            {cityPortal}
             {togglePortal}
             {accuracyPortal}
 
-            {/* Map */}
-            <div className={`relative h-full transition-all duration-500 ease-out ${selectedPoi ? 'w-[calc(100%-440px)]' : 'w-full'}`}>
-                <LeafletMap center={[37.7749, -122.4194]} zoom={12} className="w-full h-full">
-                    <TileLayer
-                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-                        url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-                    />
-                    {filteredData.map((poi: any) => (
-                        <Marker
-                            key={poi.id}
-                            position={[poi.location[1], poi.location[0]]}
-                            icon={getPinIcon(poi)}
-                            eventHandlers={{ click: () => openPanel(poi) }}
-                        />
-                    ))}
-                </LeafletMap>
-            </div>
-
-            {/* ── DETAIL PANEL ── */}
+            {/* ── DETAIL PANEL (left side) ── */}
             {selectedPoi && (() => {
                 const v = selectedPoi.vision;
                 const layers = v?.layers;
@@ -569,91 +646,141 @@ export default function MapContainer() {
                     || (Object.keys(textsByImage)[0] ?? null);
                 const textsOnDisplayImage = displayImageUrl ? (textsByImage[displayImageUrl] || []) : [];
 
-                return (
+                const predColor = v?.prediction === 'open' ? '#22c55e' : v?.prediction === 'not_open' ? '#ef4444' : v?.prediction === 'uncertain' ? '#f59e0b' : '#6b7280';
+
+                return createPortal(
                     <div
-                        className="w-[440px] h-full z-[1000] overflow-y-auto absolute right-0 top-0 panel-enter"
+                        className="panel-enter"
                         style={{
-                            background: 'linear-gradient(180deg, #0c1021 0%, #080d1a 100%)',
-                            borderLeft: '1px solid rgba(255,255,255,0.05)',
-                            boxShadow: '-20px 0 60px rgba(0,0,0,0.5)',
+                            position: 'fixed',
+                            top: 16,
+                            left: 16,
+                            maxHeight: 'calc(100vh - 32px)',
+                            height: 'fit-content',
+                            width: 400,
+                            zIndex: 99999,
+                            overflowY: 'auto',
+                            background: 'rgba(15,23,42,0.95)',
+                            backdropFilter: 'blur(16px)',
+                            borderRadius: 20,
+                            boxShadow: `0 20px 60px rgba(0,0,0,0.8), 0 0 40px rgba(255,255,255,0.05)`,
+                            pointerEvents: 'auto',
+                            border: '1px solid rgba(255,255,255,0.1)',
                         }}
                     >
-                        {/* ── Header ── */}
-                        <div
-                            className="sticky top-0 z-20 px-5 pt-5 pb-4"
-                            style={{ background: 'linear-gradient(180deg, #0c1021 85%, transparent)', backdropFilter: 'blur(16px)' }}
+                        {/* ── Close button ── */}
+                        <button
+                            onClick={() => setSelectedPoi(null)}
+                            style={{
+                                position: 'absolute',
+                                top: 16,
+                                right: 16,
+                                zIndex: 50,
+                                background: 'none',
+                                border: 'none',
+                                padding: 0,
+                                margin: 0,
+                                cursor: 'pointer',
+                                color: 'white',
+                                lineHeight: 1,
+                            }}
                         >
-                            <div className="flex items-start justify-between gap-3">
-                                <div className="flex-1 min-w-0">
-                                    <h2 className="text-lg font-bold text-white tracking-tight truncate leading-tight">{selectedPoi.name}</h2>
-                                    <div className="flex items-center gap-1.5 mt-2 flex-wrap">
-                                        <span
-                                            className="text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-md"
-                                            style={{ backgroundColor: 'rgba(59,130,246,0.1)', color: '#60a5fa', border: '1px solid rgba(59,130,246,0.2)' }}
-                                        >
-                                            {selectedPoi.category}
-                                        </span>
-                                        {v?.prediction && <PredictionPill prediction={v.prediction} />}
-                                    </div>
-                                </div>
-                                <button
-                                    onClick={() => setSelectedPoi(null)}
-                                    className="text-slate-600 hover:text-white p-1.5 hover:bg-white/[0.06] rounded-lg transition-all"
+                            <X size={18} />
+                        </button>
+
+                        {/* ── Header ── */}
+                        <div className="px-8 pt-7 pb-5 text-center">
+                            <h2 className="text-[22px] font-bold text-white leading-snug pr-6">{selectedPoi.name}</h2>
+                            <div className="flex items-center justify-center gap-2 mt-0">
+                                <span
+                                    className="text-[11px] font-semibold uppercase tracking-widest px-5 py-1.5 rounded-full"
+                                    style={{ color: '#60a5fa', border: '1px solid rgba(59,130,246,0.3)' }}
                                 >
-                                    <X size={18} />
-                                </button>
+                                    &nbsp;&nbsp;{selectedPoi.category}&nbsp;&nbsp;
+                                </span>
                             </div>
-                            <div className="flex items-start text-xs text-slate-500 mt-2.5 gap-1.5">
-                                <MapPin size={12} className="mt-0.5 shrink-0 text-slate-600" />
-                                <span className="leading-relaxed">{selectedPoi.address}</span>
+                            <div className="flex items-center justify-center text-[11px] text-slate-500 mt-1.5 gap-1.5">
+                                <MapPin size={11} className="shrink-0 text-slate-600" />
+                                <span>&nbsp;{selectedPoi.address}</span>
+                            </div>
+                            <div className="flex items-center justify-center text-[11px] text-slate-500 font-mono mt-1 gap-1.5">
+                                <Navigation size={11} className="shrink-0 text-slate-600" />
+                                <span>&nbsp;{selectedPoi.location[1].toFixed(5)}, {selectedPoi.location[0].toFixed(5)}</span>
                             </div>
                         </div>
 
-                        {/* ── Content ── */}
-                        <div className="px-5 pb-8 space-y-3">
+                        {/* ── Divider Removed ── */}
 
-                            {/* ── CONFIDENCE HERO ── */}
+                        {/* ── Content ── */}
+                        <div className="px-8 pb-8 pt-6 space-y-5">
+
+                            {/* ── CONFIDENCE HERO + SCORE MATH ── */}
                             {v?.confidence != null && (() => {
                                 const rawScore = v.confidence;
                                 const isOpen = v.prediction === 'open';
                                 const directedConf = isOpen ? rawScore : (1 - rawScore);
                                 const pct = Math.round(directedConf * 100);
                                 const color = isOpen ? '#4ade80' : '#f87171';
-                                const bgColor = isOpen ? 'rgba(34,197,94,0.08)' : 'rgba(239,68,68,0.08)';
-                                const borderColor = isOpen ? 'rgba(34,197,94,0.2)' : 'rgba(239,68,68,0.2)';
                                 const label = isOpen ? 'LIKELY OPEN' : 'LIKELY CLOSED';
+                                const breakdown: { signal: string; weight: number; description: string }[] = v.score_breakdown || [];
                                 return (
-                                    <div className="rounded-xl p-4 text-center" style={{ background: bgColor, border: `1px solid ${borderColor}` }}>
-                                        <div className="text-[36px] font-black font-mono leading-none" style={{ color }}>{pct}%</div>
-                                        <div className="text-[11px] font-bold tracking-[0.15em] mt-1.5" style={{ color }}>{label}</div>
-                                        <div className="w-full h-1.5 bg-white/[0.06] rounded-full overflow-hidden mt-3">
+                                    <div className="text-center py-4">
+                                        <div className="text-[44px] font-black font-mono leading-none tracking-tighter" style={{ color }}>{pct}%</div>
+                                        <div className="text-[10px] tracking-[0.25em] mt-2 uppercase" style={{ color, opacity: 0.8, fontWeight: 900 }}>{label}</div>
+                                        <div className="w-3/4 mx-auto h-1 rounded-full overflow-hidden mt-4" style={{ background: 'rgba(255,255,255,0.06)' }}>
                                             <div className="h-full rounded-full transition-all duration-700" style={{ width: `${pct}%`, backgroundColor: color }} />
                                         </div>
+
+                                        {/* Score breakdown table */}
+                                        {breakdown.length > 0 && (
+                                            <div className="mt-5 mx-auto" style={{ maxWidth: 280 }}>
+                                                <div style={{ height: 1, background: 'rgba(255,255,255,0.06)' }} className="mb-3" />
+                                                {breakdown.map((item, i) => {
+                                                    const isBase = item.signal === 'base';
+                                                    const weightColor = isBase ? '#94a3b8' : item.weight > 0 ? '#4ade80' : '#f87171';
+                                                    const weightStr = isBase ? item.weight.toFixed(2) : `${item.weight > 0 ? '+' : ''}${item.weight.toFixed(2)}`;
+                                                    return (
+                                                        <div key={i} className="flex items-center justify-between text-[10px] py-0.5">
+                                                            <span className="text-slate-400 text-left truncate" style={{ maxWidth: 180 }}>{item.description}</span>
+                                                            <span className="font-mono font-semibold" style={{ color: weightColor }}>{weightStr}</span>
+                                                        </div>
+                                                    );
+                                                })}
+                                                <div style={{ height: 1, background: 'rgba(255,255,255,0.06)' }} className="my-2" />
+                                                <div className="flex items-center justify-between text-[11px]">
+                                                    <span className="text-white font-semibold">Final Score</span>
+                                                    <span className="font-mono font-bold" style={{ color }}>{rawScore.toFixed(2)}</span>
+                                                </div>
+                                            </div>
+                                        )}
                                     </div>
                                 );
                             })()}
 
-                            {/* ── SECTION 1: Ground Truth (always visible) ── */}
+                            {/* ── Ground Truth ── */}
                             {selectedPoi.ground_truth && (
-                                <div className="rounded-xl p-3.5" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
-                                    <div className="flex items-center justify-between">
-                                        <div className="flex items-center gap-2">
-                                            <ShieldCheck size={14} className="text-slate-400" />
-                                            <span className="text-[11px] text-slate-400">Ground Truth</span>
-                                        </div>
+                                <div className="space-y-2 text-center">
+                                    <div className="flex items-center justify-center gap-1.5">
+                                        <ShieldCheck size={13} className="text-slate-500" />
+                                        <span className="text-[11px] text-slate-400 font-medium tracking-wide">&nbsp;GROUND TRUTH:&nbsp;</span>
                                         <span className={`text-[12px] font-bold font-mono ${selectedPoi.ground_truth === 'open' ? 'text-green-400' : 'text-red-400'}`}>
                                             {selectedPoi.ground_truth === 'open' ? 'OPEN' : 'CLOSED'}
                                         </span>
                                     </div>
-                                    {/* Model accuracy vs ground truth */}
-                                    {selectedPoi.vision?.prediction && (
-                                        <div className="flex items-center justify-between mt-2 pt-2" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-                                            <span className="text-[10px] text-slate-500">Model predicted: <span className="font-mono font-bold text-slate-400">{selectedPoi.vision.prediction.toUpperCase()}</span></span>
-                                            <GroundTruthBadge poi={selectedPoi} />
-                                        </div>
-                                    )}
+                                    {selectedPoi.vision?.prediction && (() => {
+                                        const isCorrect = (selectedPoi.vision.prediction === 'open' && selectedPoi.ground_truth === 'open') ||
+                                            (selectedPoi.vision.prediction === 'not_open' && selectedPoi.ground_truth === 'closed');
+                                        return (
+                                            <div className="flex items-center justify-center pt-1.5 pb-1">
+                                                <span className={`inline-flex items-center gap-1 text-[11px] font-bold px-2 py-0.5 rounded-full ${isCorrect ? 'bg-green-500/15 text-green-400' : 'bg-red-500/15 text-red-400'}`}>
+                                                    {isCorrect ? <CheckCircle size={10} /> : <XCircle size={10} />}
+                                                    <span>&nbsp;{isCorrect ? 'PREDICTION CORRECT' : 'PREDICTION INCORRECT'}</span>
+                                                </span>
+                                            </div>
+                                        );
+                                    })()}
                                     {selectedPoi.yelp && (
-                                        <p className="text-[9px] text-slate-600 mt-1.5">
+                                        <p className="text-[9px] text-slate-600">
                                             Source: Yelp — {selectedPoi.yelp.yelp_name}
                                             {selectedPoi.yelp.yelp_rating && ` (${selectedPoi.yelp.yelp_rating}★)`}
                                         </p>
@@ -661,277 +788,266 @@ export default function MapContainer() {
                                 </div>
                             )}
 
-                            {/* ── SECTION 2: Metadata Model (collapsible) ── */}
-                            {layers?.xgboost && (
-                                <div className="rounded-xl overflow-hidden" style={{ background: 'rgba(59,130,246,0.04)', border: '1px solid rgba(59,130,246,0.15)' }}>
-                                    <button
-                                        onClick={() => toggleSection('xgboost')}
-                                        className="w-full flex items-center gap-2 p-3.5 hover:bg-white/[0.02] transition-colors"
-                                    >
-                                        <Database size={14} className="text-blue-400" />
-                                        <span className="text-[11px] font-semibold text-blue-400">Metadata Model</span>
-                                        <span className={`ml-auto text-[10px] font-bold font-mono px-2 py-0.5 rounded ${
-                                            xgbScore > 0.6 ? 'bg-green-500/10 text-green-400' :
-                                            xgbScore < 0.4 ? 'bg-red-500/10 text-red-400' :
-                                            'bg-slate-500/10 text-slate-400'
-                                        }`}>
-                                            {(xgbScore * 100).toFixed(0)}% open
-                                        </span>
-                                        {expandedSections.xgboost
-                                            ? <ChevronDown size={14} className="text-slate-500 ml-1" />
-                                            : <ChevronRight size={14} className="text-slate-500 ml-1" />
-                                        }
-                                    </button>
-                                    {expandedSections.xgboost && (
-                                        <div className="px-3.5 pb-3.5 pt-0 space-y-2.5">
-                                            <ScoreBar score={xgbScore} max={1.0} color="#3b82f6" />
-                                            <p className="text-[10px] text-slate-500 leading-relaxed">{layers.xgboost.detail}</p>
-                                            {layers.xgboost.feature_contributions && Object.keys(layers.xgboost.feature_contributions).length > 0 && (
-                                                <div className="space-y-1 pt-1">
-                                                    <p className="text-[9px] text-slate-600 uppercase tracking-widest font-semibold">Features</p>
-                                                    {Object.entries(layers.xgboost.feature_contributions).map(([key, val]: [string, any]) => (
-                                                        <div key={key} className="flex items-center justify-between text-[10px]">
-                                                            <span className="text-slate-500">{key.replace(/_/g, ' ')}</span>
-                                                            <span className="text-slate-300 font-mono">{typeof val === 'number' ? val.toFixed(2) : String(val)}</span>
-                                                        </div>
-                                                    ))}
+                            {/* ── Divider Removed ── */}
+
+                            {/* ── Signal Icons ── */}
+                            <div className="flex items-start justify-center gap-6 h-16">
+                                {(() => {
+                                    const isActive = activeLayer === 'website';
+                                    return (
+                                        <button
+                                            onClick={() => setActiveLayer(isActive ? null : 'website')}
+                                            style={{ background: 'transparent', border: 'none', padding: '8px 8px 4px 8px', cursor: 'pointer', opacity: isActive ? 1 : 0.6, transition: 'all 0.2s', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px' }}
+                                            title="Website"
+                                        >
+                                            <Globe size={24} style={{ color: '#3b82f6' }} />
+                                            <div style={{ width: 20, height: 2, backgroundColor: isActive ? 'white' : 'transparent', borderRadius: 2, transition: 'background-color 0.2s' }} />
+                                        </button>
+                                    );
+                                })()}
+                                {(() => {
+                                    const isActive = activeLayer === 'text';
+                                    return (
+                                        <button
+                                            onClick={() => setActiveLayer(isActive ? null : 'text')}
+                                            style={{ background: 'transparent', border: 'none', padding: '8px 8px 4px 8px', cursor: 'pointer', opacity: isActive ? 1 : 0.6, transition: 'all 0.2s', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px' }}
+                                            title="Text Detection & Images"
+                                        >
+                                            <Type size={24} style={{ color: '#ef4444' }} />
+                                            <div style={{ width: 20, height: 2, backgroundColor: isActive ? 'white' : 'transparent', borderRadius: 2, transition: 'background-color 0.2s' }} />
+                                        </button>
+                                    );
+                                })()}
+                                {(() => {
+                                    const isActive = activeLayer === 'xgboost';
+                                    return (
+                                        <button
+                                            onClick={() => setActiveLayer(isActive ? null : 'xgboost')}
+                                            style={{ background: 'transparent', border: 'none', padding: '8px 8px 4px 8px', cursor: 'pointer', opacity: isActive ? 1 : 0.6, transition: 'all 0.2s', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px' }}
+                                            title="Metadata Model"
+                                        >
+                                            <Database size={24} style={{ color: '#f97316' }} />
+                                            <div style={{ width: 20, height: 2, backgroundColor: isActive ? 'white' : 'transparent', borderRadius: 2, transition: 'background-color 0.2s' }} />
+                                        </button>
+                                    );
+                                })()}
+                            </div>
+
+                            {/* ── Expanded Layer Content ── */}
+                            {activeLayer === 'website' && (
+                                <div className="panel-content-enter pt-4 flex flex-col items-center text-center">
+                                    {layers?.website ? (
+                                        <>
+                                            <div className="w-full">
+                                                <div style={{ backgroundColor: layers.website.status === 'alive' ? '#059669' : layers.website.status === 'dead' ? '#dc2626' : '#d97706', borderColor: layers.website.status === 'alive' ? '#065f46' : layers.website.status === 'dead' ? '#991b1b' : '#92400e' }} className="w-full py-2.5 rounded-lg shadow-sm border flex items-center justify-center">
+                                                    <span style={{ fontWeight: 900 }} className="text-[12px] text-white font-mono tracking-wide uppercase text-center block w-full">
+                                                        {layers.website.status === 'alive' ? 'ALIVE' : layers.website.status === 'dead' ? 'DEAD' : layers.website.status === 'redirect' ? 'REDIRECTED' : layers.website.status === 'parked' ? 'PARKED' : layers.website.status.toUpperCase()}
+                                                    </span>
                                                 </div>
-                                            )}
+                                            </div>
+                                            <div className="flex flex-col items-center gap-0 w-full pt-3">
+                                                {layers.website.url && (
+                                                    <a href={layers.website.url} target="_blank" rel="noopener noreferrer"
+                                                        className="text-[11px] text-slate-400 hover:text-slate-300 flex items-center justify-center gap-1.5 break-all font-medium text-center">
+                                                        <ExternalLink size={10} className="shrink-0" />
+                                                        {layers.website.url}
+                                                    </a>
+                                                )}
+                                                <div className="text-[11px] text-slate-400/80 leading-tight text-center m-0 p-0">{layers.website.detail}</div>
+                                            </div>
+                                        </>
+                                    ) : (
+                                        <div className="w-full">
+                                            <div style={{ backgroundColor: '#64748b', borderColor: '#475569' }} className="w-full py-2.5 rounded-lg shadow-sm border flex items-center justify-center">
+                                                <span style={{ fontWeight: 900 }} className="text-[12px] text-white font-mono tracking-wide uppercase text-center block w-full">
+                                                    NO WEBSITE
+                                                </span>
+                                            </div>
+                                            <p className="text-[11px] text-slate-500 mt-3">No website on record for this business</p>
                                         </div>
                                     )}
                                 </div>
                             )}
 
-                            {/* ── SECTION 3: Website Liveness (collapsible) ── */}
-                            {layers?.website && layers.website.status !== 'no_url' && (
-                                <div className="rounded-xl overflow-hidden" style={{
-                                    background: layers.website.status === 'alive' ? 'rgba(34,197,94,0.04)' :
-                                               layers.website.status === 'dead' ? 'rgba(239,68,68,0.04)' :
-                                               'rgba(245,158,11,0.04)',
-                                    border: `1px solid ${layers.website.status === 'alive' ? 'rgba(34,197,94,0.15)' :
-                                                         layers.website.status === 'dead' ? 'rgba(239,68,68,0.15)' :
-                                                         'rgba(245,158,11,0.15)'}`,
-                                }}>
-                                    <button
-                                        onClick={() => toggleSection('website')}
-                                        className="w-full flex items-center gap-2 p-3.5 hover:bg-white/[0.02] transition-colors"
-                                    >
-                                        <Globe size={14} className={
-                                            layers.website.status === 'alive' ? 'text-green-400' :
-                                            layers.website.status === 'dead' ? 'text-red-400' :
-                                            'text-amber-400'
-                                        } />
-                                        <span className={`text-[11px] font-semibold ${
-                                            layers.website.status === 'alive' ? 'text-green-400' :
-                                            layers.website.status === 'dead' ? 'text-red-400' :
-                                            'text-amber-400'
-                                        }`}>Website</span>
-                                        <span className={`ml-auto text-[10px] font-bold px-2 py-0.5 rounded ${
-                                            layers.website.status === 'alive' ? 'bg-green-500/10 text-green-400' :
-                                            layers.website.status === 'dead' ? 'bg-red-500/10 text-red-400' :
-                                            layers.website.status === 'redirect' ? 'bg-red-500/10 text-red-400' :
-                                            'bg-amber-500/10 text-amber-400'
-                                        }`}>
-                                            {layers.website.status === 'alive' ? 'ALIVE' :
-                                             layers.website.status === 'dead' ? 'DEAD' :
-                                             layers.website.status === 'redirect' ? 'REDIRECTED' :
-                                             layers.website.status === 'parked' ? 'PARKED' :
-                                             layers.website.status.toUpperCase()}
-                                        </span>
-                                        {expandedSections.website
-                                            ? <ChevronDown size={14} className="text-slate-500 ml-1" />
-                                            : <ChevronRight size={14} className="text-slate-500 ml-1" />
-                                        }
-                                    </button>
-                                    {expandedSections.website && (
-                                        <div className="px-3.5 pb-3.5 pt-0 space-y-2">
-                                            {layers.website.url && (
-                                                <a
-                                                    href={layers.website.url}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="text-[10px] text-blue-400 hover:text-blue-300 flex items-center gap-1 break-all"
-                                                >
-                                                    <ExternalLink size={9} className="shrink-0" />
-                                                    {layers.website.url}
-                                                </a>
-                                            )}
-                                            <p className="text-[10px] text-slate-500 leading-relaxed">{layers.website.detail}</p>
-                                            {layers.website.status_code && (
-                                                <span className="text-[9px] font-mono text-slate-600">HTTP {layers.website.status_code}</span>
-                                            )}
-                                        </div>
-                                    )}
-                                </div>
-                            )}
-
-                            {/* ── SECTION 4: Text Detection (collapsible) ── */}
-                            {layers?.text && (
-                                <div className="rounded-xl overflow-hidden" style={{ background: 'rgba(16,185,129,0.04)', border: '1px solid rgba(16,185,129,0.15)' }}>
-                                    <button
-                                        onClick={() => toggleSection('text')}
-                                        className="w-full flex items-center gap-2 p-3.5 hover:bg-white/[0.02] transition-colors"
-                                    >
-                                        <Type size={14} className="text-emerald-400" />
-                                        <span className="text-[11px] font-semibold text-emerald-400">Text Detection</span>
-                                        <span className={`ml-auto text-[10px] font-bold px-2 py-0.5 rounded ${
-                                            textVerdict === 'full_match' ? 'bg-green-500/10 text-green-400' :
-                                            textVerdict === 'partial_match' ? 'bg-amber-500/10 text-amber-400' :
-                                            'bg-slate-500/10 text-slate-500'
-                                        }`}>
-                                            {textVerdict === 'full_match' ? 'FULL MATCH' : textVerdict === 'partial_match' ? 'PARTIAL' : textVerdict === 'no_images' ? 'NO IMAGES' : 'NO MATCH'}
-                                        </span>
-                                        {expandedSections.text
-                                            ? <ChevronDown size={14} className="text-slate-500 ml-1" />
-                                            : <ChevronRight size={14} className="text-slate-500 ml-1" />
-                                        }
-                                    </button>
-                                    {expandedSections.text && (
-                                        <div className="px-3.5 pb-3.5 pt-0 space-y-2.5">
-                                            <p className="text-[10px] text-slate-500 leading-relaxed">{layers.text.detail}</p>
-
-                                            {/* Image age warning */}
-                                            {layers.text.image_age_years > 3 && (
-                                                <div className="flex items-center gap-1.5 px-2 py-1.5 rounded-md" style={{
-                                                    backgroundColor: layers.text.image_age_years > 5 ? 'rgba(239,68,68,0.08)' : 'rgba(245,158,11,0.08)',
-                                                    border: `1px solid ${layers.text.image_age_years > 5 ? 'rgba(239,68,68,0.2)' : 'rgba(245,158,11,0.2)'}`,
-                                                }}>
-                                                    <Clock size={10} className={layers.text.image_age_years > 5 ? 'text-red-400' : 'text-amber-400'} />
-                                                    <span className={`text-[9px] font-semibold ${layers.text.image_age_years > 5 ? 'text-red-400' : 'text-amber-400'}`}>
-                                                        Image is {layers.text.image_age_years.toFixed(0)} years old
-                                                        {layers.text.image_age_years > 5 ? ' — low reliability' : ' — reduced confidence'}
-                                                    </span>
-                                                    <span className="ml-auto text-[9px] font-mono text-slate-500">
-                                                        {layers.text.image_age_factor !== undefined ? `${(layers.text.image_age_factor * 100).toFixed(0)}% weight` : ''}
-                                                    </span>
-                                                </div>
-                                            )}
-
+                            {activeLayer === 'text' && (() => {
+                                const gallery: any[] = selectedPoi.current_gallery || [];
+                                const safeIdx = Math.min(textGalleryIdx, Math.max(0, gallery.length - 1));
+                                const currentImg = gallery[safeIdx];
+                                const currentImgUrl = currentImg?.url;
+                                // Texts detected on this specific image
+                                const textsForCurrentImg = currentImgUrl ? allTexts.filter((t: any) => t.imageUrl === currentImgUrl) : [];
+                                // The highlighted text (clicked chip) — show its bbox
+                                const highlightedItem = highlightedTextId ? textsForCurrentImg.find((t: any) => t.id === highlightedTextId) : null;
+                                return (
+                                <div className="panel-content-enter pt-4 flex flex-col items-center text-center">
+                                    {/* Verdict badge */}
+                                    {layers?.text && (
+                                        <div className="w-full">
+                                            <div style={{ backgroundColor: textVerdict === 'full_match' ? '#059669' : textVerdict === 'partial_match' ? '#d97706' : textVerdict === 'no_match' ? '#dc2626' : '#64748b', borderColor: textVerdict === 'full_match' ? '#065f46' : textVerdict === 'partial_match' ? '#92400e' : textVerdict === 'no_match' ? '#991b1b' : '#475569' }} className="w-full py-2.5 rounded-lg shadow-sm border flex items-center justify-center">
+                                                <span style={{ fontWeight: 900 }} className="text-[12px] text-white font-mono tracking-wide uppercase text-center block w-full">
+                                                    {textVerdict === 'full_match' ? 'FULL MATCH' : textVerdict === 'partial_match' ? 'PARTIAL' : textVerdict === 'no_images' ? 'NO IMAGES' : 'NO MATCH'}
+                                                </span>
+                                            </div>
                                             {layers.text.matched_text && (
-                                                <div>
-                                                    <span className="text-[10px] text-slate-600 mr-2">Matched:</span>
-                                                    <span className="text-[11px] font-semibold text-emerald-300 font-mono">"{layers.text.matched_text}"</span>
+                                                <div className="text-center mt-2">
+                                                    <span className="text-[10px] text-slate-500 mr-2">Matched:</span>
+                                                    <span className="text-[12px] font-bold text-red-400 font-mono">"{layers.text.matched_text}"</span>
                                                 </div>
                                             )}
+                                        </div>
+                                    )}
 
-                                            {displayImageUrl && (
-                                                <div className="relative rounded-lg overflow-hidden ring-1 ring-emerald-500/20">
-                                                    <img src={displayImageUrl} className="w-full object-cover h-52" alt="Text evidence" loading="lazy" />
-                                                    {/* All bounding boxes on this image */}
-                                                    {textsOnDisplayImage.map((item: any) => {
-                                                        const bbox = item.detail?.bbox_pct;
-                                                        if (!bbox) return null;
-                                                        const isActive = activeTextId === item.id;
-                                                        const isMatch = item.isMatch;
+                                    {/* Image browser */}
+                                    {gallery.length > 0 ? (
+                                        <div className="w-full mt-3">
+                                            {/* Navigation row: arrow — image — arrow */}
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+                                                {gallery.length > 1 ? (
+                                                    <button onClick={() => { setTextGalleryIdx(safeIdx > 0 ? safeIdx - 1 : gallery.length - 1); setHighlightedTextId(null); }}
+                                                        style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8, width: 32, height: 32, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', flexShrink: 0 }}>
+                                                        <ChevronLeft size={18} color="white" />
+                                                    </button>
+                                                ) : <div style={{ width: 32, flexShrink: 0 }} />}
+                                                <div className="relative rounded-lg overflow-hidden shadow-lg" style={{ flex: 1, minWidth: 0 }}>
+                                                    <img src={currentImgUrl} style={{ width: '100%', height: 180, objectFit: 'cover', display: 'block' }} alt={`Street view ${safeIdx + 1}`} loading="lazy" />
+                                                    {/* Highlighted text bbox overlay (clicked chip) */}
+                                                    {highlightedItem?.detail?.bbox_pct && (() => {
+                                                        const bbox = highlightedItem.detail.bbox_pct;
+                                                        const color = highlightedItem.isMatch ? '#ef4444' : '#3b82f6';
                                                         return (
-                                                            <div
-                                                                key={item.id}
-                                                                onClick={(e) => { e.stopPropagation(); setActiveTextId(isActive ? null : item.id); }}
-                                                                style={{
-                                                                    position: 'absolute',
-                                                                    left: `${bbox[0] * 100}%`,
-                                                                    top: `${bbox[1] * 100}%`,
-                                                                    width: `${bbox[2] * 100}%`,
-                                                                    height: `${bbox[3] * 100}%`,
-                                                                    border: isActive ? '2px solid #fbbf24' : isMatch ? '2px solid #10b981' : '1px solid rgba(148,163,184,0.4)',
-                                                                    backgroundColor: isActive ? 'rgba(251,191,36,0.25)' : isMatch ? 'rgba(16,185,129,0.15)' : 'rgba(148,163,184,0.08)',
-                                                                    borderRadius: '2px',
-                                                                    cursor: 'pointer',
-                                                                    zIndex: isActive ? 3 : isMatch ? 2 : 1,
-                                                                    transition: 'all 0.15s ease',
-                                                                }}
-                                                            >
-                                                                {(isActive || isMatch) && (
-                                                                    <span style={{
-                                                                        position: 'absolute', top: '-15px', left: 0,
-                                                                        fontSize: '8px',
-                                                                        backgroundColor: isActive ? '#f59e0b' : '#10b981',
-                                                                        color: 'white',
-                                                                        padding: '1px 4px', borderRadius: '2px', whiteSpace: 'nowrap',
-                                                                        lineHeight: '12px',
-                                                                    }}>
-                                                                        {item.text}
-                                                                    </span>
-                                                                )}
+                                                            <div style={{
+                                                                position: 'absolute', left: `${bbox[0] * 100}%`, top: `${bbox[1] * 100}%`, width: `${bbox[2] * 100}%`, height: `${bbox[3] * 100}%`,
+                                                                border: `2px solid ${color}`, backgroundColor: `${color}33`,
+                                                                borderRadius: '2px', zIndex: 2, pointerEvents: 'none',
+                                                            }}>
+                                                                <span style={{ position: 'absolute', top: '-20px', left: '50%', transform: 'translateX(-50%)', fontSize: '10px', fontWeight: 700, backgroundColor: color, color: 'white', padding: '2px 8px', borderRadius: '4px', whiteSpace: 'nowrap', lineHeight: '14px' }}>
+                                                                    {highlightedItem.text}
+                                                                </span>
                                                             </div>
                                                         );
-                                                    })}
+                                                    })()}
+                                                    {/* Counter badge */}
+                                                    <div style={{ position: 'absolute', bottom: 6, right: 6, background: 'rgba(0,0,0,0.7)', borderRadius: 8, padding: '2px 8px', zIndex: 5 }}>
+                                                        <span className="text-[10px] text-white font-mono font-semibold">{safeIdx + 1}/{gallery.length}</span>
+                                                    </div>
+                                                </div>
+                                                {gallery.length > 1 ? (
+                                                    <button onClick={() => { setTextGalleryIdx(safeIdx < gallery.length - 1 ? safeIdx + 1 : 0); setHighlightedTextId(null); }}
+                                                        style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8, width: 32, height: 32, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', flexShrink: 0 }}>
+                                                        <ChevronRight size={18} color="white" />
+                                                    </button>
+                                                ) : <div style={{ width: 32, flexShrink: 0 }} />}
+                                            </div>
+                                            {/* Image metadata */}
+                                            {currentImg && (
+                                                <div className="flex items-center justify-center gap-3 mt-1.5">
+                                                    <span className="text-[9px] text-slate-500 flex items-center gap-1"><Calendar size={9} />{currentImg.date}</span>
+                                                    <span className="text-[9px] text-slate-500 flex items-center gap-1"><Navigation size={9} />{currentImg.distance_m}m away</span>
                                                 </div>
                                             )}
-
-                                            {allTexts.length > 0 && (
-                                                <div>
-                                                    <p className="text-[9px] text-slate-600 mb-1">Click text to locate on image</p>
-                                                    <div className="flex flex-wrap gap-1">
-                                                        {allTexts.map((item: any) => {
-                                                            const isActive = activeTextId === item.id;
+                                            {/* All OCR texts detected in this image — click to highlight on image */}
+                                            {textsForCurrentImg.length > 0 ? (
+                                                <div className="mt-2">
+                                                    <p className="text-[8px] text-slate-600 uppercase tracking-widest mb-1.5">Detected text — click to locate</p>
+                                                    <div className="flex flex-wrap justify-center gap-1.5">
+                                                        {textsForCurrentImg.map((item: any) => {
+                                                            const isHighlighted = highlightedTextId === item.id;
+                                                            const isMatch = item.isMatch;
                                                             return (
-                                                                <button
-                                                                    key={item.id}
-                                                                    onClick={(e) => {
-                                                                        e.stopPropagation();
-                                                                        if (!item.hasBbox) return;
-                                                                        setActiveTextId(isActive ? null : item.id);
-                                                                    }}
-                                                                    className={`text-[9px] px-1.5 py-0.5 rounded font-mono transition-all ${
-                                                                        isActive
-                                                                            ? 'bg-amber-500/20 text-amber-300 ring-1 ring-amber-500/40'
-                                                                            : item.isMatch
-                                                                                ? 'bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-500/30'
-                                                                                : item.hasBbox
-                                                                                    ? 'text-slate-400 hover:bg-white/[0.06] cursor-pointer'
-                                                                                    : 'text-slate-500 cursor-default'
-                                                                    }`}
-                                                                    style={!isActive && !item.isMatch ? { backgroundColor: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)' } : {}}
-                                                                >
-                                                                    {item.isMatch ? '● ' : ''}{item.text}
+                                                                <button key={item.id}
+                                                                    onClick={() => setHighlightedTextId(isHighlighted ? null : item.id)}
+                                                                    style={{
+                                                                        cursor: item.detail?.bbox_pct ? 'pointer' : 'default',
+                                                                        background: isHighlighted ? (isMatch ? 'rgba(239,68,68,0.3)' : 'rgba(59,130,246,0.3)') : (isMatch ? 'rgba(239,68,68,0.15)' : 'rgba(255,255,255,0.04)'),
+                                                                        border: isHighlighted ? `1.5px solid ${isMatch ? '#ef4444' : '#3b82f6'}` : (isMatch ? '1px solid rgba(239,68,68,0.4)' : '1px solid rgba(255,255,255,0.06)'),
+                                                                        borderRadius: 4, padding: '2px 6px', fontSize: '9px', fontFamily: 'monospace',
+                                                                        color: isMatch ? '#fca5a5' : '#94a3b8',
+                                                                        fontWeight: isMatch || isHighlighted ? 600 : 400,
+                                                                        transition: 'all 0.15s',
+                                                                    }}>
+                                                                    {isMatch ? '★ ' : ''}{item.text}
                                                                 </button>
                                                             );
                                                         })}
                                                     </div>
                                                 </div>
+                                            ) : (
+                                                <p className="text-[9px] text-slate-600 mt-2">No text detected in this image</p>
                                             )}
+                                        </div>
+                                    ) : (
+                                        <div className="w-full mt-3 py-6 rounded-lg flex flex-col items-center justify-center" style={{ background: 'rgba(255,255,255,0.03)' }}>
+                                            <span className="text-slate-600 text-[11px] font-medium">No street-level images available</span>
+                                        </div>
+                                    )}
 
-                                            <p className="text-[9px] text-slate-600">
-                                                {v?.images_analyzed || 0} images analyzed · {textsOnDisplayImage.filter((t: any) => t.isMatch).length} matches found
-                                            </p>
+                                    {/* Summary */}
+                                    <p className="text-[10px] text-slate-500 pt-2 text-center">
+                                        {v?.images_analyzed || 0} images analyzed · {allTexts.filter((t: any) => t.isMatch).length} text matches
+                                    </p>
+                                </div>
+                                );
+                            })()}
+
+                            {activeLayer === 'xgboost' && layers?.xgboost && (
+                                <div className="panel-content-enter pt-4 flex flex-col items-center text-center">
+                                    <div className="w-full">
+                                        <div style={{ backgroundColor: xgbScore > 0.6 ? '#059669' : xgbScore < 0.4 ? '#dc2626' : '#d97706', borderColor: xgbScore > 0.6 ? '#065f46' : xgbScore < 0.4 ? '#991b1b' : '#92400e' }} className="w-full py-2.5 rounded-lg shadow-sm border flex items-center justify-center">
+                                            <span style={{ fontWeight: 900 }} className="text-[12px] text-white font-mono tracking-wide uppercase text-center block w-full">
+                                                {(xgbScore * 100).toFixed(0)}% OPEN
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div className="w-full mt-3">
+                                        <ScoreBar score={xgbScore} max={1.0} color="#f97316" />
+                                    </div>
+                                    <div className="text-[11px] text-slate-400/80 leading-tight text-center mt-2 m-0 p-0">{layers.xgboost.detail}</div>
+                                    {layers.xgboost.feature_contributions && Object.keys(layers.xgboost.feature_contributions).length > 0 && (
+                                        <div className="space-y-1.5 pt-2 w-full flex flex-col items-center" style={{ borderTop: '1px solid rgba(249,115,22,0.1)' }}>
+                                            <p className="text-[9px] text-orange-400/80 uppercase tracking-widest font-semibold text-center pb-1">Features</p>
+                                            <div className="w-full max-w-[200px]">
+                                                {Object.entries(layers.xgboost.feature_contributions).map(([key, val]: [string, any]) => (
+                                                    <div key={key} className="flex items-center justify-between text-[10px]">
+                                                        <span className="text-slate-500">{key.replace(/_/g, ' ')}</span>
+                                                        <span className="text-slate-300 font-mono">{typeof val === 'number' ? val.toFixed(2) : String(val)}</span>
+                                                    </div>
+                                                ))}
+                                            </div>
                                         </div>
                                     )}
                                 </div>
                             )}
 
-                            {/* ── SECTION 4: Street View (collapsible) ── */}
-                            {selectedPoi.current_gallery?.length > 0 && (
-                                <div className="rounded-xl overflow-hidden" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}>
-                                    <button
-                                        onClick={() => toggleSection('gallery')}
-                                        className="w-full flex items-center gap-2 p-3.5 hover:bg-white/[0.02] transition-colors"
-                                    >
-                                        <ImageIcon size={14} className="text-slate-400" />
-                                        <span className="text-[11px] font-semibold text-slate-400">Street View</span>
-                                        <span className="ml-auto text-[10px] text-slate-500 font-mono">{selectedPoi.current_gallery.length} images</span>
-                                        {expandedSections.gallery
-                                            ? <ChevronDown size={14} className="text-slate-500 ml-1" />
-                                            : <ChevronRight size={14} className="text-slate-500 ml-1" />
-                                        }
-                                    </button>
-                                    {expandedSections.gallery && (
-                                        <div className="px-3.5 pb-3.5 pt-0">
-                                            <GalleryStrip images={selectedPoi.current_gallery} label="Street View" accent="#3b82f6" />
-                                        </div>
-                                    )}
-                                </div>
-                            )}
-
-                            {/* FOOTER */}
-                            <div className="pt-3 border-t border-white/[0.04] text-center">
-                                <p className="text-[10px] text-slate-700 font-mono">{selectedPoi.location[1].toFixed(5)}, {selectedPoi.location[0].toFixed(5)}</p>
-                                <p className="text-[8px] text-slate-800 mt-1 uppercase tracking-[0.2em]">Overture Maps · Yelp · Mapillary · Foursquare · OCR + XGBoost</p>
+                            {/* ── Footer ── */}
+                            <div className="pt-4 text-center" style={{ borderTop: '1px solid rgba(255,255,255,0.04)' }}>
+                                <p className="text-[7px] text-slate-700 uppercase tracking-[0.25em]">Overture Maps · Yelp · Mapillary · Foursquare · OCR + XGBoost</p>
                             </div>
                         </div>
-                    </div>
+                    </div>,
+                    document.body
                 );
             })()}
+
+
+
+            {/* Map */}
+            <div className="relative h-full flex-1 min-w-0 transition-all duration-500 ease-out">
+                <LeafletMap center={cityConfig.center} zoom={cityConfig.zoom} className="w-full h-full">
+                    <MapFlyTo center={cityConfig.center} zoom={cityConfig.zoom} />
+                    <TileLayer
+                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                        url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+                    />
+                    {filteredData.map((poi: any) => (
+                        <Marker
+                            key={poi.id}
+                            position={[poi.location[1], poi.location[0]]}
+                            icon={getPinIcon(poi)}
+                            eventHandlers={{ click: () => openPanel(poi) }}
+                        />
+                    ))}
+                </LeafletMap>
+            </div>
         </div>
     );
 }
