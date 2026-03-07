@@ -1,14 +1,19 @@
 {
   "weights": {
-    "Foursquare": 2.1607,
-    "Website": 1.206,
-    "Text": 0.0825,
-    "XGBoost": 1.3007,
-    "FSQ_verified+Web_dead": -1.0423,
-    "FSQ_no_data": -0.4071,
-    "FSQ_nodata+Web_alive": -0.8741
+    "Foursquare": 1.8997,
+    "Website": 1.3448,
+    "Text": 0.1617,
+    "XGBoost": 0.6998,
+    "TomTom": -0.0668,
+    "Yelp_reviews": 1.7241,
+    "FSQ_verified+Web_dead": -0.9368,
+    "FSQ_no_data": -0.7736,
+    "FSQ_nodata+Web_alive": -1.0269,
+    "Both_dirs_verified": 0.509,
+    "Both_dirs_missing": -0.0729,
+    "FSQ_verified+No_yelp": -0.1488
   },
-  "intercept": -0.226,
-  "loco_cv_accuracy": 0.8246,
-  "loco_cv_balanced_accuracy": 0.8246
+  "intercept": 0.6184,
+  "loco_cv_accuracy": 0.8421,
+  "loco_cv_balanced_accuracy": 0.8421
 }

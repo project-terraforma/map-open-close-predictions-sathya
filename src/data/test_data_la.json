@@ -78,7 +78,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.786,
+      "confidence": 0.8892,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No text match on 4 recent images | Metadata: 75% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | Website: alive | No text match on 4 recent images | Metadata: 75% open (no nudge) | Score: 0.75",
@@ -275,28 +275,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.786,
-          "description": "Metamodel score (logit=+1.30)"
+          "weight": 0.8892,
+          "description": "Metamodel score (logit=+2.08)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3827,
+          "weight": 0.1934,
           "description": "XGBoost: 78% (signal=+0.28)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: verified match=0.3 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.7442,
+          "description": "Yelp: 73 reviews (signal=+0.43)"
         }
       ]
     },
@@ -308,6 +318,15 @@
       "yelp_rating": 4.4,
       "yelp_review_count": 73,
       "yelp_url": "https://www.yelp.com/biz/rice-los-angeles-4?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Valentine DTLA",
+      "match_score": 0.3,
+      "has_phone": true,
+      "has_url": false,
+      "phone": "+1 424-261-8204",
+      "url": ""
     }
   },
   {
@@ -389,7 +408,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8852,
+      "confidence": 0.866,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No text match on 4 recent images | Metadata: 70% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | Website: alive | No text match on 4 recent images | Metadata: 70% open (no nudge) | Score: 0.75",
@@ -846,32 +865,51 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8852,
-          "description": "Metamodel score (logit=+2.04)"
+          "weight": 0.866,
+          "description": "Metamodel score (logit=+1.87)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2737,
+          "weight": 0.1383,
           "description": "XGBoost: 70% (signal=+0.20)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "open"
+    "ground_truth": "open",
+    "tomtom": {
+      "status": "verified",
+      "name": "Caldo Verde",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 213-806-1023",
+      "url": "www.properhotel.com/downtown-la/restaurants-bars/caldo-verde/"
+    }
   },
   {
     "name": "Town Hof And Thanks Chicken",
@@ -958,7 +996,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8823,
+      "confidence": 0.9858,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No text match on 5 recent images | Metadata: 68% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | Website: alive | No text match on 5 recent images | Metadata: 68% open (no nudge) | Score: 0.75",
@@ -1685,28 +1723,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8823,
-          "description": "Metamodel score (logit=+2.01)"
+          "weight": 0.9858,
+          "description": "Metamodel score (logit=+4.24)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2453,
+          "weight": 0.1239,
           "description": "XGBoost: 68% (signal=+0.18)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: verified match=0.5 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.9574,
+          "description": "Yelp: 129 reviews (signal=+0.56)"
         }
       ]
     },
@@ -1718,6 +1766,15 @@
       "yelp_rating": 4.5,
       "yelp_review_count": 129,
       "yelp_url": "https://www.yelp.com/biz/town-hof-and-thanks-chicken-los-angeles?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Town Hof & Thanks Chicken",
+      "match_score": 0.48,
+      "has_phone": true,
+      "has_url": false,
+      "phone": "+1 323-998-0818",
+      "url": ""
     }
   },
   {
@@ -1774,7 +1831,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8865,
+      "confidence": 0.9816,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No street-level images",
       "layers": {
@@ -1847,17 +1904,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8865,
-          "description": "Metamodel score (logit=+2.06)"
+          "weight": 0.9816,
+          "description": "Metamodel score (logit=+3.98)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
@@ -1867,8 +1924,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.2712,
+          "weight": 0.137,
           "description": "XGBoost: 70% (signal=+0.20)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.6516,
+          "description": "Yelp: 57 reviews (signal=+0.38)"
         }
       ]
     },
@@ -1880,6 +1947,9 @@
       "yelp_rating": 4.0,
       "yelp_review_count": 57,
       "yelp_url": "https://www.yelp.com/biz/charlies-fixtures-los-angeles-4?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -1979,7 +2049,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.7942,
+      "confidence": 0.9111,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (Client error 444) | No text match on 7 recent images | Metadata: 81% open (no nudge) | Score: 0.65",
       "detail": "Foursquare: verified | Website: dead (Client error 444) | No text match on 7 recent images | Metadata: 81% open (no nudge) | Score: 0.65",
@@ -3311,28 +3381,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7942,
-          "description": "Metamodel score (logit=+1.35)"
+          "weight": 0.9111,
+          "description": "Metamodel score (logit=+2.33)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.4322,
+          "weight": 0.2183,
           "description": "XGBoost: 81% (signal=+0.31)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.9631,
+          "description": "Yelp: 131 reviews (signal=+0.56)"
         }
       ]
     },
@@ -3344,6 +3424,9 @@
       "yelp_rating": 3.7,
       "yelp_review_count": 131,
       "yelp_url": "https://www.yelp.com/biz/hermosa-saloon-hermosa-beach?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -3425,7 +3508,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.7824,
+      "confidence": 0.9605,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 4 recent images | Metadata: 74% open (no nudge) | Score: 0.65",
       "detail": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 4 recent images | Metadata: 74% open (no nudge) | Score: 0.65",
@@ -3885,28 +3968,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7824,
-          "description": "Metamodel score (logit=+1.28)"
+          "weight": 0.9605,
+          "description": "Metamodel score (logit=+3.19)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3615,
+          "weight": 0.1826,
           "description": "XGBoost: 76% (signal=+0.26)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.421,
+          "description": "Yelp: 445 reviews (signal=+0.82)"
         }
       ]
     },
@@ -3918,6 +4011,15 @@
       "yelp_rating": 3.9,
       "yelp_review_count": 445,
       "yelp_url": "https://www.yelp.com/biz/muma-kitchen-los-angeles-3?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Muma Kitchen",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 310-446-0055",
+      "url": "www.mumakitchen.com/"
     }
   },
   {
@@ -3999,7 +4101,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.7848,
+      "confidence": 0.9707,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (Client error 403) | No text match on 4 recent images | Metadata: 78% open (no nudge) | Score: 0.65",
       "detail": "Foursquare: verified | Website: dead (Client error 403) | No text match on 4 recent images | Metadata: 78% open (no nudge) | Score: 0.65",
@@ -4274,28 +4376,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7848,
-          "description": "Metamodel score (logit=+1.29)"
+          "weight": 0.9707,
+          "description": "Metamodel score (logit=+3.50)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3759,
+          "weight": 0.1899,
           "description": "XGBoost: 77% (signal=+0.27)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.7241,
+          "description": "Yelp: 1849 reviews (signal=+1.00)"
         }
       ]
     },
@@ -4307,6 +4419,15 @@
       "yelp_rating": 3.8,
       "yelp_review_count": 1849,
       "yelp_url": "https://www.yelp.com/biz/ye-olde-kings-head-santa-monica-8?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Ye Olde King's Head",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 310-451-1402",
+      "url": "yeoldekingshead.com/"
     }
   },
   {
@@ -4376,7 +4497,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.7657,
+      "confidence": 0.8979,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 2 recent images | Metadata: 69% open (no nudge) | Score: 0.65",
       "detail": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 2 recent images | Metadata: 69% open (no nudge) | Score: 0.65",
@@ -4584,28 +4705,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7657,
-          "description": "Metamodel score (logit=+1.18)"
+          "weight": 0.8979,
+          "description": "Metamodel score (logit=+2.17)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2659,
+          "weight": 0.1344,
           "description": "XGBoost: 69% (signal=+0.19)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.8943,
+          "description": "Yelp: 109 reviews (signal=+0.52)"
         }
       ]
     },
@@ -4617,6 +4748,9 @@
       "yelp_rating": 1.9,
       "yelp_review_count": 109,
       "yelp_url": "https://www.yelp.com/biz/roxy-cleaners-studio-city?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -4698,7 +4832,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8395,
+      "confidence": 0.9724,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | No text match on 4 recent images | Metadata: 79% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | No text match on 4 recent images | Metadata: 79% open (no nudge) | Score: 0.75",
@@ -5414,12 +5548,12 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8395,
-          "description": "Metamodel score (logit=+1.65)"
+          "weight": 0.9724,
+          "description": "Metamodel score (logit=+3.56)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
@@ -5429,13 +5563,23 @@
         },
         {
           "signal": "text",
-          "weight": 0.0369,
+          "weight": 0.0809,
           "description": "Text: partial_match (signal=+0.5)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3657,
+          "weight": 0.1847,
           "description": "XGBoost: 76% (signal=+0.26)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.7785,
+          "description": "Yelp: 80 reviews (signal=+0.45)"
         }
       ]
     },
@@ -5447,6 +5591,9 @@
       "yelp_rating": 4.0,
       "yelp_review_count": 80,
       "yelp_url": "https://www.yelp.com/biz/sweet-lady-jane-los-angeles-6?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -5509,8 +5656,8 @@
       "detail": "Website responding (HTTP 200)"
     },
     "vision": {
-      "prediction": "not_open",
-      "confidence": 0.2345,
+      "prediction": "open",
+      "confidence": 0.6015,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: mismatch (\"Old Yerevan Restaurant\") | Website: alive | Metadata: 70% open (no nudge) | Score: 0.25",
       "detail": "Foursquare: mismatch (\"Old Yerevan Restaurant\") | Website: alive | Metadata: 70% open (no nudge) | Score: 0.25",
@@ -5761,28 +5908,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2345,
-          "description": "Metamodel score (logit=-1.18)"
+          "weight": 0.6015,
+          "description": "Metamodel score (logit=+0.41)"
         },
         {
           "signal": "foursquare",
-          "weight": -1.0961,
+          "weight": -0.9498,
           "description": "Foursquare: mismatch (signal=-0.5)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3362,
+          "weight": 0.1698,
           "description": "XGBoost: 74% (signal=+0.24)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.0,
+          "description": "Yelp: 10 reviews (signal=+0.00)"
         }
       ]
     },
@@ -5794,6 +5951,15 @@
       "yelp_rating": 5.0,
       "yelp_review_count": 10,
       "yelp_url": "https://www.yelp.com/biz/mer-yerevan-restaurant-glendale-2?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Mer Yerevan Restaurant",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": false,
+      "phone": "+1 818-484-8288",
+      "url": ""
     }
   },
   {
@@ -5887,7 +6053,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8838,
+      "confidence": 0.8652,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No text match on 6 recent images | Metadata: 68% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | Website: alive | No text match on 6 recent images | Metadata: 68% open (no nudge) | Score: 0.75",
@@ -6075,32 +6241,51 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8838,
-          "description": "Metamodel score (logit=+2.03)"
+          "weight": 0.8652,
+          "description": "Metamodel score (logit=+1.86)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.26,
+          "weight": 0.1314,
           "description": "XGBoost: 69% (signal=+0.19)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "open"
+    "ground_truth": "open",
+    "tomtom": {
+      "status": "verified",
+      "name": "Evil Cooks",
+      "match_score": 1.0,
+      "has_phone": false,
+      "has_url": false,
+      "phone": "",
+      "url": ""
+    }
   },
   {
     "name": "A Votre Sante",
@@ -6181,7 +6366,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.7824,
+      "confidence": 0.9625,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (Client error 403) | No text match on 4 recent images | Metadata: 74% open (no nudge) | Score: 0.65",
       "detail": "Foursquare: verified | Website: dead (Client error 403) | No text match on 4 recent images | Metadata: 74% open (no nudge) | Score: 0.65",
@@ -6296,28 +6481,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7824,
-          "description": "Metamodel score (logit=+1.28)"
+          "weight": 0.9625,
+          "description": "Metamodel score (logit=+3.24)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3615,
+          "weight": 0.1826,
           "description": "XGBoost: 76% (signal=+0.26)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=0.8 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.4742,
+          "description": "Yelp: 513 reviews (signal=+0.86)"
         }
       ]
     },
@@ -6329,6 +6524,15 @@
       "yelp_rating": 3.9,
       "yelp_review_count": 513,
       "yelp_url": "https://www.yelp.com/biz/a-votre-sant%C3%A9-los-angeles-4?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "A Votre Sant\u00e9",
+      "match_score": 0.8,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 310-451-1813",
+      "url": "avotresantela.com"
     }
   },
   {
@@ -6400,8 +6604,8 @@
       "detail": "Client error 403"
     },
     "vision": {
-      "prediction": "not_open",
-      "confidence": 0.1765,
+      "prediction": "open",
+      "confidence": 0.6807,
       "primary_layer": "xgboost",
       "evidence": "Website: dead (Client error 403) | Text: partial match (5yr old) | Metadata: 74% open (no nudge) | Score: 0.40",
       "detail": "Website: dead (Client error 403) | Text: partial match (5yr old) | Metadata: 74% open (no nudge) | Score: 0.40",
@@ -6931,28 +7135,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1765,
-          "description": "Metamodel score (logit=-1.54)"
+          "weight": 0.6807,
+          "description": "Metamodel score (logit=+0.76)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": 0.0369,
+          "weight": 0.0809,
           "description": "Text: partial_match (signal=+0.5)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3395,
+          "weight": 0.1715,
           "description": "XGBoost: 75% (signal=+0.25)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.7001,
+          "description": "Yelp: 938 reviews (signal=+0.99)"
         }
       ]
     },
@@ -6964,6 +7178,15 @@
       "yelp_rating": 4.2,
       "yelp_review_count": 938,
       "yelp_url": "https://www.yelp.com/biz/big-wok-mongolian-bbq-manhattan-beach?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Big Wok Mongolian BBQ",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 424-398-0043",
+      "url": "www.bigwok-mongolian-barbq.com"
     }
   },
   {
@@ -7045,7 +7268,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8869,
+      "confidence": 0.8204,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | Text: partial match (10yr old) | Metadata: 68% open (no nudge) | Score: 0.80",
       "detail": "Foursquare: verified | Website: alive | Text: partial match (10yr old) | Metadata: 68% open (no nudge) | Score: 0.80",
@@ -7607,32 +7830,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8869,
-          "description": "Metamodel score (logit=+2.06)"
+          "weight": 0.8204,
+          "description": "Metamodel score (logit=+1.52)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": 0.0369,
+          "weight": 0.0809,
           "description": "Text: partial_match (signal=+0.5)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2387,
+          "weight": 0.1206,
           "description": "XGBoost: 67% (signal=+0.17)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "open"
+    "ground_truth": "open",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Rockin' Bites",
@@ -7688,7 +7924,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8554,
+      "confidence": 0.975,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No street-level images",
       "layers": {
@@ -7761,17 +7997,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8554,
-          "description": "Metamodel score (logit=+1.78)"
+          "weight": 0.975,
+          "description": "Metamodel score (logit=+3.67)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
@@ -7781,8 +8017,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": -0.0061,
+          "weight": -0.0031,
           "description": "XGBoost: 50% (signal=-0.00)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.0357,
+          "description": "Yelp: 11 reviews (signal=+0.02)"
         }
       ]
     },
@@ -7794,6 +8040,15 @@
       "yelp_rating": 4.5,
       "yelp_review_count": 11,
       "yelp_url": "https://www.yelp.com/biz/rockin-bites-beverly-hills?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Rockin' Bites",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 323-452-9113",
+      "url": "www.rockinbitesmenu.com/"
     }
   },
   {
@@ -7875,7 +8130,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.62,
+      "confidence": 0.9573,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (Client error 403) | Text: partial match (9yr old) | Metadata: 29% open (nudge -0.04) | Score: 0.66",
       "detail": "Foursquare: verified | Website: dead (Client error 403) | Text: partial match (9yr old) | Metadata: 29% open (nudge -0.04) | Score: 0.66",
@@ -8410,28 +8665,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.62,
-          "description": "Metamodel score (logit=+0.49)"
+          "weight": 0.9573,
+          "description": "Metamodel score (logit=+3.11)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": 0.0369,
+          "weight": 0.0809,
           "description": "Text: partial_match (signal=+0.5)"
         },
         {
           "signal": "xgboost",
-          "weight": -0.4804,
+          "weight": -0.2427,
           "description": "XGBoost: 15% (signal=-0.35)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=0.8 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.6507,
+          "description": "Yelp: 822 reviews (signal=+0.96)"
         }
       ]
     },
@@ -8443,6 +8708,15 @@
       "yelp_rating": 3.4,
       "yelp_review_count": 822,
       "yelp_url": "https://www.yelp.com/biz/joes-pizza-los-angeles-36?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Delicious Pizza Sunset",
+      "match_score": 0.8,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 323-467-3840",
+      "url": "www.deliciouspizza.com"
     }
   },
   {
@@ -8512,7 +8786,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8882,
+      "confidence": 0.9901,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No text match on 2 recent images | Metadata: 70% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | Website: alive | No text match on 2 recent images | Metadata: 70% open (no nudge) | Score: 0.75",
@@ -8668,28 +8942,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8882,
-          "description": "Metamodel score (logit=+2.07)"
+          "weight": 0.9901,
+          "description": "Metamodel score (logit=+4.61)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3033,
+          "weight": 0.1533,
           "description": "XGBoost: 72% (signal=+0.22)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.8545,
+          "description": "Yelp: 98 reviews (signal=+0.50)"
         }
       ]
     },
@@ -8701,6 +8985,15 @@
       "yelp_rating": 2.8,
       "yelp_review_count": 98,
       "yelp_url": "https://www.yelp.com/biz/king-fish-market-long-beach?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "King Fish Market",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 562-422-8384",
+      "url": "www.thefishmarket.com"
     }
   },
   {
@@ -8773,7 +9066,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1773,
+      "confidence": 0.3449,
       "primary_layer": "xgboost",
       "evidence": "Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 4 recent images | Metadata: 77% open (no nudge) | Score: 0.35",
       "detail": "Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 4 recent images | Metadata: 77% open (no nudge) | Score: 0.35",
@@ -8880,28 +9173,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1773,
-          "description": "Metamodel score (logit=-1.53)"
+          "weight": 0.3449,
+          "description": "Metamodel score (logit=-0.64)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3971,
+          "weight": 0.2006,
           "description": "XGBoost: 79% (signal=+0.29)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.3855,
+          "description": "Yelp: 28 reviews (signal=+0.22)"
         }
       ]
     },
@@ -8913,6 +9216,15 @@
       "yelp_rating": 4.0,
       "yelp_review_count": 28,
       "yelp_url": "https://www.yelp.com/biz/bistrodk-los-angeles?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Bistrodk",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 323-352-8499",
+      "url": "bistrodkla.com/"
     }
   },
   {
@@ -9000,7 +9312,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8909,
+      "confidence": 0.9466,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | Text: partial match (9yr old) | Metadata: 70% open (no nudge) | Score: 0.80",
       "detail": "Foursquare: verified | Website: alive | Text: partial match (9yr old) | Metadata: 70% open (no nudge) | Score: 0.80",
@@ -9285,28 +9597,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8909,
-          "description": "Metamodel score (logit=+2.10)"
+          "weight": 0.9466,
+          "description": "Metamodel score (logit=+2.87)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3303,
+          "weight": 0.1669,
           "description": "XGBoost: 74% (signal=+0.24)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -0.4507,
+          "description": "Yelp: 3 reviews (signal=-0.26)"
         }
       ]
     },
@@ -9318,6 +9640,9 @@
       "yelp_rating": 5.0,
       "yelp_review_count": 3,
       "yelp_url": "https://www.yelp.com/biz/andine-los-angeles?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -9393,7 +9718,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8969,
+      "confidence": 0.9956,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No text match on 3 recent images | Metadata: 77% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | Website: alive | No text match on 3 recent images | Metadata: 77% open (no nudge) | Score: 0.75",
@@ -9500,28 +9825,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8969,
-          "description": "Metamodel score (logit=+2.16)"
+          "weight": 0.9956,
+          "description": "Metamodel score (logit=+5.42)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3942,
+          "weight": 0.1992,
           "description": "XGBoost: 78% (signal=+0.28)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.6228,
+          "description": "Yelp: 763 reviews (signal=+0.94)"
         }
       ]
     },
@@ -9533,6 +9868,15 @@
       "yelp_rating": 4.0,
       "yelp_review_count": 763,
       "yelp_url": "https://www.yelp.com/biz/big-deans-ocean-front-cafe-santa-monica-2?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Big Dean's Ocean Front Cafe",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 310-393-2666",
+      "url": "www.bigdeansoceanfrontcafe.com/"
     }
   },
   {
@@ -9614,7 +9958,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.7001,
+      "confidence": 0.9543,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: redirected (Redirects to different domain: yogurtland.com) | Text: partial match (9yr old) | Metadata: 75% open (no nudge) | Score: 0.60",
       "detail": "Foursquare: verified | Website: redirected (Redirects to different domain: yogurtland.com) | Text: partial match (9yr old) | Metadata: 75% open (no nudge) | Score: 0.60",
@@ -10164,28 +10508,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7001,
-          "description": "Metamodel score (logit=+0.85)"
+          "weight": 0.9543,
+          "description": "Metamodel score (logit=+3.04)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.7446,
+          "weight": -0.9414,
           "description": "Website: redirect (signal=-0.7)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3551,
+          "weight": 0.1794,
           "description": "XGBoost: 76% (signal=+0.26)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.8731,
+          "description": "Yelp: 103 reviews (signal=+0.51)"
         }
       ]
     },
@@ -10197,6 +10551,15 @@
       "yelp_rating": 3.1,
       "yelp_review_count": 103,
       "yelp_url": "https://www.yelp.com/biz/yogurtland-inglewood-2?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Yogurtland",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 310-695-9912",
+      "url": "www.yogurtland.com/locations/view/1274"
     }
   },
   {
@@ -10278,7 +10641,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.7408,
+      "confidence": 0.6479,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 4 recent images | Metadata: 66% open (no nudge) | Score: 0.65",
       "detail": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 4 recent images | Metadata: 66% open (no nudge) | Score: 0.65",
@@ -10864,28 +11227,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7408,
-          "description": "Metamodel score (logit=+1.05)"
+          "weight": 0.6479,
+          "description": "Metamodel score (logit=+0.61)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.132,
+          "weight": 0.0667,
           "description": "XGBoost: 60% (signal=+0.10)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -0.6025,
+          "description": "Yelp: 2 reviews (signal=-0.35)"
         }
       ]
     },
@@ -10897,6 +11270,9 @@
       "yelp_rating": 5.0,
       "yelp_review_count": 2,
       "yelp_url": "https://www.yelp.com/biz/georges-greek-los-angeles?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -10978,7 +11354,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.89,
+      "confidence": 0.9709,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | Text: partial match (9yr old) | Metadata: 68% open (no nudge) | Score: 0.80",
       "detail": "Foursquare: verified | Website: alive | Text: partial match (9yr old) | Metadata: 68% open (no nudge) | Score: 0.80",
@@ -12180,28 +12556,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.89,
-          "description": "Metamodel score (logit=+2.09)"
+          "weight": 0.9709,
+          "description": "Metamodel score (logit=+3.51)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": 0.0369,
+          "weight": 0.0809,
           "description": "Text: partial_match (signal=+0.5)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2704,
+          "weight": 0.1366,
           "description": "XGBoost: 70% (signal=+0.20)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.0982,
+          "description": "Yelp: 13 reviews (signal=+0.06)"
         }
       ]
     },
@@ -12213,6 +12599,9 @@
       "yelp_rating": 4.3,
       "yelp_review_count": 13,
       "yelp_url": "https://www.yelp.com/biz/india-sweets-and-spices-los-angeles-3?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -12282,7 +12671,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.7731,
+      "confidence": 0.8811,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (Connection refused) | No text match on 2 recent images | Metadata: 70% open (no nudge) | Score: 0.65",
       "detail": "Foursquare: verified | Website: dead (Connection refused) | No text match on 2 recent images | Metadata: 70% open (no nudge) | Score: 0.65",
@@ -12381,28 +12770,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7731,
-          "description": "Metamodel score (logit=+1.23)"
+          "weight": 0.8811,
+          "description": "Metamodel score (logit=+2.00)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3078,
+          "weight": 0.1555,
           "description": "XGBoost: 72% (signal=+0.22)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.2595,
+          "description": "Yelp: 20 reviews (signal=+0.15)"
         }
       ]
     },
@@ -12414,6 +12813,15 @@
       "yelp_rating": 4.2,
       "yelp_review_count": 20,
       "yelp_url": "https://www.yelp.com/biz/the-whisky-bar-beverly-hills-3?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "The Whisky Bar",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 310-906-7218",
+      "url": "www.maybournebeverlyhills.com/restaurants-bars/the-cigar-and-whiskey-bar/"
     }
   },
   {
@@ -12495,7 +12903,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8838,
+      "confidence": 0.9938,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | Text: full match (9yr old) | Metadata: 69% open (no nudge) | Score: 0.80 | Closure hint: \"for lease\"",
       "detail": "Foursquare: verified | Website: alive | Text: full match (9yr old) | Metadata: 69% open (no nudge) | Score: 0.80 | Closure hint: \"for lease\"",
@@ -13870,28 +14278,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8838,
-          "description": "Metamodel score (logit=+2.03)"
+          "weight": 0.9938,
+          "description": "Metamodel score (logit=+5.08)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": 0.0738,
+          "weight": 0.1617,
           "description": "Text: full_match (signal=+1.0)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.1708,
+          "weight": 0.0863,
           "description": "XGBoost: 62% (signal=+0.12)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.2021,
+          "description": "Yelp: 248 reviews (signal=+0.70)"
         }
       ]
     },
@@ -13903,6 +14321,15 @@
       "yelp_rating": 4.7,
       "yelp_review_count": 248,
       "yelp_url": "https://www.yelp.com/biz/shekarchi-kabob-los-angeles-2?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Shekarchi Kabob",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 310-474-0372",
+      "url": "shekarchikabob.com/?y_source=1_ndi1nzgxndktndqwlwxvy2f0aw9ulndlynnpdgu="
     }
   },
   {
@@ -13972,7 +14399,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.9012,
+      "confidence": 0.99,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | Text: full match (6yr old) | Metadata: 75% open (no nudge) | Score: 0.80",
       "detail": "Foursquare: verified | Website: alive | Text: full match (6yr old) | Metadata: 75% open (no nudge) | Score: 0.80",
@@ -14436,28 +14863,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.9012,
-          "description": "Metamodel score (logit=+2.21)"
+          "weight": 0.99,
+          "description": "Metamodel score (logit=+4.59)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": 0.0738,
+          "weight": 0.1617,
           "description": "Text: full_match (signal=+1.0)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3533,
+          "weight": 0.1785,
           "description": "XGBoost: 76% (signal=+0.26)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.6172,
+          "description": "Yelp: 52 reviews (signal=+0.36)"
         }
       ]
     },
@@ -14469,6 +14906,15 @@
       "yelp_rating": 3.9,
       "yelp_review_count": 52,
       "yelp_url": "https://www.yelp.com/biz/kasturi-los-angeles-2?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Kasturi",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": false,
+      "phone": "+1 213-302-2848",
+      "url": ""
     }
   },
   {
@@ -14538,7 +14984,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.803,
+      "confidence": 0.9784,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | No text match on 2 recent images | Metadata: 62% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | No text match on 2 recent images | Metadata: 62% open (no nudge) | Score: 0.75",
@@ -15048,12 +15494,12 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.803,
-          "description": "Metamodel score (logit=+1.41)"
+          "weight": 0.9784,
+          "description": "Metamodel score (logit=+3.81)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
@@ -15063,13 +15509,23 @@
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.1677,
+          "weight": 0.0847,
           "description": "XGBoost: 62% (signal=+0.12)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.8012,
+          "description": "Yelp: 85 reviews (signal=+0.46)"
         }
       ]
     },
@@ -15081,6 +15537,15 @@
       "yelp_rating": 4.3,
       "yelp_review_count": 85,
       "yelp_url": "https://www.yelp.com/biz/pork-belly-filipino-kitchen-lawndale?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Pork Belly Filipino Kitchen",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": false,
+      "phone": "+1 424-456-7311",
+      "url": ""
     }
   },
   {
@@ -15156,7 +15621,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.7805,
+      "confidence": 0.8184,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (Client error 403) | No text match on 3 recent images | Metadata: 68% open (no nudge) | Score: 0.65",
       "detail": "Foursquare: verified | Website: dead (Client error 403) | No text match on 3 recent images | Metadata: 68% open (no nudge) | Score: 0.65",
@@ -15789,28 +16254,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7805,
-          "description": "Metamodel score (logit=+1.27)"
+          "weight": 0.8184,
+          "description": "Metamodel score (logit=+1.51)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3506,
+          "weight": 0.1771,
           "description": "XGBoost: 75% (signal=+0.25)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -0.2595,
+          "description": "Yelp: 5 reviews (signal=-0.15)"
         }
       ]
     },
@@ -15822,6 +16297,15 @@
       "yelp_rating": 2.6,
       "yelp_review_count": 5,
       "yelp_url": "https://www.yelp.com/biz/the-chicken-shack-lawndale-lawndale?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "The Chicken Shack",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 310-303-9426",
+      "url": "chickenshackrotisserie.com/lawndale"
     }
   },
   {
@@ -15878,7 +16362,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8945,
+      "confidence": 0.9961,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No street-level images",
       "layers": {
@@ -15951,17 +16435,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8945,
-          "description": "Metamodel score (logit=+2.14)"
+          "weight": 0.9961,
+          "description": "Metamodel score (logit=+5.54)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
@@ -15971,8 +16455,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.3533,
+          "weight": 0.1785,
           "description": "XGBoost: 76% (signal=+0.26)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.7241,
+          "description": "Yelp: 1305 reviews (signal=+1.00)"
         }
       ]
     },
@@ -15984,6 +16478,15 @@
       "yelp_rating": 4.1,
       "yelp_review_count": 1305,
       "yelp_url": "https://www.yelp.com/biz/carnival-restaurant-sherman-oaks?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Carnival Restaurant",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 818-784-3469",
+      "url": "www.carnivalrest.com"
     }
   },
   {
@@ -16053,7 +16556,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.7762,
+      "confidence": 0.9492,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 2 recent images | Metadata: 70% open (no nudge) | Score: 0.65",
       "detail": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 2 recent images | Metadata: 70% open (no nudge) | Score: 0.65",
@@ -16234,28 +16737,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7762,
-          "description": "Metamodel score (logit=+1.24)"
+          "weight": 0.9492,
+          "description": "Metamodel score (logit=+2.93)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3255,
+          "weight": 0.1645,
           "description": "XGBoost: 74% (signal=+0.23)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.1755,
+          "description": "Yelp: 231 reviews (signal=+0.68)"
         }
       ]
     },
@@ -16267,6 +16780,15 @@
       "yelp_rating": 4.6,
       "yelp_review_count": 231,
       "yelp_url": "https://www.yelp.com/biz/cariaco-to-go-glendale-2?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Cariaco",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 818-300-4055",
+      "url": "cariaco.square.site/"
     }
   },
   {
@@ -16323,7 +16845,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.7865,
+      "confidence": 0.904,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead | No street-level images",
       "layers": {
@@ -16396,17 +16918,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7865,
-          "description": "Metamodel score (logit=+1.30)"
+          "weight": 0.904,
+          "description": "Metamodel score (logit=+2.24)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
@@ -16416,8 +16938,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.3712,
+          "weight": 0.1875,
           "description": "XGBoost: 77% (signal=+0.27)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.8767,
+          "description": "Yelp: 104 reviews (signal=+0.51)"
         }
       ]
     },
@@ -16429,6 +16961,9 @@
       "yelp_rating": 4.1,
       "yelp_review_count": 104,
       "yelp_url": "https://www.yelp.com/biz/old-man-bar-culver-city?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -16510,7 +17045,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8865,
+      "confidence": 0.9837,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No text match on 4 recent images | Metadata: 70% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | Website: alive | No text match on 4 recent images | Metadata: 70% open (no nudge) | Score: 0.75",
@@ -16964,28 +17499,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8865,
-          "description": "Metamodel score (logit=+2.06)"
+          "weight": 0.9837,
+          "description": "Metamodel score (logit=+4.10)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2859,
+          "weight": 0.1444,
           "description": "XGBoost: 71% (signal=+0.21)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.3577,
+          "description": "Yelp: 26 reviews (signal=+0.21)"
         }
       ]
     },
@@ -16997,6 +17542,15 @@
       "yelp_rating": 4.4,
       "yelp_review_count": 26,
       "yelp_url": "https://www.yelp.com/biz/island-boy-cafe-los-angeles?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Island Boy Cafe",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 213-823-4389",
+      "url": "www.islandboycafe.com"
     }
   },
   {
@@ -17034,8 +17588,8 @@
       "detail": "No URL in Overture"
     },
     "vision": {
-      "prediction": "not_open",
-      "confidence": 0.2283,
+      "prediction": "open",
+      "confidence": 0.6636,
       "primary_layer": "xgboost",
       "evidence": "No street-level images",
       "layers": {
@@ -17100,12 +17654,12 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2283,
-          "description": "Metamodel score (logit=-1.22)"
+          "weight": 0.6636,
+          "description": "Metamodel score (logit=+0.68)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
@@ -17120,8 +17674,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.3797,
+          "weight": 0.1918,
           "description": "XGBoost: 77% (signal=+0.27)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.2795,
+          "description": "Yelp: 305 reviews (signal=+0.74)"
         }
       ]
     },
@@ -17133,6 +17697,15 @@
       "yelp_rating": 3.9,
       "yelp_review_count": 305,
       "yelp_url": "https://www.yelp.com/biz/tail-o-the-pup-west-hollywood?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Tail O' the Pup",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 310-579-1213",
+      "url": "www.tailothepup.com"
     }
   },
   {
@@ -17170,8 +17743,8 @@
       "detail": "DNS resolution failed \u2014 domain does not exist"
     },
     "vision": {
-      "prediction": "not_open",
-      "confidence": 0.1764,
+      "prediction": "open",
+      "confidence": 0.6723,
       "primary_layer": "website",
       "evidence": "Website: dead | No street-level images",
       "layers": {
@@ -17236,17 +17809,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1764,
-          "description": "Metamodel score (logit=-1.54)"
+          "weight": 0.6723,
+          "description": "Metamodel score (logit=+0.72)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
@@ -17256,8 +17829,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.3759,
+          "weight": 0.1899,
           "description": "XGBoost: 77% (signal=+0.27)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.7241,
+          "description": "Yelp: 1898 reviews (signal=+1.00)"
         }
       ]
     },
@@ -17269,6 +17852,15 @@
       "yelp_rating": 4.3,
       "yelp_review_count": 1898,
       "yelp_url": "https://www.yelp.com/biz/pa-ord-noodle-los-angeles-4?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Pa Ord Noodle",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": false,
+      "phone": "+1 323-461-3945",
+      "url": ""
     }
   },
   {
@@ -17306,8 +17898,8 @@
       "detail": "Website responding (HTTP 200)"
     },
     "vision": {
-      "prediction": "not_open",
-      "confidence": 0.3313,
+      "prediction": "open",
+      "confidence": 0.666,
       "primary_layer": "website",
       "evidence": "Website: alive | No street-level images",
       "layers": {
@@ -17372,17 +17964,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.3313,
-          "description": "Metamodel score (logit=-0.70)"
+          "weight": 0.666,
+          "description": "Metamodel score (logit=+0.69)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
@@ -17392,8 +17984,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.3636,
+          "weight": 0.1837,
           "description": "XGBoost: 76% (signal=+0.26)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.653,
+          "description": "Yelp: 827 reviews (signal=+0.96)"
         }
       ]
     },
@@ -17405,6 +18007,15 @@
       "yelp_rating": 4.0,
       "yelp_review_count": 827,
       "yelp_url": "https://www.yelp.com/biz/fresh-corn-grill-westwood-4?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Fresh Corn Grill",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 310-470-0414",
+      "url": "www.freshcorngrill.com/images/20140601-catering.pdf"
     }
   },
   {
@@ -17442,8 +18053,8 @@
       "detail": "Client error 403"
     },
     "vision": {
-      "prediction": "not_open",
-      "confidence": 0.161,
+      "prediction": "open",
+      "confidence": 0.5495,
       "primary_layer": "website",
       "evidence": "Website: dead | No street-level images",
       "layers": {
@@ -17508,17 +18119,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.161,
-          "description": "Metamodel score (logit=-1.65)"
+          "weight": 0.5495,
+          "description": "Metamodel score (logit=+0.20)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
@@ -17528,8 +18139,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.2662,
+          "weight": 0.1345,
           "description": "XGBoost: 69% (signal=+0.19)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: verified match=0.5 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.2658,
+          "description": "Yelp: 294 reviews (signal=+0.73)"
         }
       ]
     },
@@ -17541,6 +18162,15 @@
       "yelp_rating": 4.2,
       "yelp_review_count": 294,
       "yelp_url": "https://www.yelp.com/biz/hotel-bel-air-los-angeles-2?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "The Restaurant at Hotel Bel-Air",
+      "match_score": 0.48,
+      "has_phone": true,
+      "has_url": false,
+      "phone": "+1 310-909-1644",
+      "url": ""
     }
   },
   {
@@ -17579,7 +18209,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.3365,
+      "confidence": 0.4604,
       "primary_layer": "website",
       "evidence": "Website: alive | No street-level images",
       "layers": {
@@ -17644,17 +18274,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.3365,
-          "description": "Metamodel score (logit=-0.68)"
+          "weight": 0.4604,
+          "description": "Metamodel score (logit=-0.16)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
@@ -17664,8 +18294,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.3869,
+          "weight": 0.1955,
           "description": "XGBoost: 78% (signal=+0.28)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.7923,
+          "description": "Yelp: 83 reviews (signal=+0.46)"
         }
       ]
     },
@@ -17677,6 +18317,15 @@
       "yelp_rating": 2.7,
       "yelp_review_count": 83,
       "yelp_url": "https://www.yelp.com/biz/taco-bell-los-angeles-62?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Taco Bell",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": false,
+      "phone": "+1 310-815-1792",
+      "url": ""
     }
   },
   {
@@ -17714,8 +18363,8 @@
       "detail": "Website responding (HTTP 200)"
     },
     "vision": {
-      "prediction": "not_open",
-      "confidence": 0.2713,
+      "prediction": "open",
+      "confidence": 0.5436,
       "primary_layer": "website",
       "evidence": "Website: alive | No street-level images",
       "layers": {
@@ -17780,17 +18429,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2713,
-          "description": "Metamodel score (logit=-0.99)"
+          "weight": 0.5436,
+          "description": "Metamodel score (logit=+0.17)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
@@ -17800,8 +18449,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.0777,
+          "weight": 0.0393,
           "description": "XGBoost: 56% (signal=+0.06)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.282,
+          "description": "Yelp: 307 reviews (signal=+0.74)"
         }
       ]
     },
@@ -17813,6 +18472,15 @@
       "yelp_rating": 4.5,
       "yelp_review_count": 307,
       "yelp_url": "https://www.yelp.com/biz/pho-hoan-pasteur-gardena-gardena?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Pho Hoan Pasteur Gardena",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 310-756-6203",
+      "url": "www.phohoangardena.com/"
     }
   },
   {
@@ -17891,7 +18559,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1508,
+      "confidence": 0.0544,
       "primary_layer": "xgboost",
       "evidence": "Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 5 recent images | Metadata: 66% open (no nudge) | Score: 0.35",
       "detail": "Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 5 recent images | Metadata: 66% open (no nudge) | Score: 0.35",
@@ -18221,32 +18889,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1508,
-          "description": "Metamodel score (logit=-1.73)"
+          "weight": 0.0544,
+          "description": "Metamodel score (logit=-2.86)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2031,
+          "weight": 0.1026,
           "description": "XGBoost: 65% (signal=+0.15)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "TikiFish",
@@ -18306,7 +18987,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1047,
+      "confidence": 0.0326,
       "primary_layer": "xgboost",
       "evidence": "Website: redirected (Redirects to different domain: stalbansdeanerysynod.online) | No text match on 2 recent images | Metadata: 67% open (no nudge) | Score: 0.25",
       "detail": "Website: redirected (Redirects to different domain: stalbansdeanerysynod.online) | No text match on 2 recent images | Metadata: 67% open (no nudge) | Score: 0.25",
@@ -18480,32 +19161,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1047,
-          "description": "Metamodel score (logit=-2.15)"
+          "weight": 0.0326,
+          "description": "Metamodel score (logit=-3.39)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.7446,
+          "weight": -0.9414,
           "description": "Website: redirect (signal=-0.7)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.211,
+          "weight": 0.1066,
           "description": "XGBoost: 65% (signal=+0.15)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Soups Cute",
@@ -18577,7 +19271,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.117,
+      "confidence": 0.0347,
       "primary_layer": "xgboost",
       "evidence": "Website: redirected (Redirects to different domain: kineticeats.xyz) | No text match on 4 recent images | Metadata: 70% open (no nudge) | Score: 0.25",
       "detail": "Website: redirected (Redirects to different domain: kineticeats.xyz) | No text match on 4 recent images | Metadata: 70% open (no nudge) | Score: 0.25",
@@ -18896,32 +19590,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.117,
-          "description": "Metamodel score (logit=-2.02)"
+          "weight": 0.0347,
+          "description": "Metamodel score (logit=-3.33)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.7446,
+          "weight": -0.9414,
           "description": "Website: redirect (signal=-0.7)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3362,
+          "weight": 0.1698,
           "description": "XGBoost: 74% (signal=+0.24)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Saborcito Boricua",
@@ -19005,7 +19712,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.2043,
+      "confidence": 0.0812,
       "primary_layer": "xgboost",
       "evidence": "No text match on 6 recent images | Metadata: 57% open (no nudge) | Score: 0.45",
       "detail": "No text match on 6 recent images | Metadata: 57% open (no nudge) | Score: 0.45",
@@ -20193,12 +20900,12 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2043,
-          "description": "Metamodel score (logit=-1.36)"
+          "weight": 0.0812,
+          "description": "Metamodel score (logit=-2.43)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
@@ -20208,17 +20915,30 @@
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2526,
+          "weight": 0.1276,
           "description": "XGBoost: 68% (signal=+0.18)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Flower District Gift Shop",
@@ -20256,7 +20976,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.3465,
+      "confidence": 0.2558,
       "primary_layer": "website",
       "evidence": "Website: alive | No street-level images",
       "layers": {
@@ -20321,17 +21041,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.3465,
-          "description": "Metamodel score (logit=-0.63)"
+          "weight": 0.2558,
+          "description": "Metamodel score (logit=-1.07)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
@@ -20341,8 +21061,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.4315,
+          "weight": 0.218,
           "description": "XGBoost: 81% (signal=+0.31)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -0.1335,
+          "description": "Yelp: 7 reviews (signal=-0.08)"
         }
       ]
     },
@@ -20354,6 +21084,9 @@
       "yelp_rating": 5.0,
       "yelp_review_count": 7,
       "yelp_url": "https://www.yelp.com/biz/flower-district-gift-shop-los-angeles?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -20409,8 +21142,8 @@
       "detail": "Client error 403"
     },
     "vision": {
-      "prediction": "open",
-      "confidence": 0.734,
+      "prediction": "not_open",
+      "confidence": 0.3422,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead | No street-level images",
       "layers": {
@@ -20483,17 +21216,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.734,
-          "description": "Metamodel score (logit=+1.01)"
+          "weight": 0.3422,
+          "description": "Metamodel score (logit=-0.65)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
@@ -20503,12 +21236,25 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.0819,
+          "weight": 0.0414,
           "description": "XGBoost: 56% (signal=+0.06)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Dr. Ilya Bruce",
@@ -20580,7 +21326,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.3113,
+      "confidence": 0.0593,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | No text match on 4 recent images | Metadata: 69% open (no nudge) | Score: 0.45",
       "detail": "Website: alive | No text match on 4 recent images | Metadata: 69% open (no nudge) | Score: 0.45",
@@ -20822,32 +21568,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.3113,
-          "description": "Metamodel score (logit=-0.79)"
+          "weight": 0.0593,
+          "description": "Metamodel score (logit=-2.76)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2869,
+          "weight": 0.1449,
           "description": "XGBoost: 71% (signal=+0.21)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Nathan's Kosherland",
@@ -20915,8 +21674,8 @@
       "detail": "DNS resolution failed \u2014 domain does not exist"
     },
     "vision": {
-      "prediction": "open",
-      "confidence": 0.7308,
+      "prediction": "not_open",
+      "confidence": 0.3347,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 2 recent images | Metadata: 64% open (no nudge) | Score: 0.65",
       "detail": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 2 recent images | Metadata: 64% open (no nudge) | Score: 0.65",
@@ -21123,32 +21882,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7308,
-          "description": "Metamodel score (logit=+1.00)"
+          "weight": 0.3347,
+          "description": "Metamodel score (logit=-0.69)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.0803,
+          "weight": 0.0406,
           "description": "XGBoost: 56% (signal=+0.06)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Jaffa",
@@ -21232,7 +22004,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1508,
+      "confidence": 0.0544,
       "primary_layer": "xgboost",
       "evidence": "Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 6 recent images | Metadata: 66% open (no nudge) | Score: 0.35",
       "detail": "Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 6 recent images | Metadata: 66% open (no nudge) | Score: 0.35",
@@ -21856,32 +22628,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1508,
-          "description": "Metamodel score (logit=-1.73)"
+          "weight": 0.0544,
+          "description": "Metamodel score (logit=-2.86)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2031,
+          "weight": 0.1026,
           "description": "XGBoost: 65% (signal=+0.15)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Giga Bite",
@@ -21955,8 +22740,8 @@
       "detail": "DNS resolution failed \u2014 domain does not exist"
     },
     "vision": {
-      "prediction": "open",
-      "confidence": 0.7608,
+      "prediction": "not_open",
+      "confidence": 0.3528,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 3 recent images | Metadata: 68% open (no nudge) | Score: 0.65",
       "detail": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 3 recent images | Metadata: 68% open (no nudge) | Score: 0.65",
@@ -22613,32 +23398,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7608,
-          "description": "Metamodel score (logit=+1.16)"
+          "weight": 0.3528,
+          "description": "Metamodel score (logit=-0.61)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2387,
+          "weight": 0.1206,
           "description": "XGBoost: 67% (signal=+0.17)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "The Halal Guys",
@@ -22692,7 +23490,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1455,
+      "confidence": 0.0371,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | Metadata: 9% open (nudge -0.08) | Score: 0.42",
       "detail": "Website: alive | Metadata: 9% open (nudge -0.08) | Score: 0.42",
@@ -22775,32 +23573,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1455,
-          "description": "Metamodel score (logit=-1.77)"
+          "weight": 0.0371,
+          "description": "Metamodel score (logit=-3.26)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": -0.6894,
+          "weight": -0.3483,
           "description": "XGBoost: 0% (signal=-0.50)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "N.Y. and C. Pizza",
@@ -22866,7 +23677,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.2172,
+      "confidence": 0.0469,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | No text match on 3 recent images | Metadata: 48% open (no nudge) | Score: 0.45",
       "detail": "Website: alive | No text match on 3 recent images | Metadata: 48% open (no nudge) | Score: 0.45",
@@ -23201,32 +24012,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2172,
-          "description": "Metamodel score (logit=-1.28)"
+          "weight": 0.0469,
+          "description": "Metamodel score (logit=-3.01)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": -0.2017,
+          "weight": -0.1019,
           "description": "XGBoost: 35% (signal=-0.15)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "BIBIBOP Asian Grill",
@@ -23322,7 +24146,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1975,
+      "confidence": 0.0446,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | No text match on 8 recent images | Metadata: 42% open (no nudge) | Score: 0.45",
       "detail": "Website: alive | No text match on 8 recent images | Metadata: 42% open (no nudge) | Score: 0.45",
@@ -24529,32 +25353,51 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1975,
-          "description": "Metamodel score (logit=-1.40)"
+          "weight": 0.0446,
+          "description": "Metamodel score (logit=-3.07)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": -0.3211,
+          "weight": -0.1622,
           "description": "XGBoost: 27% (signal=-0.23)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "verified",
+      "name": "Bibibop Asian Grill",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 323-394-2380",
+      "url": "bibibop.com/locations/hollywood/"
+    }
   },
   {
     "name": "Public Kitchen & Bar",
@@ -24626,7 +25469,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1508,
+      "confidence": 0.0544,
       "primary_layer": "xgboost",
       "evidence": "Website: dead (Client error 429) | No text match on 4 recent images | Metadata: 66% open (no nudge) | Score: 0.35",
       "detail": "Website: dead (Client error 429) | No text match on 4 recent images | Metadata: 66% open (no nudge) | Score: 0.35",
@@ -25286,32 +26129,51 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1508,
-          "description": "Metamodel score (logit=-1.73)"
+          "weight": 0.0544,
+          "description": "Metamodel score (logit=-2.86)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2031,
+          "weight": 0.1026,
           "description": "XGBoost: 65% (signal=+0.15)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: verified match=0.4 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "verified",
+      "name": "Tiago Coffee Bar & Kitchen",
+      "match_score": 0.4,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 323-466-5600",
+      "url": "tiagocoffee.com"
+    }
   },
   {
     "name": "Louisiana Chicken & Fish Market",
@@ -25389,7 +26251,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.0459,
+      "confidence": 0.0211,
       "primary_layer": "xgboost",
       "evidence": "Website: redirected (Redirects to different domain: menufy.com) | No text match on 5 recent images | Metadata: 14% open (nudge -0.07) | Score: 0.18",
       "detail": "Website: redirected (Redirects to different domain: menufy.com) | No text match on 5 recent images | Metadata: 14% open (nudge -0.07) | Score: 0.18",
@@ -26796,32 +27658,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.0459,
-          "description": "Metamodel score (logit=-3.04)"
+          "weight": 0.0211,
+          "description": "Metamodel score (logit=-3.84)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.7446,
+          "weight": -0.9414,
           "description": "Website: redirect (signal=-0.7)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": -0.6781,
+          "weight": -0.3426,
           "description": "XGBoost: 1% (signal=-0.49)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "LA-Flowers",
@@ -26890,7 +27765,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.089,
+      "confidence": 0.0627,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: mismatch (\"Zavala Wholesale Flowers\") | Website: redirected (Redirects to different domain: cbsnews.com) | Text: partial match (9yr old) | Metadata: 80% open (no nudge) | Score: 0.05",
       "detail": "Foursquare: mismatch (\"Zavala Wholesale Flowers\") | Website: redirected (Redirects to different domain: cbsnews.com) | Text: partial match (9yr old) | Metadata: 80% open (no nudge) | Score: 0.05",
@@ -27226,32 +28101,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.089,
-          "description": "Metamodel score (logit=-2.33)"
+          "weight": 0.0627,
+          "description": "Metamodel score (logit=-2.70)"
         },
         {
           "signal": "foursquare",
-          "weight": -1.0961,
+          "weight": -0.9498,
           "description": "Foursquare: mismatch (signal=-0.5)"
         },
         {
           "signal": "website",
-          "weight": -0.7446,
+          "weight": -0.9414,
           "description": "Website: redirect (signal=-0.7)"
         },
         {
           "signal": "text",
-          "weight": 0.0369,
+          "weight": 0.0809,
           "description": "Text: partial_match (signal=+0.5)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.4183,
+          "weight": 0.2113,
           "description": "XGBoost: 80% (signal=+0.30)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Crossings",
@@ -27317,7 +28205,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.318,
+      "confidence": 0.0602,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | No text match on 3 recent images | Metadata: 72% open (no nudge) | Score: 0.45",
       "detail": "Website: alive | No text match on 3 recent images | Metadata: 72% open (no nudge) | Score: 0.45",
@@ -27446,32 +28334,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.318,
-          "description": "Metamodel score (logit=-0.76)"
+          "weight": 0.0602,
+          "description": "Metamodel score (logit=-2.75)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3179,
+          "weight": 0.1606,
           "description": "XGBoost: 73% (signal=+0.23)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "The Halal Guys",
@@ -27567,7 +28468,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1529,
+      "confidence": 0.0415,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | Text: partial match (5yr old) | Metadata: 9% open (nudge -0.08) | Score: 0.42",
       "detail": "Website: alive | Text: partial match (5yr old) | Metadata: 9% open (nudge -0.08) | Score: 0.42",
@@ -29081,32 +29982,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1529,
-          "description": "Metamodel score (logit=-1.71)"
+          "weight": 0.0415,
+          "description": "Metamodel score (logit=-3.14)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": 0.0369,
+          "weight": 0.0809,
           "description": "Text: partial_match (signal=+0.5)"
         },
         {
           "signal": "xgboost",
-          "weight": -0.6831,
+          "weight": -0.3451,
           "description": "XGBoost: 1% (signal=-0.49)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "The Coco Club",
@@ -29144,7 +30058,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1724,
+      "confidence": 0.3839,
       "primary_layer": "website",
       "evidence": "Website: dead | No street-level images",
       "layers": {
@@ -29209,17 +30123,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1724,
-          "description": "Metamodel score (logit=-1.57)"
+          "weight": 0.3839,
+          "description": "Metamodel score (logit=-0.47)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
@@ -29229,8 +30143,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.3485,
+          "weight": 0.1761,
           "description": "XGBoost: 75% (signal=+0.25)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.5461,
+          "description": "Yelp: 43 reviews (signal=+0.32)"
         }
       ]
     },
@@ -29242,6 +30166,15 @@
       "yelp_rating": 3.9,
       "yelp_review_count": 43,
       "yelp_url": "https://www.yelp.com/biz/the-coco-club-santa-monica-2?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "The Coco Club",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 424-268-7200",
+      "url": "cocorooftop.com/"
     }
   },
   {
@@ -29298,7 +30231,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.2098,
+      "confidence": 0.2153,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: mismatch | Website: alive | No street-level images",
       "layers": {
@@ -29371,17 +30304,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2098,
-          "description": "Metamodel score (logit=-1.33)"
+          "weight": 0.2153,
+          "description": "Metamodel score (logit=-1.29)"
         },
         {
           "signal": "foursquare",
-          "weight": -1.0961,
+          "weight": -0.9498,
           "description": "Foursquare: mismatch (signal=-0.5)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
@@ -29391,12 +30324,25 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.1781,
+          "weight": 0.09,
           "description": "XGBoost: 63% (signal=+0.13)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Juanitas Tortilleria",
@@ -29434,7 +30380,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.2121,
+      "confidence": 0.4027,
       "primary_layer": "xgboost",
       "evidence": "No street-level images",
       "layers": {
@@ -29499,12 +30445,12 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2121,
-          "description": "Metamodel score (logit=-1.31)"
+          "weight": 0.4027,
+          "description": "Metamodel score (logit=-0.39)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
@@ -29519,8 +30465,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.2852,
+          "weight": 0.1441,
           "description": "XGBoost: 71% (signal=+0.21)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.2595,
+          "description": "Yelp: 20 reviews (signal=+0.15)"
         }
       ]
     },
@@ -29532,6 +30488,9 @@
       "yelp_rating": 4.6,
       "yelp_review_count": 20,
       "yelp_url": "https://www.yelp.com/biz/juanitas-tortilleria-compton?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -29594,8 +30553,8 @@
       "detail": "Page not found (404)"
     },
     "vision": {
-      "prediction": "open",
-      "confidence": 0.579,
+      "prediction": "not_open",
+      "confidence": 0.293,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (Page not found (404)) | Text: full match | Metadata: 11% open (nudge -0.08) | Score: 0.72",
       "detail": "Foursquare: verified | Website: dead (Page not found (404)) | Text: full match | Metadata: 11% open (nudge -0.08) | Score: 0.72",
@@ -29950,32 +30909,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.579,
-          "description": "Metamodel score (logit=+0.32)"
+          "weight": 0.293,
+          "description": "Metamodel score (logit=-0.88)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": 0.0738,
+          "weight": 0.1617,
           "description": "Text: full_match (signal=+1.0)"
         },
         {
           "signal": "xgboost",
-          "weight": -0.6883,
+          "weight": -0.3477,
           "description": "XGBoost: 0% (signal=-0.50)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Rumba Kitchen",
@@ -30056,7 +31028,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1803,
+      "confidence": 0.1854,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: mismatch (\"Mama Kim's Korean Kitchen\") | Website: alive | No text match on 4 recent images | Metadata: 50% open (no nudge) | Score: 0.20",
       "detail": "Foursquare: mismatch (\"Mama Kim's Korean Kitchen\") | Website: alive | No text match on 4 recent images | Metadata: 50% open (no nudge) | Score: 0.20",
@@ -30842,32 +31814,51 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1803,
-          "description": "Metamodel score (logit=-1.51)"
+          "weight": 0.1854,
+          "description": "Metamodel score (logit=-1.48)"
         },
         {
           "signal": "foursquare",
-          "weight": -1.0961,
+          "weight": -0.9498,
           "description": "Foursquare: mismatch (signal=-0.5)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.0046,
+          "weight": 0.0023,
           "description": "XGBoost: 50% (signal=+0.00)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "verified",
+      "name": "Rumba Kitchen",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 213-265-7899",
+      "url": "www.rumbakitchen.com/"
+    }
   },
   {
     "name": "Charleys Philly Steaks",
@@ -30914,7 +31905,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.2541,
+      "confidence": 0.0533,
       "primary_layer": "website",
       "evidence": "Website: alive | No street-level images",
       "layers": {
@@ -30979,17 +31970,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2541,
-          "description": "Metamodel score (logit=-1.08)"
+          "weight": 0.0533,
+          "description": "Metamodel score (logit=-2.88)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
@@ -30999,12 +31990,31 @@
         },
         {
           "signal": "xgboost",
-          "weight": -0.0111,
+          "weight": -0.0056,
           "description": "XGBoost: 49% (signal=-0.01)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "verified",
+      "name": "Charleys Philly Steaks",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 323-292-4212",
+      "url": "charleys.com/"
+    }
   },
   {
     "name": "Boba Bear",
@@ -31051,7 +32061,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.2589,
+      "confidence": 0.0537,
       "primary_layer": "website",
       "evidence": "Website: alive | No street-level images",
       "layers": {
@@ -31116,17 +32126,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2589,
-          "description": "Metamodel score (logit=-1.05)"
+          "weight": 0.0537,
+          "description": "Metamodel score (logit=-2.87)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
@@ -31136,12 +32146,25 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.0141,
+          "weight": 0.0071,
           "description": "XGBoost: 51% (signal=+0.01)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Lemonade Restaurant",
@@ -31212,8 +32235,8 @@
       "detail": "Website responding (HTTP 200)"
     },
     "vision": {
-      "prediction": "not_open",
-      "confidence": 0.2418,
+      "prediction": "open",
+      "confidence": 0.5893,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | No text match on 4 recent images | Metadata: 63% open (no nudge) | Score: 0.45",
       "detail": "Website: alive | No text match on 4 recent images | Metadata: 63% open (no nudge) | Score: 0.45",
@@ -31507,28 +32530,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2418,
-          "description": "Metamodel score (logit=-1.14)"
+          "weight": 0.5893,
+          "description": "Metamodel score (logit=+0.36)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": -0.0622,
+          "weight": -0.0314,
           "description": "XGBoost: 46% (signal=-0.04)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=0.8 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.5714,
+          "description": "Yelp: 665 reviews (signal=+0.91)"
         }
       ]
     },
@@ -31540,6 +32573,15 @@
       "yelp_rating": 3.7,
       "yelp_review_count": 665,
       "yelp_url": "https://www.yelp.com/biz/lemonade-los-angeles-12?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Lemonade",
+      "match_score": 0.8,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 323-464-0700",
+      "url": "www.lemonadela.com/"
     }
   },
   {
@@ -31587,7 +32629,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1573,
+      "confidence": 0.0571,
       "primary_layer": "website",
       "evidence": "Website: dead | No street-level images",
       "layers": {
@@ -31652,17 +32694,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1573,
-          "description": "Metamodel score (logit=-1.68)"
+          "weight": 0.0571,
+          "description": "Metamodel score (logit=-2.80)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
@@ -31672,12 +32714,25 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.2387,
+          "weight": 0.1206,
           "description": "XGBoost: 67% (signal=+0.17)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Cock'n Bull British Pub",
@@ -31749,7 +32804,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.3185,
+      "confidence": 0.0654,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | Text: partial match (8yr old) | Metadata: 65% open (no nudge) | Score: 0.50",
       "detail": "Website: alive | Text: partial match (8yr old) | Metadata: 65% open (no nudge) | Score: 0.50",
@@ -32277,32 +33332,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.3185,
-          "description": "Metamodel score (logit=-0.76)"
+          "weight": 0.0654,
+          "description": "Metamodel score (logit=-2.66)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": 0.0369,
+          "weight": 0.0809,
           "description": "Text: partial_match (signal=+0.5)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2682,
+          "weight": 0.1355,
           "description": "XGBoost: 69% (signal=+0.19)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Gravlax",
@@ -32380,7 +33448,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.2892,
+      "confidence": 0.0567,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | No text match on 5 recent images | Metadata: 66% open (no nudge) | Score: 0.45",
       "detail": "Website: alive | No text match on 5 recent images | Metadata: 66% open (no nudge) | Score: 0.45",
@@ -32833,32 +33901,51 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2892,
-          "description": "Metamodel score (logit=-0.90)"
+          "weight": 0.0567,
+          "description": "Metamodel score (logit=-2.81)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.1814,
+          "weight": 0.0917,
           "description": "XGBoost: 63% (signal=+0.13)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "verified",
+      "name": "Gravlax",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 646-812-3069",
+      "url": "www.gravlaxla.com"
+    }
   },
   {
     "name": "Five Zero Five Salon",
@@ -32930,7 +34017,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.3434,
+      "confidence": 0.0635,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | No text match on 4 recent images | Metadata: 81% open (no nudge) | Score: 0.45",
       "detail": "Website: alive | No text match on 4 recent images | Metadata: 81% open (no nudge) | Score: 0.45",
@@ -33764,32 +34851,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.3434,
-          "description": "Metamodel score (logit=-0.65)"
+          "weight": 0.0635,
+          "description": "Metamodel score (logit=-2.69)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.4323,
+          "weight": 0.2184,
           "description": "XGBoost: 81% (signal=+0.31)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Amour Weho",
@@ -33826,8 +34926,8 @@
       "detail": "Page not found (404)"
     },
     "vision": {
-      "prediction": "not_open",
-      "confidence": 0.1726,
+      "prediction": "open",
+      "confidence": 0.5453,
       "primary_layer": "website",
       "evidence": "Website: dead | No street-level images",
       "layers": {
@@ -33892,17 +34992,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1726,
-          "description": "Metamodel score (logit=-1.57)"
+          "weight": 0.5453,
+          "description": "Metamodel score (logit=+0.18)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
@@ -33912,8 +35012,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.3496,
+          "weight": 0.1766,
           "description": "XGBoost: 75% (signal=+0.25)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.2006,
+          "description": "Yelp: 247 reviews (signal=+0.70)"
         }
       ]
     },
@@ -33925,6 +35035,15 @@
       "yelp_rating": 3.9,
       "yelp_review_count": 247,
       "yelp_url": "https://www.yelp.com/biz/amour-weho-west-hollywood-3?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Amour Weho",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 424-431-6717",
+      "url": "amourweho.love/"
     }
   },
   {
@@ -33997,7 +35116,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.3185,
+      "confidence": 0.0654,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | Text: partial match (6yr old) | Metadata: 65% open (no nudge) | Score: 0.50",
       "detail": "Website: alive | Text: partial match (6yr old) | Metadata: 65% open (no nudge) | Score: 0.50",
@@ -34473,32 +35592,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.3185,
-          "description": "Metamodel score (logit=-0.76)"
+          "weight": 0.0654,
+          "description": "Metamodel score (logit=-2.66)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": 0.0369,
+          "weight": 0.0809,
           "description": "Text: partial_match (signal=+0.5)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2682,
+          "weight": 0.1355,
           "description": "XGBoost: 69% (signal=+0.19)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "its coffee and tea",
@@ -34535,8 +35667,8 @@
       "detail": "No URL in Overture"
     },
     "vision": {
-      "prediction": "not_open",
-      "confidence": 0.1807,
+      "prediction": "open",
+      "confidence": 0.5651,
       "primary_layer": "xgboost",
       "evidence": "No street-level images",
       "layers": {
@@ -34601,12 +35733,12 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1807,
-          "description": "Metamodel score (logit=-1.51)"
+          "weight": 0.5651,
+          "description": "Metamodel score (logit=+0.26)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
@@ -34621,8 +35753,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.086,
+          "weight": 0.0435,
           "description": "XGBoost: 56% (signal=+0.06)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.0163,
+          "description": "Yelp: 151 reviews (signal=+0.59)"
         }
       ]
     },
@@ -34634,6 +35776,9 @@
       "yelp_rating": 4.5,
       "yelp_review_count": 151,
       "yelp_url": "https://www.yelp.com/biz/its-coffee-and-tea-los-angeles?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -34672,7 +35817,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1802,
+      "confidence": 0.3778,
       "primary_layer": "website",
       "evidence": "Website: dead | No street-level images",
       "layers": {
@@ -34737,17 +35882,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1802,
-          "description": "Metamodel score (logit=-1.52)"
+          "weight": 0.3778,
+          "description": "Metamodel score (logit=-0.50)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
@@ -34757,8 +35902,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.4015,
+          "weight": 0.2029,
           "description": "XGBoost: 79% (signal=+0.29)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.4998,
+          "description": "Yelp: 38 reviews (signal=+0.29)"
         }
       ]
     },
@@ -34770,6 +35925,9 @@
       "yelp_rating": 3.0,
       "yelp_review_count": 38,
       "yelp_url": "https://www.yelp.com/biz/urbnmrkt-los-angeles?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -34808,7 +35966,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1707,
+      "confidence": 0.2879,
       "primary_layer": "website",
       "evidence": "Website: dead | No street-level images",
       "layers": {
@@ -34873,17 +36031,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1707,
-          "description": "Metamodel score (logit=-1.58)"
+          "weight": 0.2879,
+          "description": "Metamodel score (logit=-0.91)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
@@ -34893,8 +36051,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.3362,
+          "weight": 0.1698,
           "description": "XGBoost: 74% (signal=+0.24)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.126,
+          "description": "Yelp: 14 reviews (signal=+0.07)"
         }
       ]
     },
@@ -34906,6 +36074,9 @@
       "yelp_rating": 3.6,
       "yelp_review_count": 14,
       "yelp_url": "https://www.yelp.com/biz/paraiso-pets-and-supplies-los-angeles-3?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -34943,8 +36114,8 @@
       "detail": "DNS resolution failed \u2014 domain does not exist"
     },
     "vision": {
-      "prediction": "not_open",
-      "confidence": 0.1637,
+      "prediction": "open",
+      "confidence": 0.5407,
       "primary_layer": "website",
       "evidence": "Website: dead | No street-level images",
       "layers": {
@@ -35009,17 +36180,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1637,
-          "description": "Metamodel score (logit=-1.63)"
+          "weight": 0.5407,
+          "description": "Metamodel score (logit=+0.16)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
@@ -35029,8 +36200,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.286,
+          "weight": 0.1445,
           "description": "XGBoost: 71% (signal=+0.21)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.214,
+          "description": "Yelp: 256 reviews (signal=+0.70)"
         }
       ]
     },
@@ -35042,6 +36223,15 @@
       "yelp_rating": 4.3,
       "yelp_review_count": 256,
       "yelp_url": "https://www.yelp.com/biz/ayan-redondo-beach?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Ayan Restaurant",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 310-406-4947",
+      "url": "www.ayancalifornia.com/"
     }
   },
   {
@@ -35079,8 +36269,8 @@
       "detail": "Website responding (HTTP 200)"
     },
     "vision": {
-      "prediction": "not_open",
-      "confidence": 0.3313,
+      "prediction": "open",
+      "confidence": 0.5288,
       "primary_layer": "website",
       "evidence": "Website: alive | No street-level images",
       "layers": {
@@ -35145,17 +36335,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.3313,
-          "description": "Metamodel score (logit=-0.70)"
+          "weight": 0.5288,
+          "description": "Metamodel score (logit=+0.12)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
@@ -35165,8 +36355,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.3636,
+          "weight": 0.1837,
           "description": "XGBoost: 76% (signal=+0.26)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.0779,
+          "description": "Yelp: 178 reviews (signal=+0.63)"
         }
       ]
     },
@@ -35178,6 +36378,15 @@
       "yelp_rating": 3.9,
       "yelp_review_count": 178,
       "yelp_url": "https://www.yelp.com/biz/birria-los-socios-los-angeles?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Birria Los Socios",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 213-466-2929",
+      "url": "birrialossociosla.com/"
     }
   },
   {
@@ -35215,8 +36424,8 @@
       "detail": "Connection refused"
     },
     "vision": {
-      "prediction": "not_open",
-      "confidence": 0.1774,
+      "prediction": "open",
+      "confidence": 0.6731,
       "primary_layer": "website",
       "evidence": "Website: dead | No street-level images",
       "layers": {
@@ -35281,17 +36490,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1774,
-          "description": "Metamodel score (logit=-1.53)"
+          "weight": 0.6731,
+          "description": "Metamodel score (logit=+0.72)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
@@ -35301,8 +36510,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.3827,
+          "weight": 0.1934,
           "description": "XGBoost: 78% (signal=+0.28)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=0.8 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.7241,
+          "description": "Yelp: 2417 reviews (signal=+1.00)"
         }
       ]
     },
@@ -35314,6 +36533,15 @@
       "yelp_rating": 4.0,
       "yelp_review_count": 2417,
       "yelp_url": "https://www.yelp.com/biz/stout-burgers-and-beers-los-angeles?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Stout Burgers & Beers",
+      "match_score": 0.8,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 323-469-3801",
+      "url": "www.stoutburgersandbeers.com/"
     }
   }
 ]

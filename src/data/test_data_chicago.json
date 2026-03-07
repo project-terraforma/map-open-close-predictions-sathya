@@ -57,7 +57,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.2057,
+      "confidence": 0.2407,
       "primary_layer": "xgboost",
       "evidence": "No text match on 2 recent images | Metadata: 71% open (no nudge) | Score: 0.45",
       "detail": "No text match on 2 recent images | Metadata: 71% open (no nudge) | Score: 0.45",
@@ -148,12 +148,12 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2057,
-          "description": "Metamodel score (logit=-1.35)"
+          "weight": 0.2407,
+          "description": "Metamodel score (logit=-1.15)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
@@ -163,13 +163,23 @@
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2615,
+          "weight": 0.1321,
           "description": "XGBoost: 69% (signal=+0.19)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -0.4507,
+          "description": "Yelp: 3 reviews (signal=-0.26)"
         }
       ]
     },
@@ -181,6 +191,9 @@
       "yelp_rating": 5.0,
       "yelp_review_count": 3,
       "yelp_url": "https://www.yelp.com/biz/flash-hernandez-tacos-cicero?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -244,7 +257,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.7557,
+      "confidence": 0.7777,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (Client error 403) | Metadata: 67% open (no nudge) | Score: 0.70",
       "detail": "Foursquare: verified | Website: dead (Client error 403) | Metadata: 67% open (no nudge) | Score: 0.70",
@@ -521,28 +534,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7557,
-          "description": "Metamodel score (logit=+1.13)"
+          "weight": 0.7777,
+          "description": "Metamodel score (logit=+1.25)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.211,
+          "weight": 0.1066,
           "description": "XGBoost: 65% (signal=+0.15)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.0,
+          "description": "Yelp: 10 reviews (signal=+0.00)"
         }
       ]
     },
@@ -554,6 +577,9 @@
       "yelp_rating": 3.6,
       "yelp_review_count": 10,
       "yelp_url": "https://www.yelp.com/biz/jw-marriott-executive-lounge-chicago?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -626,7 +652,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.114,
+      "confidence": 0.1286,
       "primary_layer": "xgboost",
       "evidence": "No text match on 4 recent images | Metadata: 50% open (no nudge) | Score: 0.45",
       "detail": "No text match on 4 recent images | Metadata: 50% open (no nudge) | Score: 0.45",
@@ -733,12 +759,12 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.114,
-          "description": "Metamodel score (logit=-2.05)"
+          "weight": 0.1286,
+          "description": "Metamodel score (logit=-1.91)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
@@ -748,13 +774,23 @@
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": -0.4376,
+          "weight": -0.2211,
           "description": "XGBoost: 18% (signal=-0.32)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -0.862,
+          "description": "Yelp: 1 reviews (signal=-0.50)"
         }
       ]
     },
@@ -766,6 +802,9 @@
       "yelp_rating": 5.0,
       "yelp_review_count": 1,
       "yelp_url": "https://www.yelp.com/biz/irving-j-leonard-dds-chicago?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -835,7 +874,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.7786,
+      "confidence": 0.9277,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (Connection refused) | No text match on 2 recent images | Metadata: 74% open (no nudge) | Score: 0.65",
       "detail": "Foursquare: verified | Website: dead (Connection refused) | No text match on 2 recent images | Metadata: 74% open (no nudge) | Score: 0.65",
@@ -1043,28 +1082,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7786,
-          "description": "Metamodel score (logit=+1.26)"
+          "weight": 0.9277,
+          "description": "Metamodel score (logit=+2.55)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3395,
+          "weight": 0.1715,
           "description": "XGBoost: 75% (signal=+0.25)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.7923,
+          "description": "Yelp: 83 reviews (signal=+0.46)"
         }
       ]
     },
@@ -1076,6 +1125,15 @@
       "yelp_rating": 4.6,
       "yelp_review_count": 83,
       "yelp_url": "https://www.yelp.com/biz/cafe-nova-chicago?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Cafe Nova",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 773-675-0736",
+      "url": "thecafenova.com/"
     }
   },
   {
@@ -1157,7 +1215,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8353,
+      "confidence": 0.9895,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | No text match on 4 recent images | Metadata: 77% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | No text match on 4 recent images | Metadata: 77% open (no nudge) | Score: 0.75",
@@ -2292,12 +2350,12 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8353,
-          "description": "Metamodel score (logit=+1.62)"
+          "weight": 0.9895,
+          "description": "Metamodel score (logit=+4.55)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
@@ -2307,13 +2365,23 @@
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3862,
+          "weight": 0.1951,
           "description": "XGBoost: 78% (signal=+0.28)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=0.8 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.426,
+          "description": "Yelp: 451 reviews (signal=+0.83)"
         }
       ]
     },
@@ -2325,6 +2393,15 @@
       "yelp_rating": 3.4,
       "yelp_review_count": 451,
       "yelp_url": "https://www.yelp.com/biz/udupi-palace-restaurant-chicago?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Udupi Palace Restaurant-Best Vegetarian Indian Restaurant in Chicago",
+      "match_score": 0.8,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 773-338-2152",
+      "url": "udupipalacetogo.com"
     }
   },
   {
@@ -2406,7 +2483,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.5528,
+      "confidence": 0.9663,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: redirected (Redirects to different domain: minghincuisine.com:443) | No text match on 4 recent images | Metadata: 37% open (nudge -0.03) | Score: 0.52",
       "detail": "Foursquare: verified | Website: redirected (Redirects to different domain: minghincuisine.com:443) | No text match on 4 recent images | Metadata: 37% open (nudge -0.03) | Score: 0.52",
@@ -2760,28 +2837,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.5528,
-          "description": "Metamodel score (logit=+0.21)"
+          "weight": 0.9663,
+          "description": "Metamodel score (logit=+3.36)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.7446,
+          "weight": -0.9414,
           "description": "Website: redirect (signal=-0.7)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": -0.2806,
+          "weight": -0.1418,
           "description": "XGBoost: 30% (signal=-0.20)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.5123,
+          "description": "Yelp: 568 reviews (signal=+0.88)"
         }
       ]
     },
@@ -2793,6 +2880,15 @@
       "yelp_rating": 4.1,
       "yelp_review_count": 568,
       "yelp_url": "https://www.yelp.com/biz/minghin-cuisine-chicago-13?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Ming Hin Cuisine",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 312-763-6996",
+      "url": "www.minghincuisine.com/"
     }
   },
   {
@@ -2862,7 +2958,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8914,
+      "confidence": 0.9928,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | Text: partial match (8yr old) | Metadata: 70% open (no nudge) | Score: 0.80",
       "detail": "Foursquare: verified | Website: alive | Text: partial match (8yr old) | Metadata: 70% open (no nudge) | Score: 0.80",
@@ -3356,28 +3452,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8914,
-          "description": "Metamodel score (logit=+2.11)"
+          "weight": 0.9928,
+          "description": "Metamodel score (logit=+4.93)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3362,
+          "weight": 0.1698,
           "description": "XGBoost: 74% (signal=+0.24)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.1572,
+          "description": "Yelp: 220 reviews (signal=+0.67)"
         }
       ]
     },
@@ -3389,6 +3495,15 @@
       "yelp_rating": 3.9,
       "yelp_review_count": 220,
       "yelp_url": "https://www.yelp.com/biz/dancen-chicago?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Dancen",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 773-878-2400",
+      "url": "dancengrill.com"
     }
   },
   {
@@ -3470,7 +3585,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8809,
+      "confidence": 0.944,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No text match on 4 recent images | Metadata: 75% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | Website: alive | No text match on 4 recent images | Metadata: 75% open (no nudge) | Score: 0.75",
@@ -3641,28 +3756,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8809,
-          "description": "Metamodel score (logit=+2.00)"
+          "weight": 0.944,
+          "description": "Metamodel score (logit=+2.82)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2317,
+          "weight": 0.1171,
           "description": "XGBoost: 67% (signal=+0.17)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -0.4507,
+          "description": "Yelp: 3 reviews (signal=-0.26)"
         }
       ]
     },
@@ -3674,6 +3799,9 @@
       "yelp_rating": 5.0,
       "yelp_review_count": 3,
       "yelp_url": "https://www.yelp.com/biz/yureka-yoga-chicago?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -3749,7 +3877,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.7942,
+      "confidence": 0.9216,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (Client error 403) | No text match on 3 recent images | Metadata: 81% open (no nudge) | Score: 0.65",
       "detail": "Foursquare: verified | Website: dead (Client error 403) | No text match on 3 recent images | Metadata: 81% open (no nudge) | Score: 0.65",
@@ -3991,28 +4119,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7942,
-          "description": "Metamodel score (logit=+1.35)"
+          "weight": 0.9216,
+          "description": "Metamodel score (logit=+2.46)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.4324,
+          "weight": 0.2185,
           "description": "XGBoost: 81% (signal=+0.31)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.6581,
+          "description": "Yelp: 58 reviews (signal=+0.38)"
         }
       ]
     },
@@ -4024,6 +4162,15 @@
       "yelp_rating": 3.8,
       "yelp_review_count": 58,
       "yelp_url": "https://www.yelp.com/biz/staytion-market-and-bar-chicago?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Staytion Market & Bar",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": false,
+      "phone": "+1 312-372-7200",
+      "url": ""
     }
   },
   {
@@ -4080,7 +4227,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8992,
+      "confidence": 0.9943,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No street-level images",
       "layers": {
@@ -4153,17 +4300,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8992,
-          "description": "Metamodel score (logit=+2.19)"
+          "weight": 0.9943,
+          "description": "Metamodel score (logit=+5.16)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
@@ -4173,8 +4320,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.4044,
+          "weight": 0.2043,
           "description": "XGBoost: 79% (signal=+0.29)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.3268,
+          "description": "Yelp: 346 reviews (signal=+0.77)"
         }
       ]
     },
@@ -4186,6 +4343,15 @@
       "yelp_rating": 3.8,
       "yelp_review_count": 346,
       "yelp_url": "https://www.yelp.com/biz/the-barrel-club-oak-lawn?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "The Barrel Club",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 708-581-3357",
+      "url": "www.barrelclubillinois.com"
     }
   },
   {
@@ -4255,7 +4421,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8848,
+      "confidence": 0.9639,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No text match on 2 recent images | Metadata: 75% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | Website: alive | No text match on 2 recent images | Metadata: 75% open (no nudge) | Score: 0.75",
@@ -4723,28 +4889,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8848,
-          "description": "Metamodel score (logit=+2.04)"
+          "weight": 0.9639,
+          "description": "Metamodel score (logit=+3.29)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2691,
+          "weight": 0.136,
           "description": "XGBoost: 69% (signal=+0.19)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -0.4507,
+          "description": "Yelp: 3 reviews (signal=-0.26)"
         }
       ]
     },
@@ -4756,6 +4932,15 @@
       "yelp_rating": 1.7,
       "yelp_review_count": 3,
       "yelp_url": "https://www.yelp.com/biz/baskin-robbins-chicago-56?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Baskin-Robbins",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 773-539-1125",
+      "url": "locations.baskinrobbins.com/il/chicago/3801-w.-belmont-ave"
     }
   },
   {
@@ -4825,7 +5010,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8862,
+      "confidence": 0.9821,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No text match on 2 recent images | Metadata: 70% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | Website: alive | No text match on 2 recent images | Metadata: 70% open (no nudge) | Score: 0.75",
@@ -5137,28 +5322,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8862,
-          "description": "Metamodel score (logit=+2.05)"
+          "weight": 0.9821,
+          "description": "Metamodel score (logit=+4.00)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2834,
+          "weight": 0.1432,
           "description": "XGBoost: 70% (signal=+0.20)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.2595,
+          "description": "Yelp: 20 reviews (signal=+0.15)"
         }
       ]
     },
@@ -5170,6 +5365,15 @@
       "yelp_rating": 4.4,
       "yelp_review_count": 20,
       "yelp_url": "https://www.yelp.com/biz/sunny-bowls-chicago?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Sunny Bowls",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 312-975-7514",
+      "url": "sunnybowls.com/?y_source=1_NjEyODY1MDgtNzY5LWxvY2F0aW9uLndlYnNpdGU%3D"
     }
   },
   {
@@ -5257,7 +5461,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8952,
+      "confidence": 0.9902,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No text match on 5 recent images | Metadata: 78% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | Website: alive | No text match on 5 recent images | Metadata: 78% open (no nudge) | Score: 0.75",
@@ -5488,28 +5692,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8952,
-          "description": "Metamodel score (logit=+2.15)"
+          "weight": 0.9902,
+          "description": "Metamodel score (logit=+4.61)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3759,
+          "weight": 0.1899,
           "description": "XGBoost: 77% (signal=+0.27)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.8226,
+          "description": "Yelp: 90 reviews (signal=+0.48)"
         }
       ]
     },
@@ -5521,6 +5735,15 @@
       "yelp_rating": 4.5,
       "yelp_review_count": 90,
       "yelp_url": "https://www.yelp.com/biz/khmai-chicago?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Khmai",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 312-626-7710",
+      "url": "khmai-fine-dining.com/"
     }
   },
   {
@@ -5584,7 +5807,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8948,
+      "confidence": 0.9812,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | Metadata: 76% open (no nudge) | Score: 0.80",
       "detail": "Foursquare: verified | Website: alive | Metadata: 76% open (no nudge) | Score: 0.80",
@@ -5705,28 +5928,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8948,
-          "description": "Metamodel score (logit=+2.14)"
+          "weight": 0.9812,
+          "description": "Metamodel score (logit=+3.96)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3712,
+          "weight": 0.1875,
           "description": "XGBoost: 77% (signal=+0.27)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: verified match=0.3 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.61,
+          "description": "Yelp: 51 reviews (signal=+0.35)"
         }
       ]
     },
@@ -5738,6 +5971,15 @@
       "yelp_rating": 4.3,
       "yelp_review_count": 51,
       "yelp_url": "https://www.yelp.com/biz/toscana-grill-chicago-2?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Toscana Restaurant",
+      "match_score": 0.3,
+      "has_phone": true,
+      "has_url": false,
+      "phone": "+1 773-728-0990",
+      "url": ""
     }
   },
   {
@@ -5819,7 +6061,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.7911,
+      "confidence": 0.9595,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (Client error 403) | Text: partial match (8yr old) | Metadata: 74% open (no nudge) | Score: 0.70",
       "detail": "Foursquare: verified | Website: dead (Client error 403) | Text: partial match (8yr old) | Metadata: 74% open (no nudge) | Score: 0.70",
@@ -6069,28 +6311,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7911,
-          "description": "Metamodel score (logit=+1.33)"
+          "weight": 0.9595,
+          "description": "Metamodel score (logit=+3.17)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": 0.0369,
+          "weight": 0.0809,
           "description": "Text: partial_match (signal=+0.5)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3615,
+          "weight": 0.1826,
           "description": "XGBoost: 76% (signal=+0.26)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: verified match=0.4 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.7241,
+          "description": "Yelp: 1227 reviews (signal=+1.00)"
         }
       ]
     },
@@ -6102,6 +6354,15 @@
       "yelp_rating": 3.9,
       "yelp_review_count": 1227,
       "yelp_url": "https://www.yelp.com/biz/ann-sather-restaurant-chicago-8?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Ann Sathers Restaurant",
+      "match_score": 0.4,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 773-348-2378",
+      "url": "www.annsather.com/"
     }
   },
   {
@@ -6171,7 +6432,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8882,
+      "confidence": 0.9909,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No text match on 2 recent images | Metadata: 70% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | Website: alive | No text match on 2 recent images | Metadata: 70% open (no nudge) | Score: 0.75",
@@ -6481,28 +6742,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8882,
-          "description": "Metamodel score (logit=+2.07)"
+          "weight": 0.9909,
+          "description": "Metamodel score (logit=+4.69)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3033,
+          "weight": 0.1533,
           "description": "XGBoost: 72% (signal=+0.22)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.9334,
+          "description": "Yelp: 121 reviews (signal=+0.54)"
         }
       ]
     },
@@ -6514,6 +6785,15 @@
       "yelp_rating": 4.4,
       "yelp_review_count": 121,
       "yelp_url": "https://www.yelp.com/biz/poke-burrito-chicago-2?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Poke Burrito South Loop",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 312-600-9406",
+      "url": "pokeburritochicago.com"
     }
   },
   {
@@ -6589,7 +6869,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.6988,
+      "confidence": 0.9401,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: redirected (Redirects to different domain: oldlvivchicago.mybistro.online) | No text match on 3 recent images | Metadata: 74% open (no nudge) | Score: 0.55",
       "detail": "Foursquare: verified | Website: redirected (Redirects to different domain: oldlvivchicago.mybistro.online) | No text match on 3 recent images | Metadata: 74% open (no nudge) | Score: 0.55",
@@ -6752,28 +7032,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.6988,
-          "description": "Metamodel score (logit=+0.84)"
+          "weight": 0.9401,
+          "description": "Metamodel score (logit=+2.75)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.7446,
+          "weight": -0.9414,
           "description": "Website: redirect (signal=-0.7)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3488,
+          "weight": 0.1762,
           "description": "XGBoost: 75% (signal=+0.25)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.0333,
+          "description": "Yelp: 158 reviews (signal=+0.60)"
         }
       ]
     },
@@ -6785,6 +7075,9 @@
       "yelp_rating": 4.2,
       "yelp_review_count": 158,
       "yelp_url": "https://www.yelp.com/biz/old-lviv-chicago?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -6872,7 +7165,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8938,
+      "confidence": 0.9773,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No text match on 5 recent images | Metadata: 77% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | Website: alive | No text match on 5 recent images | Metadata: 77% open (no nudge) | Score: 0.75",
@@ -7155,28 +7448,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8938,
-          "description": "Metamodel score (logit=+2.13)"
+          "weight": 0.9773,
+          "description": "Metamodel score (logit=+3.76)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3611,
+          "weight": 0.1824,
           "description": "XGBoost: 76% (signal=+0.26)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.4236,
+          "description": "Yelp: 31 reviews (signal=+0.25)"
         }
       ]
     },
@@ -7188,6 +7491,9 @@
       "yelp_rating": 3.6,
       "yelp_review_count": 31,
       "yelp_url": "https://www.yelp.com/biz/pine-dental-care-chicago-chicago-2?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -7257,7 +7563,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8823,
+      "confidence": 0.9903,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No text match on 2 recent images | Metadata: 68% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | Website: alive | No text match on 2 recent images | Metadata: 68% open (no nudge) | Score: 0.75",
@@ -7439,28 +7745,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8823,
-          "description": "Metamodel score (logit=+2.01)"
+          "weight": 0.9903,
+          "description": "Metamodel score (logit=+4.62)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2453,
+          "weight": 0.1239,
           "description": "XGBoost: 68% (signal=+0.18)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=0.8 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.8977,
+          "description": "Yelp: 110 reviews (signal=+0.52)"
         }
       ]
     },
@@ -7472,6 +7788,15 @@
       "yelp_rating": 4.1,
       "yelp_review_count": 110,
       "yelp_url": "https://www.yelp.com/biz/da-mao-jia-chicago-2?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Da Mao Jia-Royal Highness Zhu-A Place by Damao",
+      "match_score": 0.8,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 312-929-2088",
+      "url": "www.damaojiausa.com/"
     }
   },
   {
@@ -7528,7 +7853,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.7905,
+      "confidence": 0.9548,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead | No street-level images",
       "layers": {
@@ -7601,17 +7926,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7905,
-          "description": "Metamodel score (logit=+1.33)"
+          "weight": 0.9548,
+          "description": "Metamodel score (logit=+3.05)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
@@ -7621,8 +7946,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.3952,
+          "weight": 0.1997,
           "description": "XGBoost: 79% (signal=+0.29)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.2311,
+          "description": "Yelp: 268 reviews (signal=+0.71)"
         }
       ]
     },
@@ -7634,6 +7969,15 @@
       "yelp_rating": 4.1,
       "yelp_review_count": 268,
       "yelp_url": "https://www.yelp.com/biz/red-june-cafe-chicago?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Red June Cafe",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": false,
+      "phone": "+1 773-227-2600",
+      "url": ""
     }
   },
   {
@@ -7703,7 +8047,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8945,
+      "confidence": 0.9885,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No text match on 2 recent images | Metadata: 77% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | Website: alive | No text match on 2 recent images | Metadata: 77% open (no nudge) | Score: 0.75",
@@ -7884,28 +8228,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8945,
-          "description": "Metamodel score (logit=+2.14)"
+          "weight": 0.9885,
+          "description": "Metamodel score (logit=+4.46)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3689,
+          "weight": 0.1864,
           "description": "XGBoost: 77% (signal=+0.27)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.6708,
+          "description": "Yelp: 60 reviews (signal=+0.39)"
         }
       ]
     },
@@ -7917,6 +8271,15 @@
       "yelp_rating": 3.4,
       "yelp_review_count": 60,
       "yelp_url": "https://www.yelp.com/biz/jamba-chicago-4?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Jamba",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 312-837-3803",
+      "url": "www.jamba.com/il/chicago/the-hancock-building-103496"
     }
   },
   {
@@ -7986,7 +8349,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8221,
+      "confidence": 0.7002,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | No text match on 2 recent images | Metadata: 65% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | No text match on 2 recent images | Metadata: 65% open (no nudge) | Score: 0.75",
@@ -8216,12 +8579,12 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8221,
-          "description": "Metamodel score (logit=+1.53)"
+          "weight": 0.7002,
+          "description": "Metamodel score (logit=+0.85)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
@@ -8231,17 +8594,30 @@
         },
         {
           "signal": "text",
-          "weight": 0.0369,
+          "weight": 0.0809,
           "description": "Text: partial_match (signal=+0.5)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2418,
+          "weight": 0.1222,
           "description": "XGBoost: 67% (signal=+0.17)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "open"
+    "ground_truth": "open",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Einstein Bros. Bagels",
@@ -8312,8 +8688,8 @@
       "detail": "Website responding (HTTP 200)"
     },
     "vision": {
-      "prediction": "not_open",
-      "confidence": 0.3215,
+      "prediction": "open",
+      "confidence": 0.545,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | Text: full match (6yr old) | Metadata: 68% open (no nudge) | Score: 0.50",
       "detail": "Website: alive | Text: full match (6yr old) | Metadata: 68% open (no nudge) | Score: 0.50",
@@ -9021,28 +9397,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.3215,
-          "description": "Metamodel score (logit=-0.75)"
+          "weight": 0.545,
+          "description": "Metamodel score (logit=+0.18)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": 0.0738,
+          "weight": 0.1617,
           "description": "Text: full_match (signal=+1.0)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2453,
+          "weight": 0.1239,
           "description": "XGBoost: 68% (signal=+0.18)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.0473,
+          "description": "Yelp: 164 reviews (signal=+0.61)"
         }
       ]
     },
@@ -9054,6 +9440,9 @@
       "yelp_rating": 2.6,
       "yelp_review_count": 164,
       "yelp_url": "https://www.yelp.com/biz/einstein-bros-bagels-chicago-8?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -9135,7 +9524,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.7226,
+      "confidence": 0.9836,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: redirected (Redirects to different domain: cafebabareeba.com:443) | Text: full match | Metadata: 78% open (no nudge) | Score: 0.70",
       "detail": "Foursquare: verified | Website: redirected (Redirects to different domain: cafebabareeba.com:443) | Text: full match | Metadata: 78% open (no nudge) | Score: 0.70",
@@ -9543,28 +9932,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7226,
-          "description": "Metamodel score (logit=+0.96)"
+          "weight": 0.9836,
+          "description": "Metamodel score (logit=+4.09)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.7446,
+          "weight": -0.9414,
           "description": "Website: redirect (signal=-0.7)"
         },
         {
           "signal": "text",
-          "weight": 0.0738,
+          "weight": 0.1617,
           "description": "Text: full_match (signal=+1.0)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3759,
+          "weight": 0.1899,
           "description": "XGBoost: 77% (signal=+0.27)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.7241,
+          "description": "Yelp: 5139 reviews (signal=+1.00)"
         }
       ]
     },
@@ -9576,6 +9975,15 @@
       "yelp_rating": 4.3,
       "yelp_review_count": 5139,
       "yelp_url": "https://www.yelp.com/biz/cafe-ba-ba-reeba-chicago-3?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Cafe Ba-Ba-Reeba!",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 773-935-5000",
+      "url": "www.cafebabareeba.com/"
     }
   },
   {
@@ -9663,7 +10071,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.9017,
+      "confidence": 0.9914,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | Text: partial match (6yr old) | Metadata: 78% open (no nudge) | Score: 0.80",
       "detail": "Foursquare: verified | Website: alive | Text: partial match (6yr old) | Metadata: 78% open (no nudge) | Score: 0.80",
@@ -10466,28 +10874,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.9017,
-          "description": "Metamodel score (logit=+2.22)"
+          "weight": 0.9914,
+          "description": "Metamodel score (logit=+4.75)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": 0.0369,
+          "weight": 0.0809,
           "description": "Text: partial_match (signal=+0.5)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3959,
+          "weight": 0.2,
           "description": "XGBoost: 79% (signal=+0.29)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.8389,
+          "description": "Yelp: 94 reviews (signal=+0.49)"
         }
       ]
     },
@@ -10499,6 +10917,15 @@
       "yelp_rating": 4.4,
       "yelp_review_count": 94,
       "yelp_url": "https://www.yelp.com/biz/publican-quality-bread-chicago?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Publican Quality Bread",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 312-605-1618",
+      "url": "www.publicanqualitybread.com/#serve-warm"
     }
   },
   {
@@ -10555,7 +10982,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.7843,
+      "confidence": 0.829,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead | No street-level images",
       "layers": {
@@ -10628,17 +11055,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7843,
-          "description": "Metamodel score (logit=+1.29)"
+          "weight": 0.829,
+          "description": "Metamodel score (logit=+1.58)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
@@ -10648,8 +11075,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.3579,
+          "weight": 0.1808,
           "description": "XGBoost: 76% (signal=+0.26)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.2201,
+          "description": "Yelp: 18 reviews (signal=+0.13)"
         }
       ]
     },
@@ -10661,6 +11098,9 @@
       "yelp_rating": 4.1,
       "yelp_review_count": 18,
       "yelp_url": "https://www.yelp.com/biz/muscle-bar-chicago-4?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -10724,7 +11164,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8882,
+      "confidence": 0.9842,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | Metadata: 70% open (no nudge) | Score: 0.80",
       "detail": "Foursquare: verified | Website: alive | Metadata: 70% open (no nudge) | Score: 0.80",
@@ -10815,28 +11255,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8882,
-          "description": "Metamodel score (logit=+2.07)"
+          "weight": 0.9842,
+          "description": "Metamodel score (logit=+4.13)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3033,
+          "weight": 0.1533,
           "description": "XGBoost: 72% (signal=+0.22)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.8226,
+          "description": "Yelp: 90 reviews (signal=+0.48)"
         }
       ]
     },
@@ -10848,6 +11298,9 @@
       "yelp_rating": 3.7,
       "yelp_review_count": 90,
       "yelp_url": "https://www.yelp.com/biz/my-hookah-cafe-chicago?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -10904,7 +11357,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8831,
+      "confidence": 0.8082,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No street-level images",
       "layers": {
@@ -10977,17 +11430,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8831,
-          "description": "Metamodel score (logit=+2.02)"
+          "weight": 0.8082,
+          "description": "Metamodel score (logit=+1.44)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
@@ -10997,12 +11450,25 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.2387,
+          "weight": 0.1206,
           "description": "XGBoost: 67% (signal=+0.17)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "open"
+    "ground_truth": "open",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Sharks Fish and Chicken Blue Island",
@@ -11058,7 +11524,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.7402,
+      "confidence": 0.8447,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead | No street-level images",
       "layers": {
@@ -11131,17 +11597,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7402,
-          "description": "Metamodel score (logit=+1.05)"
+          "weight": 0.8447,
+          "description": "Metamodel score (logit=+1.69)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
@@ -11151,8 +11617,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.114,
+          "weight": 0.0576,
           "description": "XGBoost: 58% (signal=+0.08)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: verified match=0.3 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.4582,
+          "description": "Yelp: 34 reviews (signal=+0.27)"
         }
       ]
     },
@@ -11164,6 +11640,15 @@
       "yelp_rating": 2.4,
       "yelp_review_count": 34,
       "yelp_url": "https://www.yelp.com/biz/sharks-fish-and-chicken-blue-island?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Sharks Fish & Chicken",
+      "match_score": 0.3,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 708-371-2700",
+      "url": "sharksfishchickentogo.com/#page-top"
     }
   },
   {
@@ -11220,7 +11705,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8967,
+      "confidence": 0.9881,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No street-level images",
       "layers": {
@@ -11293,17 +11778,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8967,
-          "description": "Metamodel score (logit=+2.16)"
+          "weight": 0.9881,
+          "description": "Metamodel score (logit=+4.42)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
@@ -11313,8 +11798,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.3774,
+          "weight": 0.1907,
           "description": "XGBoost: 77% (signal=+0.27)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.595,
+          "description": "Yelp: 49 reviews (signal=+0.35)"
         }
       ]
     },
@@ -11326,6 +11821,15 @@
       "yelp_rating": 3.8,
       "yelp_review_count": 49,
       "yelp_url": "https://www.yelp.com/biz/liors-cafe-chicago?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Lior's Cafe",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 773-239-5467",
+      "url": "liorscafe.com/"
     }
   },
   {
@@ -11407,7 +11911,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.7723,
+      "confidence": 0.9296,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 4 recent images | Metadata: 70% open (no nudge) | Score: 0.65",
       "detail": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 4 recent images | Metadata: 70% open (no nudge) | Score: 0.65",
@@ -11604,28 +12108,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7723,
-          "description": "Metamodel score (logit=+1.22)"
+          "weight": 0.9296,
+          "description": "Metamodel score (logit=+2.58)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3033,
+          "weight": 0.1533,
           "description": "XGBoost: 72% (signal=+0.22)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.8389,
+          "description": "Yelp: 94 reviews (signal=+0.49)"
         }
       ]
     },
@@ -11637,6 +12151,15 @@
       "yelp_rating": 3.4,
       "yelp_review_count": 94,
       "yelp_url": "https://www.yelp.com/biz/the-dime-chicago-2?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "The Dime",
+      "match_score": 1.0,
+      "has_phone": false,
+      "has_url": true,
+      "phone": "",
+      "url": "thedimechi.com/"
     }
   },
   {
@@ -11706,7 +12229,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.883,
+      "confidence": 0.8647,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No text match on 2 recent images | Metadata: 63% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | Website: alive | No text match on 2 recent images | Metadata: 63% open (no nudge) | Score: 0.75",
@@ -11805,28 +12328,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.883,
-          "description": "Metamodel score (logit=+2.02)"
+          "weight": 0.8647,
+          "description": "Metamodel score (logit=+1.85)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2515,
+          "weight": 0.1271,
           "description": "XGBoost: 68% (signal=+0.18)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -11838,6 +12371,15 @@
       "yelp_rating": 0.0,
       "yelp_review_count": 0,
       "yelp_url": "https://www.yelp.com/biz/bunch-of-dumplings-chicago-3?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Bunch of Dumplings",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": false,
+      "phone": "+1 773-888-1086",
+      "url": ""
     }
   },
   {
@@ -11876,7 +12418,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.3367,
+      "confidence": 0.435,
       "primary_layer": "website",
       "evidence": "Website: alive | No street-level images",
       "layers": {
@@ -11941,17 +12483,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.3367,
-          "description": "Metamodel score (logit=-0.68)"
+          "weight": 0.435,
+          "description": "Metamodel score (logit=-0.26)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
@@ -11961,8 +12503,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.388,
+          "weight": 0.196,
           "description": "XGBoost: 78% (signal=+0.28)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.695,
+          "description": "Yelp: 64 reviews (signal=+0.40)"
         }
       ]
     },
@@ -11974,6 +12526,9 @@
       "yelp_rating": 5.0,
       "yelp_review_count": 64,
       "yelp_url": "https://www.yelp.com/biz/muse-coffee-studio-chicago?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -12012,7 +12567,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.3357,
+      "confidence": 0.4975,
       "primary_layer": "website",
       "evidence": "Website: alive | No street-level images",
       "layers": {
@@ -12077,17 +12632,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.3357,
-          "description": "Metamodel score (logit=-0.68)"
+          "weight": 0.4975,
+          "description": "Metamodel score (logit=-0.01)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
@@ -12097,8 +12652,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.3835,
+          "weight": 0.1938,
           "description": "XGBoost: 78% (signal=+0.28)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=0.8 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.9426,
+          "description": "Yelp: 124 reviews (signal=+0.55)"
         }
       ]
     },
@@ -12110,6 +12675,15 @@
       "yelp_rating": 4.5,
       "yelp_review_count": 124,
       "yelp_url": "https://www.yelp.com/biz/ciao-ragazzi-restaurant-and-bar-chicago?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Ciao Ragazzi Restaurant & Bar",
+      "match_score": 0.8,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 773-306-0093",
+      "url": "ciaoragazzirestaurantandbar.com/"
     }
   },
   {
@@ -12148,7 +12722,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.2067,
+      "confidence": 0.2188,
       "primary_layer": "xgboost",
       "evidence": "No street-level images",
       "layers": {
@@ -12213,12 +12787,12 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2067,
-          "description": "Metamodel score (logit=-1.35)"
+          "weight": 0.2188,
+          "description": "Metamodel score (logit=-1.27)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
@@ -12233,8 +12807,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.2526,
+          "weight": 0.1276,
           "description": "XGBoost: 68% (signal=+0.18)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -0.6025,
+          "description": "Yelp: 2 reviews (signal=-0.35)"
         }
       ]
     },
@@ -12246,6 +12830,9 @@
       "yelp_rating": 5.0,
       "yelp_review_count": 2,
       "yelp_url": "https://www.yelp.com/biz/black-onyx-nail-art-and-design-chicago-2?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -12284,7 +12871,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.2369,
+      "confidence": 0.0906,
       "primary_layer": "xgboost",
       "evidence": "No street-level images",
       "layers": {
@@ -12349,12 +12936,12 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2369,
-          "description": "Metamodel score (logit=-1.17)"
+          "weight": 0.0906,
+          "description": "Metamodel score (logit=-2.31)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
@@ -12369,8 +12956,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.428,
+          "weight": 0.2162,
           "description": "XGBoost: 81% (signal=+0.31)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -12382,6 +12979,9 @@
       "yelp_rating": 0.0,
       "yelp_review_count": 0,
       "yelp_url": "https://www.yelp.com/biz/evas-beauty-salon-chicago-2?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -12419,8 +13019,8 @@
       "detail": "Connection timed out"
     },
     "vision": {
-      "prediction": "not_open",
-      "confidence": 0.18,
+      "prediction": "open",
+      "confidence": 0.508,
       "primary_layer": "website",
       "evidence": "Website: dead | No street-level images",
       "layers": {
@@ -12485,17 +13085,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.18,
-          "description": "Metamodel score (logit=-1.52)"
+          "weight": 0.508,
+          "description": "Metamodel score (logit=+0.03)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
@@ -12505,8 +13105,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.4007,
+          "weight": 0.2025,
           "description": "XGBoost: 79% (signal=+0.29)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.0309,
+          "description": "Yelp: 157 reviews (signal=+0.60)"
         }
       ]
     },
@@ -12518,6 +13128,9 @@
       "yelp_rating": 2.7,
       "yelp_review_count": 157,
       "yelp_url": "https://www.yelp.com/biz/mayflower-restaurant-chicago?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -12556,7 +13169,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1574,
+      "confidence": 0.3753,
       "primary_layer": "website",
       "evidence": "Website: dead | No street-level images",
       "layers": {
@@ -12621,17 +13234,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1574,
-          "description": "Metamodel score (logit=-1.68)"
+          "weight": 0.3753,
+          "description": "Metamodel score (logit=-0.51)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
@@ -12641,8 +13254,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.2389,
+          "weight": 0.1207,
           "description": "XGBoost: 67% (signal=+0.17)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: verified match=0.5 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.5713,
+          "description": "Yelp: 46 reviews (signal=+0.33)"
         }
       ]
     },
@@ -12654,6 +13277,15 @@
       "yelp_rating": 4.8,
       "yelp_review_count": 46,
       "yelp_url": "https://www.yelp.com/biz/vn-tofu-and-fast-food-chicago?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "VN Tofu & Fast Food",
+      "match_score": 0.48,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 872-208-5686",
+      "url": "vntofuchicago.com"
     }
   },
   {
@@ -12714,7 +13346,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.2676,
+      "confidence": 0.0536,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | No text match on 2 recent images | Metadata: 63% open (no nudge) | Score: 0.45",
       "detail": "Website: alive | No text match on 2 recent images | Metadata: 63% open (no nudge) | Score: 0.45",
@@ -12940,32 +13572,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2676,
-          "description": "Metamodel score (logit=-1.01)"
+          "weight": 0.0536,
+          "description": "Metamodel score (logit=-2.87)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.0737,
+          "weight": 0.0372,
           "description": "XGBoost: 55% (signal=+0.05)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Maki Sushi & Noodle Shop",
@@ -13012,7 +13657,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.3368,
+      "confidence": 0.0641,
       "primary_layer": "website",
       "evidence": "Website: alive | No street-level images",
       "layers": {
@@ -13077,17 +13722,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.3368,
-          "description": "Metamodel score (logit=-0.68)"
+          "weight": 0.0641,
+          "description": "Metamodel score (logit=-2.68)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
@@ -13097,12 +13742,25 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.3885,
+          "weight": 0.1963,
           "description": "XGBoost: 78% (signal=+0.28)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Sweet World Pastry",
@@ -13170,8 +13828,8 @@
       "detail": "DNS resolution failed \u2014 domain does not exist"
     },
     "vision": {
-      "prediction": "open",
-      "confidence": 0.8018,
+      "prediction": "not_open",
+      "confidence": 0.4168,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | Text: full match (8yr old) | Metadata: 77% open (no nudge) | Score: 0.70",
       "detail": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | Text: full match (8yr old) | Metadata: 77% open (no nudge) | Score: 0.70",
@@ -13587,32 +14245,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8018,
-          "description": "Metamodel score (logit=+1.40)"
+          "weight": 0.4168,
+          "description": "Metamodel score (logit=-0.34)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": 0.0738,
+          "weight": 0.1617,
           "description": "Text: full_match (signal=+1.0)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3906,
+          "weight": 0.1973,
           "description": "XGBoost: 78% (signal=+0.28)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "China Buffet",
@@ -13667,8 +14338,8 @@
       "detail": "DNS resolution failed \u2014 domain does not exist"
     },
     "vision": {
-      "prediction": "open",
-      "confidence": 0.7904,
+      "prediction": "not_open",
+      "confidence": 0.3786,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead | No street-level images",
       "layers": {
@@ -13741,17 +14412,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7904,
-          "description": "Metamodel score (logit=+1.33)"
+          "weight": 0.3786,
+          "description": "Metamodel score (logit=-0.50)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
@@ -13761,12 +14432,25 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.3946,
+          "weight": 0.1994,
           "description": "XGBoost: 78% (signal=+0.28)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Falafel Island",
@@ -13840,8 +14524,8 @@
       "detail": "DNS resolution failed \u2014 domain does not exist"
     },
     "vision": {
-      "prediction": "open",
-      "confidence": 0.7542,
+      "prediction": "not_open",
+      "confidence": 0.3487,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 3 recent images | Metadata: 66% open (no nudge) | Score: 0.65",
       "detail": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 3 recent images | Metadata: 66% open (no nudge) | Score: 0.65",
@@ -14289,32 +14973,51 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7542,
-          "description": "Metamodel score (logit=+1.12)"
+          "weight": 0.3487,
+          "description": "Metamodel score (logit=-0.62)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2031,
+          "weight": 0.1026,
           "description": "XGBoost: 65% (signal=+0.15)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: verified match=0.3 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "verified",
+      "name": "I Dream of Falafel",
+      "match_score": 0.3,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 312-535-7431",
+      "url": "www.iDreamofFalafel.com"
+    }
   },
   {
     "name": "Desi Cloud Kitchen",
@@ -14374,7 +15077,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1908,
+      "confidence": 0.078,
       "primary_layer": "xgboost",
       "evidence": "No text match on 2 recent images | Metadata: 62% open (no nudge) | Score: 0.45",
       "detail": "No text match on 2 recent images | Metadata: 62% open (no nudge) | Score: 0.45",
@@ -14652,12 +15355,12 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1908,
-          "description": "Metamodel score (logit=-1.44)"
+          "weight": 0.078,
+          "description": "Metamodel score (logit=-2.47)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
@@ -14667,17 +15370,30 @@
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.1677,
+          "weight": 0.0847,
           "description": "XGBoost: 62% (signal=+0.12)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "MeeNaRi Restaurant",
@@ -14746,7 +15462,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1152,
+      "confidence": 0.0839,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: mismatch (\"MiNaRi\") | Website: dead (Connection timed out) | No text match on 2 recent images | Metadata: 72% open (no nudge) | Score: 0.10",
       "detail": "Foursquare: mismatch (\"MiNaRi\") | Website: dead (Connection timed out) | No text match on 2 recent images | Metadata: 72% open (no nudge) | Score: 0.10",
@@ -14845,32 +15561,51 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1152,
-          "description": "Metamodel score (logit=-2.04)"
+          "weight": 0.0839,
+          "description": "Metamodel score (logit=-2.39)"
         },
         {
           "signal": "foursquare",
-          "weight": -1.0961,
+          "weight": -0.9498,
           "description": "Foursquare: mismatch (signal=-0.5)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.331,
+          "weight": 0.1673,
           "description": "XGBoost: 74% (signal=+0.24)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "verified",
+      "name": "Meenari Restaurant",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": false,
+      "phone": "+1 773-267-3590",
+      "url": ""
+    }
   },
   {
     "name": "Lobo De Mar Restaurant",
@@ -14938,8 +15673,8 @@
       "detail": "DNS resolution failed \u2014 domain does not exist"
     },
     "vision": {
-      "prediction": "open",
-      "confidence": 0.7331,
+      "prediction": "not_open",
+      "confidence": 0.3361,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 2 recent images | Metadata: 64% open (no nudge) | Score: 0.65",
       "detail": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 2 recent images | Metadata: 64% open (no nudge) | Score: 0.65",
@@ -15093,32 +15828,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7331,
-          "description": "Metamodel score (logit=+1.01)"
+          "weight": 0.3361,
+          "description": "Metamodel score (logit=-0.68)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.0921,
+          "weight": 0.0465,
           "description": "XGBoost: 57% (signal=+0.07)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Roy's",
@@ -15196,7 +15944,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1047,
+      "confidence": 0.0326,
       "primary_layer": "xgboost",
       "evidence": "Website: redirected (Redirects to different domain: shoproysfurniture.com) | Text: partial match (6yr old) | Metadata: 67% open (no nudge) | Score: 0.30",
       "detail": "Website: redirected (Redirects to different domain: shoproysfurniture.com) | Text: partial match (6yr old) | Metadata: 67% open (no nudge) | Score: 0.30",
@@ -15994,32 +16742,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1047,
-          "description": "Metamodel score (logit=-2.15)"
+          "weight": 0.0326,
+          "description": "Metamodel score (logit=-3.39)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.7446,
+          "weight": -0.9414,
           "description": "Website: redirect (signal=-0.7)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.211,
+          "weight": 0.1066,
           "description": "XGBoost: 65% (signal=+0.15)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Afghan Kabob",
@@ -16091,7 +16852,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1402,
+      "confidence": 0.0522,
       "primary_layer": "xgboost",
       "evidence": "Website: dead (Connection refused) | No text match on 4 recent images | Metadata: 57% open (no nudge) | Score: 0.35",
       "detail": "Website: dead (Connection refused) | No text match on 4 recent images | Metadata: 57% open (no nudge) | Score: 0.35",
@@ -16465,32 +17226,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1402,
-          "description": "Metamodel score (logit=-1.81)"
+          "weight": 0.0522,
+          "description": "Metamodel score (logit=-2.90)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.1179,
+          "weight": 0.0596,
           "description": "XGBoost: 59% (signal=+0.09)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "KAYBEE's Indian Flavor",
@@ -16550,7 +17324,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.0842,
+      "confidence": 0.0396,
       "primary_layer": "xgboost",
       "evidence": "Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 2 recent images | Metadata: 28% open (nudge -0.04) | Score: 0.31",
       "detail": "Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 2 recent images | Metadata: 28% open (nudge -0.04) | Score: 0.31",
@@ -16750,32 +17524,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.0842,
-          "description": "Metamodel score (logit=-2.39)"
+          "weight": 0.0396,
+          "description": "Metamodel score (logit=-3.19)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": -0.4547,
+          "weight": -0.2297,
           "description": "XGBoost: 17% (signal=-0.33)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Izakaya Mita",
@@ -16847,7 +17634,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.2025,
+      "confidence": 0.0452,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | No text match on 4 recent images | Metadata: 29% open (nudge -0.04) | Score: 0.41",
       "detail": "Website: alive | No text match on 4 recent images | Metadata: 29% open (nudge -0.04) | Score: 0.41",
@@ -17168,32 +17955,51 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2025,
-          "description": "Metamodel score (logit=-1.37)"
+          "weight": 0.0452,
+          "description": "Metamodel score (logit=-3.05)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": -0.29,
+          "weight": -0.1465,
           "description": "XGBoost: 29% (signal=-0.21)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "verified",
+      "name": "Izakaya Mita",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": false,
+      "phone": "+1 773-799-8677",
+      "url": ""
+    }
   },
   {
     "name": "honeygrow",
@@ -17259,7 +18065,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.0949,
+      "confidence": 0.0532,
       "primary_layer": "xgboost",
       "evidence": "No text match on 3 recent images | Metadata: 23% open (nudge -0.05) | Score: 0.40",
       "detail": "No text match on 3 recent images | Metadata: 23% open (nudge -0.05) | Score: 0.40",
@@ -17595,12 +18401,12 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.0949,
-          "description": "Metamodel score (logit=-2.26)"
+          "weight": 0.0532,
+          "description": "Metamodel score (logit=-2.88)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
@@ -17610,17 +18416,30 @@
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": -0.6425,
+          "weight": -0.3246,
           "description": "XGBoost: 4% (signal=-0.46)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Big League Burgers",
@@ -17695,7 +18514,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8952,
+      "confidence": 0.9909,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No text match on 3 recent images | Metadata: 78% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | Website: alive | No text match on 3 recent images | Metadata: 78% open (no nudge) | Score: 0.75",
@@ -18866,28 +19685,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8952,
-          "description": "Metamodel score (logit=+2.15)"
+          "weight": 0.9909,
+          "description": "Metamodel score (logit=+4.69)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3759,
+          "weight": 0.1899,
           "description": "XGBoost: 77% (signal=+0.27)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.9011,
+          "description": "Yelp: 111 reviews (signal=+0.52)"
         }
       ]
     },
@@ -18899,6 +19728,15 @@
       "yelp_rating": 4.1,
       "yelp_review_count": 111,
       "yelp_url": "https://www.yelp.com/biz/big-league-burgers-chicago?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Big League Burgers",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 773-961-7558",
+      "url": "www.bigleagueburgersusa.com/"
     }
   },
   {
@@ -18979,8 +19817,8 @@
       "detail": "Page not found (404)"
     },
     "vision": {
-      "prediction": "open",
-      "confidence": 0.7777,
+      "prediction": "not_open",
+      "confidence": 0.3991,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (Page not found (404)) | Text: full match (12yr old) | Metadata: 68% open (no nudge) | Score: 0.70",
       "detail": "Foursquare: verified | Website: dead (Page not found (404)) | Text: full match (12yr old) | Metadata: 68% open (no nudge) | Score: 0.70",
@@ -19388,32 +20226,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7777,
-          "description": "Metamodel score (logit=+1.25)"
+          "weight": 0.3991,
+          "description": "Metamodel score (logit=-0.41)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": 0.0738,
+          "weight": 0.1617,
           "description": "Text: full_match (signal=+1.0)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2453,
+          "weight": 0.1239,
           "description": "XGBoost: 68% (signal=+0.18)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Maxwell Street Grill",
@@ -19451,7 +20302,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1796,
+      "confidence": 0.234,
       "primary_layer": "website",
       "evidence": "Website: dead | No street-level images",
       "layers": {
@@ -19516,17 +20367,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1796,
-          "description": "Metamodel score (logit=-1.52)"
+          "weight": 0.234,
+          "description": "Metamodel score (logit=-1.19)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
@@ -19536,8 +20387,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.3975,
+          "weight": 0.2008,
           "description": "XGBoost: 79% (signal=+0.29)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -0.1912,
+          "description": "Yelp: 6 reviews (signal=-0.11)"
         }
       ]
     },
@@ -19549,6 +20410,15 @@
       "yelp_rating": 3.7,
       "yelp_review_count": 6,
       "yelp_url": "https://www.yelp.com/biz/maxwell-street-grill-calumet-park?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Maxwell Street Grill",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 708-897-0685",
+      "url": "jjsausage127th.wix.com/jjsausage"
     }
   },
   {
@@ -19621,7 +20491,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1295,
+      "confidence": 0.0428,
       "primary_layer": "xgboost",
       "evidence": "Website: parked domain | No text match on 4 recent images | Metadata: 68% open (no nudge) | Score: 0.30",
       "detail": "Website: parked domain | No text match on 4 recent images | Metadata: 68% open (no nudge) | Score: 0.30",
@@ -19914,32 +20784,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1295,
-          "description": "Metamodel score (logit=-1.91)"
+          "weight": 0.0428,
+          "description": "Metamodel score (logit=-3.11)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.5319,
+          "weight": -0.6724,
           "description": "Website: parked (signal=-0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2387,
+          "weight": 0.1206,
           "description": "XGBoost: 67% (signal=+0.17)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Bountiful Eatery",
@@ -20011,7 +20894,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1322,
+      "confidence": 0.0474,
       "primary_layer": "text",
       "evidence": "Website: parked domain | Text: partial match | Metadata: 67% open (no nudge) | Score: 0.40",
       "detail": "Website: parked domain | Text: partial match | Metadata: 67% open (no nudge) | Score: 0.40",
@@ -20566,32 +21449,51 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1322,
-          "description": "Metamodel score (logit=-1.88)"
+          "weight": 0.0474,
+          "description": "Metamodel score (logit=-3.00)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.5319,
+          "weight": -0.6724,
           "description": "Website: parked (signal=-0.5)"
         },
         {
           "signal": "text",
-          "weight": 0.0369,
+          "weight": 0.0809,
           "description": "Text: partial_match (signal=+0.5)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.211,
+          "weight": 0.1066,
           "description": "XGBoost: 65% (signal=+0.15)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "verified",
+      "name": "Bountiful Eatery",
+      "match_score": 1.0,
+      "has_phone": false,
+      "has_url": false,
+      "phone": "",
+      "url": ""
+    }
   },
   {
     "name": "Jibaritos",
@@ -20651,7 +21553,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.136,
+      "confidence": 0.0517,
       "primary_layer": "xgboost",
       "evidence": "Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 2 recent images | Metadata: 52% open (no nudge) | Score: 0.35",
       "detail": "Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 2 recent images | Metadata: 52% open (no nudge) | Score: 0.35",
@@ -21029,32 +21931,51 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.136,
-          "description": "Metamodel score (logit=-1.85)"
+          "weight": 0.0517,
+          "description": "Metamodel score (logit=-2.91)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.083,
+          "weight": 0.0419,
           "description": "XGBoost: 56% (signal=+0.06)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=0.8 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "verified",
+      "name": "Jibaritos Lincoln Park",
+      "match_score": 0.8,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 773-697-4648",
+      "url": "jibaritoslp.com/"
+    }
   },
   {
     "name": "Cycle Therapy",
@@ -21116,8 +22037,8 @@
       "detail": "DNS resolution failed \u2014 domain does not exist"
     },
     "vision": {
-      "prediction": "open",
-      "confidence": 0.7911,
+      "prediction": "not_open",
+      "confidence": 0.3732,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | Metadata: 79% open (no nudge) | Score: 0.70",
       "detail": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | Metadata: 79% open (no nudge) | Score: 0.70",
@@ -21208,32 +22129,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7911,
-          "description": "Metamodel score (logit=+1.33)"
+          "weight": 0.3732,
+          "description": "Metamodel score (logit=-0.52)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.4132,
+          "weight": 0.2088,
           "description": "XGBoost: 80% (signal=+0.30)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Lina Pita",
@@ -21305,7 +22239,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1508,
+      "confidence": 0.0544,
       "primary_layer": "xgboost",
       "evidence": "Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 4 recent images | Metadata: 66% open (no nudge) | Score: 0.35",
       "detail": "Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 4 recent images | Metadata: 66% open (no nudge) | Score: 0.35",
@@ -21781,32 +22715,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1508,
-          "description": "Metamodel score (logit=-1.73)"
+          "weight": 0.0544,
+          "description": "Metamodel score (logit=-2.86)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2031,
+          "weight": 0.1026,
           "description": "XGBoost: 65% (signal=+0.15)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "The Melting Pot",
@@ -21878,7 +22825,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.2937,
+      "confidence": 0.057,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | No text match on 4 recent images | Metadata: 66% open (no nudge) | Score: 0.45",
       "detail": "Website: alive | No text match on 4 recent images | Metadata: 66% open (no nudge) | Score: 0.45",
@@ -22430,32 +23377,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2937,
-          "description": "Metamodel score (logit=-0.88)"
+          "weight": 0.057,
+          "description": "Metamodel score (logit=-2.81)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2031,
+          "weight": 0.1026,
           "description": "XGBoost: 65% (signal=+0.15)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Bon a Pit",
@@ -22515,7 +23475,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1126,
+      "confidence": 0.034,
       "primary_layer": "xgboost",
       "evidence": "Website: redirected (Redirects to different domain: bestfreetube.com) | No text match on 2 recent images | Metadata: 70% open (no nudge) | Score: 0.25",
       "detail": "Website: redirected (Redirects to different domain: bestfreetube.com) | No text match on 2 recent images | Metadata: 70% open (no nudge) | Score: 0.25",
@@ -22714,32 +23674,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1126,
-          "description": "Metamodel score (logit=-2.06)"
+          "weight": 0.034,
+          "description": "Metamodel score (logit=-3.35)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.7446,
+          "weight": -0.9414,
           "description": "Website: redirect (signal=-0.7)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2928,
+          "weight": 0.1479,
           "description": "XGBoost: 71% (signal=+0.21)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Soup Barz",
@@ -22819,8 +23792,8 @@
       "detail": "Client error 409"
     },
     "vision": {
-      "prediction": "open",
-      "confidence": 0.7765,
+      "prediction": "not_open",
+      "confidence": 0.3982,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (Client error 409) | Text: full match (6yr old) | Metadata: 68% open (no nudge) | Score: 0.70",
       "detail": "Foursquare: verified | Website: dead (Client error 409) | Text: full match (6yr old) | Metadata: 68% open (no nudge) | Score: 0.70",
@@ -23018,32 +23991,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7765,
-          "description": "Metamodel score (logit=+1.25)"
+          "weight": 0.3982,
+          "description": "Metamodel score (logit=-0.41)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": 0.0738,
+          "weight": 0.1617,
           "description": "Text: full_match (signal=+1.0)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2387,
+          "weight": 0.1206,
           "description": "XGBoost: 67% (signal=+0.17)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Grandma Annie's Pizza",
@@ -23081,7 +24067,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.2371,
+      "confidence": 0.2812,
       "primary_layer": "website",
       "evidence": "Website: alive | No street-level images",
       "layers": {
@@ -23146,17 +24132,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2371,
-          "description": "Metamodel score (logit=-1.17)"
+          "weight": 0.2812,
+          "description": "Metamodel score (logit=-0.94)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
@@ -23166,8 +24152,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": -0.1026,
+          "weight": -0.0519,
           "description": "XGBoost: 43% (signal=-0.07)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=0.8 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.2595,
+          "description": "Yelp: 20 reviews (signal=+0.15)"
         }
       ]
     },
@@ -23179,6 +24175,15 @@
       "yelp_rating": 4.2,
       "yelp_review_count": 20,
       "yelp_url": "https://www.yelp.com/biz/grandma-annies-pizza-chicago?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Grandma Annie's Pizza & Chicken",
+      "match_score": 0.8,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 773-252-5599",
+      "url": "www.grandmaannies.com/"
     }
   },
   {
@@ -23239,7 +24244,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.2107,
+      "confidence": 0.0826,
       "primary_layer": "xgboost",
       "evidence": "No text match on 2 recent images | Metadata: 70% open (no nudge) | Score: 0.45",
       "detail": "No text match on 2 recent images | Metadata: 70% open (no nudge) | Score: 0.45",
@@ -23330,12 +24335,12 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2107,
-          "description": "Metamodel score (logit=-1.32)"
+          "weight": 0.0826,
+          "description": "Metamodel score (logit=-2.41)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
@@ -23345,17 +24350,30 @@
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2918,
+          "weight": 0.1474,
           "description": "XGBoost: 71% (signal=+0.21)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Isla Pilipina",
@@ -23445,7 +24463,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.3106,
+      "confidence": 0.0595,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | No text match on 7 recent images | Metadata: 70% open (no nudge) | Score: 0.45",
       "detail": "Website: alive | No text match on 7 recent images | Metadata: 70% open (no nudge) | Score: 0.45",
@@ -24149,32 +25167,51 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.3106,
-          "description": "Metamodel score (logit=-0.80)"
+          "weight": 0.0595,
+          "description": "Metamodel score (logit=-2.76)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2834,
+          "weight": 0.1432,
           "description": "XGBoost: 70% (signal=+0.20)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "verified",
+      "name": "Isla Pilipina",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 773-271-2988",
+      "url": "islapilipina.com"
+    }
   },
   {
     "name": "Rise Sushi & Sake Lounge",
@@ -24258,7 +25295,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1253,
+      "confidence": 0.0394,
       "primary_layer": "xgboost",
       "evidence": "Website: redirected (Redirects to different domain: shinerestaurant.com) | No text match on 6 recent images | Metadata: 72% open (no nudge) | Score: 0.25",
       "detail": "Website: redirected (Redirects to different domain: shinerestaurant.com) | No text match on 6 recent images | Metadata: 72% open (no nudge) | Score: 0.25",
@@ -24824,32 +25861,51 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1253,
-          "description": "Metamodel score (logit=-1.94)"
+          "weight": 0.0394,
+          "description": "Metamodel score (logit=-3.19)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.7446,
+          "weight": -0.9414,
           "description": "Website: redirect (signal=-0.7)"
         },
         {
           "signal": "text",
-          "weight": 0.0369,
+          "weight": 0.0809,
           "description": "Text: partial_match (signal=+0.5)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3622,
+          "weight": 0.183,
           "description": "XGBoost: 76% (signal=+0.26)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0668,
+          "description": "TomTom: verified match=1.0 (signal=+1.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "verified",
+      "name": "Rise Sushi & Sake Lounge",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 773-525-3535",
+      "url": "www.risesushi.com/"
+    }
   },
   {
     "name": "Czech Plaza Restaurant",
@@ -24921,7 +25977,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.0842,
+      "confidence": 0.0396,
       "primary_layer": "xgboost",
       "evidence": "Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 4 recent images | Metadata: 28% open (nudge -0.04) | Score: 0.31",
       "detail": "Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 4 recent images | Metadata: 28% open (nudge -0.04) | Score: 0.31",
@@ -25603,32 +26659,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.0842,
-          "description": "Metamodel score (logit=-2.39)"
+          "weight": 0.0396,
+          "description": "Metamodel score (logit=-3.19)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": -0.4547,
+          "weight": -0.2297,
           "description": "XGBoost: 17% (signal=-0.33)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "iNG Restaurant",
@@ -25697,7 +26766,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.0696,
+      "confidence": 0.0509,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: mismatch (\"Next Restaurant\") | Website: redirected (Redirects to different domain: safebrowse.io) | No text match on 2 recent images | Metadata: 66% open (no nudge) | Score: 0.00",
       "detail": "Foursquare: mismatch (\"Next Restaurant\") | Website: redirected (Redirects to different domain: safebrowse.io) | No text match on 2 recent images | Metadata: 66% open (no nudge) | Score: 0.00",
@@ -25879,32 +26948,51 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.0696,
-          "description": "Metamodel score (logit=-2.59)"
+          "weight": 0.0509,
+          "description": "Metamodel score (logit=-2.93)"
         },
         {
           "signal": "foursquare",
-          "weight": -1.0961,
+          "weight": -0.9498,
           "description": "Foursquare: mismatch (signal=-0.5)"
         },
         {
           "signal": "website",
-          "weight": -0.7446,
+          "weight": -0.9414,
           "description": "Website: redirect (signal=-0.7)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2031,
+          "weight": 0.1026,
           "description": "XGBoost: 65% (signal=+0.15)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: verified match=0.3 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "verified",
+      "name": "Next Restaurant",
+      "match_score": 0.3,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 312-226-0858",
+      "url": "www.nextrestaurant.com/"
+    }
   },
   {
     "name": "Mongolian Cuisine",
@@ -25984,8 +27072,8 @@
       "detail": "DNS resolution failed \u2014 domain does not exist"
     },
     "vision": {
-      "prediction": "open",
-      "confidence": 0.762,
+      "prediction": "not_open",
+      "confidence": 0.3536,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 4 recent images | Metadata: 68% open (no nudge) | Score: 0.65",
       "detail": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 4 recent images | Metadata: 68% open (no nudge) | Score: 0.65",
@@ -26599,32 +27687,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.762,
-          "description": "Metamodel score (logit=+1.16)"
+          "weight": 0.3536,
+          "description": "Metamodel score (logit=-0.60)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2453,
+          "weight": 0.1239,
           "description": "XGBoost: 68% (signal=+0.18)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "DFworkroom",
@@ -26692,8 +27793,8 @@
       "detail": "DNS resolution failed \u2014 domain does not exist"
     },
     "vision": {
-      "prediction": "open",
-      "confidence": 0.7937,
+      "prediction": "not_open",
+      "confidence": 0.375,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 2 recent images | Metadata: 80% open (no nudge) | Score: 0.65",
       "detail": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 2 recent images | Metadata: 80% open (no nudge) | Score: 0.65",
@@ -26822,32 +27923,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7937,
-          "description": "Metamodel score (logit=+1.35)"
+          "weight": 0.375,
+          "description": "Metamodel score (logit=-0.51)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.429,
+          "weight": 0.2167,
           "description": "XGBoost: 81% (signal=+0.31)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "tomtom": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Anmol Barbecue Restaurant",
@@ -26885,7 +27999,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1291,
+      "confidence": 0.49,
       "primary_layer": "website",
       "evidence": "Website: parked | No street-level images",
       "layers": {
@@ -26950,17 +28064,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1291,
-          "description": "Metamodel score (logit=-1.91)"
+          "weight": 0.49,
+          "description": "Metamodel score (logit=-0.04)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.5319,
+          "weight": -0.6724,
           "description": "Website: parked (signal=-0.5)"
         },
         {
@@ -26970,8 +28084,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.2205,
+          "weight": 0.1114,
           "description": "XGBoost: 66% (signal=+0.16)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: verified match=0.4 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.3191,
+          "description": "Yelp: 339 reviews (signal=+0.77)"
         }
       ]
     },
@@ -26983,6 +28107,15 @@
       "yelp_rating": 3.9,
       "yelp_review_count": 339,
       "yelp_url": "https://www.yelp.com/biz/anmol-barbecue-chicago?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Anmol BBQ Restaurant",
+      "match_score": 0.4,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 773-508-5050",
+      "url": "www.eatanmol.com"
     }
   },
   {
@@ -27021,7 +28154,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.3465,
+      "confidence": 0.2654,
       "primary_layer": "website",
       "evidence": "Website: alive | No street-level images",
       "layers": {
@@ -27086,17 +28219,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.3465,
-          "description": "Metamodel score (logit=-0.63)"
+          "weight": 0.2654,
+          "description": "Metamodel score (logit=-1.02)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
@@ -27106,8 +28239,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.4315,
+          "weight": 0.218,
           "description": "XGBoost: 81% (signal=+0.31)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -0.0835,
+          "description": "Yelp: 8 reviews (signal=-0.05)"
         }
       ]
     },
@@ -27119,6 +28262,9 @@
       "yelp_rating": 1.9,
       "yelp_review_count": 8,
       "yelp_url": "https://www.yelp.com/biz/dakota-watch-company-norridge?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -27157,7 +28303,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.3469,
+      "confidence": 0.3084,
       "primary_layer": "website",
       "evidence": "Website: alive | No street-level images",
       "layers": {
@@ -27222,17 +28368,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.3469,
-          "description": "Metamodel score (logit=-0.63)"
+          "weight": 0.3084,
+          "description": "Metamodel score (logit=-0.81)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
@@ -27242,8 +28388,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.4333,
+          "weight": 0.2189,
           "description": "XGBoost: 81% (signal=+0.31)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.126,
+          "description": "Yelp: 14 reviews (signal=+0.07)"
         }
       ]
     },
@@ -27255,6 +28411,9 @@
       "yelp_rating": 4.6,
       "yelp_review_count": 14,
       "yelp_url": "https://www.yelp.com/biz/rocios-flower-and-gift-shop-chicago-2?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -27292,8 +28451,8 @@
       "detail": "Website responding (HTTP 200)"
     },
     "vision": {
-      "prediction": "not_open",
-      "confidence": 0.3253,
+      "prediction": "open",
+      "confidence": 0.5719,
       "primary_layer": "website",
       "evidence": "Website: alive | No street-level images",
       "layers": {
@@ -27358,17 +28517,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.3253,
-          "description": "Metamodel score (logit=-0.73)"
+          "weight": 0.5719,
+          "description": "Metamodel score (logit=+0.29)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
@@ -27378,8 +28537,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.3362,
+          "weight": 0.1698,
           "description": "XGBoost: 74% (signal=+0.24)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.2721,
+          "description": "Yelp: 299 reviews (signal=+0.74)"
         }
       ]
     },
@@ -27391,6 +28560,9 @@
       "yelp_rating": 3.9,
       "yelp_review_count": 299,
       "yelp_url": "https://www.yelp.com/biz/big-boss-spicy-fried-chicken-chicago?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -27429,7 +28601,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1621,
+      "confidence": 0.3694,
       "primary_layer": "website",
       "evidence": "Website: dead | No street-level images",
       "layers": {
@@ -27494,17 +28666,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1621,
-          "description": "Metamodel score (logit=-1.64)"
+          "weight": 0.3694,
+          "description": "Metamodel score (logit=-0.53)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
@@ -27514,8 +28686,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.2738,
+          "weight": 0.1384,
           "description": "XGBoost: 70% (signal=+0.20)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.5283,
+          "description": "Yelp: 41 reviews (signal=+0.31)"
         }
       ]
     },
@@ -27527,6 +28709,9 @@
       "yelp_rating": 4.0,
       "yelp_review_count": 41,
       "yelp_url": "https://www.yelp.com/biz/taqueria-el-guero-chicago-5?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -27565,7 +28750,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1683,
+      "confidence": 0.0593,
       "primary_layer": "website",
       "evidence": "Website: dead | No street-level images",
       "layers": {
@@ -27630,17 +28815,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1683,
-          "description": "Metamodel score (logit=-1.60)"
+          "weight": 0.0593,
+          "description": "Metamodel score (logit=-2.76)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
@@ -27650,8 +28835,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.3193,
+          "weight": 0.1613,
           "description": "XGBoost: 73% (signal=+0.23)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -27663,6 +28858,9 @@
       "yelp_rating": 0.0,
       "yelp_review_count": 0,
       "yelp_url": "https://www.yelp.com/biz/bonchon-melrose-park?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   }
 ]

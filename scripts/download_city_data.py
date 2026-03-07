@@ -31,10 +31,10 @@ CITIES = {
         'bbox': (-87.85, -87.52, 41.65, 42.02),
         'output': 'chicago_places.parquet',
     },
-    'nyc': {
-        'name': 'New York City',
-        'bbox': (-74.05, -73.90, 40.68, 40.82),
-        'output': 'nyc_places.parquet',
+    'miami': {
+        'name': 'Miami',
+        'bbox': (-80.22, -80.12, 25.74, 25.82),
+        'output': 'miami_places.parquet',
     },
 }
 

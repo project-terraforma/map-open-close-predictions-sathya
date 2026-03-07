@@ -659,14 +659,22 @@ def analyze_location(location):
     # learned logistic regression weights (trained with LOCO-CV, 82.5% accuracy).
     import math
 
-    # Metamodel weights (learned from logistic regression over 228 labeled samples)
+    # Metamodel weights (learned from logistic regression with 6 signals + interactions)
     META_WEIGHTS = {
-        'foursquare': 2.1922,
-        'website': 1.0637,
-        'text': 0.0738,
-        'xgboost': 1.3851,
+        'foursquare': 1.8997,
+        'website': 1.3448,
+        'text': 0.1617,
+        'xgboost': 0.6998,
+        'tomtom': -0.0668,
+        'yelp_reviews': 1.7241,
+        'fsq_verified_web_dead': -0.9368,
+        'fsq_no_data': -0.7736,
+        'fsq_nodata_web_alive': -1.0269,
+        'both_dirs_verified': 0.5090,
+        'both_dirs_missing': -0.0729,
+        'fsq_verified_no_yelp': -0.1488,
     }
-    META_INTERCEPT = -0.9401
+    META_INTERCEPT = 0.6184
 
     evidence_parts = []
     primary_layer = "xgboost"
@@ -770,12 +778,57 @@ def analyze_location(location):
 
     score_breakdown.append({"signal": "xgboost", "weight": round(xgb_centered * META_WEIGHTS['xgboost'], 4), "description": f"Metadata: {xgb_score:.0%} open (signal={xgb_centered:+.2f})"})
 
+    # Signal 5: TomTom directory
+    tt = location.get("tomtom", {})
+    tt_status = tt.get("status", "no_data")
+    tt_match = tt.get("match_score", 0.0)
+    if tt_status == 'verified' and tt_match >= 0.8:
+        tt_signal = 1.0
+        evidence_parts.append(f"TomTom: verified (match={tt_match:.1f})")
+    elif tt_status == 'verified' and tt_match >= 0.5:
+        tt_signal = 0.3
+        evidence_parts.append(f"TomTom: weak match ({tt_match:.1f})")
+    else:
+        tt_signal = 0.0
+        evidence_parts.append("TomTom: no data")
+
+    score_breakdown.append({"signal": "tomtom", "weight": round(tt_signal * META_WEIGHTS['tomtom'], 4), "description": f"TomTom: {tt_status} match={tt_match:.1f} (signal={tt_signal:+.1f})"})
+
+    # Signal 6: Yelp review count (log-scaled)
+    yelp_data = location.get("yelp", {})
+    yelp_reviews = yelp_data.get("yelp_review_count", 0)
+    if yelp_reviews > 0:
+        yelp_signal = min(1.0, (math.log10(yelp_reviews) - 1.0) / 2.0)
+        evidence_parts.append(f"Yelp: {yelp_reviews} reviews")
+    else:
+        yelp_signal = -1.0
+        evidence_parts.append("Yelp: no reviews")
+
+    score_breakdown.append({"signal": "yelp", "weight": round(yelp_signal * META_WEIGHTS['yelp_reviews'], 4), "description": f"Yelp: {yelp_reviews} reviews (signal={yelp_signal:+.2f})"})
+
+    # Interaction features
+    fsq_verified_web_dead = 1.0 if (fsq_status == 'verified' and ws_status == 'dead') else 0.0
+    fsq_no_data_flag = 1.0 if fsq_status == 'no_data' else 0.0
+    fsq_nodata_web_alive = fsq_no_data_flag * (1.0 if ws_status == 'alive' else 0.0)
+    tt_strong = tt_status == 'verified' and tt_match >= 0.8
+    both_dirs_verified = 1.0 if (fsq_status == 'verified' and tt_strong) else 0.0
+    both_dirs_missing = 1.0 if (fsq_status == 'no_data' and not tt_strong) else 0.0
+    fsq_verified_no_yelp = 1.0 if (fsq_status == 'verified' and yelp_reviews == 0) else 0.0
+
     # ── Metamodel: sigmoid(w·x + b) ──
     logit = (
         META_WEIGHTS['foursquare'] * fsq_signal +
         META_WEIGHTS['website'] * ws_signal +
         META_WEIGHTS['text'] * text_signal +
         META_WEIGHTS['xgboost'] * xgb_centered +
+        META_WEIGHTS['tomtom'] * tt_signal +
+        META_WEIGHTS['yelp_reviews'] * yelp_signal +
+        META_WEIGHTS['fsq_verified_web_dead'] * fsq_verified_web_dead +
+        META_WEIGHTS['fsq_no_data'] * fsq_no_data_flag +
+        META_WEIGHTS['fsq_nodata_web_alive'] * fsq_nodata_web_alive +
+        META_WEIGHTS['both_dirs_verified'] * both_dirs_verified +
+        META_WEIGHTS['both_dirs_missing'] * both_dirs_missing +
+        META_WEIGHTS['fsq_verified_no_yelp'] * fsq_verified_no_yelp +
         META_INTERCEPT
     )
     open_score = 1.0 / (1.0 + math.exp(-logit))

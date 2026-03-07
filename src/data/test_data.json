@@ -58,8 +58,8 @@
       }
     ],
     "vision": {
-      "prediction": "open",
-      "confidence": 0.7929,
+      "prediction": "not_open",
+      "confidence": 0.3745,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 2 recent images | Metadata: 81% open (no nudge) | Score: 0.65",
       "detail": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 2 recent images | Metadata: 81% open (no nudge) | Score: 0.65",
@@ -335,28 +335,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7929,
-          "description": "Metamodel score (logit=+1.34)"
+          "weight": 0.3745,
+          "description": "Metamodel score (logit=-0.51)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.4245,
+          "weight": 0.2145,
           "description": "XGBoost: 81% (signal=+0.31)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -366,6 +376,9 @@
       "status": "dead",
       "status_code": null,
       "detail": "DNS resolution failed \u2014 domain does not exist"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -452,7 +465,7 @@
     ],
     "vision": {
       "prediction": "open",
-      "confidence": 0.7839,
+      "confidence": 0.932,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 6 recent images | Metadata: 77% open (no nudge) | Score: 0.65",
       "detail": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 6 recent images | Metadata: 77% open (no nudge) | Score: 0.65",
@@ -813,28 +826,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7839,
-          "description": "Metamodel score (logit=+1.29)"
+          "weight": 0.932,
+          "description": "Metamodel score (logit=+2.62)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3705,
+          "weight": 0.1872,
           "description": "XGBoost: 77% (signal=+0.27)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.2856,
+          "description": "Yelp: 310 reviews (signal=+0.75)"
         }
       ]
     },
@@ -852,6 +875,9 @@
       "status": "dead",
       "status_code": null,
       "detail": "DNS resolution failed \u2014 domain does not exist"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -938,7 +964,7 @@
     ],
     "vision": {
       "prediction": "open",
-      "confidence": 0.7327,
+      "confidence": 0.8662,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 6 recent images | Metadata: 57% open (no nudge) | Score: 0.65",
       "detail": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 6 recent images | Metadata: 57% open (no nudge) | Score: 0.65",
@@ -1532,28 +1558,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7327,
-          "description": "Metamodel score (logit=+1.01)"
+          "weight": 0.8662,
+          "description": "Metamodel score (logit=+1.87)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.0903,
+          "weight": 0.0456,
           "description": "XGBoost: 57% (signal=+0.07)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.677,
+          "description": "Yelp: 61 reviews (signal=+0.39)"
         }
       ]
     },
@@ -1571,6 +1607,9 @@
       "status": "dead",
       "status_code": null,
       "detail": "DNS resolution failed \u2014 domain does not exist"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -1633,7 +1672,7 @@
     ],
     "vision": {
       "prediction": "open",
-      "confidence": 0.8944,
+      "confidence": 0.9935,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No text match on 2 recent images | Metadata: 76% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | Website: alive | No text match on 2 recent images | Metadata: 76% open (no nudge) | Score: 0.75",
@@ -1781,28 +1820,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8944,
-          "description": "Metamodel score (logit=+2.14)"
+          "weight": 0.9935,
+          "description": "Metamodel score (logit=+5.03)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3669,
+          "weight": 0.1854,
           "description": "XGBoost: 76% (signal=+0.26)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.6863,
+          "description": "Yelp: 904 reviews (signal=+0.98)"
         }
       ]
     },
@@ -1820,6 +1869,9 @@
       "status": "alive",
       "status_code": 200,
       "detail": "Website responding (HTTP 200)"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -1882,7 +1934,7 @@
     ],
     "vision": {
       "prediction": "open",
-      "confidence": 0.8399,
+      "confidence": 0.969,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Text: partial match | Metadata: 77% open (no nudge) | Score: 0.90",
       "detail": "Foursquare: verified | Text: partial match | Metadata: 77% open (no nudge) | Score: 0.90",
@@ -2628,12 +2680,12 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8399,
-          "description": "Metamodel score (logit=+1.66)"
+          "weight": 0.969,
+          "description": "Metamodel score (logit=+3.44)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
@@ -2643,13 +2695,23 @@
         },
         {
           "signal": "text",
-          "weight": 0.0369,
+          "weight": 0.0809,
           "description": "Text: partial_match (signal=+0.5)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3684,
+          "weight": 0.1861,
           "description": "XGBoost: 77% (signal=+0.27)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.6581,
+          "description": "Yelp: 58 reviews (signal=+0.38)"
         }
       ]
     },
@@ -2667,6 +2729,9 @@
       "status": "no_url",
       "status_code": null,
       "detail": "No URL in Overture"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -2716,7 +2781,7 @@
     "current_gallery": [],
     "vision": {
       "prediction": "open",
-      "confidence": 0.891,
+      "confidence": 0.9565,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No street-level images",
       "layers": {
@@ -2781,17 +2846,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.891,
-          "description": "Metamodel score (logit=+2.10)"
+          "weight": 0.9565,
+          "description": "Metamodel score (logit=+3.09)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
@@ -2801,8 +2866,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.3173,
+          "weight": 0.1603,
           "description": "XGBoost: 73% (signal=+0.23)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -0.2595,
+          "description": "Yelp: 5 reviews (signal=-0.15)"
         }
       ]
     },
@@ -2820,6 +2895,9 @@
       "status": "alive",
       "status_code": 200,
       "detail": "Website responding (HTTP 200)"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -2900,7 +2978,7 @@
     ],
     "vision": {
       "prediction": "open",
-      "confidence": 0.8919,
+      "confidence": 0.98,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | Text: full match | Metadata: 68% open (no nudge) | Score: 0.90",
       "detail": "Foursquare: verified | Website: alive | Text: full match | Metadata: 68% open (no nudge) | Score: 0.90",
@@ -3464,28 +3542,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8919,
-          "description": "Metamodel score (logit=+2.11)"
+          "weight": 0.98,
+          "description": "Metamodel score (logit=+3.89)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": 0.0738,
+          "weight": 0.1617,
           "description": "Text: full_match (signal=+1.0)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2528,
+          "weight": 0.1277,
           "description": "XGBoost: 68% (signal=+0.18)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.4113,
+          "description": "Yelp: 30 reviews (signal=+0.24)"
         }
       ]
     },
@@ -3503,6 +3591,9 @@
       "status": "alive",
       "status_code": 200,
       "detail": "Website responding (HTTP 200)"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -3595,7 +3686,7 @@
     ],
     "vision": {
       "prediction": "open",
-      "confidence": 0.7774,
+      "confidence": 0.9046,
       "primary_layer": "text",
       "evidence": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | Closure text: \"RETAIL FOR LEASE T.4\" | No text match on 7 recent images | Metadata: 74% open (no nudge) | Score: 0.35",
       "detail": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | Closure text: \"RETAIL FOR LEASE T.4\" | No text match on 7 recent images | Metadata: 74% open (no nudge) | Score: 0.35",
@@ -3984,28 +4075,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7774,
-          "description": "Metamodel score (logit=+1.25)"
+          "weight": 0.9046,
+          "description": "Metamodel score (logit=+2.25)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3323,
+          "weight": 0.1679,
           "description": "XGBoost: 74% (signal=+0.24)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.9365,
+          "description": "Yelp: 122 reviews (signal=+0.54)"
         }
       ]
     },
@@ -4023,6 +4124,9 @@
       "status": "dead",
       "status_code": null,
       "detail": "DNS resolution failed \u2014 domain does not exist"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -4115,7 +4219,7 @@
     ],
     "vision": {
       "prediction": "open",
-      "confidence": 0.8889,
+      "confidence": 0.989,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | Text: partial match | Metadata: 69% open (no nudge) | Score: 0.90",
       "detail": "Foursquare: verified | Website: alive | Text: partial match | Metadata: 69% open (no nudge) | Score: 0.90",
@@ -4616,28 +4720,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8889,
-          "description": "Metamodel score (logit=+2.08)"
+          "weight": 0.989,
+          "description": "Metamodel score (logit=+4.50)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": 0.0369,
+          "weight": 0.0809,
           "description": "Text: partial_match (signal=+0.5)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.259,
+          "weight": 0.1309,
           "description": "XGBoost: 69% (signal=+0.19)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.0944,
+          "description": "Yelp: 186 reviews (signal=+0.63)"
         }
       ]
     },
@@ -4655,6 +4769,9 @@
       "status": "alive",
       "status_code": 200,
       "detail": "Website responding (HTTP 200)"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -4729,7 +4846,7 @@
     ],
     "vision": {
       "prediction": "open",
-      "confidence": 0.8906,
+      "confidence": 0.8231,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | Text: partial match (10yr old) | Metadata: 70% open (no nudge) | Score: 0.80",
       "detail": "Foursquare: verified | Website: alive | Text: partial match (10yr old) | Metadata: 70% open (no nudge) | Score: 0.80",
@@ -5023,28 +5140,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8906,
-          "description": "Metamodel score (logit=+2.10)"
+          "weight": 0.8231,
+          "description": "Metamodel score (logit=+1.54)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": 0.0369,
+          "weight": 0.0809,
           "description": "Text: partial_match (signal=+0.5)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2756,
+          "weight": 0.1393,
           "description": "XGBoost: 70% (signal=+0.20)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -5054,6 +5181,9 @@
       "status": "alive",
       "status_code": 200,
       "detail": "Website responding (HTTP 200)"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -5119,7 +5249,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.3054,
+      "confidence": 0.414,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | No text match on 4 recent images | Metadata: 69% open (no nudge) | Score: 0.45",
       "detail": "Website: alive | No text match on 4 recent images | Metadata: 69% open (no nudge) | Score: 0.45",
@@ -5248,28 +5378,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.3054,
-          "description": "Metamodel score (logit=-0.82)"
+          "weight": 0.414,
+          "description": "Metamodel score (logit=-0.35)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2589,
+          "weight": 0.1308,
           "description": "XGBoost: 69% (signal=+0.19)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.7065,
+          "description": "Yelp: 66 reviews (signal=+0.41)"
         }
       ]
     },
@@ -5287,6 +5427,9 @@
       "status": "alive",
       "status_code": 200,
       "detail": "Website responding (HTTP 200)"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -5372,8 +5515,8 @@
       }
     ],
     "vision": {
-      "prediction": "not_open",
-      "confidence": 0.2432,
+      "prediction": "open",
+      "confidence": 0.8236,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: mismatch (\"HD Rice Noodle\") | Website: alive | Text: partial match (9yr old) | Metadata: 74% open (no nudge) | Score: 0.25",
       "detail": "Foursquare: mismatch (\"HD Rice Noodle\") | Website: alive | Text: partial match (9yr old) | Metadata: 74% open (no nudge) | Score: 0.25",
@@ -7123,28 +7266,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2432,
-          "description": "Metamodel score (logit=-1.14)"
+          "weight": 0.8236,
+          "description": "Metamodel score (logit=+1.54)"
         },
         {
           "signal": "foursquare",
-          "weight": -1.0961,
+          "weight": -0.9498,
           "description": "Foursquare: mismatch (signal=-0.5)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": 0.0369,
+          "weight": 0.0809,
           "description": "Text: partial_match (signal=+0.5)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3323,
+          "weight": 0.1679,
           "description": "XGBoost: 74% (signal=+0.24)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.9515,
+          "description": "Yelp: 127 reviews (signal=+0.55)"
         }
       ]
     },
@@ -7162,6 +7315,9 @@
       "status": "alive",
       "status_code": 200,
       "detail": "Website responding (HTTP 200)"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -7227,7 +7383,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.3062,
+      "confidence": 0.0636,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | No text match on 4 recent images | Metadata: 65% open (no nudge) | Score: 0.45",
       "detail": "Website: alive | No text match on 4 recent images | Metadata: 65% open (no nudge) | Score: 0.45",
@@ -7431,28 +7587,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.3062,
-          "description": "Metamodel score (logit=-0.82)"
+          "weight": 0.0636,
+          "description": "Metamodel score (logit=-2.69)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": 0.0369,
+          "weight": 0.0809,
           "description": "Text: partial_match (signal=+0.5)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2111,
+          "weight": 0.1066,
           "description": "XGBoost: 65% (signal=+0.15)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -7470,6 +7636,9 @@
       "status": "alive",
       "status_code": 200,
       "detail": "Website responding (HTTP 200)"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -7546,8 +7715,8 @@
       }
     ],
     "vision": {
-      "prediction": "not_open",
-      "confidence": 0.1562,
+      "prediction": "open",
+      "confidence": 0.6488,
       "primary_layer": "xgboost",
       "evidence": "Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 6 recent images | Metadata: 68% open (no nudge) | Score: 0.35",
       "detail": "Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 6 recent images | Metadata: 68% open (no nudge) | Score: 0.35",
@@ -7825,28 +7994,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1562,
-          "description": "Metamodel score (logit=-1.69)"
+          "weight": 0.6488,
+          "description": "Metamodel score (logit=+0.61)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2446,
+          "weight": 0.1236,
           "description": "XGBoost: 68% (signal=+0.18)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.7241,
+          "description": "Yelp: 1747 reviews (signal=+1.00)"
         }
       ]
     },
@@ -7864,6 +8043,9 @@
       "status": "dead",
       "status_code": null,
       "detail": "DNS resolution failed \u2014 domain does not exist"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -7917,7 +8099,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.2263,
+      "confidence": 0.2905,
       "primary_layer": "xgboost",
       "evidence": "Text: partial match (9yr old) | Metadata: 74% open (no nudge) | Score: 0.50",
       "detail": "Text: partial match (9yr old) | Metadata: 74% open (no nudge) | Score: 0.50",
@@ -8395,12 +8577,12 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2263,
-          "description": "Metamodel score (logit=-1.23)"
+          "weight": 0.2905,
+          "description": "Metamodel score (logit=-0.89)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
@@ -8410,13 +8592,23 @@
         },
         {
           "signal": "text",
-          "weight": 0.0369,
+          "weight": 0.0809,
           "description": "Text: partial_match (signal=+0.5)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3313,
+          "weight": 0.1674,
           "description": "XGBoost: 74% (signal=+0.24)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -0.343,
+          "description": "Yelp: 4 reviews (signal=-0.20)"
         }
       ]
     },
@@ -8434,6 +8626,9 @@
       "status": "no_url",
       "status_code": null,
       "detail": "No URL in Overture"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -8508,7 +8703,7 @@
     ],
     "vision": {
       "prediction": "open",
-      "confidence": 0.8881,
+      "confidence": 0.8213,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | Text: partial match (10yr old) | Metadata: 68% open (no nudge) | Score: 0.80",
       "detail": "Foursquare: verified | Website: alive | Text: partial match (10yr old) | Metadata: 68% open (no nudge) | Score: 0.80",
@@ -9324,28 +9519,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8881,
-          "description": "Metamodel score (logit=+2.07)"
+          "weight": 0.8213,
+          "description": "Metamodel score (logit=+1.53)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": 0.0369,
+          "weight": 0.0809,
           "description": "Text: partial_match (signal=+0.5)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2511,
+          "weight": 0.1269,
           "description": "XGBoost: 68% (signal=+0.18)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -9355,6 +9560,9 @@
       "status": "alive",
       "status_code": 200,
       "detail": "Website responding (HTTP 200)"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -9440,8 +9648,8 @@
       }
     ],
     "vision": {
-      "prediction": "open",
-      "confidence": 0.7755,
+      "prediction": "not_open",
+      "confidence": 0.3828,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (Page not found (404)) | Text: partial match | Metadata: 69% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | Website: dead (Page not found (404)) | Text: partial match | Metadata: 69% open (no nudge) | Score: 0.75",
@@ -9882,28 +10090,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7755,
-          "description": "Metamodel score (logit=+1.24)"
+          "weight": 0.3828,
+          "description": "Metamodel score (logit=-0.48)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": 0.0369,
+          "weight": 0.0809,
           "description": "Text: partial_match (signal=+0.5)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.27,
+          "weight": 0.1364,
           "description": "XGBoost: 69% (signal=+0.19)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -9913,6 +10131,9 @@
       "status": "dead",
       "status_code": 404,
       "detail": "Page not found (404)"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -9993,7 +10214,7 @@
     ],
     "vision": {
       "prediction": "open",
-      "confidence": 0.8882,
+      "confidence": 0.8213,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No text match on 5 recent images | Metadata: 68% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | Website: alive | No text match on 5 recent images | Metadata: 68% open (no nudge) | Score: 0.75",
@@ -10532,28 +10753,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8882,
-          "description": "Metamodel score (logit=+2.07)"
+          "weight": 0.8213,
+          "description": "Metamodel score (logit=+1.53)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": 0.0369,
+          "weight": 0.0809,
           "description": "Text: partial_match (signal=+0.5)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2513,
+          "weight": 0.1269,
           "description": "XGBoost: 68% (signal=+0.18)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -10563,6 +10794,9 @@
       "status": "alive",
       "status_code": 200,
       "detail": "Website responding (HTTP 200)"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -10611,8 +10845,8 @@
     "ground_truth": "open",
     "current_gallery": [],
     "vision": {
-      "prediction": "open",
-      "confidence": 0.7705,
+      "prediction": "not_open",
+      "confidence": 0.3648,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead | No street-level images",
       "layers": {
@@ -10677,17 +10911,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7705,
-          "description": "Metamodel score (logit=+1.21)"
+          "weight": 0.3648,
+          "description": "Metamodel score (logit=-0.55)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
@@ -10697,8 +10931,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.2784,
+          "weight": 0.1407,
           "description": "XGBoost: 70% (signal=+0.20)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -10708,6 +10952,9 @@
       "status": "dead",
       "status_code": null,
       "detail": "DNS resolution failed \u2014 domain does not exist"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -10782,7 +11029,7 @@
     ],
     "vision": {
       "prediction": "open",
-      "confidence": 0.8945,
+      "confidence": 0.8133,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No text match on 4 recent images | Metadata: 77% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | Website: alive | No text match on 4 recent images | Metadata: 77% open (no nudge) | Score: 0.75",
@@ -11023,28 +11270,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8945,
-          "description": "Metamodel score (logit=+2.14)"
+          "weight": 0.8133,
+          "description": "Metamodel score (logit=+1.47)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3687,
+          "weight": 0.1863,
           "description": "XGBoost: 77% (signal=+0.27)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -11054,6 +11311,9 @@
       "status": "alive",
       "status_code": 200,
       "detail": "Website responding (HTTP 200)"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -11110,7 +11370,7 @@
     ],
     "vision": {
       "prediction": "open",
-      "confidence": 0.8943,
+      "confidence": 0.8131,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | Metadata: 76% open (no nudge) | Score: 0.80",
       "detail": "Foursquare: verified | Website: alive | Metadata: 76% open (no nudge) | Score: 0.80",
@@ -11483,28 +11743,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8943,
-          "description": "Metamodel score (logit=+2.14)"
+          "weight": 0.8131,
+          "description": "Metamodel score (logit=+1.47)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3659,
+          "weight": 0.1849,
           "description": "XGBoost: 76% (signal=+0.26)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -11514,6 +11784,9 @@
       "status": "alive",
       "status_code": 200,
       "detail": "SSL error but HTTP works"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -11582,7 +11855,7 @@
     ],
     "vision": {
       "prediction": "open",
-      "confidence": 0.8889,
+      "confidence": 0.8219,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | Text: partial match (10yr old) | Metadata: 69% open (no nudge) | Score: 0.80",
       "detail": "Foursquare: verified | Website: alive | Text: partial match (10yr old) | Metadata: 69% open (no nudge) | Score: 0.80",
@@ -12311,28 +12584,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8889,
-          "description": "Metamodel score (logit=+2.08)"
+          "weight": 0.8219,
+          "description": "Metamodel score (logit=+1.53)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": 0.0369,
+          "weight": 0.0809,
           "description": "Text: partial_match (signal=+0.5)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.259,
+          "weight": 0.1309,
           "description": "XGBoost: 69% (signal=+0.19)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -12342,6 +12625,9 @@
       "status": "alive",
       "status_code": 200,
       "detail": "Website responding (HTTP 200)"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -12416,7 +12702,7 @@
     ],
     "vision": {
       "prediction": "open",
-      "confidence": 0.8945,
+      "confidence": 0.8132,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No text match on 4 recent images | Metadata: 77% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | Website: alive | No text match on 4 recent images | Metadata: 77% open (no nudge) | Score: 0.75",
@@ -12995,28 +13281,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8945,
-          "description": "Metamodel score (logit=+2.14)"
+          "weight": 0.8132,
+          "description": "Metamodel score (logit=+1.47)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.368,
+          "weight": 0.1859,
           "description": "XGBoost: 77% (signal=+0.27)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -13026,6 +13322,9 @@
       "status": "alive",
       "status_code": 200,
       "detail": "Website responding (HTTP 200)"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -13088,7 +13387,7 @@
     ],
     "vision": {
       "prediction": "open",
-      "confidence": 0.8944,
+      "confidence": 0.8132,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No text match on 2 recent images | Metadata: 76% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | Website: alive | No text match on 2 recent images | Metadata: 76% open (no nudge) | Score: 0.75",
@@ -13362,28 +13661,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8944,
-          "description": "Metamodel score (logit=+2.14)"
+          "weight": 0.8132,
+          "description": "Metamodel score (logit=+1.47)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3669,
+          "weight": 0.1854,
           "description": "XGBoost: 76% (signal=+0.26)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -13393,6 +13702,9 @@
       "status": "alive",
       "status_code": 200,
       "detail": "Website responding (HTTP 200)"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -13461,7 +13773,7 @@
     ],
     "vision": {
       "prediction": "open",
-      "confidence": 0.8883,
+      "confidence": 0.8083,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No text match on 3 recent images | Metadata: 72% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | Website: alive | No text match on 3 recent images | Metadata: 72% open (no nudge) | Score: 0.75",
@@ -13956,28 +14268,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8883,
-          "description": "Metamodel score (logit=+2.07)"
+          "weight": 0.8083,
+          "description": "Metamodel score (logit=+1.44)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3042,
+          "weight": 0.1537,
           "description": "XGBoost: 72% (signal=+0.22)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -13987,6 +14309,9 @@
       "status": "alive",
       "status_code": 200,
       "detail": "Website responding (HTTP 200)"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -14054,7 +14379,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8933,
+      "confidence": 0.9795,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No text match on 2 recent images | Metadata: 76% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | Website: alive | No text match on 2 recent images | Metadata: 76% open (no nudge) | Score: 0.75",
@@ -14304,28 +14629,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8933,
-          "description": "Metamodel score (logit=+2.12)"
+          "weight": 0.9795,
+          "description": "Metamodel score (logit=+3.87)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3553,
+          "weight": 0.1795,
           "description": "XGBoost: 76% (signal=+0.26)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.5283,
+          "description": "Yelp: 41 reviews (signal=+0.31)"
         }
       ]
     },
@@ -14337,6 +14672,9 @@
       "yelp_rating": 4.7,
       "yelp_review_count": 41,
       "yelp_url": "https://www.yelp.com/biz/paul-b-tan-dmd-san-francisco-2?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -14440,7 +14778,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8863,
+      "confidence": 0.9862,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | Text: partial match | Metadata: 70% open (no nudge) | Score: 0.90",
       "detail": "Foursquare: verified | Website: alive | Text: partial match | Metadata: 70% open (no nudge) | Score: 0.90",
@@ -15577,28 +15915,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8863,
-          "description": "Metamodel score (logit=+2.05)"
+          "weight": 0.9862,
+          "description": "Metamodel score (logit=+4.27)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2839,
+          "weight": 0.1435,
           "description": "XGBoost: 70% (signal=+0.20)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.9688,
+          "description": "Yelp: 133 reviews (signal=+0.56)"
         }
       ]
     },
@@ -15610,6 +15958,9 @@
       "yelp_rating": 4.4,
       "yelp_review_count": 133,
       "yelp_url": "https://www.yelp.com/biz/azalinas-san-francisco-3?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -15701,7 +16052,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8981,
+      "confidence": 0.9799,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | Text: partial match (9yr old) | Metadata: 76% open (no nudge) | Score: 0.80",
       "detail": "Foursquare: verified | Website: alive | Text: partial match (9yr old) | Metadata: 76% open (no nudge) | Score: 0.80",
@@ -16688,28 +17039,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8981,
-          "description": "Metamodel score (logit=+2.18)"
+          "weight": 0.9799,
+          "description": "Metamodel score (logit=+3.89)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": 0.0369,
+          "weight": 0.0809,
           "description": "Text: partial_match (signal=+0.5)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.355,
+          "weight": 0.1794,
           "description": "XGBoost: 76% (signal=+0.26)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.4355,
+          "description": "Yelp: 32 reviews (signal=+0.25)"
         }
       ]
     },
@@ -16721,6 +17082,9 @@
       "yelp_rating": 4.5,
       "yelp_review_count": 32,
       "yelp_url": "https://www.yelp.com/biz/ora-san-francisco?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -16800,7 +17164,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.9046,
+      "confidence": 0.9869,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No text match on 4 recent images | Metadata: 81% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | Website: alive | No text match on 4 recent images | Metadata: 81% open (no nudge) | Score: 0.75",
@@ -17120,28 +17484,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.9046,
-          "description": "Metamodel score (logit=+2.25)"
+          "weight": 0.9869,
+          "description": "Metamodel score (logit=+4.32)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": 0.0369,
+          "weight": 0.0809,
           "description": "Text: partial_match (signal=+0.5)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.4283,
+          "weight": 0.2164,
           "description": "XGBoost: 81% (signal=+0.31)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.8308,
+          "description": "Yelp: 92 reviews (signal=+0.48)"
         }
       ]
     },
@@ -17153,6 +17527,9 @@
       "yelp_rating": 4.5,
       "yelp_review_count": 92,
       "yelp_url": "https://www.yelp.com/biz/red-union-salon-san-francisco-5?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -17232,7 +17609,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8023,
+      "confidence": 0.6672,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | No text match on 4 recent images | Metadata: 62% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | No text match on 4 recent images | Metadata: 62% open (no nudge) | Score: 0.75",
@@ -17969,12 +18346,12 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8023,
-          "description": "Metamodel score (logit=+1.40)"
+          "weight": 0.6672,
+          "description": "Metamodel score (logit=+0.70)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
@@ -17984,13 +18361,23 @@
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.1633,
+          "weight": 0.0825,
           "description": "XGBoost: 62% (signal=+0.12)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -18002,6 +18389,9 @@
       "yelp_rating": 0.0,
       "yelp_review_count": 0,
       "yelp_url": "https://www.yelp.com/biz/genji-sushi-san-francisco-2?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -18075,7 +18465,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8932,
+      "confidence": 0.9835,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No text match on 3 recent images | Metadata: 76% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | Website: alive | No text match on 3 recent images | Metadata: 76% open (no nudge) | Score: 0.75",
@@ -18310,28 +18700,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8932,
-          "description": "Metamodel score (logit=+2.12)"
+          "weight": 0.9835,
+          "description": "Metamodel score (logit=+4.09)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.355,
+          "weight": 0.1794,
           "description": "XGBoost: 76% (signal=+0.26)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.7493,
+          "description": "Yelp: 74 reviews (signal=+0.43)"
         }
       ]
     },
@@ -18343,6 +18743,9 @@
       "yelp_rating": 4.7,
       "yelp_review_count": 74,
       "yelp_url": "https://www.yelp.com/biz/casa-borinquena-san-francisco-3?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -18410,7 +18813,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8866,
+      "confidence": 0.9935,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No text match on 2 recent images | Metadata: 71% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | Website: alive | No text match on 2 recent images | Metadata: 71% open (no nudge) | Score: 0.75",
@@ -18838,28 +19241,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8866,
-          "description": "Metamodel score (logit=+2.06)"
+          "weight": 0.9935,
+          "description": "Metamodel score (logit=+5.03)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.287,
+          "weight": 0.145,
           "description": "XGBoost: 71% (signal=+0.21)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.7241,
+          "description": "Yelp: 2002 reviews (signal=+1.00)"
         }
       ]
     },
@@ -18871,6 +19284,9 @@
       "yelp_rating": 3.5,
       "yelp_review_count": 2002,
       "yelp_url": "https://www.yelp.com/biz/wipeout-bar-and-grill-san-francisco-2?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -18950,7 +19366,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.7968,
+      "confidence": 0.6633,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Text: partial match | Metadata: 59% open (no nudge) | Score: 0.90",
       "detail": "Foursquare: verified | Text: partial match | Metadata: 59% open (no nudge) | Score: 0.90",
@@ -19557,12 +19973,12 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7968,
-          "description": "Metamodel score (logit=+1.37)"
+          "weight": 0.6633,
+          "description": "Metamodel score (logit=+0.68)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
@@ -19572,13 +19988,23 @@
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.1288,
+          "weight": 0.0651,
           "description": "XGBoost: 59% (signal=+0.09)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -19590,6 +20016,9 @@
       "yelp_rating": 0.0,
       "yelp_review_count": 0,
       "yelp_url": "https://www.yelp.com/biz/ragia-san-francisco?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -19657,7 +20086,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8944,
+      "confidence": 0.9915,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | Text: partial match | Metadata: 77% open (no nudge) | Score: 0.90",
       "detail": "Foursquare: verified | Website: alive | Text: partial match | Metadata: 77% open (no nudge) | Score: 0.90",
@@ -19961,28 +20390,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8944,
-          "description": "Metamodel score (logit=+2.14)"
+          "weight": 0.9915,
+          "description": "Metamodel score (logit=+4.76)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3672,
+          "weight": 0.1855,
           "description": "XGBoost: 77% (signal=+0.27)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.4193,
+          "description": "Yelp: 443 reviews (signal=+0.82)"
         }
       ]
     },
@@ -19994,6 +20433,9 @@
       "yelp_rating": 4.3,
       "yelp_review_count": 443,
       "yelp_url": "https://www.yelp.com/biz/sababa-san-francisco?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -20073,7 +20515,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.7618,
+      "confidence": 0.8999,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 4 recent images | Metadata: 68% open (no nudge) | Score: 0.65",
       "detail": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 4 recent images | Metadata: 68% open (no nudge) | Score: 0.65",
@@ -20680,28 +21122,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7618,
-          "description": "Metamodel score (logit=+1.16)"
+          "weight": 0.8999,
+          "description": "Metamodel score (logit=+2.20)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2446,
+          "weight": 0.1236,
           "description": "XGBoost: 68% (signal=+0.18)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.9272,
+          "description": "Yelp: 119 reviews (signal=+0.54)"
         }
       ]
     },
@@ -20713,6 +21165,9 @@
       "yelp_rating": 4.7,
       "yelp_review_count": 119,
       "yelp_url": "https://www.yelp.com/biz/sunshine-coast-san-francisco?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -20780,7 +21235,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.763,
+      "confidence": 0.9524,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (Client error 403) | No text match on 2 recent images | Metadata: 68% open (no nudge) | Score: 0.65",
       "detail": "Foursquare: verified | Website: dead (Client error 403) | No text match on 2 recent images | Metadata: 68% open (no nudge) | Score: 0.65",
@@ -21006,28 +21461,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.763,
-          "description": "Metamodel score (logit=+1.17)"
+          "weight": 0.9524,
+          "description": "Metamodel score (logit=+3.00)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2511,
+          "weight": 0.1269,
           "description": "XGBoost: 68% (signal=+0.18)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.7241,
+          "description": "Yelp: 1767 reviews (signal=+1.00)"
         }
       ]
     },
@@ -21039,6 +21504,9 @@
       "yelp_rating": 3.4,
       "yelp_review_count": 1767,
       "yelp_url": "https://www.yelp.com/biz/the-westin-st-francis-san-francisco-on-union-square-san-francisco?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -21118,7 +21586,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8913,
+      "confidence": 0.9798,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No text match on 4 recent images | Metadata: 74% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | Website: alive | No text match on 4 recent images | Metadata: 74% open (no nudge) | Score: 0.75",
@@ -21908,28 +22376,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8913,
-          "description": "Metamodel score (logit=+2.10)"
+          "weight": 0.9798,
+          "description": "Metamodel score (logit=+3.88)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3349,
+          "weight": 0.1692,
           "description": "XGBoost: 74% (signal=+0.24)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.5547,
+          "description": "Yelp: 44 reviews (signal=+0.32)"
         }
       ]
     },
@@ -21941,6 +22419,9 @@
       "yelp_rating": 4.6,
       "yelp_review_count": 44,
       "yelp_url": "https://www.yelp.com/biz/hermitage-banquet-hall-san-francisco?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -22026,7 +22507,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.7963,
+      "confidence": 0.9443,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (Client error 401) | Text: full match (10yr old) | Metadata: 76% open (no nudge) | Score: 0.70",
       "detail": "Foursquare: verified | Website: dead (Client error 401) | Text: full match (10yr old) | Metadata: 76% open (no nudge) | Score: 0.70",
@@ -22586,28 +23067,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7963,
-          "description": "Metamodel score (logit=+1.36)"
+          "weight": 0.9443,
+          "description": "Metamodel score (logit=+2.83)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": 0.0738,
+          "weight": 0.1617,
           "description": "Text: full_match (signal=+1.0)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3562,
+          "weight": 0.18,
           "description": "XGBoost: 76% (signal=+0.26)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.3102,
+          "description": "Yelp: 331 reviews (signal=+0.76)"
         }
       ]
     },
@@ -22619,6 +23110,9 @@
       "yelp_rating": 4.1,
       "yelp_review_count": 331,
       "yelp_url": "https://www.yelp.com/biz/red-window-san-francisco?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -22684,7 +23178,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1567,
+      "confidence": 0.0556,
       "primary_layer": "xgboost",
       "evidence": "Website: dead (Client error 403) | No text match on 4 recent images | Metadata: 68% open (no nudge) | Score: 0.35",
       "detail": "Website: dead (Client error 403) | No text match on 4 recent images | Metadata: 68% open (no nudge) | Score: 0.35",
@@ -23231,28 +23725,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1567,
-          "description": "Metamodel score (logit=-1.68)"
+          "weight": 0.0556,
+          "description": "Metamodel score (logit=-2.83)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2486,
+          "weight": 0.1256,
           "description": "XGBoost: 68% (signal=+0.18)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -23262,6 +23766,9 @@
       "status": "dead",
       "status_code": 403,
       "detail": "Client error 403"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -23327,7 +23834,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1085,
+      "confidence": 0.0333,
       "primary_layer": "xgboost",
       "evidence": "Website: redirected (Redirects to different domain: jakazimer.com) | No text match on 4 recent images | Metadata: 68% open (no nudge) | Score: 0.25",
       "detail": "Website: redirected (Redirects to different domain: jakazimer.com) | No text match on 4 recent images | Metadata: 68% open (no nudge) | Score: 0.25",
@@ -23692,28 +24199,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1085,
-          "description": "Metamodel score (logit=-2.11)"
+          "weight": 0.0333,
+          "description": "Metamodel score (logit=-3.37)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.7446,
+          "weight": -0.9414,
           "description": "Website: redirect (signal=-0.7)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2511,
+          "weight": 0.1269,
           "description": "XGBoost: 68% (signal=+0.18)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -23723,6 +24240,9 @@
       "status": "redirect",
       "status_code": 200,
       "detail": "Redirects to different domain: jakazimer.com"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -23776,7 +24296,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.157,
+      "confidence": 0.0557,
       "primary_layer": "text",
       "evidence": "Website: dead (DNS resolution failed \u2014 domain does not exist) | Text: partial match (4yr old) | Metadata: 68% open (no nudge) | Score: 0.45",
       "detail": "Website: dead (DNS resolution failed \u2014 domain does not exist) | Text: partial match (4yr old) | Metadata: 68% open (no nudge) | Score: 0.45",
@@ -24045,28 +24565,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.157,
-          "description": "Metamodel score (logit=-1.68)"
+          "weight": 0.0557,
+          "description": "Metamodel score (logit=-2.83)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2511,
+          "weight": 0.1269,
           "description": "XGBoost: 68% (signal=+0.18)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -24076,6 +24606,9 @@
       "status": "dead",
       "status_code": null,
       "detail": "DNS resolution failed \u2014 domain does not exist"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -24141,7 +24674,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1919,
+      "confidence": 0.0848,
       "primary_layer": "xgboost",
       "evidence": "No text match on 4 recent images | Metadata: 59% open (no nudge) | Score: 0.45",
       "detail": "No text match on 4 recent images | Metadata: 59% open (no nudge) | Score: 0.45",
@@ -25001,12 +25534,12 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1919,
-          "description": "Metamodel score (logit=-1.44)"
+          "weight": 0.0848,
+          "description": "Metamodel score (logit=-2.38)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
@@ -25016,13 +25549,23 @@
         },
         {
           "signal": "text",
-          "weight": 0.0369,
+          "weight": 0.0809,
           "description": "Text: partial_match (signal=+0.5)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.1229,
+          "weight": 0.0621,
           "description": "XGBoost: 59% (signal=+0.09)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -25032,6 +25575,9 @@
       "status": "no_url",
       "status_code": null,
       "detail": "No URL in Overture"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -25106,7 +25652,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.149,
+      "confidence": 0.1265,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: mismatch (\"Ai Kakou Cafe\") | No text match on 4 recent images | Metadata: 72% open (no nudge) | Score: 0.20",
       "detail": "Foursquare: mismatch (\"Ai Kakou Cafe\") | No text match on 4 recent images | Metadata: 72% open (no nudge) | Score: 0.20",
@@ -25213,12 +25759,12 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.149,
-          "description": "Metamodel score (logit=-1.74)"
+          "weight": 0.1265,
+          "description": "Metamodel score (logit=-1.93)"
         },
         {
           "signal": "foursquare",
-          "weight": -1.0961,
+          "weight": -0.9498,
           "description": "Foursquare: mismatch (signal=-0.5)"
         },
         {
@@ -25228,13 +25774,23 @@
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3085,
+          "weight": 0.1558,
           "description": "XGBoost: 72% (signal=+0.22)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -25244,6 +25800,9 @@
       "status": "no_url",
       "status_code": null,
       "detail": "No URL in Overture"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -25303,7 +25862,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.3272,
+      "confidence": 0.0614,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | No text match on 3 recent images | Metadata: 76% open (no nudge) | Score: 0.45",
       "detail": "Website: alive | No text match on 3 recent images | Metadata: 76% open (no nudge) | Score: 0.45",
@@ -25394,28 +25953,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.3272,
-          "description": "Metamodel score (logit=-0.72)"
+          "weight": 0.0614,
+          "description": "Metamodel score (logit=-2.73)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3598,
+          "weight": 0.1818,
           "description": "XGBoost: 76% (signal=+0.26)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -25425,6 +25994,9 @@
       "status": "alive",
       "status_code": 200,
       "detail": "Website responding (HTTP 200)"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -25474,7 +26046,7 @@
     "current_gallery": [],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.143,
+      "confidence": 0.1783,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: mismatch | Website: alive | No street-level images",
       "layers": {
@@ -25539,17 +26111,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.143,
-          "description": "Metamodel score (logit=-1.79)"
+          "weight": 0.1783,
+          "description": "Metamodel score (logit=-1.53)"
         },
         {
           "signal": "foursquare",
-          "weight": -1.0961,
+          "weight": -0.9498,
           "description": "Foursquare: mismatch (signal=-0.5)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
@@ -25559,8 +26131,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": -0.286,
+          "weight": -0.1445,
           "description": "XGBoost: 29% (signal=-0.21)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -25570,6 +26152,9 @@
       "status": "alive",
       "status_code": 200,
       "detail": "Website responding (HTTP 200)"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -25635,7 +26220,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1562,
+      "confidence": 0.0555,
       "primary_layer": "xgboost",
       "evidence": "Website: dead (Page not found (404)) | No text match on 4 recent images | Metadata: 68% open (no nudge) | Score: 0.35",
       "detail": "Website: dead (Page not found (404)) | No text match on 4 recent images | Metadata: 68% open (no nudge) | Score: 0.35",
@@ -26131,28 +26716,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1562,
-          "description": "Metamodel score (logit=-1.69)"
+          "weight": 0.0555,
+          "description": "Metamodel score (logit=-2.83)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2446,
+          "weight": 0.1236,
           "description": "XGBoost: 68% (signal=+0.18)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -26162,6 +26757,9 @@
       "status": "dead",
       "status_code": 404,
       "detail": "Page not found (404)"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -26221,7 +26819,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.113,
+      "confidence": 0.037,
       "primary_layer": "text",
       "evidence": "Website: redirected (Redirects to different domain: anyaelwattar.com) | Text: partial match | Metadata: 68% open (no nudge) | Score: 0.40",
       "detail": "Website: redirected (Redirects to different domain: anyaelwattar.com) | Text: partial match | Metadata: 68% open (no nudge) | Score: 0.40",
@@ -26916,28 +27514,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.113,
-          "description": "Metamodel score (logit=-2.06)"
+          "weight": 0.037,
+          "description": "Metamodel score (logit=-3.26)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.7446,
+          "weight": -0.9414,
           "description": "Website: redirect (signal=-0.7)"
         },
         {
           "signal": "text",
-          "weight": 0.0369,
+          "weight": 0.0809,
           "description": "Text: partial_match (signal=+0.5)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2446,
+          "weight": 0.1236,
           "description": "XGBoost: 68% (signal=+0.18)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -26947,6 +27555,9 @@
       "status": "redirect",
       "status_code": 200,
       "detail": "Redirects to different domain: anyaelwattar.com"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -26987,7 +27598,7 @@
     "current_gallery": [],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.33,
+      "confidence": 0.0632,
       "primary_layer": "website",
       "evidence": "Website: alive | No street-level images",
       "layers": {
@@ -27044,17 +27655,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.33,
-          "description": "Metamodel score (logit=-0.71)"
+          "weight": 0.0632,
+          "description": "Metamodel score (logit=-2.70)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
@@ -27064,8 +27675,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.3578,
+          "weight": 0.1808,
           "description": "XGBoost: 76% (signal=+0.26)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -27075,6 +27696,9 @@
       "status": "alive",
       "status_code": 200,
       "detail": "Website responding (HTTP 200)"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -27140,7 +27764,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.0822,
+      "confidence": 0.0331,
       "primary_layer": "text",
       "evidence": "Website: redirected (Redirects to different domain: desatajurhalang.id) | Text: full match | Metadata: 40% open (nudge -0.02) | Score: 0.48",
       "detail": "Website: redirected (Redirects to different domain: desatajurhalang.id) | Text: full match | Metadata: 40% open (nudge -0.02) | Score: 0.48",
@@ -28130,28 +28754,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.0822,
-          "description": "Metamodel score (logit=-2.41)"
+          "weight": 0.0331,
+          "description": "Metamodel score (logit=-3.37)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.7446,
+          "weight": -0.9414,
           "description": "Website: redirect (signal=-0.7)"
         },
         {
           "signal": "text",
-          "weight": 0.0738,
+          "weight": 0.1617,
           "description": "Text: full_match (signal=+1.0)"
         },
         {
           "signal": "xgboost",
-          "weight": -0.1441,
+          "weight": -0.0728,
           "description": "XGBoost: 40% (signal=-0.10)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -28161,6 +28795,9 @@
       "status": "redirect",
       "status_code": 200,
       "detail": "Redirects to different domain: desatajurhalang.id"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -28235,7 +28872,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1485,
+      "confidence": 0.1362,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: mismatch (\"Celeste\") | Text: partial match (10yr old) | Metadata: 68% open (no nudge) | Score: 0.25",
       "detail": "Foursquare: mismatch (\"Celeste\") | Text: partial match (10yr old) | Metadata: 68% open (no nudge) | Score: 0.25",
@@ -29075,12 +29712,12 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1485,
-          "description": "Metamodel score (logit=-1.75)"
+          "weight": 0.1362,
+          "description": "Metamodel score (logit=-1.85)"
         },
         {
           "signal": "foursquare",
-          "weight": -1.0961,
+          "weight": -0.9498,
           "description": "Foursquare: mismatch (signal=-0.5)"
         },
         {
@@ -29090,13 +29727,23 @@
         },
         {
           "signal": "text",
-          "weight": 0.0369,
+          "weight": 0.0809,
           "description": "Text: partial_match (signal=+0.5)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2528,
+          "weight": 0.1277,
           "description": "XGBoost: 68% (signal=+0.18)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -29106,6 +29753,9 @@
       "status": "no_url",
       "status_code": null,
       "detail": "No URL in Overture"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -29183,7 +29833,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1627,
+      "confidence": 0.0617,
       "primary_layer": "text",
       "evidence": "Website: dead (DNS resolution failed \u2014 domain does not exist) | Text: partial match | Metadata: 67% open (no nudge) | Score: 0.50",
       "detail": "Website: dead (DNS resolution failed \u2014 domain does not exist) | Text: partial match | Metadata: 67% open (no nudge) | Score: 0.50",
@@ -30086,28 +30736,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1627,
-          "description": "Metamodel score (logit=-1.64)"
+          "weight": 0.0617,
+          "description": "Metamodel score (logit=-2.72)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": 0.0369,
+          "weight": 0.0809,
           "description": "Text: partial_match (signal=+0.5)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.242,
+          "weight": 0.1223,
           "description": "XGBoost: 67% (signal=+0.17)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -30117,6 +30777,9 @@
       "status": "dead",
       "status_code": null,
       "detail": "DNS resolution failed \u2014 domain does not exist"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -30164,7 +30827,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1446,
+      "confidence": 0.0577,
       "primary_layer": "xgboost",
       "evidence": "Website: dead (DNS resolution failed \u2014 domain does not exist) | Metadata: 57% open (no nudge) | Score: 0.40",
       "detail": "Website: dead (DNS resolution failed \u2014 domain does not exist) | Metadata: 57% open (no nudge) | Score: 0.40",
@@ -30373,28 +31036,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1446,
-          "description": "Metamodel score (logit=-1.78)"
+          "weight": 0.0577,
+          "description": "Metamodel score (logit=-2.79)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": 0.0369,
+          "weight": 0.0809,
           "description": "Text: partial_match (signal=+0.5)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.1024,
+          "weight": 0.0517,
           "description": "XGBoost: 57% (signal=+0.07)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -30404,6 +31077,9 @@
       "status": "dead",
       "status_code": null,
       "detail": "DNS resolution failed \u2014 domain does not exist"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -30481,7 +31157,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.348,
+      "confidence": 0.0737,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | Text: full match (10yr old) | Metadata: 76% open (no nudge) | Score: 0.50",
       "detail": "Website: alive | Text: full match (10yr old) | Metadata: 76% open (no nudge) | Score: 0.50",
@@ -31327,28 +32003,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.348,
-          "description": "Metamodel score (logit=-0.63)"
+          "weight": 0.0737,
+          "description": "Metamodel score (logit=-2.53)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": 0.0738,
+          "weight": 0.1617,
           "description": "Text: full_match (signal=+1.0)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3643,
+          "weight": 0.184,
           "description": "XGBoost: 76% (signal=+0.26)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -31358,6 +32044,9 @@
       "status": "alive",
       "status_code": 200,
       "detail": "Website responding (HTTP 200)"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -31423,7 +32112,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.2177,
+      "confidence": 0.0965,
       "primary_layer": "xgboost",
       "evidence": "Text: full match (11yr old) | Metadata: 68% open (no nudge) | Score: 0.50",
       "detail": "Text: full match (11yr old) | Metadata: 68% open (no nudge) | Score: 0.50",
@@ -31762,12 +32451,12 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2177,
-          "description": "Metamodel score (logit=-1.28)"
+          "weight": 0.0965,
+          "description": "Metamodel score (logit=-2.24)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
@@ -31777,13 +32466,23 @@
         },
         {
           "signal": "text",
-          "weight": 0.0738,
+          "weight": 0.1617,
           "description": "Text: full_match (signal=+1.0)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2446,
+          "weight": 0.1236,
           "description": "XGBoost: 68% (signal=+0.18)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -31793,6 +32492,9 @@
       "status": "no_url",
       "status_code": null,
       "detail": "No URL in Overture"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -31852,7 +32554,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.204,
+      "confidence": 0.0811,
       "primary_layer": "text",
       "evidence": "Closure text: \"Rent Me Tod\" | Text: partial match | Metadata: 68% open (no nudge) | Score: 0.30",
       "detail": "Closure text: \"Rent Me Tod\" | Text: partial match | Metadata: 68% open (no nudge) | Score: 0.30",
@@ -32720,12 +33422,12 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.204,
-          "description": "Metamodel score (logit=-1.36)"
+          "weight": 0.0811,
+          "description": "Metamodel score (logit=-2.43)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
@@ -32735,13 +33437,23 @@
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2511,
+          "weight": 0.1269,
           "description": "XGBoost: 68% (signal=+0.18)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -32751,6 +33463,9 @@
       "status": "no_url",
       "status_code": null,
       "detail": "No URL in Overture"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -32828,7 +33543,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.157,
+      "confidence": 0.0557,
       "primary_layer": "xgboost",
       "evidence": "Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 6 recent images | Metadata: 68% open (no nudge) | Score: 0.35",
       "detail": "Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 6 recent images | Metadata: 68% open (no nudge) | Score: 0.35",
@@ -33938,28 +34653,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.157,
-          "description": "Metamodel score (logit=-1.68)"
+          "weight": 0.0557,
+          "description": "Metamodel score (logit=-2.83)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2511,
+          "weight": 0.1269,
           "description": "XGBoost: 68% (signal=+0.18)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -33969,6 +34694,9 @@
       "status": "dead",
       "status_code": null,
       "detail": "DNS resolution failed \u2014 domain does not exist"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -34046,7 +34774,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.3141,
+      "confidence": 0.0686,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | Text: full match (11yr old) | Metadata: 65% open (no nudge) | Score: 0.50",
       "detail": "Website: alive | Text: full match (11yr old) | Metadata: 65% open (no nudge) | Score: 0.50",
@@ -34897,28 +35625,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.3141,
-          "description": "Metamodel score (logit=-0.78)"
+          "weight": 0.0686,
+          "description": "Metamodel score (logit=-2.61)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": 0.0738,
+          "weight": 0.1617,
           "description": "Text: full_match (signal=+1.0)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2111,
+          "weight": 0.1066,
           "description": "XGBoost: 65% (signal=+0.15)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -34928,6 +35666,9 @@
       "status": "alive",
       "status_code": 200,
       "detail": "Website responding (HTTP 200)"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -34987,7 +35728,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.184,
+      "confidence": 0.0764,
       "primary_layer": "xgboost",
       "evidence": "No text match on 3 recent images | Metadata: 59% open (no nudge) | Score: 0.45",
       "detail": "No text match on 3 recent images | Metadata: 59% open (no nudge) | Score: 0.45",
@@ -35577,12 +36318,12 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.184,
-          "description": "Metamodel score (logit=-1.49)"
+          "weight": 0.0764,
+          "description": "Metamodel score (logit=-2.49)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
@@ -35592,13 +36333,23 @@
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.1229,
+          "weight": 0.0621,
           "description": "XGBoost: 59% (signal=+0.09)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -35608,6 +36359,9 @@
       "status": "no_url",
       "status_code": null,
       "detail": "No URL in Overture"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -35697,7 +36451,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1779,
+      "confidence": 0.4749,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | Text: full match (6yr old) | Metadata: 11% open (nudge -0.08) | Score: 0.42",
       "detail": "Website: alive | Text: full match (6yr old) | Metadata: 11% open (nudge -0.08) | Score: 0.42",
@@ -37006,28 +37760,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1779,
-          "description": "Metamodel score (logit=-1.53)"
+          "weight": 0.4749,
+          "description": "Metamodel score (logit=-0.10)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": 0.0738,
+          "weight": 0.1617,
           "description": "Text: full_match (signal=+1.0)"
         },
         {
           "signal": "xgboost",
-          "weight": -0.5387,
+          "weight": -0.2722,
           "description": "XGBoost: 11% (signal=-0.39)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.1623,
+          "description": "Yelp: 223 reviews (signal=+0.67)"
         }
       ]
     },
@@ -37045,6 +37809,9 @@
       "status": "alive",
       "status_code": 200,
       "detail": "Website responding (HTTP 200)"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -37104,7 +37871,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.3077,
+      "confidence": 0.0588,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | Text: partial match (8yr old) | Metadata: 69% open (no nudge) | Score: 0.50",
       "detail": "Website: alive | Text: partial match (8yr old) | Metadata: 69% open (no nudge) | Score: 0.50",
@@ -37591,28 +38358,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.3077,
-          "description": "Metamodel score (logit=-0.81)"
+          "weight": 0.0588,
+          "description": "Metamodel score (logit=-2.77)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.27,
+          "weight": 0.1364,
           "description": "XGBoost: 69% (signal=+0.19)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -37622,6 +38399,9 @@
       "status": "alive",
       "status_code": 200,
       "detail": "Website responding (HTTP 200)"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -37699,7 +38479,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1641,
+      "confidence": 0.0571,
       "primary_layer": "xgboost",
       "evidence": "Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 6 recent images | Metadata: 72% open (no nudge) | Score: 0.35",
       "detail": "Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 6 recent images | Metadata: 72% open (no nudge) | Score: 0.35",
@@ -38546,28 +39326,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1641,
-          "description": "Metamodel score (logit=-1.63)"
+          "weight": 0.0571,
+          "description": "Metamodel score (logit=-2.80)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3033,
+          "weight": 0.1533,
           "description": "XGBoost: 72% (signal=+0.22)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -38577,6 +39367,9 @@
       "status": "dead",
       "status_code": null,
       "detail": "DNS resolution failed \u2014 domain does not exist"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -38624,7 +39417,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.3024,
+      "confidence": 0.0581,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | Metadata: 68% open (no nudge) | Score: 0.50",
       "detail": "Website: alive | Metadata: 68% open (no nudge) | Score: 0.50",
@@ -38699,28 +39492,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.3024,
-          "description": "Metamodel score (logit=-0.84)"
+          "weight": 0.0581,
+          "description": "Metamodel score (logit=-2.79)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2446,
+          "weight": 0.1236,
           "description": "XGBoost: 68% (signal=+0.18)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -38730,6 +39533,9 @@
       "status": "alive",
       "status_code": 200,
       "detail": "Website responding (HTTP 200)"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -38807,7 +39613,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.157,
+      "confidence": 0.0557,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | No text match on 6 recent images | Metadata: 68% open (no nudge) | Score: 0.45",
       "detail": "Website: alive | No text match on 6 recent images | Metadata: 68% open (no nudge) | Score: 0.45",
@@ -39342,28 +40148,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.157,
-          "description": "Metamodel score (logit=-1.68)"
+          "weight": 0.0557,
+          "description": "Metamodel score (logit=-2.83)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2511,
+          "weight": 0.1269,
           "description": "XGBoost: 68% (signal=+0.18)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
@@ -39373,6 +40189,9 @@
       "status": "dead",
       "status_code": null,
       "detail": "Connection timed out"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -39458,7 +40277,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.8831,
+      "confidence": 0.9847,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: alive | No text match on 5 recent images | Metadata: 68% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | Website: alive | No text match on 5 recent images | Metadata: 68% open (no nudge) | Score: 0.75",
@@ -40229,28 +41048,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.8831,
-          "description": "Metamodel score (logit=+2.02)"
+          "weight": 0.9847,
+          "description": "Metamodel score (logit=+4.16)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2526,
+          "weight": 0.1276,
           "description": "XGBoost: 68% (signal=+0.18)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 0.8767,
+          "description": "Yelp: 104 reviews (signal=+0.51)"
         }
       ]
     },
@@ -40262,6 +41091,9 @@
       "yelp_rating": 4.0,
       "yelp_review_count": 104,
       "yelp_url": "https://www.yelp.com/biz/noodle-time-san-francisco-2?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -40332,7 +41164,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.298,
+      "confidence": 0.0575,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | No text match on 4 recent images | Metadata: 66% open (no nudge) | Score: 0.45",
       "detail": "Website: alive | No text match on 4 recent images | Metadata: 66% open (no nudge) | Score: 0.45",
@@ -40643,32 +41475,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.298,
-          "description": "Metamodel score (logit=-0.86)"
+          "weight": 0.0575,
+          "description": "Metamodel score (logit=-2.80)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2237,
+          "weight": 0.113,
           "description": "XGBoost: 66% (signal=+0.16)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "facebook": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Pizza Pino",
@@ -40753,7 +41598,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.0679,
+      "confidence": 0.0585,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: mismatch (\"Marina Pizza & Caffe\") | Website: parked domain | No text match on 5 recent images | Metadata: 47% open (no nudge) | Score: 0.05 | Closure hint: \"for rent\"",
       "detail": "Foursquare: mismatch (\"Marina Pizza & Caffe\") | Website: parked domain | No text match on 5 recent images | Metadata: 47% open (no nudge) | Score: 0.05 | Closure hint: \"for rent\"",
@@ -41375,32 +42220,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.0679,
-          "description": "Metamodel score (logit=-2.62)"
+          "weight": 0.0585,
+          "description": "Metamodel score (logit=-2.78)"
         },
         {
           "signal": "foursquare",
-          "weight": -1.0961,
+          "weight": -0.9498,
           "description": "Foursquare: mismatch (signal=-0.5)"
         },
         {
           "signal": "website",
-          "weight": -0.5319,
+          "weight": -0.6724,
           "description": "Website: parked (signal=-0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": -0.036,
+          "weight": -0.0182,
           "description": "XGBoost: 47% (signal=-0.03)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "facebook": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Fringale",
@@ -41458,7 +42316,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.3024,
+      "confidence": 0.0581,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | No text match on 2 recent images | Metadata: 68% open (no nudge) | Score: 0.45",
       "detail": "Website: alive | No text match on 2 recent images | Metadata: 68% open (no nudge) | Score: 0.45",
@@ -41648,32 +42506,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.3024,
-          "description": "Metamodel score (logit=-0.84)"
+          "weight": 0.0581,
+          "description": "Metamodel score (logit=-2.79)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2447,
+          "weight": 0.1237,
           "description": "XGBoost: 68% (signal=+0.18)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "facebook": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Loving Hut San Francisco",
@@ -41731,7 +42602,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1602,
+      "confidence": 0.0563,
       "primary_layer": "xgboost",
       "evidence": "Website: dead (Page not found (404)) | No text match on 2 recent images | Metadata: 70% open (no nudge) | Score: 0.35",
       "detail": "Website: dead (Page not found (404)) | No text match on 2 recent images | Metadata: 70% open (no nudge) | Score: 0.35",
@@ -41949,32 +42820,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1602,
-          "description": "Metamodel score (logit=-1.66)"
+          "weight": 0.0563,
+          "description": "Metamodel score (logit=-2.82)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2748,
+          "weight": 0.1388,
           "description": "XGBoost: 70% (signal=+0.20)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "facebook": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Uma Casa",
@@ -42055,8 +42939,8 @@
       "detail": "Website responding (HTTP 200)"
     },
     "vision": {
-      "prediction": "not_open",
-      "confidence": 0.3329,
+      "prediction": "open",
+      "confidence": 0.5922,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | No text match on 6 recent images | Metadata: 78% open (no nudge) | Score: 0.45",
       "detail": "Website: alive | No text match on 6 recent images | Metadata: 78% open (no nudge) | Score: 0.45",
@@ -42228,28 +43112,38 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.3329,
-          "description": "Metamodel score (logit=-0.69)"
+          "weight": 0.5922,
+          "description": "Metamodel score (logit=+0.37)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3858,
+          "weight": 0.1949,
           "description": "XGBoost: 78% (signal=+0.28)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": 1.3628,
+          "description": "Yelp: 381 reviews (signal=+0.79)"
         }
       ]
     },
@@ -42261,6 +43155,9 @@
       "yelp_rating": 4.2,
       "yelp_review_count": 381,
       "yelp_url": "https://www.yelp.com/biz/uma-casa-san-francisco?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -42327,8 +43224,8 @@
       "detail": "DNS resolution failed \u2014 domain does not exist"
     },
     "vision": {
-      "prediction": "open",
-      "confidence": 0.768,
+      "prediction": "not_open",
+      "confidence": 0.3574,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 2 recent images | Metadata: 70% open (no nudge) | Score: 0.65",
       "detail": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 2 recent images | Metadata: 70% open (no nudge) | Score: 0.65",
@@ -42553,32 +43450,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.768,
-          "description": "Metamodel score (logit=+1.20)"
+          "weight": 0.3574,
+          "description": "Metamodel score (logit=-0.59)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2787,
+          "weight": 0.1408,
           "description": "XGBoost: 70% (signal=+0.20)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "facebook": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Yoppi Yogurt",
@@ -42660,7 +43570,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.3077,
+      "confidence": 0.0588,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | No text match on 6 recent images | Metadata: 69% open (no nudge) | Score: 0.45",
       "detail": "Website: alive | No text match on 6 recent images | Metadata: 69% open (no nudge) | Score: 0.45",
@@ -43170,32 +44080,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.3077,
-          "description": "Metamodel score (logit=-0.81)"
+          "weight": 0.0588,
+          "description": "Metamodel score (logit=-2.77)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.27,
+          "weight": 0.1364,
           "description": "XGBoost: 69% (signal=+0.19)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "facebook": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Union Gent Haircutters",
@@ -43267,8 +44190,8 @@
       "detail": "DNS resolution failed \u2014 domain does not exist"
     },
     "vision": {
-      "prediction": "open",
-      "confidence": 0.7722,
+      "prediction": "not_open",
+      "confidence": 0.3602,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 3 recent images | Metadata: 72% open (no nudge) | Score: 0.65",
       "detail": "Foursquare: verified | Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 3 recent images | Metadata: 72% open (no nudge) | Score: 0.65",
@@ -43502,32 +44425,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.7722,
-          "description": "Metamodel score (logit=+1.22)"
+          "weight": 0.3602,
+          "description": "Metamodel score (logit=-0.57)"
         },
         {
           "signal": "foursquare",
-          "weight": 2.1922,
+          "weight": 1.8997,
           "description": "Foursquare: verified (signal=+1.0)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.3028,
+          "weight": 0.153,
           "description": "XGBoost: 72% (signal=+0.22)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "facebook": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Media Noche",
@@ -43606,7 +44542,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1163,
+      "confidence": 0.0896,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: mismatch (\"Counsel LLP - Media & Technology Law\") | Website: dead (Page not found (404)) | No text match on 4 recent images | Metadata: 75% open (no nudge) | Score: 0.10",
       "detail": "Foursquare: mismatch (\"Counsel LLP - Media & Technology Law\") | Website: dead (Page not found (404)) | No text match on 4 recent images | Metadata: 75% open (no nudge) | Score: 0.10",
@@ -43796,32 +44732,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1163,
-          "description": "Metamodel score (logit=-2.03)"
+          "weight": 0.0896,
+          "description": "Metamodel score (logit=-2.32)"
         },
         {
           "signal": "foursquare",
-          "weight": -1.0961,
+          "weight": -0.9498,
           "description": "Foursquare: mismatch (signal=-0.5)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.342,
+          "weight": 0.1728,
           "description": "XGBoost: 75% (signal=+0.25)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "facebook": {
+      "status": "no_data"
+    }
   },
   {
     "name": "Inle Burmese Cuisine",
@@ -43903,7 +44852,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.3024,
+      "confidence": 0.0581,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | No text match on 6 recent images | Metadata: 68% open (no nudge) | Score: 0.45",
       "detail": "Website: alive | No text match on 6 recent images | Metadata: 68% open (no nudge) | Score: 0.45",
@@ -44775,32 +45724,45 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.3024,
-          "description": "Metamodel score (logit=-0.84)"
+          "weight": 0.0581,
+          "description": "Metamodel score (logit=-2.79)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": 0.5319,
+          "weight": 0.6724,
           "description": "Website: alive (signal=+0.5)"
         },
         {
           "signal": "text",
-          "weight": -0.0148,
+          "weight": -0.0323,
           "description": "Text: no_match (signal=-0.2)"
         },
         {
           "signal": "xgboost",
-          "weight": 0.2446,
+          "weight": 0.1236,
           "description": "XGBoost: 68% (signal=+0.18)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -1.7241,
+          "description": "Yelp: 0 reviews (signal=-1.00)"
         }
       ]
     },
-    "ground_truth": "closed"
+    "ground_truth": "closed",
+    "facebook": {
+      "status": "no_data"
+    }
   },
   {
     "name": "IWC Schaffhausen Boutique",
@@ -44836,7 +45798,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1828,
+      "confidence": 0.1691,
       "primary_layer": "website",
       "evidence": "Website: dead | No street-level images",
       "layers": {
@@ -44893,17 +45855,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1828,
-          "description": "Metamodel score (logit=-1.50)"
+          "weight": 0.1691,
+          "description": "Metamodel score (logit=-1.59)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
@@ -44913,8 +45875,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.4195,
+          "weight": 0.212,
           "description": "XGBoost: 80% (signal=+0.30)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -0.6025,
+          "description": "Yelp: 2 reviews (signal=-0.35)"
         }
       ]
     },
@@ -44926,6 +45898,9 @@
       "yelp_rating": 1.0,
       "yelp_review_count": 2,
       "yelp_url": "https://www.yelp.com/biz/iwc-schaffhausen-boutique-san-francisco?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   },
   {
@@ -44962,7 +45937,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1391,
+      "confidence": 0.2249,
       "primary_layer": "website",
       "evidence": "Website: dead | No street-level images",
       "layers": {
@@ -45019,17 +45994,17 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1391,
-          "description": "Metamodel score (logit=-1.82)"
+          "weight": 0.2249,
+          "description": "Metamodel score (logit=-1.24)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.6577,
+          "weight": -0.5699,
           "description": "Foursquare: no_data (signal=-0.3)"
         },
         {
           "signal": "website",
-          "weight": -0.3191,
+          "weight": -0.4034,
           "description": "Website: dead (signal=-0.3)"
         },
         {
@@ -45039,8 +46014,18 @@
         },
         {
           "signal": "xgboost",
-          "weight": 0.0939,
+          "weight": 0.0474,
           "description": "XGBoost: 57% (signal=+0.07)"
+        },
+        {
+          "signal": "tomtom",
+          "weight": -0.0,
+          "description": "TomTom: no_data match=0.0 (signal=+0.0)"
+        },
+        {
+          "signal": "yelp",
+          "weight": -0.0835,
+          "description": "Yelp: 8 reviews (signal=-0.05)"
         }
       ]
     },
@@ -45052,6 +46037,9 @@
       "yelp_rating": 3.9,
       "yelp_review_count": 8,
       "yelp_url": "https://www.yelp.com/biz/bun-app%C3%A9tit-san-francisco?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "facebook": {
+      "status": "no_data"
     }
   }
 ]

@@ -1,6 +1,6 @@
 """
-Train a logistic regression metamodel over 4 signal scores.
-Signals: Foursquare, Website, Text/OCR, XGBoost metadata.
+Train a logistic regression metamodel over 6 signal scores.
+Signals: Foursquare, Website, Text/OCR, XGBoost metadata, TomTom, Yelp reviews.
 Evaluates per-city accuracy with Leave-One-City-Out CV.
 """
 import json
@@ -72,14 +72,41 @@ def encode_signals(loc):
     # Center around 0: positive = open, negative = closed
     xgb_centered = xgb_score - 0.5
 
+    # Signal 5: TomTom directory (only trust strong matches)
+    tt = loc.get('tomtom', {})
+    tt_status = tt.get('status', 'no_data')
+    tt_match = tt.get('match_score', 0.0)
+    if tt_status == 'verified' and tt_match >= 0.8:
+        tt_score = 1.0
+    elif tt_status == 'verified' and tt_match >= 0.5:
+        tt_score = 0.3
+    else:  # no_data or weak match (< 0.5 is unreliable)
+        tt_score = 0.0
+
+    # Signal 6: Yelp review presence (log-scaled, centered)
+    yelp = loc.get('yelp', {})
+    yelp_reviews = yelp.get('yelp_review_count', 0)
+    import math
+    # Log scale: 0 reviews -> -1.0, 10 -> 0.0, 100 -> 0.5, 1000 -> 1.0
+    if yelp_reviews > 0:
+        yelp_score = min(1.0, (math.log10(yelp_reviews) - 1.0) / 2.0)
+    else:
+        yelp_score = -1.0
+
     # Interaction features
     fsq_verified_web_dead = 1.0 if (fsq_status == 'verified' and ws_status == 'dead') else 0.0
     fsq_no_data = 1.0 if fsq_status == 'no_data' else 0.0
     web_alive = 1.0 if ws_status == 'alive' else 0.0
-    fsq_nodata_web_alive = fsq_no_data * web_alive  # open business just not on Foursquare
+    fsq_nodata_web_alive = fsq_no_data * web_alive
+    tt_strong = tt_status == 'verified' and tt_match >= 0.8
+    both_dirs_verified = 1.0 if (fsq_status == 'verified' and tt_strong) else 0.0
+    both_dirs_missing = 1.0 if (fsq_status == 'no_data' and not tt_strong) else 0.0
+    # Key interaction: Foursquare says open but no Yelp presence = ghost listing
+    fsq_verified_no_yelp = 1.0 if (fsq_status == 'verified' and yelp_reviews == 0) else 0.0
 
-    return [fsq_score, ws_score, text_score, xgb_centered,
-            fsq_verified_web_dead, fsq_no_data, fsq_nodata_web_alive]
+    return [fsq_score, ws_score, text_score, xgb_centered, tt_score, yelp_score,
+            fsq_verified_web_dead, fsq_no_data, fsq_nodata_web_alive,
+            both_dirs_verified, both_dirs_missing, fsq_verified_no_yelp]
 
 
 def main():
@@ -110,7 +137,7 @@ def main():
     unique_cities = sorted(set(cities))
 
     print(f"Loaded {len(X)} samples: {int(y.sum())} open, {int((1-y).sum())} closed")
-    print(f"Signals: Foursquare, Website, Text, XGBoost\n")
+    print(f"Signals: Foursquare, Website, Text, XGBoost, TomTom, Yelp\n")
 
     # --- Leave-One-City-Out CV ---
     print("=== Leave-One-City-Out Cross-Validation ===")
@@ -146,12 +173,13 @@ def main():
     final_model = LogisticRegression(C=1.0, max_iter=1000)
     final_model.fit(X, y)
 
-    signal_names = ['Foursquare', 'Website', 'Text', 'XGBoost',
-                    'FSQ_verified+Web_dead', 'FSQ_no_data', 'FSQ_nodata+Web_alive']
+    signal_names = ['Foursquare', 'Website', 'Text', 'XGBoost', 'TomTom', 'Yelp_reviews',
+                    'FSQ_verified+Web_dead', 'FSQ_no_data', 'FSQ_nodata+Web_alive',
+                    'Both_dirs_verified', 'Both_dirs_missing', 'FSQ_verified+No_yelp']
     print("  Learned weights:")
     for name, w in zip(signal_names, final_model.coef_[0]):
-        print(f"    {name:12s}: {w:.4f}")
-    print(f"    {'Intercept':12s}: {final_model.intercept_[0]:.4f}")
+        print(f"    {name:25s}: {w:.4f}")
+    print(f"    {'Intercept':25s}: {final_model.intercept_[0]:.4f}")
 
     # --- Compare: Current hand-tuned vs metamodel ---
     print("\n=== Comparison: Hand-tuned vs Metamodel ===")
@@ -181,7 +209,7 @@ def main():
             true_label = 'open' if y[i] == 1 else 'closed'
             kind = 'FP' if all_preds[i] == 1 else 'FN'
             sigs = X[i]
-            print(f"  {kind} | {cities[i]:10s} | prob={all_probs[i]:.3f} | fsq={sigs[0]:+.1f} ws={sigs[1]:+.1f} txt={sigs[2]:+.1f} xgb={sigs[3]:+.2f} | {names[i]} (truly {true_label})")
+            print(f"  {kind} | {cities[i]:10s} | prob={all_probs[i]:.3f} | fsq={sigs[0]:+.1f} ws={sigs[1]:+.1f} txt={sigs[2]:+.1f} xgb={sigs[3]:+.2f} tt={sigs[4]:+.1f} yelp={sigs[5]:+.2f} | {names[i]} (truly {true_label})")
 
     # Save model weights for use in run_vision.py
     meta = {

@@ -40,11 +40,11 @@ CITY_CONFIG = {
         'default_city': 'Chicago',
         'state': 'IL',
     },
-    'nyc': {
-        'parquet': os.path.join(DATA_DIR, 'nyc_places.parquet'),
-        'test_data': os.path.join(PROJECT_DIR, 'src', 'data', 'test_data_nyc.json'),
-        'default_city': 'New York',
-        'state': 'NY',
+    'miami': {
+        'parquet': os.path.join(DATA_DIR, 'miami_places.parquet'),
+        'test_data': os.path.join(PROJECT_DIR, 'src', 'data', 'test_data_miami.json'),
+        'default_city': 'Miami',
+        'state': 'FL',
     },
 }
 

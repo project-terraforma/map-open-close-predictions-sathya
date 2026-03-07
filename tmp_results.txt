@@ -1,0 +1,13 @@
+=== Region Data Sizes ===
+region
+Unknown    3000
+Name: count, dtype: int64
+
+Could not run model predictions: [Errno 2] No such file or directory: 'model/label_encoder.pkl'
+
+=== Feature Completeness by Region ===
+         has_website  ...  confidence
+region                ...            
+Unknown         0.82  ...       0.804
+
+[1 rows x 4 columns]
