@@ -40,9 +40,15 @@ CITY_CONFIG = {
         'default_city': 'Chicago',
         'state': 'IL',
     },
+    'nyc': {
+        'parquet': os.path.join(DATA_DIR, 'nyc_places.parquet'),
+        'test_data': os.path.join(PROJECT_DIR, 'src', 'data', 'test_data_nyc.json'),
+        'default_city': 'New York',
+        'state': 'NY',
+    },
 }
 
-TARGET_PER_GROUP = 40
+TARGET_PER_GROUP = 38
 
 # Parse args
 city = 'sf'

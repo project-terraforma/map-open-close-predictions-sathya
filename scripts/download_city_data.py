@@ -31,6 +31,11 @@ CITIES = {
         'bbox': (-87.85, -87.52, 41.65, 42.02),
         'output': 'chicago_places.parquet',
     },
+    'nyc': {
+        'name': 'New York City',
+        'bbox': (-74.05, -73.90, 40.68, 40.82),
+        'output': 'nyc_places.parquet',
+    },
 }
 
 OVERTURE_PATH = "s3://overturemaps-us-west-2/release/2026-02-18.0/theme=places/type=place/*"

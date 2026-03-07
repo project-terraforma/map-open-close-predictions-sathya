@@ -6,6 +6,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import testDataSf from '../data/test_data.json';
 import testDataLa from '../data/test_data_la.json';
 import testDataChicago from '../data/test_data_chicago.json';
+import testDataNyc from '../data/test_data_nyc.json';
 
 // ============================================================
 // CITY CONFIG
@@ -14,6 +15,7 @@ const CITIES: Record<string, { label: string; center: [number, number]; zoom: nu
     sf: { label: 'San Francisco', center: [37.7749, -122.4194], zoom: 12, data: testDataSf as any[] },
     la: { label: 'Los Angeles', center: [34.0522, -118.2437], zoom: 11, data: testDataLa as any[] },
     chicago: { label: 'Chicago', center: [41.8781, -87.6298], zoom: 12, data: testDataChicago as any[] },
+    nyc: { label: 'New York City', center: [40.7580, -73.9855], zoom: 12, data: testDataNyc as any[] },
 };
 
 function MapFlyTo({ center, zoom }: { center: [number, number]; zoom: number }) {
@@ -731,28 +733,76 @@ export default function MapContainer() {
                                             <div className="h-full rounded-full transition-all duration-700" style={{ width: `${pct}%`, backgroundColor: color }} />
                                         </div>
 
-                                        {/* Score breakdown table */}
-                                        {breakdown.length > 0 && (
-                                            <div className="mt-5 mx-auto" style={{ maxWidth: 280 }}>
+                                        {/* Score breakdown table — metamodel signals */}
+                                        {breakdown.length > 0 && (() => {
+                                            const metaRow = breakdown.find(b => b.signal === 'metamodel');
+                                            const signalRows = breakdown.filter(b => b.signal !== 'metamodel');
+                                            // Parse logit from metamodel description
+                                            const logitMatch = metaRow?.description?.match(/logit=([+-]?\d+\.?\d*)/);
+                                            const logit = logitMatch ? parseFloat(logitMatch[1]) : null;
+                                            return (
+                                            <div className="mt-5 mx-auto" style={{ maxWidth: 300 }}>
                                                 <div style={{ height: 1, background: 'rgba(255,255,255,0.06)' }} className="mb-3" />
-                                                {breakdown.map((item, i) => {
-                                                    const isBase = item.signal === 'base';
-                                                    const weightColor = isBase ? '#94a3b8' : item.weight > 0 ? '#4ade80' : '#f87171';
-                                                    const weightStr = isBase ? item.weight.toFixed(2) : `${item.weight > 0 ? '+' : ''}${item.weight.toFixed(2)}`;
+                                                {/* Signal header */}
+                                                <div className="flex items-center justify-between text-[8px] uppercase tracking-widest text-slate-600 mb-2">
+                                                    <span>Signal</span>
+                                                    <div className="flex gap-6">
+                                                        <span style={{ width: 40, textAlign: 'right' }}>Value</span>
+                                                        <span style={{ width: 50, textAlign: 'right' }}>Weight</span>
+                                                        <span style={{ width: 50, textAlign: 'right' }}>Contrib</span>
+                                                    </div>
+                                                </div>
+                                                {signalRows.map((item, i) => {
+                                                    // Extract signal value from description
+                                                    const sigMatch = item.description.match(/signal=([+-]?\d+\.?\d*)/);
+                                                    const sigVal = sigMatch ? parseFloat(sigMatch[1]) : 0;
+                                                    const metaWeight = item.signal === 'foursquare' ? 2.19 : item.signal === 'website' ? 1.06 : item.signal === 'text' ? 0.07 : item.signal === 'xgboost' ? 1.39 : 0;
+                                                    const contrib = item.weight;
+                                                    const contribColor = contrib > 0.01 ? '#4ade80' : contrib < -0.01 ? '#f87171' : '#94a3b8';
+                                                    const sigColor = sigVal > 0.01 ? '#4ade80' : sigVal < -0.01 ? '#f87171' : '#94a3b8';
+                                                    // Label
+                                                    const label = item.signal === 'foursquare' ? 'Foursquare' : item.signal === 'website' ? 'Website' : item.signal === 'text' ? 'Text/OCR' : item.signal === 'xgboost' ? 'XGBoost' : item.signal;
+                                                    // Status text from description
+                                                    const statusMatch = item.description.match(/:\s*(\w+)/);
+                                                    const status = statusMatch ? statusMatch[1] : '';
                                                     return (
                                                         <div key={i} className="flex items-center justify-between text-[10px] py-0.5">
-                                                            <span className="text-slate-400 text-left truncate" style={{ maxWidth: 180 }}>{item.description}</span>
-                                                            <span className="font-mono font-semibold" style={{ color: weightColor }}>{weightStr}</span>
+                                                            <span className="text-slate-400 text-left">
+                                                                {label} <span className="text-slate-600 text-[8px]">({status})</span>
+                                                            </span>
+                                                            <div className="flex gap-6">
+                                                                <span className="font-mono font-semibold" style={{ color: sigColor, width: 40, textAlign: 'right' }}>{sigVal > 0 ? '+' : ''}{sigVal.toFixed(1)}</span>
+                                                                <span className="font-mono text-slate-500" style={{ width: 50, textAlign: 'right' }}>{'\u00D7'}{metaWeight.toFixed(2)}</span>
+                                                                <span className="font-mono font-semibold" style={{ color: contribColor, width: 50, textAlign: 'right' }}>{contrib > 0 ? '+' : ''}{contrib.toFixed(2)}</span>
+                                                            </div>
                                                         </div>
                                                     );
                                                 })}
+                                                {/* Intercept */}
+                                                <div className="flex items-center justify-between text-[10px] py-0.5">
+                                                    <span className="text-slate-500 text-left">Intercept (bias)</span>
+                                                    <div className="flex gap-6">
+                                                        <span style={{ width: 40 }}></span>
+                                                        <span style={{ width: 50 }}></span>
+                                                        <span className="font-mono font-semibold text-slate-400" style={{ width: 50, textAlign: 'right' }}>-0.94</span>
+                                                    </div>
+                                                </div>
                                                 <div style={{ height: 1, background: 'rgba(255,255,255,0.06)' }} className="my-2" />
-                                                <div className="flex items-center justify-between text-[11px]">
-                                                    <span className="text-white font-semibold">Final Score</span>
+                                                {/* Logit sum */}
+                                                {logit != null && (
+                                                    <div className="flex items-center justify-between text-[10px] py-0.5">
+                                                        <span className="text-slate-400">Logit sum</span>
+                                                        <span className="font-mono font-semibold" style={{ color: logit > 0 ? '#4ade80' : '#f87171' }}>{logit > 0 ? '+' : ''}{logit.toFixed(2)}</span>
+                                                    </div>
+                                                )}
+                                                {/* Final probability */}
+                                                <div className="flex items-center justify-between text-[11px] py-0.5">
+                                                    <span className="text-white font-semibold">sigmoid({logit != null ? logit.toFixed(2) : '?'}) =</span>
                                                     <span className="font-mono font-bold" style={{ color }}>{rawScore.toFixed(2)}</span>
                                                 </div>
                                             </div>
-                                        )}
+                                            );
+                                        })()}
                                     </div>
                                 );
                             })()}

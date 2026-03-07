@@ -1,13 +1,14 @@
 """
 Train XGBoost model on Yelp-labeled Overture metadata to predict open/closed.
 
-Key improvements:
-- category_closure_rate: empirical closure rate per category (replaces useless hash)
-- Platt scaling (sigmoid calibration) so outputs are meaningful probabilities
-- scale_pos_weight for class imbalance
+Features:
+- Overture metadata: confidence, source_age, has_website/phone/brand, etc.
+- Category closure rate: empirical closure rate per category
+- Yelp rating + review count (optional — NaN for 93% of samples, XGBoost handles natively)
+- Engineered interactions: no_web_no_phone, confidence*fields, old_source, etc.
+- Platt scaling (sigmoid calibration) for meaningful probabilities
 
 Training data: scripts/yelp_training_data.json (6000+ labeled businesses)
-Test data: src/data/test_data.json (50 businesses — never trained on)
 
 Usage: python scripts/train_xgboost.py
 Output: model/xgboost_model.json, model/xgb_meta.json
@@ -27,13 +28,21 @@ BASE_FEATURES = [
     'address_complete',
     'category_closure_rate',   # empirical closure rate for this category
     'fields_populated',
+    'yelp_rating',             # NaN if not available — XGBoost handles natively
+    'yelp_review_count',       # NaN if not available
 ]
 
 # Engineered features computed from base features
 ENGINEERED_FEATURES = [
-    'missing_signals',      # count of missing website + phone + brand (0-3)
-    'data_completeness',    # confidence * fields_populated / 9 (composite quality score)
-    'low_confidence',       # 1 if confidence < 0.7 (binary flag for weak data)
+    'missing_signals',        # count of missing website + phone + brand (0-3)
+    'data_completeness',      # confidence * fields_populated / 9
+    'low_confidence',         # 1 if confidence < 0.7
+    'no_web_no_phone',        # 1 if both website and phone missing
+    'confidence_x_fields',    # confidence * fields_populated
+    'confidence_x_website',   # confidence * has_website
+    'old_source',             # 1 if source_age_days > 400 (30% closure rate)
+    'high_quality',           # 1 if confidence >= 0.95 and fields >= 7
+    'sparse_record',          # 1 if fields_populated <= 4
 ]
 
 FEATURES = BASE_FEATURES + ENGINEERED_FEATURES
@@ -72,20 +81,24 @@ def compute_category_closure_rates(data):
 
 def compute_engineered_features(features):
     """Compute engineered features from base features."""
-    missing_signals = (
-        (1 - features.get('has_website', 0)) +
-        (1 - features.get('has_phone', 0)) +
-        (1 - features.get('has_brand', 0))
-    )
+    has_web = features.get('has_website', 0)
+    has_phone = features.get('has_phone', 0)
+    has_brand = features.get('has_brand', 0)
+    missing_signals = (1 - has_web) + (1 - has_phone) + (1 - has_brand)
     confidence = features.get('overture_confidence', 0)
     fields = features.get('fields_populated', 0)
-    data_completeness = confidence * fields / 9.0
-    low_confidence = 1 if confidence < 0.7 else 0
+    age = features.get('source_age_days', 0)
 
     return {
         'missing_signals': missing_signals,
-        'data_completeness': round(data_completeness, 4),
-        'low_confidence': low_confidence,
+        'data_completeness': round(confidence * fields / 9.0, 4),
+        'low_confidence': 1 if confidence < 0.7 else 0,
+        'no_web_no_phone': 1 if (has_web == 0 and has_phone == 0) else 0,
+        'confidence_x_fields': round(confidence * fields, 4),
+        'confidence_x_website': round(confidence * has_web, 4),
+        'old_source': 1 if age > 400 else 0,
+        'high_quality': 1 if (confidence >= 0.95 and fields >= 7) else 0,
+        'sparse_record': 1 if fields <= 4 else 0,
     }
 
 
@@ -108,11 +121,20 @@ def load_training_data(path):
         cat = loc.get('category', 'Unknown')
         features['category_closure_rate'] = closure_rates.get(cat, global_rate)
 
+        # Add Yelp rating/review count (NaN if not available — XGBoost handles this)
+        yelp = loc.get('yelp') or {}
+        features['yelp_rating'] = yelp.get('yelp_rating')        # None → NaN
+        features['yelp_review_count'] = yelp.get('yelp_review_count')  # None → NaN
+
         # Compute engineered features
         eng = compute_engineered_features(features)
 
         # Build feature vector: base + engineered
-        row = [float(features.get(f, 0)) for f in BASE_FEATURES]
+        # Use np.nan for None values (XGBoost handles missing natively)
+        row = []
+        for f in BASE_FEATURES:
+            v = features.get(f)
+            row.append(float(v) if v is not None else np.nan)
         row += [float(eng.get(f, 0)) for f in ENGINEERED_FEATURES]
 
         label = 1 if gt == 'open' else 0
@@ -163,25 +185,47 @@ def main():
     weight_ratio = n_open / max(n_closed, 1)
     print(f"\n  Using scale_pos_weight={weight_ratio:.2f}")
 
-    # XGBoost config
+    # Hyperparameter grid search for best balanced accuracy
+    print("\n  Grid search for best hyperparameters...")
+    n_splits = 5
+    cv = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=42)
+
+    param_grid = [
+        {'max_depth': 4, 'n_estimators': 300, 'learning_rate': 0.05, 'min_child_weight': 3, 'subsample': 0.8, 'colsample_bytree': 0.8, 'reg_alpha': 0.3, 'reg_lambda': 1.5, 'gamma': 0.1},
+        {'max_depth': 5, 'n_estimators': 400, 'learning_rate': 0.03, 'min_child_weight': 3, 'subsample': 0.8, 'colsample_bytree': 0.8, 'reg_alpha': 0.3, 'reg_lambda': 1.5, 'gamma': 0.1},
+        {'max_depth': 6, 'n_estimators': 500, 'learning_rate': 0.02, 'min_child_weight': 2, 'subsample': 0.7, 'colsample_bytree': 0.7, 'reg_alpha': 0.5, 'reg_lambda': 2.0, 'gamma': 0.2},
+        {'max_depth': 5, 'n_estimators': 600, 'learning_rate': 0.02, 'min_child_weight': 3, 'subsample': 0.85, 'colsample_bytree': 0.85, 'reg_alpha': 0.2, 'reg_lambda': 1.0, 'gamma': 0.05},
+        {'max_depth': 4, 'n_estimators': 500, 'learning_rate': 0.03, 'min_child_weight': 5, 'subsample': 0.8, 'colsample_bytree': 0.8, 'reg_alpha': 1.0, 'reg_lambda': 3.0, 'gamma': 0.3},
+    ]
+
+    best_bal_acc_cv = 0
+    best_params = param_grid[0]
+    for pi, params in enumerate(param_grid):
+        m = xgb.XGBClassifier(
+            scale_pos_weight=weight_ratio, eval_metric='logloss', random_state=42,
+            **params,
+        )
+        fold_bal_accs = []
+        for train_idx, val_idx in cv.split(X, y):
+            m_fold = xgb.XGBClassifier(**m.get_params())
+            m_fold.fit(X[train_idx], y[train_idx])
+            preds = m_fold.predict(X[val_idx])
+            fold_bal_accs.append(balanced_accuracy_score(y[val_idx], preds))
+        mean_bal = np.mean(fold_bal_accs)
+        print(f"    Config {pi+1}: depth={params['max_depth']} n={params['n_estimators']} lr={params['learning_rate']}  bal_acc={mean_bal:.4f}")
+        if mean_bal > best_bal_acc_cv:
+            best_bal_acc_cv = mean_bal
+            best_params = params
+
+    print(f"\n  Best config: {best_params}")
+    print(f"  Best CV balanced accuracy: {best_bal_acc_cv:.4f}")
+
     base_model = xgb.XGBClassifier(
-        n_estimators=200,
-        max_depth=3,
-        min_child_weight=5,
-        learning_rate=0.05,
-        subsample=0.8,
-        colsample_bytree=0.8,
-        reg_alpha=0.5,
-        reg_lambda=2.0,
-        gamma=0.2,
-        scale_pos_weight=weight_ratio,
-        eval_metric='logloss',
-        random_state=42,
+        scale_pos_weight=weight_ratio, eval_metric='logloss', random_state=42,
+        **best_params,
     )
 
-    # Cross-validation on raw model
-    n_splits = min(5, max(3, len(X) // 20))
-    cv = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=42)
+    # Full CV with best model for detailed stats
     scores = []
     closed_recalls = []
     cv_probs_all = np.zeros(len(y))

@@ -49,12 +49,17 @@ CLOSURE_KEYWORDS = [
 # Google Places API key (free tier: 100k requests/month)
 GOOGLE_PLACES_API_KEY = os.environ.get('GOOGLE_PLACES_API_KEY', '')
 
-# Must match the features used during training (8 base + 3 engineered)
+# Must match the features used during training (10 base + 9 engineered)
 BASE_FEATURES = [
     'overture_confidence', 'source_age_days', 'has_website', 'has_phone',
     'has_brand', 'address_complete', 'category_closure_rate', 'fields_populated',
+    'yelp_rating', 'yelp_review_count',
 ]
-ENGINEERED_FEATURES = ['missing_signals', 'data_completeness', 'low_confidence']
+ENGINEERED_FEATURES = [
+    'missing_signals', 'data_completeness', 'low_confidence',
+    'no_web_no_phone', 'confidence_x_fields', 'confidence_x_website',
+    'old_source', 'high_quality', 'sparse_record',
+]
 FEATURES = BASE_FEATURES + ENGINEERED_FEATURES
 
 
@@ -244,13 +249,23 @@ def fuzzy_text_match(detected_text, search_names):
 
 def compute_engineered_features(raw):
     """Compute engineered features from base features."""
-    missing = (1 - raw.get('has_website', 0)) + (1 - raw.get('has_phone', 0)) + (1 - raw.get('has_brand', 0))
+    has_web = raw.get('has_website', 0)
+    has_phone = raw.get('has_phone', 0)
+    has_brand = raw.get('has_brand', 0)
+    missing = (1 - has_web) + (1 - has_phone) + (1 - has_brand)
     conf = raw.get('overture_confidence', 0)
     fp = raw.get('fields_populated', 0)
+    age = raw.get('source_age_days', 0)
     return {
         'missing_signals': missing,
         'data_completeness': round(conf * fp / 9.0, 4),
         'low_confidence': 1 if conf < 0.7 else 0,
+        'no_web_no_phone': 1 if (has_web == 0 and has_phone == 0) else 0,
+        'confidence_x_fields': round(conf * fp, 4),
+        'confidence_x_website': round(conf * has_web, 4),
+        'old_source': 1 if age > 400 else 0,
+        'high_quality': 1 if (conf >= 0.95 and fp >= 7) else 0,
+        'sparse_record': 1 if fp <= 4 else 0,
     }
 
 
@@ -304,12 +319,20 @@ def predict_xgboost(location):
     category = location.get('category', 'Unknown')
     raw['category_closure_rate'] = closure_rates.get(category, global_closure_rate)
 
+    # Yelp rating/review count — NaN if not available (XGBoost handles natively)
+    raw['yelp_rating'] = None      # not available at prediction time
+    raw['yelp_review_count'] = None
+
     eng = compute_engineered_features(raw)
 
-    features = [float(raw.get(f, 0)) for f in BASE_FEATURES]
+    # Build feature vector — use np.nan for None values
+    features = []
+    for f in BASE_FEATURES:
+        v = raw.get(f)
+        features.append(float(v) if v is not None else np.nan)
     features += [float(eng.get(f, 0)) for f in ENGINEERED_FEATURES]
 
-    prob = model.predict_proba([features])[0]
+    prob = model.predict_proba([np.array(features)])[0]
     raw_open_prob = float(prob[1])
 
     # Apply Platt scaling if params available
@@ -349,7 +372,6 @@ def analyze_location(location):
     search_names = get_brand_search_names(name)
 
     if not gallery:
-        xgb_layer = predict_xgboost(location)
         # Even with no images, use Foursquare + website + metadata to make a call
         fsq = location.get("foursquare", {})
         fsq_status = fsq.get("status", "no_data")
@@ -372,6 +394,8 @@ def analyze_location(location):
         else:
             ws_status, ws_code, ws_detail = 'no_url', None, 'No URL in Overture'
         website_layer = {"status": ws_status, "url": website_url, "status_code": ws_code, "detail": ws_detail}
+
+        xgb_layer = predict_xgboost(location)
 
         if ws_status == 'redirect':
             score -= 0.20
@@ -602,14 +626,11 @@ def analyze_location(location):
         "image_age_factor": round(best_age_factor, 2),
     }
 
-    # Layer 2: XGBoost metadata
-    xgb_layer = predict_xgboost(location)
-
-    # Layer 3: Google Places API (if configured)
+    # Layer 2: Google Places API (if configured)
     [lng, lat] = location.get("location", [0, 0])
     google_layer = lookup_google_places(name, lat, lng)
 
-    # Layer 4: Website liveness check
+    # Layer 3: Website liveness check
     website_url = location.get("website_url")
     if website_url:
         ws_status, ws_code, ws_detail = check_website(website_url)
@@ -622,7 +643,7 @@ def analyze_location(location):
         "detail": ws_detail,
     }
 
-    # Layer 5: Foursquare (already fetched, just format)
+    # Layer 4: Foursquare (already fetched, just format)
     fsq_raw = location.get("foursquare", {})
     fsq_layer = {
         "status": fsq_raw.get("status", "no_data"),
@@ -630,12 +651,26 @@ def analyze_location(location):
         "match": fsq_raw.get("match"),
     }
 
-    # ── Phase 4: Compute open_score (0.0 = definitely closed, 1.0 = definitely open) ──
-    # Start at 0.5 (no information), then adjust based on signals.
-    open_score = 0.50
-    score_breakdown = [{"signal": "base", "weight": 0.50, "description": "Base score"}]
+    # Layer 5: XGBoost metadata model
+    xgb_layer = predict_xgboost(location)
+
+    # ── Phase 4: Encode signal scores for metamodel ──
+    # Each signal is encoded as a single numeric value, then combined via
+    # learned logistic regression weights (trained with LOCO-CV, 82.5% accuracy).
+    import math
+
+    # Metamodel weights (learned from logistic regression over 228 labeled samples)
+    META_WEIGHTS = {
+        'foursquare': 2.1922,
+        'website': 1.0637,
+        'text': 0.0738,
+        'xgboost': 1.3851,
+    }
+    META_INTERCEPT = -0.9401
+
     evidence_parts = []
     primary_layer = "xgboost"
+    score_breakdown = []
 
     age_note = f" ({best_age:.0f}yr old)" if best_age > 3 else ""
     xgb_score = xgb_layer["score"]
@@ -655,111 +690,99 @@ def analyze_location(location):
     google_closed = google_layer.get("business_status") in ("CLOSED_PERMANENTLY", "CLOSED_TEMPORARILY")
     google_open = google_layer.get("business_status") == "OPERATIONAL"
 
-    # ── Phase 5: Additive scoring — each signal pushes score up or down ──
+    # ── Phase 5: Encode 4 signal scores ──
 
-    # DIRECTORY SIGNALS (strongest)
+    # Signal 1: Foursquare
     if fsq_verified:
-        open_score += 0.30
-        score_breakdown.append({"signal": "foursquare", "weight": 0.30, "description": "Foursquare: verified"})
+        fsq_signal = 1.0
         primary_layer = "foursquare"
         evidence_parts.append("Foursquare: verified")
     elif fsq_closed:
-        open_score -= 0.35
-        score_breakdown.append({"signal": "foursquare", "weight": -0.35, "description": "Foursquare: closed"})
+        fsq_signal = -1.0
         primary_layer = "foursquare"
         evidence_parts.append("Foursquare: closed")
     elif fsq_mismatch:
         fsq_match = fsq.get("match", {})
         other_name = fsq_match.get("name", "?") if fsq_match else "?"
-        open_score -= 0.25
-        score_breakdown.append({"signal": "foursquare", "weight": -0.25, "description": f"Foursquare: mismatch (\"{other_name}\")"})
+        fsq_signal = -0.5
         primary_layer = "foursquare"
         evidence_parts.append(f"Foursquare: mismatch (\"{other_name}\")")
+    else:
+        fsq_signal = -0.3
+        evidence_parts.append("Foursquare: no data")
 
+    score_breakdown.append({"signal": "foursquare", "weight": round(fsq_signal * META_WEIGHTS['foursquare'], 4), "description": f"Foursquare: {fsq_status} (signal={fsq_signal:+.1f})"})
+
+    # Google (not in metamodel, but still log as evidence)
     if google_open:
-        open_score += 0.20
-        score_breakdown.append({"signal": "google", "weight": 0.20, "description": "Google: operational"})
         evidence_parts.append("Google: operational")
     elif google_closed:
-        open_score -= 0.30
-        score_breakdown.append({"signal": "google", "weight": -0.30, "description": "Google: closed"})
         evidence_parts.append("Google: closed")
 
-    # WEBSITE LIVENESS SIGNAL
-    if ws_status == 'redirect':
-        open_score -= 0.20
-        score_breakdown.append({"signal": "website", "weight": -0.20, "description": "Website: redirected"})
+    # Signal 2: Website
+    if ws_status == 'alive':
+        ws_signal = 0.5
+        evidence_parts.append("Website: alive")
+    elif ws_status == 'redirect':
+        ws_signal = -0.7
         evidence_parts.append(f"Website: redirected ({ws_detail})")
     elif ws_status == 'dead':
-        open_score -= 0.10
-        score_breakdown.append({"signal": "website", "weight": -0.10, "description": "Website: dead"})
+        ws_signal = -0.3
         evidence_parts.append(f"Website: dead ({ws_detail})")
     elif ws_status == 'parked':
-        open_score -= 0.15
-        score_breakdown.append({"signal": "website", "weight": -0.15, "description": "Website: parked"})
-        evidence_parts.append(f"Website: parked domain")
-    elif ws_status == 'alive':
-        evidence_parts.append(f"Website: alive")
-    elif ws_status == 'ssl_error':
-        evidence_parts.append(f"Website: SSL error")
+        ws_signal = -0.5
+        evidence_parts.append("Website: parked domain")
+    else:
+        ws_signal = 0.0
+        if ws_status == 'ssl_error':
+            evidence_parts.append("Website: SSL error")
 
-    # TEXT SIGNALS (strong, but discounted by image age)
+    score_breakdown.append({"signal": "website", "weight": round(ws_signal * META_WEIGHTS['website'], 4), "description": f"Website: {ws_status} (signal={ws_signal:+.1f})"})
+
+    # Signal 3: Text/OCR
     if strong_closure_text:
         best_closure = fresh_closure_signals[0]
-        open_score -= 0.30
-        score_breakdown.append({"signal": "closure_text", "weight": -0.30, "description": f"Closure text: \"{best_closure['text']}\""})
+        text_signal = -1.0
         primary_layer = "text"
         evidence_parts.append(f"Closure text: \"{best_closure['text']}\"")
-
-    if text_found:
-        # Text match pushes toward open, but heavily discounted by age
-        # Images > 5 years old give zero boost — the sign means nothing after that long
-        if best_age <= 2:
-            age_discount = 1.0
-        elif best_age <= 4:
-            age_discount = 0.5
-        elif best_age <= 5:
-            age_discount = 0.2
-        else:
-            age_discount = 0.0  # 6+ year old text is meaningless
-
+    elif text_found:
         if text_strength == "full":
-            text_boost = 0.20 * age_discount
+            text_signal = 1.0
         else:
-            text_boost = 0.10 * age_discount
-
-        open_score += text_boost
-        if text_boost != 0:
-            score_breakdown.append({"signal": "text", "weight": round(text_boost, 4), "description": f"Text: {text_strength} match{age_note}"})
-        if primary_layer == "xgboost" and age_discount > 0:
+            text_signal = 0.5
+        if primary_layer == "xgboost":
             primary_layer = "text"
         evidence_parts.append(f"Text: {text_strength} match{age_note}")
+    elif best_age <= 3 and images_analyzed >= 2:
+        text_signal = -0.2
+        evidence_parts.append(f"No text match ({images_analyzed} recent images)")
+    elif images_analyzed == 0:
+        text_signal = 0.0
+        evidence_parts.append("No images available")
     else:
-        # No text match on fresh images is a weak negative signal
-        if best_age <= 3 and images_analyzed >= 2:
-            open_score -= 0.05
-            score_breakdown.append({"signal": "text", "weight": -0.05, "description": f"No text match ({images_analyzed} recent images)"})
-            evidence_parts.append(f"No text match on {images_analyzed} recent images")
-        elif images_analyzed == 0:
-            evidence_parts.append("No images available")
+        text_signal = 0.0
 
-    # METADATA SIGNAL (calibrated via Platt scaling)
-    # The model can identify weak businesses (score < 0.40) but can't reliably
-    # confirm open ones (most get 0.65-0.77 regardless). Only nudge when confident.
-    if xgb_score < 0.40:
-        # Strong closed signal from metadata (few businesses score this low)
-        xgb_nudge = (xgb_score - 0.5) * 0.20
-        open_score += xgb_nudge
-        score_breakdown.append({"signal": "xgboost", "weight": round(xgb_nudge, 4), "description": f"Metadata: {xgb_score:.0%} open (nudge)"})
-        evidence_parts.append(f"Metadata: {xgb_score:.0%} open (nudge {xgb_nudge:+.2f})")
-    else:
-        evidence_parts.append(f"Metadata: {xgb_score:.0%} open (no nudge)")
+    score_breakdown.append({"signal": "text", "weight": round(text_signal * META_WEIGHTS['text'], 4), "description": f"Text: signal={text_signal:+.1f}"})
 
-    # Clamp to [0, 1]
-    open_score = max(0.0, min(1.0, open_score))
+    # Signal 4: XGBoost metadata (centered around 0)
+    xgb_centered = xgb_score - 0.5
+    evidence_parts.append(f"Metadata: {xgb_score:.0%} open")
 
-    # Binary prediction: > 0.5 = open, <= 0.5 = not_open
-    # Tie goes to "not_open" — assume stale/closed until proven open
+    score_breakdown.append({"signal": "xgboost", "weight": round(xgb_centered * META_WEIGHTS['xgboost'], 4), "description": f"Metadata: {xgb_score:.0%} open (signal={xgb_centered:+.2f})"})
+
+    # ── Metamodel: sigmoid(w·x + b) ──
+    logit = (
+        META_WEIGHTS['foursquare'] * fsq_signal +
+        META_WEIGHTS['website'] * ws_signal +
+        META_WEIGHTS['text'] * text_signal +
+        META_WEIGHTS['xgboost'] * xgb_centered +
+        META_INTERCEPT
+    )
+    open_score = 1.0 / (1.0 + math.exp(-logit))
+
+    score_breakdown.insert(0, {"signal": "metamodel", "weight": round(open_score, 4), "description": f"Metamodel score (logit={logit:+.2f})"})
+
+    # Binary prediction
     if images_analyzed == 0 and fsq_status == "no_data" and not google_open and not google_closed:
         prediction = "unknown"
     elif open_score > 0.50:

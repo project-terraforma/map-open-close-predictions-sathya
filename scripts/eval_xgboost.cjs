@@ -14,7 +14,7 @@ for (const [city, f] of Object.entries(files)) {
 let tp=0, tn=0, fp=0, fn=0;
 let details = [];
 for (const poi of allData) {
-  const truth = poi.yelp && poi.yelp.yelp_status;
+  const truth = poi.ground_truth;
   const xgb = poi.vision && poi.vision.layers && poi.vision.layers.xgboost && poi.vision.layers.xgboost.score;
   if (!truth || xgb === undefined || xgb === null) continue;
   const trueOpen = truth === 'open';
@@ -51,7 +51,7 @@ console.log('');
 for (const city of ['SF','LA','Chicago']) {
   let ctp=0,ctn=0,cfp=0,cfn=0;
   for (const poi of allData.filter(x=>x._city===city)) {
-    const truth = poi.yelp && poi.yelp.yelp_status;
+    const truth = poi.ground_truth;
     const xgb = poi.vision && poi.vision.layers && poi.vision.layers.xgboost && poi.vision.layers.xgboost.score;
     if (!truth || xgb === undefined || xgb === null) continue;
     const trueOpen = truth==='open';

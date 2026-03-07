@@ -8,9 +8,17 @@
     "address_complete",
     "category_closure_rate",
     "fields_populated",
+    "yelp_rating",
+    "yelp_review_count",
     "missing_signals",
     "data_completeness",
-    "low_confidence"
+    "low_confidence",
+    "no_web_no_phone",
+    "confidence_x_fields",
+    "confidence_x_website",
+    "old_source",
+    "high_quality",
+    "sparse_record"
   ],
   "base_features": [
     "overture_confidence",
@@ -20,21 +28,29 @@
     "has_brand",
     "address_complete",
     "category_closure_rate",
-    "fields_populated"
+    "fields_populated",
+    "yelp_rating",
+    "yelp_review_count"
   ],
   "engineered_features": [
     "missing_signals",
     "data_completeness",
-    "low_confidence"
+    "low_confidence",
+    "no_web_no_phone",
+    "confidence_x_fields",
+    "confidence_x_website",
+    "old_source",
+    "high_quality",
+    "sparse_record"
   ],
   "n_training_samples": 6367,
   "n_open": 4977,
   "n_closed": 1390,
   "optimal_threshold": 0.69,
-  "cv_accuracy": 0.8027,
-  "closed_recall": 0.1209,
-  "platt_a": -19.5663235818923,
-  "platt_b": 18.081888941158105,
+  "cv_accuracy": 0.812,
+  "closed_recall": 0.1942,
+  "platt_a": -22.438868509800308,
+  "platt_b": 20.93467525667074,
   "category_closure_rates": {
     "Unknown": 0.0651,
     "Fast Food Restaurant": 0.084,

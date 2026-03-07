@@ -1,0 +1,14 @@
+{
+  "weights": {
+    "Foursquare": 2.1607,
+    "Website": 1.206,
+    "Text": 0.0825,
+    "XGBoost": 1.3007,
+    "FSQ_verified+Web_dead": -1.0423,
+    "FSQ_no_data": -0.4071,
+    "FSQ_nodata+Web_alive": -0.8741
+  },
+  "intercept": -0.226,
+  "loco_cv_accuracy": 0.8246,
+  "loco_cv_balanced_accuracy": 0.8246
+}
