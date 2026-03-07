@@ -154,6 +154,9 @@
         "phone": null,
         "address": "New York, NY 10023, United States"
       }
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -311,6 +314,9 @@
         "phone": null,
         "address": "15 W 47th St, New York, NY 10036, United States"
       }
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -468,6 +474,15 @@
         "phone": null,
         "address": "666 Amsterdam Ave, New York, NY 10025, United States"
       }
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Young Chow Garden",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": false,
+      "phone": "+1 212-518-6800",
+      "url": ""
     }
   },
   {
@@ -625,6 +640,9 @@
         "phone": null,
         "address": "800A 5th Ave Ste 502, New York, NY 10065, United States"
       }
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -782,6 +800,15 @@
         "phone": null,
         "address": "184 E 116th St, New York, NY 10029, United States"
       }
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Eddie's NY Deli & Pizza",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 917-639-3594",
+      "url": "www.eddiesnydelipizza.com/?utm_source=organic_bing&utm_medium=bing_pw"
     }
   },
   {
@@ -939,6 +966,9 @@
         "phone": null,
         "address": "47 Franklin St (New York), Jersey City, NJ 07307, United States"
       }
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -1096,6 +1126,15 @@
         "phone": null,
         "address": "9 Maiden Ln, New York, NY 10038, United States"
       }
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "La Parisienne",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 646-756-4911",
+      "url": "www.laparisiennenyc.com/?utm_source=TripAdvisor&utm_medium=TripAdvWebsite&utm_campaign=TA&utm_term=TA"
     }
   },
   {
@@ -1253,6 +1292,9 @@
         "phone": null,
         "address": "966 1st Ave (at E 53rd St), New York, NY 10022, United States"
       }
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -1393,6 +1435,9 @@
     "foursquare": {
       "status": "no_data",
       "detail": "Foursquare has no results nearby"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -1550,6 +1595,15 @@
         "phone": null,
         "address": "187 Atlantic Ave (btwn Clinton & Court St), Brooklyn, NY 11201, United States"
       }
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Sahadis",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 718-624-4550",
+      "url": "www.sahadis.com/"
     }
   },
   {
@@ -1707,6 +1761,15 @@
         "phone": null,
         "address": "353 W 46th St, New York, NY 10036, United States"
       }
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Chai",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 646-669-8299",
+      "url": "www.chai-nyc.com"
     }
   },
   {
@@ -1864,6 +1927,9 @@
         "phone": null,
         "address": "157 E 55th St (btwn Lexington & 3rd Ave.), New York, NY 10022, United States"
       }
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -2021,6 +2087,9 @@
         "phone": null,
         "address": "360 W 22nd St Apt 1L, New York, NY 10011, United States"
       }
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -2178,6 +2247,9 @@
         "phone": null,
         "address": "6007 Park Ave (btwn 60th St & Westover Pl), West New York, NJ 07093, United States"
       }
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -2318,6 +2390,9 @@
     "foursquare": {
       "status": "no_data",
       "detail": "Foursquare has no results nearby"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -2475,6 +2550,15 @@
         "phone": null,
         "address": "155 E 34th St (3rd Avenue), NYC, NY 10016, United States"
       }
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Little Alley",
+      "match_score": 0.3,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 646-998-3976",
+      "url": "www.littlealley.nyc"
     }
   },
   {
@@ -2632,6 +2716,15 @@
         "phone": null,
         "address": "308 W 50th St, New York, NY 10019, United States"
       }
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Blue Dog Cookhouse & Bar",
+      "match_score": 0.45,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 212-459-0700",
+      "url": "www.bluedognyc.com/"
     }
   },
   {
@@ -2789,6 +2882,9 @@
         "phone": null,
         "address": "1187 Amsterdam Ave, New York, NY 10027, United States"
       }
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -2946,6 +3042,9 @@
         "phone": null,
         "address": "15 W 47th St (5th Ave), New York, NY 10036, United States"
       }
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -3086,6 +3185,15 @@
     "foursquare": {
       "status": "no_data",
       "detail": "Foursquare has no results nearby"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Concrete Sicilian Eatery",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 917-966-8440",
+      "url": "www.concrete-brooklyn.com"
     }
   },
   {
@@ -3243,6 +3351,15 @@
         "phone": null,
         "address": "564 Myrtle Ave, Brooklyn, NY 11205, United States"
       }
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "BK Lobster",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 347-844-9393",
+      "url": "bklobster.com/myrtle-ave-menu/"
     }
   },
   {
@@ -3400,6 +3517,15 @@
         "phone": null,
         "address": "302 W 12th St, New York, NY 10014, United States"
       }
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Grove Street Social",
+      "match_score": 0.3,
+      "has_phone": false,
+      "has_url": true,
+      "phone": "",
+      "url": "61grovestreet.com/"
     }
   },
   {
@@ -3557,6 +3683,9 @@
         "phone": null,
         "address": "668 5th Ave, New York, NY 10103, United States"
       }
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -3714,6 +3843,15 @@
         "phone": null,
         "address": "2559 3rd Ave (E 139th), Bronx, NY 10451, United States"
       }
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Angie's Cafe & Pizza",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 718-292-3606",
+      "url": "www.angiescafepizza.com/"
     }
   },
   {
@@ -3871,6 +4009,15 @@
         "phone": null,
         "address": "14 Wall St (at Nassau St), New York, NY 10005, United States"
       }
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Nuchas Wall Street",
+      "match_score": 0.4,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 347-642-2503",
+      "url": "www.nuchas.com/"
     }
   },
   {
@@ -4028,6 +4175,9 @@
         "phone": null,
         "address": "20 W 20th St, New York, NY 10011, United States"
       }
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -4185,6 +4335,9 @@
         "phone": null,
         "address": "5612 56th St, Maspeth, NY 11378, United States"
       }
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -4342,6 +4495,9 @@
         "phone": null,
         "address": "1 Wall St, New York, NY 10005, United States"
       }
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -4499,6 +4655,15 @@
         "phone": null,
         "address": "38 W 36th St, New York, NY 10018, United States"
       }
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Red Cafe",
+      "match_score": 0.3,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 212-244-4090",
+      "url": "nymag.com/listings/bar/red-bar-and-lounge"
     }
   },
   {
@@ -4656,6 +4821,15 @@
         "phone": null,
         "address": "267 Elizabeth St (btwn E Houston & Prince St), New York, NY 10012, United States"
       }
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Tacombi",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 917-727-0179",
+      "url": "www.tacombi.com/?utm_source=extnet&utm_medium=yext&y_source=1_NDc4NjI0MzUtNzY5LWxvY2F0aW9uLndlYnNpdGU%3D"
     }
   },
   {
@@ -4813,6 +4987,15 @@
         "phone": null,
         "address": "32 Withers St (btwn Lorimer St & Union Ave), Brooklyn, NY 11211, United States"
       }
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Bamonte's",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 718-384-8831",
+      "url": "bamontes.club/"
     }
   },
   {
@@ -4970,6 +5153,9 @@
         "phone": null,
         "address": "502A Atlantic Ave, Brooklyn, NY 11217, United States"
       }
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -5127,6 +5313,9 @@
         "phone": null,
         "address": "266 Broome St, New York, NY 10002, United States"
       }
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -5267,6 +5456,9 @@
     "foursquare": {
       "status": "no_data",
       "detail": "Foursquare has no results nearby"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -5424,6 +5616,15 @@
         "phone": null,
         "address": "344 Graham Ave, Brooklyn, NY 11211, United States"
       }
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Wholesome Basket",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 718-576-3229",
+      "url": "wholesomebasket.dine.online/locations?fulfillment=pickup"
     }
   },
   {
@@ -5581,6 +5782,15 @@
         "phone": null,
         "address": "575 8th Ave, New York, NY 10018, United States"
       }
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Oliyo",
+      "match_score": 1.0,
+      "has_phone": false,
+      "has_url": false,
+      "phone": "",
+      "url": ""
     }
   },
   {
@@ -5738,6 +5948,15 @@
         "phone": null,
         "address": "473 Columbus Ave (Btw 82nd & 83rd Street), New York, NY 10024, United States"
       }
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Lokal Mediterranean Kitchen",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 212-595-5554",
+      "url": "www.lokal83.com/"
     }
   },
   {
@@ -5878,6 +6097,9 @@
     "foursquare": {
       "status": "no_data",
       "detail": "Foursquare has no results nearby"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -6035,6 +6257,15 @@
         "phone": null,
         "address": "1109 Lexington Ave, New York, NY 10075, United States"
       }
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Mighty Bowl",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 646-692-9065",
+      "url": "www.eatmightybowl.com/"
     }
   },
   {
@@ -6192,6 +6423,15 @@
         "phone": null,
         "address": "333 Graham Ave (Metropolitan Avenue), Brooklyn, NY 11211, United States"
       }
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Brujos-Brooklyn Taco Company",
+      "match_score": 0.8,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 718-388-8445",
+      "url": "www.brujostacos.com/"
     }
   },
   {
@@ -6332,6 +6572,9 @@
     "foursquare": {
       "status": "no_data",
       "detail": "Foursquare has no results nearby"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -6489,6 +6732,9 @@
         "phone": null,
         "address": "125 18th St, Jersey City, NJ 07310, United States"
       }
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -6646,6 +6892,9 @@
         "phone": null,
         "address": "689 5th Ave (54), New York, NY 10022, United States"
       }
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -6803,6 +7052,15 @@
         "phone": null,
         "address": "828 7th Ave, New York, NY 10019, United States, New York, NY 10019, United States"
       }
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "2 Brothers Pizza",
+      "match_score": 0.3,
+      "has_phone": true,
+      "has_url": false,
+      "phone": "+1 917-587-8888",
+      "url": ""
     }
   },
   {
@@ -6943,6 +7201,15 @@
     "foursquare": {
       "status": "no_data",
       "detail": "Foursquare has no results nearby"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Chicken Guy",
+      "match_score": 0.3,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 718-878-1337",
+      "url": "chickenguy.com/locations/new-york-city/?y_source=1_ndi1mja5mzytnzy5lwxvy2f0aw9ulndlynnpdgu%3d"
     }
   },
   {
@@ -7100,6 +7367,9 @@
         "phone": null,
         "address": "256 W 20th St (Btw 8th & 7th avenue), New York, NY 10011, United States"
       }
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -7240,6 +7510,9 @@
     "foursquare": {
       "status": "no_data",
       "detail": "Foursquare has no results nearby"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -7397,6 +7670,9 @@
         "phone": null,
         "address": "139 Essex St, New York, NY 10002, United States"
       }
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -7554,6 +7830,9 @@
         "phone": null,
         "address": "298 Central Ave (Between Hutton And Griffith), Jersey City, NJ 07307, United States"
       }
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -7694,6 +7973,15 @@
     "foursquare": {
       "status": "no_data",
       "detail": "Foursquare has no results nearby"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Oti",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 646-707-0515",
+      "url": "www.otinyc.com/"
     }
   },
   {
@@ -7834,6 +8122,9 @@
     "foursquare": {
       "status": "no_data",
       "detail": "Foursquare has no results nearby"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -7991,6 +8282,15 @@
         "phone": null,
         "address": "5819 Kennedy Blvd, North Bergen, NJ 07047, United States"
       }
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "El Jardin Middle Eastern Cuisine",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 201-416-4511",
+      "url": "www.eljardinnb.com/"
     }
   },
   {
@@ -8148,6 +8448,9 @@
         "phone": null,
         "address": "951 Manhattan Ave, Brooklyn, NY 11222, United States"
       }
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -8305,6 +8608,15 @@
         "phone": null,
         "address": "145 (Jackson Street), Brooklyn, NY 11211, United States"
       }
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Talea Beer Co.",
+      "match_score": 0.3,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 347-799-1281",
+      "url": "www.taleabeer.com/"
     }
   },
   {
@@ -8462,6 +8774,15 @@
         "phone": null,
         "address": "187 Bedford Ave (btwn N 7th St & N 5th St), Brooklyn, NY 11211, United States"
       }
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Joe's Pizza",
+      "match_score": 0.3,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 718-388-2216",
+      "url": "www.joespizzanyc.com"
     }
   },
   {
@@ -8619,6 +8940,9 @@
         "phone": null,
         "address": "244 E 13th St, New York, NY 10003, United States"
       }
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -8776,6 +9100,9 @@
         "phone": null,
         "address": "29 E 104th St, New York, NY 10029, United States"
       }
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -8933,6 +9260,15 @@
         "phone": null,
         "address": "2301 Queens Plaza N (at 24th St), Long Island City, NY 11101, United States"
       }
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Bridge Gourmet Market",
+      "match_score": 0.8,
+      "has_phone": true,
+      "has_url": false,
+      "phone": "+1 718-433-4082",
+      "url": ""
     }
   },
   {
@@ -9073,6 +9409,9 @@
     "foursquare": {
       "status": "no_data",
       "detail": "Foursquare has no results nearby"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -9230,6 +9569,9 @@
         "phone": null,
         "address": "380 Bleecker St (Perry st), New York, NY 10014, United States"
       }
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -9370,6 +9712,9 @@
     "foursquare": {
       "status": "no_data",
       "detail": "Foursquare has no results nearby"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -9527,6 +9872,15 @@
         "phone": null,
         "address": "610 9th Ave, New York, NY 10036, United States"
       }
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Tim Ho Wan",
+      "match_score": 0.8,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 212-228-2802",
+      "url": "www.timhowanusa.com/"
     }
   },
   {
@@ -9667,6 +10021,15 @@
     "foursquare": {
       "status": "no_data",
       "detail": "Foursquare has no results nearby"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Blue Sea Taverna",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 347-642-3340",
+      "url": "www.blueseataverna.com/"
     }
   },
   {
@@ -9824,6 +10187,15 @@
         "phone": null,
         "address": "1227 Fulton St, Brooklyn, NY 11216, United States"
       }
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Wing Hing",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": false,
+      "phone": "+1 718-622-1031",
+      "url": ""
     }
   },
   {
@@ -9964,6 +10336,9 @@
     "foursquare": {
       "status": "no_data",
       "detail": "Foursquare has no results nearby"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -10104,6 +10479,9 @@
     "foursquare": {
       "status": "no_data",
       "detail": "Foursquare has no results nearby"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -10261,6 +10639,9 @@
         "phone": null,
         "address": "85 Stanton St, New York, NY 10002, United States"
       }
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -10542,6 +10923,9 @@
       "yelp_rating": 4.5,
       "yelp_review_count": 340,
       "yelp_url": "https://www.yelp.com/biz/stone-bridge-pizza-and-salad-new-york?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -10741,6 +11125,9 @@
       "yelp_rating": 4.3,
       "yelp_review_count": 6,
       "yelp_url": "https://www.yelp.com/biz/coup-de-coeur-hoboken-3?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -11126,6 +11513,15 @@
       "yelp_rating": 4.5,
       "yelp_review_count": 169,
       "yelp_url": "https://www.yelp.com/biz/mazu-szechuan-new-york?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Mazu Szechuan Cuisine",
+      "match_score": 0.8,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 646-609-3388",
+      "url": "www.mazuasian.com"
     }
   },
   {
@@ -12572,6 +12968,15 @@
       "yelp_rating": 4.3,
       "yelp_review_count": 192,
       "yelp_url": "https://www.yelp.com/biz/bulbap-grill-brooklyn?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Bulbap Grill",
+      "match_score": 1.0,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 718-383-3663",
+      "url": "www.bulbapgrill.com/"
     }
   },
   {
@@ -13576,6 +13981,9 @@
       "yelp_rating": 3.6,
       "yelp_review_count": 14,
       "yelp_url": "https://www.yelp.com/biz/wok-and-staple-new-york?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "no_data"
     }
   },
   {
@@ -13936,6 +14344,15 @@
       "yelp_rating": 3.5,
       "yelp_review_count": 3442,
       "yelp_url": "https://www.yelp.com/biz/milk-bar-new-york-14?adjust_creative=6KBOrF1A5xQihejaPxkEsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=6KBOrF1A5xQihejaPxkEsQ"
+    },
+    "tomtom": {
+      "status": "verified",
+      "name": "Milk Bar East Village",
+      "match_score": 0.8,
+      "has_phone": true,
+      "has_url": true,
+      "phone": "+1 646-692-4154",
+      "url": "milkbarstore.com/"
     }
   }
 ]

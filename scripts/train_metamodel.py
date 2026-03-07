@@ -15,6 +15,7 @@ DATA_FILES = [
     ('SF', os.path.join(DATA_DIR, 'test_data.json')),
     ('LA', os.path.join(DATA_DIR, 'test_data_la.json')),
     ('Chicago', os.path.join(DATA_DIR, 'test_data_chicago.json')),
+    ('Miami', os.path.join(DATA_DIR, 'test_data_miami.json')),
 ]
 
 
@@ -103,7 +104,6 @@ def encode_signals(loc):
     both_dirs_missing = 1.0 if (fsq_status == 'no_data' and not tt_strong) else 0.0
     # Key interaction: Foursquare says open but no Yelp presence = ghost listing
     fsq_verified_no_yelp = 1.0 if (fsq_status == 'verified' and yelp_reviews == 0) else 0.0
-
     return [fsq_score, ws_score, text_score, xgb_centered, tt_score, yelp_score,
             fsq_verified_web_dead, fsq_no_data, fsq_nodata_web_alive,
             both_dirs_verified, both_dirs_missing, fsq_verified_no_yelp]

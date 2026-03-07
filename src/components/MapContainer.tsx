@@ -6,7 +6,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import testDataSf from '../data/test_data.json';
 import testDataLa from '../data/test_data_la.json';
 import testDataChicago from '../data/test_data_chicago.json';
-import testDataNyc from '../data/test_data_nyc.json';
+import testDataMiami from '../data/test_data_miami.json';
 
 // ============================================================
 // CITY CONFIG
@@ -15,7 +15,7 @@ const CITIES: Record<string, { label: string; center: [number, number]; zoom: nu
     sf: { label: 'San Francisco', center: [37.7749, -122.4194], zoom: 12, data: testDataSf as any[] },
     la: { label: 'Los Angeles', center: [34.0522, -118.2437], zoom: 11, data: testDataLa as any[] },
     chicago: { label: 'Chicago', center: [41.8781, -87.6298], zoom: 12, data: testDataChicago as any[] },
-    nyc: { label: 'New York City', center: [40.7580, -73.9855], zoom: 12, data: testDataNyc as any[] },
+    miami: { label: 'Miami', center: [25.7617, -80.1918], zoom: 12, data: testDataMiami as any[] },
 };
 
 function MapFlyTo({ center, zoom }: { center: [number, number]; zoom: number }) {
@@ -729,6 +729,12 @@ export default function MapContainer() {
                                     <div className="text-center py-4">
                                         <div className="text-[44px] font-black font-mono leading-none tracking-tighter" style={{ color }}>{pct}%</div>
                                         <div className="text-[10px] tracking-[0.25em] mt-2 uppercase" style={{ color, opacity: 0.8, fontWeight: 900 }}>{label}</div>
+                                        <div className="text-[10px] mt-1 text-slate-500">
+                                            {isOpen
+                                                ? <>{Math.round((1 - rawScore) * 100)}% chance closed</>
+                                                : <>{Math.round(rawScore * 100)}% chance open</>
+                                            }
+                                        </div>
                                         <div className="w-3/4 mx-auto h-1 rounded-full overflow-hidden mt-4" style={{ background: 'rgba(255,255,255,0.06)' }}>
                                             <div className="h-full rounded-full transition-all duration-700" style={{ width: `${pct}%`, backgroundColor: color }} />
                                         </div>
@@ -756,12 +762,12 @@ export default function MapContainer() {
                                                     // Extract signal value from description
                                                     const sigMatch = item.description.match(/signal=([+-]?\d+\.?\d*)/);
                                                     const sigVal = sigMatch ? parseFloat(sigMatch[1]) : 0;
-                                                    const metaWeight = item.signal === 'foursquare' ? 2.19 : item.signal === 'website' ? 1.06 : item.signal === 'text' ? 0.07 : item.signal === 'xgboost' ? 1.39 : 0;
+                                                    const metaWeight = item.signal === 'foursquare' ? 1.98 : item.signal === 'website' ? 0.99 : item.signal === 'text' ? 0.10 : item.signal === 'xgboost' ? 1.73 : item.signal === 'tomtom' ? 0.08 : item.signal === 'yelp' ? 0.72 : 0;
                                                     const contrib = item.weight;
                                                     const contribColor = contrib > 0.01 ? '#4ade80' : contrib < -0.01 ? '#f87171' : '#94a3b8';
                                                     const sigColor = sigVal > 0.01 ? '#4ade80' : sigVal < -0.01 ? '#f87171' : '#94a3b8';
                                                     // Label
-                                                    const label = item.signal === 'foursquare' ? 'Foursquare' : item.signal === 'website' ? 'Website' : item.signal === 'text' ? 'Text/OCR' : item.signal === 'xgboost' ? 'XGBoost' : item.signal;
+                                                    const label = item.signal === 'foursquare' ? 'Foursquare' : item.signal === 'website' ? 'Website' : item.signal === 'text' ? 'Text/OCR' : item.signal === 'xgboost' ? 'XGBoost' : item.signal === 'tomtom' ? 'TomTom' : item.signal === 'yelp' ? 'Yelp' : item.signal;
                                                     // Status text from description
                                                     const statusMatch = item.description.match(/:\s*(\w+)/);
                                                     const status = statusMatch ? statusMatch[1] : '';
@@ -784,7 +790,7 @@ export default function MapContainer() {
                                                     <div className="flex gap-6">
                                                         <span style={{ width: 40 }}></span>
                                                         <span style={{ width: 50 }}></span>
-                                                        <span className="font-mono font-semibold text-slate-400" style={{ width: 50, textAlign: 'right' }}>-0.94</span>
+                                                        <span className="font-mono font-semibold text-slate-400" style={{ width: 50, textAlign: 'right' }}>+0.26</span>
                                                     </div>
                                                 </div>
                                                 <div style={{ height: 1, background: 'rgba(255,255,255,0.06)' }} className="my-2" />

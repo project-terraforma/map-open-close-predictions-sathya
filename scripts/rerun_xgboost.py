@@ -15,20 +15,20 @@ DATA_FILES = [
 
 # Metamodel weights (learned from logistic regression with 6 signals + interactions)
 META_WEIGHTS = {
-    'foursquare': 1.8997,
-    'website': 1.3448,
-    'text': 0.1617,
-    'xgboost': 0.6998,
-    'tomtom': -0.0668,
-    'yelp_reviews': 1.7241,
-    'fsq_verified_web_dead': -0.9368,
-    'fsq_no_data': -0.7736,
-    'fsq_nodata_web_alive': -1.0269,
-    'both_dirs_verified': 0.5090,
-    'both_dirs_missing': -0.0729,
-    'fsq_verified_no_yelp': -0.1488,
+    'foursquare': 1.9779,
+    'website': 0.9863,
+    'text': 0.1037,
+    'xgboost': 1.7269,
+    'tomtom': 0.0806,
+    'yelp_reviews': 0.7189,
+    'fsq_verified_web_dead': -1.0508,
+    'fsq_no_data': -1.3316,
+    'fsq_nodata_web_alive': -0.4890,
+    'both_dirs_verified': 0.7253,
+    'both_dirs_missing': -0.0643,
+    'fsq_verified_no_yelp': -0.9879,
 }
-META_INTERCEPT = 0.6184
+META_INTERCEPT = 0.2604
 
 
 def encode_and_score(loc):
@@ -146,6 +146,20 @@ def encode_and_score(loc):
         {"signal": "tomtom", "weight": round(tt_signal * META_WEIGHTS['tomtom'], 4), "description": f"TomTom: {tt_status} match={tt_match:.1f} (signal={tt_signal:+.1f})"},
         {"signal": "yelp", "weight": round(yelp_signal * META_WEIGHTS['yelp_reviews'], 4), "description": f"Yelp: {yelp_reviews} reviews (signal={yelp_signal:+.2f})"},
     ]
+
+    # Soft boost: FSQ missing but Yelp says open with reviews + corroboration
+    yelp_not_closed = yelp.get('is_closed') == False
+    has_corroboration = ws_status == 'alive' or (tt_status == 'verified' and tt_match >= 0.5)
+    if fsq_status == 'no_data' and yelp_reviews >= 20 and yelp_not_closed and has_corroboration:
+        logit += 0.8  # Boost logit to counteract fsq_no_data penalty
+        open_score = 1.0 / (1.0 + math.exp(-logit))
+        breakdown.append({"signal": "yelp_corroboration", "weight": 0.8, "description": "Yelp open + corroboration (boost)"})
+
+    # Hard override: if Yelp explicitly says closed, trust it (98% accurate)
+    yelp_explicitly_closed = yelp.get('is_closed') == True
+    if yelp_explicitly_closed:
+        open_score = min(open_score, 0.15)  # Cap at 15% open
+        breakdown.append({"signal": "yelp_closed", "weight": -3.0, "description": "Yelp: EXPLICITLY CLOSED (override)"})
 
     # Prediction
     if open_score > 0.50:

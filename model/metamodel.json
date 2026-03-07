@@ -1,19 +1,20 @@
 {
   "weights": {
-    "Foursquare": 1.8997,
-    "Website": 1.3448,
-    "Text": 0.1617,
-    "XGBoost": 0.6998,
-    "TomTom": -0.0668,
-    "Yelp_reviews": 1.7241,
-    "FSQ_verified+Web_dead": -0.9368,
-    "FSQ_no_data": -0.7736,
-    "FSQ_nodata+Web_alive": -1.0269,
-    "Both_dirs_verified": 0.509,
-    "Both_dirs_missing": -0.0729,
-    "FSQ_verified+No_yelp": -0.1488
+    "Foursquare": 2.0008,
+    "Website": 1.3553,
+    "Text": 0.0794,
+    "XGBoost": 1.2623,
+    "TomTom": 0.4985,
+    "Yelp_reviews": 0.9395,
+    "FSQ_verified+Web_dead": -1.1005,
+    "FSQ_no_data": -0.4759,
+    "FSQ_nodata+Web_alive": -1.1788,
+    "Both_dirs_verified": 0.4152,
+    "Both_dirs_missing": -0.3043,
+    "FSQ_verified+No_yelp": -0.8792,
+    "Yelp_is_closed": -3.2214
   },
-  "intercept": 0.6184,
-  "loco_cv_accuracy": 0.8421,
-  "loco_cv_balanced_accuracy": 0.8421
+  "intercept": 0.4924,
+  "loco_cv_accuracy": 0.8446,
+  "loco_cv_balanced_accuracy": 0.8443
 }

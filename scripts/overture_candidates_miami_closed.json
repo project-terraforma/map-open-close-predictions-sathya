@@ -1,0 +1,1198 @@
+[
+  {
+    "name": "Devia Juice Bar at Midtown Garden",
+    "category": "Smoothie Juice Bar",
+    "address": "2600 NE 2nd Ave, Miami",
+    "location": [
+      -80.19112636483834,
+      25.801781518461915
+    ],
+    "overture_meta": {
+      "confidence": 0.602,
+      "update_time": "2025-07-10",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.602,
+      "source_age_days": 239,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 6
+    },
+    "id": 480
+  },
+  {
+    "name": "Jaxson Maximus",
+    "category": "Mens Clothing Store",
+    "address": "1100 Brickell Bay Dr, Miami",
+    "location": [
+      -80.1902642,
+      25.763148
+    ],
+    "overture_meta": {
+      "confidence": 0.972,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.972,
+      "source_age_days": 95,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 7
+    },
+    "id": 588
+  },
+  {
+    "name": "bartaco",
+    "category": "Taco Restaurant",
+    "address": "282 NW 25th St, Miami",
+    "location": [
+      -80.2008155,
+      25.8005489
+    ],
+    "overture_meta": {
+      "confidence": 0.973,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Bartaco"
+    },
+    "overture_raw": {
+      "overture_confidence": 0.973,
+      "source_age_days": 95,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 1,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 8
+    },
+    "id": 49
+  },
+  {
+    "name": "Havana Pizza",
+    "category": "Pizza Restaurant",
+    "address": "48 E Flagler St, Miami",
+    "location": [
+      -80.19332828928741,
+      25.77373589268362
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-03-21",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 350,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 6
+    },
+    "id": 869
+  },
+  {
+    "name": "Oise Ristorante",
+    "category": "Italian Restaurant",
+    "address": "2335 N Miami Ave, Miami",
+    "location": [
+      -80.1944722,
+      25.7994069
+    ],
+    "overture_meta": {
+      "confidence": 0.978,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.978,
+      "source_age_days": 95,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 7
+    },
+    "id": 659
+  },
+  {
+    "name": "Crema Gourmet Espresso Bar",
+    "category": "Coffee Shop",
+    "address": "1010 Brickell Ave, Miami",
+    "location": [
+      -80.1922337,
+      25.764361
+    ],
+    "overture_meta": {
+      "confidence": 0.985,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Crema Gourmet"
+    },
+    "overture_raw": {
+      "overture_confidence": 0.985,
+      "source_age_days": 95,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 1,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 8
+    },
+    "id": 664
+  },
+  {
+    "name": "Sardinia Enoteca Ristorante",
+    "category": "Italian Restaurant",
+    "address": "1801 Purdy Ave, Miami",
+    "location": [
+      -80.1442772,
+      25.793659
+    ],
+    "overture_meta": {
+      "confidence": 0.912,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.912,
+      "source_age_days": 95,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 7
+    },
+    "id": 401
+  },
+  {
+    "name": "9beach Latin Restaurant and Bar",
+    "category": "Latin American Restaurant",
+    "address": "1628 Collins Ave, Miami",
+    "location": [
+      -80.1303168,
+      25.7902611
+    ],
+    "overture_meta": {
+      "confidence": 0.944,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.944,
+      "source_age_days": 95,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 7
+    },
+    "id": 473
+  },
+  {
+    "name": "MaryGold's",
+    "category": "European Restaurant",
+    "address": "2217 NW Miami Ct, Miami",
+    "location": [
+      -80.1957186,
+      25.7984277
+    ],
+    "overture_meta": {
+      "confidence": 0.929,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.929,
+      "source_age_days": 95,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 7
+    },
+    "id": 32
+  },
+  {
+    "name": "Canvas",
+    "category": "Clothing Store",
+    "address": "2323 N Miami Ave, Miami",
+    "location": [
+      -80.1946986,
+      25.7993902
+    ],
+    "overture_meta": {
+      "confidence": 0.95,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.95,
+      "source_age_days": 95,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 7
+    },
+    "id": 264
+  },
+  {
+    "name": "Midtown Creamery",
+    "category": "Ice Cream Shop",
+    "address": "1030 Collins Ave, Miami",
+    "location": [
+      -80.1316712,
+      25.7811137
+    ],
+    "overture_meta": {
+      "confidence": 0.95,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.95,
+      "source_age_days": 95,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 6
+    },
+    "id": 146
+  },
+  {
+    "name": "SOBE Protein Bar",
+    "category": "Cafe",
+    "address": "1860 West Ave, Miami",
+    "location": [
+      -80.14293,
+      25.79447
+    ],
+    "overture_meta": {
+      "confidence": 0.192,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.192,
+      "source_age_days": 95,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 7
+    },
+    "id": 148
+  },
+  {
+    "name": "Farmer's Milk",
+    "category": "Bakery",
+    "address": "261 NW 24th St, Miami",
+    "location": [
+      -80.2004748,
+      25.8001891
+    ],
+    "overture_meta": {
+      "confidence": 0.95,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.95,
+      "source_age_days": 95,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 6
+    },
+    "id": 879
+  },
+  {
+    "name": "Atelier Monnier",
+    "category": "Bakery",
+    "address": "848 Brickell Ave, Miami",
+    "location": [
+      -80.1912774,
+      25.7650033
+    ],
+    "overture_meta": {
+      "confidence": 0.997,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Atelier Monnier - The French Bakery"
+    },
+    "overture_raw": {
+      "overture_confidence": 0.997,
+      "source_age_days": 95,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 1,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 8
+    },
+    "id": 937
+  },
+  {
+    "name": "Chick'N Jones",
+    "category": "Restaurant",
+    "address": "1601 Drexel Ave, Miami",
+    "location": [
+      -80.13284,
+      25.78965
+    ],
+    "overture_meta": {
+      "confidence": 0.323,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.323,
+      "source_age_days": 95,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 7
+    },
+    "id": 7
+  },
+  {
+    "name": "INTERMIX",
+    "category": "Clothing Store",
+    "address": "CMX, 701 S Miami Ave, Miami",
+    "location": [
+      -80.1931161,
+      25.7671479
+    ],
+    "overture_meta": {
+      "confidence": 0.989,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "INTERMIX"
+    },
+    "overture_raw": {
+      "overture_confidence": 0.989,
+      "source_age_days": 95,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 1,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 8
+    },
+    "id": 991
+  },
+  {
+    "name": "Au Bon Pain",
+    "category": "Bakery",
+    "address": "901 NW 17th St, Miami",
+    "location": [
+      -80.2102964,
+      25.7918497
+    ],
+    "overture_meta": {
+      "confidence": 0.981,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.981,
+      "source_age_days": 95,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 7
+    },
+    "id": 455
+  },
+  {
+    "name": "Miami Kava & Coffee - Biscayne",
+    "category": "Coffee Shop",
+    "address": "275 NE 18th St, CU#110, Miami",
+    "location": [
+      -80.189453,
+      25.793852
+    ],
+    "overture_meta": {
+      "confidence": 0.958,
+      "update_time": "2025-09-12",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.958,
+      "source_age_days": 175,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 6
+    },
+    "id": 706
+  },
+  {
+    "name": "Wild'n Out",
+    "category": "Sports Bar",
+    "address": "1144 Ocean Dr, Miami",
+    "location": [
+      -80.13056541506752,
+      25.78235348521339
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2023-08-15",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 934,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 6
+    },
+    "id": 769
+  },
+  {
+    "name": "Harry's Pizzeria",
+    "category": "Pizza Restaurant",
+    "address": "1680 Meridian Ave, Miami",
+    "location": [
+      -80.1367171,
+      25.7917356
+    ],
+    "overture_meta": {
+      "confidence": 0.945,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Harry\u2019s Pizzeria"
+    },
+    "overture_raw": {
+      "overture_confidence": 0.945,
+      "source_age_days": 95,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 1,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 8
+    },
+    "id": 1122
+  },
+  {
+    "name": "Magic Hands Salon",
+    "category": "Beauty Salon",
+    "address": "451 SW 8th St, Miami",
+    "location": [
+      -80.2017,
+      25.766304
+    ],
+    "overture_meta": {
+      "confidence": 0.323,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.323,
+      "source_age_days": 95,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 7
+    },
+    "id": 861
+  },
+  {
+    "name": "Gramps",
+    "category": "Bar",
+    "address": "176 NW 24th St, Miami",
+    "location": [
+      -80.1982736,
+      25.7997268
+    ],
+    "overture_meta": {
+      "confidence": 0.965,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.965,
+      "source_age_days": 95,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 7
+    },
+    "id": 586
+  },
+  {
+    "name": "Circuit Academy",
+    "category": "Gym",
+    "address": "1000 17th St, Miami",
+    "location": [
+      -80.1390294,
+      25.7917879
+    ],
+    "overture_meta": {
+      "confidence": 0.989,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.989,
+      "source_age_days": 95,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 7
+    },
+    "id": 237
+  },
+  {
+    "name": "ConSentido Miami",
+    "category": "Restaurant",
+    "address": "Jade Brickell, 1331 Brickell Bay Dr, Miami",
+    "location": [
+      -80.1893072,
+      25.7599044
+    ],
+    "overture_meta": {
+      "confidence": 0.965,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.965,
+      "source_age_days": 95,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 7
+    },
+    "id": 451
+  },
+  {
+    "name": "La Licuadora, Peruvian Food",
+    "category": "Peruvian Restaurant",
+    "address": "3023 Biscayne Blvd, Miami",
+    "location": [
+      -80.18910748620118,
+      25.805888901491702
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-08-22",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 196,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 6
+    },
+    "id": 775
+  },
+  {
+    "name": "Union Cafe & Restaurant",
+    "category": "American Restaurant",
+    "address": "120 SE 3rd Ave, Miami",
+    "location": [
+      -80.1890991,
+      25.7732053
+    ],
+    "overture_meta": {
+      "confidence": 0.95,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.95,
+      "source_age_days": 95,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 7
+    },
+    "id": 1014
+  },
+  {
+    "name": "Canvas",
+    "category": "Wine Bar",
+    "address": "Brickell Ave, Miami",
+    "location": [
+      -80.19916519715592,
+      25.761979921758126
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2024-09-21",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 531,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 6
+    },
+    "id": 392
+  },
+  {
+    "name": "The Hampton Social",
+    "category": "Restaurant",
+    "address": "900 S Miami Ave, Miami",
+    "location": [
+      -80.1933394,
+      25.7646989
+    ],
+    "overture_meta": {
+      "confidence": 0.749,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "The Hampton Social"
+    },
+    "overture_raw": {
+      "overture_confidence": 0.749,
+      "source_age_days": 95,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 1,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 8
+    },
+    "id": 853
+  },
+  {
+    "name": "Sushi By Bou",
+    "category": "Bar",
+    "address": "1116 Ocean Dr, Miami",
+    "location": [
+      -80.1302984,
+      25.7819317
+    ],
+    "overture_meta": {
+      "confidence": 0.947,
+      "update_time": "2025-07-24",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.947,
+      "source_age_days": 225,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 6
+    },
+    "id": 987
+  },
+  {
+    "name": "Lime Fresh Grill",
+    "category": "Mexican Restaurant",
+    "address": "7 W Flagler St, Miami",
+    "location": [
+      -80.19378602,
+      25.77426081
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-03-21",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 350,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 7
+    },
+    "id": 110
+  },
+  {
+    "name": "Brick",
+    "category": "Bar",
+    "address": "187 NW 28th St, Miami",
+    "location": [
+      -80.1988828,
+      25.8030463
+    ],
+    "overture_meta": {
+      "confidence": 0.949,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.949,
+      "source_age_days": 95,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 7
+    },
+    "id": 107
+  },
+  {
+    "name": "Bar La Real",
+    "category": "Bar",
+    "address": "100 NE 1st Ave, Miami",
+    "location": [
+      -80.192116,
+      25.77453
+    ],
+    "overture_meta": {
+      "confidence": 0.852,
+      "update_time": "2025-03-20",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.852,
+      "source_age_days": 351,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 6
+    },
+    "id": 944
+  },
+  {
+    "name": "Hamburguesa",
+    "category": "Burger Restaurant",
+    "address": "401 Biscayne Blvd, Miami",
+    "location": [
+      -80.186762,
+      25.778895
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-03-04",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 367,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 7
+    },
+    "id": 41
+  },
+  {
+    "name": "No. 3 Social",
+    "category": "Restaurant",
+    "address": "50 NW 24th Street Rooftop, Miami",
+    "location": [
+      -80.19611020244388,
+      25.799692342981206
+    ],
+    "overture_meta": {
+      "confidence": 0.967,
+      "update_time": "2023-11-03",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.967,
+      "source_age_days": 854,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 7
+    },
+    "id": 56
+  },
+  {
+    "name": "Da Tang Zhen Wei Restaurant",
+    "category": "Chinese Restaurant",
+    "address": "801 Brickell Bay Dr, Miami",
+    "location": [
+      -80.1890978,
+      25.7648072
+    ],
+    "overture_meta": {
+      "confidence": 0.952,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.952,
+      "source_age_days": 95,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 7
+    },
+    "id": 971
+  },
+  {
+    "name": "LIME Fresh Mexican Grill",
+    "category": "Mexican Restaurant",
+    "address": "1439 Alton Rd, Miami",
+    "location": [
+      -80.140851,
+      25.7865574
+    ],
+    "overture_meta": {
+      "confidence": 0.984,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "LIME Fresh Mexican Grill"
+    },
+    "overture_raw": {
+      "overture_confidence": 0.984,
+      "source_age_days": 95,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 1,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 8
+    },
+    "id": 686
+  },
+  {
+    "name": "SERVPRO of Miami Beach",
+    "category": "Laundry Services",
+    "address": "333 Arthur Godfrey Road, #607, Miami",
+    "location": [
+      -80.12720285603669,
+      25.81403304852831
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2021-02-12",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 1848,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 8
+    },
+    "id": 409
+  },
+  {
+    "name": "Chotto Matte Miami",
+    "category": "Japanese Restaurant",
+    "address": "1666 Lenox Ave, Miami",
+    "location": [
+      -80.140231,
+      25.7911288
+    ],
+    "overture_meta": {
+      "confidence": 0.951,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.951,
+      "source_age_days": 95,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 7
+    },
+    "id": 320
+  },
+  {
+    "name": "Doce Provisions",
+    "category": "Latin American Restaurant",
+    "address": "541 SW 12th Ave, Miami",
+    "location": [
+      -80.2143337,
+      25.7678499
+    ],
+    "overture_meta": {
+      "confidence": 0.983,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.983,
+      "source_age_days": 95,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 7
+    },
+    "id": 774
+  },
+  {
+    "name": "Sh\u2019hiwa Express",
+    "category": "Moroccan Restaurant",
+    "address": "100 S Miami Ave, Miami",
+    "location": [
+      -80.19382,
+      25.77309
+    ],
+    "overture_meta": {
+      "confidence": 0.323,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.323,
+      "source_age_days": 95,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 6
+    },
+    "id": 217
+  },
+  {
+    "name": "ADDiKT",
+    "category": "Cocktail Bar",
+    "address": "485 Brickell Ave, Miami",
+    "location": [
+      -80.18953950330533,
+      25.768721575819846
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-12-19",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 77,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 6
+    },
+    "id": 676
+  },
+  {
+    "name": "Layla",
+    "category": "Mediterranean Restaurant",
+    "address": "2216 Park Ave, Miami",
+    "location": [
+      -80.130456,
+      25.79872
+    ],
+    "overture_meta": {
+      "confidence": 0.901,
+      "update_time": "2023-12-22",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.901,
+      "source_age_days": 805,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 6
+    },
+    "id": 246
+  },
+  {
+    "name": "Lucky Cat by Gordon Ramsay Miami",
+    "category": "Restaurant",
+    "address": "119 Washington Ave, Miami",
+    "location": [
+      -80.1347057,
+      25.7703458
+    ],
+    "overture_meta": {
+      "confidence": 0.957,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.957,
+      "source_age_days": 95,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 7
+    },
+    "id": 20
+  },
+  {
+    "name": "3 Chefs At Brickell",
+    "category": "Chinese Restaurant",
+    "address": "48 SW 12th St, Miami",
+    "location": [
+      -80.1941659,
+      25.7624531
+    ],
+    "overture_meta": {
+      "confidence": 0.987,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.987,
+      "source_age_days": 95,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 7
+    },
+    "id": 1022
+  },
+  {
+    "name": "Rebel Wings",
+    "category": "Restaurant",
+    "address": "2417 N Miami Ave, Miami",
+    "location": [
+      -80.19470009533678,
+      25.800271337403647
+    ],
+    "overture_meta": {
+      "confidence": 0.531,
+      "update_time": "2025-04-21",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.531,
+      "source_age_days": 319,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 7
+    },
+    "id": 977
+  },
+  {
+    "name": "Taquerias El Mexicano",
+    "category": "Texmex Restaurant",
+    "address": "521 SW 8th St, Miami",
+    "location": [
+      -80.2028922,
+      25.7662338
+    ],
+    "overture_meta": {
+      "confidence": 0.963,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.963,
+      "source_age_days": 95,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0,
+      "fields_populated": 7
+    },
+    "id": 782
+  }
+]

@@ -57,7 +57,7 @@ def evaluate():
     feat_df['correct'] = (feat_df['true_label'] == feat_df['pred_label'])
     
     # Target cities for evaluation
-    target_cities = ['San Francisco', 'Los Angeles', 'Chicago', 'New York']
+    target_cities = ['San Francisco', 'Los Angeles', 'Chicago', 'Miami']
     
     print("\n--- Accuracy by City ---")
     results = []
