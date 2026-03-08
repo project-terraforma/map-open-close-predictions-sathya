@@ -1,0 +1,2104 @@
+[
+  {
+    "name": "Au Bon Pain",
+    "category": "Bakeries",
+    "address": "421 Curie Blvd, Philadelphia",
+    "location": [
+      -75.18199,
+      39.95574
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 0,
+      "num_images": 0,
+      "yelp_rating": 2.5,
+      "yelp_review_count": 54
+    },
+    "yelp": {
+      "yelp_name": "Au Bon Pain",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 2.5,
+      "yelp_review_count": 54,
+      "yelp_url": "https://www.yelp.com/biz/au-bon-pain-philadelphia?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "current_gallery": []
+  },
+  {
+    "name": "Passero's Coffee Roasters",
+    "category": "Coffee & Tea",
+    "address": "100 E Penn Sq, The Wanamaker Bldg., Juniper St Lobby, Philadelphia",
+    "location": [
+      -75.167448,
+      39.954196
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 1575,
+      "num_images": 4,
+      "yelp_rating": 4.3,
+      "yelp_review_count": 94
+    },
+    "yelp": {
+      "yelp_name": "Passero's Coffee Roasters",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 4.3,
+      "yelp_review_count": 94,
+      "yelp_url": "https://www.yelp.com/biz/passeros-coffee-roasters-philadelphia-3?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Passero's Coffee Roasters\" at this location",
+      "match": {
+        "fsq_id": "68ded6d47902410087bc6a2e",
+        "name": "Passero's Coffee Roasters",
+        "category": "Café",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1601 John F Kennedy Blvd, Philadelphia, PA 19103, United States"
+      }
+    },
+    "current_gallery": [
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9YE5JN06YEd009IN4M6otjl9QX83nUS7ZBTbhn-wmxqdJxjBq1j80AipviBYwmbA2XOgx7A3yROqTXFyBSEp4qt3kGxby-gircB34oZ20qjTJvhBvplTsVdUCakwSxxE0XAU969JfF8ZmAy2ZGRg?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=WbeAwoTv2UyJ2TBVZeRz2A&_nc_oc=Adl5QnhqJa5_xjtN-wub-rHS6rpQgbJE653x0cXkevTHgNoHEHCKzxuxCoFkCw2sk3cef78wyzGPC0gQ06vGHq75&ccb=10-5&oh=00_Afwc0M1xSmxc09-BG92DSEjc8Wd_qyNM7lmU3syz79wy3g&oe=69D43A0C&_nc_sid=201bca",
+        "date": "2022-07-02",
+        "distance_m": 35,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9iQ6EGKEvH-TY8Z5u3hXRuYmATfjrHAtpwNhbcyk1897O1yJ1LbX92FNWv9Xyrv7LmswG5Lp7GBoddWagBUZWBRfStf_rMWIXWFNNzPdzZ5b-oe24cqtB6WaSpEBS0CUN40LVrfGlNoG-Cd1hs6Q?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=WbeAwoTv2UyJ2TBVZeRz2A&_nc_oc=AdmnmH4wiNWDMttqVuI0a37WKLqkUMZNZKlzhuKGBoE1wpJpqzA33Hfz8-gkbZQ_GjOvy0pw-GUTh411TNDCZSpM&ccb=10-5&oh=00_AfxaOhlwbe7yQkxbeGNwyIgBUq6HlNEc0xN7utdWG0RyRQ&oe=69D41E60&_nc_sid=201bca",
+        "date": "2019-12-21",
+        "distance_m": 43,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-kFidXSIfMiomzM70VsEMAHVCs-up6aFNwbLdpN7Yb2ErYJWWaM7ojmzgAvFulIF7QMNxVM8-W9nUwErb7OgVMpHGcy4KXqvvPaw3dIBxqY0gd0oadB83Kq9upBQTt4NQLINfJiPuk_YPI9rtSSQ?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=WbeAwoTv2UyJ2TBVZeRz2A&_nc_oc=Adncb06ctCoBDQLUzMK_Wb-r-sIeYHNvc3Oz5JfsYqylhX9R4qsl96n7VJ4A8pzlJ0YGW4nxJ25LQvD7csFn9SuJ&ccb=10-5&oh=00_AfwH1YMx7zq-92xLn5ZDlm1C2ZakZaB7bsmT8np0czcVLg&oe=69D41A51&_nc_sid=201bca",
+        "date": "2022-07-02",
+        "distance_m": 31,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9QPvuykI9k0b_jbHQqDghGdu6zGm7OIxk4VwDafukkwv98m9rUYlrFz36OFKzcBbvRZTLMVI4IMmnjZZqdLSLIJM8PkQgkA0UNChSlbPa8mVF9fOSFzYXIJG4xkhgeTZDVKh0m72uwck6awwEGjo0?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=WbeAwoTv2UyJ2TBVZeRz2A&_nc_oc=AdkgTFJd4CEfJl8oUuMDj1CLeK456OXI4_zYWLq8oaD1s5-yirvGdwQz4sEgpaOy8T_1N_peWDcunm6u50XL83tY&ccb=10-5&oh=00_AfyI-Pgh5MI1retl2pMobfmfM2gRDxHHg2K0e4Yt8Ti0pw&oe=69D41DBE&_nc_sid=201bca",
+        "date": "2022-07-02",
+        "distance_m": 32,
+        "group": "sequential"
+      }
+    ]
+  },
+  {
+    "name": "Bottom of the Sea Soul",
+    "category": "Seafood",
+    "address": "327 S 52nd St, Philadelphia",
+    "location": [
+      -75.2259334176779,
+      39.9537233054413
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 0,
+      "num_images": 0,
+      "yelp_rating": 4.3,
+      "yelp_review_count": 17
+    },
+    "yelp": {
+      "yelp_name": "Bottom Of The Sea Soul",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 4.3,
+      "yelp_review_count": 17,
+      "yelp_url": "https://www.yelp.com/biz/bottom-of-the-sea-soul-philadelphia?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "current_gallery": []
+  },
+  {
+    "name": "Criniti's Prime Meats",
+    "category": "Meat Shops",
+    "address": "2024 S 10th St, Philadelphia",
+    "location": [
+      -75.16286,
+      39.9240334
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 2252,
+      "num_images": 3,
+      "yelp_rating": 4.8,
+      "yelp_review_count": 4
+    },
+    "yelp": {
+      "yelp_name": "Criniti's Prime Meats",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 4.8,
+      "yelp_review_count": 4,
+      "yelp_url": "https://www.yelp.com/biz/crinitis-prime-meats-philadelphia?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Criniti's Prime Meats\" at this location",
+      "match": {
+        "fsq_id": "4f32857019836c91c7dfeaf0",
+        "name": "Criniti's Prime Meats",
+        "category": "Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2024 S 10th St, Philadelphia, PA 19148, United States"
+      }
+    },
+    "current_gallery": [
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8sbzYtL1-x08qbH82meu09x3JwPvD5aeE2B6OXZfPR5P8ERKXiNIMF2SgMw5WIRvswkn11nIZ-3wgD3SgbTtsR6XqmZCkeTB1BOdF96a0FAMGJGUYZlqHGWmkIEGql9Zn6rgfU4Gw-ATqfbJLhYA?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=6l17Q3sP67BSY_yfHC_7qQ&_nc_oc=AdkNUQPY4ER5xs2F4f0Bu5potH5JxYAScYPWX46vCpnyiKl8spKsv6uDKcDfdcRw5TZV_vSmwsgqC9zL2iRYSPoF&ccb=10-5&oh=00_AfyLAlgyKkHkAuAMfv6OZ1prUnczN0EomD4EKxXoE8BeEg&oe=69D4463B&_nc_sid=201bca",
+        "date": "2020-01-16",
+        "distance_m": 26,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-IH5d2ixioxNIEckG5hLyeUa5ucnMaigy9_mf_cyaTYIyIIZAcQXJMUiJKsRAXodozMcVT1YYSnmZNu6tXtx7OQNlZpztLdAAoeZSMJGASuxeaoTxjlxz9KzLGUdlz5kAnAtuL5YszM64Yaw0Zfw?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=6l17Q3sP67BSY_yfHC_7qQ&_nc_oc=AdllEp-uYHxSj3jJPrphqWFjs9re-Epv8ozLNP6H97kQNTC4hmvFvjWLuEgsHppYSDHkEXjoB05X2scXKM1TRTrB&ccb=10-5&oh=00_AfzAOOs0kCJ_Wxpy3Y-LDODeHkr2mq9WhnlVST-qR9pJuA&oe=69D41AAF&_nc_sid=201bca",
+        "date": "2020-01-16",
+        "distance_m": 26,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8yM_n02N9DL1kHuhYW0OZa67aLzRWdwP-67NhffowAahyVukCdzXxVDh2fSr8nzN6A0M2RG0N6GP_HF-IobhSzqGfNsVs1Ej4_ZLcq4f7hlSJFx7GezBgX7g9A3hCsjMv3UIygbKbWS41XlHtWfA?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=6l17Q3sP67BSY_yfHC_7qQ&_nc_oc=AdlO5xJ-AmqFSv5Y0K6D4GXT88tXRl1pNiDJ9_b-rLjUW5riQ4PcsCP31p1klGhqgiXNtPPTRUthlx0gCxFDCPqN&ccb=10-5&oh=00_AfzbBZ80My3eft9TQRAm3djv6utSh7ntt-JB-BhIgnffgQ&oe=69D41709&_nc_sid=201bca",
+        "date": "2019-12-18",
+        "distance_m": 16,
+        "group": "sequential"
+      }
+    ]
+  },
+  {
+    "name": "Jade Garden",
+    "category": "Chinese",
+    "address": "1525 S 11th St, Philadelphia",
+    "location": [
+      -75.17881,
+      39.94511
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 2480,
+      "num_images": 2,
+      "yelp_rating": 2,
+      "yelp_review_count": 2
+    },
+    "yelp": {
+      "yelp_name": "Jade Garden",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 2,
+      "yelp_review_count": 2,
+      "yelp_url": "https://www.yelp.com/biz/jade-garden-philadelphia-3?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "current_gallery": [
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8SJ35Fr8ZtuWeq8ySuxbvbxGRPLyw2vDVgUr1qHqy0jZ5f70e-P-dQ72aubqEMzM9k8S8l7pbXtp3iLeW1FghWfroSGLfKroJVTLHWEt2zbi589lo6QJRWqjIqFyizCMVF3goeOUZe_EjIfbxwbsI?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=F6WQs_-YOqOVjJ-Ho4QCcA&_nc_oc=AdnW9vXaAtU0HjsqlUA7pIcgFqCB5AsmJfG_7cf_785gpYoqw1eWX7cSd4LaMUUkpVImOuslwQO12U1nrJmeGpm-&ccb=10-5&oh=00_AfwkgUo8Rd-95rNK3AbTxgpEf0rVnzQ702Dwx5CyM0Yqbg&oe=69D4174F&_nc_sid=201bca",
+        "date": "2020-01-15",
+        "distance_m": 25,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9ABMOQq3cHpztfJ1wcE5TcWQyPGjcHR-mrNJg8Y54u0AV7lc8I6wyDJNaFYSbic5bQqCMdAtDT71BI-AqDiddfwpsYuZYjazWJCkOlypXcpr-D7J8If8RPTJ21MT2DFLrro1Vo8J3NuUzRuLAucA?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=F6WQs_-YOqOVjJ-Ho4QCcA&_nc_oc=AdmsGmoGJNTlpg8T1SIuqhq77xCN8-oSnuTftmVJ1cdLvt8p48C42UxjCaIqqCsYorMELVBcobuZOiQw9Lbtav3J&ccb=10-5&oh=00_AfxFhOkrApFlPGGewJA0dr7Uu39qLRDEozqFevs2Yh3AXA&oe=69D412C8&_nc_sid=201bca",
+        "date": "2018-09-29",
+        "distance_m": 28,
+        "group": "sequential"
+      }
+    ]
+  },
+  {
+    "name": "Greene Street",
+    "category": "Used, Vintage & Consignment",
+    "address": "21 Snyder Ave, Philadelphia",
+    "location": [
+      -75.154138,
+      39.94291
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 2269,
+      "num_images": 3,
+      "yelp_rating": 2.7,
+      "yelp_review_count": 150
+    },
+    "yelp": {
+      "yelp_name": "Greene Street",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 2.7,
+      "yelp_review_count": 150,
+      "yelp_url": "https://www.yelp.com/biz/greene-street-philadelphia-4?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Greene Street\" at this location",
+      "match": {
+        "fsq_id": "4b5111c2f964a520b54027e3",
+        "name": "Greene Street",
+        "category": "Vintage and Thrift Store",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "700 South St (at 7th St), Philadelphia, PA 19147, United States"
+      }
+    },
+    "current_gallery": [
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_yAxuOVHotSOAflQy5kEHWk4h8SzvWgZ67YbG_yJFfvpl5h7cVrcxHSRI_PpQ-Ju3bQIiPRL5yy6p10LMrpJQ5fKg-SnkDnXErv_P35LASSK2Oiekqcz10Yy9ICsrVujjAdNtObpgh2ROte2lg_fE?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=uo9G9AcLr_Wh0GtImeJwtA&_nc_oc=Adk5fkgynEov_s4hq2ThHwVOrQVefd4lRLA-o-G9VRfIm4zdXBjuaPQDhkef8ndG_NGd2Bn8gjVFNJF7qhOYuvvx&ccb=10-6&oh=00_AfzCcWnjqNQh5Qte3v1nJa6lR-kknmrBAJMQ72r-IcyGRg&oe=69D43789&_nc_sid=201bca",
+        "date": "2019-12-21",
+        "distance_m": 44,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_4RcwMo1mu7mWhIG5uI4LxiEgO8zzeYzZcpIg_7la7nFzVoHKovrXfEC9rub3rwryAxkmUZ1xVZmw-6M-lBWa-2H1RNxxTRbBxgls22i5zuDRgRwM_rEeKcntB1AMl-q1xjUg-H1yGtkb_edvfTQ?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=uo9G9AcLr_Wh0GtImeJwtA&_nc_oc=AdmbFz8Iye1gjKAmw-FhTuLcrQNPu8NcIq9a-P4xBCcZ4aEsN21ZFJ9k_K3NM3-eh836EdROuNITHTgy1ppf2NNE&ccb=10-5&oh=00_Afw1X7krsju8be9rkNYn2Rb2Y0qDRZU0mVbN4Bf48FgNww&oe=69D41023&_nc_sid=201bca",
+        "date": "2019-12-19",
+        "distance_m": 47,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-VuHtPobN6zEUOgNMXn7iW10zWOEL4svtwmKFVPkrBVlQkkxYs-oJ1D1TrZJsksfQ8e7k2Eh1aqNCMbRYSwOGQOLUvCtoqQCrKjUEMYcqAXlyWJEUQBD9NqYmEaxJy8uwWm-NXfDegW_HCx7HBWQ?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=uo9G9AcLr_Wh0GtImeJwtA&_nc_oc=AdnmHsNgN0aKNNb7xonAMEJCdQVf3Z2YJCAi73pDkCPIqPn1_gHf8V7dta3hODa8iI7fdDYdHYuHs4zXNermtlRT&ccb=10-5&oh=00_Afyal_m68hIuUHKQLzu6oRn9j_bXMv5NLy75z2qU5MEWxw&oe=69D41526&_nc_sid=201bca",
+        "date": "2019-12-21",
+        "distance_m": 35,
+        "group": "sequential"
+      }
+    ]
+  },
+  {
+    "name": "Saladworks",
+    "category": "Vegetarian",
+    "address": "1625 Chestnut St, Philadelphia",
+    "location": [
+      -75.18189746411218,
+      39.95559161888918
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 1076,
+      "num_images": 1,
+      "yelp_rating": 3.5,
+      "yelp_review_count": 8
+    },
+    "yelp": {
+      "yelp_name": "Saladworks",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 3.5,
+      "yelp_review_count": 8,
+      "yelp_url": "https://www.yelp.com/biz/saladworks-philadelphia-9?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "current_gallery": [
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9f7R0PO5pkrUh6VxMKx1zJakkjA5FfaHU1d_OlNw3QHk8MtP2-_fiKnuIkeNaVF5r3A3hyzaCulP1ZIvy3TP5-Sb_aw7Omn4YLGb9S9YhFuO7_Rw_NCtI5xezbHtAhcB-zGHFJBg_GZJXmD3J4Hg?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=Q4gm8_Bxt_dDjs15j1mvTw&_nc_oc=AdlKQpm-UX-KwAvEH96cqlfCGk9zygyrUbVsujnSpYsM1GG1JsvO4T-H9lFuWzkmpxh0VDywjMq91UXYOZUIqYP0&ccb=10-5&oh=00_Afw4hvy86ZBBPqSWQlyTKJk5YAut1kjStpo5bydSgVKMpA&oe=69D4273F&_nc_sid=201bca",
+        "date": "2023-03-27",
+        "distance_m": 54,
+        "group": "sequential"
+      }
+    ]
+  },
+  {
+    "name": "Emmy Squared Pizza: University City - Philadelphia, Pennsylvania",
+    "category": "Pizza",
+    "address": "3300 Fairmount Ave (University Fair Food Co), Philadelphia",
+    "location": [
+      -75.19102,
+      39.966164
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 205,
+      "num_images": 5,
+      "yelp_rating": 4,
+      "yelp_review_count": 1
+    },
+    "yelp": {
+      "yelp_name": "Emmy Squared Pizza - University City",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 4,
+      "yelp_review_count": 1,
+      "yelp_url": "https://www.yelp.com/biz/emmy-squared-pizza-university-city-philadelphia?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "current_gallery": [
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9AT8WbN_r01t6wR7gvf6a3GYtjbkr-_-eJyffWmTlAXV-gLrzgQ1DUAXxvgHpRMsEizgEcVxPFAnFUBSySV0cExoDq2be6LKHAPh9ivczf7CUpQm7_ck6uGLMSFsFlbtbDOG7bfJEoPJzRsHc1oOU?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=hj0MYFKoMM-ejzPoJvKzew&_nc_oc=AdlJb5LhVwcL6a3QjL-qGGbp23Dt2KJf9j6qpGFcin5HZGv_Taw-6Mcg0fnrJ8rGRe_dCnZyE7As4nTPak0rx_Ef&ccb=10-5&oh=00_AfznNZguEXZ1HQU5pSE5QdouLqFvMPCpA8HxRZ1Ykv-emQ&oe=69D41E2B&_nc_sid=201bca",
+        "date": "2025-08-14",
+        "distance_m": 47,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8C1IgbYPvPGOLleR_KuY-RKfjctQvgxkmpw8o-xzXA0sK_Eaa-434SFAgdVJuEuT2-qWY6NPYFOB0_ECrY77HV24BDByZcEPjpmRPxYjGKqBju_ouBPYgtjn9BrFAURWgo4sqpT8dDLNbO0Mpx64w?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=hj0MYFKoMM-ejzPoJvKzew&_nc_oc=AdkT2I6eU__sriG4W4Xc_feNJxIAV4PJlN6h6liNf8Fd-9ri0CgOUeeOqndjNn52Yt6-BBPPZYuwPVS8hvoSNOgR&ccb=10-6&oh=00_AfyGQzoDi_lzrS8nql_adrctbjw6O6TTjN_gbb4QOdj7gg&oe=69D410D6&_nc_sid=201bca",
+        "date": "2025-08-14",
+        "distance_m": 56,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_Thf_xtIFm2HkJ7GHGlkl8HxdVdrK4QyUL6nW2IyfwkPkaAGHFiZEek8DZ2Fml0bwW0shPB3BwJ3JQtjPt3PDqBBWBux5fuuTkJp4AAS4Dh5V9qQb_rvcnaWQSS-eqs3ppHEhDZ0REyhunxcYoyYY?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=hj0MYFKoMM-ejzPoJvKzew&_nc_oc=AdlaQX1wN7uC2CQyVQYyK7PXMS2AJ_d29R4JP0_1zlyt_bFDLvpLmBUTS4XJI1BNOH2j5qQX2Da8PUsBwuI4lJly&ccb=10-6&oh=00_Afw2oCl1rpBik_nmwoAz0Km22jV4jCGX4xQRh6Y9NC3imQ&oe=69D44511&_nc_sid=201bca",
+        "date": "2025-08-14",
+        "distance_m": 60,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8zLyxhJOuM_wOQqcsI3u6YYCfaW19faY4619OJ8hzaXzTePMhnBbHW9Si_ZJT3gzDvCy4SZwtjNUW1VyDdDNpRT-ip-r3YqgE0VN8s6W93nvieaNJ7VOp4OWcPVH4iFNnuIqmjzq72zkJ7yOUDDA?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=hj0MYFKoMM-ejzPoJvKzew&_nc_oc=AdlZ94w7hYBMxkQX-Xo8Dp6FAxixZmxl1XqjAlmm2IT9H4e1bMcC0a6Ne-nhOB0Si1JrlQOEApVWloUgWoQBzvsa&ccb=10-5&oh=00_Afy7Q02yj0FxGjya99QPgEsba8iliIA_O9ZkMsvaLJ8LNw&oe=69D42CC7&_nc_sid=201bca",
+        "date": "2025-08-14",
+        "distance_m": 53,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9D4M-YxVBvHgfJ0_l2cMFyQWdhU0nYgIjHSVGyjqhdhv5WTznRXCpgrYJSzoqT3KfdejkInIH-W_9mX-4BiMGeTQMESt6jXOIVgsPqjNfFMt64c73uEuq38OdKjfQEDIXbbXPG8J3R5rpZnnsTFWY?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=hj0MYFKoMM-ejzPoJvKzew&_nc_oc=AdnZQ8dafhtQ5b1f9JuahTMN6qQl60TVIe65KvWerpjb91FnlZ-_xcCTpLiOAZ-pR-1zjmymcpUiTcOAtKvVvsLA&ccb=10-5&oh=00_AfztJB5Pz-nnVQ6tjMF55KOOiY2ukAaEWYLEn4fuHogCrA&oe=69D438F8&_nc_sid=201bca",
+        "date": "2025-08-14",
+        "distance_m": 55,
+        "group": "sequential"
+      }
+    ]
+  },
+  {
+    "name": "Metro by T-Mobile",
+    "category": "Mobile Phones",
+    "address": "2717 W Girard Ave, Philadelphia",
+    "location": [
+      -75.158419,
+      39.977982
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 2734,
+      "num_images": 3,
+      "yelp_rating": 1,
+      "yelp_review_count": 1
+    },
+    "yelp": {
+      "yelp_name": "Metro by T-Mobile",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 1,
+      "yelp_review_count": 1,
+      "yelp_url": "https://www.yelp.com/biz/metro-by-t-mobile-philadelphia-8?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "current_gallery": [
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9c51Hme1Je1C0toWuAGL1qAlYrz-NMnj5y1XvCbipCgQNQw1I1GcLjj5DIAtiQWmgOwur_qYKiDgGe_T0i35aHBPrA79YeQJwpcsGXBSt_o2k5Z03WQRU3NXtO1Nsi7LMByKyrDsyY--aXOZ0heco?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=ZSVo8IhoxuvPnzGCC25uCg&_nc_oc=Adl65Y2qgh-8bfOcx9TknpwEQIW-oR_9HSVEXh_tDANU-ci_h4GwiAWcq0coIgfEWZtpLPyIlKwCB6CKO3RHOmgY&ccb=10-6&oh=00_AfzllayArBbrkY1GCkCf6NoxIjOw8LTpQFTKq2yOLdMQmQ&oe=69D41A77&_nc_sid=201bca",
+        "date": "2018-09-18",
+        "distance_m": 35,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9rwVzbgZygNykaVWM3b-23sRllBh1eOP9tIrWjMgV6Vu-aMgIb_5tkrX4VsF2Sip6K-haumOvDxFAoQOA_kXKI2KJLj8Klw5iYL9Z4OPZL8icWqYPpquUfDNBuU-OIVTslta5fio0pGpOEurJarA?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=ZSVo8IhoxuvPnzGCC25uCg&_nc_oc=AdnX9jAJto5_eCcYO8M8S_-bU8E0tvnPOcyuAurDnHRlzdrVm8riXvIHsJXN63ypwyrmopgLGhMhHuNWQ9knN5TR&ccb=10-5&oh=00_AfxOv6TVXw99nXG9y1ggpCThDYD49FAsK7D6EfmWbKTpvA&oe=69D42D64&_nc_sid=201bca",
+        "date": "2018-09-18",
+        "distance_m": 33,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9Z7XNtNf5tR0B-oj6xSvIh3ZoGjhisilTEJlnvOXhRgPe0vdSrF4uOh-ThB6Cr6IMYNC7ANWXsXFj8JB9s1KTPfM8FsAzv697doDwdXe6rEHj5pkjrCUKmLVngxj-w9XYKXxSuPYh8VkMzt4OH6g?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=ZSVo8IhoxuvPnzGCC25uCg&_nc_oc=AdnufRySP2qx0trHSBNKTQu-XMEo_Zpn1MC17iOddyFK28VHxYpCa5VaS0GGVALca9rfyBmXCfZ6x1IL4pQhrH5J&ccb=10-5&oh=00_AfxkXb2Wq29MrfdZbzrWRV3TIShzOyDgrHKinNjcKNVm1Q&oe=69D41FEF&_nc_sid=201bca",
+        "date": "2018-08-28",
+        "distance_m": 48,
+        "group": "sequential"
+      }
+    ]
+  },
+  {
+    "name": "Kismet Bialys",
+    "category": "Bagels",
+    "address": "1136 Arch St, Philadelphia",
+    "location": [
+      -75.159089,
+      39.953157
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 2357,
+      "num_images": 4,
+      "yelp_rating": 4.2,
+      "yelp_review_count": 33
+    },
+    "yelp": {
+      "yelp_name": "Kismet Bialys",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 4.2,
+      "yelp_review_count": 33,
+      "yelp_url": "https://www.yelp.com/biz/kismet-bialys-philadelphia-2?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Kismet Bialys\" at this location",
+      "match": {
+        "fsq_id": "63cfecb8936f626417d2c855",
+        "name": "Kismet Bialys",
+        "category": "Bagel Shop",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1136 Arch St, Philadelphia, PA 19107, United States"
+      }
+    },
+    "current_gallery": [
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_FeTezSuuOMSBbejUUD5685bA6unXBUVgrEgFlMm8Z7qJcViqyxyiTgASwet1gcXPN11CDBgfHuMUZAVV51cpQJS62W-dB38rEJyReeBlrui7lO6V6zvilVzF5Q8ygjer1NGqPsgsl_-oG4HVxwoU?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=QK9S7fnEyBgOwY1L4JhayQ&_nc_oc=AdmijlCPA3R0jJoyHO27YWhdjGG-UNrhy3JO-L7zzGNGDs4JoeDXOp6jHfxz9NknnlETXQMmpaqzbvSOEfzIm9Qe&ccb=10-5&oh=00_AfyMxDTgUtxdlpdKas59rc0Ldq6zHY1svFhW-IJygfuocQ&oe=69D41C33&_nc_sid=201bca",
+        "date": "2019-12-21",
+        "distance_m": 48,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-LyD5clKxI2oEu2j4I9QC_3dSqtI5n46lBoZom-mjO1XPm9nw2c1_5vObepjqUo09d8mkLlVQT5_Gb5zADrkVl29VQ3R3Nj1ByzvcbOWcAgkDBnQGsNf1jFvMHJOASWD75gVB07wpmOBA-0Zy3ZQ?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=QK9S7fnEyBgOwY1L4JhayQ&_nc_oc=AdlyYZdYO74H-FUdomntH83Hk4laeKwpBhYj9yjb-g1whXFDYWthrytQ4ZS6vKyLyKCphUIfPJsSsRDhkMoMReEL&ccb=10-6&oh=00_AfwbSTqUvUlj2Opitg3EPBTYaMZS_Rf3ff2y9FKfO20jtw&oe=69D4456F&_nc_sid=201bca",
+        "date": "2019-12-21",
+        "distance_m": 39,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_dKFJ642MQJHZz_-Gxl9aEfqtYDHwhxwCTU1TUlONFCJszQZCzC95xfZZTS2PKSv3l0SJUzbsWvzVM3z2fP62o70Unqwm1rlyvDLzS-msrADDxlGjlzB4GJY3f4_Iyr2B1iCHZ2AmmJBPbkZQU69g?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=QK9S7fnEyBgOwY1L4JhayQ&_nc_oc=AdnXgRuSiuijgE3-TGGVttREfGDPxz8PmRCoNOs5lG24qZq9ra4kzxcKuMOWdW_P3vnG9uaZYzBG6aC9qpZ8GLqg&ccb=10-5&oh=00_AfxV62G6R10KUV42JEcy0rtxM-wJXeDHWNCjQLQ45fgMVg&oe=69D41208&_nc_sid=201bca",
+        "date": "2019-01-07",
+        "distance_m": 60,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8Xk7Cfol_6UCcUJ5pJnLQMo7hALFA0JT6OqI2UAbsNQ8pjwz7Pps_gKC7y1AN4K67uoxHECYabJADlChZLUq8PVsn8FLvNmnDazBBrOysIotHIlHv4t6sOq9W5mETZ_9Z_mbdKgGi5i37W_sJ6iA?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=QK9S7fnEyBgOwY1L4JhayQ&_nc_oc=AdnS7rerEGyQ_ybDBExROv3dIo1QqWpLTau7f7i30TJOMlJiTZEeAh_Dc7UWx74kVEhTv9cXb9GPg96i123ehmBX&ccb=10-5&oh=00_Afy-U_ypOuNCH3_Viq0j0NhVR3s8SdJbY8xfToW3c_u4sA&oe=69D430B3&_nc_sid=201bca",
+        "date": "2019-12-15",
+        "distance_m": 57,
+        "group": "sequential"
+      }
+    ]
+  },
+  {
+    "name": "The Morris Restaurant",
+    "category": "American",
+    "address": "225 S 8th St, Philadelphia",
+    "location": [
+      -75.1542873,
+      39.94738018102611
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 2268,
+      "num_images": 2,
+      "yelp_rating": 4.8,
+      "yelp_review_count": 56
+    },
+    "yelp": {
+      "yelp_name": "The Morris Restaurant",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 4.8,
+      "yelp_review_count": 56,
+      "yelp_url": "https://www.yelp.com/biz/the-morris-restaurant-philadelphia?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "mismatch",
+      "detail": "Foursquare shows \"Morris House Hotel\" instead",
+      "match": {
+        "fsq_id": "4aea08bcf964a520aeb821e3",
+        "name": "Morris House Hotel",
+        "category": "Hotel",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "225 S 8th St (at St James St), Philadelphia, PA 19106, United States"
+      }
+    },
+    "current_gallery": [
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An83ylJotHV_wu_UHimpF3fUIadcHHs52U5N0-zIYCaDKUuLVHmhigPYLv51xR2wLDdcy93XKBRW_Y1VHq0mZ9rIYAmjg1Tmeq53sfKxPNw6u0FOPik8MuA7AYM59LHZbWn7IxsQSJM57NE_3kK_MA?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=vGA9-mgOdJhCBxMB2FIiuA&_nc_oc=AdlSdzsPONaDJjkXkgBJyvVz9IeecXFbwPezX5lh9IomodKa6y4vssxiIAmBmGEmVDgLfYsHb0QPvPDkFTOdttVV&ccb=10-5&oh=00_Afyufbp5pXLeneQO9ofcUJVg-XYEJCaPtXjCBZoSNE4QdQ&oe=69D43209&_nc_sid=201bca",
+        "date": "2019-12-21",
+        "distance_m": 26,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-cp-vlhg8HPUQPEmgL53SrjMsLaz7VJxb39aKD02AMpQ84A0GvoHHec-2eMQY34jiEYx9g0CR_2e7_hnSinkxxAP9BiRmMC_sCRrVIHh42dCMCV9hSP-wlHOux_rgjk4GYffZ9RZ_CSabU_cKJMg?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=vGA9-mgOdJhCBxMB2FIiuA&_nc_oc=AdnsK4ZsfoVIiggApqBzT_Vm3mJGadJ3byzbZrlYO2XgfJmpO06Hml6QznjkHtzdzNcHBn82hWpMNGTdW2BhkG3m&ccb=10-6&oh=00_AfwuDCLuNyBuZQKvRO7ZTirhVuhS8x-TJRsqy3PYkL5pIQ&oe=69D441D1&_nc_sid=201bca",
+        "date": "2019-12-21",
+        "distance_m": 19,
+        "group": "sequential"
+      }
+    ]
+  },
+  {
+    "name": "Krispy Krunchy Chicken",
+    "category": "Cajun/Creole",
+    "address": "2500 Island Ave, Philadelphia",
+    "location": [
+      -75.243536,
+      39.91264
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 0,
+      "num_images": 0,
+      "yelp_rating": 4,
+      "yelp_review_count": 1
+    },
+    "yelp": {
+      "yelp_name": "Krispy Krunchy Chicken",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 4,
+      "yelp_review_count": 1,
+      "yelp_url": "https://www.yelp.com/biz/krispy-krunchy-chicken-philadelphia-8?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Krispy Krunchy Chicken\" at this location",
+      "match": {
+        "fsq_id": "ff1e7a60a5ad438406edc49e",
+        "name": "Krispy Krunchy Chicken",
+        "category": "Cajun and Creole Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2500 Island Ave, Philadelphia, PA 19153, United States"
+      }
+    },
+    "current_gallery": []
+  },
+  {
+    "name": "Ten Thousand Villages",
+    "category": "Home Decor",
+    "address": "1315 Walnut St, Philadelphia",
+    "location": [
+      -75.20438,
+      40.0751
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 0,
+      "num_images": 0,
+      "yelp_rating": 5,
+      "yelp_review_count": 7
+    },
+    "yelp": {
+      "yelp_name": "Ten Thousand Villages",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 5,
+      "yelp_review_count": 7,
+      "yelp_url": "https://www.yelp.com/biz/ten-thousand-villages-philadelphia-2?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "current_gallery": []
+  },
+  {
+    "name": "Yellowtail",
+    "category": "Sushi Bars",
+    "address": "1218 Pine St, Philadelphia",
+    "location": [
+      -75.16206,
+      39.94503
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 2271,
+      "num_images": 2,
+      "yelp_rating": 3.6,
+      "yelp_review_count": 140
+    },
+    "yelp": {
+      "yelp_name": "Yellowtail",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 3.6,
+      "yelp_review_count": 140,
+      "yelp_url": "https://www.yelp.com/biz/yellowtail-philadelphia?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "current_gallery": [
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_65vZSJqAn-BTJe_eT_QiLq79N_30817JsdjPTXymQKQYUhnfHM_Q--fs58DqefwcA-Z1PHTpJKodx3ZMnWw1-27lAZOdQyiDb2VgpmTe4O7ffkPRBEYJapyxZYFqIIuRSm7a1V83mf3xLzu8lLA?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=8jcSuoIWvLZ4DpKTJ6tBVw&_nc_oc=AdntmV_UUrujtzYhkxAiDxFsP60amWjAYets4u4ljQf5k3wAq-5g-iTsbvvi9wsmAlNuh1fTyieQkHzPHJStnYMI&ccb=10-5&oh=00_AfzKckT0_xfupZgE-cwhg06CtUpCoHbr0bIDNK_-Igq_DA&oe=69D43010&_nc_sid=201bca",
+        "date": "2019-12-15",
+        "distance_m": 22,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8aEyl_-FmWSqJ1paNDkIh-twC2I68IRnKSIfbPu0gxvRoPtCdAleCNwMIgfHo84uWvwmkxXVmJYGGKs4e_EOTCsWo_cd1eDH7nImnqiVCRj6X-2qYd2MwixgAQoLEXByapnuhZdp0rRyehy_fO48M?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=8jcSuoIWvLZ4DpKTJ6tBVw&_nc_oc=AdlSFMk0oIZtJnEn0JWuG5KESYi_sYFZp4-X6f_Uv1U3G_0EHU02wU_KTLIga-VW69kZN8oXb1yRsGEc3IUe4pSP&ccb=10-5&oh=00_Afw-9qpQZgh_B4UgPKI1dGR02aQ3mPIX5NmI5NAaBmYBaQ&oe=69D41F26&_nc_sid=201bca",
+        "date": "2019-12-21",
+        "distance_m": 31,
+        "group": "sequential"
+      }
+    ]
+  },
+  {
+    "name": "HipCityVeg",
+    "category": "Vegetarian",
+    "address": "127 S 18th St, Philadelphia",
+    "location": [
+      -75.1636850461364,
+      39.9502654001867
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 2268,
+      "num_images": 2,
+      "yelp_rating": 4.3,
+      "yelp_review_count": 203
+    },
+    "yelp": {
+      "yelp_name": "HipCityVeg",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 4.3,
+      "yelp_review_count": 203,
+      "yelp_url": "https://www.yelp.com/biz/hipcityveg-philadelphia-4?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"HipCityVeg\" at this location",
+      "match": {
+        "fsq_id": "5852d6aad21e030e68cb5512",
+        "name": "HipCityVeg",
+        "category": "Vegan and Vegetarian Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "121 S Broad St, Philadelphia, PA 19107, United States"
+      }
+    },
+    "current_gallery": [
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_b1noGheTIFhZuBtywN9DePhLTEklfPHOD6JOXZ4lCJcEVUpkEY6SYSz2xFjBBLQPc8vB97_jb73_dibWblfgU7P7pRF2DFYx2IoS8QShmA-179U-1Uisxj89aNhZTNMn-58AOKyN_LN9VboCEEZ4?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=7V78GN9dXzFhxRSmvIVsrQ&_nc_oc=AdnHT-cL280FcKm3M-gd0Z4oR8E-VSB8ozL6KT6sb9NOw29iutdr5sF6wtTpHyjNVKDUDwYrgXhnvm82PbOWBQfS&ccb=10-5&oh=00_AfxUJn-KQO5598m518935QyWPtrnldRhs9ymqGwMMd4P1g&oe=69D425C8&_nc_sid=201bca",
+        "date": "2019-12-21",
+        "distance_m": 26,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-Zc3gcEZp6Uu_IV1C9vv5yA65mLJdnBk-2b82xYq3LSNvk31S-yjZLM-vx4gMSYP2BwJxTCg8s1MUqJ7QtNyqYYOddDDOs4kDa5V5ygIZenjoXPqK3MX16UOYDZLKhvrAxt9dt3sNs5OAnUSOvUw?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=7V78GN9dXzFhxRSmvIVsrQ&_nc_oc=AdnZiMBEkx3Q_LxwSPuSsXPzh8_gCjZSbTLWAHik1-sYwTYvZhWft5YL-XB6uT5FlXnHpLum80tRgG0sRFUFryEe&ccb=10-5&oh=00_Afx103_pZG1MuBRbw8Cq6Fio0YOT5iZuBks_l-eXMgzuMw&oe=69D4233F&_nc_sid=201bca",
+        "date": "2019-12-21",
+        "distance_m": 21,
+        "group": "sequential"
+      }
+    ]
+  },
+  {
+    "name": "The Refinery",
+    "category": "Saunas",
+    "address": "1001 N Delaware Ave, Philadelphia",
+    "location": [
+      -75.14448,
+      39.95048
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 0,
+      "num_images": 0,
+      "yelp_rating": 4.7,
+      "yelp_review_count": 22
+    },
+    "yelp": {
+      "yelp_name": "The Wellness Refinery",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 4.7,
+      "yelp_review_count": 22,
+      "yelp_url": "https://www.yelp.com/biz/the-wellness-refinery-philadelphia?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"The Wellness Refinery\" at this location",
+      "match": {
+        "fsq_id": "600af7292ffd7345e45593f7",
+        "name": "The Wellness Refinery",
+        "category": "Sauna",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "216 Church St (N 3rd Street), Philadelphia, PA 19106, United States"
+      }
+    },
+    "current_gallery": []
+  },
+  {
+    "name": "Dollar General",
+    "category": "Discount Store",
+    "address": "2815 Ridge Ave Ste A, Philadelphia",
+    "location": [
+      -75.17941,
+      39.98653
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 407,
+      "num_images": 2,
+      "yelp_rating": 5,
+      "yelp_review_count": 1
+    },
+    "yelp": {
+      "yelp_name": "Dollar General",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 5,
+      "yelp_review_count": 1,
+      "yelp_url": "https://www.yelp.com/biz/dollar-general-philadelphia-11?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Dollar General\" at this location",
+      "match": {
+        "fsq_id": "4fa9376ee4b01db688c10412",
+        "name": "Dollar General",
+        "category": "Discount Store",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2815 Ridge Ave Ste A, Philadelphia, PA 19121, United States"
+      }
+    },
+    "current_gallery": [
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An84JV0LANfAEaOlcLSC2jwKxAw76f3MoGFTAN0godj6fbWOaAQfsHD64BJIMFRw3k-4xJk-p-o2mVN3XbIsVe1AcMQAzEPG8bZU5ub9EWUEfJstAtzd9X34lTqLXoW41BBOTIfQkIHC4MAuMQrVp_o?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=Lbia1NJvQSb5qfW3u0i_-w&_nc_oc=Adk95YEPlm7mt1xdKuJeJ5UrrJhMHBVzu7qipz4GOUOK6ubF03slzUdOXZY2WMxq9EqZl3iGFM_UF5JVQQOGJOiJ&ccb=10-5&oh=00_AfyK2KDmcen6dL8IW1twt6mGlKjap4FCtKYm98G3TqPe8w&oe=69D41DB4&_nc_sid=201bca",
+        "date": "2024-01-05",
+        "distance_m": 54,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_sgYkvHCkx59dAqDBVv3yXUu-VZ6vV5-n8JOcwUIPLO2xhw-Zg1Qdl6AyeGE71cSaGiIXVbgjjUlIdmNdt7fBVDzoe9-SvDAEJLNrfVZNpASr9_knaag5R55cnNmU9Pf8Ms8KMby45-8s2Uga3K3Q?stp=s2048x3640&edm=AOnQwmMEAAAA&_nc_gid=Lbia1NJvQSb5qfW3u0i_-w&_nc_oc=AdkxXgovsUfjJw4ZBEG4R4yhRTiGHQRWQ5VICSUIf3lPvdQHLIA19FQ9ukAjjFbp0DvVPDTHAvte2sKcmCwukNNb&ccb=10-5&oh=00_AfwQ-HP3WXOaJDrv6pRH6secdFtJE8pvetb-y03cJ1rxaw&oe=69D41467&_nc_sid=201bca",
+        "date": "2026-02-13",
+        "distance_m": 57,
+        "group": "sequential"
+      }
+    ]
+  },
+  {
+    "name": "Taste King Restaurant",
+    "category": "Chinese",
+    "address": "5245 Market St, Philadelphia",
+    "location": [
+      -75.02509596885247,
+      40.10910893951458
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 0,
+      "num_images": 0,
+      "yelp_rating": 3.4,
+      "yelp_review_count": 87
+    },
+    "yelp": {
+      "yelp_name": "Taste King Restaurant",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 3.4,
+      "yelp_review_count": 87,
+      "yelp_url": "https://www.yelp.com/biz/taste-king-restaurant-philadelphia?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Taste King Restaurant\" at this location",
+      "match": {
+        "fsq_id": "4b9c656ff964a5209b6536e3",
+        "name": "Taste King Restaurant",
+        "category": "Chinese Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "10763 Bustleton Ave, Philadelphia, PA 19116, United States"
+      }
+    },
+    "current_gallery": []
+  },
+  {
+    "name": "Screamin' Rooster",
+    "category": "Fast Food",
+    "address": "1016 Race St, Philadelphia",
+    "location": [
+      -75.15666250706388,
+      39.9551743
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 2268,
+      "num_images": 2,
+      "yelp_rating": 4.7,
+      "yelp_review_count": 27
+    },
+    "yelp": {
+      "yelp_name": "Screamin’ Rooster",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 4.7,
+      "yelp_review_count": 27,
+      "yelp_url": "https://www.yelp.com/biz/screamin-rooster-philadelphia?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "current_gallery": [
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_HO8FnRKMrb1-E3bvQRZIfNGpxgdtgalRT7gW9eFhboIOSdev28F89KNVatwCDEqxagG5HSdzIsTBbRgIHlVfhovivShNj_VBfsrepMVfzWiPnJwmsPumP0TU1W3opjA8kleChjEY8iRayInG0tA?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=GLatLFfqb3l1DDK5U2PmdA&_nc_oc=AdkogRh1MNITH5oXdK7pS7wcQr9hHp5iemPOTAfPOXb6wVvbDWnsvuo8laO-uiqq2Gb25Sn4FJpPYkltWHBW9E__&ccb=10-5&oh=00_AfyWV2ths4gMfBzvUNGgflhHnfAFmcq1MvNJbMo-v-Qmcw&oe=69D43421&_nc_sid=201bca",
+        "date": "2019-12-21",
+        "distance_m": 45,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_OONwpiUYwwJkHQPSWpCoUlAsJgQQn1x-KnyLIflu3T1H-6ngGjcX9qq9ONgJMA-ZFTucER5-cKGovk75zFMu0ZM-aPaz5vSti9CSdEZEpuSWz4hr9EOnJooWfbG9vYhO5Cc2ux7MM0YE2VEEF0w?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=GLatLFfqb3l1DDK5U2PmdA&_nc_oc=AdkEA2aYoWPjmENR5tFUWPhIKnobF5MNigoXDDD9Xy6GCrb6ejNvlV-p2sSmf5KuSWz-CPFaSs-d6pQZPpLlmoSK&ccb=10-5&oh=00_AfxbFOUTyfR4p6vS-FV99GS-X8TPRnrnWdaS4hUZeQIBBA&oe=69D424FA&_nc_sid=201bca",
+        "date": "2019-12-21",
+        "distance_m": 42,
+        "group": "sequential"
+      }
+    ]
+  },
+  {
+    "name": "Dragon House",
+    "category": "Chinese",
+    "address": "1228 Chestnut St, Philadelphia",
+    "location": [
+      -75.1615829467773,
+      39.9503517150879
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 2268,
+      "num_images": 2,
+      "yelp_rating": 4.2,
+      "yelp_review_count": 5
+    },
+    "yelp": {
+      "yelp_name": "Dragon House",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 4.2,
+      "yelp_review_count": 5,
+      "yelp_url": "https://www.yelp.com/biz/dragon-house-philadelphia?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Dragon House\" at this location",
+      "match": {
+        "fsq_id": "4b89a53df964a520c54832e3",
+        "name": "Dragon House",
+        "category": "Chinese Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1228 Chestnut St (13th), Philadelphia, PA 19107, United States"
+      }
+    },
+    "current_gallery": [
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-YTiQkzxH7KEGGkNjYke9cJmnsaau2Rgy-c2FcTVTmH0vEh-qJ9LmK319Wmj7okWCLaRPjYzz7Ge0aX67i9kYFqCVJweokeeTI7BwqBUSA9ew6cRVc_u8gDnz-Ul7SGiE68g36g5K1DjO0FIlg0A?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=bQFIhlhJjstf2XZ5du44sw&_nc_oc=AdkOVIsM0zBa4CtdqePf4HOoMWqpYklYxWo7tNHi9b0MFDXQm_89SkpDvRI0Wo7NUIXD0Ty1yT1_0mTvagX9cmHn&ccb=10-5&oh=00_AfzH8wPFr1F2zCafjnXuw3bSLA7JVNI3L3TwKV4_fjGcmw&oe=69D43387&_nc_sid=201bca",
+        "date": "2019-12-21",
+        "distance_m": 22,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8HqYBzNeapBgU32pRPWKhoaIqfZFwsJohUmz7n43RPhgOH2SMKd5I0YoitgRscENCOQrkj1cBxGEkD3PPk4CYEQljLaomTPQdaCcJL8o6YZxqX-cKCGLJgikEUpxHiI955oU68NlOvPkH0vRrsVA?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=bQFIhlhJjstf2XZ5du44sw&_nc_oc=AdnzXDbYbTik6x2tuoS5II4aYh-TQKBYyY3wL2hMhYeNppjPFh_JslnlLIT9DfSSEo_uSbadNqpN4tk8Y-fkTITK&ccb=10-5&oh=00_AfzuPHVmBAni41qrmwb-ORbKZ2Mt7X8fMCkCkdanHaMU3A&oe=69D42E53&_nc_sid=201bca",
+        "date": "2019-12-21",
+        "distance_m": 18,
+        "group": "sequential"
+      }
+    ]
+  },
+  {
+    "name": "Chika Ramen Bar",
+    "category": "Ramen",
+    "address": "1526 Sansom St, Philadelphia",
+    "location": [
+      -75.1669376730107,
+      39.950412556687944
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 2269,
+      "num_images": 3,
+      "yelp_rating": 4,
+      "yelp_review_count": 68
+    },
+    "yelp": {
+      "yelp_name": "Chika Ramen Bar",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 4,
+      "yelp_review_count": 68,
+      "yelp_url": "https://www.yelp.com/biz/chika-ramen-bar-philadelphia-2?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "current_gallery": [
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8zeo6Xa-rAYyGpZNRT6vrXxd4kyIyQZ0G-KM5PL_rdOP2Su6lXnzVj0xHzn8NbJx8zQbkWZmFkDbfWw_ElJOMxqZPb7eO3IkMgkAHtV2e20ePEsupiMpKcsS8TB488yc7lJhf40RXGltI2pJSBZA?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=GZpUbh-cr1QkV-vNK7dKmA&_nc_oc=AdkunsM3ttmEJbGBN1SXzhWzTnFgfwlxhcHKP7UUEH36ZKQdRvZcHvZBfsdh7dKvM4Cb9GS2FjIp-BOyegFTKivs&ccb=10-5&oh=00_AfwfTbxiSsUDHHjxixmPM03t6F960LBQlel_POI5OTiJuQ&oe=69D426F4&_nc_sid=201bca",
+        "date": "2019-12-22",
+        "distance_m": 30,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_C5lDCJfQSdTFRgMX6Z4_cTqZp1ON_vBZ6oHd8H-H1MPvtaPyuTF0Qe0z3TA3mLPib2XgdYtlrL0qEhSH4rMh2MPGi0yOeBoOPZirhcGPe5qiXl99Mb6_d2z4QXdIZcnETvlxkdKsZGXqJLqzMkQ?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=GZpUbh-cr1QkV-vNK7dKmA&_nc_oc=Adnra482IA2nPFxrIpkIYKQuoxoB6glvpeLf0coKvZVtVqx2Sjeeiov1r_2bSbffSrBB2xVkGTNPSodY2D7afBcl&ccb=10-5&oh=00_AfwbcySOB7mreufdaK9UcYhgDNUcvWobSzV4eOehGwCsbw&oe=69D42B66&_nc_sid=201bca",
+        "date": "2019-12-22",
+        "distance_m": 24,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-69SWl8p7EiAaEu4eO_wn_KHldKpdne26OUXg_4LEdG6cxGPN5o6-FEaGye2WZmHL7c254L4bYTXLv-s6IzdgjFGalcEp9WrIwO08OeV_YKllvfnvdskHjW5y_bJcFlicUIbFh_baYu_IQ647S-HQ?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=GZpUbh-cr1QkV-vNK7dKmA&_nc_oc=Adn6slydFgD12uEZw0YpDfkHlLr-JzyzpwDxi1NU-27SZxp5rDT1fBPgBBsRtB06WLQPRzQgwdzGHF-ZGm7K45z-&ccb=10-5&oh=00_AfwQkvhuUk0p4ii9UDlq__4X_0emyDtv6Tf7LN9ehuzyig&oe=69D42B34&_nc_sid=201bca",
+        "date": "2019-12-18",
+        "distance_m": 32,
+        "group": "sequential"
+      }
+    ]
+  },
+  {
+    "name": "Bark Social",
+    "category": "Bars",
+    "address": "3720 Main St., Ste E, Philadelphia",
+    "location": [
+      -75.211411,
+      40.015609
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 0,
+      "num_images": 0,
+      "yelp_rating": 4.3,
+      "yelp_review_count": 16
+    },
+    "yelp": {
+      "yelp_name": "Bark Social - Philadelphia",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 4.3,
+      "yelp_review_count": 16,
+      "yelp_url": "https://www.yelp.com/biz/bark-social-philadelphia-philadelphia?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Bark Social Philadelphia\" at this location",
+      "match": {
+        "fsq_id": "6410bd48e4855271274fb662",
+        "name": "Bark Social Philadelphia",
+        "category": "Bar",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "3720 Main St, Philadelphia, PA 19127, United States"
+      }
+    },
+    "current_gallery": []
+  },
+  {
+    "name": "Krispy Krunchy Chicken",
+    "category": "Cajun/Creole",
+    "address": "7400 Marshall Rd, Philadelphia",
+    "location": [
+      -75.243536,
+      39.91264
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 0,
+      "num_images": 0,
+      "yelp_rating": 4,
+      "yelp_review_count": 1
+    },
+    "yelp": {
+      "yelp_name": "Krispy Krunchy Chicken",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 4,
+      "yelp_review_count": 1,
+      "yelp_url": "https://www.yelp.com/biz/krispy-krunchy-chicken-philadelphia-8?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Krispy Krunchy Chicken\" at this location",
+      "match": {
+        "fsq_id": "ff1e7a60a5ad438406edc49e",
+        "name": "Krispy Krunchy Chicken",
+        "category": "Cajun and Creole Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2500 Island Ave, Philadelphia, PA 19153, United States"
+      }
+    },
+    "current_gallery": []
+  },
+  {
+    "name": "Nafisa's Kitchen",
+    "category": "African",
+    "address": "5629 Chester Ave, Philadelphia",
+    "location": [
+      -75.22675,
+      39.93728
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 0,
+      "num_images": 0,
+      "yelp_rating": 4.3,
+      "yelp_review_count": 6
+    },
+    "yelp": {
+      "yelp_name": "Nafisa's Kitchen",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 4.3,
+      "yelp_review_count": 6,
+      "yelp_url": "https://www.yelp.com/biz/nafisas-kitchen-philadelphia?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "mismatch",
+      "detail": "Foursquare shows \"Thunka Kitchen\" instead",
+      "match": {
+        "fsq_id": "691b9a7ddcebcd6c1cb8a3d8",
+        "name": "Thunka Kitchen",
+        "category": "Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "5629 Chester Ave, Philadelphia, PA 19143, United States"
+      }
+    },
+    "current_gallery": []
+  },
+  {
+    "name": "Metro by T-Mobile",
+    "category": "Mobile Phones",
+    "address": "2704 N 5th St, Philadelphia",
+    "location": [
+      -75.158419,
+      39.977982
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 2734,
+      "num_images": 3,
+      "yelp_rating": 1,
+      "yelp_review_count": 1
+    },
+    "yelp": {
+      "yelp_name": "Metro by T-Mobile",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 1,
+      "yelp_review_count": 1,
+      "yelp_url": "https://www.yelp.com/biz/metro-by-t-mobile-philadelphia-8?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "current_gallery": [
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9c51Hme1Je1C0toWuAGL1qAlYrz-NMnj5y1XvCbipCgQNQw1I1GcLjj5DIAtiQWmgOwur_qYKiDgGe_T0i35aHBPrA79YeQJwpcsGXBSt_o2k5Z03WQRU3NXtO1Nsi7LMByKyrDsyY--aXOZ0heco?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=LMSZwLN2ydKTyNkjXiC7qg&_nc_oc=Adl65Y2qgh-8bfOcx9TknpwEQIW-oR_9HSVEXh_tDANU-ci_h4GwiAWcq0coIgfEWZtpLPyIlKwCB6CKO3RHOmgY&ccb=10-5&oh=00_AfynP30Z0ea6717TuQd0l9P5KFVa7t0TobtiRbTLYZnftA&oe=69D41A77&_nc_sid=201bca",
+        "date": "2018-09-18",
+        "distance_m": 35,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9rwVzbgZygNykaVWM3b-23sRllBh1eOP9tIrWjMgV6Vu-aMgIb_5tkrX4VsF2Sip6K-haumOvDxFAoQOA_kXKI2KJLj8Klw5iYL9Z4OPZL8icWqYPpquUfDNBuU-OIVTslta5fio0pGpOEurJarA?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=LMSZwLN2ydKTyNkjXiC7qg&_nc_oc=AdnX9jAJto5_eCcYO8M8S_-bU8E0tvnPOcyuAurDnHRlzdrVm8riXvIHsJXN63ypwyrmopgLGhMhHuNWQ9knN5TR&ccb=10-5&oh=00_AfwE7gTb7jKm9JpWOMlf-ggOqXWckOEWzgVcrWP_ZhHkdA&oe=69D42D64&_nc_sid=201bca",
+        "date": "2018-09-18",
+        "distance_m": 33,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9Z7XNtNf5tR0B-oj6xSvIh3ZoGjhisilTEJlnvOXhRgPe0vdSrF4uOh-ThB6Cr6IMYNC7ANWXsXFj8JB9s1KTPfM8FsAzv697doDwdXe6rEHj5pkjrCUKmLVngxj-w9XYKXxSuPYh8VkMzt4OH6g?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=LMSZwLN2ydKTyNkjXiC7qg&_nc_oc=AdnufRySP2qx0trHSBNKTQu-XMEo_Zpn1MC17iOddyFK28VHxYpCa5VaS0GGVALca9rfyBmXCfZ6x1IL4pQhrH5J&ccb=10-5&oh=00_AfyFrwrfZFwE7cxtWhyX6uPNybCeDLH25Sc89cqrGYCnsg&oe=69D41FEF&_nc_sid=201bca",
+        "date": "2018-08-28",
+        "distance_m": 48,
+        "group": "sequential"
+      }
+    ]
+  },
+  {
+    "name": "Spruce Hill Provisions",
+    "category": "Grocery",
+    "address": "4529 Baltimore Ave, Philadelphia",
+    "location": [
+      -75.21426,
+      39.94916
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 3555,
+      "num_images": 2,
+      "yelp_rating": 5,
+      "yelp_review_count": 1
+    },
+    "yelp": {
+      "yelp_name": "Spruce Hill Provisions",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 5,
+      "yelp_review_count": 1,
+      "yelp_url": "https://www.yelp.com/biz/spruce-hill-provisions-philadelphia?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Spruce Hill Provisions\" at this location",
+      "match": {
+        "fsq_id": "63f27dc3ccd0ce200bb4832c",
+        "name": "Spruce Hill Provisions",
+        "category": "Grocery Store",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "Philadelphia, PA 19143, United States"
+      }
+    },
+    "current_gallery": [
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_hsBMzPXvS3dMwCu365n8YWD0EX2vbq7nWqsor_9Hdnw8mh1G9U8L0poMVothJ2vFAxZ8YkN9pQW853WJMkpnXxN0Cku0J_6kQ5BP2hVz2D4O5sKCUQFtj6dq1y7LmvffPQyfbyfhk2FYhmI4chQ?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=rUsac62JEoUKAM4JwRQyoA&_nc_oc=Adm2hsj-9GV_lE1biAqRhuvm9b86IMTDkAgW-oe7DMPWdPK8iIAeJNezJLOe5m-U-YBhwRR8WNNIyyGQif1W2SGz&ccb=10-5&oh=00_Afz0iA9avVHhpSoRklIxvsLzVOfWALj2tbzb0jemCij5Ag&oe=69D431F8&_nc_sid=201bca",
+        "date": "2016-06-12",
+        "distance_m": 47,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_BxNf25OY8YmeHW_9zV1p84WLCLO2Qkr2Zh7u43OAwhX8JLzjezzHrfdzvJRuTsnmBaKYQETepiELwoJfWkntZKvnYPMK3SxnvoeHBMR1aUVExoqApMn6sLQeCIx2nWQ6PBNQEyUiarSu4SMfW3w?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=rUsac62JEoUKAM4JwRQyoA&_nc_oc=AdkFSyji2V_nZtsgygbl4t0YLhEe4wXRTk8QkIcRFsuOZeqWr85A8q1GkTVKXdQyQ5bYrwG0JWEOJcHmboO4sSYH&ccb=10-5&oh=00_AfwTqR6ntPMRJKQ5ke5NX-385yHQYUQWxOSQFTHvNX0MPg&oe=69D4321A&_nc_sid=201bca",
+        "date": "2016-06-12",
+        "distance_m": 25,
+        "group": "sequential"
+      }
+    ]
+  },
+  {
+    "name": "Metro by T-Mobile",
+    "category": "Mobile Phones",
+    "address": "2239 Cecil B Moore Ave, Philadelphia",
+    "location": [
+      -75.158419,
+      39.977982
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 2734,
+      "num_images": 3,
+      "yelp_rating": 1,
+      "yelp_review_count": 1
+    },
+    "yelp": {
+      "yelp_name": "Metro by T-Mobile",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 1,
+      "yelp_review_count": 1,
+      "yelp_url": "https://www.yelp.com/biz/metro-by-t-mobile-philadelphia-8?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "current_gallery": [
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9c51Hme1Je1C0toWuAGL1qAlYrz-NMnj5y1XvCbipCgQNQw1I1GcLjj5DIAtiQWmgOwur_qYKiDgGe_T0i35aHBPrA79YeQJwpcsGXBSt_o2k5Z03WQRU3NXtO1Nsi7LMByKyrDsyY--aXOZ0heco?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=zVoDC9fHMrn9Ti2brBC1uA&_nc_oc=Adl65Y2qgh-8bfOcx9TknpwEQIW-oR_9HSVEXh_tDANU-ci_h4GwiAWcq0coIgfEWZtpLPyIlKwCB6CKO3RHOmgY&ccb=10-5&oh=00_Afzd-gTdP9l95L-A9IuXzhHlaAMer-xjADENGh0my7OKKw&oe=69D41A77&_nc_sid=201bca",
+        "date": "2018-09-18",
+        "distance_m": 35,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9rwVzbgZygNykaVWM3b-23sRllBh1eOP9tIrWjMgV6Vu-aMgIb_5tkrX4VsF2Sip6K-haumOvDxFAoQOA_kXKI2KJLj8Klw5iYL9Z4OPZL8icWqYPpquUfDNBuU-OIVTslta5fio0pGpOEurJarA?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=zVoDC9fHMrn9Ti2brBC1uA&_nc_oc=AdnX9jAJto5_eCcYO8M8S_-bU8E0tvnPOcyuAurDnHRlzdrVm8riXvIHsJXN63ypwyrmopgLGhMhHuNWQ9knN5TR&ccb=10-5&oh=00_AfwBq2diNZSWNPxuX7ZdT0bd2zYKC6AJdsBOHsgqdm3UKA&oe=69D42D64&_nc_sid=201bca",
+        "date": "2018-09-18",
+        "distance_m": 33,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9Z7XNtNf5tR0B-oj6xSvIh3ZoGjhisilTEJlnvOXhRgPe0vdSrF4uOh-ThB6Cr6IMYNC7ANWXsXFj8JB9s1KTPfM8FsAzv697doDwdXe6rEHj5pkjrCUKmLVngxj-w9XYKXxSuPYh8VkMzt4OH6g?stp=s2048x1152&edm=AOnQwmMEAAAA&_nc_gid=zVoDC9fHMrn9Ti2brBC1uA&_nc_oc=AdnufRySP2qx0trHSBNKTQu-XMEo_Zpn1MC17iOddyFK28VHxYpCa5VaS0GGVALca9rfyBmXCfZ6x1IL4pQhrH5J&ccb=10-5&oh=00_AfynZsvamvbb-5QsK47BxmtXPDWzXZe6fIMH9IiUCehKjA&oe=69D41FEF&_nc_sid=201bca",
+        "date": "2018-08-28",
+        "distance_m": 48,
+        "group": "sequential"
+      }
+    ]
+  },
+  {
+    "name": "Saxbys Coffee",
+    "category": "Coffee & Tea",
+    "address": "5600 City Ave, Philadelphia",
+    "location": [
+      -75.2031435956314,
+      39.9527910361358
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 0,
+      "num_images": 0,
+      "yelp_rating": 3,
+      "yelp_review_count": 122
+    },
+    "yelp": {
+      "yelp_name": "Saxbys",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 3,
+      "yelp_review_count": 122,
+      "yelp_url": "https://www.yelp.com/biz/saxbys-philadelphia-16?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Saxbys Coffee\" at this location",
+      "match": {
+        "fsq_id": "4b5a0561f964a5203ca828e3",
+        "name": "Saxbys Coffee",
+        "category": "Coffee Shop",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "4000 Locust St (at 40th St), Philadelphia, PA 19104, United States"
+      }
+    },
+    "current_gallery": []
+  },
+  {
+    "name": "V's Barbershop - Old City Philadelphia",
+    "category": "Barbers",
+    "address": "58 N 2nd St, Philadelphia",
+    "location": [
+      -75.14357,
+      39.95146
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 1993,
+      "num_images": 1,
+      "yelp_rating": 4.2,
+      "yelp_review_count": 22
+    },
+    "yelp": {
+      "yelp_name": "V's Barbershop - Old City Philadelphia",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 4.2,
+      "yelp_review_count": 22,
+      "yelp_url": "https://www.yelp.com/biz/vs-barbershop-old-city-philadelphia-philadelphia?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"V's Barbershop - Old City Philadelphia\" at this location",
+      "match": {
+        "fsq_id": "603a702490d26834e7bb0049",
+        "name": "V's Barbershop - Old City Philadelphia",
+        "category": "Hair Salon",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "58 N 2nd St, Philadelphia, PA 19106, United States"
+      }
+    },
+    "current_gallery": [
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_KcjUgcvmgjauur1bZS1XW-OX1tqU6rfQGMrN1iWwgioH6HHpK57pHzixTjq5_2ZaSEsrVQMJDPfhRrOsaf9n9OX4o0dZZJ2cPYpdX3HBwHxUeoawA8rxUO7rFHNlf7wBx6o7vlvyXcjuvtxzIsA?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=YmRRdqssn3BRLSUxDtD-Sg&_nc_oc=AdlCZehTKgs9sCumzxoiLdxL4hBlLQ2prwoy42IvmT0QaHoy9HjvLjxi1Li9RCpyNOk15L2sISKbg-qs_QWmkYm3&ccb=10-5&oh=00_AfyyksYiOKWHyu2YNGt1RgPNxAm2RwIHBFwtvVcDTao8Jw&oe=69D415A5&_nc_sid=201bca",
+        "date": "2020-09-21",
+        "distance_m": 13,
+        "group": "sequential"
+      }
+    ]
+  },
+  {
+    "name": "Menagerie Coffee",
+    "category": "Coffee & Tea",
+    "address": "18 S 3rd St, Philadelphia",
+    "location": [
+      -75.14818,
+      39.94974
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 1993,
+      "num_images": 2,
+      "yelp_rating": 4.4,
+      "yelp_review_count": 18
+    },
+    "yelp": {
+      "yelp_name": "Menagerie Coffee at The Bourse",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 4.4,
+      "yelp_review_count": 18,
+      "yelp_url": "https://www.yelp.com/biz/menagerie-coffee-at-the-bourse-philadelphia-2?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Menagerie Coffee\" at this location",
+      "match": {
+        "fsq_id": "5c0a8c158d0a530039f027cd",
+        "name": "Menagerie Coffee",
+        "category": "Coffee Shop",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "The Bourse Building, Philadelphia, PA 19106, United States"
+      }
+    },
+    "current_gallery": [
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_J9DyBugh2TNATSJuefEMtbHd1i0KVBzcRwJXYLBvmF_7m5Deu2FtudynLnjNgwiiJph5o7_HZ07FsX8jDLddh2mN2vj-GW5NmaM-qTo12KYzQ2v9_4ltc2cVweUijSxpi5LoaTxNxq8VqP2Qu0w?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=6XQKIz4pJOBOo8mA4KXKEw&_nc_oc=Adk6HcWEGBfH0nHvoQINuVqhvSRGOgN--B-5j1IaTcJKd8sqtMNYhvI4QUrK7tWqq6pj9IGYf2gdSMeXuhqLO4Zf&ccb=10-5&oh=00_AfxxaxzYRLIJOPdfIASfa90KePk05XyGpOMdEgdCL03btw&oe=69D43367&_nc_sid=201bca",
+        "date": "2020-09-21",
+        "distance_m": 50,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9jPjXDjqwFdaTYtRNo9fqrct88KT4F8m4yJgeozsKsyfZ9a4OUOUxZ00TnAHGmiZ41a-NmXqUSgrHOy5pQgXy7IA6ilTmGWIjOQbH6lfscGi4e_ZXQ6bnk9s_g4XAu7Rx7nt7xua5CqXHzfKhj3w?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=6XQKIz4pJOBOo8mA4KXKEw&_nc_oc=Adl1DBvMr1YiEMZFGxO5pTv62NRVLj4nU1lsV0PwL9POKz1O1_gfZc9UOP4lo0ZqYVFsB3dSR1O690pAuYePDuJy&ccb=10-5&oh=00_Afy8FxYJm5H9IUBLJIdTPZwOwqXTrCF9lTnCaJyKiczGug&oe=69D41FB6&_nc_sid=201bca",
+        "date": "2020-09-21",
+        "distance_m": 38,
+        "group": "sequential"
+      }
+    ]
+  },
+  {
+    "name": "JD's Soul Food Kitchen",
+    "category": "Soul Food",
+    "address": "4056 Lancaster Ave, Philadelphia",
+    "location": [
+      -75.20438,
+      39.9641
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 3555,
+      "num_images": 4,
+      "yelp_rating": 2.9,
+      "yelp_review_count": 20
+    },
+    "yelp": {
+      "yelp_name": "JD's Soul Food Kitchen",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 2.9,
+      "yelp_review_count": 20,
+      "yelp_url": "https://www.yelp.com/biz/jds-soul-food-kitchen-philadelphia?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "current_gallery": [
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_5Gk1LPQL3nO6S1xvJO522dWTEU4GDKSHwiH5CEKmA0B6osTLhnvWq4Rlszc46Xi2UhReyxX9wXr8fASYlSRd3yTDuuTQ26QmkOY5bCt1AqBepA_G8JPPbj66zzK6aKfcm2egZwgngzid_ncz39w?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=oj2S6zcML-xc9VCeXza8Hg&_nc_oc=AdlEUzr6gh9fue2gW3uEJR5f9saDSpWZ4-gmrOxBJHSYQwFseNldrQkA82AlIA7n40UwUDBTNO_YEohpRz47P5M0&ccb=10-5&oh=00_AfzEogFkRKK24jqlYud62f6hI3jwaNE8FQL31kMthR132w&oe=69D43A4B&_nc_sid=201bca",
+        "date": "2016-06-12",
+        "distance_m": 31,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9haRV16_6mXtZbe9ejWmVEBajG3kf8rPJpvgceTBBhhu5b1xBdsFmBG1hElrHAFtG9e1ZD3hHUUcMTtmcR45LhgC-omFwHCsf1z2_PjDD-3pyh1_-YS1RK266toX6OENHsseJz6FNF5kohy6aFxQ?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=oj2S6zcML-xc9VCeXza8Hg&_nc_oc=Adk1qqoWibzJxMtpaPwKtJ6h9eyM-PGgGQbjVyFa2elUlf8SoBnpYCLUj7Xx1PRtd085HL_T8p7pJ5fTlnstjmkk&ccb=10-5&oh=00_AfxRj3BDL9uuoQFIKn0kXyNmfWdef7YOhUS4VZk0iNpIKA&oe=69D42321&_nc_sid=201bca",
+        "date": "2016-06-12",
+        "distance_m": 37,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9vEax2So6sZFZN9svL8aUdMGotLpwBvc4hGdTKydXmgYVaJQkNtV0lWuCE-jY0XMFIjgf-tR5aUG20I7itSacQ0ibxmSrTtAmuDeeLxOqF4ZhQi0GUoKdbt4h3zgpNYfct3VyzSaJg8envwaRDAQ?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=oj2S6zcML-xc9VCeXza8Hg&_nc_oc=AdlBrq0085WEqBk1NJx_quKXgD1GRoQGJHZgDE1VMVJcjyOT6cjd-WKIvsSR-_iSf2GmiQFL_5wUNmyg6KFsu09i&ccb=10-5&oh=00_AfzG-0snha-ORsyhqYli584Rhf0Js6S0-vptq51EwyxUtg&oe=69D42979&_nc_sid=201bca",
+        "date": "2016-06-12",
+        "distance_m": 59,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-3CmGfJZXhcJUiadmDHDTxInIQBd6L-SWZpWCuptCZQKTl5zd1njK8CY98l2AvUtJYLFevIY1rWq1OcuSaQ-U3-X2hAeWCAnJcpsCFetGyYxEOOvaZ7XyKgizrWzVcJ2mQjUVF0PFPc40-5xglTw?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=oj2S6zcML-xc9VCeXza8Hg&_nc_oc=AdnN9GyzmfugzeJb2LNrlZSN0Zht2GrQpdH7Zxqdm8kJSYJwpGH37ZVMcBYMwMISnrVExhsatIGyuZp-cKwUcAJ9&ccb=10-5&oh=00_Afzwnu2Tot1O_obszgWmVEhw5aPIYF2DDl5X1seRx0vj4A&oe=69D44789&_nc_sid=201bca",
+        "date": "2016-06-12",
+        "distance_m": 45,
+        "group": "sequential"
+      }
+    ]
+  },
+  {
+    "name": "Cole Haan",
+    "category": "Shoe Stores",
+    "address": "1600 Walnut St, Philadelphia",
+    "location": [
+      -75.167747,
+      39.949475
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 2269,
+      "num_images": 2,
+      "yelp_rating": 3.4,
+      "yelp_review_count": 13
+    },
+    "yelp": {
+      "yelp_name": "Cole Haan",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 3.4,
+      "yelp_review_count": 13,
+      "yelp_url": "https://www.yelp.com/biz/cole-haan-philadelphia?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Coleman, Barbara J., therapist\" at this location",
+      "match": {
+        "fsq_id": "34c6ee2779c946993f3821e8",
+        "name": "Coleman, Barbara J., therapist",
+        "category": "Mental Health Clinic",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1616 Walnut St, Philadelphia, PA 19103, United States"
+      }
+    },
+    "current_gallery": [
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8Tf31Mdq7NSDGqVZ6pOkiULkcqIbp-VjVYv_oWDNtVRz8WJkfP9VkU-OMBXB-WkKYHLzQ-R62qyBESCbFX2wRt-cCAhhCntvvI7EZWB8QzCBv4GHabwPDRgzgFPp8VMEIYPJk2wQwb7QeqMZl5sQ?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=j3kH0TLWDz3WNG1VqYBojQ&_nc_oc=AdkdMzkBlSl7MBOaZbOmjGin-Sy1QkWLhGOJ8zsv7MzgW1Iu_GeIkjJJLPd3iE6ODlGJ-uxviPaqdgRgDxedveDA&ccb=10-5&oh=00_Afzf1hUrAfjfEHtlVuwjWaVGyICUOJtr-PgVgGb3mHPEbg&oe=69D43BC5&_nc_sid=201bca",
+        "date": "2019-12-22",
+        "distance_m": 24,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8mgmUXrQzOE9gJY0Sf80mx3r0FM1v62HVLmxbKaXEDW0UAfFLDjw6NY3d1xm13TgLWKrWR6jh39aELpUQx9PAjw88r4fGr_KU2q0Y-vJXESeDkEwGQ-86GbowWlsG_Yo4tIastU44eJzg-wC49mN0?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=j3kH0TLWDz3WNG1VqYBojQ&_nc_oc=Adk8v3-Vv3-w9GlS3BZQs0royPmBmu2_BKg5iyN8_g7D7uYcQAVZRr44y37ZXwf64KfNDEG0d2zfJziTi3hLGw5t&ccb=10-5&oh=00_AfySP2R7AOjnrIimR_1pB8M9_w8jXsm5gZD6H7v9teuOZw&oe=69D443E5&_nc_sid=201bca",
+        "date": "2019-12-18",
+        "distance_m": 26,
+        "group": "sequential"
+      }
+    ]
+  },
+  {
+    "name": "Vibrant Coffee Roasters & Bakery - Lombard",
+    "category": "Bakeries",
+    "address": "542 Lombard St, Philadelphia",
+    "location": [
+      -75.181938,
+      39.955725
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 0,
+      "num_images": 0,
+      "yelp_rating": 3.7,
+      "yelp_review_count": 13
+    },
+    "yelp": {
+      "yelp_name": "Vibrant Coffee Roasters & Bakery",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 3.7,
+      "yelp_review_count": 13,
+      "yelp_url": "https://www.yelp.com/biz/vibrant-coffee-roasters-and-bakery-philadelphia-3?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    },
+    "current_gallery": []
+  },
+  {
+    "name": "Tria Cafe Wash West",
+    "category": "Wine Bars",
+    "address": "1137 Spruce St, Philadelphia",
+    "location": [
+      -75.1609139,
+      39.9466238
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 2677,
+      "num_images": 4,
+      "yelp_rating": 4.5,
+      "yelp_review_count": 810
+    },
+    "yelp": {
+      "yelp_name": "Tria Cafe Wash West",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 4.5,
+      "yelp_review_count": 810,
+      "yelp_url": "https://www.yelp.com/biz/tria-cafe-wash-west-philadelphia-2?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Tria Cafe Wash West\" at this location",
+      "match": {
+        "fsq_id": "4a0b643bf964a520f2741fe3",
+        "name": "Tria Cafe Wash West",
+        "category": "Wine Bar",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1137 Spruce St (at S 12th St), Philadelphia, PA 19107, United States"
+      }
+    },
+    "current_gallery": [
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_XhR7DfHSkwipQjN78tMekALscgaiBpgt5IRpkR2DtexyMTGY01NW5sR4CpQGMU9jTKWHhpM9PX8mab7ueKpsM1M3atMy7I0jLMffa5eLiRJXSIkCjc4Q0ojpytwatAoQrtwMQZiGLyQW_bSNqHQ?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=teRnfytNlyxSxTnU-5hOTg&_nc_oc=AdnyFVV-dw-1L4nsB4TjZE6e74CbjXhv2zjcSY8TBlxUMtmUIsdEOkBuA_E_sTI5zpLHpntM6JrJnURdxeAQ6Eh6&ccb=10-5&oh=00_Afw5Pc3sinQV2sbu5Tp3QXqumxbD64AJUMnrXS5CYvzm_Q&oe=69D43A7B&_nc_sid=201bca",
+        "date": "2019-12-21",
+        "distance_m": 21,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An-SkDypCTLUux9h_L3gUfad6lG8aL8Fujw0Df8MNpNEWe2YH2iE8vrgYRgh2d3FW1jwXkiH874xTtgs5Z4FntM54jeVk-fw8575O5C4V8Trwz3ZvbUZah8zPhCtkxaIIZHfyIJoqyoAeNEUMQY-kA?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=teRnfytNlyxSxTnU-5hOTg&_nc_oc=Adnj6NUWUVv6Qx2VK7RMcaeC3yzSjfABlc3uvgiAaR7TaykQSdqhmPLfhYwUWOa-RT20eE59fcqIeQ8ID5naC7JA&ccb=10-6&oh=00_AfxuxNzgodCylm8YQbi15zIdT9JgxRyYSojXTFaWEeaEIQ&oe=69D43A64&_nc_sid=201bca",
+        "date": "2015-06-29",
+        "distance_m": 22,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_kI1O8pVhR7_t62-BTSrlP7o6n8wm9VARx2BS_XVqCjLuordcLpZT3pyx4IKGO1meyqRLUvvDLuIfJIxUBuJsgi5AJJUR4gxgCF9lRoPJ33jfW_IYpHBn7Djj8f0CBQ2TnjpUVufM0be9_-M2hPQ?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=teRnfytNlyxSxTnU-5hOTg&_nc_oc=AdnMkmR8lmNx1DTKw72VZVMqbvuXEUR6snw_JRtsIV32CQbIp6wr1lJNIRHLwSyTaVmIj2YCDR6oxRWEaQshEgQ8&ccb=10-5&oh=00_Afwu666o1FmJ_gWlPIvtaIYb1t5Q02eJe61GPeuQkgm38Q&oe=69D42960&_nc_sid=201bca",
+        "date": "2019-12-21",
+        "distance_m": 24,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An9kTkF9BcTOdeU1wlVmvYfy7aJVSso9O3n5GxgrdhE2xZjtDA6vDjRU3yzVAIYTgxelhFrOcI6KiB_RBIwN01GW2igF7MktzlvpL1A04FQvJPX0kNt32MM6k5PRzViT7hcvdmQs7KBNbCIrCdbYjA?stp=s2048x1536&edm=AOnQwmMEAAAA&_nc_gid=teRnfytNlyxSxTnU-5hOTg&_nc_oc=AdlImbmnG-o3OOmFExJ6vztmyOgnxV5CWFIri0utFqy5Q8mUxjTu2bch_UhYkn1y8GVlcgIHVaufEcGyMFSstugH&ccb=10-5&oh=00_AfzY_JQfMG7IEMPXOyr_-lx-NUXzf6Q0Chd02gX9lr-aVA&oe=69D42F54&_nc_sid=201bca",
+        "date": "2019-12-21",
+        "distance_m": 19,
+        "group": "sequential"
+      }
+    ]
+  },
+  {
+    "name": "Sakura Japanese Cuisine",
+    "category": "Japanese",
+    "address": "1521 Spring Garden St, Philadelphia",
+    "location": [
+      -75.16371,
+      39.963
+    ],
+    "overture_meta": {
+      "confidence": 0.9,
+      "update_time": "2026-02-18",
+      "source": "overture",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.9,
+      "source_age_days": 17,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_closure_rate": 0.15,
+      "fields_populated": 5,
+      "image_age_days": 1083,
+      "num_images": 3,
+      "yelp_rating": 3.5,
+      "yelp_review_count": 168
+    },
+    "yelp": {
+      "yelp_name": "Sakura Japanese Cuisine",
+      "is_closed": true,
+      "match_score": 1,
+      "yelp_rating": 3.5,
+      "yelp_review_count": 168,
+      "yelp_url": "https://www.yelp.com/biz/sakura-japanese-cuisine-philadelphia?adjust_creative=yWOggowLsrHw3G5u-hvdqQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=yWOggowLsrHw3G5u-hvdqQ"
+    },
+    "ground_truth": "closed",
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Sakura Japanese Cuisine\" at this location",
+      "match": {
+        "fsq_id": "4c890843a0ffb60c43eb26c5",
+        "name": "Sakura Japanese Cuisine",
+        "category": "Japanese Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1521 Spring Garden St, Philadelphia, PA 19130, United States"
+      }
+    },
+    "current_gallery": [
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_qlvY0GxiLxkch3ML3AYO5t8rHsHix3gHlPCqC8oe8rpuy71VzgmiPIP6oCt9XJ8_idFIzp_Q0OQd-9gOVSx9h_Y774CYwhnQnEs_GEThx5YRj_RAvzOO1WLHPV8xAexZtILA5tVhLZ0Ecr1d0QqU?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=kPC_FtoMBpuk8T7MrpgYtg&_nc_oc=Admv-CPpyVitQS3yU16xC4fggRJxZUCLHlkJYMhtaaMWj_mdw7sx9crRooedY0H4_XRQtksFHPch50hs4g16ddLA&ccb=10-5&oh=00_Afy7dJpZjcukizQTvhOFSJoQTFPEhp1yX6WrJ1SPIhf7rQ&oe=69D442AC&_nc_sid=201bca",
+        "date": "2023-03-21",
+        "distance_m": 41,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An8cPgkE_eOqJjrqZJPdyc32D58JjbB6P-d6iL3kXrJRVK8cWx5pRLPlzhPpltTbp3LwjbWFhMqcNhADVfoPl8afJTuXbUlRswP1Ebq0Fc4DN-McY6gRw5IbylZDyooiaE7XDpDpmOUZO55eFXUXaA?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=kPC_FtoMBpuk8T7MrpgYtg&_nc_oc=Admg0MSzXzNbJbl49-L4PB9aUuFOSCOC9ZcaW6lbn7uOSYOl2MGauL7ZHCA5mQ6hMIHwIDh0Gh7Lje7U86j-QvPJ&ccb=10-5&oh=00_AfwRTNXawmLMPr6zxcUBlLZR2zEmAko-Sl_MKO1rXeDXbw&oe=69D42C5B&_nc_sid=201bca",
+        "date": "2023-03-21",
+        "distance_m": 38,
+        "group": "sequential"
+      },
+      {
+        "url": "https://scontent-sjc6-1.xx.fbcdn.net/m1/v/t6/An_2qaNF5xAGJLP3We-bxwSlb_3DIENFUC_Twu1yBj7xgtP5gVz2uMtYvZHbrbNj_Xsd7T6lUefn03kw51MBdTF9VZG7OGhdQ-xZTe6qGS7y7dZb67gLPqdlfTadcC628bGae8-0eZS6AFXEaifIy-c?stp=s2048x1024&edm=AOnQwmMEAAAA&_nc_gid=kPC_FtoMBpuk8T7MrpgYtg&_nc_oc=Adn18HGIAf2haOYRTOSGLzsdC_Wb5WvOiecDr1eTOhia1Se9q9p9ofuHYA2VPkShMAoZ3I3oDQG5Dug0pE8GOmTs&ccb=10-5&oh=00_Afyd4SUVJhPRxmpKs5gv3Yv8y813TJxX7t-lUuyjs-FAjA&oe=69D41EB5&_nc_sid=201bca",
+        "date": "2023-03-18",
+        "distance_m": 44,
+        "group": "sequential"
+      }
+    ]
+  }
+]

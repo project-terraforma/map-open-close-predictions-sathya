@@ -5292,7 +5292,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.4187,
+      "confidence": 0.4664,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | No text match on 4 recent images | Metadata: 69% open (no nudge) | Score: 0.45",
       "detail": "Website: alive | No text match on 4 recent images | Metadata: 69% open (no nudge) | Score: 0.45",
@@ -5421,13 +5421,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2445,
-          "description": "Metamodel score (logit=-1.13)"
+          "weight": 0.3694,
+          "description": "Metamodel score (logit=-0.53)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -5571,7 +5571,7 @@
     ],
     "vision": {
       "prediction": "open",
-      "confidence": 0.6522,
+      "confidence": 0.7893,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: mismatch (\"HD Rice Noodle\") | Website: alive | Text: partial match (9yr old) | Metadata: 74% open (no nudge) | Score: 0.25",
       "detail": "Foursquare: mismatch (\"HD Rice Noodle\") | Website: alive | Text: partial match (9yr old) | Metadata: 74% open (no nudge) | Score: 0.25",
@@ -7321,13 +7321,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.6522,
-          "description": "Metamodel score (logit=+0.63)"
+          "weight": 0.7893,
+          "description": "Metamodel score (logit=+1.32)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.9889,
-          "description": "Foursquare: mismatch (signal=-0.5)"
+          "weight": -0.2967,
+          "description": "Foursquare: mismatch (signal=-0.1)"
         },
         {
           "signal": "website",
@@ -7444,7 +7444,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1063,
+      "confidence": 0.2769,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | No text match on 4 recent images | Metadata: 65% open (no nudge) | Score: 0.45",
       "detail": "Website: alive | No text match on 4 recent images | Metadata: 65% open (no nudge) | Score: 0.45",
@@ -7648,13 +7648,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1063,
-          "description": "Metamodel score (logit=-2.13)"
+          "weight": 0.2769,
+          "description": "Metamodel score (logit=-0.96)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -7678,8 +7678,8 @@
         },
         {
           "signal": "yelp",
-          "weight": -0.7189,
-          "description": "Yelp: 0 reviews (signal=-1.00)"
+          "weight": -0.1438,
+          "description": "Yelp: 0 reviews (signal=-0.20)"
         }
       ]
     },
@@ -7777,7 +7777,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.2647,
+      "confidence": 0.3945,
       "primary_layer": "xgboost",
       "evidence": "Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 6 recent images | Metadata: 68% open (no nudge) | Score: 0.35",
       "detail": "Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 6 recent images | Metadata: 68% open (no nudge) | Score: 0.35",
@@ -8055,13 +8055,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2647,
-          "description": "Metamodel score (logit=-1.02)"
+          "weight": 0.3945,
+          "description": "Metamodel score (logit=-0.43)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -8167,7 +8167,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.2023,
+      "confidence": 0.3146,
       "primary_layer": "xgboost",
       "evidence": "Text: partial match (9yr old) | Metadata: 74% open (no nudge) | Score: 0.50",
       "detail": "Text: partial match (9yr old) | Metadata: 74% open (no nudge) | Score: 0.50",
@@ -8645,13 +8645,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2023,
-          "description": "Metamodel score (logit=-1.37)"
+          "weight": 0.3146,
+          "description": "Metamodel score (logit=-0.78)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -17770,7 +17770,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.6714,
+      "confidence": 0.7841,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | No text match on 4 recent images | Metadata: 62% open (no nudge) | Score: 0.75",
       "detail": "Foursquare: verified | No text match on 4 recent images | Metadata: 62% open (no nudge) | Score: 0.75",
@@ -18507,8 +18507,8 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.6714,
-          "description": "Metamodel score (logit=+0.71)"
+          "weight": 0.7841,
+          "description": "Metamodel score (logit=+1.29)"
         },
         {
           "signal": "foursquare",
@@ -18537,8 +18537,8 @@
         },
         {
           "signal": "yelp",
-          "weight": -0.7189,
-          "description": "Yelp: 0 reviews (signal=-1.00)"
+          "weight": -0.1438,
+          "description": "Yelp: 0 reviews (signal=-0.20)"
         }
       ]
     },
@@ -19540,7 +19540,7 @@
     },
     "vision": {
       "prediction": "open",
-      "confidence": 0.6618,
+      "confidence": 0.7767,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: verified | Text: partial match | Metadata: 59% open (no nudge) | Score: 0.90",
       "detail": "Foursquare: verified | Text: partial match | Metadata: 59% open (no nudge) | Score: 0.90",
@@ -20147,8 +20147,8 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.6618,
-          "description": "Metamodel score (logit=+0.67)"
+          "weight": 0.7767,
+          "description": "Metamodel score (logit=+1.25)"
         },
         {
           "signal": "foursquare",
@@ -20177,8 +20177,8 @@
         },
         {
           "signal": "yelp",
-          "weight": -0.7189,
-          "description": "Yelp: 0 reviews (signal=-1.00)"
+          "weight": -0.1438,
+          "description": "Yelp: 0 reviews (signal=-0.20)"
         }
       ]
     },
@@ -23380,7 +23380,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1652,
+      "confidence": 0.2638,
       "primary_layer": "xgboost",
       "evidence": "Website: dead (Client error 403) | No text match on 4 recent images | Metadata: 68% open (no nudge) | Score: 0.35",
       "detail": "Website: dead (Client error 403) | No text match on 4 recent images | Metadata: 68% open (no nudge) | Score: 0.35",
@@ -23927,13 +23927,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1652,
-          "description": "Metamodel score (logit=-1.62)"
+          "weight": 0.2638,
+          "description": "Metamodel score (logit=-1.03)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -24045,7 +24045,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1349,
+      "confidence": 0.2202,
       "primary_layer": "xgboost",
       "evidence": "Website: redirected (Redirects to different domain: jakazimer.com) | No text match on 4 recent images | Metadata: 68% open (no nudge) | Score: 0.25",
       "detail": "Website: redirected (Redirects to different domain: jakazimer.com) | No text match on 4 recent images | Metadata: 68% open (no nudge) | Score: 0.25",
@@ -24410,13 +24410,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1349,
-          "description": "Metamodel score (logit=-1.86)"
+          "weight": 0.2202,
+          "description": "Metamodel score (logit=-1.26)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -24516,7 +24516,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.0793,
+      "confidence": 0.1349,
       "primary_layer": "text",
       "evidence": "Website: dead (DNS resolution failed \u2014 domain does not exist) | Text: partial match (4yr old) | Metadata: 68% open (no nudge) | Score: 0.45",
       "detail": "Website: dead (DNS resolution failed \u2014 domain does not exist) | Text: partial match (4yr old) | Metadata: 68% open (no nudge) | Score: 0.45",
@@ -24785,13 +24785,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.0793,
-          "description": "Metamodel score (logit=-2.45)"
+          "weight": 0.1349,
+          "description": "Metamodel score (logit=-1.86)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -24894,7 +24894,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.096,
+      "confidence": 0.1612,
       "primary_layer": "xgboost",
       "evidence": "No text match on 4 recent images | Metadata: 59% open (no nudge) | Score: 0.45",
       "detail": "No text match on 4 recent images | Metadata: 59% open (no nudge) | Score: 0.45",
@@ -25754,13 +25754,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.096,
-          "description": "Metamodel score (logit=-2.24)"
+          "weight": 0.1612,
+          "description": "Metamodel score (logit=-1.65)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -25872,7 +25872,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.2528,
+      "confidence": 0.4034,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: mismatch (\"Ai Kakou Cafe\") | No text match on 4 recent images | Metadata: 72% open (no nudge) | Score: 0.20",
       "detail": "Foursquare: mismatch (\"Ai Kakou Cafe\") | No text match on 4 recent images | Metadata: 72% open (no nudge) | Score: 0.20",
@@ -25979,13 +25979,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2528,
-          "description": "Metamodel score (logit=-1.08)"
+          "weight": 0.4034,
+          "description": "Metamodel score (logit=-0.39)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.9889,
-          "description": "Foursquare: mismatch (signal=-0.5)"
+          "weight": -0.2967,
+          "description": "Foursquare: mismatch (signal=-0.1)"
         },
         {
           "signal": "website",
@@ -26082,7 +26082,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.4076,
+      "confidence": 0.455,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | No text match on 3 recent images | Metadata: 76% open (no nudge) | Score: 0.45",
       "detail": "Website: alive | No text match on 3 recent images | Metadata: 76% open (no nudge) | Score: 0.45",
@@ -26173,13 +26173,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2362,
-          "description": "Metamodel score (logit=-1.17)"
+          "weight": 0.3589,
+          "description": "Metamodel score (logit=-0.58)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -26280,7 +26280,7 @@
     "current_gallery": [],
     "vision": {
       "prediction": "open",
-      "confidence": 0.5153,
+      "confidence": 0.6799,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: mismatch | Website: alive | No street-level images",
       "layers": {
@@ -26345,13 +26345,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.5153,
-          "description": "Metamodel score (logit=+0.06)"
+          "weight": 0.6799,
+          "description": "Metamodel score (logit=+0.75)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.9889,
-          "description": "Foursquare: mismatch (signal=-0.5)"
+          "weight": -0.2967,
+          "description": "Foursquare: mismatch (signal=-0.1)"
         },
         {
           "signal": "website",
@@ -26465,7 +26465,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.2647,
+      "confidence": 0.3945,
       "primary_layer": "xgboost",
       "evidence": "Website: dead (Page not found (404)) | No text match on 4 recent images | Metadata: 68% open (no nudge) | Score: 0.35",
       "detail": "Website: dead (Page not found (404)) | No text match on 4 recent images | Metadata: 68% open (no nudge) | Score: 0.35",
@@ -26961,13 +26961,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2647,
-          "description": "Metamodel score (logit=-1.02)"
+          "weight": 0.3945,
+          "description": "Metamodel score (logit=-0.43)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -27076,7 +27076,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.0583,
+      "confidence": 0.1008,
       "primary_layer": "text",
       "evidence": "Website: redirected (Redirects to different domain: anyaelwattar.com) | Text: partial match | Metadata: 68% open (no nudge) | Score: 0.40",
       "detail": "Website: redirected (Redirects to different domain: anyaelwattar.com) | Text: partial match | Metadata: 68% open (no nudge) | Score: 0.40",
@@ -27771,13 +27771,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.0583,
-          "description": "Metamodel score (logit=-2.78)"
+          "weight": 0.1008,
+          "description": "Metamodel score (logit=-2.19)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -27855,7 +27855,7 @@
     "current_gallery": [],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1195,
+      "confidence": 0.1972,
       "primary_layer": "website",
       "evidence": "Website: alive | No street-level images",
       "layers": {
@@ -27912,13 +27912,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1195,
-          "description": "Metamodel score (logit=-2.00)"
+          "weight": 0.1972,
+          "description": "Metamodel score (logit=-1.40)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -28021,7 +28021,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1289,
+      "confidence": 0.2112,
       "primary_layer": "text",
       "evidence": "Website: redirected (Redirects to different domain: desatajurhalang.id) | Text: full match | Metadata: 40% open (nudge -0.02) | Score: 0.48",
       "detail": "Website: redirected (Redirects to different domain: desatajurhalang.id) | Text: full match | Metadata: 40% open (nudge -0.02) | Score: 0.48",
@@ -29011,13 +29011,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1289,
-          "description": "Metamodel score (logit=-1.91)"
+          "weight": 0.2112,
+          "description": "Metamodel score (logit=-1.32)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -29140,7 +29140,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.2534,
+      "confidence": 0.4042,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: mismatch (\"Celeste\") | Text: partial match (10yr old) | Metadata: 68% open (no nudge) | Score: 0.25",
       "detail": "Foursquare: mismatch (\"Celeste\") | Text: partial match (10yr old) | Metadata: 68% open (no nudge) | Score: 0.25",
@@ -29980,13 +29980,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2534,
-          "description": "Metamodel score (logit=-1.08)"
+          "weight": 0.4042,
+          "description": "Metamodel score (logit=-0.39)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.9889,
-          "description": "Foursquare: mismatch (signal=-0.5)"
+          "weight": -0.2967,
+          "description": "Foursquare: mismatch (signal=-0.1)"
         },
         {
           "signal": "website",
@@ -30101,7 +30101,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.0839,
+      "confidence": 0.1422,
       "primary_layer": "text",
       "evidence": "Website: dead (DNS resolution failed \u2014 domain does not exist) | Text: partial match | Metadata: 67% open (no nudge) | Score: 0.50",
       "detail": "Website: dead (DNS resolution failed \u2014 domain does not exist) | Text: partial match | Metadata: 67% open (no nudge) | Score: 0.50",
@@ -31004,13 +31004,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.0839,
-          "description": "Metamodel score (logit=-2.39)"
+          "weight": 0.1422,
+          "description": "Metamodel score (logit=-1.80)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -31095,7 +31095,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.0715,
+      "confidence": 0.1223,
       "primary_layer": "xgboost",
       "evidence": "Website: dead (DNS resolution failed \u2014 domain does not exist) | Metadata: 57% open (no nudge) | Score: 0.40",
       "detail": "Website: dead (DNS resolution failed \u2014 domain does not exist) | Metadata: 57% open (no nudge) | Score: 0.40",
@@ -31304,13 +31304,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.0715,
-          "description": "Metamodel score (logit=-2.56)"
+          "weight": 0.1223,
+          "description": "Metamodel score (logit=-1.97)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -31425,7 +31425,7 @@
     ],
     "vision": {
       "prediction": "open",
-      "confidence": 0.5643,
+      "confidence": 0.6111,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | Text: full match (10yr old) | Metadata: 76% open (no nudge) | Score: 0.50",
       "detail": "Website: alive | Text: full match (10yr old) | Metadata: 76% open (no nudge) | Score: 0.50",
@@ -32271,13 +32271,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.3679,
-          "description": "Metamodel score (logit=-0.54)"
+          "weight": 0.513,
+          "description": "Metamodel score (logit=+0.05)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -32394,7 +32394,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1152,
+      "confidence": 0.1907,
       "primary_layer": "xgboost",
       "evidence": "Text: full match (11yr old) | Metadata: 68% open (no nudge) | Score: 0.50",
       "detail": "Text: full match (11yr old) | Metadata: 68% open (no nudge) | Score: 0.50",
@@ -32733,13 +32733,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1152,
-          "description": "Metamodel score (logit=-2.04)"
+          "weight": 0.1907,
+          "description": "Metamodel score (logit=-1.45)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -32836,7 +32836,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1038,
+      "confidence": 0.1734,
       "primary_layer": "text",
       "evidence": "Closure text: \"Rent Me Tod\" | Text: partial match | Metadata: 68% open (no nudge) | Score: 0.30",
       "detail": "Closure text: \"Rent Me Tod\" | Text: partial match | Metadata: 68% open (no nudge) | Score: 0.30",
@@ -33704,13 +33704,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1038,
-          "description": "Metamodel score (logit=-2.16)"
+          "weight": 0.1734,
+          "description": "Metamodel score (logit=-1.56)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -33825,7 +33825,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.0793,
+      "confidence": 0.1349,
       "primary_layer": "xgboost",
       "evidence": "Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 6 recent images | Metadata: 68% open (no nudge) | Score: 0.35",
       "detail": "Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 6 recent images | Metadata: 68% open (no nudge) | Score: 0.35",
@@ -34935,13 +34935,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.0793,
-          "description": "Metamodel score (logit=-2.45)"
+          "weight": 0.1349,
+          "description": "Metamodel score (logit=-1.86)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -35056,7 +35056,7 @@
     ],
     "vision": {
       "prediction": "open",
-      "confidence": 0.5402,
+      "confidence": 0.5877,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | Text: full match (11yr old) | Metadata: 65% open (no nudge) | Score: 0.50",
       "detail": "Website: alive | Text: full match (11yr old) | Metadata: 65% open (no nudge) | Score: 0.50",
@@ -35907,13 +35907,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.3455,
-          "description": "Metamodel score (logit=-0.64)"
+          "weight": 0.4886,
+          "description": "Metamodel score (logit=-0.05)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -36026,7 +36026,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.0899,
+      "confidence": 0.1516,
       "primary_layer": "xgboost",
       "evidence": "No text match on 3 recent images | Metadata: 59% open (no nudge) | Score: 0.45",
       "detail": "No text match on 3 recent images | Metadata: 59% open (no nudge) | Score: 0.45",
@@ -36616,13 +36616,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.0899,
-          "description": "Metamodel score (logit=-2.32)"
+          "weight": 0.1516,
+          "description": "Metamodel score (logit=-1.72)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -36749,7 +36749,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1408,
+      "confidence": 0.15,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | Text: full match (6yr old) | Metadata: 11% open (nudge -0.08) | Score: 0.42",
       "detail": "Website: alive | Text: full match (6yr old) | Metadata: 11% open (nudge -0.08) | Score: 0.42",
@@ -38058,13 +38058,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1408,
-          "description": "Metamodel score (logit=-1.81)"
+          "weight": 0.2288,
+          "description": "Metamodel score (logit=-1.22)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -38181,7 +38181,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1457,
+      "confidence": 0.236,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | Text: partial match (8yr old) | Metadata: 69% open (no nudge) | Score: 0.50",
       "detail": "Website: alive | Text: partial match (8yr old) | Metadata: 69% open (no nudge) | Score: 0.50",
@@ -38668,13 +38668,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1457,
-          "description": "Metamodel score (logit=-1.77)"
+          "weight": 0.236,
+          "description": "Metamodel score (logit=-1.17)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -38798,7 +38798,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.0842,
+      "confidence": 0.1427,
       "primary_layer": "xgboost",
       "evidence": "Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 6 recent images | Metadata: 72% open (no nudge) | Score: 0.35",
       "detail": "Website: dead (DNS resolution failed \u2014 domain does not exist) | No text match on 6 recent images | Metadata: 72% open (no nudge) | Score: 0.35",
@@ -39645,13 +39645,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.0842,
-          "description": "Metamodel score (logit=-2.39)"
+          "weight": 0.1427,
+          "description": "Metamodel score (logit=-1.79)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -39736,7 +39736,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1035,
+      "confidence": 0.1728,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | Metadata: 68% open (no nudge) | Score: 0.50",
       "detail": "Website: alive | Metadata: 68% open (no nudge) | Score: 0.50",
@@ -39811,13 +39811,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1035,
-          "description": "Metamodel score (logit=-2.16)"
+          "weight": 0.1728,
+          "description": "Metamodel score (logit=-1.57)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -39932,7 +39932,7 @@
     ],
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.0793,
+      "confidence": 0.1349,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | No text match on 6 recent images | Metadata: 68% open (no nudge) | Score: 0.45",
       "detail": "Website: alive | No text match on 6 recent images | Metadata: 68% open (no nudge) | Score: 0.45",
@@ -40467,13 +40467,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.0793,
-          "description": "Metamodel score (logit=-2.45)"
+          "weight": 0.1349,
+          "description": "Metamodel score (logit=-1.86)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -41494,7 +41494,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1011,
+      "confidence": 0.1691,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | No text match on 4 recent images | Metadata: 66% open (no nudge) | Score: 0.45",
       "detail": "Website: alive | No text match on 4 recent images | Metadata: 66% open (no nudge) | Score: 0.45",
@@ -41805,13 +41805,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1011,
-          "description": "Metamodel score (logit=-2.19)"
+          "weight": 0.1691,
+          "description": "Metamodel score (logit=-1.59)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -41928,7 +41928,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.327,
+      "confidence": 0.4926,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: mismatch (\"Marina Pizza & Caffe\") | Website: parked domain | No text match on 5 recent images | Metadata: 47% open (no nudge) | Score: 0.05 | Closure hint: \"for rent\"",
       "detail": "Foursquare: mismatch (\"Marina Pizza & Caffe\") | Website: parked domain | No text match on 5 recent images | Metadata: 47% open (no nudge) | Score: 0.05 | Closure hint: \"for rent\"",
@@ -42550,13 +42550,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.327,
-          "description": "Metamodel score (logit=-0.72)"
+          "weight": 0.4926,
+          "description": "Metamodel score (logit=-0.03)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.9889,
-          "description": "Foursquare: mismatch (signal=-0.5)"
+          "weight": -0.2967,
+          "description": "Foursquare: mismatch (signal=-0.1)"
         },
         {
           "signal": "website",
@@ -42658,7 +42658,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1035,
+      "confidence": 0.1728,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | No text match on 2 recent images | Metadata: 68% open (no nudge) | Score: 0.45",
       "detail": "Website: alive | No text match on 2 recent images | Metadata: 68% open (no nudge) | Score: 0.45",
@@ -42848,13 +42848,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1035,
-          "description": "Metamodel score (logit=-2.16)"
+          "weight": 0.1728,
+          "description": "Metamodel score (logit=-1.57)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -42944,7 +42944,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.253,
+      "confidence": 0.3801,
       "primary_layer": "xgboost",
       "evidence": "Website: dead (Page not found (404)) | No text match on 2 recent images | Metadata: 70% open (no nudge) | Score: 0.35",
       "detail": "Website: dead (Page not found (404)) | No text match on 2 recent images | Metadata: 70% open (no nudge) | Score: 0.35",
@@ -43162,13 +43162,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.253,
-          "description": "Metamodel score (logit=-1.08)"
+          "weight": 0.3801,
+          "description": "Metamodel score (logit=-0.49)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -43466,13 +43466,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.3326,
-          "description": "Metamodel score (logit=-0.70)"
+          "weight": 0.4743,
+          "description": "Metamodel score (logit=-0.10)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -43935,7 +43935,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.4526,
+      "confidence": 0.5008,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | No text match on 6 recent images | Metadata: 69% open (no nudge) | Score: 0.45",
       "detail": "Website: alive | No text match on 6 recent images | Metadata: 69% open (no nudge) | Score: 0.45",
@@ -44445,13 +44445,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2708,
-          "description": "Metamodel score (logit=-0.99)"
+          "weight": 0.402,
+          "description": "Metamodel score (logit=-0.40)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -44924,7 +44924,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.2079,
+      "confidence": 0.344,
       "primary_layer": "foursquare",
       "evidence": "Foursquare: mismatch (\"Counsel LLP - Media & Technology Law\") | Website: dead (Page not found (404)) | No text match on 4 recent images | Metadata: 75% open (no nudge) | Score: 0.10",
       "detail": "Foursquare: mismatch (\"Counsel LLP - Media & Technology Law\") | Website: dead (Page not found (404)) | No text match on 4 recent images | Metadata: 75% open (no nudge) | Score: 0.10",
@@ -45114,13 +45114,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2079,
-          "description": "Metamodel score (logit=-1.34)"
+          "weight": 0.344,
+          "description": "Metamodel score (logit=-0.65)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.9889,
-          "description": "Foursquare: mismatch (signal=-0.5)"
+          "weight": -0.2967,
+          "description": "Foursquare: mismatch (signal=-0.1)"
         },
         {
           "signal": "website",
@@ -45233,8 +45233,8 @@
       "detail": "Website responding (HTTP 200)"
     },
     "vision": {
-      "prediction": "not_open",
-      "confidence": 0.4773,
+      "prediction": "open",
+      "confidence": 0.5256,
       "primary_layer": "xgboost",
       "evidence": "Website: alive | No text match on 6 recent images | Metadata: 68% open (no nudge) | Score: 0.45",
       "detail": "Website: alive | No text match on 6 recent images | Metadata: 68% open (no nudge) | Score: 0.45",
@@ -46106,13 +46106,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.2909,
-          "description": "Metamodel score (logit=-0.89)"
+          "weight": 0.4262,
+          "description": "Metamodel score (logit=-0.30)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -46197,7 +46197,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1477,
+      "confidence": 0.15,
       "primary_layer": "website",
       "evidence": "Website: dead | No street-level images",
       "layers": {
@@ -46254,13 +46254,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1477,
-          "description": "Metamodel score (logit=-1.75)"
+          "weight": 0.2387,
+          "description": "Metamodel score (logit=-1.16)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",
@@ -46345,7 +46345,7 @@
     },
     "vision": {
       "prediction": "not_open",
-      "confidence": 0.1254,
+      "confidence": 0.15,
       "primary_layer": "website",
       "evidence": "Website: dead | No street-level images",
       "layers": {
@@ -46402,13 +46402,13 @@
       "score_breakdown": [
         {
           "signal": "metamodel",
-          "weight": 0.1254,
-          "description": "Metamodel score (logit=-1.94)"
+          "weight": 0.206,
+          "description": "Metamodel score (logit=-1.35)"
         },
         {
           "signal": "foursquare",
-          "weight": -0.5934,
-          "description": "Foursquare: no_data (signal=-0.3)"
+          "weight": 0.0,
+          "description": "Foursquare: no_data (signal=+0.0)"
         },
         {
           "signal": "website",

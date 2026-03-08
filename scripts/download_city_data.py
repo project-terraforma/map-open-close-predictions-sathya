@@ -36,6 +36,11 @@ CITIES = {
         'bbox': (-80.22, -80.12, 25.74, 25.82),
         'output': 'miami_places.parquet',
     },
+    'philly': {
+        'name': 'Philadelphia',
+        'bbox': (-75.28, -75.13, 39.87, 40.02),
+        'output': 'philly_places.parquet',
+    },
 }
 
 OVERTURE_PATH = "s3://overturemaps-us-west-2/release/2026-02-18.0/theme=places/type=place/*"

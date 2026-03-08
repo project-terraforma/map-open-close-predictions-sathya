@@ -16,6 +16,7 @@ DATA_FILES = [
     ('LA', os.path.join(DATA_DIR, 'test_data_la.json')),
     ('Chicago', os.path.join(DATA_DIR, 'test_data_chicago.json')),
     ('Miami', os.path.join(DATA_DIR, 'test_data_miami.json')),
+    ('Philly', os.path.join(DATA_DIR, 'test_data_philly.json')),
 ]
 
 

@@ -33,6 +33,11 @@ CITY_CONFIG = {
         'default_city': 'Chicago',
         'state': 'IL',
     },
+    'philly': {
+        'parquet': os.path.join(DATA_DIR, 'philly_places.parquet'),
+        'default_city': 'Philadelphia',
+        'state': 'PA',
+    },
 }
 
 # Parse --city arg

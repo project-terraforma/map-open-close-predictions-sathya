@@ -34,6 +34,12 @@ CITY_CONFIG = {
     'chicago': {
         'parquet': os.path.join(DATA_DIR, 'chicago_places.parquet'),
     },
+    'miami': {
+        'parquet': os.path.join(DATA_DIR, 'miami_places.parquet'),
+    },
+    'philly': {
+        'parquet': os.path.join(DATA_DIR, 'philly_places.parquet'),
+    },
 }
 
 # Parse --city arg (default: sf)

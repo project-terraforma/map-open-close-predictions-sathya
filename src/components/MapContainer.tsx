@@ -7,6 +7,7 @@ import testDataSf from '../data/test_data.json';
 import testDataLa from '../data/test_data_la.json';
 import testDataChicago from '../data/test_data_chicago.json';
 import testDataMiami from '../data/test_data_miami.json';
+import testDataPhilly from '../data/test_data_philly.json';
 
 // ============================================================
 // CITY CONFIG
@@ -16,6 +17,7 @@ const CITIES: Record<string, { label: string; center: [number, number]; zoom: nu
     la: { label: 'Los Angeles', center: [34.0522, -118.2437], zoom: 11, data: testDataLa as any[] },
     chicago: { label: 'Chicago', center: [41.8781, -87.6298], zoom: 12, data: testDataChicago as any[] },
     miami: { label: 'Miami', center: [25.7617, -80.1918], zoom: 12, data: testDataMiami as any[] },
+    philly: { label: 'Philadelphia', center: [39.9526, -75.1652], zoom: 12, data: testDataPhilly as any[] },
 };
 
 function MapFlyTo({ center, zoom }: { center: [number, number]; zoom: number }) {

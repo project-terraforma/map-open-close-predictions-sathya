@@ -11,6 +11,7 @@ DATA_FILES = [
     ('LA', os.path.join(os.path.dirname(__file__), '..', 'src', 'data', 'test_data_la.json')),
     ('Chicago', os.path.join(os.path.dirname(__file__), '..', 'src', 'data', 'test_data_chicago.json')),
     ('Miami', os.path.join(os.path.dirname(__file__), '..', 'src', 'data', 'test_data_miami.json')),
+    ('Philly', os.path.join(os.path.dirname(__file__), '..', 'src', 'data', 'test_data_philly.json')),
 ]
 
 # Metamodel weights (learned from logistic regression with 6 signals + interactions)
@@ -50,9 +51,9 @@ def encode_and_score(loc):
     elif fsq_status == 'closed':
         fsq_signal = -1.0
     elif fsq_status == 'mismatch':
-        fsq_signal = -0.5
+        fsq_signal = -0.15
     else:
-        fsq_signal = -0.3
+        fsq_signal = 0.0
 
     # Encode Website
     if ws_status == 'alive':
@@ -103,10 +104,13 @@ def encode_and_score(loc):
     # Signal 6: Yelp review count (log-scaled)
     yelp = loc.get('yelp', {})
     yelp_reviews = yelp.get('yelp_review_count', 0)
+    yelp_closed = yelp.get('is_closed')
     if yelp_reviews > 0:
         yelp_signal = min(1.0, (math.log10(yelp_reviews) - 1.0) / 2.0)
+    elif yelp_closed is None:
+        yelp_signal = -1.0  # No Yelp match at all
     else:
-        yelp_signal = -1.0
+        yelp_signal = -0.2  # Yelp matched but 0 reviews
 
     # Interaction features
     fsq_verified_web_dead = 1.0 if (fsq_status == 'verified' and ws_status == 'dead') else 0.0
@@ -150,8 +154,8 @@ def encode_and_score(loc):
     # Soft boost: FSQ missing but Yelp says open with reviews + corroboration
     yelp_not_closed = yelp.get('is_closed') == False
     has_corroboration = ws_status == 'alive' or (tt_status == 'verified' and tt_match >= 0.5)
-    if fsq_status == 'no_data' and yelp_reviews >= 20 and yelp_not_closed and has_corroboration:
-        logit += 0.8  # Boost logit to counteract fsq_no_data penalty
+    if fsq_status == 'no_data' and yelp_not_closed and yelp_reviews >= 3 and has_corroboration:
+        logit += 0.4  # Boost: reviews + corroboration
         open_score = 1.0 / (1.0 + math.exp(-logit))
         breakdown.append({"signal": "yelp_corroboration", "weight": 0.8, "description": "Yelp open + corroboration (boost)"})
 
@@ -161,8 +165,8 @@ def encode_and_score(loc):
         open_score = min(open_score, 0.15)  # Cap at 15% open
         breakdown.append({"signal": "yelp_closed", "weight": -3.0, "description": "Yelp: EXPLICITLY CLOSED (override)"})
 
-    # Prediction
-    if open_score > 0.50:
+    # Prediction threshold
+    if open_score > 0.51:
         prediction = 'open'
     else:
         prediction = 'not_open'
