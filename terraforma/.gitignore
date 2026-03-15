@@ -1,0 +1,37 @@
+__pycache__/
+*.pyc
+.env
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+*.ipynb_checkpoints/
+.DS_Store
+
+# Large data files
+*.parquet
+*.zip
+*.tar
+*.pkl
+
+# Large JSON data
+Yelp JSON/
+website_alive_cache.json
+
+# Caches
+cache_*.parquet
+catboost_info/
+website_alive_cache.json
+
+# Models (binary)
+models/
+
+# Yelp dataset
+Yelp JSON/
+
+# StatusNow
+StatusNow-main.zip
+
+# Claude settings
+.claude/

@@ -1,0 +1,17 @@
+services:
+  db:
+    image: postgis/postgis:16-3.4
+    container_name: terraforma_db
+    environment:
+      POSTGRES_DB: terraforma
+      POSTGRES_USER: terraforma
+      POSTGRES_PASSWORD: terraforma_dev
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./sql/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql
+
+volumes:
+  pgdata:

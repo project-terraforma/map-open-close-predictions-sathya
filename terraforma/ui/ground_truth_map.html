@@ -1,0 +1,2004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerraForma — Ensemble Predictions</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+        #map { width: 100%; height: 100vh; }
+
+        /* ── Top bar: city + filter toggles ── */
+        .top-bar {
+            position: absolute; top: 10px; left: 60px; z-index: 1000;
+            display: flex; gap: 8px; align-items: center;
+        }
+        .btn-group {
+            background: white; padding: 6px 8px; border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15); display: flex; gap: 4px;
+        }
+        .btn {
+            padding: 6px 14px; border: none; border-radius: 8px;
+            background: #f1f5f9; cursor: pointer; font-size: 12px; font-weight: 600;
+            color: #475569; transition: all 0.15s;
+        }
+        .btn:hover { background: #e2e8f0; }
+        .btn.active { background: #1e40af; color: white; }
+        .btn.active-green { background: #16a34a; color: white; }
+        .btn.active-red { background: #dc2626; color: white; }
+
+        /* ── Stats panel ── */
+        .stats {
+            position: absolute; top: 10px; right: 10px; z-index: 1000;
+            background: white; padding: 16px 20px; border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.15); min-width: 200px; font-size: 13px;
+            text-align: center;
+        }
+        .stats h3 { font-size: 15px; margin-bottom: 6px; color: #1e293b; }
+        .accuracy-big {
+            font-size: 36px; font-weight: 800;
+            margin: 4px 0 2px; line-height: 1;
+        }
+        .accuracy-sub { font-size: 11px; color: #64748b; margin-bottom: 10px; }
+        .gt-filters { display: flex; gap: 4px; justify-content: center; }
+        .gt-btn {
+            padding: 6px 12px; border: none; border-radius: 8px;
+            background: #f1f5f9; cursor: pointer; font-size: 11px; font-weight: 600;
+            color: #475569; transition: all 0.15s;
+        }
+        .gt-btn:hover { background: #e2e8f0; }
+        .gt-btn.active { background: #1e40af; color: white; }
+        .gt-btn.active-green { background: #16a34a; color: white; }
+        .gt-btn.active-red { background: #dc2626; color: white; }
+
+        /* ── Legend ── */
+        .legend {
+            background: white; padding: 10px 14px; border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15); font-size: 12px; line-height: 1.8;
+        }
+        .legend-item { display: flex; align-items: center; gap: 8px; }
+        .legend-dot {
+            width: 12px; height: 12px; border-radius: 50%;
+            border: 2px solid white; box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        /* ── Popup ── */
+        .popup { max-width: 300px; font-size: 12px; }
+        .popup h3 { font-size: 15px; margin-bottom: 6px; color: #1e293b; }
+        .popup .addr { color: #64748b; margin-bottom: 8px; }
+
+        .ens-box {
+            padding: 10px; border-radius: 10px; margin-bottom: 8px;
+        }
+        .ens-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+        .ens-pct { font-size: 22px; font-weight: 800; }
+        .ens-verdict { font-size: 12px; font-weight: 600; }
+        .ens-bar { height: 6px; border-radius: 3px; background: #e2e8f0; overflow: hidden; }
+        .ens-fill { height: 100%; border-radius: 3px; }
+
+        .signals { display: flex; gap: 6px; margin-top: 8px; }
+        .sig {
+            flex: 1; text-align: center; padding: 6px 4px;
+            border-radius: 8px; background: #f8fafc;
+        }
+        .sig-pct { font-size: 14px; font-weight: 700; display: block; }
+        .sig-name { font-size: 9px; color: #64748b; font-weight: 600; text-transform: uppercase; }
+        .sig-detail { font-size: 9px; color: #94a3b8; margin-top: 2px; }
+
+        .truth-row {
+            margin-top: 8px; padding: 6px 10px; border-radius: 8px;
+            font-size: 11px; display: flex; justify-content: space-between; align-items: center;
+        }
+        .truth-open { background: #f0fdf4; color: #166534; }
+        .truth-closed { background: #fef2f2; color: #991b1b; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <div class="top-bar" id="topBar"></div>
+    <div class="stats" id="stats"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const allData = [
+  {
+    "city": "chicago",
+    "overture_id": "97ee5135-6bb4-44b3-9b21-d0fb783d5117",
+    "name": "Huddle House Grill",
+    "lat": 41.9679919,
+    "lon": -87.7134212,
+    "address": "4748 N Kimball Ave",
+    "google_status": "CLOSED_PERMANENTLY",
+    "google_open": false,
+    "ens_pct": 69.2,
+    "ens_label": "likely_open",
+    "predicted_open": true,
+    "correct": false,
+    "model_score": 0.8701,
+    "osm_score": 0.5,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 0,
+    "web_score": 0.68,
+    "web_alive": true,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "chicago",
+    "overture_id": "97f88610-8667-4a2e-9e89-9fda3ef0ca73",
+    "name": "One Eleven Food & Liquors",
+    "lat": 41.8832426531342,
+    "lon": -87.70574254293487,
+    "address": "111 N Kedzie Ave",
+    "google_status": "CLOSED_PERMANENTLY",
+    "google_open": false,
+    "ens_pct": 60.0,
+    "ens_label": "likely_open",
+    "predicted_open": true,
+    "correct": false,
+    "model_score": 0.8332,
+    "osm_score": 0.5,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 0,
+    "web_score": 0.53,
+    "web_alive": null,
+    "brave_results": 9,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "chicago",
+    "overture_id": "502dc6f0-e364-46fe-a85f-643a385ee0cc",
+    "name": "Rio Grande Fruit Market Inc",
+    "lat": 41.9098635,
+    "lon": -87.7145375,
+    "address": "3501 W North Ave",
+    "google_status": "CLOSED_TEMPORARILY",
+    "google_open": false,
+    "ens_pct": 61.0,
+    "ens_label": "likely_open",
+    "predicted_open": true,
+    "correct": false,
+    "model_score": 0.8411,
+    "osm_score": 0.9,
+    "osm_found": true,
+    "osm_name": "Rio Grande Fruit Market",
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 5,
+    "web_score": 0.4,
+    "web_alive": false,
+    "brave_results": 3,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "chicago",
+    "overture_id": "01ad4a29-b157-4480-8151-8b1256a749e5",
+    "name": "Able Distributors",
+    "lat": 41.9263626,
+    "lon": -87.7656615,
+    "address": "2501 N Central Ave",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 69.6,
+    "ens_label": "likely_open",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.8887,
+    "osm_score": 0.5,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 0,
+    "web_score": 0.68,
+    "web_alive": true,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "chicago",
+    "overture_id": "008128c1-e6c0-4fad-939c-71534b50355d",
+    "name": "Au Bon Pain",
+    "lat": 41.88448710785045,
+    "lon": -87.6303389600915,
+    "address": "161 N Clark St",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 60.6,
+    "ens_label": "likely_open",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.6898,
+    "osm_score": 0.3,
+    "osm_found": false,
+    "osm_name": "replaced: West Randolph Street (business)",
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 11,
+    "web_score": 0.68,
+    "web_alive": true,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "chicago",
+    "overture_id": "022312ea-830a-45e0-b6d8-9c653558ec4f",
+    "name": "Bar Louie",
+    "lat": 41.8720409,
+    "lon": -87.6288463,
+    "address": "47 W Polk St",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 55.7,
+    "ens_label": "uncertain",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.838,
+    "osm_score": null,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": false,
+    "osm_biz_count": 0,
+    "web_score": 0.43,
+    "web_alive": false,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 2
+  },
+  {
+    "city": "chicago",
+    "overture_id": "015a3f05-5844-4ceb-99a7-f26cf2cab1e7",
+    "name": "Bubbleland",
+    "lat": 41.9220951,
+    "lon": -87.6946564,
+    "address": "2249 N Milwaukee Ave",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 76.6,
+    "ens_label": "likely_open",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.8464,
+    "osm_score": 0.9,
+    "osm_found": true,
+    "osm_name": "Bubbleland",
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 5,
+    "web_score": 0.68,
+    "web_alive": true,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "chicago",
+    "overture_id": "0373591b-276a-439e-aaae-42877e323c54",
+    "name": "Creative Salon",
+    "lat": 41.8589796,
+    "lon": -87.7245049,
+    "address": "3946 W 16th St",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 53.8,
+    "ens_label": "uncertain",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.8045,
+    "osm_score": 0.5,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 0,
+    "web_score": 0.43,
+    "web_alive": false,
+    "brave_results": 9,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "chicago",
+    "overture_id": "01bb46f5-892a-404f-a023-37e324aadd9e",
+    "name": "Delta Mobile Inc",
+    "lat": 41.968778,
+    "lon": -87.6697266,
+    "address": "1601 W Lawrence Ave",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 67.4,
+    "ens_label": "likely_open",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.8081,
+    "osm_score": 0.9,
+    "osm_found": true,
+    "osm_name": "Delta Mobile",
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 11,
+    "web_score": 0.53,
+    "web_alive": null,
+    "brave_results": 5,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "chicago",
+    "overture_id": "067d9ee6-c7f3-45dc-9b4f-595c838ee15a",
+    "name": "Edgewater Lounge",
+    "lat": 41.98345913,
+    "lon": -87.670082,
+    "address": "5600 N Ashland Ave",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 70.5,
+    "ens_label": "likely_open",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.7603,
+    "osm_score": null,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": false,
+    "osm_biz_count": 0,
+    "web_score": 0.68,
+    "web_alive": true,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 2
+  },
+  {
+    "city": "chicago",
+    "overture_id": "a0f116a2-c841-47e6-aa16-f0b805796298",
+    "name": "Fine Fair Food and Liquors",
+    "lat": 41.8589938,
+    "lon": -87.7101018,
+    "address": "3357 W 16th St",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 81.2,
+    "ens_label": "likely_open",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.888,
+    "osm_score": 0.5,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 0,
+    "web_score": 0.89,
+    "web_alive": true,
+    "brave_results": 1,
+    "ai_judgment": "OPEN",
+    "ai_confidence": 80,
+    "signals_used": 3
+  },
+  {
+    "city": "chicago",
+    "overture_id": "02d0ffbe-1867-48c9-a37d-3274fcc90cb5",
+    "name": "Frank's Auto Glass",
+    "lat": 41.7788789,
+    "lon": -87.6298838,
+    "address": "6341 S Wentworth Ave",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 69.2,
+    "ens_label": "likely_open",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.8724,
+    "osm_score": 0.5,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 0,
+    "web_score": 0.68,
+    "web_alive": true,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "chicago",
+    "overture_id": "028270e8-e068-4b7c-bc99-c1edd6f0d173",
+    "name": "Internal Income Inc",
+    "lat": 41.8693144,
+    "lon": -87.6599286,
+    "address": "1317 W Taylor St",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 75.3,
+    "ens_label": "likely_open",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.913,
+    "osm_score": null,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": false,
+    "osm_biz_count": 0,
+    "web_score": 0.68,
+    "web_alive": true,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 2
+  },
+  {
+    "city": "chicago",
+    "overture_id": "03d222a9-f1e7-4666-9686-97958144d404",
+    "name": "LORE Chicago",
+    "lat": 41.8928302,
+    "lon": -87.6334165,
+    "address": "157 W Ontario St",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 72.2,
+    "ens_label": "likely_open",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.8135,
+    "osm_score": null,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": false,
+    "osm_biz_count": 0,
+    "web_score": 0.68,
+    "web_alive": true,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 2
+  },
+  {
+    "city": "chicago",
+    "overture_id": "0109f804-5068-435f-a7d4-6b23008e88ed",
+    "name": "Maruichi Leavitt Pipe & Tube",
+    "lat": 41.6847137,
+    "lon": -87.6649139,
+    "address": "1717 W 115th St",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 69.1,
+    "ens_label": "likely_open",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.8681,
+    "osm_score": 0.5,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 0,
+    "web_score": 0.68,
+    "web_alive": true,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "chicago",
+    "overture_id": "0277dcc8-88ec-4e8c-a22d-f3f416eff512",
+    "name": "Potbelly Sandwich Shop",
+    "lat": 41.7882554,
+    "lon": -87.7425411,
+    "address": "Midway Airport, 5700 S Cicero Ave",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 46.2,
+    "ens_label": "uncertain",
+    "predicted_open": false,
+    "correct": false,
+    "model_score": 0.5326,
+    "osm_score": null,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": false,
+    "osm_biz_count": 0,
+    "web_score": 0.43,
+    "web_alive": false,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 2
+  },
+  {
+    "city": "chicago",
+    "overture_id": "027d7d1d-7250-4604-95e3-7e23e64d1b9a",
+    "name": "Sid's Clothing and Hat Store",
+    "lat": 41.867041,
+    "lon": -87.642579,
+    "address": "609 W Roosevelt Rd",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 74.9,
+    "ens_label": "likely_open",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.8447,
+    "osm_score": 0.9,
+    "osm_found": true,
+    "osm_name": "Sid's Clothing & Hat Store",
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 15,
+    "web_score": 0.65,
+    "web_alive": true,
+    "brave_results": 1,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "chicago",
+    "overture_id": "038bce70-732f-44b7-a734-1215d1605686",
+    "name": "Tenorio Tire Shop",
+    "lat": 41.8308741,
+    "lon": -87.6853326,
+    "address": "3440 S Western Ave",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 54.6,
+    "ens_label": "uncertain",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.8385,
+    "osm_score": 0.5,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 0,
+    "web_score": 0.43,
+    "web_alive": false,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "chicago",
+    "overture_id": "02a32254-ab6b-4f15-b712-36c2122f466d",
+    "name": "T & S Cleaners",
+    "lat": 41.92659060197831,
+    "lon": -87.64075547905333,
+    "address": "2435 N Clark St",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 54.8,
+    "ens_label": "uncertain",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.6965,
+    "osm_score": 0.3,
+    "osm_found": false,
+    "osm_name": "replaced: CM Chicken (restaurant)",
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 5,
+    "web_score": 0.57,
+    "web_alive": true,
+    "brave_results": 0,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "chicago",
+    "overture_id": "d387ae2a-db50-45f7-a07f-86675db82c63",
+    "name": "T's Paisan's Pizza",
+    "lat": 41.80912013649873,
+    "lon": -87.64342070987387,
+    "address": "704 W 47th St",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 51.0,
+    "ens_label": "uncertain",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.7603,
+    "osm_score": 0.5,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 0,
+    "web_score": 0.4,
+    "web_alive": false,
+    "brave_results": 1,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "new_york",
+    "overture_id": "99bafbfe-e745-43c3-a102-96ba224e9769",
+    "name": "Bar Pasquale",
+    "lat": 40.7211935,
+    "lon": -73.9968805,
+    "address": "98 Kenmare St",
+    "google_status": "CLOSED_TEMPORARILY",
+    "google_open": false,
+    "ens_pct": 66.5,
+    "ens_label": "likely_open",
+    "predicted_open": true,
+    "correct": false,
+    "model_score": 0.4446,
+    "osm_score": 0.9,
+    "osm_found": true,
+    "osm_name": "Bar Pasquale",
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 15,
+    "web_score": 0.68,
+    "web_alive": true,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "new_york",
+    "overture_id": "1614b313-4618-4782-8b64-46d4c646ed0b",
+    "name": "China Jade Szechuan Chili House",
+    "lat": 40.777392,
+    "lon": -73.9523285,
+    "address": "1643 2nd Ave",
+    "google_status": "CLOSED_PERMANENTLY",
+    "google_open": false,
+    "ens_pct": 36.6,
+    "ens_label": "likely_closed",
+    "predicted_open": false,
+    "correct": true,
+    "model_score": 0.2787,
+    "osm_score": 0.3,
+    "osm_found": false,
+    "osm_name": "replaced: GNC (nutrition_supplements)",
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 20,
+    "web_score": 0.43,
+    "web_alive": false,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "new_york",
+    "overture_id": "33076311-7d32-48cc-bd7d-f00bdfcbb2b8",
+    "name": "La Barca Cantina",
+    "lat": 40.7616667,
+    "lon": -74.0022192,
+    "address": "82 N River Piers",
+    "google_status": "CLOSED_PERMANENTLY",
+    "google_open": false,
+    "ens_pct": 54.6,
+    "ens_label": "uncertain",
+    "predicted_open": true,
+    "correct": false,
+    "model_score": 0.4489,
+    "osm_score": 0.3,
+    "osm_found": false,
+    "osm_name": "replaced: Pier 81 (business)",
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 4,
+    "web_score": 0.68,
+    "web_alive": true,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "new_york",
+    "overture_id": "413c704c-1d5a-4fee-baab-aae01069d216",
+    "name": "LIC Corner Cafe",
+    "lat": 40.7466881,
+    "lon": -73.9476044,
+    "address": "21-03 45th Rd",
+    "google_status": "CLOSED_PERMANENTLY",
+    "google_open": false,
+    "ens_pct": 58.9,
+    "ens_label": "uncertain",
+    "predicted_open": true,
+    "correct": false,
+    "model_score": 0.4608,
+    "osm_score": 0.5,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 0,
+    "web_score": 0.68,
+    "web_alive": true,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "new_york",
+    "overture_id": "41bd825c-2421-4386-8541-6ca3550ff0a1",
+    "name": "Loreto Italian Kitchen and Bar",
+    "lat": 40.687057,
+    "lon": -73.9783982,
+    "address": "280 Ashland Pl",
+    "google_status": "CLOSED_PERMANENTLY",
+    "google_open": false,
+    "ens_pct": 30.7,
+    "ens_label": "likely_closed",
+    "predicted_open": false,
+    "correct": true,
+    "model_score": 0.277,
+    "osm_score": null,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": false,
+    "osm_biz_count": 0,
+    "web_score": 0.32,
+    "web_alive": false,
+    "brave_results": 0,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 2
+  },
+  {
+    "city": "new_york",
+    "overture_id": "f8d6fb81-0880-46c6-a7f1-76edd6c15832",
+    "name": "Made Fresh Daily",
+    "lat": 40.7077043,
+    "lon": -74.0020872,
+    "address": "226 Front St",
+    "google_status": "CLOSED_PERMANENTLY",
+    "google_open": false,
+    "ens_pct": 52.9,
+    "ens_label": "uncertain",
+    "predicted_open": true,
+    "correct": false,
+    "model_score": 0.4489,
+    "osm_score": 0.9,
+    "osm_found": true,
+    "osm_name": "Made Fresh Daily",
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 15,
+    "web_score": 0.43,
+    "web_alive": false,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "new_york",
+    "overture_id": "a5cbdd1a-530d-4c9b-8514-59102db7cd31",
+    "name": "New Jubilee News II Inc",
+    "lat": 40.7094149,
+    "lon": -74.0066655,
+    "address": "135 William St",
+    "google_status": "CLOSED_TEMPORARILY",
+    "google_open": false,
+    "ens_pct": 53.2,
+    "ens_label": "uncertain",
+    "predicted_open": true,
+    "correct": false,
+    "model_score": 0.9411,
+    "osm_score": 0.3,
+    "osm_found": false,
+    "osm_name": "replaced: Fulton Street (business)",
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 25,
+    "web_score": 0.43,
+    "web_alive": false,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "new_york",
+    "overture_id": "ce3f8cbd-8373-442c-96b9-1ddcc82d922c",
+    "name": "Wangbi",
+    "lat": 40.7481092,
+    "lon": -73.9872096,
+    "address": "37 W 32nd St",
+    "google_status": "CLOSED_PERMANENTLY",
+    "google_open": false,
+    "ens_pct": 33.6,
+    "ens_label": "likely_closed",
+    "predicted_open": false,
+    "correct": true,
+    "model_score": 0.1594,
+    "osm_score": 0.3,
+    "osm_found": false,
+    "osm_name": "replaced: caff\u00e9 bene (cafe)",
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 22,
+    "web_score": 0.43,
+    "web_alive": false,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "new_york",
+    "overture_id": "849340b1-3da4-49f1-a29a-ca1db555a44d",
+    "name": "20166 Parking LLC",
+    "lat": 40.7664294,
+    "lon": -73.9626211,
+    "address": "202 E 67th St",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 62.3,
+    "ens_label": "likely_open",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.7556,
+    "osm_score": 0.3,
+    "osm_found": false,
+    "osm_name": "replaced: East 67th Street & 3rd Avenue (business)",
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 10,
+    "web_score": 0.68,
+    "web_alive": true,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "new_york",
+    "overture_id": "872241d9-682e-45c6-b169-c4456d1f7404",
+    "name": "291 Dicayagua Grocery Inc.",
+    "lat": 40.6950013,
+    "lon": -73.9250505,
+    "address": "291 Evergreen Ave",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 66.3,
+    "ens_label": "likely_open",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.8313,
+    "osm_score": 0.9,
+    "osm_found": true,
+    "osm_name": "Dicayagua Deli & Grocery",
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 1,
+    "web_score": 0.5,
+    "web_alive": null,
+    "brave_results": 1,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "new_york",
+    "overture_id": "1312cf2f-97a2-4130-96cc-f60ed731c8e0",
+    "name": "Advance Auto & Body Works Inc",
+    "lat": 40.7481995,
+    "lon": -73.9518758,
+    "address": "1001 45th Ave",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 66.8,
+    "ens_label": "likely_open",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.8411,
+    "osm_score": 0.5,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 0,
+    "web_score": 0.65,
+    "web_alive": true,
+    "brave_results": 3,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "new_york",
+    "overture_id": "050076af-f7ce-45a1-b86c-2529708e1d19",
+    "name": "Baya Inc.",
+    "lat": 40.8152158,
+    "lon": -73.9262382,
+    "address": "381 Canal Pl",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 73.8,
+    "ens_label": "likely_open",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.8666,
+    "osm_score": null,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": false,
+    "osm_biz_count": 0,
+    "web_score": 0.68,
+    "web_alive": true,
+    "brave_results": 8,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 2
+  },
+  {
+    "city": "new_york",
+    "overture_id": "421a1a23-d08c-4c4d-bf76-37fe423d55f5",
+    "name": "Clinton Auto Collision Inc.",
+    "lat": 40.6966793,
+    "lon": -73.9694151,
+    "address": "37 Clinton Ave",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 82.8,
+    "ens_label": "likely_open",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.8862,
+    "osm_score": 0.5,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 0,
+    "web_score": 0.92,
+    "web_alive": true,
+    "brave_results": 2,
+    "ai_judgment": "OPEN",
+    "ai_confidence": 90,
+    "signals_used": 3
+  },
+  {
+    "city": "new_york",
+    "overture_id": "f7c52c22-a861-4956-8327-e8c95fc28657",
+    "name": "Deco Jewels Inc",
+    "lat": 40.7265547,
+    "lon": -74.0013124,
+    "address": "131 Thompson St",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 58.7,
+    "ens_label": "uncertain",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.9308,
+    "osm_score": null,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": false,
+    "osm_biz_count": 0,
+    "web_score": 0.43,
+    "web_alive": false,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 2
+  },
+  {
+    "city": "new_york",
+    "overture_id": "67a6331b-850e-420c-90b6-52045efc0eda",
+    "name": "Edwin Food Corp",
+    "lat": 40.7976081,
+    "lon": -73.9492506,
+    "address": "2 W 111th St",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 65.8,
+    "ens_label": "likely_open",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.7451,
+    "osm_score": 0.9,
+    "osm_found": true,
+    "osm_name": "Edwin Food",
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 5,
+    "web_score": 0.53,
+    "web_alive": null,
+    "brave_results": 7,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "new_york",
+    "overture_id": "9efdcef7-8470-4384-acdf-0386dbd24906",
+    "name": "Estevez Deli Corp.",
+    "lat": 40.6925582,
+    "lon": -73.9074692,
+    "address": "804 Knickerbocker Ave",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 66.7,
+    "ens_label": "likely_open",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.8484,
+    "osm_score": 0.9,
+    "osm_found": true,
+    "osm_name": "Estevez Deli Corp",
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 1,
+    "web_score": 0.5,
+    "web_alive": null,
+    "brave_results": 2,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "new_york",
+    "overture_id": "4256041d-e885-48ec-9d2d-23a351199337",
+    "name": "Evflorist Corp",
+    "lat": 40.7286723,
+    "lon": -73.984013,
+    "address": "247 E 10th St",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 74.2,
+    "ens_label": "likely_open",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.8798,
+    "osm_score": null,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": false,
+    "osm_biz_count": 0,
+    "web_score": 0.68,
+    "web_alive": true,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 2
+  },
+  {
+    "city": "new_york",
+    "overture_id": "e4640ceb-b121-4ef8-994e-4d376a9ff970",
+    "name": "Foley Nursing Agency Inc",
+    "lat": 40.7685337,
+    "lon": -73.9679411,
+    "address": "790 Madison Ave",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 67.1,
+    "ens_label": "likely_open",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.7889,
+    "osm_score": 0.5,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 0,
+    "web_score": 0.68,
+    "web_alive": true,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "new_york",
+    "overture_id": "c74b9469-ff96-458f-bc68-d976b2f7779d",
+    "name": "Fresh Garden Inc",
+    "lat": 40.6867548,
+    "lon": -73.9752803,
+    "address": "729 Fulton St",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 63.3,
+    "ens_label": "likely_open",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.8666,
+    "osm_score": 0.9,
+    "osm_found": true,
+    "osm_name": "Fresh Garden",
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 25,
+    "web_score": 0.43,
+    "web_alive": false,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "new_york",
+    "overture_id": "a714b6d4-39cf-40b9-a333-2542ea2333f0",
+    "name": "JAB Industries Inc.",
+    "lat": 40.7447544,
+    "lon": -73.9850113,
+    "address": "99 Madison Ave",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 51.2,
+    "ens_label": "uncertain",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.8636,
+    "osm_score": 0.3,
+    "osm_found": false,
+    "osm_name": "replaced: DG Interactive (company)",
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 10,
+    "web_score": 0.43,
+    "web_alive": false,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "san_francisco",
+    "overture_id": "31481167-08ec-45fc-aa32-d93e586ab8d3",
+    "name": "Chanvi Eatery",
+    "lat": 37.78124308,
+    "lon": -122.41115977,
+    "address": "1063 Market St",
+    "google_status": "CLOSED_PERMANENTLY",
+    "google_open": false,
+    "ens_pct": 44.3,
+    "ens_label": "uncertain",
+    "predicted_open": false,
+    "correct": true,
+    "model_score": 0.4712,
+    "osm_score": null,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": false,
+    "osm_biz_count": 0,
+    "web_score": 0.43,
+    "web_alive": false,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 2
+  },
+  {
+    "city": "san_francisco",
+    "overture_id": "d7bd90fa-ee48-47f4-b74d-f9717cffc1b3",
+    "name": "Le Colonial SF",
+    "lat": 37.7881697,
+    "lon": -122.4124115,
+    "address": "20 Cosmo Pl",
+    "google_status": "CLOSED_PERMANENTLY",
+    "google_open": false,
+    "ens_pct": 51.6,
+    "ens_label": "uncertain",
+    "predicted_open": true,
+    "correct": false,
+    "model_score": 0.4627,
+    "osm_score": 0.9,
+    "osm_found": true,
+    "osm_name": "Le Colonial",
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 11,
+    "web_score": 0.4,
+    "web_alive": false,
+    "brave_results": 2,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "san_francisco",
+    "overture_id": "276b5016-760d-4621-abd5-3f02b985a6ac",
+    "name": "My Boudoir",
+    "lat": 37.7967893468883,
+    "lon": -122.43685133048248,
+    "address": "2285 Union St",
+    "google_status": "CLOSED_PERMANENTLY",
+    "google_open": false,
+    "ens_pct": 47.1,
+    "ens_label": "uncertain",
+    "predicted_open": false,
+    "correct": true,
+    "model_score": 0.6993,
+    "osm_score": 0.3,
+    "osm_found": false,
+    "osm_name": "replaced: Marina Submarine (fast_food)",
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 11,
+    "web_score": 0.43,
+    "web_alive": false,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "san_francisco",
+    "overture_id": "030ed075-74b1-4601-bfdd-76e58bb5b938",
+    "name": "Oda Restaurant",
+    "lat": 37.7688044,
+    "lon": -122.3956221,
+    "address": "1500 Owens St",
+    "google_status": "CLOSED_PERMANENTLY",
+    "google_open": false,
+    "ens_pct": 47.0,
+    "ens_label": "uncertain",
+    "predicted_open": false,
+    "correct": true,
+    "model_score": 0.314,
+    "osm_score": 0.5,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 0,
+    "web_score": 0.53,
+    "web_alive": null,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "san_francisco",
+    "overture_id": "5e013e0e-35aa-47fd-92f7-d5ac2dbbd3ee",
+    "name": "Pineapple Bistro and Bar",
+    "lat": 37.7868315,
+    "lon": -122.4130322,
+    "address": "580 Geary St",
+    "google_status": "CLOSED_PERMANENTLY",
+    "google_open": false,
+    "ens_pct": 33.2,
+    "ens_label": "likely_closed",
+    "predicted_open": false,
+    "correct": true,
+    "model_score": 0.2094,
+    "osm_score": 0.3,
+    "osm_found": false,
+    "osm_name": "replaced: Staypineapple An Elegant Hotel (business)",
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 24,
+    "web_score": 0.4,
+    "web_alive": false,
+    "brave_results": 1,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "san_francisco",
+    "overture_id": "f185f3ef-6aef-47e5-9825-bea62d3ee784",
+    "name": "Solar Planet Tanning & Massage",
+    "lat": 37.798664,
+    "lon": -122.436119,
+    "address": "3151 Fillmore St",
+    "google_status": "CLOSED_PERMANENTLY",
+    "google_open": false,
+    "ens_pct": 57.4,
+    "ens_label": "uncertain",
+    "predicted_open": true,
+    "correct": false,
+    "model_score": 0.7946,
+    "osm_score": 0.5,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 0,
+    "web_score": 0.5,
+    "web_alive": null,
+    "brave_results": 1,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "san_francisco",
+    "overture_id": "c7464397-10db-4eac-8b8f-0930506a645b",
+    "name": "The Winery SF",
+    "lat": 37.8187238,
+    "lon": -122.366407,
+    "address": "30 Avenue G",
+    "google_status": "CLOSED_PERMANENTLY",
+    "google_open": false,
+    "ens_pct": 45.4,
+    "ens_label": "uncertain",
+    "predicted_open": false,
+    "correct": true,
+    "model_score": 0.4712,
+    "osm_score": 0.5,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 0,
+    "web_score": 0.43,
+    "web_alive": false,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "san_francisco",
+    "overture_id": "65c412ed-9e4e-4af7-aa48-9315b3a3a87d",
+    "name": "828 Irving Market",
+    "lat": 37.7642659,
+    "lon": -122.4669176,
+    "address": "828 Irving St",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 52.5,
+    "ens_label": "uncertain",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.7554,
+    "osm_score": 0.5,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 0,
+    "web_score": 0.43,
+    "web_alive": false,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "san_francisco",
+    "overture_id": "0f3729aa-6bf3-4993-9a6d-d2dc19bfeedd",
+    "name": "Andrea Schwartz Gallery",
+    "lat": 37.7791799,
+    "lon": -122.3973744,
+    "address": "545 4th St",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 64.8,
+    "ens_label": "likely_open",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.9279,
+    "osm_score": 0.9,
+    "osm_found": true,
+    "osm_name": "Andrea Schwartz Gallery",
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 10,
+    "web_score": 0.43,
+    "web_alive": false,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "san_francisco",
+    "overture_id": "c07dfd34-4f46-4ecb-acfc-b6cdd7ef5945",
+    "name": "Berschler Associates, PC",
+    "lat": 37.7915858,
+    "lon": -122.3993836,
+    "address": "22 Battery St #888",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 64.9,
+    "ens_label": "likely_open",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.8582,
+    "osm_score": 0.3,
+    "osm_found": false,
+    "osm_name": "replaced: Boichik (fast_food)",
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 19,
+    "web_score": 0.68,
+    "web_alive": true,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "san_francisco",
+    "overture_id": "68366237-049f-4ca9-9ebc-dafe3e71a75f",
+    "name": "Chevron",
+    "lat": 37.789611,
+    "lon": -122.422617,
+    "address": "1501 Van Ness Ave",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 65.2,
+    "ens_label": "likely_open",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.8722,
+    "osm_score": 0.3,
+    "osm_found": false,
+    "osm_name": "replaced: Standard (fuel)",
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 8,
+    "web_score": 0.68,
+    "web_alive": true,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "san_francisco",
+    "overture_id": "633453e9-7feb-451e-bea6-2091601d09b0",
+    "name": "Cole Michael T DDS",
+    "lat": 37.755654,
+    "lon": -122.418429,
+    "address": "2595 Mission St",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 76.0,
+    "ens_label": "likely_open",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.7771,
+    "osm_score": 0.3,
+    "osm_found": false,
+    "osm_name": "replaced: Wells Fargo (bank)",
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 9,
+    "web_score": 0.92,
+    "web_alive": true,
+    "brave_results": 2,
+    "ai_judgment": "OPEN",
+    "ai_confidence": 90,
+    "signals_used": 3
+  },
+  {
+    "city": "san_francisco",
+    "overture_id": "ffe0c1f1-1542-4950-a334-2581aa3a9d61",
+    "name": "Energetic Therapeutics",
+    "lat": 37.793587,
+    "lon": -122.399345,
+    "address": "230 California St Ste 308",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 53.8,
+    "ens_label": "uncertain",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.8075,
+    "osm_score": 0.5,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 0,
+    "web_score": 0.43,
+    "web_alive": false,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "san_francisco",
+    "overture_id": "e4474c69-9aea-4ec2-be24-143eaa2be71c",
+    "name": "Golden Nails Salon",
+    "lat": 37.7093012,
+    "lon": -122.4508387,
+    "address": "5817 Mission St",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 53.1,
+    "ens_label": "uncertain",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.9373,
+    "osm_score": 0.3,
+    "osm_found": false,
+    "osm_name": "replaced: Mission Street & Lawrence Avenue (business)",
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 2,
+    "web_score": 0.43,
+    "web_alive": false,
+    "brave_results": 6,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "san_francisco",
+    "overture_id": "5c7febe2-1575-484f-b792-0b83718e930a",
+    "name": "Hotel Majestic",
+    "lat": 37.7872605,
+    "lon": -122.4254393,
+    "address": "1500 Sutter St",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 55.7,
+    "ens_label": "uncertain",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.8816,
+    "osm_score": 0.5,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 0,
+    "web_score": 0.43,
+    "web_alive": false,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "san_francisco",
+    "overture_id": "f6dc6584-e6ee-4d5f-8681-d01b1f6af0be",
+    "name": "Jimenez Construction",
+    "lat": 37.75366030682602,
+    "lon": -122.41000380333601,
+    "address": "1143 Florida St",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 71.6,
+    "ens_label": "likely_open",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.7963,
+    "osm_score": null,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": false,
+    "osm_biz_count": 0,
+    "web_score": 0.68,
+    "web_alive": true,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 2
+  },
+  {
+    "city": "san_francisco",
+    "overture_id": "d23cb291-4938-49ab-a862-5c196b278d6d",
+    "name": "Lauren C Hebel, DMD",
+    "lat": 37.789666,
+    "lon": -122.407849,
+    "address": "450 Sutter St",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 43.0,
+    "ens_label": "uncertain",
+    "predicted_open": false,
+    "correct": false,
+    "model_score": 0.7771,
+    "osm_score": 0.3,
+    "osm_found": false,
+    "osm_name": "replaced: Miguel Delgado, MD (doctors)",
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 16,
+    "web_score": 0.32,
+    "web_alive": false,
+    "brave_results": 0,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "san_francisco",
+    "overture_id": "cc4a4118-c157-458d-9ca9-a44f2f23e41c",
+    "name": "Law Offices of Helene V. Wenzel",
+    "lat": 37.7941724,
+    "lon": -122.4226713,
+    "address": "2000 Van Ness Ave",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 33.3,
+    "ens_label": "likely_closed",
+    "predicted_open": false,
+    "correct": false,
+    "model_score": 0.8277,
+    "osm_score": 0.3,
+    "osm_found": false,
+    "osm_name": "replaced: Metro United Bank (bank)",
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 11,
+    "web_score": 0.12,
+    "web_alive": false,
+    "brave_results": 4,
+    "ai_judgment": "CLOSED",
+    "ai_confidence": 80,
+    "signals_used": 3
+  },
+  {
+    "city": "san_francisco",
+    "overture_id": "76ef1d16-60e5-4c95-857c-b363f75e3c1f",
+    "name": "Mama Art Cafe",
+    "lat": 37.722107,
+    "lon": -122.437263,
+    "address": "4754 Mission St",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 55.2,
+    "ens_label": "uncertain",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.6421,
+    "osm_score": 0.5,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": true,
+    "osm_biz_count": 0,
+    "web_score": 0.53,
+    "web_alive": null,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 3
+  },
+  {
+    "city": "san_francisco",
+    "overture_id": "b1f7a4e5-839a-49a8-8858-351077c7e908",
+    "name": "MM",
+    "lat": 37.798117,
+    "lon": -122.402454,
+    "address": "855 Sansome St",
+    "google_status": "OPERATIONAL",
+    "google_open": true,
+    "ens_pct": 70.3,
+    "ens_label": "likely_open",
+    "predicted_open": true,
+    "correct": true,
+    "model_score": 0.7528,
+    "osm_score": null,
+    "osm_found": false,
+    "osm_name": null,
+    "osm_disused": false,
+    "osm_building": false,
+    "osm_biz_count": 0,
+    "web_score": 0.68,
+    "web_alive": true,
+    "brave_results": 10,
+    "ai_judgment": "UNCERTAIN",
+    "ai_confidence": 0,
+    "signals_used": 2
+  }
+];
+
+        const CENTERS = {
+            san_francisco: [37.77, -122.42],
+            new_york: [40.75, -73.99],
+            chicago: [41.88, -87.63],
+        };
+        const LABELS = {
+            san_francisco: "San Francisco",
+            new_york: "New York",
+            chicago: "Chicago",
+        };
+
+        const map = L.map('map').setView([37.77, -122.42], 4);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors', maxZoom: 19,
+        }).addTo(map);
+
+        let markers = [];
+        let activeCity = 'all';
+        let activeFilter = 'all';  // all | correct | wrong
+
+        // ── Pin color = ensemble prediction ──
+        function pinColor(d) {
+            if (d.ens_pct === null) return '#9ca3af';  // no prediction yet
+            return d.predicted_open ? '#22c55e' : '#ef4444';
+        }
+
+        function pinBorder(d) {
+            if (d.correct === null) return '#fff';
+            return d.correct ? '#fff' : '#000';  // black border = wrong prediction
+        }
+
+        // ── Popup ──
+        function pctColor(pct) {
+            if (pct >= 60) return '#16a34a';
+            if (pct >= 40) return '#ca8a04';
+            return '#dc2626';
+        }
+
+        function renderPopup(d) {
+            const hasPrediction = d.ens_pct !== null;
+            let ensHtml = '';
+
+            if (hasPrediction) {
+                const pct = d.ens_pct.toFixed(1);
+                const color = pctColor(d.ens_pct);
+                const bgColor = d.predicted_open ? '#f0fdf4' : '#fef2f2';
+                const verdict = d.predicted_open ? 'OPEN' : 'CLOSED';
+
+                // Build the weighted math line
+                // Weights: Model=25%, OSM=20%, Web=55% (redistributed if missing)
+                const signals = [];
+                if (d.model_score !== null) signals.push({ name: 'Model', score: d.model_score, baseW: 0.25 });
+                if (d.osm_score !== null) signals.push({ name: 'OSM', score: d.osm_score, baseW: 0.20 });
+                if (d.web_score !== null) signals.push({ name: 'Web', score: d.web_score, baseW: 0.55 });
+
+                // Redistribute weights to match what ensemble actually did
+                const totalW = signals.reduce((s, x) => s + x.baseW, 0);
+                signals.forEach(s => s.w = s.baseW / totalW);
+
+                // Build math string: "(82% x 0.25) + (50% x 0.20) + (90% x 0.55) = 78.0%"
+                const mathParts = signals.map(s =>
+                    `(${(s.score * 100).toFixed(0)}% x ${s.w.toFixed(2)})`
+                );
+                const mathStr = mathParts.join(' + ') + ` = <b>${pct}%</b>`;
+
+                // Signal detail lines
+                let osmDetail = '';
+                if (d.osm_found && d.osm_disused) osmDetail = 'disused';
+                else if (d.osm_found) osmDetail = 'found on OSM';
+                else if (d.osm_name && d.osm_name.startsWith('replaced:')) osmDetail = 'replaced by ' + d.osm_name.substring(10);
+                else if (d.osm_building) osmDetail = 'building found, no listing';
+                else osmDetail = 'not on OSM';
+
+                let webDetail = '';
+                if (d.ai_judgment && d.ai_judgment !== 'UNCERTAIN') {
+                    webDetail = 'AI says ' + d.ai_judgment.toLowerCase() + ' (' + d.ai_confidence + '% conf)';
+                } else if (d.web_alive === true) webDetail = 'website alive';
+                else if (d.web_alive === false) webDetail = 'website down';
+                else webDetail = 'no website found';
+
+                ensHtml = `
+                    <div class="ens-box" style="background:${bgColor}">
+                        <div class="ens-header">
+                            <span class="ens-pct" style="color:${color}">${pct}%</span>
+                            <span class="ens-verdict" style="color:${color}">${verdict}</span>
+                        </div>
+                        <div class="ens-bar">
+                            <div class="ens-fill" style="width:${pct}%;background:${color}"></div>
+                        </div>
+                        <div style="font-size:10px;color:#64748b;margin-top:8px;line-height:1.5;font-family:monospace">
+                            ${mathStr}
+                        </div>
+                        <div style="margin-top:8px;font-size:11px;line-height:1.7">
+                            ${signals.map(s => {
+                                const icon = s.score >= 0.5 ? '&#9679;' : '&#9675;';
+                                const c = s.score >= 0.5 ? '#16a34a' : '#dc2626';
+                                let detail = '';
+                                if (s.name === 'OSM') detail = osmDetail;
+                                else if (s.name === 'Web') detail = webDetail;
+                                else detail = s.score >= 0.5 ? 'predicts open' : 'predicts closed';
+                                return `<div><span style="color:${c}">${icon}</span> <b>${s.name}</b> ${(s.score*100).toFixed(0)}% — ${detail}</div>`;
+                            }).join('')}
+                        </div>
+                    </div>
+                `;
+            } else {
+                ensHtml = '<div class="ens-box" style="background:#f8fafc;text-align:center;color:#94a3b8">No prediction yet</div>';
+            }
+
+            const truthClass = d.google_open ? 'truth-open' : 'truth-closed';
+            const truthLabel = d.google_open ? 'OPEN' : 'CLOSED';
+            const matchText = d.correct === true ? '&#10003;' : (d.correct === false ? '&#10007;' : '');
+            const matchColor = d.correct === true ? '#16a34a' : '#dc2626';
+
+            return `
+                <div class="popup">
+                    <h3>${d.name}</h3>
+                    <div class="addr">${d.address || 'No address'}</div>
+                    ${ensHtml}
+                    <div class="truth-row ${truthClass}">
+                        <span>Google: <b>${truthLabel}</b></span>
+                        <b style="color:${matchColor}">${matchText}</b>
+                    </div>
+                </div>
+            `;
+        }
+
+        // ── Stats panel — accuracy + ground truth filter ──
+        let activeGT = 'all';  // all | open | closed
+
+        function updateStats(unfilteredData) {
+            const hasEns = unfilteredData.filter(d => d.ens_pct !== null);
+            const correct = hasEns.filter(d => d.correct === true).length;
+            const acc = hasEns.length > 0 ? (100 * correct / hasEns.length) : 0;
+            const accColor = acc >= 80 ? '#16a34a' : (acc >= 60 ? '#ca8a04' : '#dc2626');
+
+            const gtOpen = unfilteredData.filter(d => d.google_open).length;
+            const gtClosed = unfilteredData.length - gtOpen;
+
+            const cityName = activeCity === 'all' ? 'All Cities' : (LABELS[activeCity] || activeCity);
+
+            let html = `<h3>${cityName}</h3>`;
+            if (hasEns.length > 0) {
+                html += `
+                    <div class="accuracy-big" style="color:${accColor}">${acc.toFixed(0)}%</div>
+                    <div class="accuracy-sub">accuracy vs Google (${correct}/${hasEns.length})</div>
+                `;
+            } else {
+                html += `<div class="accuracy-sub" style="margin:8px 0">No predictions yet</div>`;
+            }
+
+            html += `
+                <div style="border-top:1px solid #e2e8f0;margin:10px 0 8px"></div>
+                <div style="font-size:11px;color:#64748b;margin-bottom:6px">Ground Truth Filter</div>
+                <div class="gt-filters">
+                    <button class="gt-btn ${activeGT === 'all' ? 'active' : ''}" onclick="setGT('all')">All (${unfilteredData.length})</button>
+                    <button class="gt-btn ${activeGT === 'open' ? 'active-green' : ''}" onclick="setGT('open')">Open (${gtOpen})</button>
+                    <button class="gt-btn ${activeGT === 'closed' ? 'active-red' : ''}" onclick="setGT('closed')">Closed (${gtClosed})</button>
+                </div>
+            `;
+
+            document.getElementById('stats').innerHTML = html;
+        }
+
+        window.setGT = function(val) {
+            activeGT = val;
+            render();
+        };
+
+        // ── Render markers ──
+        function render() {
+            markers.forEach(m => map.removeLayer(m));
+            markers = [];
+
+            let data = activeCity === 'all'
+                ? allData
+                : allData.filter(d => d.city === activeCity);
+
+            // For stats, use city-filtered but NOT gt-filtered data
+            const statsData = data;
+
+            // Apply ground truth filter
+            if (activeGT === 'open') data = data.filter(d => d.google_open);
+            if (activeGT === 'closed') data = data.filter(d => !d.google_open);
+
+            // Apply correct/wrong filter
+            if (activeFilter === 'correct') data = data.filter(d => d.correct === true);
+            if (activeFilter === 'wrong') data = data.filter(d => d.correct === false);
+
+            data.forEach(d => {
+                const m = L.circleMarker([d.lat, d.lon], {
+                    radius: 9,
+                    fillColor: pinColor(d),
+                    color: pinBorder(d),
+                    weight: d.correct === false ? 3 : 2,
+                    opacity: 1,
+                    fillOpacity: 0.9,
+                }).addTo(map);
+                m.bindPopup(renderPopup(d), { maxWidth: 340 });
+                markers.push(m);
+            });
+
+            if (data.length > 0 && activeCity !== 'all' && CENTERS[activeCity]) {
+                map.setView(CENTERS[activeCity], 13);
+            } else if (data.length > 0) {
+                const group = L.featureGroup(markers);
+                map.fitBounds(group.getBounds().pad(0.1));
+            }
+
+            updateStats(statsData);
+
+            // Update button states
+            document.querySelectorAll('.city-btn').forEach(b =>
+                b.classList.toggle('active', b.dataset.city === activeCity));
+            document.querySelectorAll('.filter-btn').forEach(b => {
+                b.classList.remove('active', 'active-green', 'active-red');
+                if (b.dataset.filter === activeFilter) {
+                    if (activeFilter === 'correct') b.classList.add('active-green');
+                    else if (activeFilter === 'wrong') b.classList.add('active-red');
+                    else b.classList.add('active');
+                }
+            });
+        }
+
+        // ── Build top bar ──
+        const topBar = document.getElementById('topBar');
+
+        // City buttons
+        const cityGroup = document.createElement('div');
+        cityGroup.className = 'btn-group';
+
+        const cities = [...new Set(allData.map(d => d.city))];
+        [{ key: 'all', label: 'All' }, ...cities.map(c => ({ key: c, label: LABELS[c] || c }))].forEach(c => {
+            const btn = document.createElement('button');
+            btn.className = 'btn city-btn';
+            const count = c.key === 'all' ? allData.length : allData.filter(d => d.city === c.key).length;
+            btn.textContent = `${c.label} (${count})`;
+            btn.dataset.city = c.key;
+            btn.onclick = () => { activeCity = c.key; activeGT = 'all'; render(); };
+            cityGroup.appendChild(btn);
+        });
+        topBar.appendChild(cityGroup);
+
+        // Filter buttons (correct/wrong)
+        const filterGroup = document.createElement('div');
+        filterGroup.className = 'btn-group';
+        [
+            { key: 'all', label: 'All' },
+            { key: 'correct', label: 'Correct' },
+            { key: 'wrong', label: 'Wrong' },
+        ].forEach(f => {
+            const btn = document.createElement('button');
+            btn.className = 'btn filter-btn';
+            btn.textContent = f.label;
+            btn.dataset.filter = f.key;
+            btn.onclick = () => { activeFilter = f.key; render(); };
+            filterGroup.appendChild(btn);
+        });
+        topBar.appendChild(filterGroup);
+
+        // Legend
+        const legend = L.control({ position: 'bottomleft' });
+        legend.onAdd = () => {
+            const div = L.DomUtil.create('div', 'legend');
+            div.innerHTML = `
+                <div class="legend-item"><div class="legend-dot" style="background:#22c55e"></div> Predicted Open</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#ef4444"></div> Predicted Closed</div>
+                <div style="margin-top:4px;font-size:11px;color:#64748b">Black border = wrong prediction</div>
+            `;
+            return div;
+        };
+        legend.addTo(map);
+
+        render();
+    </script>
+</body>
+</html>

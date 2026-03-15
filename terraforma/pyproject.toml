@@ -1,0 +1,62 @@
+[project]
+name = "terraforma"
+version = "0.1.0"
+description = "Predict business open/closed status using Overture Maps and multi-signal ensemble"
+requires-python = ">=3.10"
+
+dependencies = [
+    # Database
+    "psycopg2-binary>=2.9",
+    "sqlalchemy>=2.0",
+
+    # Geospatial
+    "geopandas>=0.14",
+    "shapely>=2.0",
+
+    # Overture Maps (parquet via DuckDB)
+    "duckdb>=1.0",
+
+    # Data processing
+    "pandas>=2.1",
+    "numpy>=1.26",
+
+    # ML
+    "scikit-learn>=1.4",
+    "xgboost>=2.0",
+
+    # Fuzzy matching
+    "rapidfuzz>=3.6",
+    "unidecode>=1.3",
+
+    # CV / Image analysis
+    "Pillow>=10.0",
+    "open-clip-torch>=2.24",
+    "torch>=2.1",
+
+    # Web crawling
+    "requests>=2.31",
+    "beautifulsoup4>=4.12",
+
+    # Config
+    "python-dotenv>=1.0",
+
+    # Utilities
+    "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ipykernel>=6.29",
+    "jupyter>=1.0",
+    "matplotlib>=3.8",
+    "seaborn>=0.13",
+]
+
+[build-system]
+requires = ["setuptools>=69.0"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
