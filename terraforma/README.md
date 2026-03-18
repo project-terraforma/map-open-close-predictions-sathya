@@ -91,6 +91,14 @@ python -m src.step4_classifier foursquare sf 500
 python -m src.step4_classifier predict
 ```
 
+## Recent Improvements
+
+- **Early stopping** on both CatBoost (50 rounds) and LightGBM (50 rounds) to prevent overfitting on small datasets
+- **Platt scaling calibration** for well-calibrated probability outputs — uses a holdout set to fit a sigmoid calibrator
+- **Optimal threshold search** via balanced accuracy on calibration data (instead of fixed 0.5)
+- **Deeper trees** (depth 6, 1200 iterations) with lower learning rate (0.03) for better generalization
+- **Calibration-aware final model**: Train/calibrate split, then retrain on all data preserving the calibrated threshold
+
 ## Scaling
 
 At inference, the model uses only Overture features — no APIs. Scoring 100M+ places costs ~$750 in compute per run.
@@ -101,13 +109,24 @@ For Overture's member companies, internal signals could replace all external API
 - **TomTom:** Fleet telemetry (foot traffic proxy)
 - **Release deltas:** Diff consecutive Overture releases for source/confidence changes (free, biggest accuracy boost)
 
+## Future Improvements
+
+- **More Overture release pairs**: Use 3-4 consecutive releases to capture velocity of change — accelerating loss = stronger closure signal
+- **Temporal decay weighting**: Weight recent training samples higher. Closure patterns shift over time
+- **Geographic clustering**: If 5 businesses at the same address all lose sources, likely a building closure — group-level features
+- **LLM-augmented labels**: Use Llama/GPT to verify ambiguous web crawl results for higher-quality feedback labels
+- **Ensemble stacking**: Add Random Forest or neural net as third model for more diversity
+- **Feature selection with SHAP**: Prune low-importance features from the 45+ set to reduce overfitting risk
+- **Cross-city transfer learning**: Pre-train on data-rich cities (SF, NYC), fine-tune on data-sparse cities
+- **Multi-release velocity features**: `delta_sources_3mo`, `delta_sources_6mo` — declining trajectory is more predictive than a single snapshot
+
 ## Project Structure
 
 ```
 src/
   step1_registries/    # Business registry ingestion
   step2_overture/      # Overture Maps data download
-  step3_matching/      # Fuzzy matching registries ↔ Overture
+  step3_matching/      # Fuzzy matching registries <-> Overture
   step4_classifier/    # CatBoost+LightGBM model + retraining pipeline
   step6_web/           # Website liveness checks
   step7_ground_truth/  # Ground truth label management

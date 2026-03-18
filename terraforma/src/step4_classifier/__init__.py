@@ -843,7 +843,8 @@ def train():
         w_train = sample_weights[train_idx]
 
         model = EnsembleClassifier()
-        model.fit(X_train, y_train, sample_weight=w_train)
+        model.fit(X_train, y_train, sample_weight=w_train,
+                  eval_set=[(X_val, y_val)])
 
         y_pred_proba[val_idx] = model.predict_proba(X_val)[:, 1]
         fold_auc = roc_auc_score(y_val, y_pred_proba[val_idx])
@@ -893,7 +894,7 @@ def train():
                     continue  # skip if only one class
 
                 geo_model = EnsembleClassifier()
-                geo_model.fit(X_tr, y_tr)
+                geo_model.fit(X_tr, y_tr, eval_set=[(X_te, y_te)])
                 geo_proba = geo_model.predict_proba(X_te)[:, 1]
                 geo_pred = (geo_proba >= best_thresh).astype(int)
                 geo_auc = roc_auc_score(y_te, geo_proba)
@@ -904,14 +905,32 @@ def train():
                          holdout_city, geo_auc, 100 * geo_bal,
                          100 * geo_rec_closed, 100 * geo_rec_open)
 
-    # Train final model on all data
-    log.info("\nTraining final model on all %d samples...", len(X))
+    # Train final model on all data with calibration
+    # Use 80/20 split for calibration holdout
+    from sklearn.model_selection import train_test_split
+    X_tr, X_cal, y_tr, y_cal, w_tr, _ = train_test_split(
+        X, y, sample_weights, test_size=0.2, random_state=42, stratify=y
+    )
+    log.info("\nTraining final model on %d samples (calibration holdout: %d)...",
+             len(X_tr), len(X_cal))
     final_model = EnsembleClassifier()
-    final_model.fit(X, y, sample_weight=sample_weights)
+    final_model.fit(X_tr, y_tr, sample_weight=w_tr, eval_set=[(X_cal, y_cal)])
+
+    # Platt scaling calibration on holdout set
+    final_model.calibrate(X_cal, y_cal)
+    log.info("Calibrated. Optimal threshold: %.2f", final_model.threshold)
+
+    # Retrain on all data with the calibrated threshold preserved
+    cal_threshold = final_model.threshold
+    final_model_full = EnsembleClassifier(threshold=cal_threshold)
+    final_model_full.fit(X, y, sample_weight=sample_weights)
+    final_model_full.threshold = cal_threshold
+    # Re-apply calibrator from the split model
+    final_model_full._calibrator = final_model._calibrator
 
     # Feature importance
     log.info("\nFeature importances:")
-    importances = final_model.feature_importances_
+    importances = final_model_full.feature_importances_
     for name, imp in sorted(zip(feature_cols, importances), key=lambda x: -x[1]):
         if imp > 0.01:
             log.info("  %-30s %.3f", name, imp)
@@ -920,11 +939,11 @@ def train():
     MODEL_PATH.parent.mkdir(parents=True, exist_ok=True)
     with open(MODEL_PATH, "wb") as f:
         pickle.dump({
-            "model": final_model,
+            "model": final_model_full,
             "feature_cols": feature_cols,
-            "threshold": best_thresh,
+            "threshold": cal_threshold,
         }, f)
-    log.info("\nModel saved to %s (threshold=%.2f)", MODEL_PATH, best_thresh)
+    log.info("\nModel saved to %s (threshold=%.2f)", MODEL_PATH, cal_threshold)
 
     return final_model, feature_cols
 
