@@ -25,6 +25,17 @@ We train a CatBoost + LightGBM ensemble on 19 features engineered from Overture 
 
 **Key insight:** Train with expensive signals, predict with cheap Overture features. At inference, only the model runs — no API calls needed.
 
+### Training Data
+
+The baseline model trains on **~3,000 Overture-labeled places** from Overture's Project C dataset — real places with human-verified open/closed labels. The iterative retraining pipeline then adds signal-verified labels:
+
+| Source | Type | Quality | Description |
+|--------|------|---------|-------------|
+| Overture Project C | Gold | Human-verified | ~3k baseline samples with known labels |
+| Yelp API | Gold | `is_closed` field | Matched Overture places checked against Yelp |
+| Foursquare API | Gold | `closed_bucket` status | Cross-referenced venue status |
+| Web crawl + Llama | Silver (~80%) | Brave search + LLM reasoning | Down-weighted 0.3x during training |
+
 ### Iterative Retraining Pipeline
 
 The model improves by progressively adding signal-verified labels to the training set:
@@ -90,6 +101,17 @@ python -m src.step4_classifier foursquare sf 500
 # Score all matched DB records
 python -m src.step4_classifier predict
 ```
+
+## Limitations
+
+- **Small training set**: ~3k labeled samples for a 45-feature model risks overfitting. Standard ML practice would call for 10-50x more samples
+- **70.2% balanced accuracy**: The model still gets ~30% of businesses wrong. At 100M places, that's 30M incorrect predictions
+- **Silver label noise**: Web crawl feedback is ~80% accurate. Even down-weighted, noisy labels can mislead the model on edge cases (seasonal closures, temporarily closed, etc.)
+- **Delta features require two releases**: Places in only one Overture release get zeros for all ~15 delta features, weakening predictions on newly-added places
+- **Geography bias**: Baseline training data is not evenly distributed across cities or countries — US-heavy, may not generalize internationally
+- **Ensemble diversity**: CatBoost and LightGBM are both gradient-boosted trees — they make similar errors. A more diverse ensemble (neural net, logistic regression) could help
+- **No confidence intervals**: Single probability output doesn't tell you how uncertain the model is
+- **Pipeline infrastructure**: Requires Docker + PostGIS, and fuzzy matching is slow at scale (~10min for 49k businesses per-query)
 
 ## Recent Improvements
 
