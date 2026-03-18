@@ -45,11 +45,18 @@ The retraining pipeline uses high-confidence signal outputs as training labels t
 
 Yelp labels provided the single biggest accuracy boost. The full ensemble still outperforms model-only predictions, but retraining narrows the gap.
 
+## Recent Improvements
+
+- **SMOTE oversampling**: Addresses the 3.6:1 class imbalance (4,977 open vs 1,390 closed) by synthetically generating minority-class samples, improving closed-business detection
+- **Early stopping**: XGBoost now uses early stopping (30 rounds) during both grid search and final training to prevent overfitting
+- **Expanded hyperparameter search**: Added deep-tree + strong regularization and shallow-wide ensemble configs to the grid search
+- **SMOTE-aware cross-validation**: SMOTE is applied per-fold during CV (only on training splits) to avoid data leakage
+
 ## Project Structure
 
 ```
 training/                  # Model training
-  train_xgboost.py         # XGBoost classifier (19 features, grid search, Platt scaling)
+  train_xgboost.py         # XGBoost classifier (19 features, grid search, Platt scaling, SMOTE)
   train_metamodel.py        # Logistic regression metamodel over 6 signals
   retrain_pipeline.py       # Iterative retraining using signal labels
   feature_engineering.py    # Feature extraction from Overture place data
@@ -93,6 +100,7 @@ tests/                     # Test files
 
 ### Train XGBoost model
 ```bash
+pip install xgboost scikit-learn imbalanced-learn
 python training/train_xgboost.py
 ```
 
@@ -125,6 +133,16 @@ This approach is designed to scale to Overture's 100M+ places:
 2. **Signal ensemble** adds accuracy where external data is available
 3. **Retraining pipeline** allows the model to learn from signal outputs, gradually reducing dependence on expensive API calls
 4. **Per-city evaluation** ensures the model generalizes across geographies
+
+## Future Improvements
+
+- **More training data**: Current 6,367 samples is small. Scraping more Yelp/Google labels across more cities would directly improve generalization
+- **Overture release deltas**: Diff consecutive Overture releases (free) -- places that lose sources, change categories, or drop confidence between releases are strong closure signals
+- **Google Places signal**: Google's `business_status` field would be the single highest-accuracy signal, but requires API costs
+- **Temporal features**: Track how features change over time (e.g., a place losing its phone number between releases is more predictive than never having one)
+- **Category-specific models**: Train separate models for food/retail/services -- closure patterns differ significantly by industry (restaurants close at ~15%, hospitals at ~1%)
+- **Active learning**: Instead of random signal lookups, prioritize checking businesses where the model is least confident to maximize label value per API call
+- **Metamodel upgrade**: Replace logistic regression with a small neural net or gradient-boosted metamodel that can learn non-linear signal interactions
 
 ## Test Cities
 

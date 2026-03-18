@@ -185,6 +185,20 @@ def main():
     weight_ratio = n_open / max(n_closed, 1)
     print(f"\n  Using scale_pos_weight={weight_ratio:.2f}")
 
+    # SMOTE oversampling to address class imbalance (3.6:1 open:closed)
+    use_smote = False
+    try:
+        from imblearn.over_sampling import SMOTE
+        sm = SMOTE(random_state=42, k_neighbors=5)
+        X_res, y_res = sm.fit_resample(X, y)
+        n_open_res = int(sum(y_res))
+        n_closed_res = len(y_res) - n_open_res
+        print(f"\n  SMOTE resampling: {len(X)} -> {len(X_res)} samples ({n_open_res} open, {n_closed_res} closed)")
+        use_smote = True
+    except ImportError:
+        print("\n  imblearn not installed (pip install imbalanced-learn) — skipping SMOTE")
+        X_res, y_res = X, y
+
     # Hyperparameter grid search for best balanced accuracy
     print("\n  Grid search for best hyperparameters...")
     n_splits = 5
@@ -196,6 +210,10 @@ def main():
         {'max_depth': 6, 'n_estimators': 500, 'learning_rate': 0.02, 'min_child_weight': 2, 'subsample': 0.7, 'colsample_bytree': 0.7, 'reg_alpha': 0.5, 'reg_lambda': 2.0, 'gamma': 0.2},
         {'max_depth': 5, 'n_estimators': 600, 'learning_rate': 0.02, 'min_child_weight': 3, 'subsample': 0.85, 'colsample_bytree': 0.85, 'reg_alpha': 0.2, 'reg_lambda': 1.0, 'gamma': 0.05},
         {'max_depth': 4, 'n_estimators': 500, 'learning_rate': 0.03, 'min_child_weight': 5, 'subsample': 0.8, 'colsample_bytree': 0.8, 'reg_alpha': 1.0, 'reg_lambda': 3.0, 'gamma': 0.3},
+        # New: deeper trees with stronger regularization
+        {'max_depth': 7, 'n_estimators': 800, 'learning_rate': 0.01, 'min_child_weight': 5, 'subsample': 0.75, 'colsample_bytree': 0.7, 'reg_alpha': 1.0, 'reg_lambda': 5.0, 'gamma': 0.5},
+        # New: shallow but wide ensemble
+        {'max_depth': 3, 'n_estimators': 1000, 'learning_rate': 0.01, 'min_child_weight': 10, 'subsample': 0.9, 'colsample_bytree': 0.9, 'reg_alpha': 0.1, 'reg_lambda': 1.0, 'gamma': 0.0},
     ]
 
     best_bal_acc_cv = 0
@@ -203,12 +221,17 @@ def main():
     for pi, params in enumerate(param_grid):
         m = xgb.XGBClassifier(
             scale_pos_weight=weight_ratio, eval_metric='logloss', random_state=42,
+            early_stopping_rounds=30,
             **params,
         )
         fold_bal_accs = []
         for train_idx, val_idx in cv.split(X, y):
             m_fold = xgb.XGBClassifier(**m.get_params())
-            m_fold.fit(X[train_idx], y[train_idx])
+            m_fold.fit(
+                X[train_idx], y[train_idx],
+                eval_set=[(X[val_idx], y[val_idx])],
+                verbose=False,
+            )
             preds = m_fold.predict(X[val_idx])
             fold_bal_accs.append(balanced_accuracy_score(y[val_idx], preds))
         mean_bal = np.mean(fold_bal_accs)
@@ -222,17 +245,26 @@ def main():
 
     base_model = xgb.XGBClassifier(
         scale_pos_weight=weight_ratio, eval_metric='logloss', random_state=42,
+        early_stopping_rounds=30,
         **best_params,
     )
 
-    # Full CV with best model for detailed stats
+    # Full CV with best model for detailed stats (use SMOTE-resampled data for training)
     scores = []
     closed_recalls = []
     cv_probs_all = np.zeros(len(y))
 
     for fold_idx, (train_idx, val_idx) in enumerate(cv.split(X, y)):
+        if use_smote:
+            X_train_fold, y_train_fold = sm.fit_resample(X[train_idx], y[train_idx])
+        else:
+            X_train_fold, y_train_fold = X[train_idx], y[train_idx]
         m = xgb.XGBClassifier(**base_model.get_params())
-        m.fit(X[train_idx], y[train_idx])
+        m.fit(
+            X_train_fold, y_train_fold,
+            eval_set=[(X[val_idx], y[val_idx])],
+            verbose=False,
+        )
         preds = m.predict(X[val_idx])
         probs = m.predict_proba(X[val_idx])[:, 1]
         cv_probs_all[val_idx] = probs
@@ -256,13 +288,16 @@ def main():
     print(f"    Closed: min={closed_probs.min():.3f}  median={np.median(closed_probs):.3f}  max={closed_probs.max():.3f}")
 
     # Train final model with Platt scaling (sigmoid calibration)
-    print(f"\n  Training calibrated model (Platt scaling)...")
+    # Use SMOTE-resampled data if available for better closed-class learning
+    X_final = X_res if use_smote else X
+    y_final = y_res if use_smote else y
+    print(f"\n  Training calibrated model (Platt scaling) on {len(X_final)} samples...")
     calibrated_model = CalibratedClassifierCV(
         estimator=base_model,
         method='sigmoid',
         cv=5,
     )
-    calibrated_model.fit(X, y)
+    calibrated_model.fit(X_final, y_final)
 
     # Get calibrated predictions
     y_prob_cal = calibrated_model.predict_proba(X)[:, 1]
@@ -293,7 +328,11 @@ def main():
     print(classification_report(y, y_pred_opt, target_names=['Closed', 'Open']))
 
     # Train raw model for saving (calibration params saved separately)
-    base_model.fit(X, y)
+    base_model.fit(
+        X_final, y_final,
+        eval_set=[(X, y)],
+        verbose=False,
+    )
 
     # Extract Platt scaling parameters from the calibrated model
     # CalibratedClassifierCV wraps with sigmoid: P(y=1|f) = 1 / (1 + exp(A*f + B))
@@ -330,6 +369,8 @@ def main():
             'base_features': BASE_FEATURES,
             'engineered_features': ENGINEERED_FEATURES,
             'n_training_samples': len(X),
+            'n_training_samples_after_smote': len(X_final) if use_smote else len(X),
+            'smote_applied': use_smote,
             'n_open': n_open,
             'n_closed': n_closed,
             'optimal_threshold': round(float(best_thresh), 3),
