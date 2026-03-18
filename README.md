@@ -2,6 +2,8 @@
 
 Predicting whether businesses listed in Overture Maps are currently open or permanently closed, using a 6-signal ensemble approach built on top of Overture Places data.
 
+> **See also: [Approach 2 (`terraforma-v1` branch)](../../tree/terraforma-v1)** — a separate CatBoost + LightGBM pipeline that trains on 45+ Overture features with a web crawl + LLM (Llama) feedback loop. That approach uses signals only for training labels and needs no API calls at inference, making it cheaper to scale. It reached 70.2% balanced accuracy with 80.6% closed recall.
+
 ## Overview
 
 This project builds a metamodel that combines 6 independent signals to predict business status:
