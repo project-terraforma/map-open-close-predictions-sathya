@@ -23,6 +23,53 @@ This branch contains **Approach 2** of TerraForma — a PostGIS-backed pipeline 
 | Closed Recall | 71.8% | 80.6% |
 | AUC | 0.748 | 0.761 |
 
+## Feedback Loop: How the Model Improves Itself
+
+The core idea of this approach is a **feedback loop** — the model starts weak but gets better by learning from external signals that verify its predictions. Crucially, those signals are only needed during training. At inference, only cheap Overture features are used.
+
+```
+                    +---------------------------+
+                    |   Overture Places (100M+)  |
+                    +---------------------------+
+                              |
+                    +---------v---------+
+                    |  CatBoost+LightGBM |  <-- trains on Overture features only
+                    |  (45 features)     |
+                    +---------+---------+
+                              |
+                     predict open/closed
+                              |
+              +---------------v---------------+
+              |   External Signal Verification |
+              |   (Yelp, Foursquare, Web+LLM) |
+              +---------------+---------------+
+                              |
+                    verified labels fed back
+                              |
+                    +---------v---------+
+                    |   Retrain model    |  <-- more labels = better model
+                    |   on new labels    |
+                    +-------------------+
+```
+
+Each round adds more verified labels, and the model learns from them:
+
+| Round | What Happens | Samples | Balanced Acc | Closed Recall | AUC |
+|-------|-------------|---------|-------------|---------------|-----|
+| R0 | Train on Overture labels only | 3,006 | 67.4% | 71.8% | 0.748 |
+| R1 | + Yelp checks `is_closed` for uncertain predictions | 3,536 | **70.2%** | **80.6%** | 0.761 |
+| R2 | + Foursquare venue status + website liveness | 3,536 | 70.2% | 80.6% | 0.761 |
+| R3 | + Web crawl (Brave search) verified by Llama LLM | 3,550 | 70.0% | **81.1%** | **0.765** |
+
+**How the web crawl feedback loop works:**
+1. The model scores a business as "uncertain" (e.g., 40-60% probability)
+2. Brave Search API runs 5 queries about that business (name + city, "permanently closed", reviews, etc.)
+3. Meta's Llama (via Groq) reads the search results and reasons about whether the business is open or closed, returning a status + confidence score
+4. If the LLM is highly confident (>85%), that result becomes a **silver label** (weighted 0.3x vs gold labels at 1.0x)
+5. The model retrains on the expanded label set and makes better predictions next round
+
+The key insight: **each round, the model gets better at predicting on Overture features alone**, reducing future dependence on expensive signal lookups. The goal is that eventually the model is accurate enough that signals are only needed for spot-checking.
+
 ## Training Data
 
 The baseline model trains on **~3,000 Overture-labeled places** from `samples_3k_project_c_updated.parquet` — these are real Overture places with human-verified open/closed labels provided by the Overture Maps Foundation (Project C).

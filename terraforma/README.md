@@ -36,18 +36,28 @@ The baseline model trains on **~3,000 Overture-labeled places** from Overture's 
 | Foursquare API | Gold | `closed_bucket` status | Cross-referenced venue status |
 | Web crawl + Llama | Silver (~80%) | Brave search + LLM reasoning | Down-weighted 0.3x during training |
 
-### Iterative Retraining Pipeline
+### Feedback Loop: How the Model Improves
 
-The model improves by progressively adding signal-verified labels to the training set:
+The pipeline uses a **feedback loop** where external signals verify the model's uncertain predictions, then those verified results become new training labels:
 
-| Round | Data | Samples | Balanced Acc | AUC | Closed Recall |
-|-------|------|---------|-------------|------|---------------|
+1. Model scores a business as "uncertain" (40-60% probability)
+2. Yelp/Foursquare APIs check the business status (gold labels)
+3. For businesses without API coverage: Brave Search runs 5 queries, then Meta's Llama (via Groq) reasons about whether it's open or closed (silver labels, ~80% accurate)
+4. High-confidence results become training labels (silver labels down-weighted 0.3x)
+5. Model retrains on the expanded dataset and improves
+
+Each round adds verified labels and the model learns from them:
+
+| Round | What Gets Added | Samples | Balanced Acc | AUC | Closed Recall |
+|-------|----------------|---------|-------------|------|---------------|
 | R0 | Overture labels only | 3,006 | 67.4% | 0.748 | 71.8% |
-| R1 | + Yelp verified labels | 3,536 | 70.2% | 0.761 | 80.6% |
-| R2 | + Foursquare + website | 3,536 | 70.2% | 0.761 | 80.6% |
-| R3 | + Web crawl feedback | 3,550 | 70.0% | 0.765 | 81.1% |
+| R1 | + Yelp `is_closed` checks | 3,536 | **70.2%** | 0.761 | **80.6%** |
+| R2 | + Foursquare + website liveness | 3,536 | 70.2% | 0.761 | 80.6% |
+| R3 | + Web crawl (Brave + Llama) feedback | 3,550 | 70.0% | **0.765** | **81.1%** |
 
-With just one signal (Yelp), balanced accuracy improved from 67.4% to 70.2% and closed recall jumped from 71.8% to 80.6%. Adding more signal volume (Foursquare labels, website liveness labels, web crawl labels) would continue pushing accuracy upward.
+Yelp labels gave the biggest single boost (+2.8% balanced accuracy, +8.8% closed recall). The web crawl feedback loop continued improving AUC and closed recall even though balanced accuracy dipped slightly — it's finding more closed businesses correctly at the cost of a few more false positives.
+
+The goal: **each round, the model gets better at predicting from Overture features alone**, reducing future dependence on expensive API lookups.
 
 ### 19 Engineered Features
 
