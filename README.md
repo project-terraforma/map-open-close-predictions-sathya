@@ -21,7 +21,21 @@ A **logistic regression metamodel** combines these signal scores into a final op
 
 - **85-93% accuracy** across 5 test cities (SF, LA, Chicago, Miami, Philadelphia)
 - XGBoost model-only accuracy: **51.8% baseline -> 62.5% after retraining** with signal labels
-- Trained on **6,367 Yelp-labeled samples** (4,977 open, 1,390 closed)
+- Trained on **6,367 labeled samples** (4,977 open, 1,390 closed)
+
+## Training Data
+
+The XGBoost model was trained on **6,367 Overture places** with known open/closed labels from 3 sources:
+
+| Source | Samples | Closed Rate | Description |
+|--------|---------|-------------|-------------|
+| Overture Project C (original) | 3,179 | 8.7% | Overture's own labeled sample dataset — mostly open businesses |
+| Overture Project C (updated) | 2,740 | 39.7% | Updated batch with more balanced closed representation |
+| Yelp API | 448 | 5.8% | Yelp `is_closed` field for businesses matched to Overture |
+
+Each sample has 8 raw Overture features (confidence, source_age_days, has_website, has_phone, has_brand, address_complete, category, fields_populated) which get expanded into 19 features via engineering. Only 448 samples (7%) have Yelp rating/review data — the rest use NaN (XGBoost handles missing values natively).
+
+The **metamodel** was evaluated on 407 test samples across 5 cities using Leave-One-City-Out cross-validation, where all 6 signals (XGBoost, Foursquare, Website, Yelp, Text, TomTom) score each business independently.
 
 ### XGBoost Features (19 total)
 
@@ -134,15 +148,40 @@ This approach is designed to scale to Overture's 100M+ places:
 3. **Retraining pipeline** allows the model to learn from signal outputs, gradually reducing dependence on expensive API calls
 4. **Per-city evaluation** ensures the model generalizes across geographies
 
+## Limitations
+
+### Training Data
+- **Small dataset**: 6,367 samples is small for a model meant to generalize to 100M+ places. Most ML models for this task would use 50k-500k labeled samples
+- **Class imbalance**: 3.6:1 open-to-closed ratio means the model sees far fewer closed businesses. SMOTE helps but synthetic samples aren't real-world closed businesses
+- **No city labels**: All 6,367 training samples lack city metadata — the model can't learn geographic patterns (e.g., NYC restaurants close faster than rural ones)
+- **Overture-labeled data quality**: The bulk of training data (5,919 samples) comes from Overture's own Project C labeled sets, which may have labeling inconsistencies or biases toward certain business types
+- **Yelp bias**: The 448 Yelp-labeled samples skew heavily open (94.2% open) because Yelp's API mostly returns active businesses. Closed businesses get delisted, so the Yelp source underrepresents closures
+- **Category skew**: Hotels (356 samples) and professional services (201) are overrepresented. Common categories like "restaurant" only have 96 samples — the model likely performs worse on underrepresented categories
+
+### Model
+- **XGBoost model-only is weak**: 51.8% baseline accuracy (barely better than a coin flip) means the model alone isn't useful — it relies on the 6-signal ensemble to reach 85%+
+- **No temporal features**: The model sees a single snapshot of each business. It can't detect *changes* over time (e.g., a place that just lost its phone number vs one that never had one)
+- **OCR signal dropped**: Mapillary street-level imagery was too outdated to be useful — this was meant to be a strong signal but contributed nothing
+- **TomTom near-zero weight**: TomTom's signal (0.006 weight) adds almost no value. Effectively a 5-signal ensemble
+- **Test set is small**: 407 test samples across 5 US cities. Performance on international cities, rural areas, or non-English businesses is unknown
+- **Metamodel is simple**: Logistic regression can't learn non-linear signal interactions (e.g., "Foursquare says open BUT website is dead" should be weighted differently than either signal alone)
+
+### Signals
+- **API dependency at inference**: Unlike approach 2, this approach needs to call Foursquare, Yelp, and website-check APIs for every prediction. This is expensive at scale and adds latency
+- **Foursquare deprecation risk**: Foursquare has changed API access terms before — the signal could break if they restrict access
+- **Website liveness is noisy**: A dead website doesn't always mean a closed business (site might be temporarily down), and a live website doesn't always mean open (abandoned sites stay up for years)
+
 ## Future Improvements
 
-- **More training data**: Current 6,367 samples is small. Scraping more Yelp/Google labels across more cities would directly improve generalization
-- **Overture release deltas**: Diff consecutive Overture releases (free) -- places that lose sources, change categories, or drop confidence between releases are strong closure signals
-- **Google Places signal**: Google's `business_status` field would be the single highest-accuracy signal, but requires API costs
+- **More training data**: 6,367 samples is too small. Scraping 50k+ Yelp/Google labels across more cities and categories would directly improve generalization
+- **Overture release deltas**: Diff consecutive Overture releases (free) — places that lose sources, change categories, or drop confidence between releases are strong closure signals. This is the single highest-ROI improvement
+- **Google Places signal**: Google's `business_status` field would be the single highest-accuracy signal, but requires API costs at ~$5/1000 lookups
 - **Temporal features**: Track how features change over time (e.g., a place losing its phone number between releases is more predictive than never having one)
-- **Category-specific models**: Train separate models for food/retail/services -- closure patterns differ significantly by industry (restaurants close at ~15%, hospitals at ~1%)
+- **Category-specific models**: Train separate models for food/retail/services — closure patterns differ significantly by industry (restaurants close at ~15%, hospitals at ~1%)
 - **Active learning**: Instead of random signal lookups, prioritize checking businesses where the model is least confident to maximize label value per API call
-- **Metamodel upgrade**: Replace logistic regression with a small neural net or gradient-boosted metamodel that can learn non-linear signal interactions
+- **Metamodel upgrade**: Replace logistic regression with a gradient-boosted metamodel that can learn non-linear signal interactions
+- **Better Yelp sampling**: Actively search for closed businesses on Yelp (filter by "closed" status) to balance the Yelp label source
+- **International training data**: Current data is US-only. Adding European/Asian labeled data would test whether the model transfers across geographies
 
 ## Test Cities
 
