@@ -43,8 +43,10 @@ pipeline/__pycache__/
 # Large data files
 *.parquet
 *.zip
-scripts/yelp_balanced_cache.json
-scripts/yelp_cache.json
+
+# Caches
+data/labeling/yelp_balanced_cache.json
+data/labeling/yelp_cache.json
 
 # Misc
 .sf

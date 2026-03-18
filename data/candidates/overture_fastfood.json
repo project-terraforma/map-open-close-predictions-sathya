@@ -1,0 +1,3624 @@
+[
+  {
+    "id": 1,
+    "name": "KFC",
+    "category": "Fast Food",
+    "address": "2101 Lombard St #252, San Francisco",
+    "location": [
+      -122.4362965,
+      37.7997648
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2013-07-27",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Shake Shack",
+    "category": "Fast Food",
+    "address": "3060 Fillmore St, San Francisco",
+    "location": [
+      -122.4354714,
+      37.7979495
+    ],
+    "overture_meta": {
+      "confidence": 0.997,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Shake Shack"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Shake Shack\" at this location",
+      "match": {
+        "fsq_id": "5e35cb307bc3680008d3dbab",
+        "name": "Shake Shack",
+        "category": "Burger Joint",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "3060 Fillmore St (at Filbert St), San Francisco, CA 94123, United States"
+      }
+    }
+  },
+  {
+    "id": 3,
+    "name": "SUBWAY",
+    "category": "Fast Food",
+    "address": "653 Kearny St, San Francisco",
+    "location": [
+      -122.40478379157967,
+      37.794502991410965
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-03-20",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Subway",
+    "category": "Fast Food",
+    "address": "408 Montgomery St, San Francisco",
+    "location": [
+      -122.4026955,
+      37.7931603
+    ],
+    "overture_meta": {
+      "confidence": 0.974,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Subway"
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 5,
+    "name": "McDonald's",
+    "category": "Fast Food",
+    "address": "235 Front St, San Francisco",
+    "location": [
+      -122.3990661,
+      37.7938773
+    ],
+    "overture_meta": {
+      "confidence": 0.988,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "McDonald's"
+    },
+    "foursquare": {
+      "status": "mismatch",
+      "detail": "Foursquare shows \"McMorgan & Company\" instead",
+      "match": {
+        "fsq_id": "3340f0d8c075434beac38b31",
+        "name": "McMorgan & Company",
+        "category": "Financial Planner",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1 Front St, San Francisco, CA 94111, United States"
+      }
+    }
+  },
+  {
+    "id": 6,
+    "name": "Taco Bell Express",
+    "category": "Fast Food",
+    "address": "7 Drumm St, San Francisco",
+    "location": [
+      -122.39645795183644,
+      37.79370409915568
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-08-19",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 7,
+    "name": "Chipotle Mexican Grill",
+    "category": "Fast Food",
+    "address": "50 California St, San Francisco",
+    "location": [
+      -122.3975633,
+      37.7942718
+    ],
+    "overture_meta": {
+      "confidence": 0.988,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Chipotle Mexican Grill"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Chipotle Mexican Grill\" at this location",
+      "match": {
+        "fsq_id": "4f8edf91e4b0d3d2c9e2d71a",
+        "name": "Chipotle Mexican Grill",
+        "category": "Mexican Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "50 California St (at Sacramento St), San Francisco, CA 94111, United States"
+      }
+    }
+  },
+  {
+    "id": 8,
+    "name": "SUBWAY",
+    "category": "Fast Food",
+    "address": "99 Drumm St, San Francisco",
+    "location": [
+      -122.39678198200266,
+      37.794565589432864
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-03-20",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 9,
+    "name": "Subway",
+    "category": "Fast Food",
+    "address": "30 Pacific Ave, San Francisco",
+    "location": [
+      -122.39757486882154,
+      37.798191266105896
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-06-12",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Subway\" at this location",
+      "match": {
+        "fsq_id": "4f3286c219836c91c7e06f07",
+        "name": "Subway",
+        "category": "Sandwich Spot",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "30 Pacific Ave, San Francisco, CA 94111, United States"
+      }
+    }
+  },
+  {
+    "id": 10,
+    "name": "Subway",
+    "category": "Fast Food",
+    "address": "160 Broadway, San Francisco",
+    "location": [
+      -122.4007651,
+      37.7987363
+    ],
+    "overture_meta": {
+      "confidence": 0.974,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Subway"
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 11,
+    "name": "McDonald's",
+    "category": "Fast Food",
+    "address": "145 Jefferson St, San Francisco",
+    "location": [
+      -122.41449,
+      37.808235
+    ],
+    "overture_meta": {
+      "confidence": 0.994,
+      "update_time": "2025-07-10",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 12,
+    "name": "Subway",
+    "category": "Fast Food",
+    "address": "350 Bay St, San Francisco",
+    "location": [
+      -122.4129525,
+      37.8064156
+    ],
+    "overture_meta": {
+      "confidence": 0.946,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Subway"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Subway\" at this location",
+      "match": {
+        "fsq_id": "5a25b14ce185f32e3ac9ad94",
+        "name": "Subway",
+        "category": "Sandwich Spot",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "350 Bay St, San Francisco, CA 94133, United States"
+      }
+    }
+  },
+  {
+    "id": 13,
+    "name": "In-N-Out Burger",
+    "category": "Fast Food",
+    "address": "333 Jefferson St, San Francisco",
+    "location": [
+      -122.4185255,
+      37.8077755
+    ],
+    "overture_meta": {
+      "confidence": 0.995,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "In-N-Out Burger"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"In-N-Out Burger\" at this location",
+      "match": {
+        "fsq_id": "43f08afdf964a520752f1fe3",
+        "name": "In-N-Out Burger",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "333 Jefferson St, San Francisco, CA 94133, United States"
+      }
+    }
+  },
+  {
+    "id": 14,
+    "name": "San Francisco",
+    "category": "Fast Food",
+    "address": "333 Jefferson, San Francisco",
+    "location": [
+      -122.41858,
+      37.80773
+    ],
+    "overture_meta": {
+      "confidence": 0.594,
+      "update_time": "2026-01-06",
+      "source": "AllThePlaces",
+      "brand": "In-N-Out Burger"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Sutter Care at Home - San Francisco (Home Health)\" at this location",
+      "match": {
+        "fsq_id": "5b6b1928234724002c14b438",
+        "name": "Sutter Care at Home - San Francisco (Home Health)",
+        "category": "Home Service",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2800 Leavenworth St (#350A), San Francisco, CA 94133, United States"
+      }
+    }
+  },
+  {
+    "id": 15,
+    "name": "Jack in the Box",
+    "category": "Fast Food",
+    "address": "2739 Taylor St, San Francisco",
+    "location": [
+      -122.415927,
+      37.807781
+    ],
+    "overture_meta": {
+      "confidence": 0.947,
+      "update_time": "2017-09-19",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 16,
+    "name": "Taco Bell",
+    "category": "Fast Food",
+    "address": "333 Jefferson Street, San Francisco",
+    "location": [
+      -122.4178465,
+      37.80751132889316
+    ],
+    "overture_meta": {
+      "confidence": 0.4,
+      "update_time": "2026-01-06",
+      "source": "AllThePlaces",
+      "brand": "Taco Bell"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Taco Bell Cantina\" at this location",
+      "match": {
+        "fsq_id": "695700b5f18cae0eedc95560",
+        "name": "Taco Bell Cantina",
+        "category": "Mexican Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "333 Jefferson St, San Francisco, CA 94133, United States"
+      }
+    }
+  },
+  {
+    "id": 17,
+    "name": "Subway",
+    "category": "Fast Food",
+    "address": "388 Market St, San Francisco",
+    "location": [
+      -122.3981655,
+      37.7920874
+    ],
+    "overture_meta": {
+      "confidence": 0.984,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Subway"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Subway\" at this location",
+      "match": {
+        "fsq_id": "4b709469f964a5202a232de3",
+        "name": "Subway",
+        "category": "Sandwich Spot",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "388 Market St (btwn Front & Pine St.), San Francisco, CA 94111, United States"
+      }
+    }
+  },
+  {
+    "id": 18,
+    "name": "Jack in the Box",
+    "category": "Fast Food",
+    "address": "42 1st St, San Francisco",
+    "location": [
+      -122.39837410790648,
+      37.7904796094927
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-03-21",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 19,
+    "name": "Chipotle Mexican Grill",
+    "category": "Fast Food",
+    "address": "400 Howard St, San Francisco",
+    "location": [
+      -122.3958156,
+      37.7891139
+    ],
+    "overture_meta": {
+      "confidence": 0.987,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Chipotle Mexican Grill"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Chipotle Mexican Grill\" at this location",
+      "match": {
+        "fsq_id": "580ab25338faa26beeb60845",
+        "name": "Chipotle Mexican Grill",
+        "category": "Mexican Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "400 Howard St (1st Street), San Francisco, CA 94105, United States"
+      }
+    }
+  },
+  {
+    "id": 20,
+    "name": "Chipotle Mexican Grill",
+    "category": "Fast Food",
+    "address": "126 New Montgomery St, San Francisco",
+    "location": [
+      -122.399847,
+      37.786992
+    ],
+    "overture_meta": {
+      "confidence": 0.968,
+      "update_time": "2019-04-09",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 21,
+    "name": "Del Taco",
+    "category": "Fast Food",
+    "address": "711 Market St, San Francisco",
+    "location": [
+      -122.403987,
+      37.787212450000006
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-03-20",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Delarosa\" at this location",
+      "match": {
+        "fsq_id": "55f88fbc498ef7ef0fa8db74",
+        "name": "Delarosa",
+        "category": "Pizzeria",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "37 Yerba Buena Ln (Market St.), San Francisco, CA 94103, United States"
+      }
+    }
+  },
+  {
+    "id": 22,
+    "name": "Subway",
+    "category": "Fast Food",
+    "address": "795 Folsom Street, San Francisco",
+    "location": [
+      -122.4007055239897,
+      37.78217545160578
+    ],
+    "overture_meta": {
+      "confidence": 0.979,
+      "update_time": "2025-10-04",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "mismatch",
+      "detail": "Foursquare shows \"Yerba Buena/Moscone MUNI Metro Station\" instead",
+      "match": {
+        "fsq_id": "637967aa1354fd0f659a7f1e",
+        "name": "Yerba Buena/Moscone MUNI Metro Station",
+        "category": "Metro Station",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "4th St (at Clementina St), San Francisco, CA 94103, United States"
+      }
+    }
+  },
+  {
+    "id": 23,
+    "name": "Chipotle Mexican Grill",
+    "category": "Fast Food",
+    "address": "121 4th St, San Francisco",
+    "location": [
+      -122.4037204,
+      37.7842426
+    ],
+    "overture_meta": {
+      "confidence": 0.991,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Chipotle Mexican Grill"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Chipotle Mexican Grill\" at this location",
+      "match": {
+        "fsq_id": "4fecb21be4b03cd0426ba3ce",
+        "name": "Chipotle Mexican Grill",
+        "category": "Mexican Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "121 4th St (Fourth Street and Mission), San Francisco, CA 94103, United States"
+      }
+    }
+  },
+  {
+    "id": 24,
+    "name": "Shake Shack",
+    "category": "Fast Food",
+    "address": "845 Market St, San Francisco",
+    "location": [
+      -122.4065522,
+      37.784511
+    ],
+    "overture_meta": {
+      "confidence": 0.995,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Shake Shack"
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 25,
+    "name": "Jollibee",
+    "category": "Fast Food",
+    "address": "934 Market Street, San Francisco",
+    "location": [
+      -122.4086985,
+      37.7838654
+    ],
+    "overture_meta": {
+      "confidence": 0.988,
+      "update_time": "2025-09-18",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 26,
+    "name": "Panda Express",
+    "category": "Fast Food",
+    "address": "865 Market St, San Francisco",
+    "location": [
+      -122.4073248,
+      37.7838577
+    ],
+    "overture_meta": {
+      "confidence": 0.986,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Panda Express\" at this location",
+      "match": {
+        "fsq_id": "4afa146af964a5208c1622e3",
+        "name": "Panda Express",
+        "category": "Chinese Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "865 Market St, San Francisco, CA 94103, United States"
+      }
+    }
+  },
+  {
+    "id": 27,
+    "name": "Carl's Jr.",
+    "category": "Fast Food",
+    "address": "1 Hallidie Plz, San Francisco",
+    "location": [
+      -122.4087354,
+      37.7842365
+    ],
+    "overture_meta": {
+      "confidence": 0.987,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Carl's Jr."
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Carl's Jr.\" at this location",
+      "match": {
+        "fsq_id": "4ab68617f964a520957720e3",
+        "name": "Carl's Jr.",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1 Hallidie Plz (corner of Eddy & Cyril Magnin), San Francisco, CA 94102, United States"
+      }
+    }
+  },
+  {
+    "id": 28,
+    "name": "Subway",
+    "category": "Fast Food",
+    "address": "147 Mason Street, San Francisco",
+    "location": [
+      -122.40965027761024,
+      37.78498403388505
+    ],
+    "overture_meta": {
+      "confidence": 0.987,
+      "update_time": "2025-09-28",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"SUBWAY\" at this location",
+      "match": {
+        "fsq_id": "50ca4825e4b03ff32bc1ae76",
+        "name": "SUBWAY",
+        "category": "Sandwich Spot",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "147 Mason St (at Ellis St), San Francisco, CA 94102, United States"
+      }
+    }
+  },
+  {
+    "id": 29,
+    "name": "Burger King",
+    "category": "Fast Food",
+    "address": "35 Powell St, San Francisco",
+    "location": [
+      -122.4079246,
+      37.7852105
+    ],
+    "overture_meta": {
+      "confidence": 0.995,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Burger King"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Burger King\" at this location",
+      "match": {
+        "fsq_id": "4ac997b8f964a52015c020e3",
+        "name": "Burger King",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "35 Powell St (btwn Market & Ellis), San Francisco, CA 94102, United States"
+      }
+    }
+  },
+  {
+    "id": 30,
+    "name": "Chipotle Mexican Grill",
+    "category": "Fast Food",
+    "address": "232 Ofarrell St, San Francisco",
+    "location": [
+      -122.4086095,
+      37.7864817
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-08-19",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "mismatch",
+      "detail": "Foursquare shows \"Herbert's Mexican Grill\" instead",
+      "match": {
+        "fsq_id": "4a91cf64f964a520ec1b20e3",
+        "name": "Herbert's Mexican Grill",
+        "category": "Mexican Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "161 Powell St (Geary St), San Francisco, CA 94102, United States"
+      }
+    }
+  },
+  {
+    "id": 31,
+    "name": "McDonald's",
+    "category": "Fast Food",
+    "address": "441 Sutter St, San Francisco",
+    "location": [
+      -122.4076837,
+      37.7892648
+    ],
+    "overture_meta": {
+      "confidence": 0.993,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "McDonald's"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"McDonald's\" at this location",
+      "match": {
+        "fsq_id": "5536a861498ea8168b810453",
+        "name": "McDonald's",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "441 Sutter St, San Francisco, CA 94108, United States"
+      }
+    }
+  },
+  {
+    "id": 32,
+    "name": "McDonald's",
+    "category": "Fast Food",
+    "address": "609 Market St, San Francisco",
+    "location": [
+      -122.4014303,
+      37.7888793
+    ],
+    "overture_meta": {
+      "confidence": 0.975,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "McDonald's"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"McDonald's\" at this location",
+      "match": {
+        "fsq_id": "4b0af2a4f964a520862a23e3",
+        "name": "McDonald's",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "609 Market St (btwn 2nd & New Montgomery), San Francisco, CA 94105, United States"
+      }
+    }
+  },
+  {
+    "id": 33,
+    "name": "Chipotle Mexican Grill",
+    "category": "Fast Food",
+    "address": "525 Market St, San Francisco",
+    "location": [
+      -122.399444,
+      37.7905369
+    ],
+    "overture_meta": {
+      "confidence": 0.992,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Chipotle Mexican Grill"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Chipotle Mexican Grill\" at this location",
+      "match": {
+        "fsq_id": "4a2077b8f964a5208c7c1fe3",
+        "name": "Chipotle Mexican Grill",
+        "category": "Mexican Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "525 Market St (at 1st St), San Francisco, CA 94105, United States"
+      }
+    }
+  },
+  {
+    "id": 34,
+    "name": "Subway",
+    "category": "Fast Food",
+    "address": "425 Bush St, San Francisco",
+    "location": [
+      -122.40453065054328,
+      37.79058427256573
+    ],
+    "overture_meta": {
+      "confidence": 0.964,
+      "update_time": "2025-10-02",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 35,
+    "name": "SUBWAY",
+    "category": "Fast Food",
+    "address": "1199 Sutter St, San Francisco",
+    "location": [
+      -122.42003952216318,
+      37.78779216593156
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2020-07-15",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 36,
+    "name": "Burger King",
+    "category": "Fast Food",
+    "address": "819 Van Ness Ave, San Francisco",
+    "location": [
+      -122.4211043,
+      37.7830779
+    ],
+    "overture_meta": {
+      "confidence": 0.988,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Burger King"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Burger King\" at this location",
+      "match": {
+        "fsq_id": "4aea54fcf964a52012bb21e3",
+        "name": "Burger King",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "819 Van Ness Ave (at Eddy), San Francisco, CA 94109, United States"
+      }
+    }
+  },
+  {
+    "id": 37,
+    "name": "Taco Bell / KFC",
+    "category": "Fast Food",
+    "address": "691 Eddy Street, San Francisco",
+    "location": [
+      -122.41898438325447,
+      37.78300628351222
+    ],
+    "overture_meta": {
+      "confidence": 0.988,
+      "update_time": "2025-10-04",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Taco Bell\" at this location",
+      "match": {
+        "fsq_id": "4a497863f964a52060ab1fe3",
+        "name": "Taco Bell",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "691 Eddy St (at Polk St.), San Francisco, CA 94109, United States"
+      }
+    }
+  },
+  {
+    "id": 38,
+    "name": "KFC",
+    "category": "Fast Food",
+    "address": "691 Eddy St, San Francisco",
+    "location": [
+      -122.4190531,
+      37.783065
+    ],
+    "overture_meta": {
+      "confidence": 0.963,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "KFC"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"KFC\" at this location",
+      "match": {
+        "fsq_id": "4e4e178bbd4101d0d7a1fc94",
+        "name": "KFC",
+        "category": "Fried Chicken Joint",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "691 Eddy St, San Francisco, CA 94109, United States"
+      }
+    }
+  },
+  {
+    "id": 39,
+    "name": "SUBWAY",
+    "category": "Fast Food",
+    "address": "753 Polk St, San Francisco",
+    "location": [
+      -122.41945983111141,
+      37.78399144442045
+    ],
+    "overture_meta": {
+      "confidence": 0.965,
+      "update_time": "2025-03-20",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 40,
+    "name": "Domino's Pizza",
+    "category": "Fast Food",
+    "address": "728 Geary St, San Francisco",
+    "location": [
+      -122.4153729,
+      37.7868186
+    ],
+    "overture_meta": {
+      "confidence": 0.985,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Domino's Pizza"
+    },
+    "foursquare": {
+      "status": "mismatch",
+      "detail": "Foursquare shows \"Rotana Pizza\" instead",
+      "match": {
+        "fsq_id": "4e0ff502e4cdef074b66c463",
+        "name": "Rotana Pizza",
+        "category": "Pizzeria",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "Geary (Leavenworth), San Francisco, CA 94102, United States"
+      }
+    }
+  },
+  {
+    "id": 41,
+    "name": "Jack in the Box",
+    "category": "Fast Food",
+    "address": "400 Geary St, San Francisco",
+    "location": [
+      -122.409985,
+      37.787232
+    ],
+    "overture_meta": {
+      "confidence": 0.987,
+      "update_time": "2025-12-31",
+      "source": "DAC",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Jack in the Box\" at this location",
+      "match": {
+        "fsq_id": "4ad75d30f964a520d40921e3",
+        "name": "Jack in the Box",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "400 Geary St (at Mason St), San Francisco, CA 94102, United States"
+      }
+    }
+  },
+  {
+    "id": 42,
+    "name": "Carl's Jr. / Green Burrito",
+    "category": "Fast Food",
+    "address": "10 United Nations Plz, San Francisco",
+    "location": [
+      -122.4127539581599,
+      37.78031394729395
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-01-29",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 43,
+    "name": "SUBWAY",
+    "category": "Fast Food",
+    "address": "1099 Mission St, San Francisco",
+    "location": [
+      -122.41092164710543,
+      37.77921428275558
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-08-19",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 44,
+    "name": "Wingstop",
+    "category": "Fast Food",
+    "address": "1200 Market St, 101-102, San Francisco",
+    "location": [
+      -122.4150615,
+      37.7784825
+    ],
+    "overture_meta": {
+      "confidence": 0.986,
+      "update_time": "2025-09-04",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Wingstop\" at this location",
+      "match": {
+        "fsq_id": "6790711c3e90b915ef73ae45",
+        "name": "Wingstop",
+        "category": "Wings Joint",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1200 Market St #101-102, San Francisco, CA 94102, United States"
+      }
+    }
+  },
+  {
+    "id": 45,
+    "name": "Wingstop",
+    "category": "Fast Food",
+    "address": "1200 Market St, 101-102, San Francisco",
+    "location": [
+      -122.4152914,
+      37.7786745
+    ],
+    "overture_meta": {
+      "confidence": 0.4,
+      "update_time": "2026-01-06",
+      "source": "AllThePlaces",
+      "brand": "Wingstop"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Wingstop\" at this location",
+      "match": {
+        "fsq_id": "6790711c3e90b915ef73ae45",
+        "name": "Wingstop",
+        "category": "Wings Joint",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1200 Market St #101-102, San Francisco, CA 94102, United States"
+      }
+    }
+  },
+  {
+    "id": 46,
+    "name": "Little Caesars",
+    "category": "Fast Food",
+    "address": "1200 Market St, San Francisco",
+    "location": [
+      -122.415262,
+      37.778657
+    ],
+    "overture_meta": {
+      "confidence": 0.986,
+      "update_time": "2025-09-16",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Little Caesars Pizza\" at this location",
+      "match": {
+        "fsq_id": "6983bf08cf02bc0c01927e86",
+        "name": "Little Caesars Pizza",
+        "category": "Pizzeria",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1200 Market St, San Francisco, CA 94102, United States"
+      }
+    }
+  },
+  {
+    "id": 47,
+    "name": "Subway",
+    "category": "Fast Food",
+    "address": "1250 Market St, San Francisco",
+    "location": [
+      -122.4170578,
+      37.7812499
+    ],
+    "overture_meta": {
+      "confidence": 0.976,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Subway"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Subway\" at this location",
+      "match": {
+        "fsq_id": "4c12b7cd7f7f2d7fded3dd68",
+        "name": "Subway",
+        "category": "Sandwich Spot",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "376 Larkin St (at Golden Gate Ave), San Francisco, CA 94102, United States"
+      }
+    }
+  },
+  {
+    "id": 48,
+    "name": "McDonald's",
+    "category": "Fast Food",
+    "address": "1455 Market St, San Francisco",
+    "location": [
+      -122.41843011856224,
+      37.77584844170261
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-03-20",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 49,
+    "name": "Subway",
+    "category": "Fast Food",
+    "address": "1400 Mission St, San Francisco",
+    "location": [
+      -122.4163752,
+      37.7753974
+    ],
+    "overture_meta": {
+      "confidence": 0.998,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Subway"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Subway\" at this location",
+      "match": {
+        "fsq_id": "599708b512c8f04177c0aa69",
+        "name": "Subway",
+        "category": "Sandwich Spot",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1400 Mission St (at 10th St), San Francisco, CA 94103, United States"
+      }
+    }
+  },
+  {
+    "id": 50,
+    "name": "Burger King",
+    "category": "Fast Food",
+    "address": "1298 Howard St, San Francisco",
+    "location": [
+      -122.41334744612686,
+      37.77551044423092
+    ],
+    "overture_meta": {
+      "confidence": 0.98,
+      "update_time": "2025-03-20",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 51,
+    "name": "SUBWAY",
+    "category": "Fast Food",
+    "address": "804 Bryant St, San Francisco",
+    "location": [
+      -122.40279611412403,
+      37.77596207231995
+    ],
+    "overture_meta": {
+      "confidence": 0.981,
+      "update_time": "2025-08-19",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 52,
+    "name": "McDonald's",
+    "category": "Fast Food",
+    "address": "820 Bryant St, San Francisco",
+    "location": [
+      -122.4031201945518,
+      37.77591795693082
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-03-20",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 53,
+    "name": "SUBWAY",
+    "category": "Fast Food",
+    "address": "195-197 Sixth St, San Francisco",
+    "location": [
+      -122.40725714964205,
+      37.780008063265626
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-03-21",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 54,
+    "name": "Jollibee Nha Kauswagan",
+    "category": "Fast Food",
+    "address": "5th St, San Francisco",
+    "location": [
+      -122.40217,
+      37.77899
+    ],
+    "overture_meta": {
+      "confidence": 0.323,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 55,
+    "name": "Wingstop",
+    "category": "Fast Food",
+    "address": "60 Morris St, San Francisco",
+    "location": [
+      -122.4027955,
+      37.7769767
+    ],
+    "overture_meta": {
+      "confidence": 0.993,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Wingstop"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Wingstop\" at this location",
+      "match": {
+        "fsq_id": "6497a4d8abd1a360d0ee1548",
+        "name": "Wingstop",
+        "category": "Wings Joint",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "60 Morris St, San Francisco, CA 94107, United States"
+      }
+    }
+  },
+  {
+    "id": 56,
+    "name": "Subway",
+    "category": "Fast Food",
+    "address": "700 4th St, San Francisco",
+    "location": [
+      -122.3948087,
+      37.7767266
+    ],
+    "overture_meta": {
+      "confidence": 0.986,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Subway"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Subway\" at this location",
+      "match": {
+        "fsq_id": "4aca55b6f964a5207ac120e3",
+        "name": "Subway",
+        "category": "Sandwich Spot",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "700 4th St Ste 111 (at King St), San Francisco, CA 94107, United States"
+      }
+    }
+  },
+  {
+    "id": 57,
+    "name": "Subway",
+    "category": "Fast Food",
+    "address": "177 Townsend St, San Francisco",
+    "location": [
+      -122.3921836,
+      37.7791989
+    ],
+    "overture_meta": {
+      "confidence": 0.993,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Subway"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Subway\" at this location",
+      "match": {
+        "fsq_id": "4db21fea5da30ffdfd1b322a",
+        "name": "Subway",
+        "category": "Sandwich Spot",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "177 Townsend St, San Francisco, CA 94107, United States"
+      }
+    }
+  },
+  {
+    "id": 58,
+    "name": "McDonald's",
+    "category": "Fast Food",
+    "address": "701 3rd St, San Francisco",
+    "location": [
+      -122.3926154565801,
+      37.77883245076147
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-03-20",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "mismatch",
+      "detail": "Foursquare shows \"McLuvin\" instead",
+      "match": {
+        "fsq_id": "52041c95498eb1d2c23dd8a4",
+        "name": "McLuvin",
+        "category": null,
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "San Francisco, CA, United States"
+      }
+    }
+  },
+  {
+    "id": 59,
+    "name": "Taco Bell",
+    "category": "Fast Food",
+    "address": "710 3rd St, San Francisco",
+    "location": [
+      -122.392696,
+      37.7786384
+    ],
+    "overture_meta": {
+      "confidence": 0.987,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Taco Bell"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Taco Bell Cantina\" at this location",
+      "match": {
+        "fsq_id": "560461b3498e93e852864f6b",
+        "name": "Taco Bell Cantina",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "710 3rd St (at Townsend St), San Francisco, CA 94107, United States"
+      }
+    }
+  },
+  {
+    "id": 60,
+    "name": "Subway",
+    "category": "Fast Food",
+    "address": "550B Gene Friend Way, San Francisco",
+    "location": [
+      -122.39032373577834,
+      37.76910884759844
+    ],
+    "overture_meta": {
+      "confidence": 0.945,
+      "update_time": "2025-09-28",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Subway\" at this location",
+      "match": {
+        "fsq_id": "4a3fe92bf964a52010a41fe3",
+        "name": "Subway",
+        "category": "Sandwich Spot",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "550B Gene Friend Way (at 3rd St), San Francisco, CA 94158, United States"
+      }
+    }
+  },
+  {
+    "id": 61,
+    "name": "McDonald's",
+    "category": "Fast Food",
+    "address": "302 Potrero Ave, San Francisco",
+    "location": [
+      -122.4078589,
+      37.7654008
+    ],
+    "overture_meta": {
+      "confidence": 0.997,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "McDonald's"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"McDonald's\" at this location",
+      "match": {
+        "fsq_id": "4a05cfc3f964a52079721fe3",
+        "name": "McDonald's",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "302 Potrero Ave (at 16th St), San Francisco, CA 94103, United States"
+      }
+    }
+  },
+  {
+    "id": 62,
+    "name": "KFC",
+    "category": "Fast Food",
+    "address": "200 Duboce Avenue, San Francisco",
+    "location": [
+      -122.42483335276125,
+      37.76991183597961
+    ],
+    "overture_meta": {
+      "confidence": 0.947,
+      "update_time": "2025-09-19",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 63,
+    "name": "Burger King",
+    "category": "Fast Food",
+    "address": "2978 16th St, San Francisco",
+    "location": [
+      -122.41914444940865,
+      37.76524788792914
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-08-19",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 64,
+    "name": "KFC",
+    "category": "Fast Food",
+    "address": "1058 Valencia St, San Francisco",
+    "location": [
+      -122.42124804014772,
+      37.75597131162886
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2023-11-30",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 65,
+    "name": "McDonald's",
+    "category": "Fast Food",
+    "address": "2801 Mission St, San Francisco",
+    "location": [
+      -122.4181865,
+      37.7521947
+    ],
+    "overture_meta": {
+      "confidence": 0.992,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "McDonald's"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"McDonald's\" at this location",
+      "match": {
+        "fsq_id": "4a6399c4f964a5206cc51fe3",
+        "name": "McDonald's",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2801 Mission St (at 24th St), San Francisco, CA 94110, United States"
+      }
+    }
+  },
+  {
+    "id": 66,
+    "name": "Subway",
+    "category": "Fast Food",
+    "address": "3801 3rd St, San Francisco",
+    "location": [
+      -122.387376,
+      37.7416898
+    ],
+    "overture_meta": {
+      "confidence": 0.937,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Subway"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"SUBWAY\" at this location",
+      "match": {
+        "fsq_id": "4b8091dcf964a520a17d30e3",
+        "name": "SUBWAY",
+        "category": "Sandwich Spot",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "3801 3rd St (at Fairfax Ave), San Francisco, CA 94124, United States"
+      }
+    }
+  },
+  {
+    "id": 67,
+    "name": "Taco Bell",
+    "category": "Fast Food",
+    "address": "2815 Geneva Ave, San Francisco",
+    "location": [
+      -122.414496,
+      37.7069039
+    ],
+    "overture_meta": {
+      "confidence": 0.947,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Taco Bell"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Taco Bell\" at this location",
+      "match": {
+        "fsq_id": "4b468a49f964a520c62326e3",
+        "name": "Taco Bell",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2815 Geneva Ave, Daly City, CA 94014, United States"
+      }
+    }
+  },
+  {
+    "id": 68,
+    "name": "KFC",
+    "category": "Fast Food",
+    "address": "2815 Geneva Ave, San Francisco",
+    "location": [
+      -122.4144387,
+      37.7068646
+    ],
+    "overture_meta": {
+      "confidence": 0.981,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "KFC"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"KFC\" at this location",
+      "match": {
+        "fsq_id": "515c82ccf0e4172442779d71",
+        "name": "KFC",
+        "category": "Fried Chicken Joint",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2815 Geneva Ave, Daly City, CA 94014, United States"
+      }
+    }
+  },
+  {
+    "id": 69,
+    "name": "Domino's Pizza",
+    "category": "Fast Food",
+    "address": "2665 Geneva Ave, San Francisco",
+    "location": [
+      -122.4159827,
+      37.7074383
+    ],
+    "overture_meta": {
+      "confidence": 0.964,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Domino's Pizza"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Domino's Pizza\" at this location",
+      "match": {
+        "fsq_id": "5830539165be58789aaa3301",
+        "name": "Domino's Pizza",
+        "category": "Pizzeria",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2665 Geneva Ave, Daly City, CA 94014, United States"
+      }
+    }
+  },
+  {
+    "id": 70,
+    "name": "Wingstop",
+    "category": "Fast Food",
+    "address": "2665 Geneva Ave, San Francisco",
+    "location": [
+      -122.4160633,
+      37.7072455
+    ],
+    "overture_meta": {
+      "confidence": 0.976,
+      "update_time": "2025-09-04",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Wingstop\" at this location",
+      "match": {
+        "fsq_id": "68d5bd6f5a85253c82abe11e",
+        "name": "Wingstop",
+        "category": "Fried Chicken Joint",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2665 Geneva Ave, Daly City, CA 94014, United States"
+      }
+    }
+  },
+  {
+    "id": 71,
+    "name": "McDonald's",
+    "category": "Fast Food",
+    "address": "2750 Geneva Ave, San Francisco",
+    "location": [
+      -122.4153288,
+      37.7065778
+    ],
+    "overture_meta": {
+      "confidence": 0.954,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "McDonald's"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"McDonald's\" at this location",
+      "match": {
+        "fsq_id": "4abb84d6f964a520e88320e3",
+        "name": "McDonald's",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2750 Geneva Ave (at Accacia St), Daly City, CA 94014, United States"
+      }
+    }
+  },
+  {
+    "id": 72,
+    "name": "Taco Bell",
+    "category": "Fast Food",
+    "address": "4285 Mission St, San Francisco",
+    "location": [
+      -122.430812,
+      37.7289973
+    ],
+    "overture_meta": {
+      "confidence": 0.987,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Taco Bell"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Taco Bell\" at this location",
+      "match": {
+        "fsq_id": "4ae4d429f964a5208b9e21e3",
+        "name": "Taco Bell",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "4285 Mission St (at Silver Ave), San Francisco, CA 94112, United States"
+      }
+    }
+  },
+  {
+    "id": 73,
+    "name": "KFC",
+    "category": "Fast Food",
+    "address": "4285 Mission St, San Francisco",
+    "location": [
+      -122.4310379,
+      37.728892
+    ],
+    "overture_meta": {
+      "confidence": 0.988,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "KFC"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"KFC\" at this location",
+      "match": {
+        "fsq_id": "4f320e6b19833175d60c28a3",
+        "name": "KFC",
+        "category": "Fried Chicken Joint",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "4285 Mission St (at Silver Ave), San Francisco, CA 94112, United States"
+      }
+    }
+  },
+  {
+    "id": 74,
+    "name": "Subway",
+    "category": "Fast Food",
+    "address": "2599 San Bruno Ave, San Francisco",
+    "location": [
+      -122.4040426,
+      37.7289919
+    ],
+    "overture_meta": {
+      "confidence": 0.964,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Subway"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Subway\" at this location",
+      "match": {
+        "fsq_id": "4bd33e98462cb713b2eddd07",
+        "name": "Subway",
+        "category": "Sandwich Spot",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2599 San Bruno Ave (at Burrows St), San Francisco, CA 94134, United States"
+      }
+    }
+  },
+  {
+    "id": 75,
+    "name": "McDonald's",
+    "category": "Fast Food",
+    "address": "5411 3rd St, San Francisco",
+    "location": [
+      -122.3925247,
+      37.7280402
+    ],
+    "overture_meta": {
+      "confidence": 0.961,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "McDonald's"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"McDonald's\" at this location",
+      "match": {
+        "fsq_id": "4ba25792f964a5201cef37e3",
+        "name": "McDonald's",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "5411 3rd St (at Wallace St), San Francisco, CA 94124, United States"
+      }
+    }
+  },
+  {
+    "id": 76,
+    "name": "Taco Bell Mobile & Delivery @ Charter Oak CloudKitchens",
+    "category": "Fast Food",
+    "address": "90 Charter Oak Ave, San Francisco",
+    "location": [
+      -122.4053399650836,
+      37.73682698906909
+    ],
+    "overture_meta": {
+      "confidence": 0.929,
+      "update_time": "2025-09-22",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 77,
+    "name": "Popeyes",
+    "category": "Fast Food",
+    "address": "90 Charter Oak Ave, San Francisco",
+    "location": [
+      -122.405358,
+      37.73684
+    ],
+    "overture_meta": {
+      "confidence": 0.4,
+      "update_time": "2026-01-06",
+      "source": "AllThePlaces",
+      "brand": "Popeyes"
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 78,
+    "name": "Wingstop",
+    "category": "Fast Food",
+    "address": "90 Charter Oak Ave, San Francisco",
+    "location": [
+      -122.4050527,
+      37.7368391
+    ],
+    "overture_meta": {
+      "confidence": 0.989,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Wingstop"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Wingstop\" at this location",
+      "match": {
+        "fsq_id": "5fa2cd22f291e935db5e7388",
+        "name": "Wingstop",
+        "category": "Wings Joint",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "90 Charter Oak Ave, San Francisco, CA 94124, United States"
+      }
+    }
+  },
+  {
+    "id": 79,
+    "name": "Little Caesars Pizza",
+    "category": "Fast Food",
+    "address": "90 Charter Oak Ave, San Francisco",
+    "location": [
+      -122.4050611,
+      37.7368495
+    ],
+    "overture_meta": {
+      "confidence": 0.997,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Little Caesars"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Little Caesars Pizza\" at this location",
+      "match": {
+        "fsq_id": "f5cca5bda2f9429b5f2b97dd",
+        "name": "Little Caesars Pizza",
+        "category": "Pizzeria",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "90 Charter Oak Ave, San Francisco, CA 94124, United States"
+      }
+    }
+  },
+  {
+    "id": 80,
+    "name": "Five Guys",
+    "category": "Fast Food",
+    "address": "90 Charter Oak Ave, San Francisco",
+    "location": [
+      -122.4048287,
+      37.7369156
+    ],
+    "overture_meta": {
+      "confidence": 0.989,
+      "update_time": "2025-09-24",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Five Guys\" at this location",
+      "match": {
+        "fsq_id": "6983bf26cf02bc0c019311bb",
+        "name": "Five Guys",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "90 Charter Oak Ave, San Francisco, CA 94124, United States"
+      }
+    }
+  },
+  {
+    "id": 81,
+    "name": "Domino's Pizza",
+    "category": "Fast Food",
+    "address": "320 Bayshore Blvd, San Francisco",
+    "location": [
+      -122.40564,
+      37.7427554
+    ],
+    "overture_meta": {
+      "confidence": 0.978,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Domino's Pizza"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Domino's Pizza\" at this location",
+      "match": {
+        "fsq_id": "4b738e4ef964a520d9b32de3",
+        "name": "Domino's Pizza",
+        "category": "Pizzeria",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "320 Bay Shore Blvd (btwn Oakdale Ave & Flower St), San Francisco, CA 94124, United States"
+      }
+    }
+  },
+  {
+    "id": 82,
+    "name": "McDonald's",
+    "category": "Fast Food",
+    "address": "345 Bayshore Blvd, San Francisco",
+    "location": [
+      -122.4052453,
+      37.7422166
+    ],
+    "overture_meta": {
+      "confidence": 0.992,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "McDonald's"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"McDonald's\" at this location",
+      "match": {
+        "fsq_id": "4af08d73f964a52029dd21e3",
+        "name": "McDonald's",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "345 Bay Shore Blvd (at Flower St), San Francisco, CA 94124, United States"
+      }
+    }
+  },
+  {
+    "id": 83,
+    "name": "Jack in the Box",
+    "category": "Fast Food",
+    "address": "366 Bayshore Blvd, San Francisco",
+    "location": [
+      -122.40585,
+      37.74195
+    ],
+    "overture_meta": {
+      "confidence": 0.991,
+      "update_time": "2025-12-31",
+      "source": "DAC",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Jack in the Box\" at this location",
+      "match": {
+        "fsq_id": "4af1eff3f964a52088e421e3",
+        "name": "Jack in the Box",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "366 Bay Shore Blvd, San Francisco, CA 94124, United States"
+      }
+    }
+  },
+  {
+    "id": 84,
+    "name": "Taco Bell",
+    "category": "Fast Food",
+    "address": "1610 Jerrold Ave, San Francisco",
+    "location": [
+      -122.38952086688207,
+      37.73927383076529
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-03-20",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 85,
+    "name": "KFC",
+    "category": "Fast Food",
+    "address": "1610 Jerrold Ave, San Francisco",
+    "location": [
+      -122.38959029948477,
+      37.73923586625978
+    ],
+    "overture_meta": {
+      "confidence": 0.991,
+      "update_time": "2025-03-20",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 86,
+    "name": "Burger King",
+    "category": "Fast Food",
+    "address": "245 Bayshore Blvd, San Francisco",
+    "location": [
+      -122.4040849,
+      37.7440945
+    ],
+    "overture_meta": {
+      "confidence": 0.986,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Burger King"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Burger King\" at this location",
+      "match": {
+        "fsq_id": "4af392cff964a520b0ee21e3",
+        "name": "Burger King",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "245 Bay Shore Blvd (at McKinnon Ave), San Francisco, CA 94124, United States"
+      }
+    }
+  },
+  {
+    "id": 87,
+    "name": "Burger King",
+    "category": "Fast Food",
+    "address": "245 Bay Shore Blvd, San Francisco",
+    "location": [
+      -122.4044025,
+      37.7442673
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2013-07-27",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Burger King\" at this location",
+      "match": {
+        "fsq_id": "4af392cff964a520b0ee21e3",
+        "name": "Burger King",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "245 Bay Shore Blvd (at McKinnon Ave), San Francisco, CA 94124, United States"
+      }
+    }
+  },
+  {
+    "id": 88,
+    "name": "Burger King",
+    "category": "Fast Food",
+    "address": "1690 Valencia St, San Francisco",
+    "location": [
+      -122.4201764,
+      37.7455992
+    ],
+    "overture_meta": {
+      "confidence": 0.994,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Burger King"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Burger King\" at this location",
+      "match": {
+        "fsq_id": "4bb772dc7421a593f171c040",
+        "name": "Burger King",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1690 Valencia St (at Mission St.), San Francisco, CA 94110, United States"
+      }
+    }
+  },
+  {
+    "id": 89,
+    "name": "Burger King",
+    "category": "Fast Food",
+    "address": "4780 Mission St, San Francisco",
+    "location": [
+      -122.437063,
+      37.7217002
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2013-07-27",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "mismatch",
+      "detail": "Foursquare shows \"Flats Burgers\" instead",
+      "match": {
+        "fsq_id": "67bbce77dc3cee35aeff0f0f",
+        "name": "Flats Burgers",
+        "category": "Burger Joint",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "4753 Mission St, San Francisco, CA 94112, United States"
+      }
+    }
+  },
+  {
+    "id": 90,
+    "name": "Burger King",
+    "category": "Fast Food",
+    "address": "4780 Mission St, San Francisco",
+    "location": [
+      -122.437295,
+      37.721659
+    ],
+    "overture_meta": {
+      "confidence": 0.981,
+      "update_time": "2014-05-19",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "mismatch",
+      "detail": "Foursquare shows \"Flats Burgers\" instead",
+      "match": {
+        "fsq_id": "67bbce77dc3cee35aeff0f0f",
+        "name": "Flats Burgers",
+        "category": "Burger Joint",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "4753 Mission St, San Francisco, CA 94112, United States"
+      }
+    }
+  },
+  {
+    "id": 91,
+    "name": "Popeyes® Louisiana Kitchen",
+    "category": "Fast Food",
+    "address": "890 Geneva Ave, San Francisco",
+    "location": [
+      -122.4412757,
+      37.716594
+    ],
+    "overture_meta": {
+      "confidence": 0.993,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Popeyes Louisiana Kitchen"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Popeyes Louisiana Kitchen\" at this location",
+      "match": {
+        "fsq_id": "4ac81456f964a5208cbb20e3",
+        "name": "Popeyes Louisiana Kitchen",
+        "category": "Fried Chicken Joint",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "890 Geneva Ave (at Mission St), San Francisco, CA 94112, United States"
+      }
+    }
+  },
+  {
+    "id": 92,
+    "name": "Popeyes",
+    "category": "Fast Food",
+    "address": "890 Geneva Ave, San Francisco",
+    "location": [
+      -122.441342,
+      37.716609
+    ],
+    "overture_meta": {
+      "confidence": 0.4,
+      "update_time": "2026-01-06",
+      "source": "AllThePlaces",
+      "brand": "Popeyes"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Popeyes Louisiana Kitchen\" at this location",
+      "match": {
+        "fsq_id": "4ac81456f964a5208cbb20e3",
+        "name": "Popeyes Louisiana Kitchen",
+        "category": "Fried Chicken Joint",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "890 Geneva Ave (at Mission St), San Francisco, CA 94112, United States"
+      }
+    }
+  },
+  {
+    "id": 93,
+    "name": "Little Caesars Pizza",
+    "category": "Fast Food",
+    "address": "955 Geneva Ave, San Francisco",
+    "location": [
+      -122.440011,
+      37.7160716
+    ],
+    "overture_meta": {
+      "confidence": 0.981,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Little Caesars"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Little Caesars Pizza\" at this location",
+      "match": {
+        "fsq_id": "4a37f0d0f964a520959e1fe3",
+        "name": "Little Caesars Pizza",
+        "category": "Pizzeria",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "955 Geneva Ave, San Francisco, CA 94112, United States"
+      }
+    }
+  },
+  {
+    "id": 94,
+    "name": "Subway",
+    "category": "Fast Food",
+    "address": "4841 Mission Street, San Francisco",
+    "location": [
+      -122.437469132209,
+      37.72087367317092
+    ],
+    "overture_meta": {
+      "confidence": 0.984,
+      "update_time": "2025-09-28",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Subway\" at this location",
+      "match": {
+        "fsq_id": "4b49043ef964a520286226e3",
+        "name": "Subway",
+        "category": "Sandwich Spot",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "4841 Mission St (at Onondaga Ave), San Francisco, CA 94112, United States"
+      }
+    }
+  },
+  {
+    "id": 95,
+    "name": "McDonald's",
+    "category": "Fast Food",
+    "address": "5454 Mission St, San Francisco",
+    "location": [
+      -122.444502,
+      37.7131713
+    ],
+    "overture_meta": {
+      "confidence": 0.993,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "McDonald's"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"McDonald's\" at this location",
+      "match": {
+        "fsq_id": "4b79d7fdf964a520ba152fe3",
+        "name": "McDonald's",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "5454 Mission St (btwn Ottawa & Foote Ave), San Francisco, CA 94112, United States"
+      }
+    }
+  },
+  {
+    "id": 96,
+    "name": "Subway",
+    "category": "Fast Food",
+    "address": "3911 Alemany Blvd, San Francisco",
+    "location": [
+      -122.4670036,
+      37.7109643
+    ],
+    "overture_meta": {
+      "confidence": 0.96,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Subway"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Subway\" at this location",
+      "match": {
+        "fsq_id": "4b64cc66f964a520f3d02ae3",
+        "name": "Subway",
+        "category": "Sandwich Spot",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "3911 Alemany Blvd (at Worcester Ave), San Francisco, CA 94132, United States"
+      }
+    }
+  },
+  {
+    "id": 97,
+    "name": "McDonald's",
+    "category": "Fast Food",
+    "address": "1201 Ocean Ave, San Francisco",
+    "location": [
+      -122.455475,
+      37.7235836
+    ],
+    "overture_meta": {
+      "confidence": 0.985,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "McDonald's"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"McDonald's\" at this location",
+      "match": {
+        "fsq_id": "4a60277ff964a520b9c01fe3",
+        "name": "McDonald's",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1201 Ocean Ave (at Brighton Ave), San Francisco, CA 94112, United States"
+      }
+    }
+  },
+  {
+    "id": 98,
+    "name": "KFC",
+    "category": "Fast Food",
+    "address": "2040 Ocean Ave, San Francisco",
+    "location": [
+      -122.4649602,
+      37.7263762
+    ],
+    "overture_meta": {
+      "confidence": 0.993,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "KFC"
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 99,
+    "name": "McDonald's",
+    "category": "Fast Food",
+    "address": "255 Winston Dr, San Francisco",
+    "location": [
+      -122.4763991,
+      37.7264432
+    ],
+    "overture_meta": {
+      "confidence": 0.997,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "McDonald's"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"McDonald's\" at this location",
+      "match": {
+        "fsq_id": "4a8972e5f964a5200b0820e3",
+        "name": "McDonald's",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "255 Winston Dr (at 20th Ave), San Francisco, CA 94132, United States"
+      }
+    }
+  },
+  {
+    "id": 100,
+    "name": "Subway",
+    "category": "Fast Food",
+    "address": "750 Font Blvd, San Francisco",
+    "location": [
+      -122.482179,
+      37.7234113
+    ],
+    "overture_meta": {
+      "confidence": 0.96,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Subway"
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 101,
+    "name": "Chipotle Mexican Grill",
+    "category": "Fast Food",
+    "address": "3251 20th Ave, San Francisco",
+    "location": [
+      -122.4763633,
+      37.727585
+    ],
+    "overture_meta": {
+      "confidence": 0.964,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Chipotle Mexican Grill"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Chipotle Mexican Grill\" at this location",
+      "match": {
+        "fsq_id": "523b598711d27a43cfa0a523",
+        "name": "Chipotle Mexican Grill",
+        "category": "Mexican Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "3251 20th Ave (at Winston Dr), San Francisco, CA 94132, United States"
+      }
+    }
+  },
+  {
+    "id": 102,
+    "name": "Panda Express",
+    "category": "Fast Food",
+    "address": "3251 20th Ave, San Francisco",
+    "location": [
+      -122.4768327,
+      37.7278089
+    ],
+    "overture_meta": {
+      "confidence": 0.98,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Panda Express\" at this location",
+      "match": {
+        "fsq_id": "47f191bdf964a5208d4e1fe3",
+        "name": "Panda Express",
+        "category": "Chinese Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "3251 20th Ave (in Stonestown Galleria), San Francisco, CA 94132, United States"
+      }
+    }
+  },
+  {
+    "id": 103,
+    "name": "Subway",
+    "category": "Fast Food",
+    "address": "595 Buckingham Way, San Francisco",
+    "location": [
+      -122.4764887,
+      37.7302123
+    ],
+    "overture_meta": {
+      "confidence": 0.981,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Subway"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Subway\" at this location",
+      "match": {
+        "fsq_id": "5144a104e4b07022e79fa5dc",
+        "name": "Subway",
+        "category": "Sandwich Spot",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "595 Buckingham Way (at 20th Ave), San Francisco, CA 94132, United States"
+      }
+    }
+  },
+  {
+    "id": 104,
+    "name": "Subway",
+    "category": "Fast Food",
+    "address": "1501 Sloat Blvd, San Francisco",
+    "location": [
+      -122.4893017,
+      37.7337925
+    ],
+    "overture_meta": {
+      "confidence": 0.945,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Subway"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Subway\" at this location",
+      "match": {
+        "fsq_id": "555f8d96498ec84f84587222",
+        "name": "Subway",
+        "category": "Sandwich Spot",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1501 Sloat Blvd Ste B (at Lakeshore Plz), San Francisco, CA 94132, United States"
+      }
+    }
+  },
+  {
+    "id": 105,
+    "name": "Wingstop",
+    "category": "Fast Food",
+    "address": "Lakeshore Plaza, 1501 Sloat Blvd, San Francisco",
+    "location": [
+      -122.4896421,
+      37.7335818
+    ],
+    "overture_meta": {
+      "confidence": 0.986,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Wingstop"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Wingstop\" at this location",
+      "match": {
+        "fsq_id": "63534ae0f6bcbb7580097a04",
+        "name": "Wingstop",
+        "category": "Wings Joint",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1507 Sloat Blvd, San Francisco, CA 94132, United States"
+      }
+    }
+  },
+  {
+    "id": 106,
+    "name": "Chipotle Mexican Grill",
+    "category": "Fast Food",
+    "address": "1523 Sloat Blvd, San Francisco",
+    "location": [
+      -122.4900002,
+      37.7325588
+    ],
+    "overture_meta": {
+      "confidence": 0.992,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Chipotle Mexican Grill"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Chipotle Mexican Grill\" at this location",
+      "match": {
+        "fsq_id": "4e162a98aeb7e76b4f1b9594",
+        "name": "Chipotle Mexican Grill",
+        "category": "Mexican Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1523 Sloat Blvd (Lakeshore Plaza @ Sloat Blvd.), San Francisco, CA 94132, United States"
+      }
+    }
+  },
+  {
+    "id": 107,
+    "name": "KFC",
+    "category": "Fast Food",
+    "address": "1150 Taraval St, San Francisco",
+    "location": [
+      -122.4787393,
+      37.7429714
+    ],
+    "overture_meta": {
+      "confidence": 0.986,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "KFC"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"KFC\" at this location",
+      "match": {
+        "fsq_id": "4b5fca25f964a520cecc29e3",
+        "name": "KFC",
+        "category": "Fried Chicken Joint",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1150 Taraval St (at 22nd Ave), San Francisco, CA 94116, United States"
+      }
+    }
+  },
+  {
+    "id": 108,
+    "name": "Taco Bell",
+    "category": "Fast Food",
+    "address": "1150 Taraval St, San Francisco",
+    "location": [
+      -122.4787868,
+      37.7430239
+    ],
+    "overture_meta": {
+      "confidence": 0.985,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Taco Bell"
+    },
+    "foursquare": {
+      "status": "mismatch",
+      "detail": "Foursquare shows \"KFC\" instead",
+      "match": {
+        "fsq_id": "4b5fca25f964a520cecc29e3",
+        "name": "KFC",
+        "category": "Fried Chicken Joint",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1150 Taraval St (at 22nd Ave), San Francisco, CA 94116, United States"
+      }
+    }
+  },
+  {
+    "id": 109,
+    "name": "KFC",
+    "category": "Fast Food",
+    "address": "1900 Irving St #250, San Francisco",
+    "location": [
+      -122.4783754,
+      37.7635233
+    ],
+    "overture_meta": {
+      "confidence": 0.947,
+      "update_time": "2013-07-27",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 110,
+    "name": "Subway",
+    "category": "Fast Food",
+    "address": "2516 Noriega St, San Francisco",
+    "location": [
+      -122.49068828620227,
+      37.753814242421406
+    ],
+    "overture_meta": {
+      "confidence": 0.985,
+      "update_time": "2025-04-01",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Subway\" at this location",
+      "match": {
+        "fsq_id": "4b9ae7bdf964a52094e135e3",
+        "name": "Subway",
+        "category": "Sandwich Spot",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2516 Noriega St, San Francisco, CA 94122, United States"
+      }
+    }
+  },
+  {
+    "id": 111,
+    "name": "Domino's Pizza",
+    "category": "Fast Food",
+    "address": "3116 Noriega St, San Francisco",
+    "location": [
+      -122.497085,
+      37.75333
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2015-12-02",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Domino's Pizza\" at this location",
+      "match": {
+        "fsq_id": "4b60b8caf964a520e9f529e3",
+        "name": "Domino's Pizza",
+        "category": "Pizzeria",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "3116 Noriega St (btw 38th Ave & 39th Ave), San Francisco, CA 94122, United States"
+      }
+    }
+  },
+  {
+    "id": 112,
+    "name": "Domino's Pizza",
+    "category": "Fast Food",
+    "address": "3116 Noriega St, San Francisco",
+    "location": [
+      -122.4971662,
+      37.7534405
+    ],
+    "overture_meta": {
+      "confidence": 0.983,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Domino's Pizza"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Domino's Pizza\" at this location",
+      "match": {
+        "fsq_id": "4b60b8caf964a520e9f529e3",
+        "name": "Domino's Pizza",
+        "category": "Pizzeria",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "3116 Noriega St (btw 38th Ave & 39th Ave), San Francisco, CA 94122, United States"
+      }
+    }
+  },
+  {
+    "id": 113,
+    "name": "SUBWAY",
+    "category": "Fast Food",
+    "address": "2375 Market St, San Francisco",
+    "location": [
+      -122.4344112836543,
+      37.76293599771707
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-03-21",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 114,
+    "name": "McDonald's",
+    "category": "Fast Food",
+    "address": "730 Stanyan St, San Francisco",
+    "location": [
+      -122.45320826768875,
+      37.76903836061256
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-08-19",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 115,
+    "name": "Panda Express",
+    "category": "Fast Food",
+    "address": "500 Parnassus Ave, San Francisco",
+    "location": [
+      -122.458369,
+      37.7635567
+    ],
+    "overture_meta": {
+      "confidence": 0.959,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Panda Express\" at this location",
+      "match": {
+        "fsq_id": "47f19991f964a520914e1fe3",
+        "name": "Panda Express",
+        "category": "Chinese Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "500 Parnassus Ave (btwn 3rd Ave & Hillway Ave), San Francisco, CA 94143, United States"
+      }
+    }
+  },
+  {
+    "id": 116,
+    "name": "Jack in the Box",
+    "category": "Fast Food",
+    "address": "4649 Geary Blvd, San Francisco",
+    "location": [
+      -122.469109,
+      37.78071
+    ],
+    "overture_meta": {
+      "confidence": 0.991,
+      "update_time": "2025-12-31",
+      "source": "DAC",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Jack in the Box\" at this location",
+      "match": {
+        "fsq_id": "4a97c7c0f964a520bd2920e3",
+        "name": "Jack in the Box",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "4649 Geary Blvd (at 11th Ave), San Francisco, CA 94118, United States"
+      }
+    }
+  },
+  {
+    "id": 117,
+    "name": "Taco Bell",
+    "category": "Fast Food",
+    "address": "4150 Geary Blvd, San Francisco",
+    "location": [
+      -122.4641851,
+      37.7812834
+    ],
+    "overture_meta": {
+      "confidence": 0.964,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Taco Bell"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Taco Bell\" at this location",
+      "match": {
+        "fsq_id": "4ad39371f964a52003e520e3",
+        "name": "Taco Bell",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "4150 Geary Blvd (at 6th Ave), San Francisco, CA 94118, United States"
+      }
+    }
+  },
+  {
+    "id": 118,
+    "name": "KFC",
+    "category": "Fast Food",
+    "address": "4150 Geary Blvd, San Francisco",
+    "location": [
+      -122.4642579,
+      37.7812446
+    ],
+    "overture_meta": {
+      "confidence": 0.959,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "KFC"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"KFC\" at this location",
+      "match": {
+        "fsq_id": "515c82ccf0e4172442779da2",
+        "name": "KFC",
+        "category": "Fried Chicken Joint",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "4150 Geary Blvd, San Francisco, CA 94118, United States"
+      }
+    }
+  },
+  {
+    "id": 119,
+    "name": "Burger King",
+    "category": "Fast Food",
+    "address": "3900 Geary Blvd, San Francisco",
+    "location": [
+      -122.4612805,
+      37.7813699
+    ],
+    "overture_meta": {
+      "confidence": 0.989,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Burger King"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Burger King\" at this location",
+      "match": {
+        "fsq_id": "4b2da447f964a520e9d924e3",
+        "name": "Burger King",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "3900 Geary Blvd (at 3rd Ave.), San Francisco, CA 94118, United States"
+      }
+    }
+  },
+  {
+    "id": 120,
+    "name": "Popeyes® Louisiana Kitchen",
+    "category": "Fast Food",
+    "address": "599 Divisadero St, San Francisco",
+    "location": [
+      -122.437976,
+      37.7749046
+    ],
+    "overture_meta": {
+      "confidence": 0.984,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Popeyes Louisiana Kitchen"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Popeyes Louisiana Kitchen\" at this location",
+      "match": {
+        "fsq_id": "4af0ba8df964a5209dde21e3",
+        "name": "Popeyes Louisiana Kitchen",
+        "category": "Fried Chicken Joint",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "599 Divisadero St (at Hayes St), San Francisco, CA 94117, United States"
+      }
+    }
+  },
+  {
+    "id": 121,
+    "name": "Popeyes",
+    "category": "Fast Food",
+    "address": "599 Divisadero St, San Francisco",
+    "location": [
+      -122.437987,
+      37.774857
+    ],
+    "overture_meta": {
+      "confidence": 0.4,
+      "update_time": "2026-01-06",
+      "source": "AllThePlaces",
+      "brand": "Popeyes"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Popeyes Louisiana Kitchen\" at this location",
+      "match": {
+        "fsq_id": "4af0ba8df964a5209dde21e3",
+        "name": "Popeyes Louisiana Kitchen",
+        "category": "Fried Chicken Joint",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "599 Divisadero St (at Hayes St), San Francisco, CA 94117, United States"
+      }
+    }
+  },
+  {
+    "id": 122,
+    "name": "McDonald's",
+    "category": "Fast Food",
+    "address": "1100 Fillmore St, San Francisco",
+    "location": [
+      -122.4318375,
+      37.7798633
+    ],
+    "overture_meta": {
+      "confidence": 0.971,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "McDonald's"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"McDonald's\" at this location",
+      "match": {
+        "fsq_id": "4ad3c458f964a52037e620e3",
+        "name": "McDonald's",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1100 Fillmore St (at Golden Gate Ave), San Francisco, CA 94115, United States"
+      }
+    }
+  },
+  {
+    "id": 123,
+    "name": "Subway",
+    "category": "Fast Food",
+    "address": "2675 Geary Blvd, San Francisco",
+    "location": [
+      -122.4458699,
+      37.7818427
+    ],
+    "overture_meta": {
+      "confidence": 0.987,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Subway"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Subway\" at this location",
+      "match": {
+        "fsq_id": "4ab91ad7f964a520057e20e3",
+        "name": "Subway",
+        "category": "Sandwich Spot",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2675 Geary Blvd (at Masonic Ave.), San Francisco, CA 94118, United States"
+      }
+    }
+  },
+  {
+    "id": 124,
+    "name": "Chipotle Mexican Grill",
+    "category": "Fast Food",
+    "address": "2675 Geary Blvd, San Francisco",
+    "location": [
+      -122.4462575,
+      37.7819756
+    ],
+    "overture_meta": {
+      "confidence": 0.977,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Chipotle Mexican Grill"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Chipotle Mexican Grill\" at this location",
+      "match": {
+        "fsq_id": "55c22c50498ed3a8d492dceb",
+        "name": "Chipotle Mexican Grill",
+        "category": "Mexican Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2675 Geary Blvd (at Masonic Ave), San Francisco, CA 94118, United States"
+      }
+    }
+  },
+  {
+    "id": 125,
+    "name": "Panda Express",
+    "category": "Fast Food",
+    "address": "3519 California St, San Francisco",
+    "location": [
+      -122.4519056,
+      37.7865621
+    ],
+    "overture_meta": {
+      "confidence": 0.968,
+      "update_time": "2025-10-03",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Panda Express\" at this location",
+      "match": {
+        "fsq_id": "62d341e40c139b768ad684dd",
+        "name": "Panda Express",
+        "category": "Chinese Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "3519 California St, San Francisco, CA 94118, United States"
+      }
+    }
+  },
+  {
+    "id": 126,
+    "name": "Domino's Pizza",
+    "category": "Fast Food",
+    "address": "1408 Fillmore St, San Francisco",
+    "location": [
+      -122.4326141,
+      37.7828255
+    ],
+    "overture_meta": {
+      "confidence": 0.947,
+      "update_time": "2015-12-02",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 127,
+    "name": "Popeyes® Louisiana Kitchen",
+    "category": "Fast Food",
+    "address": "1426 Fillmore St, San Francisco",
+    "location": [
+      -122.4322597,
+      37.783135
+    ],
+    "overture_meta": {
+      "confidence": 0.966,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Popeyes Louisiana Kitchen"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Popeyes Louisiana Kitchen\" at this location",
+      "match": {
+        "fsq_id": "49e6c8d6f964a5206d641fe3",
+        "name": "Popeyes Louisiana Kitchen",
+        "category": "Fried Chicken Joint",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1426 Fillmore St (at Ellis St.), San Francisco, CA 94115, United States"
+      }
+    }
+  },
+  {
+    "id": 128,
+    "name": "Popeyes",
+    "category": "Fast Food",
+    "address": "1426 Fillmore St, San Francisco",
+    "location": [
+      -122.432375,
+      37.783128
+    ],
+    "overture_meta": {
+      "confidence": 0.4,
+      "update_time": "2026-01-06",
+      "source": "AllThePlaces",
+      "brand": "Popeyes"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Popeyes Louisiana Kitchen\" at this location",
+      "match": {
+        "fsq_id": "49e6c8d6f964a5206d641fe3",
+        "name": "Popeyes Louisiana Kitchen",
+        "category": "Fried Chicken Joint",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1426 Fillmore St (at Ellis St.), San Francisco, CA 94115, United States"
+      }
+    }
+  },
+  {
+    "id": 129,
+    "name": "Panda Express",
+    "category": "Fast Food",
+    "address": "1480 Fillmore St, San Francisco",
+    "location": [
+      -122.4326874,
+      37.7831814
+    ],
+    "overture_meta": {
+      "confidence": 0.989,
+      "update_time": "2025-10-03",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Panda Express\" at this location",
+      "match": {
+        "fsq_id": "47f1994cf964a520904e1fe3",
+        "name": "Panda Express",
+        "category": "Chinese Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1480 Fillmore St (at O'Farrell St), San Francisco, CA 94115, United States"
+      }
+    }
+  },
+  {
+    "id": 130,
+    "name": "KFC - Kentucky Fried Chicken",
+    "category": "Fast Food",
+    "address": "1881 Geary Blvd, San Francisco",
+    "location": [
+      -122.43411,
+      37.7838
+    ],
+    "overture_meta": {
+      "confidence": 0.979,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "KFC"
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 131,
+    "name": "Subway",
+    "category": "Fast Food",
+    "address": "1500 Fillmore St, San Francisco",
+    "location": [
+      -122.4319941,
+      37.7835259
+    ],
+    "overture_meta": {
+      "confidence": 0.961,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Subway"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Subway\" at this location",
+      "match": {
+        "fsq_id": "4aff22e2f964a520c03422e3",
+        "name": "Subway",
+        "category": "Sandwich Spot",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1500 Fillmore St (at O'Farrell St.), San Francisco, CA 94115, United States"
+      }
+    }
+  },
+  {
+    "id": 132,
+    "name": "Burger King",
+    "category": "Fast Food",
+    "address": "1701 Fillmore St, San Francisco",
+    "location": [
+      -122.4333019,
+      37.7852132
+    ],
+    "overture_meta": {
+      "confidence": 0.975,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Burger King"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Burger King\" at this location",
+      "match": {
+        "fsq_id": "4ad94653f964a520851921e3",
+        "name": "Burger King",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1701 Fillmore St (at Post St), San Francisco, CA 94115, United States"
+      }
+    }
+  },
+  {
+    "id": 133,
+    "name": "Burger King",
+    "category": "Fast Food",
+    "address": "D-27 Fillmore St 1701, San Francisco",
+    "location": [
+      -122.4340836,
+      37.7900684
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2013-07-27",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "id": 134,
+    "name": "Domino's Pizza",
+    "category": "Fast Food",
+    "address": "5200 Geary Blvd, San Francisco",
+    "location": [
+      -122.4756652,
+      37.7805925
+    ],
+    "overture_meta": {
+      "confidence": 0.983,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Domino's Pizza"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Domino's Pizza\" at this location",
+      "match": {
+        "fsq_id": "4b8de79ef964a520de1233e3",
+        "name": "Domino's Pizza",
+        "category": "Pizzeria",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "5200 Geary Blvd Ste D (at 17th Ave), San Francisco, CA 94118, United States"
+      }
+    }
+  },
+  {
+    "id": 135,
+    "name": "Subway",
+    "category": "Fast Food",
+    "address": "5650 Geary Blvd, San Francisco",
+    "location": [
+      -122.4802604,
+      37.7804322
+    ],
+    "overture_meta": {
+      "confidence": 0.979,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Subway"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Subway\" at this location",
+      "match": {
+        "fsq_id": "4a60d3def964a5203fc11fe3",
+        "name": "Subway",
+        "category": "Sandwich Spot",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "5650 Geary Blvd (at 21st Ave), San Francisco, CA 94121, United States"
+      }
+    }
+  },
+  {
+    "id": 136,
+    "name": "Burger King",
+    "category": "Fast Food",
+    "address": "898 John Daly Blvd, San Francisco",
+    "location": [
+      -122.4846843,
+      37.7018784
+    ],
+    "overture_meta": {
+      "confidence": 0.972,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Burger King"
+    },
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Burger King\" at this location",
+      "match": {
+        "fsq_id": "4b674f96f964a52043472be3",
+        "name": "Burger King",
+        "category": "Fast Food Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "898 John Daly Blvd (at Lake Merced Blvd), Daly City, CA 94015, United States"
+      }
+    }
+  },
+  {
+    "id": 137,
+    "name": "SUBWAY",
+    "category": "Fast Food",
+    "address": "1901 Junipero Serra Blvd, San Francisco",
+    "location": [
+      -122.47029090329828,
+      37.702380547140606
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-03-21",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  }
+]

@@ -1,0 +1,162 @@
+[
+  {
+    "round": "R0_baseline",
+    "samples": 6367,
+    "avg_accuracy": 51.8,
+    "per_city": {
+      "SF": {
+        "correct": 38,
+        "total": 76,
+        "accuracy": 50.0
+      },
+      "LA": {
+        "correct": 39,
+        "total": 76,
+        "accuracy": 51.3
+      },
+      "Chicago": {
+        "correct": 38,
+        "total": 76,
+        "accuracy": 50.0
+      },
+      "Miami": {
+        "correct": 32,
+        "total": 68,
+        "accuracy": 47.1
+      },
+      "Philly": {
+        "correct": 67,
+        "total": 111,
+        "accuracy": 60.4
+      }
+    }
+  },
+  {
+    "round": "R1_+yelp",
+    "samples": 6655,
+    "avg_accuracy": 62.5,
+    "per_city": {
+      "SF": {
+        "correct": 38,
+        "total": 76,
+        "accuracy": 50.0
+      },
+      "LA": {
+        "correct": 38,
+        "total": 76,
+        "accuracy": 50.0
+      },
+      "Chicago": {
+        "correct": 38,
+        "total": 76,
+        "accuracy": 50.0
+      },
+      "Miami": {
+        "correct": 50,
+        "total": 68,
+        "accuracy": 73.5
+      },
+      "Philly": {
+        "correct": 99,
+        "total": 111,
+        "accuracy": 89.2
+      }
+    }
+  },
+  {
+    "round": "R2_+foursquare",
+    "samples": 6861,
+    "avg_accuracy": 56.2,
+    "per_city": {
+      "SF": {
+        "correct": 38,
+        "total": 76,
+        "accuracy": 50.0
+      },
+      "LA": {
+        "correct": 38,
+        "total": 76,
+        "accuracy": 50.0
+      },
+      "Chicago": {
+        "correct": 38,
+        "total": 76,
+        "accuracy": 50.0
+      },
+      "Miami": {
+        "correct": 45,
+        "total": 68,
+        "accuracy": 66.2
+      },
+      "Philly": {
+        "correct": 72,
+        "total": 111,
+        "accuracy": 64.9
+      }
+    }
+  },
+  {
+    "round": "R3_+website",
+    "samples": 7146,
+    "avg_accuracy": 54.1,
+    "per_city": {
+      "SF": {
+        "correct": 38,
+        "total": 76,
+        "accuracy": 50.0
+      },
+      "LA": {
+        "correct": 38,
+        "total": 76,
+        "accuracy": 50.0
+      },
+      "Chicago": {
+        "correct": 38,
+        "total": 76,
+        "accuracy": 50.0
+      },
+      "Miami": {
+        "correct": 41,
+        "total": 68,
+        "accuracy": 60.3
+      },
+      "Philly": {
+        "correct": 67,
+        "total": 111,
+        "accuracy": 60.4
+      }
+    }
+  },
+  {
+    "round": "R4_+metamodel",
+    "samples": 7369,
+    "avg_accuracy": 60.0,
+    "per_city": {
+      "SF": {
+        "correct": 46,
+        "total": 76,
+        "accuracy": 60.5
+      },
+      "LA": {
+        "correct": 38,
+        "total": 76,
+        "accuracy": 50.0
+      },
+      "Chicago": {
+        "correct": 40,
+        "total": 76,
+        "accuracy": 52.6
+      },
+      "Miami": {
+        "correct": 52,
+        "total": 68,
+        "accuracy": 76.5
+      },
+      "Philly": {
+        "correct": 67,
+        "total": 111,
+        "accuracy": 60.4
+      }
+    }
+  }
+]

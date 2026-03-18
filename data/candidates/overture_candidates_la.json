@@ -1,0 +1,3110 @@
+[
+  {
+    "name": "Cariaco",
+    "category": "Venezuelan Restaurant",
+    "address": "211 W Wilson Ave, Los Angeles",
+    "location": [
+      -118.25687797476989,
+      34.14822644215076
+    ],
+    "overture_meta": {
+      "confidence": 0.953,
+      "update_time": "2025-03-21",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.953,
+      "source_age_days": 343,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 99,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 1,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Cariaco\" at this location",
+      "match": {
+        "fsq_id": "5cd3871c625a66002c4d726f",
+        "name": "Cariaco",
+        "category": "Venezuelan Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "211 W Wilson Ave (N Orange St.), Glendale, CA 91203, United States"
+      }
+    }
+  },
+  {
+    "name": "Roxy Cleaners",
+    "category": "Laundry Services",
+    "address": "10925 Ventura Blvd, Los Angeles",
+    "location": [
+      -118.36793994126165,
+      34.14015007418497
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-11-19",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 100,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 90,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 2,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Roxy Cleaners\" at this location",
+      "match": {
+        "fsq_id": "4bc7c44514d79521591c68e9",
+        "name": "Roxy Cleaners",
+        "category": "Laundry Service",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "10925 Ventura Blvd, Studio City, CA 91604, United States"
+      }
+    }
+  },
+  {
+    "name": "Yogurtland",
+    "category": "Milk Bar",
+    "address": "3561-A W Century Blvd, Los Angeles",
+    "location": [
+      -118.333488,
+      33.94577
+    ],
+    "overture_meta": {
+      "confidence": 0.981,
+      "update_time": "2026-02-02",
+      "source": "AllThePlaces",
+      "brand": "Yogurtland"
+    },
+    "overture_raw": {
+      "overture_confidence": 0.981,
+      "source_age_days": 25,
+      "has_website": 1,
+      "has_phone": 0,
+      "has_brand": 1,
+      "address_complete": 1,
+      "category_encoded": 72,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 3,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Yogurtland\" at this location",
+      "match": {
+        "fsq_id": "53c1c2ac498ea554b4be70ea",
+        "name": "Yogurtland",
+        "category": "Frozen Yogurt Shop",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "3561 W Century Blvd, Inglewood, CA 90303, United States"
+      }
+    }
+  },
+  {
+    "name": "Saborcito Boricua",
+    "category": "Puerto Rican Restaurant",
+    "address": "16922 S Hobart Blvd, Los Angeles",
+    "location": [
+      -118.307743,
+      33.877775
+    ],
+    "overture_meta": {
+      "confidence": 0.639,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.639,
+      "source_age_days": 88,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 125,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 4,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Diane Schneider, Hairstylist",
+    "category": "Kids Hair Salon",
+    "address": "9740 Wilshire Blvd, Los Angeles",
+    "location": [
+      -118.408073,
+      34.06708
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2010-10-28",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 5601,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 159,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 5,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "A Votre Sante",
+    "category": "Health Food Restaurant",
+    "address": "13016 San Vicente Blvd, Los Angeles",
+    "location": [
+      -118.4903738,
+      34.0485109
+    ],
+    "overture_meta": {
+      "confidence": 0.988,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.988,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 97,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 6,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"A Votre Santé\" at this location",
+      "match": {
+        "fsq_id": "4b31295cf964a520790125e3",
+        "name": "A Votre Santé",
+        "category": "Café",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "13016 San Vicente Blvd (at 26th St), Los Angeles, CA 90049, United States"
+      }
+    }
+  },
+  {
+    "name": "Suehiro DTLA",
+    "category": "Japanese Restaurant",
+    "address": "400 S Main St, Los Angeles",
+    "location": [
+      -118.247295,
+      34.047825
+    ],
+    "overture_meta": {
+      "confidence": 0.96,
+      "update_time": "2026-01-10",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.96,
+      "source_age_days": 48,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 42,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 7,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Suehiro DTLA\" at this location",
+      "match": {
+        "fsq_id": "651e18f4e3308759c55cabfc",
+        "name": "Suehiro DTLA",
+        "category": "Japanese Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "400 S Main St (4th street), Los Angeles, CA 90013, United States"
+      }
+    }
+  },
+  {
+    "name": "Fluid Hair by Dana Michelle",
+    "category": "Hair Salon",
+    "address": "1200 Pacific Coast Hwy, Los Angeles",
+    "location": [
+      -118.3926922,
+      33.8642189
+    ],
+    "overture_meta": {
+      "confidence": 0.95,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.95,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 11,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 8,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Cal Specialty Restaurant Fixture",
+    "category": "Restaurant Equipment And Supply",
+    "address": "3630 San Fernando Rd, Los Angeles",
+    "location": [
+      -118.252484,
+      34.1215713
+    ],
+    "overture_meta": {
+      "confidence": 0.96,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.96,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 111,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 9,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Cal Specialty Restaurant Fixture\" at this location",
+      "match": {
+        "fsq_id": "4f3223e319836c91c7ba133f",
+        "name": "Cal Specialty Restaurant Fixture",
+        "category": "Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "3630 San Fernando Rd, Glendale, CA 91204, United States"
+      }
+    }
+  },
+  {
+    "name": "Kasturi",
+    "category": "Bangladeshi Restaurant",
+    "address": "3580 W 3rd St, Los Angeles",
+    "location": [
+      -118.2939253,
+      34.06889
+    ],
+    "overture_meta": {
+      "confidence": 0.969,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.969,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 137,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 10,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Kasturi\" at this location",
+      "match": {
+        "fsq_id": "64ab867eac35b8045ff8aa22",
+        "name": "Kasturi",
+        "category": "Indian Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "3580 W 3rd St, Los Angeles, CA 90020, United States"
+      }
+    }
+  },
+  {
+    "name": "Sweet Lady Jane",
+    "category": "Bakery",
+    "address": "203 N Larchmont Blvd, Los Angeles",
+    "location": [
+      -118.323948,
+      34.0748
+    ],
+    "overture_meta": {
+      "confidence": 0.989,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.989,
+      "source_age_days": 88,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 24,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 11,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Sweet Lady Jane\" at this location",
+      "match": {
+        "fsq_id": "6653ab78c8448e3f9523c9a8",
+        "name": "Sweet Lady Jane",
+        "category": "Bakery",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "203 N Larchmont Blvd, Los Angeles, CA 90004, United States"
+      }
+    }
+  },
+  {
+    "name": "Caldo Verde",
+    "category": "Portuguese Restaurant",
+    "address": "1100 S Broadway, Los Angeles",
+    "location": [
+      -118.2589999,
+      34.0394358
+    ],
+    "overture_meta": {
+      "confidence": 0.991,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.991,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 94,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 12,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Caldo Verde\" at this location",
+      "match": {
+        "fsq_id": "60cb696430cc47201e9825cb",
+        "name": "Caldo Verde",
+        "category": "Portuguese Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1100 S Broadway (11th St), Los Angeles, CA 90015, United States"
+      }
+    }
+  },
+  {
+    "name": "Hong Kong Express",
+    "category": "Asian Restaurant",
+    "address": "671 E University Dr, Los Angeles",
+    "location": [
+      -118.2646281,
+      33.8584702
+    ],
+    "overture_meta": {
+      "confidence": 0.957,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.957,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 56,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 13,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Hong Kong Express\" at this location",
+      "match": {
+        "fsq_id": "4bc105c274a9a593db2fd1f6",
+        "name": "Hong Kong Express",
+        "category": "Chinese Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "671 E University Dr (S. Avalon Blvd.), Carson, CA 90746, United States"
+      }
+    }
+  },
+  {
+    "name": "Old Man Bar",
+    "category": "Whiskey Bar",
+    "address": "12517 W Washington Blvd, Los Angeles",
+    "location": [
+      -118.4314686,
+      33.9970101
+    ],
+    "overture_meta": {
+      "confidence": 0.974,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.974,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 121,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 14,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Old Man Bar\" at this location",
+      "match": {
+        "fsq_id": "55b1b4dc498e43abeeeffc4e",
+        "name": "Old Man Bar",
+        "category": "Whisky Bar",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "12517 W Washington Blvd (at Boise Ave), Los Angeles, CA 90066, United States"
+      }
+    }
+  },
+  {
+    "name": "Matisse Restaurant",
+    "category": "American Restaurant",
+    "address": "14400 Hindry Ave, Los Angeles",
+    "location": [
+      -118.37146740026178,
+      33.90092795677204
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-08-19",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 192,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 17,
+      "fields_populated": 8,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 15,
+    "foursquare": {
+      "status": "mismatch",
+      "detail": "Foursquare shows \"Happy Hour at the Matisse Bar\" instead",
+      "match": {
+        "fsq_id": "4fd692cbe4b0d1cc3285a136",
+        "name": "Happy Hour at the Matisse Bar",
+        "category": "Hotel Bar",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "Hawthorne, CA 90250, United States"
+      }
+    }
+  },
+  {
+    "name": "Gravlax",
+    "category": "Scandinavian Restaurant",
+    "address": "12400 W Washington Blvd, Los Angeles",
+    "location": [
+      -118.42847146535907,
+      33.99692792511843
+    ],
+    "overture_meta": {
+      "confidence": 0.795,
+      "update_time": "2025-08-19",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.795,
+      "source_age_days": 192,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 155,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 16,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Rice DTLA",
+    "category": "Sushi Restaurant",
+    "address": "333 S Alameda St #310, Los Angeles",
+    "location": [
+      -118.238582,
+      34.045094
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-12-17",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 72,
+      "has_website": 1,
+      "has_phone": 0,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 33,
+      "fields_populated": 5,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 17,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Rice DTLA\" at this location",
+      "match": {
+        "fsq_id": "664929b64946886bba7c3274",
+        "name": "Rice DTLA",
+        "category": "Sushi Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "333 S Alameda St #310, Los Angeles, CA 90013, United States"
+      }
+    }
+  },
+  {
+    "name": "TikiFish",
+    "category": "Hawaiian Restaurant",
+    "address": "3300 Overland Ave, Los Angeles",
+    "location": [
+      -118.41344744859087,
+      34.02750944973499
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-08-19",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 192,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 65,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 18,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "N.Y. and C. Pizza",
+    "category": "Pizza Restaurant",
+    "address": "1120 Wilshire Blvd, Los Angeles",
+    "location": [
+      -118.49098,
+      34.02477946
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-08-19",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 192,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 6,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 19,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Giga Bite",
+    "category": "Hookah Bar",
+    "address": "11257 National Blvd, Los Angeles",
+    "location": [
+      -118.43068997894643,
+      34.0267526629304
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-07-04",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 238,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 63,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 20,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Giga Bite\" at this location",
+      "match": {
+        "fsq_id": "670ee684934c4dea1684c2cd",
+        "name": "Giga Bite",
+        "category": "Hookah Bar",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "11257 National Blvd, Los Angeles, CA 90064, United States"
+      }
+    }
+  },
+  {
+    "name": "Ktown Pho",
+    "category": "Vietnamese Restaurant",
+    "address": "974 S Western Ave, Los Angeles",
+    "location": [
+      -118.3089676,
+      34.0534868
+    ],
+    "overture_meta": {
+      "confidence": 0.963,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.963,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 66,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 21,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Ktown Pho\" at this location",
+      "match": {
+        "fsq_id": "58e4507f8b0ebb31a48dc1ae",
+        "name": "Ktown Pho",
+        "category": "Vietnamese Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "974 S Western Ave, Los Angeles, CA 90006, United States"
+      }
+    }
+  },
+  {
+    "name": "Mohawk Bend",
+    "category": "Beer Bar",
+    "address": "2141 W Sunset Blvd, Los Angeles",
+    "location": [
+      -118.264739990234,
+      34.0776824951172
+    ],
+    "overture_meta": {
+      "confidence": 0.384,
+      "update_time": "2017-10-04",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.384,
+      "source_age_days": 3068,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 85,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 22,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Metro Bike Mohawk Bend\" at this location",
+      "match": {
+        "fsq_id": "652c2cac876e9f071edafedc",
+        "name": "Metro Bike Mohawk Bend",
+        "category": "Bike Rental",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "Los Angeles, CA 90026, United States"
+      }
+    }
+  },
+  {
+    "name": "Town Hof And Thanks Chicken",
+    "category": "Korean Restaurant",
+    "address": "1144 S Western Ave, Los Angeles",
+    "location": [
+      -118.30852845946661,
+      34.04948547396871
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-12-17",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 72,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 68,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 23,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Town Hof And Thanks Chicken\" at this location",
+      "match": {
+        "fsq_id": "60b1a39b1a5c47058ed292e1",
+        "name": "Town Hof And Thanks Chicken",
+        "category": "Korean Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1144 S Western Ave, Los Angeles, CA 90006, United States"
+      }
+    }
+  },
+  {
+    "name": "Poets Club",
+    "category": "Hookah Bar",
+    "address": "3186 W 8th St, Los Angeles",
+    "location": [
+      -118.297426,
+      34.057542
+    ],
+    "overture_meta": {
+      "confidence": 0.639,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.639,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 63,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 24,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Dr. Ilya Bruce",
+    "category": "General Dentistry",
+    "address": "9808 Venice Blvd, Los Angeles",
+    "location": [
+      -118.3980346,
+      34.0235724
+    ],
+    "overture_meta": {
+      "confidence": 0.95,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.95,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 77,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 25,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Lala's Grill",
+    "category": "Argentine Restaurant",
+    "address": "11935 Ventura Blvd, Los Angeles",
+    "location": [
+      -118.3917713,
+      34.143393
+    ],
+    "overture_meta": {
+      "confidence": 0.979,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.979,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 53,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 26,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Lala's Argentine Grill\" at this location",
+      "match": {
+        "fsq_id": "4acba19ef964a520b3c420e3",
+        "name": "Lala's Argentine Grill",
+        "category": "Argentinian Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "11935 Ventura Blvd (btw Colfax & Radford), Studio City, CA 91604, United States"
+      }
+    }
+  },
+  {
+    "name": "Restaurante Managua",
+    "category": "Nicaraguan Restaurant",
+    "address": "2709 Santa Ana St, Los Angeles",
+    "location": [
+      -118.2219878,
+      33.964756
+    ],
+    "overture_meta": {
+      "confidence": 0.979,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.979,
+      "source_age_days": 88,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 134,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 27,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Restaurante Managua\" at this location",
+      "match": {
+        "fsq_id": "5664bc81498ea7aba156c21b",
+        "name": "Restaurante Managua",
+        "category": "Latin American Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2709 Santa Ana St, South Gate, CA 90280, United States"
+      }
+    }
+  },
+  {
+    "name": "BistroDK",
+    "category": "Asian Restaurant",
+    "address": "2020 Barranca St, Los Angeles",
+    "location": [
+      -118.2216957,
+      34.0766399
+    ],
+    "overture_meta": {
+      "confidence": 0.989,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.989,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 56,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 28,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Delta Pride Fish Grill & Southern Cuisine",
+    "category": "Fish And Chips Restaurant",
+    "address": "6081 Center Dr #217, Los Angeles",
+    "location": [
+      -118.39172925910522,
+      33.977250190648476
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-03-21",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 343,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 76,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 29,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "India Sweets & Spices",
+    "category": "Indian Grocery Store",
+    "address": "567 S Fairfax Ave, Los Angeles",
+    "location": [
+      -118.361714,
+      34.065504
+    ],
+    "overture_meta": {
+      "confidence": 0.947,
+      "update_time": "2025-09-17",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.947,
+      "source_age_days": 163,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 153,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 30,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"India Sweets & Spices\" at this location",
+      "match": {
+        "fsq_id": "645ef4abca8c502a9ee97145",
+        "name": "India Sweets & Spices",
+        "category": "Grocery Store",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "567 S Fairfax Ave (Lindenhurst Avenue), Los Angeles, CA 90036, United States"
+      }
+    }
+  },
+  {
+    "name": "Fat and Flour",
+    "category": "Bakery",
+    "address": "317 S Broadway, Los Angeles",
+    "location": [
+      -118.2486605,
+      34.0506214
+    ],
+    "overture_meta": {
+      "confidence": 0.937,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.937,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 24,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 31,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Fat & Flour\" at this location",
+      "match": {
+        "fsq_id": "5e17eeada88e0f00087c84d2",
+        "name": "Fat & Flour",
+        "category": "Bakery",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "317 S Broadway, Los Angeles, CA 90013, United States"
+      }
+    }
+  },
+  {
+    "name": "Chalet Edelweiss",
+    "category": "Swiss Restaurant",
+    "address": "8740 S Sepulveda Blvd, Los Angeles",
+    "location": [
+      -118.39587092399597,
+      33.957617408892865
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-03-20",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 344,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 167,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 32,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "todd reed",
+    "category": "Jewelry Store",
+    "address": "1511 Abbot Kinney Blvd, Los Angeles",
+    "location": [
+      -118.46422669430243,
+      33.99042653486091
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-08-22",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 189,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 19,
+      "fields_populated": 8,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 33,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"todd reed\" at this location",
+      "match": {
+        "fsq_id": "54277368498e4908f2d5e4a8",
+        "name": "todd reed",
+        "category": "Jewelry Store",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1511 Abbot Kinney Blvd, Los Angeles, CA 90291, United States"
+      }
+    }
+  },
+  {
+    "name": "Evil Cooks",
+    "category": "Taco Restaurant",
+    "address": "2461 N Eastern Ave, Los Angeles",
+    "location": [
+      -118.18057232633963,
+      34.075442972619065
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-03-15",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 349,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 78,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 34,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Evil Cooks\" at this location",
+      "match": {
+        "fsq_id": "5fb1cb2a53930630f770c737",
+        "name": "Evil Cooks",
+        "category": "Taco Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2461 N Eastern Ave (Klamath Pl), Los Angeles, CA 90032, United States"
+      }
+    }
+  },
+  {
+    "name": "Charleys Philly Steaks",
+    "category": "Cheesesteak Restaurant",
+    "address": "3650 W Martin Luther King Jr Blvd, Los Angeles",
+    "location": [
+      -118.3371386,
+      34.0107386
+    ],
+    "overture_meta": {
+      "confidence": 0.893,
+      "update_time": "2020-03-21",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.893,
+      "source_age_days": 2169,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 162,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 35,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Restaurant El Sinaloense",
+    "category": "Mexican Restaurant",
+    "address": "15503 Paramount Blvd, Los Angeles",
+    "location": [
+      -118.1604826,
+      33.8928389
+    ],
+    "overture_meta": {
+      "confidence": 0.95,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.95,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 14,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 36,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Restaurant El Sinaloense\" at this location",
+      "match": {
+        "fsq_id": "4da8a1f0a86e68edb7e1e741",
+        "name": "Restaurant El Sinaloense",
+        "category": "Mexican Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "15503 Paramount Blvd, Paramount, CA 90723, United States"
+      }
+    }
+  },
+  {
+    "name": "King Fish Market",
+    "category": "Seafood Restaurant",
+    "address": "6175 Atlantic Ave, Los Angeles",
+    "location": [
+      -118.1855685,
+      33.8667156
+    ],
+    "overture_meta": {
+      "confidence": 0.958,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.958,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 50,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 37,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Kings Fish\" at this location",
+      "match": {
+        "fsq_id": "4d3b7c521fc36dcbaf5572f5",
+        "name": "Kings Fish",
+        "category": "Fish and Chips Shop",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "6175 Atlantic Ave (at E. Harding St), Long Beach, CA 90805, United States"
+      }
+    }
+  },
+  {
+    "name": "El Rinconcito",
+    "category": "Sports Bar",
+    "address": "1633 E Florence Ave, Los Angeles",
+    "location": [
+      -118.24440607906907,
+      33.97498891383057
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-08-19",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 192,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 37,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 38,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Five Zero Five Salon",
+    "category": "Beauty Salon",
+    "address": "505 Pier Ave, Los Angeles",
+    "location": [
+      -118.3969521,
+      33.8644808
+    ],
+    "overture_meta": {
+      "confidence": 0.974,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.974,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 3,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 39,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Shekarchi Kabob",
+    "category": "Persian Iranian Restaurant",
+    "address": "2029 Westwood Blvd, Los Angeles",
+    "location": [
+      -118.4336041,
+      34.0459075
+    ],
+    "overture_meta": {
+      "confidence": 0.955,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.955,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 101,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 40,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Shekarchi Kabob\" at this location",
+      "match": {
+        "fsq_id": "5a7932a4a35dce2b9bbe0c3b",
+        "name": "Shekarchi Kabob",
+        "category": "Kebab Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2029 Westwood Blvd, Los Angeles, CA 90025, United States"
+      }
+    }
+  },
+  {
+    "name": "Louisiana Chicken & Fish Market",
+    "category": "Cajun And Creole Restaurant",
+    "address": "13257 Hawthorne Blvd, Los Angeles",
+    "location": [
+      -118.3528942,
+      33.9119001
+    ],
+    "overture_meta": {
+      "confidence": 0.438,
+      "update_time": "2020-07-10",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.438,
+      "source_age_days": 2058,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 126,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 41,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "THE garden Grille & Bar",
+    "category": "Theme Restaurant",
+    "address": "2410 Marine Ave, Los Angeles",
+    "location": [
+      -118.36659879053644,
+      33.89388840410589
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2023-11-11",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 839,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 82,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 42,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"THE garden Grille & Bar\" at this location",
+      "match": {
+        "fsq_id": "56fa0180498ee93d53b12608",
+        "name": "THE garden Grille & Bar",
+        "category": "Theme Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2410 Marine Ave, Redondo Beach, CA 90278, United States"
+      }
+    }
+  },
+  {
+    "name": "Big Dean's Ocean Front Cafe",
+    "category": "Bar And Grill Restaurant",
+    "address": "1615 Ocean Front Walk, Los Angeles",
+    "location": [
+      -118.4955896,
+      34.0102558
+    ],
+    "overture_meta": {
+      "confidence": 0.974,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.974,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 30,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 43,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Big Dean's Ocean Front Cafe\" at this location",
+      "match": {
+        "fsq_id": "3fd66200f964a52000f01ee3",
+        "name": "Big Dean's Ocean Front Cafe",
+        "category": "Beer Garden",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1615 Ocean Front Walk, Santa Monica, CA 90401, United States"
+      }
+    }
+  },
+  {
+    "name": "The Halal Guys",
+    "category": "Halal Restaurant",
+    "address": "8919 Santa Monica Blvd, Los Angeles",
+    "location": [
+      -118.384665,
+      34.084805
+    ],
+    "overture_meta": {
+      "confidence": 0.159,
+      "update_time": "2019-09-01",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.159,
+      "source_age_days": 2371,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 103,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 44,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Superior Grocers",
+    "category": "Grocery Store",
+    "address": "5824 S Vermont Ave, Los Angeles",
+    "location": [
+      -118.2897923,
+      33.9882246
+    ],
+    "overture_meta": {
+      "confidence": 0.96,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Superior Grocers"
+    },
+    "overture_raw": {
+      "overture_confidence": 0.96,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 1,
+      "address_complete": 1,
+      "category_encoded": 13,
+      "fields_populated": 8,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 45,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Superior Grocers\" at this location",
+      "match": {
+        "fsq_id": "4b730032f964a520d9942de3",
+        "name": "Superior Grocers",
+        "category": "Grocery Store",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "5824 S Vermont Ave (W. Slauson Ave), Los Angeles, CA 90044, United States"
+      }
+    }
+  },
+  {
+    "name": "Jaffa",
+    "category": "Israeli Restaurant",
+    "address": "8048 W 3rd St, Los Angeles",
+    "location": [
+      -118.36554457928051,
+      34.07185125575565
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-03-21",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 343,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 120,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 46,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Margaritaville",
+    "category": "Theme Restaurant",
+    "address": "100 Universal City Plz, Los Angeles",
+    "location": [
+      -118.3514251,
+      34.1370907
+    ],
+    "overture_meta": {
+      "confidence": 0.974,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Margaritaville"
+    },
+    "overture_raw": {
+      "overture_confidence": 0.974,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 1,
+      "address_complete": 1,
+      "category_encoded": 82,
+      "fields_populated": 8,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 47,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Margaritaville\" at this location",
+      "match": {
+        "fsq_id": "589e64dd7b43b46edfa61112",
+        "name": "Margaritaville",
+        "category": "Bar",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "100 Universal City Plaza, Universal City, CA 91608, United States"
+      }
+    }
+  },
+  {
+    "name": "Muma Kitchen",
+    "category": "Turkish Restaurant",
+    "address": "1942 Westwood Blvd, Los Angeles",
+    "location": [
+      -118.4347493,
+      34.0475791
+    ],
+    "overture_meta": {
+      "confidence": 0.989,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.989,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 148,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 48,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Muma Kitchen\" at this location",
+      "match": {
+        "fsq_id": "539bc293498ef219413bf685",
+        "name": "Muma Kitchen",
+        "category": "Mediterranean Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1942 Westwood Blvd, Los Angeles, CA 90025, United States"
+      }
+    }
+  },
+  {
+    "name": "Rockin' Bites",
+    "category": "Kosher Restaurant",
+    "address": "8326 Wilshire Blvd, Los Angeles",
+    "location": [
+      -118.3728334,
+      34.064051
+    ],
+    "overture_meta": {
+      "confidence": 0.938,
+      "update_time": "2023-09-01",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.938,
+      "source_age_days": 910,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 122,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 49,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Rockin' Bites\" at this location",
+      "match": {
+        "fsq_id": "650a2dbd9116ef1a1f1a4f6e",
+        "name": "Rockin' Bites",
+        "category": "Juice Bar",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "Beverly Hills, CA 90211, United States"
+      }
+    }
+  },
+  {
+    "name": "Cock'n Bull British Pub",
+    "category": "British Restaurant",
+    "address": "2947 Lincoln Blvd, Los Angeles",
+    "location": [
+      -118.472203,
+      34.004083
+    ],
+    "overture_meta": {
+      "confidence": 0.639,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.639,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 83,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 50,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "George's Greek Cafe",
+    "category": "Greek Restaurant",
+    "address": "445 S Figueroa St #102, Los Angeles",
+    "location": [
+      -118.25688289148155,
+      34.052479888640796
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-06-09",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 263,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 67,
+      "fields_populated": 8,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 51,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"George's Greek Cafe\" at this location",
+      "match": {
+        "fsq_id": "4b75b9d6f964a52013202ee3",
+        "name": "George's Greek Cafe",
+        "category": "Greek Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "445 S Figueroa St #102 (At 5th Ave), Los Angeles, CA 90071, United States"
+      }
+    }
+  },
+  {
+    "name": "Rumba Kitchen",
+    "category": "Puerto Rican Restaurant",
+    "address": "123 Astronaut Ellison Onizuka Street, #204, Los Angeles",
+    "location": [
+      -118.242338,
+      34.04988
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2024-12-13",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 441,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 125,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 52,
+    "foursquare": {
+      "status": "mismatch",
+      "detail": "Foursquare shows \"Mama Kim's Korean Kitchen\" instead",
+      "match": {
+        "fsq_id": "592dd42fdb1d811307186499",
+        "name": "Mama Kim's Korean Kitchen",
+        "category": "Korean Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "236 S Los Angeles St #G, Los Angeles, CA 90012, United States"
+      }
+    }
+  },
+  {
+    "name": "Boba Bear",
+    "category": "Hookah Bar",
+    "address": "1861 S Bundy Dr, Los Angeles",
+    "location": [
+      -118.45743697292816,
+      34.03526916031392
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2021-11-15",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 1565,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 63,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 53,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "The Dining Room",
+    "category": "Molecular Gastronomy Restaurant",
+    "address": "1301 Ocean Ave, Los Angeles",
+    "location": [
+      -118.4993532678971,
+      34.01528810906336
+    ],
+    "overture_meta": {
+      "confidence": 0.933,
+      "update_time": "2025-05-03",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.933,
+      "source_age_days": 300,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 64,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 54,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"The Dining Room\" at this location",
+      "match": {
+        "fsq_id": "4c0702bfb4aa0f47fb116562",
+        "name": "The Dining Room",
+        "category": "Molecular Gastronomy Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1301 Ocean Ave (at Arizona Ave), Santa Monica, CA 90401, United States"
+      }
+    }
+  },
+  {
+    "name": "Lemonade Restaurant",
+    "category": "Health Food Restaurant",
+    "address": "626 N Larchmont Blvd, Los Angeles",
+    "location": [
+      -118.3234993,
+      34.0824998
+    ],
+    "overture_meta": {
+      "confidence": 0.795,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": "Lemonade LA"
+    },
+    "overture_raw": {
+      "overture_confidence": 0.795,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 1,
+      "address_complete": 1,
+      "category_encoded": 97,
+      "fields_populated": 8,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 55,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Hermosa Saloon",
+    "category": "Bar",
+    "address": "211 Pacific Coast Hwy, Los Angeles",
+    "location": [
+      -118.3908626,
+      33.8566873
+    ],
+    "overture_meta": {
+      "confidence": 0.979,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.979,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 18,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 56,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Hermosa Saloon\" at this location",
+      "match": {
+        "fsq_id": "452fac91f964a5205b3b1fe3",
+        "name": "Hermosa Saloon",
+        "category": "Cocktail Bar",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "211 Pacific Coast Hwy (2nd St), Hermosa Beach, CA 90254, United States"
+      }
+    }
+  },
+  {
+    "name": "BIBIBOP Asian Grill",
+    "category": "Asian Fusion Restaurant",
+    "address": "6333 W Sunset Blvd, Los Angeles",
+    "location": [
+      -118.3274305,
+      34.0979944
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2019-06-18",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 2446,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 44,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 57,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "The Whisky Bar",
+    "category": "Cigar Bar",
+    "address": "225 N Canon Dr, Los Angeles",
+    "location": [
+      -118.3987511,
+      34.067965
+    ],
+    "overture_meta": {
+      "confidence": 0.932,
+      "update_time": "2025-09-03",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.932,
+      "source_age_days": 177,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 86,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 58,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"The Maybourne Bar\" at this location",
+      "match": {
+        "fsq_id": "61089421fef1063396c8da70",
+        "name": "The Maybourne Bar",
+        "category": "Bar",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "225 N Canon Dr, Beverly Hills, CA 90210, United States"
+      }
+    }
+  },
+  {
+    "name": "Delicious Pizza",
+    "category": "Beer Bar",
+    "address": "6601 W Sunset Blvd, Los Angeles",
+    "location": [
+      -118.3333365,
+      34.0982124
+    ],
+    "overture_meta": {
+      "confidence": 0.965,
+      "update_time": "2022-12-23",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.965,
+      "source_age_days": 1162,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 85,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 59,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Delicious Pizza\" at this location",
+      "match": {
+        "fsq_id": "580fb55938fab9399ba8cb70",
+        "name": "Delicious Pizza",
+        "category": "Pizzeria",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "6601 W Sunset Blvd, Los Angeles, CA 90028, United States"
+      }
+    }
+  },
+  {
+    "name": "Andine",
+    "category": "Clothing Store",
+    "address": "8159 W 3rd St, Los Angeles",
+    "location": [
+      -118.3673509,
+      34.0724077
+    ],
+    "overture_meta": {
+      "confidence": 0.95,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.95,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 21,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 60,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Andine\" at this location",
+      "match": {
+        "fsq_id": "2ede6241061b71022c387b2e",
+        "name": "Andine",
+        "category": "Clothing Store",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "8159 W 3rd St, Los Angeles, CA 90048, United States"
+      }
+    }
+  },
+  {
+    "name": "Island Boy Cafe",
+    "category": "Caribbean Restaurant",
+    "address": "5025 W Pico Blvd, Los Angeles",
+    "location": [
+      -118.3467337,
+      34.0479491
+    ],
+    "overture_meta": {
+      "confidence": 0.917,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.917,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 70,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 61,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Island Boy Cafe\" at this location",
+      "match": {
+        "fsq_id": "61c0d433567861015a3a0f73",
+        "name": "Island Boy Cafe",
+        "category": "Caribbean Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "5025 W Pico Blvd, Los Angeles, CA 90019, United States"
+      }
+    }
+  },
+  {
+    "name": "Elegant Barber & Salon",
+    "category": "Hair Salon",
+    "address": "628 N Vermont Ave, Los Angeles",
+    "location": [
+      -118.2913106,
+      34.0826759
+    ],
+    "overture_meta": {
+      "confidence": 0.95,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.95,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 11,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 62,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Natas Pastries, LA's Portuguese Bakery & Cafe",
+    "category": "Portuguese Restaurant",
+    "address": "13317 Ventura Blvd, Los Angeles",
+    "location": [
+      -118.4231319,
+      34.1468508
+    ],
+    "overture_meta": {
+      "confidence": 0.984,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.984,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 94,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 63,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Natas Portuguese Bakery\" at this location",
+      "match": {
+        "fsq_id": "4a7de0e3f964a5200af01fe3",
+        "name": "Natas Portuguese Bakery",
+        "category": "Bakery",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "13317 Ventura Blvd (at Fulton Ave), Sherman Oaks, CA 91423, United States"
+      }
+    }
+  },
+  {
+    "name": "LA-Flowers",
+    "category": "Flowers And Gifts Shop",
+    "address": "630 S Los Angeles St, Los Angeles",
+    "location": [
+      -118.24959,
+      34.0405
+    ],
+    "overture_meta": {
+      "confidence": 0.323,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.323,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 9,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 64,
+    "foursquare": {
+      "status": "mismatch",
+      "detail": "Foursquare shows \"Zavala Wholesale Flowers\" instead",
+      "match": {
+        "fsq_id": "abca032959684c76ec81afac",
+        "name": "Zavala Wholesale Flowers",
+        "category": "Flower Store",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "754 Wall St, Los Angeles, CA 90014, United States"
+      }
+    }
+  },
+  {
+    "name": "The Guild",
+    "category": "American Restaurant",
+    "address": "8741 W Sunset Blvd, Los Angeles",
+    "location": [
+      -118.38177768078302,
+      34.09170138085017
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-08-19",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 192,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 17,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 65,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"The Mortgage Guy, Inc\" at this location",
+      "match": {
+        "fsq_id": "584edc8fef787f341531cff3",
+        "name": "The Mortgage Guy, Inc",
+        "category": "Bank",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "West Hollywood, CA 90069, United States"
+      }
+    }
+  },
+  {
+    "name": "Soups Cute",
+    "category": "Soup Restaurant",
+    "address": "7533 W Sunset Blvd, Los Angeles",
+    "location": [
+      -118.3538421,
+      34.0982404
+    ],
+    "overture_meta": {
+      "confidence": 0.95,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.95,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 127,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 66,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Charlie's Fixtures",
+    "category": "Restaurant Equipment And Supply",
+    "address": "2251 Venice Blvd, Los Angeles",
+    "location": [
+      -118.3079798,
+      34.0437004
+    ],
+    "overture_meta": {
+      "confidence": 0.936,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.936,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 111,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 67,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Charlie's Fixtures inc.\" at this location",
+      "match": {
+        "fsq_id": "49e1122bf964a52091611fe3",
+        "name": "Charlie's Fixtures inc.",
+        "category": "Hardware Store",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2251 Venice Blvd, Los Angeles, CA 90006, United States"
+      }
+    }
+  },
+  {
+    "name": "The Chicken Shack",
+    "category": "Peruvian Restaurant",
+    "address": "16711 Hawthorne Blvd, Los Angeles",
+    "location": [
+      -118.3527066,
+      33.8788533
+    ],
+    "overture_meta": {
+      "confidence": 0.969,
+      "update_time": "2023-03-28",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.969,
+      "source_age_days": 1067,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 74,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 68,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"The Chicken Shack\" at this location",
+      "match": {
+        "fsq_id": "6940834cb9c5366b7b30fea9",
+        "name": "The Chicken Shack",
+        "category": "South American Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "16711 Hawthorne Blvd, Lawndale, CA 90260, United States"
+      }
+    }
+  },
+  {
+    "name": "Carnival Restaurant",
+    "category": "Lebanese Restaurant",
+    "address": "4356 Woodman Ave, Los Angeles",
+    "location": [
+      -118.4306017,
+      34.1497316
+    ],
+    "overture_meta": {
+      "confidence": 0.97,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.97,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 89,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 69,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Carnival Restaurant\" at this location",
+      "match": {
+        "fsq_id": "4a35ac6cf964a520489d1fe3",
+        "name": "Carnival Restaurant",
+        "category": "Middle Eastern Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "4356 Woodman Ave (at Moorpark St), Sherman Oaks, CA 91423, United States"
+      }
+    }
+  },
+  {
+    "name": "Public Kitchen & Bar",
+    "category": "Hotel Bar",
+    "address": "7000 Hollywood Blvd, Los Angeles",
+    "location": [
+      -118.34156086742924,
+      34.101162751867435
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-04-23",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 310,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 119,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 70,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Big Wok Mongolian BBQ",
+    "category": "Mongolian Restaurant",
+    "address": "926 N Sepulveda Blvd, Los Angeles",
+    "location": [
+      -118.3957914,
+      33.8854644
+    ],
+    "overture_meta": {
+      "confidence": 0.99,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.99,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 149,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 71,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Ye Olde King's Head",
+    "category": "British Restaurant",
+    "address": "116 Santa Monica Blvd, Los Angeles",
+    "location": [
+      -118.4972854,
+      34.014595
+    ],
+    "overture_meta": {
+      "confidence": 0.993,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.993,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 83,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 72,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Ye Olde King's Head\" at this location",
+      "match": {
+        "fsq_id": "41059b00f964a5207f0b1fe3",
+        "name": "Ye Olde King's Head",
+        "category": "Pub",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "116 Santa Monica Blvd (btwn Ocean Ave. & 2nd St.), Santa Monica, CA 90401, United States"
+      }
+    }
+  },
+  {
+    "name": "Dar Maghreb",
+    "category": "Moroccan Restaurant",
+    "address": "7651 W Sunset Blvd, Los Angeles",
+    "location": [
+      -118.35601948084401,
+      34.09825021280512
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-07-03",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 239,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 92,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 73,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Dar Maghreb\" at this location",
+      "match": {
+        "fsq_id": "d144281655114c8062e6024f",
+        "name": "Dar Maghreb",
+        "category": "Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "7651 W Sunset Blvd, West Hollywood, CA 90046, United States"
+      }
+    }
+  },
+  {
+    "name": "Mer Yerevan Restaurant",
+    "category": "Armenian Restaurant",
+    "address": "1351 E Colorado St, Los Angeles",
+    "location": [
+      -118.2355897,
+      34.1430145
+    ],
+    "overture_meta": {
+      "confidence": 0.95,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.95,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 88,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 74,
+    "foursquare": {
+      "status": "mismatch",
+      "detail": "Foursquare shows \"Old Yerevan Restaurant\" instead",
+      "match": {
+        "fsq_id": "4f32ab2e19836c91c7ee2978",
+        "name": "Old Yerevan Restaurant",
+        "category": "Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1351 E Colorado St, Glendale, CA 91205, United States"
+      }
+    }
+  },
+  {
+    "name": "Crossings",
+    "category": "American Restaurant",
+    "address": "1010 Mission St, Los Angeles",
+    "location": [
+      -118.15657902372968,
+      34.11591354348763
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-08-19",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 192,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 17,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 75,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Cudahy Family Dental Group",
+    "category": "Dentist",
+    "address": "2926 E Cesar E Chavez Ave, Los Angeles",
+    "location": [
+      -118.20078,
+      34.0435224
+    ],
+    "overture_meta": {
+      "confidence": 0.95,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.95,
+      "source_age_days": 88,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 2,
+      "fields_populated": 7,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 76,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "The Halal Guys",
+    "category": "Halal Restaurant",
+    "address": "510 W 7th St, Los Angeles",
+    "location": [
+      -118.2558472,
+      34.0468284
+    ],
+    "overture_meta": {
+      "confidence": 0.171,
+      "update_time": "2018-10-30",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.171,
+      "source_age_days": 2677,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 103,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 77,
+    "foursquare": {
+      "status": "no_data",
+      "detail": "Foursquare has no results nearby"
+    }
+  },
+  {
+    "name": "Beachcutters Salon",
+    "category": "Kids Hair Salon",
+    "address": "2219 1/2 Artesia Blvd, Los Angeles",
+    "location": [
+      -118.37201,
+      33.87292
+    ],
+    "overture_meta": {
+      "confidence": 0.947,
+      "update_time": "2018-12-27",
+      "source": "Microsoft",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.947,
+      "source_age_days": 2619,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 159,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 78,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Beachcutters Salon\" at this location",
+      "match": {
+        "fsq_id": "54efb387498e6bc708894410",
+        "name": "Beachcutters Salon",
+        "category": "Hair Salon",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "2219 Artesia Blvd, Redondo Beach, CA 90278, United States"
+      }
+    }
+  },
+  {
+    "name": "Nathan's Kosherland",
+    "category": "Jewish Restaurant",
+    "address": "1636 Westwood Blvd, Los Angeles",
+    "location": [
+      -118.43891073586248,
+      34.05239370944946
+    ],
+    "overture_meta": {
+      "confidence": 0.77,
+      "update_time": "2025-03-21",
+      "source": "Foursquare",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.77,
+      "source_age_days": 343,
+      "has_website": 1,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 150,
+      "fields_populated": 8,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 79,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Nathan's Kosherland\" at this location",
+      "match": {
+        "fsq_id": "4b5cc8e6f964a520ea4329e3",
+        "name": "Nathan's Kosherland",
+        "category": "Jewish Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "1636 Westwood Blvd (btwn Massachusetts & Holman), Los Angeles, CA 90024, United States"
+      }
+    }
+  },
+  {
+    "name": "Pork Belly Filipino Kitchen",
+    "category": "Filipino Restaurant",
+    "address": "15339 Hawthorne Blvd, Los Angeles",
+    "location": [
+      -118.353275,
+      33.8911121
+    ],
+    "overture_meta": {
+      "confidence": 0.95,
+      "update_time": "2025-12-01",
+      "source": "meta",
+      "brand": null
+    },
+    "overture_raw": {
+      "overture_confidence": 0.95,
+      "source_age_days": 88,
+      "has_website": 0,
+      "has_phone": 1,
+      "has_brand": 0,
+      "address_complete": 1,
+      "category_encoded": 58,
+      "fields_populated": 6,
+      "ocr_text_match": 0,
+      "image_age_days": 0,
+      "num_images": 0
+    },
+    "id": 80,
+    "foursquare": {
+      "status": "verified",
+      "detail": "Foursquare confirms \"Pork Belly Filipino Kitchen\" at this location",
+      "match": {
+        "fsq_id": "65830e8fdd622b243026147b",
+        "name": "Pork Belly Filipino Kitchen",
+        "category": "Filipino Restaurant",
+        "closed": false,
+        "website": null,
+        "phone": null,
+        "address": "4415 W 154th St (Hawthore Blvd), Lawndale, CA 90260, United States"
+      }
+    }
+  }
+]
