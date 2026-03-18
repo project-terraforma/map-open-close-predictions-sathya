@@ -325,21 +325,35 @@ def fresh_ground_truth(city: str, target_open: int = 25, target_closed: int = 25
     if deleted:
         log.info("Cleared %d old labels for %s", deleted, key)
 
+    # Categories to skip — solo practitioners and niche businesses with
+    # little web presence. These are nearly impossible to verify via web crawling.
+    SKIP_CATEGORIES = [
+        "doctor", "dentist", "lawyer", "attorney", "chiropract",
+        "optician", "optometrist", "therapist", "psycholog",
+        "psychiatr", "counselor", "notary", "accountant", "tax_prep",
+        "insurance_agent", "real_estate_agent", "tutor", "driving_school",
+        "funeral", "cemetery",
+    ]
+    skip_pattern = "|".join(SKIP_CATEGORIES)
+
     # Get a large random sample from overture.places in this city
     # These ALL have full metadata (confidence, sources, websites, etc.)
+    # Skip solo practitioners / hard-to-verify categories
     with engine.connect() as conn:
-        candidates = conn.execute(text("""
-            SELECT id, name, latitude, longitude, website
+        candidates = conn.execute(text(f"""
+            SELECT id, name, latitude, longitude, website, category
             FROM overture.places
             WHERE latitude BETWEEN :min_lat AND :max_lat
               AND longitude BETWEEN :min_lon AND :max_lon
               AND name IS NOT NULL
               AND name != ''
+              AND (category IS NULL OR NOT category ~* :skip_pattern)
             ORDER BY random()
             LIMIT :n
         """), {
             "min_lat": bbox["min_lat"], "max_lat": bbox["max_lat"],
             "min_lon": bbox["min_lon"], "max_lon": bbox["max_lon"],
+            "skip_pattern": skip_pattern,
             "n": (target_open + target_closed) * 8,  # oversample
         }).fetchall()
 
@@ -350,7 +364,7 @@ def fresh_ground_truth(city: str, target_open: int = 25, target_closed: int = 25
     api_calls = 0
     suspicious_count = 0
 
-    for ov_id, name, lat, lon, website in candidates:
+    for ov_id, name, lat, lon, website, category in candidates:
         if found_open >= target_open and found_closed >= target_closed:
             break
 
@@ -366,8 +380,12 @@ def fresh_ground_truth(city: str, target_open: int = 25, target_closed: int = 25
         # Only accept definitive labels — skip UNKNOWN (not found on Google)
         if status == "OPERATIONAL":
             is_open = True
-        elif status in ("CLOSED_PERMANENTLY", "CLOSED_TEMPORARILY"):
+        elif status == "CLOSED_PERMANENTLY":
             is_open = False
+        elif status == "CLOSED_TEMPORARILY":
+            log.info("  [%d] %s → TEMPORARILY CLOSED (skipping)", api_calls, name)
+            time.sleep(0.2)
+            continue
         else:
             # UNKNOWN = Google couldn't find it. NOT evidence of closure, skip.
             log.info("  [%d] %s → %s (skipping — not a real business match)", api_calls, name, status)

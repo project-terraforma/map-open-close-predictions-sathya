@@ -21,20 +21,21 @@ class EnsembleClassifier:
         self.threshold = threshold
 
         self.cat_model = CatBoostClassifier(
-            iterations=1000,
-            depth=6,
-            learning_rate=0.05,
-            l2_leaf_reg=5,
+            iterations=800,
+            depth=5,
+            learning_rate=0.04,
+            l2_leaf_reg=7,
             random_seed=42,
             verbose=0,
             auto_class_weights="Balanced",
         )
 
         self.lgb_model = LGBMClassifier(
-            n_estimators=1500,
-            max_depth=8,
-            learning_rate=0.05,
-            num_leaves=80,
+            n_estimators=800,
+            max_depth=5,
+            learning_rate=0.04,
+            num_leaves=31,
+            min_child_samples=20,
             subsample=0.8,
             colsample_bytree=0.8,
             class_weight="balanced",

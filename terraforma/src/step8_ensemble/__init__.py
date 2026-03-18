@@ -114,12 +114,13 @@ def _load_jan_snapshot(city: str):
     return lookup
 
 
-def model_signal(overture_id: str, city: str = "san_francisco") -> dict:
+def model_signal(overture_id: str, city: str = "san_francisco",
+                 osm_result: dict = None, website_alive: bool = None) -> dict:
     """Run the CatBoost+LightGBM ensemble on a single Overture place.
 
-    Uses current Overture snapshot features only (no delta comparison).
-    The model was trained on current-snapshot features: confidence, sources,
-    digital presence, recency/staleness, brand, category.
+    Uses current Overture features + cross-source features (OSM, website liveness).
+    Cross-source features are passed in from the ensemble pipeline which computes
+    them anyway — this way the model can learn from all signals together.
     """
     import json as _json
     from src.step4_classifier import extract_features
@@ -154,7 +155,21 @@ def model_signal(overture_id: str, city: str = "san_francisco") -> dict:
                 if val is not None:
                     serialized = _json.dumps(val) if not isinstance(val, str) else val
                     record[key] = serialized
-                    record[f"base_{key}"] = serialized  # base = current (no old snapshot)
+                    record[f"base_{key}"] = serialized
+
+    # Add cross-source features
+    if website_alive is not None:
+        record["website_alive"] = int(website_alive)
+    if osm_result:
+        record["osm_found"] = int(osm_result.get("osm_found", False))
+        record["osm_disused"] = int(osm_result.get("osm_disused", False))
+        record["osm_replaced"] = int(
+            not osm_result.get("osm_found", False) and
+            osm_result.get("osm_building", False) and
+            osm_result.get("osm_businesses_here", 0) > 0
+        )
+        record["osm_building"] = int(osm_result.get("osm_building", False))
+        record["osm_businesses_here"] = osm_result.get("osm_businesses_here", 0)
 
     df = pd.DataFrame([record])
     feat = extract_features(df)
@@ -303,10 +318,10 @@ def osm_signal(name: str, lat: float, lon: float) -> dict:
 
     n_businesses_here = len(other_businesses) + (1 if best_match else 0) + len(disused_matches)
 
-    # Scoring logic:
-    # 1. Found our business, active → strong open signal
+    # Scoring logic — ONLY care about found=True cases:
+    # 1. Found our business, active → boost (strong open signal)
     if best_match:
-        score = 0.9 if best_match["dist"] < 25 else 0.75
+        score = 0.85 if best_match["dist"] < 25 else 0.70
         return {
             "osm_score": score,
             "osm_found": True,
@@ -316,10 +331,10 @@ def osm_signal(name: str, lat: float, lon: float) -> dict:
             "osm_businesses_here": n_businesses_here,
         }
 
-    # 2. Found our business but marked disused → strong closed signal
+    # 2. Found our business but marked disused → penalize (strong closed signal)
     if disused_matches:
         return {
-            "osm_score": 0.08,
+            "osm_score": 0.10,
             "osm_found": True,
             "osm_name": disused_matches[0]["osm_name"],
             "osm_disused": True,
@@ -327,36 +342,11 @@ def osm_signal(name: str, lat: float, lon: float) -> dict:
             "osm_businesses_here": n_businesses_here,
         }
 
-    # 3. Building exists with OTHER businesses but not ours → likely replaced/closed
-    #    This is the only "not found" case that's actually a negative signal
-    if has_building and other_businesses:
-        nearby = [b for b in other_businesses if b["dist"] < 15]
-        if nearby:
-            score = 0.30  # different business at exact same storefront → likely closed
-            return {
-                "osm_score": score,
-                "osm_found": False,
-                "osm_name": f"replaced: {nearby[0]['name']} ({nearby[0]['type']})",
-                "osm_disused": False,
-                "osm_building": True,
-                "osm_businesses_here": n_businesses_here,
-            }
-
-    # 4. Building exists but no businesses listed → neutral (OSM just doesn't have detail)
-    if has_building:
-        return {
-            "osm_score": 0.50,
-            "osm_found": False,
-            "osm_name": None,
-            "osm_disused": False,
-            "osm_building": True,
-            "osm_businesses_here": 0,
-        }
-
-    # 5. No building, no POIs → neutral (not in OSM doesn't mean closed)
-    #    IMPORTANT: must be 0.50 neutral — absence of OSM data is NOT evidence of closure
-    return {"osm_score": 0.50, "osm_found": False, "osm_name": None,
-            "osm_disused": False, "osm_building": False, "osm_businesses_here": 0}
+    # 3. NOT found in OSM → completely neutral. Not being in OSM means nothing.
+    #    OSM coverage is sparse — most real businesses aren't in it.
+    return {"osm_score": None, "osm_found": False, "osm_name": None,
+            "osm_disused": False, "osm_building": has_building,
+            "osm_businesses_here": n_businesses_here}
 
 
 # ══════════════════════════════════════════════════════════════════════
@@ -383,14 +373,13 @@ def _check_website(url: str) -> dict:
 
 
 def _brave_search(name: str, city_label: str) -> list[dict]:
-    """Run targeted Brave searches to get 3-5 high-signal pages.
+    """5 targeted Brave queries maximizing signal diversity.
 
-    Priority sources (in order):
-      1. Google Maps listing
-      2. Yelp page
-      3. TripAdvisor page
-      4. Official website / general result
-      5. News or directory
+    1. General listing — official site, Google Maps, directories
+    2. Review platforms — Yelp, TripAdvisor (most reliable open/closed)
+    3. Closure signals — explicit "permanently closed" mentions
+    4. Social/directories — Facebook, Instagram, local listings
+    5. News — recent articles about the business
     """
     if not BRAVE_SEARCH_KEY:
         return []
@@ -408,137 +397,118 @@ def _brave_search(name: str, city_label: str) -> list[dict]:
 
     from concurrent.futures import ThreadPoolExecutor
 
-    # Query 1: Find the business's own page (official website, Facebook, etc.)
     q1 = f'"{name}" {city_label}'
-    # Query 2: Yelp + TripAdvisor (most reliable open/closed status sources)
-    q2 = f'"{name}" {city_label} site:yelp.com OR site:tripadvisor.com'
-    # Query 3: Address-specific search for open/closed status
-    q3 = f'"{name}" {city_label} "permanently closed" OR "closed" OR "open" OR "hours"'
+    q2 = f'"{name}" {city_label} site:yelp.com OR site:tripadvisor.com OR site:google.com/maps'
+    q3 = f'"{name}" {city_label} "permanently closed" OR "out of business" OR "shut down"'
+    q4 = f'"{name}" {city_label} site:facebook.com OR site:instagram.com OR hours OR address'
+    q5 = f'"{name}" {city_label} closed OR opening OR relocated OR new location'
 
-    # Run all 3 queries in parallel
-    with ThreadPoolExecutor(max_workers=3) as pool:
-        f1 = pool.submit(_search, q1, 3)
-        f2 = pool.submit(_search, q2, 3)
-        f3 = pool.submit(_search, q3, 3)
-        all_results = f1.result() + f2.result() + f3.result()
+    with ThreadPoolExecutor(max_workers=5) as pool:
+        futures = [
+            pool.submit(_search, q1, 3),
+            pool.submit(_search, q2, 3),
+            pool.submit(_search, q3, 2),
+            pool.submit(_search, q4, 2),
+            pool.submit(_search, q5, 2),
+        ]
+        all_results = []
+        for f in futures:
+            all_results.extend(f.result())
 
-    # Deduplicate by URL, prioritize review sites first
-    PRIORITY_DOMAINS = ["yelp.com", "tripadvisor.com"]
+    # Deduplicate by URL, prioritize review sites
+    REVIEW_DOMAINS = ["yelp.com", "tripadvisor.com", "google.com/maps"]
     seen = set()
-    priority = []
+    review = []
+    social = []
     others = []
     for r in all_results:
         url = r.get("url", "")
         if url in seen:
             continue
         seen.add(url)
-        if any(d in url for d in PRIORITY_DOMAINS):
-            priority.append(r)
+        if any(d in url for d in REVIEW_DOMAINS):
+            review.append(r)
+        elif any(d in url for d in ["facebook.com", "instagram.com"]):
+            social.append(r)
         else:
             others.append(r)
 
-    # Return priority sources first, then general, capped at 8 total
-    return (priority + others)[:8]
+    return (review + social + others)[:10]
 
 
 def _groq_judge(name: str, city: str, snippets: list[dict],
                 website_alive: bool | None) -> dict:
-    """Send search snippets to Groq LLM for open/closed reasoning."""
-    if not GROQ_API_KEY or not snippets:
-        return {"ai_judgment": "UNCERTAIN", "ai_confidence": 0}
+    """Evidence-based reasoning via Groq LLM. Returns structured verdict."""
+    if not GROQ_API_KEY:
+        return {"ai_status": "UNKNOWN", "ai_confidence": 0,
+                "ai_evidence": [], "ai_reasoning": ""}
 
     from groq import Groq
     client = Groq(api_key=GROQ_API_KEY)
 
-    # Label each source by type for the AI
-    def _source_type(url: str) -> str:
-        if "yelp.com" in url: return "Yelp"
-        if "google.com/maps" in url: return "Google Maps"
-        if "tripadvisor.com" in url: return "TripAdvisor"
-        if "bbb.org" in url: return "BBB Directory"
-        if "facebook.com" in url: return "Facebook"
-        if "instagram.com" in url: return "Instagram"
-        return "General Web"
-
     context = "\n".join(
-        f"{i}. [{_source_type(s.get('url', ''))}] {s.get('title', '')}\n"
-        f"   URL: {s.get('url', '')}\n"
+        f"{i}. [{s.get('url', '')}]\n"
+        f"   Title: {s.get('title', '')}\n"
         f"   Snippet: {s.get('description', '')}"
-        for i, s in enumerate(snippets[:6], 1)
+        for i, s in enumerate(snippets[:8], 1)
     )
 
-    web_status = ("website is LIVE" if website_alive is True
-                  else "website is DOWN/EXPIRED" if website_alive is False
-                  else "no website listed")
+    web_status = ("LIVE (responds with 200)" if website_alive is True
+                  else "DOWN or EXPIRED" if website_alive is False
+                  else "no website on file")
 
     from datetime import date
     today = date.today().isoformat()
 
-    prompt = f"""You are an AI system that determines whether a business is currently operating.
+    prompt = f"""Determine whether this business is currently operating or permanently closed.
 
-You will be given web search results, page snippets, and extracted text from multiple websites about a business. Your task is to analyze this evidence and determine the most likely operational status.
+BUSINESS: "{name}"
+CITY: {city}
+WEBSITE STATUS: {web_status}
+DATE: {today}
 
-Business Name: "{name}"
-Location: {city}
-Official website status: {web_status}
-Today's date: {today}
+SEARCH RESULTS:
+{context if context.strip() else "(no search results found)"}
 
-Web Evidence:
-{context}
+TASK: Extract evidence from EACH search result. Then classify.
 
-Instructions:
-Analyze the evidence and determine whether the business is:
-- OPEN (currently operating)
-- CLOSED (permanently closed, shut down, or out of business)
-- UNCERTAIN (not enough evidence to decide)
+STEP 1 — For each result, extract ONE of these signals:
+  CLOSURE: "permanently closed", "out of business", "shut down", Yelp/TripAdvisor CLOSED label
+  ACTIVE: recent reviews (last 12 months), current hours, active social media, booking available
+  REPLACED: different business now at same address
+  STALE: old directory listing, no dates, generic info (IGNORE these)
+  IRRELEVANT: wrong business, different location (IGNORE these)
 
-Evaluate all evidence carefully and weigh the strength of different signals.
+STEP 2 — Count your signals:
+  How many CLOSURE signals? How many ACTIVE signals? How many REPLACED?
 
-Strong PERMANENT CLOSURE signals:
-* Yelp, TripAdvisor, or Google explicitly says "Permanently Closed" or "CLOSED" in the title or snippet
-* News articles confirming shutdown or closure
-* Government business registries showing the business as inactive or dissolved
-* Official announcements from the business about closing
-* The business's website domain has expired or shows a parked/for-sale page
+STEP 3 — Apply these rules IN ORDER:
+  1. If Yelp/TripAdvisor/Google title contains "CLOSED" AND other sources also confirm closure → PERMANENTLY_CLOSED (confidence 85-95)
+  2. If Yelp title says "CLOSED" but the business has a LIVE website with current content OR recent social media activity → check carefully. The Yelp CLOSED label might be for a different location or outdated. If other evidence shows activity, say OPEN (confidence 60-70).
+  3. If 2+ independent sources say closed → PERMANENTLY_CLOSED (confidence 80-90)
+  4. If a news article confirms closure → PERMANENTLY_CLOSED (confidence 75-90)
+  5. If a different business is now at the same address → LIKELY_CLOSED (confidence 70-80)
+  6. If recent reviews describe visits within 12 months → OPEN (confidence 75-90)
+  7. If website has current content (menus, prices, dates from this year) → OPEN (confidence 60-75)
+  8. If Yelp/TripAdvisor page exists with hours and NO closed label → OPEN (confidence 55-70)
+  9. If only stale directory listings found → UNKNOWN (confidence 30-40)
+  10. If no results found at all → UNKNOWN (confidence 20-30)
 
-Moderate closure signals:
-* Multiple directories indicating the business is closed
-* Social media accounts inactive for 2+ years
-* Recent reviews (past 12 months) mentioning "this place is closed" or "no longer open"
-* A different business name now appears at the same address
+CRITICAL RULES:
+- Do NOT count directory sites (MapQuest, Manta, YellowPages, Birdeye, Chamberofcommerce) as evidence of ANYTHING. They persist for years after closure.
+- A live website ALONE is weak evidence. Many closed businesses keep websites up.
+- A single Yelp "CLOSED" label is NOT conclusive — Yelp sometimes tags the wrong location or has stale data. Look for corroborating evidence before saying PERMANENTLY_CLOSED.
+- Do NOT contradict yourself. If evidence is unreliable, do not use it.
+- Only use facts from the search results. Do not hallucinate.
 
-Strong OPEN signals:
-* Recent reviews (within last 12 months) describing an actual visit experience
-* Listed business hours on Yelp/TripAdvisor WITHOUT a "closed" label
-* Active website with current content, menus, prices, or booking functionality
-* Reservation or online ordering links that are functional
-* Recent social media posts showing business activity
-
-Review signals (important):
-User reviews from platforms like Yelp and TripAdvisor can indicate whether the business is operating.
-Consider:
-* Reviews describing a recent visit experience
-* Reviews posted within the last 6-12 months
-* Multiple recent reviews suggesting customers are still visiting
-A recent review describing an actual visit is STRONG evidence the business is still open.
-
-CRITICAL reasoning rules:
-1. A Yelp or TripAdvisor PAGE existing does NOT mean the business is open — closed businesses keep their pages up for years with all their old reviews. You MUST look for explicit "Permanently Closed" or "CLOSED" labels in the title/snippet.
-2. If a major review platform (Yelp, TripAdvisor) explicitly marks it "Permanently Closed" or "CLOSED" in the snippet title, trust it — this is very reliable.
-3. Prefer recent information over older information. A 2025-2026 source beats a 2020 source.
-4. Prefer multiple independent sources over a single source.
-5. If the search results are about a DIFFERENT business with a similar name, classify as UNCERTAIN.
-6. If there is insufficient evidence to decide, classify as UNCERTAIN. Do NOT guess.
-7. An active website alone is NOT enough to say OPEN — many closed businesses keep websites running.
-
-Respond with EXACTLY this JSON, nothing else:
-{{"judgment": "OPEN" or "CLOSED" or "UNCERTAIN", "confidence": 0-100, "reasoning": "brief explanation citing the key evidence"}}"""
+Return EXACTLY this JSON (no markdown, no explanation outside JSON):
+{{"status": "OPEN|LIKELY_CLOSED|PERMANENTLY_CLOSED|UNKNOWN", "confidence": 0-100, "key_evidence": ["evidence1", "evidence2"], "reasoning_summary": "one sentence"}}"""
 
     try:
         response = client.chat.completions.create(
-            model="llama-3.1-8b-instant",
+            model="llama-3.3-70b-versatile",
             messages=[{"role": "user", "content": prompt}],
-            temperature=0.1, max_tokens=300,
+            temperature=0.05, max_tokens=300,
         )
         import json
         raw = response.choices[0].message.content.strip()
@@ -548,61 +518,87 @@ Respond with EXACTLY this JSON, nothing else:
                 raw = raw[4:]
             raw = raw.strip()
         result = json.loads(raw)
-        reasoning = result.get("reasoning", "")
+
+        status = result.get("status", "UNKNOWN")
+        reasoning = result.get("reasoning_summary", "")
+        evidence = result.get("key_evidence", [])
         if reasoning:
-            log.info("    AI reasoning: %s", reasoning)
+            log.info("    AI: %s | %s", status, reasoning)
+        if evidence:
+            for e in evidence[:3]:
+                log.info("      evidence: %s", e)
+
         return {
-            "ai_judgment": result.get("judgment", "UNCERTAIN"),
-            "ai_confidence": int(result.get("confidence", 50)),
+            "ai_status": status,
+            "ai_confidence": int(result.get("confidence", 30)),
+            "ai_evidence": evidence,
+            "ai_reasoning": reasoning,
         }
     except Exception as e:
         log.warning("Groq failed for %s: %s", name, e)
-        return {"ai_judgment": "UNCERTAIN", "ai_confidence": 0}
+        return {"ai_status": "UNKNOWN", "ai_confidence": 0,
+                "ai_evidence": [], "ai_reasoning": str(e)}
 
 
 def web_crawl_signal(name: str, city_label: str, website: str | None) -> dict:
-    """Combine website check + Brave search + Groq AI into a single 0-1 score."""
+    """Combine website check + Brave search + Groq AI into a single 0-1 score.
+
+    Score mapping (direct from AI status — no manual tweaking):
+      OPEN               → 0.50 + (confidence/100 * 0.45)  = 0.50 to 0.95
+      UNKNOWN            → 0.50 (neutral)
+      LIKELY_CLOSED      → 0.50 - (confidence/100 * 0.35)  = 0.15 to 0.50
+      PERMANENTLY_CLOSED → 0.50 - (confidence/100 * 0.45)  = 0.05 to 0.50
+    """
     from concurrent.futures import ThreadPoolExecutor
     with ThreadPoolExecutor(max_workers=2) as pool:
         web_future = pool.submit(_check_website, website)
         brave_future = pool.submit(_brave_search, name, city_label)
         web = web_future.result()
         results = brave_future.result()
-    ai = _groq_judge(name, city_label, results, web["web_alive"])
-
-    score = 0.5  # neutral start
-
-    judgment = ai.get("ai_judgment", "UNCERTAIN")
-    conf = ai.get("ai_confidence", 0) or 0
-
-    # AI judgment is the primary driver — but scale with confidence
-    if judgment == "OPEN":
-        score += 0.40 * (conf / 100)
-    elif judgment == "CLOSED":
-        score -= 0.45 * (conf / 100)
-    # UNCERTAIN: stay near 0.5 (slight pull toward closed if confidence > 0)
-    elif conf > 50:
-        score -= 0.05
-
-    # Website alive is a WEAK signal — closed businesses keep websites up
-    if web["web_alive"] is True:
-        score += 0.03  # tiny bump — many closed businesses still have live sites
-    elif web["web_alive"] is False:
-        score -= 0.08  # dead website is a moderate closed signal
 
     n_results = len(results)
-    if n_results == 0:
-        score -= 0.08  # no web presence at all
+
+    # Run Groq AI — always, even with 0 results
+    ai = _groq_judge(name, city_label, results, web["web_alive"])
+
+    status = ai.get("ai_status", "UNKNOWN")
+    conf = ai.get("ai_confidence", 0) or 0
+
+    # Direct status → score mapping.
+    # UNKNOWN leans slightly open (0.55) since most businesses ARE open.
+    # This prevents thin-web-presence open businesses from falling below 60%.
+    if status == "OPEN":
+        score = 0.55 + (conf / 100) * 0.40
+    elif status == "PERMANENTLY_CLOSED":
+        score = 0.50 - (conf / 100) * 0.45
+    elif status == "LIKELY_CLOSED":
+        score = 0.50 - (conf / 100) * 0.35
+    else:  # UNKNOWN — lean open, most businesses are open
+        score = 0.55
+
+    # Website check: tiny nudge only
+    if web["web_alive"] is True:
+        score += 0.02
+    elif web["web_alive"] is False:
+        score -= 0.02
 
     score = max(0.0, min(1.0, score))
+
+    # Map back to ai_judgment for compatibility with ensemble combiner + feedback
+    if status in ("PERMANENTLY_CLOSED", "LIKELY_CLOSED"):
+        ai_judgment = "CLOSED"
+    elif status == "OPEN":
+        ai_judgment = "OPEN"
+    else:
+        ai_judgment = "UNCERTAIN"
 
     return {
         "web_score": round(score, 3),
         "web_alive": web["web_alive"],
         "web_status_code": web["web_status_code"],
         "brave_results": n_results,
-        "ai_judgment": ai["ai_judgment"],
-        "ai_confidence": ai["ai_confidence"],
+        "ai_judgment": ai_judgment,
+        "ai_confidence": conf,
     }
 
 
@@ -617,8 +613,16 @@ def combine_signals(model: dict, osm: dict, web: dict) -> dict:
     Uses weighted average of available signals. If a signal is missing (None),
     its weight is redistributed proportionally to the remaining signals.
     """
+    model_score = model.get("model_score")
+
+    # If the model is uncertain (score between 0.40-0.60), it's basically
+    # guessing — treat it as None so its weight goes to web/OSM instead.
+    # Only let the model vote when it has a strong opinion.
+    if model_score is not None and 0.40 <= model_score <= 0.60:
+        model_score = None  # model is guessing, don't let it drag others down
+
     signals = {
-        "model": (model.get("model_score"), W_MODEL),
+        "model": (model_score,              W_MODEL),
         "osm":   (osm.get("osm_score"),    W_OSM),
         "web":   (web.get("web_score"),     W_WEB),
     }
@@ -721,6 +725,125 @@ def store_result(conn, r: dict):
 
 
 # ══════════════════════════════════════════════════════════════════════
+# Feedback loop: save high-confidence web results as training labels
+# ══════════════════════════════════════════════════════════════════════
+
+FEEDBACK_PATH = PROJECT_ROOT / "feedback_labels.parquet"
+
+# Minimum confidence thresholds to accept a web crawl result as training data
+FEEDBACK_MIN_CONFIDENCE = 85  # AI must be >= 85% confident (stricter = cleaner labels)
+FEEDBACK_MIN_WEB_SCORE_OPEN = 0.85   # web score >= 0.85 to label as open
+FEEDBACK_MAX_WEB_SCORE_CLOSED = 0.15  # web score <= 0.15 to label as closed
+
+
+def _save_feedback_labels(results: list[dict], city: str):
+    """Save high-confidence ensemble results as silver training labels.
+
+    Only saves when the web crawling signal (Brave+Groq) is highly confident,
+    so we don't feed noisy labels back into the model.
+
+    Each saved record includes the Overture raw_json so we can extract features
+    at training time without needing the DB.
+    """
+    import json as _json
+
+    new_labels = []
+
+    for r in results:
+        web_score = r.get("web_score")
+        ai_conf = r.get("ai_confidence", 0) or 0
+        ai_judgment = r.get("ai_judgment", "UNCERTAIN")
+        ov_id = r.get("overture_id")
+
+        if web_score is None or ai_judgment == "UNCERTAIN" or ai_judgment == "SKIPPED":
+            continue
+        if ai_conf < FEEDBACK_MIN_CONFIDENCE:
+            continue
+
+        # Determine label from web signal
+        if ai_judgment == "OPEN" and web_score >= FEEDBACK_MIN_WEB_SCORE_OPEN:
+            label = 1  # open
+        elif ai_judgment == "CLOSED" and web_score <= FEEDBACK_MAX_WEB_SCORE_CLOSED:
+            label = 0  # closed
+        else:
+            continue  # not confident enough
+
+        # Fetch Overture raw_json from DB to store alongside label
+        try:
+            with engine.connect() as conn:
+                row = conn.execute(text("""
+                    SELECT id, confidence, raw_json
+                    FROM overture.places WHERE id = :oid
+                """), {"oid": ov_id}).fetchone()
+
+            if not row:
+                continue
+
+            rj = row[2]
+            if isinstance(rj, str):
+                try:
+                    rj = _json.loads(rj)
+                except (ValueError, TypeError):
+                    rj = {}
+
+            record = {
+                "id": ov_id,
+                "label": label,
+                "city": city,
+                "confidence": row[1],
+                "web_score": web_score,
+                "ai_judgment": ai_judgment,
+                "ai_confidence": ai_conf,
+                "osm_found": r.get("osm_found", False),
+                "osm_disused": r.get("osm_disused", False),
+                "osm_building": r.get("osm_building", False),
+                "osm_businesses_here": r.get("osm_businesses_here", 0),
+                "web_alive": r.get("web_alive"),
+            }
+
+            # Store Overture fields as JSON strings (same format as training parquet)
+            if isinstance(rj, dict):
+                for key in ("sources", "names", "categories", "websites", "socials",
+                             "emails", "phones", "brand", "addresses"):
+                    val = rj.get(key)
+                    if val is not None:
+                        record[key] = _json.dumps(val) if not isinstance(val, str) else val
+                        record[f"base_{key}"] = record[key]
+                    else:
+                        record[key] = None
+                        record[f"base_{key}"] = None
+
+            record["base_confidence"] = row[1]
+            new_labels.append(record)
+
+        except Exception as e:
+            log.warning("  Feedback: failed to fetch %s: %s", ov_id, e)
+            continue
+
+    if not new_labels:
+        log.info("Feedback: no high-confidence labels to save this run")
+        return
+
+    new_df = pd.DataFrame(new_labels)
+
+    # Merge with existing feedback file
+    if FEEDBACK_PATH.exists():
+        existing = pd.read_parquet(FEEDBACK_PATH)
+        # Deduplicate by overture_id — newer results overwrite older ones
+        combined = pd.concat([existing, new_df], ignore_index=True)
+        combined = combined.drop_duplicates(subset=["id"], keep="last")
+    else:
+        combined = new_df
+
+    combined.to_parquet(FEEDBACK_PATH, index=False)
+
+    n_open = (combined["label"] == 1).sum()
+    n_closed = (combined["label"] == 0).sum()
+    log.info("Feedback: saved %d new labels (%d total: %d open, %d closed) → %s",
+             len(new_labels), len(combined), n_open, n_closed, FEEDBACK_PATH.name)
+
+
+# ══════════════════════════════════════════════════════════════════════
 # Main runner
 # ══════════════════════════════════════════════════════════════════════
 
@@ -770,21 +893,30 @@ def run_ensemble(city: str, skip_web: bool = False):
     for i, (ov_id, name, lat, lon, website, actual_open) in enumerate(rows):
         log.info("\n[%d/%d] %s", i + 1, len(rows), name)
 
-        # Run signals in parallel (skip web if --no-web flag)
+        # Step 1: Get OSM + website check first (model needs these as features)
         from concurrent.futures import ThreadPoolExecutor
-        with ThreadPoolExecutor(max_workers=3) as pool:
-            m_future = pool.submit(model_signal, ov_id, city) if has_model else None
+        from src.step8_ensemble import _check_website
+        with ThreadPoolExecutor(max_workers=2) as pool:
             o_future = pool.submit(osm_signal, name, lat, lon)
-            if not skip_web:
-                w_future = pool.submit(web_crawl_signal, name, city_label, website)
-
-            m = m_future.result() if m_future else {"model_score": None, "model_pred_open": None}
+            web_check_future = pool.submit(_check_website, website)
             o = o_future.result()
-            if skip_web:
-                w = {"web_score": None, "web_alive": None, "web_status_code": None,
-                     "brave_results": 0, "ai_judgment": "SKIPPED", "ai_confidence": 0}
-            else:
-                w = w_future.result()
+            web_check = web_check_future.result()
+
+        # Step 2: Run model WITH cross-source features baked in
+        if has_model:
+            m = model_signal(ov_id, city,
+                             osm_result=o,
+                             website_alive=web_check.get("web_alive"))
+        else:
+            m = {"model_score": None, "model_pred_open": None}
+
+        # Step 3: Web crawl signal (Brave + Groq) if enabled
+        if skip_web:
+            w = {"web_score": None, "web_alive": web_check.get("web_alive"),
+                 "web_status_code": web_check.get("web_status_code"),
+                 "brave_results": 0, "ai_judgment": "SKIPPED", "ai_confidence": 0}
+        else:
+            w = web_crawl_signal(name, city_label, website)
 
         if m["model_score"] is not None:
             log.info("  Model: %.3f (pred=%s)", m["model_score"],
@@ -813,6 +945,8 @@ def run_ensemble(city: str, skip_web: bool = False):
         result = {
             "overture_id": ov_id,
             "city": key,
+            "name": name,
+            "actual_open": bool(actual_open),
             **m, **o, **w, **ens,
         }
         results.append(result)
@@ -826,6 +960,10 @@ def run_ensemble(city: str, skip_web: bool = False):
     with engine.begin() as conn:
         for r in results:
             store_result(conn, r)
+
+    # ── Save high-confidence results as feedback labels for model retraining ──
+    if not skip_web:
+        _save_feedback_labels(results, key)
 
     # ── Accuracy vs ground truth ──
     log.info("\n" + "=" * 60)
@@ -876,6 +1014,73 @@ def run_ensemble(city: str, skip_web: bool = False):
     likely_closed = sum(1 for r in results if r.get("ensemble_label") == "likely_closed")
     log.info("Distribution: %d likely_open, %d uncertain, %d likely_closed",
              likely_open, uncertain, likely_closed)
+
+    # ── Labeled results table — shows every business with ground truth ──
+    log.info("\n" + "=" * 60)
+    log.info("LABELED RESULTS TABLE")
+    log.info("=" * 60)
+    log.info("%-4s %-35s %-8s %-8s %-6s %-7s %-5s %-10s %s",
+             "#", "Business", "Actual", "Predict", "Ens%", "Web", "AI%", "AI_Judge", "Result")
+    log.info("-" * 110)
+
+    errors_open_as_closed = []  # false closed (actually open)
+    errors_closed_as_open = []  # false open (actually closed)
+
+    for i, r in enumerate(results, 1):
+        actual_open = r.get("actual_open")
+        ens_pct = r.get("ensemble_pct", 0) or 0
+        predicted_open = ens_pct >= 60
+        actual_str = "OPEN" if actual_open else "CLOSED"
+        pred_str = "OPEN" if predicted_open else "CLOSED"
+        web_score = r.get("web_score")
+        web_str = f"{web_score:.2f}" if web_score is not None else "n/a"
+        ai_conf = r.get("ai_confidence", 0) or 0
+        ai_judge = r.get("ai_judgment", "n/a")
+        match = "OK" if predicted_open == actual_open else "WRONG"
+        name = r.get("name", "???")[:35]
+
+        log.info("%-4d %-35s %-8s %-8s %-6.1f %-7s %-5d %-10s %s",
+                 i, name, actual_str, pred_str, ens_pct, web_str,
+                 ai_conf, ai_judge, match)
+
+        if match == "WRONG":
+            if actual_open and not predicted_open:
+                errors_open_as_closed.append(r)
+            else:
+                errors_closed_as_open.append(r)
+
+    # ── Error analysis ──
+    if errors_open_as_closed or errors_closed_as_open:
+        log.info("\n" + "-" * 60)
+        log.info("ERROR ANALYSIS")
+        log.info("-" * 60)
+
+        if errors_closed_as_open:
+            log.info("\n  FALSE OPEN (actually closed, we said open) — %d errors:",
+                     len(errors_closed_as_open))
+            for r in errors_closed_as_open:
+                log.info("    - %s | web=%.2f ai=%s(%d%%) brave=%d alive=%s",
+                         r.get("name", "???"),
+                         r.get("web_score", 0),
+                         r.get("ai_judgment", "?"),
+                         r.get("ai_confidence", 0) or 0,
+                         r.get("brave_results", 0),
+                         r.get("web_alive"))
+
+        if errors_open_as_closed:
+            log.info("\n  FALSE CLOSED (actually open, we said closed) — %d errors:",
+                     len(errors_open_as_closed))
+            for r in errors_open_as_closed:
+                log.info("    - %s | web=%.2f ai=%s(%d%%) brave=%d alive=%s",
+                         r.get("name", "???"),
+                         r.get("web_score", 0),
+                         r.get("ai_judgment", "?"),
+                         r.get("ai_confidence", 0) or 0,
+                         r.get("brave_results", 0),
+                         r.get("web_alive"))
+
+        log.info("\n  PATTERN: %d false-open, %d false-closed",
+                 len(errors_closed_as_open), len(errors_open_as_closed))
 
     return results
 
